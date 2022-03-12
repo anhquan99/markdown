@@ -1,0 +1,113 @@
+{
+  "main": {
+    "id": "5fd8b28bdee7cf52",
+    "type": "split",
+    "children": [
+      {
+        "id": "f98da2626b75fbef",
+        "type": "leaf",
+        "state": {
+          "type": "image",
+          "state": {
+            "file": "Image/Pasted image 20220313011212.png"
+          }
+        }
+      },
+      {
+        "id": "df822e8a47302e58",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Align scrum.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "01351d948cc9e2c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "8b65e194c7a42ea4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c5b80fc6022785f0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "9e18e6d9ab3002b0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2487c25ee90bb2aa",
+    "type": "split",
+    "children": [
+      {
+        "id": "28fb2725ac639651",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2dc73e90815389a5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Image/Pasted image 20220313011212.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f98da2626b75fbef",
+  "lastOpenFiles": [
+    "Image/Pasted image 20220313011212.png",
+    "Summery.md",
+    "Align scrum.md",
+    "Design pattern.md",
+    "OOP.md",
+    "Programming principle.md",
+    "Restfull API.md",
+    "Search algorithms.md",
+    "Software architectual pattern.md",
+    "Sort algorithms.md"
+  ]
+}

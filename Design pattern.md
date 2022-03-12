@@ -1,0 +1,4 @@
+
+- ## [[Creational]]
+- ## [[Structural]]
+- ## [[Behavioral]]
