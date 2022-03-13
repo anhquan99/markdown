@@ -4,22 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "f98da2626b75fbef",
-        "type": "leaf",
-        "state": {
-          "type": "image",
-          "state": {
-            "file": "Image/Pasted image 20220313011212.png"
-          }
-        }
-      },
-      {
         "id": "df822e8a47302e58",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Align scrum.md",
+            "file": "CSharp.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "b5ceba0aa5937231",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "CSharp.md",
             "mode": "source",
             "source": false
           }
@@ -63,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -79,7 +82,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Image/Pasted image 20220313011212.png",
+                "file": "CSharp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,17 +100,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f98da2626b75fbef",
+  "active": "df822e8a47302e58",
   "lastOpenFiles": [
-    "Image/Pasted image 20220313011212.png",
+    "CSharp.md",
+    "Image/Pasted image 20220313160144.png",
+    "Image/Pasted image 20220313161419.png",
+    "Pasted image 20220313160219.png.md",
+    "Pasted image 20220313160219.png",
     "Summery.md",
-    "Align scrum.md",
-    "Design pattern.md",
-    "OOP.md",
     "Programming principle.md",
-    "Restfull API.md",
-    "Search algorithms.md",
     "Software architectual pattern.md",
+    "C`.md",
     "Sort algorithms.md"
   ]
 }

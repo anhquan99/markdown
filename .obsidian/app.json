@@ -4,6 +4,9 @@
   "alwaysUpdateLinks": true,
   "promptDelete": false,
   "spellcheckDictionary": [
-    "Creational"
+    "Creational",
+    "Const",
+    "readonly",
+    "Readonly"
   ]
 }
