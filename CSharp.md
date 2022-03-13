@@ -140,7 +140,7 @@ public class HomeController{}
 - Throw preserves original stack
 - Throw ex have the stack trace from their throw point
 # How we can create an array with non-default values?
-- Using Enumerable.Repeat
+- Using `Enumerable.Repeat()`
 # Inherited interfaces have conflicting method names?
 - Using interface as initialize declaration. In implement method, remove public keyword.
 # Finalize() vs Dispose()
@@ -149,3 +149,7 @@ public class HomeController{}
 # Array clone() vs copy()
 - **Clone()** destination is not required
 - **Copy()** destination is required, the array copy need to exist before copy and must be large enough to hold all elements.
+# Internal 
+- Accessible within the same assembly
+# Object pool
+- An object pool is a container having objects ready to be used. It tracks the object that is currently in use, total number of objects in the pool. This reduces the overhead of creating and re-creating objects.

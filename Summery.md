@@ -12,3 +12,4 @@
 - [[Software architectual pattern]]
 - [[Programming principle]]``
 - [[CSharp]]
+- [[Javascript]]
