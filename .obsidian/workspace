@@ -6,53 +6,28 @@
       {
         "id": "c078e44cbc4a9316",
         "type": "leaf",
-        "dimension": 64.24982053122757,
+        "dimension": 50,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Programming principle.md",
+            "file": "Design pattern.md",
             "mode": "source",
             "source": false
           }
-        },
-        "group": "0c7e4936dff6e751"
+        }
       },
       {
-        "id": "f3280911ebefb5f2",
+        "id": "2f827f4c32d73c05",
         "type": "leaf",
-        "dimension": 35.75017946877244,
+        "dimension": 50,
         "state": {
-          "type": "localgraph",
+          "type": "markdown",
           "state": {
-            "file": "Programming principle.md",
-            "options": {
-              "collapse-filter": true,
-              "search": "",
-              "localJumps": 1,
-              "localBacklinks": true,
-              "localForelinks": true,
-              "localInterlinks": false,
-              "showTags": false,
-              "showAttachments": false,
-              "hideUnresolved": false,
-              "collapse-color-groups": true,
-              "colorGroups": [],
-              "collapse-display": true,
-              "showArrow": false,
-              "textFadeMultiplier": 0,
-              "nodeSizeMultiplier": 1,
-              "lineSizeMultiplier": 1,
-              "collapse-forces": true,
-              "centerStrength": 0.518713248970312,
-              "repelStrength": 10,
-              "linkStrength": 1,
-              "linkDistance": 250,
-              "scale": 0.6152776797437972,
-              "close": false
-            }
+            "file": "Design pattern/Dependency injection.md",
+            "mode": "source",
+            "source": false
           }
-        },
-        "group": "0c7e4936dff6e751"
+        }
       }
     ],
     "direction": "vertical"
@@ -108,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming principle.md",
+                "file": "Design pattern/Dependency injection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,17 +101,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "c078e44cbc4a9316",
+  "active": "2f827f4c32d73c05",
   "lastOpenFiles": [
-    "Programming principle.md",
-    "Summery.md",
-    "Unit test.md",
-    "Javascipt/React JS.md",
-    "Data structure/Hash table.md",
-    "OOP.md",
+    "Design pattern/Dependency injection.md",
     "Design pattern.md",
-    "Design pattern/Creational.md",
-    "Design pattern/Singleton.md",
-    "Data structure.md"
+    "Summery.md",
+    "CSharp.md",
+    "Data structure.md",
+    "OOP.md",
+    "Dot NET.md",
+    "Programming principle.md",
+    "Unit test.md",
+    "Javascipt/React JS.md"
   ]
 }
