@@ -6,28 +6,53 @@
       {
         "id": "c078e44cbc4a9316",
         "type": "leaf",
-        "dimension": 62.20779220779221,
+        "dimension": 64.24982053122757,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Unit test.md",
+            "file": "Programming principle.md",
             "mode": "source",
             "source": false
           }
-        }
+        },
+        "group": "0c7e4936dff6e751"
       },
       {
-        "id": "4b69c6becfe189cd",
+        "id": "f3280911ebefb5f2",
         "type": "leaf",
-        "dimension": 37.79220779220779,
+        "dimension": 35.75017946877244,
         "state": {
-          "type": "markdown",
+          "type": "localgraph",
           "state": {
-            "file": "Dot NET.md",
-            "mode": "source",
-            "source": false
+            "file": "Programming principle.md",
+            "options": {
+              "collapse-filter": true,
+              "search": "",
+              "localJumps": 1,
+              "localBacklinks": true,
+              "localForelinks": true,
+              "localInterlinks": false,
+              "showTags": false,
+              "showAttachments": false,
+              "hideUnresolved": false,
+              "collapse-color-groups": true,
+              "colorGroups": [],
+              "collapse-display": true,
+              "showArrow": false,
+              "textFadeMultiplier": 0,
+              "nodeSizeMultiplier": 1,
+              "lineSizeMultiplier": 1,
+              "collapse-forces": true,
+              "centerStrength": 0.518713248970312,
+              "repelStrength": 10,
+              "linkStrength": 1,
+              "linkDistance": 250,
+              "scale": 0.6152776797437972,
+              "close": false
+            }
           }
-        }
+        },
+        "group": "0c7e4936dff6e751"
       }
     ],
     "direction": "vertical"
@@ -67,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -84,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Unit test.md",
+                "file": "Programming principle.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,15 +128,15 @@
   },
   "active": "c078e44cbc4a9316",
   "lastOpenFiles": [
+    "Programming principle.md",
+    "Summery.md",
     "Unit test.md",
     "Javascipt/React JS.md",
-    "Dot NET.md",
-    "Summery.md",
-    "Restfull API.md",
-    "Untitled.md",
-    "Align scrum.md",
-    "Bit operations.md",
-    "CSharp.md",
+    "Data structure/Hash table.md",
+    "OOP.md",
+    "Design pattern.md",
+    "Design pattern/Creational.md",
+    "Design pattern/Singleton.md",
     "Data structure.md"
   ]
 }

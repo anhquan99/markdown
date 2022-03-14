@@ -17,7 +17,7 @@
 # Function
 - ## Using linked list
 	- enqueue(value) add value at position tail
-	- dequeue() remove value at position tail
+	- dequeue() remove value at position head
 	- empty()
 - ## Fixed array:
 	- enqueue(value) add item at the end of available storage
