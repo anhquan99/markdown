@@ -2,7 +2,6 @@
 - [[Search algorithms]]
 - [[Sort algorithms]]
 - [[Bit operations]]
-- [[Processes and threads]]
 - [[Unit test]]
 - [[Restfull API]]
 - [[Align scrum]]
@@ -13,3 +12,5 @@
 - [[Programming principle]]``
 - [[CSharp]]
 - [[Javascript]]
+- [[Dot NET]]
+- [[React JS]]
