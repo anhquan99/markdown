@@ -10,20 +10,20 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Design pattern.md",
+            "file": "Summery.md",
             "mode": "source",
             "source": false
           }
         }
       },
       {
-        "id": "2f827f4c32d73c05",
+        "id": "352f76f90d0ea040",
         "type": "leaf",
         "dimension": 50,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Design pattern/Dependency injection.md",
+            "file": "Git.md",
             "mode": "source",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design pattern/Dependency injection.md",
+                "file": "Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,17 +101,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "2f827f4c32d73c05",
+  "active": "352f76f90d0ea040",
   "lastOpenFiles": [
-    "Design pattern/Dependency injection.md",
-    "Design pattern.md",
+    "Git.md",
     "Summery.md",
+    "Unit test.md",
+    "Javascipt/React JS.md",
+    "Design pattern.md",
+    "Design pattern/Dependency injection.md",
     "CSharp.md",
     "Data structure.md",
     "OOP.md",
-    "Dot NET.md",
-    "Programming principle.md",
-    "Unit test.md",
-    "Javascipt/React JS.md"
+    "Dot NET.md"
   ]
 }
