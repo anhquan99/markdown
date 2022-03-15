@@ -6,20 +6,6 @@
       {
         "id": "c078e44cbc4a9316",
         "type": "leaf",
-        "dimension": 50,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Summery.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "352f76f90d0ea040",
-        "type": "leaf",
-        "dimension": 50,
         "state": {
           "type": "markdown",
           "state": {
@@ -101,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "352f76f90d0ea040",
+  "active": "c078e44cbc4a9316",
   "lastOpenFiles": [
     "Git.md",
     "Summery.md",
+    "Programming principle.md",
     "Unit test.md",
     "Javascipt/React JS.md",
     "Design pattern.md",
     "Design pattern/Dependency injection.md",
     "CSharp.md",
     "Data structure.md",
-    "OOP.md",
-    "Dot NET.md"
+    "OOP.md"
   ]
 }
