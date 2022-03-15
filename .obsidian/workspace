@@ -127,6 +127,7 @@
   "active": "0ddc8debde7caac0",
   "lastOpenFiles": [
     "Data structure/Array.md",
+    "Bit operations.md",
     "Data structure.md",
     "Summery.md",
     "SQL.md",
@@ -134,7 +135,6 @@
     "OOP.md",
     "Git.md",
     "Dot NET.md",
-    "Unit test.md",
-    "Restfull API.md"
+    "Unit test.md"
   ]
 }
