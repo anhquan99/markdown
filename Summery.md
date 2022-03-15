@@ -15,3 +15,4 @@
 - [[Dot NET]]
 - [[React JS]]
 - [[Git]]
+- [[SQL]]
