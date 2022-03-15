@@ -77,3 +77,55 @@ Does not integrate any of new data into working files | Downloads new data and i
 - `git branch --no-merged` return the list of branched that have not been merged.
 # Cherry pick
 - `git cherry-pick` enables you to pick up commits from a branch within the repo and apply it to another brand. This command is useful to undo changes when any commit is accidentally made to the wrong branch. Then, you can switch to the correct branch and use this command to cherry-pick the commit.
+# Note 
+``````
+- commits ở master luôn luôn theo sau hoặc update to date với dev
+
+- feature branch nên được tạo từ latest dev (lâu lâu cũng có thể tạo từ master), mỗi lần merge xong zô dev thì nên delete, khi nào có nhu cầu thì tạo lại từ dev tránh trường hợp để đó bị out of date rồi bữa sau lại vô đó code tiếp thì ko ổn.
+
+- hotfix branch tạo từ master, fix xong thì merge vô dev và merge vô master.
+
+- nếu muốn merge code từ feature branch về dev thì nên làm như sau:
+
+ + chú ý nếu có người khác làm chung feature_branch thì trước khi merge thì nên báo tất cả mọi người commit và push latest code lên và dừng code lại để tránh issue do đoạn rebase ở bên dưới, còn nếu feature_branch này có 1 mình mình làm thì ko sao.
+
+ + git checkout feature_branch
+
+ + git pull --rebase
+
+ + git rebase dev
+
+ + resolve conflict nếu có, build và test lạ i.
+
+ + commit
+
+ + git push --force-with-lease
+
+ + báo các bạn khác làm chung feature_branch:
+
+ + git checkout feature_branch
+
+ + git reset --hard origin/feature_branch
+
+ + các bạn tự test lại feature dưới local để make sure ko có vấn đề gì sau khi rebase, nếu có issue thì tiếp tục code fix issue rồi commit push code lên sau đó quay lại từ đầu.
+
+ + nếu mọi thứ đều đã ok để merge zô dev thì đi tiếp các bước bên dưới
+
+ + báo TL/TA review code (optional)
+
+ + nếu có review feedback(s) thì tiếp tục code fix issue rồi commit push code lên sau đó quay lại bước TL/TA review code.
+
+ + nếu mọi thứ đều đã ok để merge zô dev thì quay lại từ đầu
+
+ + git checkout dev
+
+ + git merge feature_branch
+
+ + git branch -d feature_branch
+
+- từ dev về master thì submit pull request (lẽ ra từ feature_branch về dev cũng cần phải submit pull request nhưng sợ a ko đủ thời gian review nên mấy đứa sẽ bị stuck)
+
+[https://megakemp.com/2019/03/20/the-case-for-pull-rebase/](https://megakemp.com/2019/03/20/the-case-for-pull-rebase/)
+
+[https://stackoverflow.com/questions/21364636/git-pull-rebase-preserve-merges](https://stackoverflow.com/questions/21364636/git-pull-rebase-preserve-merges)`
+``````
