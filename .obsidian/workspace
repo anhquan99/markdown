@@ -9,11 +9,48 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "SQL.md",
+            "file": "Data structure/Array.md",
             "mode": "source",
             "source": false
           }
-        }
+        },
+        "group": "e81af493301f96f5"
+      },
+      {
+        "id": "29000d6aeafc2ffc",
+        "type": "leaf",
+        "state": {
+          "type": "localgraph",
+          "state": {
+            "file": "Data structure/Array.md",
+            "options": {
+              "collapse-filter": true,
+              "search": "",
+              "localJumps": 1,
+              "localBacklinks": true,
+              "localForelinks": true,
+              "localInterlinks": false,
+              "showTags": false,
+              "showAttachments": false,
+              "hideUnresolved": false,
+              "collapse-color-groups": true,
+              "colorGroups": [],
+              "collapse-display": true,
+              "showArrow": false,
+              "textFadeMultiplier": 0,
+              "nodeSizeMultiplier": 1,
+              "lineSizeMultiplier": 1,
+              "collapse-forces": true,
+              "centerStrength": 0.518713248970312,
+              "repelStrength": 10,
+              "linkStrength": 1,
+              "linkDistance": 250,
+              "scale": 1,
+              "close": false
+            }
+          }
+        },
+        "group": "e81af493301f96f5"
       }
     ],
     "direction": "vertical"
@@ -69,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL.md",
+                "file": "Data structure/Array.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +126,15 @@
   },
   "active": "0ddc8debde7caac0",
   "lastOpenFiles": [
+    "Data structure/Array.md",
+    "Data structure.md",
+    "Summery.md",
     "SQL.md",
     "Image/Pasted image 20220315233030.png",
-    "Summery.md",
     "OOP.md",
     "Git.md",
     "Dot NET.md",
     "Unit test.md",
-    "Restfull API.md",
-    "Pasted image 20220315122457.png",
-    "Image/Pasted image 20220315082757.png"
+    "Restfull API.md"
   ]
 }
