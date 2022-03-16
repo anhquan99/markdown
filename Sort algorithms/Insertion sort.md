@@ -8,4 +8,4 @@
 # Disadvantages
 - Big time complexity for big input data.
 # Coding
-![](app://local/E%3A%5CWork%5CTrain%5CTrainning%5CPasted%20image%2020220311140442.png?1646982282882)
+![[Pasted image 20220311140442.png]]

@@ -116,14 +116,14 @@
 - The **this** keyword inside an arrow function, does not refer to the object calling it. It rather inherits its value from the parent scope which is the window object in this case.
   ``````js
 	var obj1 = {
-	valueOfThis: function(){
-	return this;
-	}
+		valueOfThis: function(){
+			return this;
+		}
 	}
 	var obj2 = {
-	valueOfThis: ()=>{
-	return this;
-	}
+		valueOfThis: ()=>{
+			return this;
+		}
 	}
 	
 	obj1.valueOfThis(); // Will return the object obj1

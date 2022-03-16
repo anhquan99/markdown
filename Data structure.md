@@ -5,3 +5,6 @@
 - [[Hash table]]
 - [[Heap]]
 - [[Binary tree]]
+![[Pasted image 20220316005803.png]]
+![[Pasted image 20220316005629.png]]
+![[Pasted image 20220316005726.png]]

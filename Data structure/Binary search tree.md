@@ -35,4 +35,4 @@
 - # Is binary search tree
 - # Delete value
 - # Get successor
-	- Return next-highest value in tree after fgiven value, -1 if none
+	- Return next-highest value in tree after given value, -1 if none

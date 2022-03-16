@@ -6,13 +6,15 @@
 # Drawbacks
 - Random access is not allowed.
 - Extra memory space for a pointer
-- Not cache friendly. Since linked list is not  contiguous memeory locations
+- Not cache friendly. Since linked list is not contiguous memory locations
 # Singly Linked list
 - ## Structure
-	- `struct Node{`
-		` int data;`
-		`struct Node* next;`
-		`}`
+``````c
+	 struct Node{
+		 int data;
+		struct Node* next;
+		}
+``````
 - ## Function
 	-  Append node
 		- At the end: travel to the end of the linked list and set last node pointer to new node and point new last node to null;

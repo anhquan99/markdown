@@ -1,5 +1,5 @@
 # Definition 
-- Is a design pattern, designed to lossy classes to each others.
+- Is a design pattern, designed to lossy coupling classes to each others.
 - If class A uses some methods from class B, we can say class A is depending on class B. Now to remove this dependency, we use Dependency injection.
 - Using DI will inject the dependency in the run time instead by compile time.
 # How to use

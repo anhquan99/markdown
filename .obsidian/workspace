@@ -4,25 +4,27 @@
     "type": "split",
     "children": [
       {
-        "id": "0ddc8debde7caac0",
+        "id": "ae59adce0afc23f1",
         "type": "leaf",
+        "dimension": 57.07792207792208,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Data structure/Array.md",
-            "mode": "source",
+            "file": "Javascipt/React JS.md",
+            "mode": "preview",
             "source": false
           }
         },
-        "group": "e81af493301f96f5"
+        "group": "00150dd87fba3ce3"
       },
       {
-        "id": "29000d6aeafc2ffc",
+        "id": "0c108eb981bd57db",
         "type": "leaf",
+        "dimension": 42.922077922077925,
         "state": {
           "type": "localgraph",
           "state": {
-            "file": "Data structure/Array.md",
+            "file": "Javascipt/React JS.md",
             "options": {
               "collapse-filter": true,
               "search": "",
@@ -50,7 +52,7 @@
             }
           }
         },
-        "group": "e81af493301f96f5"
+        "group": "00150dd87fba3ce3"
       }
     ],
     "direction": "vertical"
@@ -77,7 +79,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": ".net",
+                "query": "file:20220311140442",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 301
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -106,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data structure/Array.md",
+                "file": "Javascipt/React JS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,17 +126,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0ddc8debde7caac0",
+  "active": "0c108eb981bd57db",
   "lastOpenFiles": [
-    "Data structure/Array.md",
-    "Bit operations.md",
-    "Data structure.md",
+    "Javascipt/React JS.md",
     "Summery.md",
     "SQL.md",
-    "Image/Pasted image 20220315233030.png",
-    "OOP.md",
     "Git.md",
-    "Dot NET.md",
-    "Unit test.md"
+    "OOP.md",
+    "Design pattern/Behavioral.md",
+    "CSharp.md",
+    "Javascipt/Javascript.md",
+    "Programming principle.md",
+    "Software architectual pattern.md"
   ]
 }

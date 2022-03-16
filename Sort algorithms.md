@@ -8,3 +8,4 @@
 - [[Bubble sort]]
 - [[Insertion sort]]
 - [[Heap sort]]
+![[Pasted image 20220316005711.png]]

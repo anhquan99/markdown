@@ -13,11 +13,13 @@
 - Form of a multi-stage decision-making
 - As a workflow for compositing digital images for visual effects.
 # Structure
-`struct node{`
-`  data_type dataName;`
-`  struct node* left;`
-`  struct node* right;`
-`}`
+``````c
+struct node{
+  data_type dataName;
+  struct node* left;
+  struct node* right;
+}
+``````
 # Properties
 - The maximum number of nodes at level L is $2^L$
 - The maximum number of nodes in a binary tree of height H is $2^H - 1$
@@ -26,10 +28,13 @@
 - In a Binary tree where every node has 0 or 2 children, the number of leaf nodes is always one more than nodes with two children.
 # Functions 
 - Traversal
-	- Inorder (Left, Root, Right) ![[Pasted image 20220311080945.png]]
-	- Preorder (Root, Left, Right) ![[Pasted image 20220311080951.png]]
-	- Postorder (Left, Right, Root) ![[Pasted image 20220311080917.png]]
-	- ![[Pasted image 20220311080856.png]]
+	- Inorder (Left, Root, Right) 
+	  ![[Pasted image 20220311080945.png | 300]]
+	- Preorder (Root, Left, Right) 
+	  ![[Pasted image 20220311080951.png | 300]]
+	- Postorder (Left, Right, Root) 
+	  ![[Pasted image 20220311080917.png | 300]]
+	- ![[Pasted image 20220311080856.png | 400]]
 	- Using [[Stack]]
 		1. Create an empty stack
 		2. Initialize current node as root
@@ -43,45 +48,11 @@
 # Variations
 - [[Binary tree]]
 	- **Full Binary tree:** every node has 0 or 2 children.
-	              18
-	           /       \  
-	         15         30  
-	        /  \        /  \
-	      40    50    100   40	
-	             18
-	           /    \   
-	         15     20    
-	        /  \       
-	      40    50   
-	    /   \
-	   30   50	
-	               18
-	            /     \  
-	          40       30  
-	                   /  \
-	                 100   40
+	  ![[Pasted image 20220316002455.png]]
 	- **Complete Binary tree:** if all the levels are completely filled except possibly the last level and the last level has all keys as left as possible
-			  18
-           /       \  
-         15         30  
-        /  \        /  \
-      40    50    100   40
-               18
-           /       \  
-         15         30  
-        /  \        /  \
-      40    50    100   40
-     /  \   /
-    8   7  9
+	  ![[Pasted image 20220316002512.png]]
 	- Perfect Binary tree: When all the internal nodes have 2 children and all leaf nodes are at the same level
-			 18
-           /       \  
-         15         30  
-        /  \        /  \
-      40    50    100   40
-               18
-           /       \  
-         15         30
+	  ![[Pasted image 20220316002522.png]]
 	- Balance Binary tree: A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.
 - [[Binary search tree]]
 - [[Red black tree]]

@@ -6,7 +6,7 @@
 # Function
 - Insertion: compare the element until the queue is in correct order
 - Deletion: Remove the maximum priority element.
-- Peek: return maximum element from Max Heap or minimum element from Min Heap withou deleting the node from priority queue
+- Peek: return maximum element from Max Heap or minimum element from Min Heap without deleting the node from priority queue
 # Type of Priority Queue:
 - Ascending order
 - Descending order
@@ -25,11 +25,16 @@ Time complexity | O(n) | O(1) | O(1)
 	- remove
 	- getMax
 	- changePriority
+
+
 Heap | insert() | remove() | peek()
 ------------ | ------------| ------------| ------------
 Time complexity | O(logn) | O(logn) | O(1)
+
+
 - [[Binary tree]]
-	- 
+
+
 Binary tree | enqueue() | dequeue() | peek()
 ------------ | ------------| ------------| ------------
 Time complexity | O(1) | O(logn) | O(logn)

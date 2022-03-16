@@ -16,3 +16,4 @@
 # Search
 - [[DFS]] (Deep first search)
 - [[BFS]] (Breadth first search)
+![[Pasted image 20220316005744.png]]

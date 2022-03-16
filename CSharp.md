@@ -25,7 +25,7 @@
 # Delegate
 - Create delegate variable reference to a function with the same input arguments.![[Pasted image 20220313165658.png]]
 - Multicast delegate
-	``````c#
+``````c#
 using System;
 
 // Define a custom delegate that has a string parameter and returns void.

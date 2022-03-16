@@ -4,7 +4,7 @@
 - Key must be hashable
 - Key will be mapped to an index by using [[Hash function]]
 # Time complexity
-- n/k called <span style='color:aqua; font-weight:bold'>load factor</span>. When load factor small to 1, and hash function distributed evenly. If the buckets are big enough, each bucket only have some elements. This will make searching very efficient O(n). 
+- n/k called <span style='color:aqua; font-weight:bold'>load factor</span>. When load factor small to 1, and hash function distributed evenly. If the buckets are big enough, each bucket only have some elements. This will make searching very efficient O(1). 
 # Problem
 - When hashing, the index values can be the same. This will make collision for the elements, and it affects the efficiency of the hash table
 - There are 2 solutions for this issue:
