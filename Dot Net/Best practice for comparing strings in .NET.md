@@ -40,3 +40,26 @@
   ``````
 - ![[Pasted image 20220325161333.png]]
 - ![[Pasted image 20220325161612.png]]
+## <span style="color:#00FF00">Choosing a StringComparison member for your method call</span>
+Data | Behavior | Corresponding System.StringComparison value
+------------ | ------------ | ------------ 
+Case-sensitive internal identifiers.<br/>Case-sensitive identifiers in standards such as XML and HTTP.<br/>Case-sensitive security-related settings. | A non-linguistic identifier, where bytes match exactly. | Ordinal
+Case-insensitive internal identifiers. <br/>Case-insensitive identifiers in standards such as XML and HTTP.<br/> File paths. <br/>Registry keys and values. <br/>Environment variables. <br/>Resource identifiers (for example, handle names). <br/>Case-insensitive security-related settings. | A non-linguistic identifier, where case is irrelevant; especially data stored in most Windows system services. | OrdinalIgnoreCase
+Some persisted, linguistically relevant data. <br/>Display of linguistic data that requires a fixed sort order. | Culturally agnostic data that still is linguistically relevant. | InvariantCulture or InvariantCultureIgnoreCase
+Data displayed to the user.  <br/>Most user input. | Data that requires local linguistic customs. | CultureCurrent or CurrentCultureIgnoreCase
+
+## <span style="color:#00FF00">Common string comparison methods in .NET</span>
+- `String.Compare`
+	- Default interpretation: `StringComparison.CurrentCulture`
+- `String.CompareTo`
+	- Default interpretation: `StringComparison.CurrentCulture`
+	- This method currently does not offer an overload that specifies a `StringComparison` type.
+- `String.Equals`
+	- Default interpretation: `StringComparison.Ordinal`
+- `String.ToUpper` and `String.ToLower`
+	- Default interpretation: `StringComparison.CurrentCulture`
+	- Be careful when you use these methods, because forcing a string to uppercase and lowercase if often used as a small normalization for comparing strings regardless of case. If so, consider using a case-insensitive comparison.
+	- The `String.ToUpperInvariant` and the `String.ToLowerInvariant` methods are also available
+- `Char.ToUpper` and `Char.ToLower`
+	- Default interpretation: `StringComparison.CurrentCulture`
+- 

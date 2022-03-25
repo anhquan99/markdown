@@ -8,9 +8,11 @@
         "type": "leaf",
         "dimension": 72.31182795698925,
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "Image/Pasted image 20220325161333.png"
+            "file": "Dot Net/Best practice for comparing strings in .NET.md",
+            "mode": "source",
+            "source": false
           }
         }
       },
@@ -21,7 +23,7 @@
         "state": {
           "type": "localgraph",
           "state": {
-            "file": "Image/Pasted image 20220325161333.png",
+            "file": "Dot Net/Best practice for comparing strings in .NET.md",
             "options": {
               "collapse-filter": true,
               "search": "",
@@ -44,7 +46,7 @@
               "repelStrength": 10,
               "linkStrength": 1,
               "linkDistance": 250,
-              "scale": 1,
+              "scale": 1.401982897776101,
               "close": false
             }
           }
@@ -104,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Image/Pasted image 20220325161333.png",
+                "file": "Dot Net/Best practice for comparing strings in .NET.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,8 +126,8 @@
   },
   "active": "d07c0f70b4e55579",
   "lastOpenFiles": [
-    "Image/Pasted image 20220325161333.png",
     "Dot Net/Best practice for comparing strings in .NET.md",
+    "Image/Pasted image 20220325161333.png",
     "Dot Net/Dot NET.md",
     "Dot Net/Interview questions.md",
     "Javascipt/React JS.md",
