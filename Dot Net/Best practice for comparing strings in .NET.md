@@ -59,7 +59,11 @@ Data displayed to the user.  <br/>Most user input. | Data that requires local li
 - `String.ToUpper` and `String.ToLower`
 	- Default interpretation: `StringComparison.CurrentCulture`
 	- Be careful when you use these methods, because forcing a string to uppercase and lowercase if often used as a small normalization for comparing strings regardless of case. If so, consider using a case-insensitive comparison.
-	- The `String.ToUpperInvariant` and the `String.ToLowerInvariant` methods are also available
+	- The `String.ToUpperInvariant` and the `String.ToLowerInvariant` methods are also available. `ToUpperInvariant` is the standard way to normalize case. Comparisons made using `StringComparison.OrdinalIgnoreCase` are behaviorally the composition of two calls: calling `ToUpperInvariant` on both string arguments, and doing a comparison using `StringComparison.Ordinal`.
 - `Char.ToUpper` and `Char.ToLower`
 	- Default interpretation: `StringComparison.CurrentCulture`
-- 
+- `String.IndexOf` and `String.LastIndexOf`
+	- Default interpretation: `StringComparison.CurrentCulture`
+- `Array.Sort` and `Array.BinarySearch`
+	- Default interpretation: `StringComparison.CurrentCulture`
+# Read more at [https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-and-localization]

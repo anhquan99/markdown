@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "d07c0f70b4e55579",
+        "id": "563cd7c398ae18e2",
         "type": "leaf",
-        "dimension": 72.31182795698925,
+        "dimension": 56.63157894736842,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Dot Net/Best practice for comparing strings in .NET.md",
+            "file": "Dot Net/Culture sensitive.md",
             "mode": "source",
             "source": false
           }
@@ -19,11 +19,11 @@
       {
         "id": "0c108eb981bd57db",
         "type": "leaf",
-        "dimension": 27.688172043010752,
+        "dimension": 43.36842105263158,
         "state": {
           "type": "localgraph",
           "state": {
-            "file": "Dot Net/Best practice for comparing strings in .NET.md",
+            "file": "Dot Net/Culture sensitive.md",
             "options": {
               "collapse-filter": true,
               "search": "",
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot Net/Best practice for comparing strings in .NET.md",
+                "file": "Dot Net/Culture sensitive.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,17 +124,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d07c0f70b4e55579",
+  "active": "563cd7c398ae18e2",
   "lastOpenFiles": [
+    "Dot Net/Culture sensitive.md",
+    "Dot Net/Dot NET.md",
     "Dot Net/Best practice for comparing strings in .NET.md",
     "Image/Pasted image 20220325161333.png",
-    "Dot Net/Dot NET.md",
     "Dot Net/Interview questions.md",
     "Javascipt/React JS.md",
     "Summery.md",
     "SQL.md",
     "Git.md",
-    "OOP.md",
-    "Design pattern/Behavioral.md"
+    "OOP.md"
   ]
 }
