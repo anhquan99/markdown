@@ -1,6 +1,3 @@
-   
-
-[MVC MCQ Quiz & Online Test 2021 - Online Interview Questions](https://www.onlineinterviewquestions.com/mvc-mcq/)
 
 [50 Top MVC Interview Questions & Answers in 2021 [Updated] (hackr.io)](https://hackr.io/blog/mvc-interview-questions)
 

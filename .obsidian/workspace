@@ -4,27 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "ae59adce0afc23f1",
+        "id": "d07c0f70b4e55579",
         "type": "leaf",
-        "dimension": 57.07792207792208,
+        "dimension": 72.31182795698925,
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "Javascipt/React JS.md",
-            "mode": "preview",
-            "source": false
+            "file": "Image/Pasted image 20220325161333.png"
           }
-        },
-        "group": "00150dd87fba3ce3"
+        }
       },
       {
         "id": "0c108eb981bd57db",
         "type": "leaf",
-        "dimension": 42.922077922077925,
+        "dimension": 27.688172043010752,
         "state": {
           "type": "localgraph",
           "state": {
-            "file": "Javascipt/React JS.md",
+            "file": "Image/Pasted image 20220325161333.png",
             "options": {
               "collapse-filter": true,
               "search": "",
@@ -51,8 +48,7 @@
               "close": false
             }
           }
-        },
-        "group": "00150dd87fba3ce3"
+        }
       }
     ],
     "direction": "vertical"
@@ -108,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Javascipt/React JS.md",
+                "file": "Image/Pasted image 20220325161333.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,17 +122,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0c108eb981bd57db",
+  "active": "d07c0f70b4e55579",
   "lastOpenFiles": [
+    "Image/Pasted image 20220325161333.png",
+    "Dot Net/Best practice for comparing strings in .NET.md",
+    "Dot Net/Dot NET.md",
+    "Dot Net/Interview questions.md",
     "Javascipt/React JS.md",
     "Summery.md",
     "SQL.md",
     "Git.md",
     "OOP.md",
-    "Design pattern/Behavioral.md",
-    "CSharp.md",
-    "Javascipt/Javascript.md",
-    "Programming principle.md",
-    "Software architectual pattern.md"
+    "Design pattern/Behavioral.md"
   ]
 }
