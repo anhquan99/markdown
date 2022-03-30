@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Dot Net/Culture sensitive.md",
+            "file": "JS Framework/Javascript.md",
             "mode": "source",
             "source": false
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "localgraph",
           "state": {
-            "file": "Dot Net/Culture sensitive.md",
+            "file": "JS Framework/Javascript.md",
             "options": {
               "collapse-filter": true,
               "search": "",
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot Net/Culture sensitive.md",
+                "file": "JS Framework/Javascript.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,15 +126,15 @@
   },
   "active": "563cd7c398ae18e2",
   "lastOpenFiles": [
+    "JS Framework/Javascript.md",
+    "JS Framework/React JS.md",
     "Dot Net/Culture sensitive.md",
     "Dot Net/Dot NET.md",
     "Dot Net/Best practice for comparing strings in .NET.md",
     "Image/Pasted image 20220325161333.png",
     "Dot Net/Interview questions.md",
-    "Javascipt/React JS.md",
     "Summery.md",
     "SQL.md",
-    "Git.md",
-    "OOP.md"
+    "Git.md"
   ]
 }

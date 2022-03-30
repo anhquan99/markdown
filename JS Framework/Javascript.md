@@ -1,9 +1,17 @@
 # Primitive type
 - String
+	- Backticks: Are extended fucntionality quotes, they allow us to embed variables and expressions into a string by wrapping them in `&{...}`
+	  ``````js
+	let name = "John"; // embed a variable alert
+	( `Hello, _${__name}_!` ); // Hello, John! // embed an expression
+	alert( `the result is _${__1 + 2}_` ); // the result is 3
+	``````
 - Number
+	- *Special numeric values:* `Infinity`, `NaN`
 - BigInt
 - Boolean
-- Undefined
+- Undefined: meaning the variable value is not assigned
+	- ![[Pasted image 20220330070133.png]]
 - Null
 - Symbol
 # Hoisting
@@ -134,3 +142,30 @@
 -   Unlike functions, classes are not hoisted. A class cannot be used before it is declared.
 -   A class can inherit properties and methods from other classes by using the extend keyword.
 -   All the syntaxes inside the class must follow the strict mode(‘use strict’) of javascript. Error will be thrown if the strict mode rules are not followed.
+# Interaction
+- alert
+- prompt: shows a modal window with a text message, an input field for the visitor, and the buttons OK/Cancel. `[default]` is the default value when user doesn't input.
+	``````js
+	result = prompt(title, [default]);
+	```````
+- confirm: shows a modal window with a `question` and two buttons: OK and Cancel
+  ``````js
+  result = confirm(question);
+  ``````
+# Type conventions
+- String convention: `String(value)`
+- Numeric convention
+	- Implicit
+	  ``````js
+	  alert( "6" / "2" ); // 3, strings are converted to numbers
+	  ``````
+	- Explicit
+	  ``````js
+	  let str = "123"; 
+	  alert(typeof str); // string 
+	  let num = Number(str); // becomes a number 123 
+	  alert(typeof num); // number
+	  `````` 
+- Boolean convention
+	- Values that are intuitively `empty` like `0`, `null`, `undefined` and `NaN` become `false`
+	- Other become `true`
