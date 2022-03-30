@@ -9,6 +9,7 @@
     "readonly",
     "Readonly",
     "Cient-Server",
-    "BigInt"
+    "BigInt",
+    "Javascript"
   ]
 }

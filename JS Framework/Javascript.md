@@ -169,3 +169,164 @@
 - Boolean convention
 	- Values that are intuitively `empty` like `0`, `null`, `undefined` and `NaN` become `false`
 	- Other become `true`
+# Basic operators, math
+- Exponentiation
+	- `a ** b` is `a` power b, $a^b$
+- Terms
+	- unary: If it has a single operand. Like `x = -x`
+	- binary: if it has 2 operands
+	- operand: is what operators are applied to. For instance, in the multiplication of `5 * 2` there are two operands
+		- The left operand is 5 and the right is 2. Sometimes, people call these "arguments" instead of "operands"
+## Operator precedence
+![[Pasted image 20220330133915.png]]
+## Assignment
+- An assignment `=` is also an operator.
+- Example:
+	-  `x = 2 * 2 + 1` the `2 * 2 + 1` is done first and then `=` is evaluated
+## Chaining assignments
+- Chained assignments evaluate from right to left. `a = b = c = 2 + 2` the rightmost expression `2 + 2` is evaluated and then assigned to the variables on the left `c` and `b` then `a`. At the end the variables share a single value.
+- Split such code:
+  ``````js
+  c = 2 + 2;
+  b = c;
+  a = c;
+  ``````
+## Increment/decrement
+- Postfix form: `a = counter++` return `counter` and then increase `counter` 
+- Prefix form: `a = ++counter` increase `counter` and then return.
+## Comma
+- The comma operator allows us to evaluate several expressions, dividing them with a comma `,` each of them is evaluated, but only the result of the last one is returned.
+  ``````js
+  _let a = (1 + 2, 3 + 4);
+  alert( a ); // 7 (the result of 3 + 4)
+  ``````
+  - Here, the first expression `1 + 2` is evaluated, and its result is thrown away. Then `3 + 4` is evaluated and returned as the result
+  > **WARNING:** Comma has very low precedence
+  > 
+  > Please note that the comma operator has very low precedence, lower than `=` so parentheses are important in the example above.
+  > Without them: `a = 1 + 2, 3 + 4` evaluate `+` first, summing the numbers into `a = 3, 7`, then the assignment operator `=` operator assigns `a = 3`, and the rest is ignored. It's like `(a = 1 + 2), 3 + 4` 
+  - Why do we need an operator that throws away everything except the last expression?
+	  - Sometimes, people use it more complex constructs to put several actions in one line
+	    ``````js
+	    // three operations in one line 
+	    for (_a = 1, b = 3, c = a * b_; a < 10; a++) { 
+		    ... 
+		}
+	    ``````
+# String comparison
+- **Algorithm**
+	1. Compare the first character of both string
+	2. If the first character from the first string is greater (or less) then the other string's, then the first string is greater (or less) then the second. We are done.
+	3. Otherwise, if both strings' both character are the same, compare the second character the same way.
+	4. Repeat until the end of either string.
+	5. If both strings end at the same length, then they are equal. Otherwise, the longer string is greater.
+>**Not a real dictionary, but Unicode order**
+>
+>The comparison algorithm given above is roughly equivalent to the one used in dictionaries or phone books, but it's not exactly the same
+>For instance, case matters. A capital letter `"A"` is not equal to the lowercase `"a"`. Which one is greater? The lowercase `"a"`. Why? Because the lowercase character has a greater index in the internal encoding table JavaScript uses (Unicode).
+
+![[Pasted image 20220330143230.png]]
+![[Pasted image 20220330144030.png]]
+![[Pasted image 20220330144043.png]]
+# Logical operators
+## "||" (OR)
+- Evaluate from left to right if there are more than 2 "or" condition.
+- Javascript will find the first truthy value and then return operand
+## "&&" (AND)
+- Evaluate from right to left if there are more than 2 "and" condition
+- Javascript will find the first falsely value and then return operand
+## Precedence 
+- The precedence of AND is **higher** than OR
+# Function
+- If a same-named variable is declared inside the function then it shadows the outer one. For instance, in the code below, the function uses the local `username`. The outer one is ignored.
+- Variables declared outside any function, such as the outer `userName` in the code above, are called *global*. Global variables are visible from any function
+  ``````js
+  let userName = 'John'; 
+  function showMessage() { 
+	  _let userName = "Bob"; // declare a local variable_ 
+	  let message = 'Hello, ' + userName; // _Bob_ 
+	  alert(message); 
+  } // the function will create and use its own userName 
+  showMessage(); 
+  alert( userName ); // _John_, unchanged, the function did not access the outer variable
+  ``````
+  - It's a good practice to minimize the use of global variables.
+  ## Parameters
+  - If parameter is value then it will be passed as value in function
+  - If parameter is reference type it will be passed as reference in function if you change its internal property value. If you change parameter itself, that won't affect the parameter.
+    ``````js
+	function changeStuff(a, b, c)
+	{
+	  a = a * 10;
+	  b.item = "changed";
+	  c = {item: "changed"};
+	}
+	
+	var num = 10;
+	var obj1 = {item: "unchanged"};
+	var obj2 = {item: "unchanged"};
+	
+	changeStuff(num, obj1, obj2);
+	
+	console.log(num);
+	console.log(obj1.item);
+	console.log(obj2.item);
+    ``````
+## Default values
+``````js
+function showMessage(from, _text = "no text given"_) { 
+	alert( from + ": " + text ); 
+} 
+showMessage("Ann"); // Ann: no text given
+``````
+
+``````js
+function showMessage(from, text = anotherFunction()) { 
+	// anotherFunction() only executed if no text given 
+	// its result becomes the value of text 
+}
+``````
+
+>**Evaluation of default parameters**
+>
+In JavaScript, a default parameter is evaluated every time the function is called without the respective parameter.
+In the example above, `anotherFunction()` isn't called at all, if the `text` parameter is provided.
+On the other hand, it's independently called every time when `text` is missing.
+## Alternative default parameters
+- Sometimes it makes sense to assign default values for parameters not in the function declaration, but a later stage.
+  ``````js
+  function showMessage(text){
+	  if(text === undefined){ // if the paramter is missing
+		  text = 'empty message';
+	  }
+  }
+  ``````
+- Modern JS engines support the [[Nullish coalescing operator]] `??`, it's better when most falsely values, such as `0`, should be considered *normal*:
+  ``````js
+  function showCount(count){
+	  // if count is undefined or null, show "unknow"
+	  alert(count ?? "unknow");
+  }
+  showCount(0); // 0
+  showCount(null); // unknow
+  showCount(); // unknow
+  
+  ``````
+## Return a value
+- If a function does not return a value, it is the same as if it returns `undefined`
+  ``````js
+  function doNothing(){return;}
+  function doNothingMore(){}
+  alert(doNothing() === undefined); // true
+  alert(doNothingMore() === undefined); // true
+  ``````
+- Return expression to wrap across multiple lines, we should wrap it at the same line as `return`
+  ``````js
+  return ( 
+	  some + long 
+	  + expression 
+	  + or + whatever * f(a) + f(b) 
+	  );
+  ``````
+## Function expressions
+- 

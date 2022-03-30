@@ -6,49 +6,10 @@
       {
         "id": "563cd7c398ae18e2",
         "type": "leaf",
-        "dimension": 56.63157894736842,
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "JS Framework/Javascript.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "0c108eb981bd57db",
-        "type": "leaf",
-        "dimension": 43.36842105263158,
-        "state": {
-          "type": "localgraph",
-          "state": {
-            "file": "JS Framework/Javascript.md",
-            "options": {
-              "collapse-filter": true,
-              "search": "",
-              "localJumps": 1,
-              "localBacklinks": true,
-              "localForelinks": true,
-              "localInterlinks": false,
-              "showTags": false,
-              "showAttachments": false,
-              "hideUnresolved": false,
-              "collapse-color-groups": true,
-              "colorGroups": [],
-              "collapse-display": true,
-              "showArrow": false,
-              "textFadeMultiplier": 0,
-              "nodeSizeMultiplier": 1,
-              "lineSizeMultiplier": 1,
-              "collapse-forces": true,
-              "centerStrength": 0.518713248970312,
-              "repelStrength": 10,
-              "linkStrength": 1,
-              "linkDistance": 250,
-              "scale": 1.401982897776101,
-              "close": false
-            }
+            "file": "Image/Pasted image 20220330144043.png"
           }
         }
       }
@@ -106,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS Framework/Javascript.md",
+                "file": "Image/Pasted image 20220330144043.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,15 +87,15 @@
   },
   "active": "563cd7c398ae18e2",
   "lastOpenFiles": [
+    "Image/Pasted image 20220330144043.png",
+    "Image/Pasted image 20220330133915.png",
     "JS Framework/Javascript.md",
+    "Nullish coalescing operator.md",
     "JS Framework/React JS.md",
     "Dot Net/Culture sensitive.md",
     "Dot Net/Dot NET.md",
     "Dot Net/Best practice for comparing strings in .NET.md",
     "Image/Pasted image 20220325161333.png",
-    "Dot Net/Interview questions.md",
-    "Summery.md",
-    "SQL.md",
-    "Git.md"
+    "Dot Net/Interview questions.md"
   ]
 }
