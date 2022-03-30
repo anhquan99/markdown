@@ -1,6 +1,6 @@
 # Primitive type
 - String
-	- Backticks: Are extended fucntionality quotes, they allow us to embed variables and expressions into a string by wrapping them in `&{...}`
+	- Backticks: Are extended functionality quotes, they allow us to embed variables and expressions into a string by wrapping them in `&{...}`
 	  ``````js
 	let name = "John"; // embed a variable alert
 	( `Hello, _${__name}_!` ); // Hello, John! // embed an expression
@@ -10,12 +10,12 @@
 	- *Special numeric values:* `Infinity`, `NaN`
 - BigInt
 - Boolean
-- Undefined: meaning the variable value is not assigned
+- Undefined: meaning the variable value is not assigned or not assigned
 	- ![[Pasted image 20220330070133.png]]
-- Null
+- Null: means empty or not does not exist
 - Symbol
 # Hoisting
-- Is a default behavior of js where all variable and function declarations are moved on top.
+- Is a default behavior of JS where all variable and function declarations are moved on top.
 - This means where the variables and functions declared, they are moved on top of the scope or global.
 # == vs ===
 - == compare values
@@ -117,6 +117,37 @@
 - **A prototype is a blueprint of an object.** Prototype allows us to use properties and methods on an object even if the properties and methods do not exist on the current object.
 # Callback 
 - A callback is a function that will be executed after another function gets executed.
+- When you pass functions as values, expect it to be **called back** later if necessary.
+  ``````js
+  function ask(question, yes, no) { 
+	  if (confirm(question)) yes() 
+	  else no(); 
+  } 
+  function showOk() { 
+	  alert( "You agreed." ); 
+  } 
+  function showCancel() { 
+	  alert( "You canceled the execution." ); 
+  } // usage: functions showOk, showCancel are passed as arguments to ask 
+  ask("Do you agree?", showOk, showCancel);
+  `````` 
+  
+>**A function is a value representing an "action"**
+>
+>Regular values like strings or numbers represent the *data*
+>A function can be perceived as an action
+>We can pass it between variables and run when we want
+- **A Function Expression is created when the execution reaches it and is usable only from that moment**
+- **A Function Declaration can be called earlier than it is defined dual to hoisting**
+- **In strict mode, when a Function Declaration is within a code block, it's visible everywhere inside that block. But not outside of it**
+
+>**When to choose Function Declaration verus Function Expression?**
+>
+>As a rule of thumb, when we need to declare a function, the first to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
+>
+That’s also better for readability, as it’s easier to look up `function f(…) {…}` in the code than `let f = function(…) {…};`. Function Declarations are more “eye-catching”.
+>
+…But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we’ve just seen an example), then Function Expression should be used.
 # Arrow function
 - By general definition, the **this** keyword always refers to the object that is calling the function.  
 - As you can see in the code above, **obj1.valueOfThis()** returns obj1, since **this** keyword refers to the object calling the function.  
@@ -329,4 +360,29 @@ On the other hand, it's independently called every time when `text` is missing.
 	  );
   ``````
 ## Function expressions
-- 
+- In JS, a function is not a "magical language structure", but a special kind of value. 
+- Function expression:
+  ``````js
+  let sayHi = function(){
+	  alert("Hello");
+  };
+  ``````
+- Function expression have a semicolon `;` at the end, but function declaration does not.
+# Arrow functions
+``````js
+let func = (arg1, arg2, ..., argN) => expression;
+``````
+- Arrow function creates a function `func` that accepts arguments `arg1, arg2,.., argN` then evaluates the expression on the right side with their use and returns its result.
+``````js
+let double = n => n * 2; // roughly the same as: let double = function(n) { return n * 2 }
+alert( double(3) ); // 6
+``````  
+### Multiline arrow functions
+- Sometimes we need a more complex function, with multiple expressions and statements. In that case, but we can enclose them in curly braces, The major difference is that curly braces require a `return` within them to return a value.
+  ``````js
+  let sum = (a, b) => { // the curly brace opens a multiline function 
+	  let result = a + b; 
+	  return result; // if we use curly braces, then we need an explicit "return"
+  }; 
+  alert( sum(1, 2) ); // 3
+  ``````

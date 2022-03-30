@@ -6,12 +6,53 @@
       {
         "id": "563cd7c398ae18e2",
         "type": "leaf",
+        "dimension": 71.90506735086593,
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "Image/Pasted image 20220330144043.png"
+            "file": "JS Framework/Javascript/Javascript Fundamentals.md",
+            "mode": "source",
+            "source": false
           }
-        }
+        },
+        "group": "8f158a4dc4ef186a"
+      },
+      {
+        "id": "18d88dcd4b54a2df",
+        "type": "leaf",
+        "dimension": 28.09493264913406,
+        "state": {
+          "type": "localgraph",
+          "state": {
+            "file": "JS Framework/Javascript/Javascript Fundamentals.md",
+            "options": {
+              "collapse-filter": true,
+              "search": "",
+              "localJumps": 1,
+              "localBacklinks": true,
+              "localForelinks": true,
+              "localInterlinks": false,
+              "showTags": false,
+              "showAttachments": false,
+              "hideUnresolved": false,
+              "collapse-color-groups": true,
+              "colorGroups": [],
+              "collapse-display": true,
+              "showArrow": false,
+              "textFadeMultiplier": 0,
+              "nodeSizeMultiplier": 1,
+              "lineSizeMultiplier": 1,
+              "collapse-forces": true,
+              "centerStrength": 0.518713248970312,
+              "repelStrength": 10,
+              "linkStrength": 1,
+              "linkDistance": 250,
+              "scale": 1,
+              "close": false
+            }
+          }
+        },
+        "group": "8f158a4dc4ef186a"
       }
     ],
     "direction": "vertical"
@@ -67,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Image/Pasted image 20220330144043.png",
+                "file": "JS Framework/Javascript/Javascript Fundamentals.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,11 +128,11 @@
   },
   "active": "563cd7c398ae18e2",
   "lastOpenFiles": [
-    "Image/Pasted image 20220330144043.png",
-    "Image/Pasted image 20220330133915.png",
-    "JS Framework/Javascript.md",
-    "Nullish coalescing operator.md",
-    "JS Framework/React JS.md",
+    "JS Framework/Javascript/Javascript Fundamentals.md",
+    "JS Framework/Javascript and Frameworks.md",
+    "JS Framework/React JS/React JS.md",
+    "Summery.md",
+    "lm.md",
     "Dot Net/Culture sensitive.md",
     "Dot Net/Dot NET.md",
     "Dot Net/Best practice for comparing strings in .NET.md",

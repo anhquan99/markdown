@@ -11,7 +11,7 @@
 - [[Software architectual pattern]]
 - [[Programming principle]]``
 - [[CSharp]]
-- [[Javascript]]
+- [[Javascript and Frameworks]]
 - [[Dot NET]]
 - [[React JS]]
 - [[Git]]

@@ -1,5 +1,5 @@
 # Feature
-- JSX is a syntax extension to [[Javascript]]. It is used with React. By using JSX we can write HTML structure in the same file that contains JS code. Web browsers can't read JSX directly.
+- JSX is a syntax extension to [[Javascript Fundamentals]]. It is used with React. By using JSX we can write HTML structure in the same file that contains JS code. Web browsers can't read JSX directly.
 - Components: building blocks of any React application, and single app usually consist of multiple components. It can be split into independent, reusable part that can be processed separately
 -   Virtual DOM: React keeps a lightweight representation of the real DOM in the memory, and that is known as the virtual DOM. When the state of an object changes, virtual DOM changes only that object in the real DOM, rather than updating all the objects.
 # Advantages
