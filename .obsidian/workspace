@@ -4,55 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "563cd7c398ae18e2",
+        "id": "739d7c23a1e19df2",
         "type": "leaf",
-        "dimension": 71.90506735086593,
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "JS Framework/Javascript/Javascript Fundamentals.md",
-            "mode": "source",
-            "source": false
+            "file": "Image/Pasted image 20220331153512.png"
           }
-        },
-        "group": "8f158a4dc4ef186a"
-      },
-      {
-        "id": "18d88dcd4b54a2df",
-        "type": "leaf",
-        "dimension": 28.09493264913406,
-        "state": {
-          "type": "localgraph",
-          "state": {
-            "file": "JS Framework/Javascript/Javascript Fundamentals.md",
-            "options": {
-              "collapse-filter": true,
-              "search": "",
-              "localJumps": 1,
-              "localBacklinks": true,
-              "localForelinks": true,
-              "localInterlinks": false,
-              "showTags": false,
-              "showAttachments": false,
-              "hideUnresolved": false,
-              "collapse-color-groups": true,
-              "colorGroups": [],
-              "collapse-display": true,
-              "showArrow": false,
-              "textFadeMultiplier": 0,
-              "nodeSizeMultiplier": 1,
-              "lineSizeMultiplier": 1,
-              "collapse-forces": true,
-              "centerStrength": 0.518713248970312,
-              "repelStrength": 10,
-              "linkStrength": 1,
-              "linkDistance": 250,
-              "scale": 1,
-              "close": false
-            }
-          }
-        },
-        "group": "8f158a4dc4ef186a"
+        }
       }
     ],
     "direction": "vertical"
@@ -92,7 +51,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301
+    "width": 301,
+    "collapsed": true
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -108,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS Framework/Javascript/Javascript Fundamentals.md",
+                "file": "Image/Pasted image 20220331153512.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,17 +86,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "563cd7c398ae18e2",
+  "active": "739d7c23a1e19df2",
   "lastOpenFiles": [
-    "JS Framework/Javascript/Javascript Fundamentals.md",
+    "Image/Pasted image 20220331153512.png",
+    "Programming principle.md",
+    "Data types.md",
     "JS Framework/Javascript and Frameworks.md",
-    "JS Framework/React JS/React JS.md",
-    "Summery.md",
-    "lm.md",
-    "Dot Net/Culture sensitive.md",
-    "Dot Net/Dot NET.md",
-    "Dot Net/Best practice for comparing strings in .NET.md",
-    "Image/Pasted image 20220325161333.png",
-    "Dot Net/Interview questions.md"
+    "JS Framework/Javascript/Array and functions.md",
+    "JS Framework/Javascript/Symbol.md",
+    "Image/Pasted image 20220331105002.png",
+    "JS Framework/Javascript/Objects the basics.md",
+    "JS Framework/Javascript/Javascript Fundamentals.md",
+    "Image/Pasted image 20220330144043.png"
   ]
 }
