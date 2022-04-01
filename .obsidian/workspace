@@ -4,12 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "739d7c23a1e19df2",
+        "id": "08478630a62b06c5",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "Image/Pasted image 20220331153512.png"
+            "file": "JS Framework/Javascript/Array and functions.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -38,16 +40,17 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "file:20220311140442",
+                "query": "deep copy",
                 "matchingCase": false,
-                "explainSearch": false,
+                "explainSearch": true,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Image/Pasted image 20220331153512.png",
+                "file": "JS Framework/Javascript/Array and functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,17 +89,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "739d7c23a1e19df2",
+  "active": "08478630a62b06c5",
   "lastOpenFiles": [
+    "JS Framework/Javascript/Array and functions.md",
+    "JS Framework/Javascript and Frameworks.md",
+    "JS Framework/Javascript/Objects the basics.md",
+    "JS Framework/Javascript/Javascript Fundamentals.md",
+    "JS Framework/Javascript/Symbol.md",
     "Image/Pasted image 20220331153512.png",
     "Programming principle.md",
     "Data types.md",
-    "JS Framework/Javascript and Frameworks.md",
-    "JS Framework/Javascript/Array and functions.md",
-    "JS Framework/Javascript/Symbol.md",
     "Image/Pasted image 20220331105002.png",
-    "JS Framework/Javascript/Objects the basics.md",
-    "JS Framework/Javascript/Javascript Fundamentals.md",
     "Image/Pasted image 20220330144043.png"
   ]
 }

@@ -171,6 +171,15 @@ cloneUsingAssign = Object.assign({}, user); // equivalent to for loop
 - Copy the reference of the original variable
 ## Deep copy
 - A deep copy means that all the values of the new variable are copied and disconnected from the original variable
+- Using JSON, but it only works with number and String and Object literal without function or Symbol properties
+``````js
+JSON.parse(JSON.stringify())
+``````
+- Using external library 
+``````js
+// lodash libary
+_.cloneDeep(obj);
+``````
 ## Spread operator
 - A shallow copy method
   ``````js
