@@ -309,3 +309,37 @@ alert(john.name); // John
   alert(user?.address?.street); // undefined
   ``````
 - We should use `?.` only where it’s ok that something doesn’t exist. For example, if according to our code logic `user` object must exist, but `address` is optional, then we should write `user.address?.street`, but not `user?.address?.street`. Then, if `user` happens to be undefined, we’ll see a programming error about it and fix it. Otherwise, if we overuse `?.`, coding errors can be silenced where not appropriate, and become more difficult to debug.
+# Object.keys, values, entries
+![[Pasted image 20220401115801.png]]
+# Destructuring assignment 
+- It allows for instantly mapping an object or array onto many variables
+  ``````js
+  let {prop : varName = default, ...rest} = object
+  ``````
+- **The rest pattern** `...`
+	- Object has more properties than we have variables, we can take some and then assign the `rest` somewhere
+	  ``````js
+let options = {
+
+ title: "Menu",
+
+ height: 200,
+
+ width: 100
+
+};
+
+// title = property named title
+
+// rest = object with the rest of properties
+
+let {title, ...rest} = options;
+
+// now title="Menu", rest={height: 200, width: 100}
+
+alert(rest.height); // 200
+
+alert(rest.width); // 100
+
+alert(title); // Menu
+	  ``````

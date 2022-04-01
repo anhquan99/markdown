@@ -5,5 +5,9 @@
 [[Symbol]]
 [[Data types]]
 [[Array and functions]]
+[[Map and Set]]
+[[JSON]]
+[[ES5]]
+[[ES6]]
 # Framework
 [[React JS]]
