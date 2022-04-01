@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "b261d31744024729",
+        "id": "cf404759a2e43c07",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "JSON.md",
+            "file": "ES6.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "file:20220311140442",
+                "query": "from()",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -70,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JSON.md",
+                "file": "ES6.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,17 +89,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "b261d31744024729",
+  "active": "cf404759a2e43c07",
   "lastOpenFiles": [
-    "JSON.md",
-    "JS Framework/Javascript and Frameworks.md",
-    "JS Framework/Javascript/Javascript Fundamentals.md",
-    "JS Framework/Javascript/Objects the basics.md",
-    "JS Framework/Javascript/Map and Set.md",
-    "JS Framework/Javascript/Array and functions.md",
-    "JS Framework/Javascript/Nullish coalescing operator.md",
-    "ES5.md",
     "ES6.md",
-    "Image/Pasted image 20220331153512.png"
+    "JS Framework/Javascript/Array and functions.md",
+    "JS Framework/Javascript/Javascript Fundamentals.md",
+    "ES5.md",
+    "JS Framework/Javascript/Objects the basics.md",
+    "[.md",
+    "JS Framework/Javascript and Frameworks.md",
+    "JSON.md",
+    "JS Framework/Javascript/Map and Set.md",
+    "JS Framework/Javascript/Nullish coalescing operator.md"
   ]
 }
