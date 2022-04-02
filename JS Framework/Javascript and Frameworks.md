@@ -9,5 +9,7 @@
 [[JSON]]
 [[ES5]]
 [[ES6]]
+[[Prototype]]
+[[Classes]]
 # Framework
 [[React JS]]

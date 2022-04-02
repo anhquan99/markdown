@@ -4,14 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "cf404759a2e43c07",
+        "id": "f34022a84bb44bd5",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "ES6.md",
-            "mode": "source",
-            "source": false
+            "file": "Image/Pasted image 20220401162255.png"
           }
         }
       }
@@ -49,13 +47,11 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 301,
-    "collapsed": true
+    "width": 301
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -71,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ES6.md",
+                "file": "Image/Pasted image 20220401162255.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,17 +85,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "cf404759a2e43c07",
+  "active": "f34022a84bb44bd5",
   "lastOpenFiles": [
-    "ES6.md",
-    "JS Framework/Javascript/Array and functions.md",
-    "JS Framework/Javascript/Javascript Fundamentals.md",
-    "ES5.md",
-    "JS Framework/Javascript/Objects the basics.md",
-    "[.md",
+    "Image/Pasted image 20220401162255.png",
+    "Classes.md",
     "JS Framework/Javascript and Frameworks.md",
-    "JSON.md",
+    "JS Framework/Javascript/Prototype.md",
+    "JS Framework/Javascript/ES6.md",
     "JS Framework/Javascript/Map and Set.md",
-    "JS Framework/Javascript/Nullish coalescing operator.md"
+    "JS Framework/Javascript/ES5.md",
+    "Image/Pasted image 20220401100717.png",
+    "Untitled.md",
+    "[.md"
   ]
 }
