@@ -4,12 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "f34022a84bb44bd5",
+        "id": "cf404759a2e43c07",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "Image/Pasted image 20220401162255.png"
+            "file": "JS Framework/Javascript/Javascript Fundamentals.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -38,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "from()",
+                "query": "callback",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -67,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Image/Pasted image 20220401162255.png",
+                "file": "JS Framework/Javascript/Javascript Fundamentals.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -85,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f34022a84bb44bd5",
+  "active": "cf404759a2e43c07",
   "lastOpenFiles": [
-    "Image/Pasted image 20220401162255.png",
-    "Classes.md",
-    "JS Framework/Javascript and Frameworks.md",
+    "JS Framework/Javascript/Javascript Fundamentals.md",
     "JS Framework/Javascript/Prototype.md",
+    "JS Framework/Javascript/Array and functions.md",
+    "JS Framework/Javascript/ES5.md",
+    "JS Framework/Javascript/Class.md",
     "JS Framework/Javascript/ES6.md",
     "JS Framework/Javascript/Map and Set.md",
-    "JS Framework/Javascript/ES5.md",
-    "Image/Pasted image 20220401100717.png",
-    "Untitled.md",
-    "[.md"
+    "JS Framework/Javascript/Promises async await.md",
+    "JS Framework/Javascript/Objects the basics.md",
+    "JS Framework/Javascript/Nullish coalescing operator.md"
   ]
 }

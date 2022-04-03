@@ -386,3 +386,25 @@ alert( double(3) ); // 6
   }; 
   alert( sum(1, 2) ); // 3
   ``````
+
+# Error objects:
+- `message` the hunman-readable error message
+- `name` error name
+- `stack` the stack at the moment of  error creation
+# Closures
+- Closure là những function tham chiếu đến các biến tự do (free variable) tách biệt. Nói cách khác, function được định nghĩa trong closure sẽ ghi nhớ mội trường trong nó được tạo ra
+``````js
+function numberGenerator() {
+  // Local free variable that ends up within the closure
+  var num = 1;
+  function checkNumber() { 
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
+}
+
+var number = numberGenerator();
+number(); // 2
+
+``````

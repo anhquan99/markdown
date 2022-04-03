@@ -108,3 +108,30 @@ alert( rabbit.eats ); // true
 ``````
 
   ![[Pasted image 20220401172538.png]]
+# Prototype là gì?
+- Là cơ chế mà các object trong JS kế thừa các tính năng từ một object khác. Tất cả các object trong JS đều có một prototype, và các object này kế thừa các thuộc tính và phương thức từ prototype của mình
+- Protype bản thân cũng là 1 object trong JS
+- Function trong JS cũng được gọi là 1 object, và nó cũng có thuộc tính prototype, bản thân thuộc tính này mang giá trị là 1 object
+- Object trong JS có prototype attribute trỏ tới prototype object mà nó kế thừa thuộc tính. Ta dùng `__proto__` để truy cập tới prototype object.
+``````js
+//Tạo ra 1 hàm khởi tạo cơ sở function 
+Animal(_age){ this.age = _age; }
+//Có thể thêm thuộc tính vào thuộc tính prototype của hàm khởi tạo 
+Animal.prototype.showAge = function(){ 
+	console.log( this.age ); 
+}; 
+//Tạo ra 1 hàm khởi tạo con (sẽ dùng để kế thừa hàm cơ sở) 
+function Dog(_color){ 
+	this.color = _color; 
+} 
+//Thực hiện kế thừa, gán hàm khởi tạo của Animal cho prototype của 
+Dog Dog.prototype = new Animal(); 
+Dog.prototype.showColor = function(){ 
+	console.log( this.color ); 
+}; 
+//Kiểm tra sự kế thừa 
+var chophuquoc = new Dog('yellow'); 
+chophuquoc.age = 3; 
+chophuquoc.showAge(); //3  
+chophuquoc.showColor(); //yellow
+``````
