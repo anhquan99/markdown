@@ -135,3 +135,24 @@ chophuquoc.age = 3;
 chophuquoc.showAge(); //3  
 chophuquoc.showColor(); //yellow
 ``````
+# Closures
+- Closure là những function tham chiếu đến các biến tự do (free variable) tách biệt. Nói cách khác, function được định nghĩa trong closure sẽ ghi nhớ mội trường trong nó được tạo ra
+``````js
+function numberGenerator() {
+  // Local free variable that ends up within the closure
+  var num = 1;
+  function checkNumber() { 
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
+}
+
+var number = numberGenerator();
+number(); // 2
+
+``````
+# Closures vs prototype
+- Định nghĩa đối tượng closures nhanh hơn
+- Khả năng tiết kiệm bộ nhớ và khởi tạo đối tượng mới prototype nhanh hơn
+- Truy cập hàm (getter, setter) prototype nhanh hơn

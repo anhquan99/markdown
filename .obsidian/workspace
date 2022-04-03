@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "JS Framework/Javascript/Javascript Fundamentals.md",
+            "file": "JS Framework/Javascript/Prototype.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS Framework/Javascript/Javascript Fundamentals.md",
+                "file": "JS Framework/Javascript/Prototype.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,8 @@
   },
   "active": "cf404759a2e43c07",
   "lastOpenFiles": [
-    "JS Framework/Javascript/Javascript Fundamentals.md",
     "JS Framework/Javascript/Prototype.md",
+    "JS Framework/Javascript/Javascript Fundamentals.md",
     "JS Framework/Javascript/Array and functions.md",
     "JS Framework/Javascript/ES5.md",
     "JS Framework/Javascript/Class.md",
