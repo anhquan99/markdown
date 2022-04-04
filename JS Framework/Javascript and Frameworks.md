@@ -10,6 +10,8 @@
 [[ES5]]
 [[ES6]]
 [[Prototype]]
-[[Classes]]
+[[Class]]
+[[Prototype]]
+
 # Framework
 [[React JS]]
