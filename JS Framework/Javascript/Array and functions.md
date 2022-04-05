@@ -76,10 +76,10 @@ alert( arr.slice(-2) ); // s,t (copy from -2 till the end)
   ``````js
 let arr = [1, 2];
 let arrayLike = {
- 0: "something",
- 1: "else",
- [Symbol.isConcatSpreadable]: true,
- length: 2
+	 0: "something",
+	 1: "else",
+	 [Symbol.isConcatSpreadable]: true,
+	 length: 2
 };
 alert( arr.concat(arrayLike) ); // 1,2,something,else
   ``````
@@ -92,23 +92,23 @@ alert( arr.concat(arrayLike) ); // 1,2,something,else
   ``````
 ## Searching in array
 ### `indexOf(item, from)`
--Looks for `item` starting from index `from` and return the index where it was found, otherwise `-1`
+- Looks for `item` starting from index `from` and return the index where it was found, otherwise `-1`
 ### `lastIndexOf(item, from)`
 - Same as `indexOf` but looks for from right to left
 ### `includes(item, from)`
 - Looks for `item` starting from `index` return `true` if found.
 ### `find(item)`
 - Return `true` if item is found in the array, else return `undefined`
-  ``````js
+``````js
 let users = [
-{id: 1, name: "John"},
-{id: 2, name: "Pete"},
-{id: 3, name: "Mary"}
+	{id: 1, name: "John"},
+	{id: 2, name: "Pete"},
+	{id: 3, name: "Mary"}
 ];
 
 let user = users.find(item => item.id == 1);
 alert(user.name); // John
-  ``````
+``````
 ### `findIndex(item)`
 - Same as `find(item)` but return index and `-1` when nothing is found.
 ### `filter` 

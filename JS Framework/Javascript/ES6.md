@@ -28,7 +28,7 @@ myFunction(5); // will return 15
 ``````
 ## Function Rest Parameter
 - Allows a function to treat an indefinite number of arguments as an array
-  ``````js
+``````js
 function sum(...args) {  
 	let sum = 0;  
 	for (let arg of args) sum += arg;  
@@ -36,7 +36,7 @@ function sum(...args) {
 }  
 
 let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
-  ``````
+``````
 # `String.includes()`
 - Return `true` if a string contains a specified value, otherwise `false`
 ## `String.startWith()`

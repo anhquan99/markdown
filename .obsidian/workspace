@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "JS Framework/Javascript/Array and functions.md",
-            "mode": "preview",
+            "file": "Dot Net/Authentication and Identity Framework.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 379
+    "width": 379,
+    "collapsed": true
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS Framework/Javascript/Array and functions.md",
+                "file": "Dot Net/Authentication and Identity Framework.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +90,15 @@
   },
   "active": "f34022a84bb44bd5",
   "lastOpenFiles": [
-    "JS Framework/Javascript/Array and functions.md",
     "Dot Net/Authentication and Identity Framework.md",
+    "JS Framework/Javascript/Objects the basics.md",
+    "JS Framework/Javascript/ES6.md",
+    "JS Framework/Javascript/ES5.md",
+    "JS Framework/Javascript/Class.md",
+    "JS Framework/Javascript/Array and functions.md",
     "Dot Net/System.Collections.md",
     "Dot Net/Dot NET.md",
     "Dot Net/Culture sensitive.md",
-    "Dot Net/Entity Framework.md",
-    "Dot Net/Best practice for comparing strings in .NET.md",
-    "Dot Net/Interview questions.md",
-    "JS Framework/Javascript and Frameworks.md",
-    "JS Framework/Javascript/JSON.md"
+    "Dot Net/Entity Framework.md"
   ]
 }

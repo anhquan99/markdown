@@ -313,12 +313,12 @@ alert(john.name); // John
 ![[Pasted image 20220401115801.png]]
 # Destructuring assignment 
 - It allows for instantly mapping an object or array onto many variables
-  ``````js
+``````js
   let {prop : varName = default, ...rest} = object
-  ``````
+``````
 - **The rest pattern** `...`
 	- Object has more properties than we have variables, we can take some and then assign the `rest` somewhere
-	  ``````js
+``````js
 let options = {
 
  title: "Menu",
@@ -342,4 +342,4 @@ alert(rest.height); // 200
 alert(rest.width); // 100
 
 alert(title); // Menu
-	  ``````
+``````
