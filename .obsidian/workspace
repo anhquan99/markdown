@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Dot Net/Authentication and Identity Framework.md",
-            "mode": "source",
+            "file": "JS Framework/Javascript/Array and functions.md",
+            "mode": "preview",
             "source": false
           }
         }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot Net/Authentication and Identity Framework.md",
+                "file": "JS Framework/Javascript/Array and functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "f34022a84bb44bd5",
   "lastOpenFiles": [
+    "JS Framework/Javascript/Array and functions.md",
     "Dot Net/Authentication and Identity Framework.md",
     "Dot Net/System.Collections.md",
     "Dot Net/Dot NET.md",
@@ -97,7 +98,6 @@
     "Dot Net/Best practice for comparing strings in .NET.md",
     "Dot Net/Interview questions.md",
     "JS Framework/Javascript and Frameworks.md",
-    "JS Framework/Javascript/JSON.md",
-    "Classes.md"
+    "JS Framework/Javascript/JSON.md"
   ]
 }

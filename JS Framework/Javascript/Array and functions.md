@@ -39,7 +39,7 @@ let arr = [];
   ``````js
   arr.splice(start, deleteCount, elment1, ..., elementN)
   ``````
-- It modilies `arr` staring from the index `start` remove `deleteCount` elements and then inserts `element1, ..., elementN` at their place. Return the array of removed elements.
+- It modifies  `arr` staring from the index `start` remove `deleteCount` elements and then inserts `element1, ..., elementN` at their place. Return the array of removed elements.
   ``````js
 	let arr = ["I", "study", "JavaScript", "right", "now"];
 	// remove 3 first elements and replace them with another
