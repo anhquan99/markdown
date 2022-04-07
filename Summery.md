@@ -16,4 +16,5 @@
 - [[React JS]]
 - [[Git]]
 - [[SQL]]
+- [[Clean code]]
 ![[Pasted image 20220316005822.png]]

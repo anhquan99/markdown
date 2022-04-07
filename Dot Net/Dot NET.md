@@ -6,3 +6,4 @@
 - [[Culture sensitive]]
 - [[Entity Framework]]
 - [[Authentication and Identity Framework]]
+- [[Authentication and Authorization]]
