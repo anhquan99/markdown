@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Dot Net/LINQ.md",
-            "mode": "source",
+            "file": "Design pattern/Singleton.md",
+            "mode": "preview",
             "source": false
           }
         }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot Net/LINQ.md",
+                "file": "Design pattern/Singleton.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "f34022a84bb44bd5",
   "lastOpenFiles": [
+    "Design pattern/Singleton.md",
+    "Design pattern/Structural.md",
+    "Design pattern/Observer.md",
+    "Design pattern/Creational.md",
+    "Design pattern/Behavioral.md",
+    "Design pattern/Adapter.md",
+    "Dot Net/What new on c#.md",
+    "Dot Net/System.Collections.md",
     "Dot Net/LINQ.md",
-    "Dot Net/Dot NET.md",
-    "Summery.md",
-    "SQL.md",
-    "Clean code.md",
-    "Restfull API.md",
-    "Dot Net/Authentication and Identity Framework.md",
-    "JS Framework/Javascript/Objects the basics.md",
-    "JS Framework/Javascript/ES6.md",
-    "JS Framework/Javascript/ES5.md"
+    "Dot Net/Interview questions.md"
   ]
 }
