@@ -69,4 +69,4 @@ resulting in the following
 ![[Pasted image 20220325185618.png]]
 
 - Together these techniques can help you create an application that is sensitive to the language and culture of the user. If you need to override that, you can also do that knowingly by specifying which culture to use when presenting your data. Hard coding the entities that vary is not culture sensitive and will display the same regardless of the locale of the machine it is run on.
-# Based on article: [https://stackoverflow.com/questions/51684170/culture-insensitive-vs-culture-sensitive]
+# Based on article: [culture compare](https://stackoverflow.com/questions/51684170/culture-insensitive-vs-culture-sensitive)

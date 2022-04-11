@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "f34022a84bb44bd5",
+        "id": "9e80425783b3481f",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Design pattern/Singleton.md",
-            "mode": "preview",
+            "file": "Dot Net/Lambda expressions.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 258
+    "width": 258,
+    "collapsed": true
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design pattern/Singleton.md",
+                "file": "Dot Net/Lambda expressions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,17 +88,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f34022a84bb44bd5",
+  "active": "9e80425783b3481f",
   "lastOpenFiles": [
+    "Dot Net/Lambda expressions.md",
+    "Dot Net/LINQ.md",
+    "Dot Net/Culture sensitive.md",
+    "Dot Net/Authentication and Authorization.md",
     "Design pattern/Singleton.md",
     "Design pattern/Structural.md",
     "Design pattern/Observer.md",
     "Design pattern/Creational.md",
     "Design pattern/Behavioral.md",
-    "Design pattern/Adapter.md",
-    "Dot Net/What new on c#.md",
-    "Dot Net/System.Collections.md",
-    "Dot Net/LINQ.md",
-    "Dot Net/Interview questions.md"
+    "Design pattern/Adapter.md"
   ]
 }
