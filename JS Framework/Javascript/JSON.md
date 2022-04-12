@@ -1,7 +1,7 @@
 # `JSON.stringify(object)`
 - Convert object to string
 - Ignore function properties, symbolic, properties that store `undefined`
-  ``````js
+ ``````js
 let student = {
 	
 	name: 'John',

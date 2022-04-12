@@ -21,7 +21,7 @@ Represent a subject via a collection of claims.
 - Safety stores user information
 - Symmetric encryption, key only on server
 - Used tp re-construct the ClaimsPrincipal object on each request
-- Secured by ASP.NE Core Data Protection
+- Secured by ASP.NET Core Data Protection
 # Scheme actions
 - **Authenticate:** How claim and principal is created
 - **Challenge:** Define what happen if user access url or resources that need to authorize.

@@ -4,7 +4,7 @@
   ![[Pasted image 20220401162305.png]]
 - When we read a property from `object`, and it's missing, JS automatically takes it from the prototype. In programming, this is called "prototype inheritance".
 - The property `[[Prototype]]` is internal and hidden, but there are many ways to set it.
-  ``````js
+ ``````js
 let animal = {
 	eats: true
 };
@@ -65,7 +65,7 @@ alert(animal.isSleeping); // if animal call sleep it will not be undefined
 - Iterates over inherited properties.
 ## `obj.hasOwnProperty(key)`
 - Return `true` if `obj` has its own property
-  ``````js
+ ``````js
 let animal = {
 	eats: true
 };

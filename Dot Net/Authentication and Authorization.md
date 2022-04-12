@@ -5,7 +5,6 @@
 	- Identity Provider give token to user when access
 		- **Identity Token:** include to generate claims principal before it get destroyed 
 		- **Access Token:** Sent with request when user access resources. It will be save for later access
-		- 
 # Standard
 - OAuth2 - Open Authentication 2 (delegated authorization) : include only Access Token
 - OpenIDConnect - OIDC (federated authentication): include Access Token and Identity Token

@@ -1,7 +1,7 @@
 # Primitive type
 - String
 	- Backticks: Are extended functionality quotes, they allow us to embed variables and expressions into a string by wrapping them in `&{...}`
-	  ``````js
+	 ``````js
 	let name = "John"; // embed a variable alert
 	( `Hello, _${__name}_!` ); // Hello, John! // embed an expression
 	alert( `the result is _${__1 + 2}_` ); // the result is 3
@@ -55,15 +55,15 @@
 	  x - y    //Returns 0 since the variable y (string type) is converted to a number type
 	  ``````
 - ## Boolean coercion
-	- 0, 0n, -0, “”, null, undefined and NaN
-	  ``````js
+	- `0`, `-0`, `“”`, `null`, `undefined` and `NaN`
+	 ``````js
 	var x = 0;
 	var y = 23;
 		
 	if(x) { console.log(x) }   // The code inside this block will not run since the value of x is 0(Falsy) 
 		
 	if(y) { console.log(y) }    // The code inside this block will run since the value of y is 23 (Truthy)
-	  ``````
+	 ``````
 	- Logical operators in javascript, unlike operators in other programming languages, **do not return true or false. They always return one of the operands.**  
   
 	- **OR ( | | ) operator** - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.  
@@ -95,20 +95,20 @@
 	var y = 24;
 	
 	function favFunction(){
-	var x = 667;
-	var anotherFavFunction = function(){
-	console.log(x); // Does not find x inside anotherFavFunction, so looks for variable inside favFunction, outputs 667
+		var x = 667;
+		var anotherFavFunction = function(){
+			console.log(x); 
+			// Does not find x inside anotherFavFunction, so looks for variable inside favFunction, outputs 667
+		}
+	
+		var yetAnotherFavFunction = function(){
+		console.log(y); 
+		// Does not find y inside yetAnotherFavFunction, so looks for variable inside favFunction and does not find it, so looks for variable in global scope, finds it and outputs 24
+		}
+	
+		anotherFavFunction();
+		yetAnotherFavFunction();
 	}
-	
-	var yetAnotherFavFunction = function(){
-	console.log(y); // Does not find y inside yetAnotherFavFunction, so looks for variable inside favFunction and does not find it, so looks for variable in global scope, finds it and outputs 24
-	}
-	
-	anotherFavFunction();
-	yetAnotherFavFunction();
-	}
-	
-	
 	favFunction();
   ``````
 # Prototype
@@ -150,9 +150,9 @@ That’s also better for readability, as it’s easier to look up `function f(�
 …But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we’ve just seen an example), then Function Expression should be used.
 # Arrow function
 - By general definition, the **this** keyword always refers to the object that is calling the function.  
-- As you can see in the code above, **obj1.valueOfThis()** returns obj1, since **this** keyword refers to the object calling the function.  
-- In the arrow functions, there is no binding of the **this** keyword.  
-- The **this** keyword inside an arrow function, does not refer to the object calling it. It rather inherits its value from the parent scope which is the window object in this case.
+- As you can see in the code below, `obj1.valueOfThis()` returns `obj1`, since `this` keyword refers to the object calling the function.  
+- In the arrow functions, there is no binding of the `this` keyword.  
+- The `this` keyword inside an arrow function, does not refer to the object calling it. It rather inherits its value from the parent scope which is the window object in this case.
   ``````js
 	var obj1 = {
 		valueOfThis: function(){
@@ -260,10 +260,10 @@ That’s also better for readability, as it’s easier to look up `function f(�
 ![[Pasted image 20220330144030.png]]
 ![[Pasted image 20220330144043.png]]
 # Logical operators
-## "||" (OR)
+## `||` (OR)
 - Evaluate from left to right if there are more than 2 "or" condition.
 - Javascript will find the first truthy value and then return operand
-## "&&" (AND)
+## `&&` (AND)
 - Evaluate from right to left if there are more than 2 "and" condition
 - Javascript will find the first falsely value and then return operand
 ## Precedence 
@@ -285,7 +285,7 @@ That’s also better for readability, as it’s easier to look up `function f(�
   ## Parameters
   - If parameter is value then it will be passed as value in function
   - If parameter is reference type it will be passed as reference in function if you change its internal property value. If you change parameter itself, that won't affect the parameter.
-    ``````js
+	 ``````js
 	function changeStuff(a, b, c)
 	{
 	  a = a * 10;

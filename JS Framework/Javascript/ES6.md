@@ -1,6 +1,6 @@
 # ES6
 ## [[Javascript Fundamentals#Var vs let vs const | let and const]]
-## [[Javascript Fundamentals#Arrow functions]]
+## [[Javascript Fundamentals#Arrow functions | Arrow function]]
 ## `For...of` loop
 - `For...of` lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
 ``````js

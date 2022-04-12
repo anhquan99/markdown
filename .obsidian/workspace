@@ -4,53 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "9e80425783b3481f",
+        "id": "f12f797d525a68f9",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Dot Net/Dot NET.md",
-            "mode": "source",
+            "file": "Restfull API.md",
+            "mode": "preview",
             "source": false
           }
-        },
-        "group": "c6425fbaba51ecab"
-      },
-      {
-        "id": "9b9b18e0446a6fe6",
-        "type": "leaf",
-        "state": {
-          "type": "localgraph",
-          "state": {
-            "file": "Dot Net/Dot NET.md",
-            "options": {
-              "collapse-filter": true,
-              "search": "",
-              "localJumps": 1,
-              "localBacklinks": true,
-              "localForelinks": true,
-              "localInterlinks": false,
-              "showTags": false,
-              "showAttachments": false,
-              "hideUnresolved": false,
-              "collapse-color-groups": true,
-              "colorGroups": [],
-              "collapse-display": true,
-              "showArrow": false,
-              "textFadeMultiplier": 0,
-              "nodeSizeMultiplier": 1,
-              "lineSizeMultiplier": 1,
-              "collapse-forces": true,
-              "centerStrength": 0.518713248970312,
-              "repelStrength": 10,
-              "linkStrength": 1,
-              "linkDistance": 250,
-              "scale": 0.7132754626224421,
-              "close": false
-            }
-          }
-        },
-        "group": "c6425fbaba51ecab"
+        }
       }
     ],
     "direction": "vertical"
@@ -106,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot Net/Dot NET.md",
+                "file": "Restfull API.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "9b9b18e0446a6fe6",
+  "active": "f12f797d525a68f9",
   "lastOpenFiles": [
-    "Dot Net/Dot NET.md",
-    "Dot Net/System.Collections.md",
+    "Restfull API.md",
+    "SQL.md",
     "Dot Net/LINQ.md",
+    "Design pattern/Dependency injection.md",
+    "Dot Net/System.Collections.md",
+    "Dot Net/Dot NET.md",
     "Dot Net/Lambda expressions.md",
-    "Dot Net/Culture sensitive.md",
     "Dot Net/Authentication and Authorization.md",
-    "Design pattern/Singleton.md",
-    "Design pattern/Structural.md",
-    "Design pattern/Observer.md",
-    "Design pattern/Creational.md"
+    "Dot Net/Authentication and Identity Framework.md",
+    "Dot Net/Entity Framework.md"
   ]
 }

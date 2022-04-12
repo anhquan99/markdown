@@ -11,7 +11,6 @@
 [[ES6]]
 [[Prototype]]
 [[Class]]
-[[Prototype]]
 
 # Framework
 [[React JS]]

@@ -1,4 +1,4 @@
-c# Definition
+# C# Definition
 - RESTful web services are services that follow REST architecture.
 - REST stand for Representational State Transfer and uses HTTP protocol for implementation
 - These services are lightweight, provide maintainability, scalability, support communication among multiple applications that are developed using different programming languages.
@@ -22,7 +22,7 @@ c# Definition
 - Uses HTTP protocol for request and response.
 - Resources are accessible to the service by means of URIs
 - Stateless.
-	- The session on the server is identified by the session identifier sent by the client.
+- The session on the server is identified by the session identifier sent by the client.
 - Services also uses the concept of caching to minimize the server calls of repeated requests.
 # Status code
 - These are the standard codes that refer to the predefined status of the task at the server. Following are the status codes formats available:

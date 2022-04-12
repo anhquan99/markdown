@@ -68,7 +68,7 @@
 			    group student by student.Scores.Average() > 80;
     ``````
     - **Grouping by numeric range**
-      ``````c#
+  ``````c#
       var query = from student in students
 			      let avg = (int) student.Scores.Average()
 			      group student by (avg/10) into g
@@ -84,7 +84,7 @@
 	Students with an average between 90 and 100 
 		Mortensen, Sven:93.5 
 	*/
-      ``````
+  ``````
     - **Grouping by composite keys**
       ``````c#
       group person by new {name = person.surname, city = person.city}
@@ -139,7 +139,7 @@
 						  Owner.FirstName,
 						  PetName = subpet?.Name ?? String.Empty
 				  };
-	`````` 
+		`````` 
 		- The method returns a collection that contains a single default value if the sequence matching `Pet` objects is empty for any `Person` object, thereby ensuring that each `Person` object is represented in the result collection.
 	
 	``````ad-note
@@ -169,7 +169,7 @@
 - #### `into`
 	- Used to create temporary identifier to store the results of a `group`, `join` or `select` into a new identifier.
 -  `let`
-	- In query expression, it is sometimes useful to sotre the result of a sub-expresison in order to use it in subsequent clauses. You can do this by using `let` clause
+	- In query expression, it is sometimes useful to store the result of a sub-expresison in order to use it in subsequent clauses. You can do this by using `let` clause
   ``````c#
   var query = from  sentence in strings
 			  let words = sentence.Split(' ')
@@ -178,7 +178,7 @@
 			  where w[0] == 'a' || w[0] == 'e'
 					|| w[0] == 'i' || w[0] == 'o'
 				select word;
-	 ``````
+ ``````
 - `ascending`
 	- Used in the `orderby` in query expression to specify that the sort order is from smallest to largest.
 - `descending`

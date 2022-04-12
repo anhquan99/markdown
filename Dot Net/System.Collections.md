@@ -1,3 +1,17 @@
+# Generic collections
+- List
+- Dictionary
+- SortedList
+- Queue
+- Stack
+- Hashset
+# Non-generic collections
+- ArrayList
+- SortedList
+- Stack
+- Queue
+- Hashtable
+- BitArray
 # IEnumerable and IEnumerator
 ``````c#
 ItemEnumerable items = new ItemEnumerable(data);

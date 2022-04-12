@@ -113,7 +113,7 @@ alert(user.name); // John
 - Same as `find(item)` but return index and `-1` when nothing is found.
 ### `filter` 
 - Retrun array of matching filter.
-  ``````js
+ ``````js
 let users = [
 {id: 1, name: "John"},
 {id: 2, name: "Pete"},

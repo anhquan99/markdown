@@ -4,7 +4,7 @@
 - Symbol is unique
 - Symbol can not be converted to string
 - Global Symbol used when you want to have the same description reference to only one Symbol you use `Symbol.for(key)` 
-  ``````js
+ ``````js
 // Tạo một Symbol mới với description là "id"
 let id1 = Symbol("id");
 
