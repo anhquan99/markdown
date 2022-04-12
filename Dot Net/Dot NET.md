@@ -7,3 +7,6 @@
 - [[Entity Framework]]
 - [[Authentication and Identity Framework]]
 - [[Authentication and Authorization]]
+- [[Lambda expressions]]
+- [[LINQ]]
+- [[System.Collections]]

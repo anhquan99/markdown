@@ -24,4 +24,10 @@
   ``````
 - In C# 9 you can use discards to specify two or more input parameters of a lambda expression that aren't used in the expression
   `Fun<int, int, int> constant = (_, _) => 42;`
+# Extension methods
+- Extension methods enable you to "aadd" methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type.
+- Binding extension methods at compile time, you can use extension methods to extend a class or interface, but not to override them. An extension method with the same name and signature as an interface or class method will never be called.  At complie time, extension methods always have lower priority than instance methods defined in the type itself.
+- **Common usage pattern:**
+	- Layer-specific functionality: When using an Onion Architecture or other layered application design, it's common to have a set of Domain Entities or Data Transfer Objects that can be used to communicate across application boundaries. These objects contain no functionality. Extension mthods can be used to add functionality that is specific to each application layer without loading object down with methods not needed or wanted in other layers.
+	- Extemding predefined types: Rather than creating new object when reusable functionality needs to be created, we can often exnted an exsting type. As an example, if we don't use extension methods, we might create an `Engine` or `Query` class to do the work of executing a query on a SQL Server that may be called from multiple places in our code. However, we can instead extend the `System.Data.SqlClient.SqlConnection` class using methods to perform that query from anywhere we have a connection to a SQL Server.
 

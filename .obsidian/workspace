@@ -9,11 +9,48 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Dot Net/Lambda expressions.md",
+            "file": "Dot Net/Dot NET.md",
             "mode": "source",
             "source": false
           }
-        }
+        },
+        "group": "c6425fbaba51ecab"
+      },
+      {
+        "id": "9b9b18e0446a6fe6",
+        "type": "leaf",
+        "state": {
+          "type": "localgraph",
+          "state": {
+            "file": "Dot Net/Dot NET.md",
+            "options": {
+              "collapse-filter": true,
+              "search": "",
+              "localJumps": 1,
+              "localBacklinks": true,
+              "localForelinks": true,
+              "localInterlinks": false,
+              "showTags": false,
+              "showAttachments": false,
+              "hideUnresolved": false,
+              "collapse-color-groups": true,
+              "colorGroups": [],
+              "collapse-display": true,
+              "showArrow": false,
+              "textFadeMultiplier": 0,
+              "nodeSizeMultiplier": 1,
+              "lineSizeMultiplier": 1,
+              "collapse-forces": true,
+              "centerStrength": 0.518713248970312,
+              "repelStrength": 10,
+              "linkStrength": 1,
+              "linkDistance": 250,
+              "scale": 0.7132754626224421,
+              "close": false
+            }
+          }
+        },
+        "group": "c6425fbaba51ecab"
       }
     ],
     "direction": "vertical"
@@ -53,8 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 258,
-    "collapsed": true
+    "width": 258
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -70,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot Net/Lambda expressions.md",
+                "file": "Dot Net/Dot NET.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,17 +124,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "9e80425783b3481f",
+  "active": "9b9b18e0446a6fe6",
   "lastOpenFiles": [
-    "Dot Net/Lambda expressions.md",
+    "Dot Net/Dot NET.md",
+    "Dot Net/System.Collections.md",
     "Dot Net/LINQ.md",
+    "Dot Net/Lambda expressions.md",
     "Dot Net/Culture sensitive.md",
     "Dot Net/Authentication and Authorization.md",
     "Design pattern/Singleton.md",
     "Design pattern/Structural.md",
     "Design pattern/Observer.md",
-    "Design pattern/Creational.md",
-    "Design pattern/Behavioral.md",
-    "Design pattern/Adapter.md"
+    "Design pattern/Creational.md"
   ]
 }
