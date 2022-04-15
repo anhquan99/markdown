@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Restfull API.md",
+            "file": "Dot Net/LINQ.md",
             "mode": "preview",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Restfull API.md",
+                "file": "Dot Net/LINQ.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "f12f797d525a68f9",
   "lastOpenFiles": [
-    "Restfull API.md",
-    "SQL.md",
     "Dot Net/LINQ.md",
-    "Design pattern/Dependency injection.md",
-    "Dot Net/System.Collections.md",
     "Dot Net/Dot NET.md",
-    "Dot Net/Lambda expressions.md",
-    "Dot Net/Authentication and Authorization.md",
+    "Dot Net/Culture sensitive.md",
+    "Dot Net/Best practice for comparing strings in .NET.md",
     "Dot Net/Authentication and Identity Framework.md",
-    "Dot Net/Entity Framework.md"
+    "Dot Net/Authentication and Authorization.md",
+    "Dot Net/ASP.NET Fundamental.md",
+    "Dot Net/Lambda expressions.md",
+    "Dot Net/Interview questions.md",
+    "Dot Net/DotNet Framework 4.x.md"
   ]
 }

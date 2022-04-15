@@ -28,9 +28,9 @@
 
 - Middleware is software that's assembled into an app pipeline to handle requests and responses. Each component
 
- - Chooses whether to pass the request to the next component in the pipline
+- Chooses whether to pass the request to the next component in the pipline
 
- - Can perform work before and after the next component in the pipline
+- Can perform work before and after the next component in the pipline
 
 - Request delegates are used to build the request pipeline. The request deletgates handle each HTTP request
 
@@ -48,53 +48,53 @@
 
 if (app.Environment.IsDevelopment()) {
 
- app.UseMigrationsEndPoint();
+     app.UseMigrationsEndPoint();
 
 }
 
 else {
 
- app.UseExceptionHandler("/Error");
+     app.UseExceptionHandler("/Error");
 
- // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 
- app.UseHsts(); } app.UseHttpsRedirection();
+     app.UseHsts(); } app.UseHttpsRedirection();
 
- app.UseStaticFiles();
+     app.UseStaticFiles();
 
- // app.UseCookiePolicy();
+     // app.UseCookiePolicy();
 
- app.UseRouting();
+     app.UseRouting();
 
- // app.UseRequestLocalization();
+     // app.UseRequestLocalization();
 
- // app.UseCors();
+     // app.UseCors();
 
- app.UseAuthentication();
+     app.UseAuthentication();
 
- app.UseAuthorization();
+     app.UseAuthorization();
 
- // app.UseSession();
+     // app.UseSession();
 
- // app.UseResponseCompression();
+     // app.UseResponseCompression();
 
- // app.UseResponseCaching();
+     // app.UseResponseCaching();
 
- app.MapRazorPages();
+     app.MapRazorPages();
 
- app.MapControllerRoute( name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+     app.MapControllerRoute( name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
- app.Run();
+     app.Run();
 
 ``````
 
 - Not eacery middleware appers in exact order but:
 
- - `UseCors`, `UseAuthentication` nad `UseAuthorization` must appear in the order shown
+     - `UseCors`, `UseAuthentication` nad `UseAuthorization` must appear in the order shown
 
- - `UseCors` must appear before `UseResponseCaching`
+     - `UseCors` must appear before `UseResponseCaching`
 
- - `UseRequestLocalization` must appear before any middleware that might check the request culture. (ex: `UseMvcWithDefaultRoute()`)
+     - `UseRequestLocalization` must appear before any middleware that might check the request culture. (ex: `UseMvcWithDefaultRoute()`)
 
 # Host
 
