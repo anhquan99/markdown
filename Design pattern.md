@@ -4,3 +4,4 @@
 - ## [[Behavioral]]
 # Others
 - [[Dependency injection]]
+- [[CQRS]]

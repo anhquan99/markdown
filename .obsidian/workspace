@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "f12f797d525a68f9",
+        "id": "7b35222fbb7dee4e",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Dot Net/LINQ.md",
-            "mode": "preview",
+            "file": "Design pattern/CQRS.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 258
+    "width": 387.00521087646484,
+    "collapsed": true
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot Net/LINQ.md",
+                "file": "Design pattern/CQRS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,17 +88,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f12f797d525a68f9",
+  "active": "7b35222fbb7dee4e",
   "lastOpenFiles": [
+    "Design pattern/CQRS.md",
+    "Design pattern.md",
+    "Design pattern/Dependency injection.md",
+    "Summery.md",
     "Dot Net/LINQ.md",
     "Dot Net/Dot NET.md",
     "Dot Net/Culture sensitive.md",
     "Dot Net/Best practice for comparing strings in .NET.md",
     "Dot Net/Authentication and Identity Framework.md",
-    "Dot Net/Authentication and Authorization.md",
-    "Dot Net/ASP.NET Fundamental.md",
-    "Dot Net/Lambda expressions.md",
-    "Dot Net/Interview questions.md",
-    "Dot Net/DotNet Framework 4.x.md"
+    "Dot Net/Authentication and Authorization.md"
   ]
 }
