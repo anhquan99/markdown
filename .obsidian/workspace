@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "7b35222fbb7dee4e",
+        "id": "92f386a888a08426",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Design pattern/CQRS.md",
+            "file": "Python/Python fundamental.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design pattern/CQRS.md",
+                "file": "Python/Python fundamental.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,17 +88,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7b35222fbb7dee4e",
+  "active": "92f386a888a08426",
   "lastOpenFiles": [
-    "Design pattern/CQRS.md",
-    "Design pattern.md",
-    "Design pattern/Dependency injection.md",
+    "Python/Python fundamental.md",
     "Summery.md",
-    "Dot Net/LINQ.md",
-    "Dot Net/Dot NET.md",
-    "Dot Net/Culture sensitive.md",
-    "Dot Net/Best practice for comparing strings in .NET.md",
-    "Dot Net/Authentication and Identity Framework.md",
-    "Dot Net/Authentication and Authorization.md"
+    "Python.md",
+    "Design pattern/Behavior/Observer.md",
+    "Design pattern/Singleton.md",
+    "Design pattern/Creational.md",
+    "Design pattern/CQRS.md",
+    "Design pattern/Behavioral.md",
+    "Design pattern/Structural.md",
+    "Design pattern/Dependency injection.md"
   ]
 }

@@ -1,4 +1,4 @@
-<span style="color:aqua; font-weight:bold">Behavioral->Observer:</span>
+# <mark style="background: #BBFABBA6;">Observer</mark> 
 - Notify many objects in the system
 - publisher subscriber model. The subscriber subscribe to the publisher to get notification.
 - <span style="color:#d966ff; font-weight:bold">Problem:</span>
