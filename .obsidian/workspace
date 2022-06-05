@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Python/Python fundamental.md",
+            "file": "Dot Net/C Sharp 11.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 387.00521087646484,
-    "collapsed": true
+    "width": 387.00521087646484
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python/Python fundamental.md",
+                "file": "Dot Net/C Sharp 11.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +89,7 @@
   },
   "active": "92f386a888a08426",
   "lastOpenFiles": [
+    "Dot Net/C Sharp 11.md",
     "Python/Python fundamental.md",
     "Summery.md",
     "Python.md",
@@ -98,7 +98,6 @@
     "Design pattern/Creational.md",
     "Design pattern/CQRS.md",
     "Design pattern/Behavioral.md",
-    "Design pattern/Structural.md",
-    "Design pattern/Dependency injection.md"
+    "Design pattern/Structural.md"
   ]
 }
