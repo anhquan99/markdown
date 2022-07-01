@@ -4,12 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "92f386a888a08426",
+        "id": "612eada963bd71d3",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Python/Python fundamental.md",
+            "file": "Dot Net/Dot NET.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "1db8ad744c6bdc41",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Dot Net/Covariance and Contravariance.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 387.00521087646484,
-    "collapsed": true
+    "width": 387.00521087646484
   },
   "right": {
     "id": "2487c25ee90bb2aa",
@@ -70,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python/Python fundamental.md",
+                "file": "Dot Net/Dot NET.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,17 +99,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "92f386a888a08426",
+  "active": "612eada963bd71d3",
   "lastOpenFiles": [
-    "Python/Python fundamental.md",
-    "Summery.md",
-    "Python.md",
-    "Design pattern/Behavior/Observer.md",
-    "Design pattern/Singleton.md",
-    "Design pattern/Creational.md",
-    "Design pattern/CQRS.md",
-    "Design pattern/Behavioral.md",
-    "Design pattern/Structural.md",
-    "Design pattern/Dependency injection.md"
+    "Dot Net/Dot NET.md",
+    "Dot Net/Covariance and Contravariance.md",
+    "Dot Net/DotNet Framework 4.x.md",
+    "Dot Net/Specification pattern.md",
+    "Dot Net/System.Collections.md",
+    "Dot Net/Entity Framework.md",
+    "Dot Net/Culture sensitive.md",
+    "Dot Net/Interview questions.md",
+    "Dot Net/Lambda expressions.md",
+    "Dot Net/LINQ.md"
   ]
 }

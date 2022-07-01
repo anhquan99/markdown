@@ -10,3 +10,5 @@
 - [[Lambda expressions]]
 - [[LINQ]]
 - [[System.Collections]]
+- [[Covariance and Contravariance]]
+- [[Specification pattern]]
