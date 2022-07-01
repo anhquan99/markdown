@@ -1,0 +1,5 @@
+- INumber<T>
+- Static abstract
+- Matching parttern
+- Constructor init field
+- Litteral string

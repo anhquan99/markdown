@@ -22,6 +22,7 @@
           "type": "markdown",
           "state": {
             "file": "Dot Net/Covariance and Contravariance.md",
+            "file": "Dot Net/C Sharp 11.md",
             "mode": "source",
             "source": false
           }
@@ -82,6 +83,7 @@
               "type": "backlink",
               "state": {
                 "file": "Dot Net/Dot NET.md",
+                "file": "Dot Net/C Sharp 11.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,5 +113,15 @@
     "Dot Net/Interview questions.md",
     "Dot Net/Lambda expressions.md",
     "Dot Net/LINQ.md"
+    "Dot Net/C Sharp 11.md",
+    "Python/Python fundamental.md",
+    "Summery.md",
+    "Python.md",
+    "Design pattern/Behavior/Observer.md",
+    "Design pattern/Singleton.md",
+    "Design pattern/Creational.md",
+    "Design pattern/CQRS.md",
+    "Design pattern/Behavioral.md",
+    "Design pattern/Structural.md"
   ]
 }
