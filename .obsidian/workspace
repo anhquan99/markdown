@@ -9,7 +9,7 @@
         "state": {
           "type": "image",
           "state": {
-            "file": "Image/Pasted image 20220814154441.png"
+            "file": "Image/Pasted image 20220814222920.png"
           }
         }
       }
@@ -67,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Image/Pasted image 20220814154441.png",
+                "file": "Image/Pasted image 20220814222920.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,14 +87,15 @@
   },
   "active": "b105507afba350e5",
   "lastOpenFiles": [
+    "OOP.md",
     "Clean code/Clean Architecture.md",
+    "Image/Pasted image 20220814154441.png",
     "CSharp.md",
     "Image/Pasted image 20220814143046.png",
     "Clean code/Clean code.md",
     "Unit test/Jest testing framework.md",
     "Pasted image 20220814142950.png",
     "Programming principle.md",
-    "Software architectual pattern.md",
-    "JS Framework/React JS/React JS.md"
+    "Software architectual pattern.md"
   ]
 }

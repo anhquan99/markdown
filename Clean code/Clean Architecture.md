@@ -45,8 +45,8 @@ In cohesion, module focuses on the single thing | In coupling, modules are conne
 ![[Pasted image 20220814154441.png]]
 ![[Pasted image 20220814160153.png]]
 ![[Pasted image 20220814160214.png]]
-- The entities and use cases layer should be vertical sliding
-- The controllers and external interfaces should be horizontal sliding
+- The entities and use cases layer should be vertical slice
+- The controllers and external interfaces should be horizontal slice
 - The entities can refered as domain
 ### Benefits of Clean Architecture
 - Framework independent
@@ -79,3 +79,30 @@ In cohesion, module focuses on the single thing | In coupling, modules are conne
 - Unit test
 - Integration test
 - E2E test (end to end test)
+## Clean architecture and Micro-services
+- Micro-services are a deployment option
+- Clean architecture does not care how the components are deployed
+- A micro-service architecture can nicely conform to the Clean Architecture
+## Clean architecture and Serverless
+- One of main obstacles with Serverless development:
+	- Local testing
+	- Vendor Lock-in
+- Serverless is a deployment option too
+- Code written in the decoupled way (following Clean architecture rules) is easy to test
+- Clean architecture can help to mitigate the risks/fears of vendor lock-in
+![[Pasted image 20220814222920.png]]
+## Problem with Clean architecture
+- Monolithic in approach
+- Mock heavy
+- Abstraction upon abstractions
+- Heavy coupling inside layers
+- Resolve with clean architecture
+	- Vertical slice architecture: minimize coupling between slices and maximize coupling within a slice
+		- Things that change together, belong together
+		- Maximize cohesion along axes of change and minimize coupling between them
+		- ![[Pasted image 20220814223417.png]]
+## Hexagonal architecture vs Onion architecture
+- ![[Pasted image 20220814223842.png]]
+- Onion architecture: application core can access all the layers
+- Hexagonal architecture: 2 layers
+- 2 architecture combines with SOLID we get the clean architecture
