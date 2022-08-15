@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3a4ba52c0e74cd03",
@@ -89,6 +90,8 @@
   },
   "active": "8072fb3985596e05",
   "lastOpenFiles": [
+    "DevOps/Docker.md",
+    "Pasted image 20220815223135.png",
     "Image/Pasted image 20220814222920.png",
     "OOP.md",
     "Clean code/Clean Architecture.md",
@@ -96,8 +99,6 @@
     "CSharp.md",
     "Image/Pasted image 20220814143046.png",
     "Clean code/Clean code.md",
-    "Unit test/Jest testing framework.md",
-    "Pasted image 20220814142950.png",
-    "Programming principle.md"
+    "Unit test/Jest testing framework.md"
   ]
 }
