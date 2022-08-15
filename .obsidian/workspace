@@ -7,11 +7,9 @@
         "id": "8072fb3985596e05",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "DevOps/Docker.md",
-            "mode": "source",
-            "source": false
+            "file": "Image/Pasted image 20220815220039.png"
           }
         }
       }
@@ -53,8 +51,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3a4ba52c0e74cd03",
@@ -70,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevOps/Docker.md",
+                "file": "Image/Pasted image 20220815220039.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,10 +85,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "8072fb3985596e05",
+  "active": "b105507afba350e5",
   "lastOpenFiles": [
     "DevOps/Docker.md",
-    "Pasted image 20220815223135.png",
+    "Image/Pasted image 20220815223135.png",
     "Image/Pasted image 20220814222920.png",
     "OOP.md",
     "Clean code/Clean Architecture.md",
