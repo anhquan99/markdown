@@ -1,3 +1,12 @@
+# Summary javascript
+- Weakly Typed Language
+	- No explicit type assignment
+- Object oriented language 
+	- Data can be organized in logical objects
+	- Primitive and reference types
+- Versatile language
+	- Run in browser and directly on a PC/ server
+	- Can perform a broad variety of tasks
 # Primitive type
 - String
 	- Backticks: Are extended functionality quotes, they allow us to embed variables and expressions into a string by wrapping them in `&{...}`
