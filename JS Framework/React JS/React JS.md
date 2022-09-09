@@ -17,6 +17,7 @@
 - Update state:
 	- In class use setState
 	- In function use React hook
+- Should use the previous state to update the current state of the object because ReactJS is not controll all the state.
 # Pros
 - Short for Properties. It is a  React built-in object that store value of the attribute of a tag.
 - Provide a way to pass data from component to other components

@@ -395,6 +395,36 @@ alert( double(3) ); // 6
   }; 
   alert( sum(1, 2) ); // 3
   ``````
+  ### This keyword
+  - The keyword `this` is refered to the object which defined the arrow function, when the function in the object is writtern like this
+    ````js
+    const object = {
+	    name: 'aq',
+	    age: 21,
+	    hello: () => {
+			console.log("Hi, I am " + this.name);
+			// this will print "Hi, I am " because this keyword is refered to the global scope   
+	    }
+    }
+    ````
+    - If you want to use the `this` of the object we have to use the old school functions
+      ````js
+      ...
+	      ...
+	      hello: function(){
+		      ...
+	      }
+	````  
+		or
+	````js
+	...
+		...
+		hello(){
+			...
+		}
+		
+	````
+
 
 # Error objects:
 - `message` the hunman-readable error message
