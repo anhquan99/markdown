@@ -7,12 +7,8 @@
         "id": "83e8bb3521a63133",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "JS Framework/React JS/React JS.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -53,8 +49,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3a4ba52c0e74cd03",
@@ -70,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS Framework/React JS/React JS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +82,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "83e8bb3521a63133",
+  "active": "b105507afba350e5",
   "lastOpenFiles": [
+    "JS Framework/React JS/React JS.md",
     "JS Framework/Javascript/Javascript Fundamentals.md",
     "JS Framework/Javascript/Array and functions.md",
     "JS Framework/Javascript/ES6.md",
@@ -98,7 +93,6 @@
     "Untitled.md",
     "Javascript Fundamentals.md",
     "Data structure/Binary tree.md",
-    "Data structure.md",
-    "Image/Pasted image 20220815220039.png"
+    "Data structure.md"
   ]
 }
