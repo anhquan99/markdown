@@ -7,8 +7,12 @@
         "id": "83e8bb3521a63133",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Mobile/React-native/Component.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Mobile/React-native/Component.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,15 +89,15 @@
   },
   "active": "b105507afba350e5",
   "lastOpenFiles": [
+    "Mobile/React-native/Flexbox.md",
+    "Mobile/React-native/Index.md",
+    "Mobile/React-native/Component.md",
+    "Untitled.md",
+    "Mobile/Index.md",
+    "mobile.md",
     "JS Framework/React JS/React JS.md",
     "JS Framework/Javascript/Javascript Fundamentals.md",
     "JS Framework/Javascript/Array and functions.md",
-    "JS Framework/Javascript/ES6.md",
-    "JS Framework/Javascript/Class.md",
-    "JS Framework/Javascript/ES5.md",
-    "Untitled.md",
-    "Javascript Fundamentals.md",
-    "Data structure/Binary tree.md",
-    "Data structure.md"
+    "JS Framework/Javascript/ES6.md"
   ]
 }
