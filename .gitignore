@@ -1,1 +1,14 @@
-.obsidian/workspace
+.obsidian/**
+.obsidian/*
+.obsidian
+.obsidian/plugins/highlightr-plugin/styles.css
+.obsidian/plugins/highlightr-plugin/manifest.json
+.obsidian/plugins/highlightr-plugin/main.js
+.obsidian/graph.json
+.obsidian/plugins/obsidian-admonition/main.js
+.obsidian/plugins/obsidian-admonition/manifest.json
+.obsidian/plugins/obsidian-languagetool-plugin/main.js
+.obsidian/plugins/obsidian-languagetool-plugin/manifest.json
+.obsidian/plugins/obsidian-style-settings/main.js
+.obsidian/plugins/obsidian-style-settings/manifest.json
+.obsidian/plugins/obsidian-style-settings/styles.css

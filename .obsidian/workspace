@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "83e8bb3521a63133",
+        "id": "33ab3d8504790d0b",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3a4ba52c0e74cd03",
@@ -87,16 +88,16 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "b105507afba350e5",
+  "active": "33ab3d8504790d0b",
   "lastOpenFiles": [
     "Mobile/React-native/Flexbox.md",
     "Mobile/React-native/Index.md",
     "Mobile/React-native/Component.md",
+    "JS Framework/Javascript/Javascript Fundamentals.md",
     "Untitled.md",
     "Mobile/Index.md",
     "mobile.md",
     "JS Framework/React JS/React JS.md",
-    "JS Framework/Javascript/Javascript Fundamentals.md",
     "JS Framework/Javascript/Array and functions.md",
     "JS Framework/Javascript/ES6.md"
   ]

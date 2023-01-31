@@ -1,6 +1,7 @@
 {
   "baseFontSize": 20,
   "cssTheme": "Prism",
-  "theme": "obsidian",
-  "translucency": false
+  "theme": "moonstone",
+  "translucency": false,
+  "accentColor": ""
 }
