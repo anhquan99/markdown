@@ -54,7 +54,7 @@
 		- **Nighttime is highlight time**
 		- **Quit when you are done**
 2. <mark style="background: #ADCCFFA6;">Laser: beat distraction to make time for your Highlight</mark>
-	- ***To pay attention, this is our endless and proper work.***
+	- ***"To pay attention, this is our endless and proper work.*"**
 	- <mark style="background: #FFB86CA6;"> Create barriers to distraction:</mark>
 		- **Try a disctraction-free phone**
 			- Tech companies make money when you use their products.

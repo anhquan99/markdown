@@ -1,1 +1,2 @@
 - [[Make time]]
+- [[Emotional intelligence]]
