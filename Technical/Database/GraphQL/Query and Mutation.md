@@ -1,7 +1,5 @@
-## What is GraphQL?
-- GraphQL is a query language for your API, and a server-side runtime for executing queries using a type system you define for your data. GraphQL isn't tied to any specific database or storage engine and is instead backed by your exising code and data.
-## Queries and Mutations
-- Fields: what you want to see in the result when a query is return.
+- <mark style="background: #FF5582A6;">Fields:</mark> what you want to see in the result when a query is return.
+
 ````js
 // query for hero name and their friends name. Fields also refer to an object, with GraphQl queries can traverse related objects and their fields, letting client fetch lots of related data in one request, instead of serveral roundtrips as one would need in a classic REST architecture.
 #Query
@@ -34,7 +32,9 @@
   }
 }
 ````
-- Arguments: specific data queries. ^eb8020
+
+- <mark style="background: #FF5582A6;">Arguments:</mark> specific data queries. ^eb8020
+
 ````js
 #Query
 {
@@ -53,7 +53,9 @@
   }
 }
 ````
-- Aliases: rename the result fields to anything you want
+
+- <mark style="background: #FF5582A6;">Aliases:</mark> rename the result fields to anything you want.
+
 ````js
 #Query
 {
@@ -70,7 +72,9 @@
   }
 }
 ````
-- Fragments: let you construct sets of fields, and then include them in queries where you don't need to repeat those fields again. Fragments can take [[GraphQL^]]
+
+- <mark style="background: #FF5582A6;">Fragments:</mark> let you construct sets of fields, and then include them in queries where you don't need to repeat those fields again. Fragments can take [[Query and Mutation#^eb8020|arguments]] ^a7289c
+
 ````js
 #Query
 {
@@ -108,8 +112,10 @@ fragment comparisonFields on Character {
   }
 }
 ````
-- Operation name: the default operation name is `query` where there are `mutaion` and `subcription` operation. Every query should have the operartion name for debugging and logging.
-- Variable: Like [[GraphQL#^eb8020 | argument]], query could be passed a variable.
+
+- <mark style="background: #FF5582A6;">Operation name:</mark> the default operation name is `query` where there are `mutaion` and `subcription` operation. Every query should have the operartion name for debugging and logging.
+- <mark style="background: #FF5582A6;">Variable:</mark> Like [[Query and Mutation#^a7289c|fragments]], query could be passed a variable.
+
 ```js
 #Query
 query HeroNameAndFriends($episode: Episode) {
@@ -145,3 +151,10 @@ query HeroNameAndFriends($episode: Episode) {
 }
 ```
 
+- <mark style="background: #FF5582A6;">Directives:</mark> is a function to query with conditions.
+
+- <mark style="background: #FF5582A6;">Mutation: </mark> a request to modify data. While query fields are executed in parallel, mutation fields run in series, one after others.
+
+- <mark style="background: #FF5582A6;">Inline Fragments</mark>
+
+- <mark style="background: #FF5582A6;">Meta fields</mark>
