@@ -35,5 +35,5 @@
 		- The emotional storage - amygdala scan for memories, comparing what happening now with what happened in the past. This comparision of sloppy because of the fast react to the situation.
 		- In the modern world, things are changing with fast, where the amygdala is not able to catch up. What is dangerous back then maybe now not dangeruos anymore and the amygdala mechanism is not fully analyze income signal made it response wrong.
 		- Since the earliest emotional memories are establised at the time before infants have words for their experience, when these emotional memories are triggered in later life there is not a matching set of articulated thoughs about the response that take us over.
-	- When emotionals are fast amd sloppy
+	- When emotionals are fast and sloppy
 		- 
