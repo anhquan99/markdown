@@ -4,7 +4,7 @@
 - [[Bit operations]]
 - [[Unit test]]
 - [[Restfull API]]
-- [[Align scrum]]
+- [[Scrum]]
 - [[Design pattern]]
 - [[OOP]]
 - [[Graph]]

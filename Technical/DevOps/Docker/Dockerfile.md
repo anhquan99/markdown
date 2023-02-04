@@ -1,0 +1,5 @@
+- `FROM` specifies what image should docker use.
+- `WORKDIR` specifies the working directory for docker whenever the container is created. It is not required, after the `WORKDIR` is specifies docker will use that directory as default.
+- `COPY` copy files from the current folder of your computer to the container folder.
+- `EXPOSE $PORT` exposes the container port to network.
+- `CMD[$command]` will be executed when the container is created.

@@ -1,0 +1,6 @@
+- `docker build .` build the docker file from current folder.
+- `docker start $container_id/container_name` start created container.
+- `docker run $image_id/image_name` create a new container from image.
+	- `-it `  run in interactive mode.
+	- `-p $computer_port:$exposed_port` map the port from container to the your computer port.
+- `docker stop $container_id/container_name` stop the running container.

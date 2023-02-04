@@ -1,0 +1,6 @@
+- Pull a docker image command `docker run image_name:version` or `docker pull image_name:version`
+- Alias
+	- `image_name:version` : `IMG_V`
+	- `image_name` : `img`
+- Run interactive shell `docker run -it img`
+- Start with [[Dockerfile]], you will need to write code to tell docker how to build docker image

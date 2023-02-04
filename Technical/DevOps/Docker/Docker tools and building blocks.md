@@ -1,0 +1,4 @@
+- Docker engine
+- Docker desktop (deamon and CLI)
+- Docker hub
+- Docker compose
