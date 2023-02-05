@@ -1,3 +1,4 @@
+- <mark style="background: #FF5582A6;">Using SQL Server 2017</mark>
 - Create example database
 ```sql
 create database sql_cookbook
@@ -74,8 +75,4 @@ INSERT INTO Foo VALUES('7')
 INSERT INTO Foo VALUES('8')
 INSERT INTO Foo VALUES('9')
 INSERT INTO t1
-
-   SELECT f1.i
-
-   FROM Foo f1
 ```
