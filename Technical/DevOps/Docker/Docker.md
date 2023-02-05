@@ -1,10 +1,11 @@
 ## Definition
-- What is container?
+- What is [[Container|container]]? ^d2bd26
 	- Container: a package of code where you put code, tools - dependencies to run that code.
 	- Like the real life container, it contains the goods. And whenever needed to move those goods around, you just need to take that container move to where you want. You don't get any unexpected when opening the container. The same with container always yields the exact same application and execution behavior. No matter where or by whom, it might be executed.
-- What is [[Image]]?
+- What is [[Image]]? ^7a8e6c
 	- The templates/blueprints for containers
 	- Contain code + required tools/runtimes
+	- Image is a snapshot of  you code.
 - What is docker?
 	- Docker is a container technology for creating and managing containers.
 	- Docker supports for containers is built into modern operating systems, and simplifies the creation and management of such containers.
