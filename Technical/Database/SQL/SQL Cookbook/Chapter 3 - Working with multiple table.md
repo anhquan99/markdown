@@ -138,3 +138,6 @@ select * from dept
 EXCEPT
 select * from no40dept
 ```
+## Using NULLs in operations and comparations
+- <mark style="background: #ADCCFFA6;">Problem:</mark> <mark style="background: #FF5582A6;">Null is never equal to or not equal to any value, not event it selft,</mark> but you want to evaludate values returned by a nullable column like you would  evaluate real values.
+- <mark style="background: #ADCCFFA6;">Solution:</mark> Use a built-in function like `COALESCE` to transform the NULL value into a real value that can be used inn standar evaluation
