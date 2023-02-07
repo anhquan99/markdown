@@ -4,5 +4,6 @@
   "glassBg": true,
   "shouldAutoCheck": true,
   "pickyMode": false,
-  "staticLanguage": "en"
+  "staticLanguage": "auto",
+  "englishVeriety": "en-US"
 }
