@@ -141,3 +141,6 @@ select * from no40dept
 ## Using NULLs in operations and comparations
 - <mark style="background: #ADCCFFA6;">Problem:</mark> <mark style="background: #FF5582A6;">Null is never equal to or not equal to any value, not event it selft,</mark> but you want to evaludate values returned by a nullable column like you would  evaluate real values.
 - <mark style="background: #ADCCFFA6;">Solution:</mark> Use a built-in function like `COALESCE` to transform the NULL value into a real value that can be used inn standar evaluation
+## Scalar query:
+- <mark style="background: #ADCCFFA6;">Problem:</mark> Adding joins to a query without interfering with other joins.
+- <mark style="background: #ADCCFFA6;">Solution:</mark> A scalar subquery is a subquery that selects only one column or expression and returns one row. A scalar subquery can be used anywhere in an SQL query that a column or expression can be used.
