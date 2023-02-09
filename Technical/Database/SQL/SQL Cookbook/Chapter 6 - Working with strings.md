@@ -46,3 +46,17 @@ select empno, ename, sal, deptno
     and substring(c, 1, 1) = ','
 )
 ```
+## Case sensitive and insensitive
+- In SQL Server 2017 the default string comparision is case insensitive.
+- If you want to compare case sensitive then use the `COLLATE + $Collate_type`.
+## Create a delimited list from table rows
+- Problem: you want to return table rows as values in a delimited list.
+- Solution: use `string_agg()` function for SQL Server
+```sql
+select deptno,
+        string_agg(ename, ',') within GROUP (order by empno) as emps
+from emp
+group by deptno
+```
+## Comparing strings by sound
+- Use `SOUNDEX` function.
