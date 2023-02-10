@@ -5,3 +5,4 @@
 ## Chapter 4 - Inserting, updating and deleting
 ## Chapter 5 - Metadata query
 ## [[Chapter 6 - Working with strings]]
+## Chapter 7 - Working with numbers
