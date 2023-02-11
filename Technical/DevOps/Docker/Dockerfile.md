@@ -3,3 +3,4 @@
 - `COPY` copy files from the current folder of your computer to the container folder.
 - `EXPOSE $PORT` exposes the container port to network.
 - `CMD[$command]` will be executed when the container is created.
+- `VOLUME []`

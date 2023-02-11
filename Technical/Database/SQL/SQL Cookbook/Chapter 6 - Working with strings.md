@@ -50,8 +50,8 @@ select empno, ename, sal, deptno
 - In SQL Server 2017 the default string comparision is case insensitive.
 - If you want to compare case sensitive then use the `COLLATE + $Collate_type`.
 ## Create a delimited list from table rows
-- Problem: you want to return table rows as values in a delimited list.
-- Solution: use `string_agg()` function for SQL Server
+- <mark style="background: #ADCCFFA6;">Problem:</mark> you want to return table rows as values in a delimited list.
+- <mark style="background: #ADCCFFA6;">Solution:</mark> use `string_agg()` function for SQL Server
 ```sql
 select deptno,
         string_agg(ename, ',') within GROUP (order by empno) as emps

@@ -1,4 +1,4 @@
-- `docker image/container prune` remove all unused images or container. ^b22ac4
+- `docker image/container/volume prune` remove all unused images or container. ^b22ac4
 ## [[Docker#^7a8e6c|Image]]
 ^736b8f
 - `docker build .` build the docker file  from current folder and create an image.
@@ -23,10 +23,16 @@
 	- `--rm` remove container when finished.
 - `docker stop $container_id/container_name` stop the running container.
 - `docker attach $container` attach container terminal.
-- `docker log $container$` fetch the log of the container.
+- `docker logs $container$` fetch the log of the container.
 	- `-f` continue output log.
 - `docker rm $container_name/id` remove container.
 	- [[CLI#^b22ac4|prune]]
 - `docker cp $a $b` copy file from local computer file/folder to running container or reverse.
 	- `$a` and `$b` can be `$file/folder_on_computer` or `$container_name/id:$path`
 - `docker run --name $container_name` create container with your assigned name.
+	- `-v $local_volume:$container_volume` create a named volumes for containers. If you don't always want to copy and use the full path, another calls for this command are: 
+		- `-v $(pwd):container_volume` for macOS/Linux.
+		- `-v "%cd%":container_volume` for Windows.
+## [[Volumes]]
+^042429
+- `docker volume rm $volume_name`

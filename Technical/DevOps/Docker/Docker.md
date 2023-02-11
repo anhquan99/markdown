@@ -24,5 +24,5 @@
 		- The container is a small running OS but not whole OS itselft, there the resources are not going to be wasted and runs faster than VM.
 		- Docker help you to create image, it is easy to share the image.
 ## [[Docker tools and building blocks]]
-
+## [[Volumes]]
 ## [[Note]]
