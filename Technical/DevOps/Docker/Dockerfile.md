@@ -1,6 +1,9 @@
 - `FROM` specifies what image should docker use.
-- `WORKDIR` specifies the working directory for docker whenever the container is created. It is not required, after the `WORKDIR` is specifies docker will use that directory as default.
+- `WORKDIR` specifies the working directory for docker whenever the container is created. It is not required, after the `WORKDIR` is specified docker will use that directory as default.
 - `COPY` copy files from the current folder of your computer to the container folder.
+	- If some folder or files you don't want to copy the use the `.dockerignore` file.
 - `EXPOSE $PORT` exposes the container port to network.
 - `CMD[$command]` will be executed when the container is created.
-- `VOLUME []`
+- `VOLUME ['$volume_name']` create an anonymous volume when the container starts.
+- `ENV $environment_variable $value` set default environment variable value.
+- `ARG $arg=$arg_value` create a default argument.
