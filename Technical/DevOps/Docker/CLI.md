@@ -49,6 +49,8 @@
 ^79c0c7
 - `docker-compose up` to run compose and run container from docker compose file.
 	- `-d` run with detach mode.
+	- `--build` rebuild image.
+	- If you don't specify which services will be run then docker will start all services.
 - `docker-compose down` to shut down all containers created by docker-compose file.
 - `docker-compose build` build images but not run containers.
 - `docker-compose run $service_name $command` create an image and run registered service in the docker compose file, after the container started then run the `$command$`. This command will not remove the container after the container stop so if you want to do that simply add `--rm`.

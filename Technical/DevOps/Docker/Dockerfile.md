@@ -1,5 +1,5 @@
 - `FROM` specifies what image should docker use.
-- `WORKDIR` specifies the working directory for docker whenever the container is created. It is not required, after the `WORKDIR` is specified docker will use that directory as default.
+- `WORKDIR` specifies the working directory for docker whenever the container is created. It is not required, after the `WORKDIR` is specified docker will use that directory as default. ^c49566
 - `COPY` copy files from the current folder of your computer to the container folder.
 	- If some folder or files you don't want to copy the use the `.dockerignore` file.
 - `EXPOSE $PORT` exposes the container port to network.
