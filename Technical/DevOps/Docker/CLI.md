@@ -26,8 +26,9 @@
 	- `-v $local_volume:$container_volume` create a named volume for containers. If you don't always want to copy and use the full path, another calls for this command are: 
 		- `-v $(pwd):container_volume` for macOS/Linux.
 		- `-v "%cd%":container_volume` for Windows.
-	- `-e $environment_variable:$environment_value` or `--env $environment_variable:$environment_value` create and assign an environment value. This will protect image from leaking security information by not including it into the image.
+	- `-e $environment_variable:$environment_value` or `--env $environment_variable:$environment_value` create and assign an environment value. This will protect the image from leaking security information by not including it into the image.
 		- `--env-file $environment_file` set environment variables from a file.
+	- `--network $network_name` run container with specific network.
 - `docker stop $container_id/container_name` stop the running container.
 - `docker attach $container` attach container terminal.
 - `docker logs $container$` fetch the log of the container.
@@ -40,3 +41,15 @@
 ^042429
 - `docker volume rm $volume_name`
 - `docker run -v $local_folder:$container_folder:ro` The `ro` command give folder readonly attribute where container can not write into this folder.
+## [[Network]]
+^7e7061
+- `docker network create $network_name` create a new network.
+	- `--driver $type_of_driver` create a network with a driver type.
+## [[Docker compose]]
+^79c0c7
+- `docker-compose up` to run compose and run container from docker compose file.
+	- `-d` run with detach mode.
+- `docker-compose down` to shut down all containers created by docker-compose file.
+- `docker-compose build` build images but not run containers.
+- `docker-compose run $service_name $command` create an image and run registered service in the docker compose file, after the container started then run the `$command$`. This command will not remove the container after the container stop so if you want to do that simply add `--rm`.
+- `docker-compose exec` run a command to the running container. 

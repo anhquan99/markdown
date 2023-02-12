@@ -7,3 +7,4 @@
 - `VOLUME ['$volume_name']` create an anonymous volume when the container starts.
 - `ENV $environment_variable $value` set default environment variable value.
 - `ARG $arg=$arg_value` create a default argument.
+- `ENTRYPOINT ["$COMMAND"]` create a default prefix command on each command user input. ^4e4524
