@@ -9,6 +9,7 @@
 	- Use `COPY` to copy a code snapshot into the image.
 	- Ensures that every image runs without any extra, surrounding configuration or code.
 ## Containerized apps might need a build step (ex React app)
+- [[Multi-stage builds]]
 ## Multi-container projects might need to be split (or should be split) across multiple host/remote machine.
 ## Trade-offs between control and responsibility might be worth it.
 - Run the "do it yourself" [[Deploy image to AWS EC2]]. Managing the configuration more controls, but you have more responsibility. You need to create them, manage them, keep them updated, monitor them, scale them, ...

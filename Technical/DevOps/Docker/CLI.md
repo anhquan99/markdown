@@ -4,6 +4,8 @@
 - `docker build .` build the docker file from current folder and create an image.
 	- `-t $name:$tag .` create an image with a name and tag.
 	- `--build-arg $arg=$arg_value` assign argument variable. 
+	- `-f $dockerfile_name` specify which docker file is being used to build.
+	- `--target $process` specify which process to run, relate to [[Multi-stage builds]].
 - `docker image remove $image_name/id` remove image, require all the container from that image is removed.
 	- `docker rmi $image_name/id` alias.
 	- [[CLI#^b22ac4|prune]]

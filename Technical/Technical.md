@@ -1,6 +1,5 @@
 - [[Data structure]]
-- [[Search algorithms]]
-- [[Sort algorithms]]
+- [[Algorithms]]
 - [[Bit operations]]
 - [[Unit test]]
 - [[Restfull API]]
