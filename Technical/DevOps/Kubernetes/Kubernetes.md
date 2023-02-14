@@ -51,3 +51,4 @@
 - Create your objects (e.g. pods) and manage them.
 - Monitor pods and re-create them, scale pods, ...
 - K8s utilizes the provided (cloud) resources to apply your config/goals.
+## [[Object]]
