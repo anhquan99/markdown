@@ -12,7 +12,9 @@
     "BigInt",
     "Javascript",
     " Cons",
-    "Macvlan"
+    "Macvlan",
+    "Kubelet",
+    "Kube-proxy"
   ],
   "vimMode": false
 }
