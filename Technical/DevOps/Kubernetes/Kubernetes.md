@@ -51,4 +51,12 @@
 - Create your objects (e.g. pods) and manage them.
 - Monitor pods and re-create them, scale pods, ...
 - K8s utilizes the provided (cloud) resources to apply your config/goals.
+## How to build a kubernetest service:
+1. Create image and push it to repository.
+2. Start create service by file (Declarative) or by CLI (Imperative)
+	- Declarative:
+		- Create deployment and service file with extension is .yaml or .yml, here you can have multile file for multiple resources.
+		- Use `kubectl apply -f $deployment_file -f $service_file` to apply resource to k8s.
+	- Imperative:
+3. Use `$service_provider service $service_name` like `minikube service backend` to start start service from service provider.
 ## [[Object]]

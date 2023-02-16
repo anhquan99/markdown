@@ -19,3 +19,6 @@
 	- Services group Pods with a shared IP.
 	- Services can allow external access to Pods.
 - Reaching a Pod from outside the Cluster is not possible at all without Services
+## [[Technical/DevOps/Kubernetes/Volumes|Volume]]
+## [[Technical/DevOps/Kubernetes/Network|Network]]
+## ConfigMap
