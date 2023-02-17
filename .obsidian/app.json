@@ -14,7 +14,8 @@
     " Cons",
     "Macvlan",
     "Kubelet",
-    "Kube-proxy"
+    "Kube-proxy",
+    "knight"
   ],
   "vimMode": false
 }

@@ -1,7 +1,7 @@
 # Database
 - Is an organized collection of data, stored and retrieved digitally from a remote or local computer system. Databases can be vast and complex, and such databases are developed using fixed design and modeling approaches.
 # DBMS (Database Management System)
-- System software responsible for the creation, retrieval, updation, and management of database. It ensures that data is consistent, organized and easily accessible by serving as an interface between the database and its end users or application software.
+- System software responsible for the creation, retrieval, update, and management of database. It ensures that data is consistent, organized and easily accessible by serving as an interface between the database and its end users or application software.
 # RDBMS (Relational Database Management System)
 - Store data in the form of a collection of tables, and relations can be defined between the common fields of these tables.
 # SQL (Structured Query Language)
@@ -15,7 +15,7 @@
 - Check: Verifies that all values in the field satisfy a condition
 - Default: automatically assigns a default value if no value has been specified for the field
 - Unique
-- Index: Indexes a field providing faster retrieval of records.
+- Index: Indexes a field, providing faster retrieval of records.
 - Primary key
 - Foreign key
 # Join
@@ -114,7 +114,7 @@ DEALLOCATE db_cursor
 - Normal forms are used to eliminate or reduce redundancy in database
 	- 1st form: **single value attribute**
 	- 2nd form: **no partial dependency**, no non-prime attribute (attributes which are not part of any candidate key) is dependent on any proper subset of any candidate key of the table.
-	- 3rd form: **Transitive dependency –** If A->B and B->C are two FDs then A->C is called transitive dependency.
+	- 3rd form: **Transitive dependency –** If A → B and B → C are two FDs, then A → C is called transitive dependency.
 # Truncate
 - Command is used to delete all the rows from the table and free the space containing the table.
 ```sql
@@ -182,3 +182,12 @@ SELECT * /* Matches first names with exactly four characters */
 FROM students 
 WHERE first_name LIKE '____'
 ```
+## Grouping
+^1e5537
+- Indicates whether a specified column expression in a GROUP BY list is aggregated or not. GROUPING returns 1 for aggregated or 0 for not aggregated in the result set. GROUPING can be used only in the SELECT `<select>` list, HAVING, and ORDER BY clauses when GROUP BY is specified.
+## Rollup
+^4874b1
+- The rollup is an extension of the `GROUP BY` clause, allows you to include extra rows that represent the subtotal, which are commonly referred to as super-aggregate rows, along with the grand total row.
+## Cube
+^c8ce95
+- Similar to [[SQL#^4874b1|rollup]], allows you to generate subtotals. In addition, the extension will generate subtotals for all combinations of grouping columns specified in the `GROUP BY` clause.

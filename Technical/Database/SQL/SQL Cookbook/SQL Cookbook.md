@@ -8,5 +8,6 @@
 ## [[Chapter 7 - Working with numbers]]
 ## [[Chapter 8 - Date arithmetic]]
 ## [[Chapter 9 - Date manipulation]]
-## Chapter 10 - Working with ranges
+## [[Chapter 10 - Working with ranges]]
 ## [[Chapter 11 - Advanced searching]]
+## [[Chapter 12 - Reporting and reshaping]]
