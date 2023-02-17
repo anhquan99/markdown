@@ -1,7 +1,5 @@
 ## Pivoting a result set into one row
-
 ^a6f205
-
 - Problem: you want to take values from groups of rows and turn those values into columns in a single row per group.
 - Solution: transpose the result set using CASE and the aggregate function SUM. When using CASE expression, we must know how many columns returned.
 ```SQL
