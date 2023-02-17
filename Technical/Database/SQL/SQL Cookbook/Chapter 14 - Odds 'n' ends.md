@@ -38,3 +38,8 @@ from
     cnt for deptno in (dept_10, dept_20, dept_30, dept_40)
   ) as un_pivolt
 ```
+## Pivoting a ranked result set
+- Problem: you wnat to rank the values in a table and then pivot the result set into three columns. The idea is to show the top three, the next three, and then all the rest.
+- Solution: 
+	1. The key is to use the window function `DENSE_RANK OVER` to rank the employees by their salary.
+	2. Next use the `ROW_NUMBER OVER` to rank each employee within their group.
