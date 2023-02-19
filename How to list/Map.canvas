@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"aa9eec290abbcb18","x":-200,"y":-200,"width":400,"height":165,"type":"file","file":"How to list/How to list.md"},
+		{"id":"22b18b931b1867dd","x":-1740,"y":-802,"width":400,"height":173,"type":"file","file":"How to list/How to SQ3R.md"},
+		{"id":"da168faef479a8ab","x":-263,"y":-904,"width":400,"height":163,"type":"file","file":"How to list/How to read a book.md"},
+		{"id":"4eaf0cf4c00d5237","x":-913,"y":-853,"width":400,"height":275,"type":"file","file":"How to list/How to take note.md"},
+		{"id":"28b7a898e38912ab","x":-1740,"y":-422,"width":400,"height":188,"type":"file","file":"How to list/How to create a mind map.md"}
+	],
+	"edges":[
+		{"id":"46ff47df549049e3","fromNode":"da168faef479a8ab","fromSide":"left","toNode":"4eaf0cf4c00d5237","toSide":"top","label":"Remember to take note"},
+		{"id":"20a3e584c4640d5a","fromNode":"aa9eec290abbcb18","fromSide":"top","toNode":"da168faef479a8ab","toSide":"right"},
+		{"id":"9b57695adac7e3d8","fromNode":"4eaf0cf4c00d5237","fromSide":"left","toNode":"28b7a898e38912ab","toSide":"right","label":"Summary the idea of the book"},
+		{"id":"26c5aa49b32fb074","fromNode":"28b7a898e38912ab","fromSide":"top","toNode":"22b18b931b1867dd","toSide":"bottom","label":"Digest the information"}
+	]
+}

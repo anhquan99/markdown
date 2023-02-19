@@ -1,2 +1,4 @@
 - [[How to read a book]]
-- [[How to build docker]]
+- [[How to take note]]
+- [[How to create a mind map]]
+- [[How to SQ3R]]
