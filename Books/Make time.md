@@ -1,3 +1,4 @@
+<mark style="background: #FFB86CA6;">by Jake Knapp and John Zeratsky</mark>
 - This technique is based on sprint. It has 4 steps and those steps will make an efftive day, but before planning for a day it must be planning for the whole week.
 - Each sprint will have their owns goals, in the end of the week its goals must be done.
 - There will be some task are not importance, but it must have a due date for the completion of the task. Throughout the week the task can be defered but must be finished.

@@ -1,2 +1,3 @@
 - [[Make time]]
 - [[Emotional intelligence]]
+- [[The subtle art not giving a fuck]]
