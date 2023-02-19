@@ -8,24 +8,24 @@
 - Extra memory space for a pointer
 - Not cache friendly. Since linked list is not contiguous memory locations
 # Singly Linked list
-- ## Structure
+- <mark style="background: #ADCCFFA6;">Structure</mark>
 ``````c
 	 struct Node{
 		 int data;
 		struct Node* next;
 		}
 ``````
-- ## Function
-	-  Append node
+- <mark style="background: #ADCCFFA6;">Function</mark>
+	-  <mark style="background: #D2B3FFA6;">Append node</mark>
 		- At the end: travel to the end of the linked list and set last node pointer to new node and point new last node to null;
 		- At specific position: travel to specific node  and point that pointer to new node. Point new node pointer to the node next to that specific node 
 		- At the front: Point the new node pointer to the first pointer.
-	- Delete node
+	- <mark style="background: #D2B3FFA6;">Delete node</mark>
 		- Iterative method:
 			1. Find the previous node of the node to be deleted
 			2. Point the pointer of the previous node to the next node of the node to be deleted
 			3. Free memory for the node to be deleted.
-		- Recursive method:
+		- <mark style="background: #D2B3FFA6;">Recursive method</mark>
 			-  ![[Pasted image 20220309230710.png]]
 	- Size() return number of the elements in list
 	- Empty() check if list is empty

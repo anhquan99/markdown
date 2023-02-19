@@ -1,7 +1,8 @@
+<mark style="background: #FF5582A6;">by Daniel Goleman</mark>
 > "Anybody can become angry - that is easy, but to be angry with the right person and to the right degree and at the right time and for the right purpose, and in the right way - that is not within everybody's power and is not easy"
 
 ### Part 1: The emotional brain
-1. <mark style="background: #ADCCFFA6;">Chapter 1: What are emotions for?</mark>
+-  <mark style="background: #ADCCFFA6;">Chapter 1: What are emotions for?</mark>
 	- <mark style="background: #D2B3FFA6;">When passions overwhelm reason: </mark>
 		- Everytimes emotion makes a decision, it is the instinct of the hunman. Through time, it was developed through survival and till now it is not keeping up with the modern world.
 	- <mark style="background: #D2B3FFA6;">Impules to action:</mark>
@@ -16,7 +17,7 @@
 		- Rational : the logical brain
 		- Emotional mind: the heart
 	- How did your brain grew?
-2. <mark style="background: #ADCCFFA6;">Anatomy of an Emotional hjacking</mark>
+-  <mark style="background: #ADCCFFA6;">Anatomy of an Emotional hjacking</mark>
 	- <mark style="background: #D2B3FFA6;">The seat of all passion</mark>
 		- In hunmans, the amygdala (from the Greek word for "almond") is an almond-shape cluster of interconnected structyures perched above the brainstem. If hunman lost amydala, they can no longer have feeling for others and all the passions.
 	- <mark style="background: #D2B3FFA6;">The neural tripwire</mark>
@@ -41,3 +42,129 @@
 		- ***" If the amygdala often acts as an emergency trigger, the left prefrontal lobe appears to be part of the brain’s “off” switch for disturbing emotion: the amygdala proposes, the prefrontal lobe disposes. These prefrontal-limbic connections are crucial in mental life far beyond fine-tuning emotion; they are essential for navigating us through the decisions that matter most in life."***
 	- <mark style="background: #D2B3FFA6;">Harmonizing emotion and thought</mark>
 		- We have two brains, two minds - and two different kinds of intelligence: rational and emotional. Our decision in life is determined by both rational and intelligence. When these two partners interact well, emotional inteliigence rises - as does intellectual ability.
+## Part 2: The nature of emotional intelligence
+- When smart is dumb
+	- Emotional intelligence and destiny
+	- A different kind of intelligence
+	- Spock vs Data: When cognition is not enough
+	- Can emotions be intelligent
+	- IQ and emotional intelligence: Pure types
+- Know thyself
+	- The passionate and the indifferent
+	- The man without feelings
+	- In praise of gut feeling
+- Passion's slaves
+	- The anatomy of rage
+		- The rage "rush"
+		- Anger builds on anger
+		- Balm of anger
+		- Cooling down
+		- The ventilation fallacy
+	- Soothing anxiety: what, me worry?
+		- The work of worrying
+	- Managing melancholy
+	- Repressors: upbeat denial
+- The master aptitude
+	- Impulse control: the marshmallow test
+	- Foul moods, fouled thinking
+	- Pandora's box and pollyanna: the power of positive thinking
+	- Optimism: the geart motivator
+	- Flow: the neurobiology of excellence
+	- Learning and flow: a new model for education
+- The roots of empathy
+	- How empathy unfolds
+	- The well-attuned child
+	- The costs of misattunement
+	- The neurology of empathy
+	- Empathy and ethics: the roots of altruism
+	- Life without empathy: the mind of the molester, the morals of the sociopath
+- The social arts
+	- Show some emotion
+	- Expressiveness and emotional contagion
+	- The rudiments of social intelligence
+	- The making of social incompetent
+	- "We hate you": at the threshold
+	- Emotional brilliance: a case report
+## Part 3: Emotional intelligence applied
+- Intimate enemies
+	- His marriage and hers: childhood roots
+	- Marital fault line
+	- Toxic thoughts
+	- Flooding the swamping of marriage
+	- Men: the vulnerable sex
+	- His and hers: marital advice
+	- The good fight
+		- Calming down
+		- Detoxifying self-talk
+		- Nondefensive listening and speaking
+		- Practicing
+- Managing with Heart
+	- Criticism is job one
+		- The worst way to motivate someone
+		- The artful critique
+	- Dealing with diversity
+		- The roots of prejudice
+		- Zero tolerance for intolerance
+	- Organzational savvy and the group IQ
+- Mind and medicine
+	- The body's mind: how emotions matter for health
+	- Toxic emotions: the clinical data
+		- When anger is suicidal
+		- Stress: anxiety out of proportion and out of place
+	- The medical costs of depression
+	- The medical benefits of positive feelings
+		- The price of pessimism and advantages of optimism
+		- With a little help from my friends: the medical value of relationships
+		- The healing power of emotional support
+	- Bringing emotional intelligence to medical care
+	- Toward a medicine that cares
+## Part 4: windows of opportunity
+- The family crucible
+	- Heart start
+	- Getting emotional basics
+	- How to raise a bully
+	- Abuse: the extinction of empathy
+- Trauma and emotional relearning
+	- Horror frozen in memory
+	- PTSD as a limbic disorder
+	- Emotional relearning
+	- Reeducating the emotional brain
+	- Emotional relearning and recovery from trauma
+	- Psychotherapy as an emotional tutorial
+- Temperament is not destiny
+	- The neurochemistry of timidity
+	- Noting bothers me: the cheerful temperament
+	- Taming the overexcitable amygdala
+	- Childhood: a window of opportunity
+	- Crucial windows
+## Part 5: emotional literacy
+- The cost of emotional illiteracy
+	- An emotional malaise
+	- Taming aggression
+	- School for bullies
+	- Preventing depression
+	- A cost of modernity: rising rates of depression
+	- The course of depression in the young
+	- Depressionogenic ways of thought
+	- Short-circuiting depression
+	- Eating disorders
+	- Only the lonely: dropouts
+	- Drinking and drugs: addiction as self-medication
+	- No more wars: a final common preventive pathway
+		- Information is not enough
+		- The active ingredients
+- Scholling the emotions
+	- A lesson in cooperation
+	- A point of contention
+	- Postmortem: a fight that did not break out
+	- Concerns of the day
+	- The abc's of emotional intelligence
+	- Emotional literacy in the inner city
+	- Emotional literacy in disguise
+	- The emotional timetable
+	- Timing is all
+	- Emotional literacy is prevention
+	- Rethiking schools: teeaching by being, commuities that care
+	- An expanded mission fopr schools
+	- Does emotional literacy make a difference?
+	- Character, morality, and the arts of democracy
