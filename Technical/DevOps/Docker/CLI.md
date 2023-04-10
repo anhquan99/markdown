@@ -39,11 +39,11 @@
 	- [[CLI#^b22ac4|prune]]
 - `docker cp $a $b` copy file from local computer file/folder to running container or reverse.
 	- `$a` and `$b` can be `$file/folder_on_computer` or `$container_name/id:$path`
-## [[Technical/DevOps/Docker/Volumes]]
+## [[Technical/DevOps/Docker/Volumes|Volumes]]
 ^042429
 - `docker volume rm $volume_name`
 - `docker run -v $local_folder:$container_folder:ro` The `ro` command give folder readonly attribute where container can not write into this folder.
-## [[Technical/DevOps/Docker/Network]]
+## [[Technical/DevOps/Docker/Network|Network]]
 ^7e7061
 - `docker network create $network_name` create a new network.
 	- `--driver $type_of_driver` create a network with a driver type.

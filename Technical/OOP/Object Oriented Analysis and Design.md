@@ -5,7 +5,7 @@
 - Always begin a project by figuring out what the customer wants.
 - You can solve a big problem by breaking it into lots of function pieces, and then workingon each of those peices individually.
 - Customer don't pay you for greate code , they pay you for greate software.
-###<mark style="background: #D2B3FFA6;"> 2. Apply basic OO principles to add flexibility.</mark>
+### <mark style="background: #D2B3FFA6;"> 2. Apply basic OO principles to add flexibility.</mark>
 - Anytime you see duplicate code, look for a place to encapsulate.
 - Once you've got the basic functionality of an app in place work onrefining the design so it's flexible.
 - Your system must work in the real world, not just when everything goes as you expect it to.
