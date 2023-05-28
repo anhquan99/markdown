@@ -153,3 +153,11 @@ public class HomeController{}
 - Accessible within the same assembly
 # Object pool
 - An object pool is a container having objects ready to be used. It tracks the object that is currently in use, total number of objects in the pool. This reduces the overhead of creating and re-creating objects.
+# Anonymous type 
+- Initialize and type interference (`var`), c# can create anonymous type object has a class is an object. but that does not mean it is dynamic like a Javascript variable. The compiler generate the class based on the name and type of the parameters in the initializer.
+```c#
+var myAnonType = new {  
+    Name = "MVC",  
+    Category = "Pattern"  
+};
+```
