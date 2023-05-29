@@ -369,3 +369,13 @@ public class AddressSummary {
 	public string Country { get; set; }  
 }
 ```
+# Validation
+- Defining self-validating methods:
+	- Implement IValidatableObject
+- Enable client side validation:
+```C#
+// Web.Config
+  <add key="ClientValidationEnabled" value="true" />  
+  <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+```
+![[Pasted image 20230529162356.png]]
