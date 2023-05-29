@@ -371,11 +371,23 @@ public class AddressSummary {
 ```
 # Validation
 - Defining self-validating methods:
-	- Implement IValidatableObject
+	- `IValidatableObject`
 - Enable client side validation:
 ```C#
 // Web.Config
   <add key="ClientValidationEnabled" value="true" />  
   <add key="UnobtrusiveJavaScriptEnabled" value="true" />
 ```
+# Filter
 ![[Pasted image 20230529162356.png]]
+- <mark style="background: #D2B3FFA6;">Authorization filter:</mark>
+	- `IAuthorizationFilter`
+	- `AuthorizeAttribute`
+- <mark style="background: #D2B3FFA6;">Authentication filter:</mark>
+	- Authentication filters have a relatively complex lifecycle. They are run before any other filter, which lets you define an authentication policy that will be applied before any other type of filter is used. Authentication filters can also be combined with authorization filters to provide authentication challenges for requests that don’t comply to the authorization policy. Authentication filters are also run after an action method has been executed but before the `ActionResult` is processed.
+	- `IAuthenticationFilter`
+		- `OnAuthentication` the controller will call the `OnAuthentication` method before running any other kind of filter providing an opportunity to perform a broad check.
+		- `OnAuthenticationChanllenge` is called whenever a request has failed the authentication or authorization policies for an action method. If request is not fail it will be call before `ActionResult` is processed.
+	- `FilterAttribute`
+- <mark style="background: #D2B3FFA6;">Exception filter</mark>
+- <mark style="background: #D2B3FFA6;">Action filter</mark>
