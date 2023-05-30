@@ -391,3 +391,19 @@ public class AddressSummary {
 	- `FilterAttribute`
 - <mark style="background: #D2B3FFA6;">Exception filter</mark>
 - <mark style="background: #D2B3FFA6;">Action filter</mark>
+# ASP.NET life cycles
+- <mark style="background: #D2B3FFA6;">Application life cycle</mark> tracks the life of a web application from the moment it starts to the moment it is terminated.
+	- ASP.NET provides notifications when the application starts and stops.
+	- Defined by the global application class which is the Global.asax and Global.asax.cs file
+	- `Application_Start()` is called when the application started.
+	- `Application_End()` is called when the application is about to be terminated, and it is an opportunity to release any resource that the application maintains.
+	- `System.Web.HttpApplication` which is the base class for the application, and it is not define the method, it uses reflection to look for the methods by name.
+- <mark style="background: #D2B3FFA6;">Request life cycle</mark> defines the path that an HTTP request follows as it moves through the ASP.NET platform from the point at which the initial request is received until the response is sent.
+- ASP.NET life cycles
+![[Pasted image 20230530205638.png]]
+![[Pasted image 20230530205646.png]]
+- HttpContext
+![[Pasted image 20230530211704.png]]
+![[Pasted image 20230530211714.png]]
+- ASP.NET context objects provide information about the application, the current request, and the response that is being prepared for it, they also provide access to the most important ASP.NET platform services such as security and state data.
+- HttpApplication objects describes a single HTTP requests as it is being processed.
