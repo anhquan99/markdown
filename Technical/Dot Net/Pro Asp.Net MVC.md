@@ -406,4 +406,6 @@ public class AddressSummary {
 ![[Pasted image 20230530211704.png]]
 ![[Pasted image 20230530211714.png]]
 - ASP.NET context objects provide information about the application, the current request, and the response that is being prepared for it, they also provide access to the most important ASP.NET platform services such as security and state data.
-- HttpApplication objects describes a single HTTP requests as it is being processed.
+- `HttpApplication` objects describes a single HTTP requests as it is being processed.
+# IHttpModule
+- Modules are classes that handle life-cycle events to monitor or manipulate requests or responses. Modules can also provide services to handlers.
