@@ -409,3 +409,113 @@ public class AddressSummary {
 - `HttpApplication` objects describes a single HTTP requests as it is being processed.
 # IHttpModule
 - Modules are classes that handle life-cycle events to monitor or manipulate requests or responses. Modules can also provide services to handlers.
+- Methods defined
+	- `Init(app)`
+	- `Dispose()`
+- Create self-register modules: Using an assembly attribute called `PreApplicationStartMethod`.
+- These modules can access from `HttpContext.ApplicationInstance.Modules`
+# IHttpHandler
+- Handlers are the ASP.NET request handling component that is responsible for generating the response content for requests
+  ![[Pasted image 20230605204152.png]]
+  ![[Pasted image 20230605204202.png]]
+  - Methods defined
+	  - `ProcressRequest(context)`
+	  - `IsReusable()`
+  - Request life-cycle events relevant to handlers
+	  - `MapRequestHandler`: locate a handler for the request
+	  - `PostMapRequestHandler`: locate a handler for the request
+	  - `PreRequestHandlerExecute`:  trigger immediately before the `ProcessRequest()` called
+	  - `PostRequestHandlerExecute`: trigger immediately after the `ProcessRequest()` called
+  - `IRouteHandler` map the route with the `IHttppHandler`
+```C#
+// how to use IHttpModule with IHttpHandler
+namespace SimpleApp.Infrastructure {
+  public class DayModule: IHttpModule {
+    public void Init(HttpApplication app) {
+      app.PostMapRequestHandler += (src, args) => {
+        if (app.Context.Handler is DayOfWeekHandler) {
+          app.Context.Items["DayModule_Time"] = DateTime.Now;
+        }
+      };
+    }
+    public void Dispose() {
+      // nothing to do
+    }
+  }
+}
+```
+- `IHttpHandlerFactory` is responsible for providing instances of handler classes to the ASP.NET platform in order to generate content for requests
+	- Methods defined
+		- `GetHandler(context, verb, url, path)`
+		- `ReleaseHandler(handler)`
+# Disrupting the request life cycle
+- Redirect URL with handler.
+- Select handler to disrup.
+- Transfer a request to a different handler using `TransferRequest()`.
+- Terminating requests using `CompleteRequest()`
+- Add handle event method with delegation
+```C#
+public class EventListModule : IHttpModule {
+
+        public void Init(HttpApplication app) {
+
+            string[] events = { "BeginRequest", "AuthenticateRequest",
+                "PostAuthenticateRequest", "AuthorizeRequest", "ResolveRequestCache",
+                "PostResolveRequestCache", "MapRequestHandler", "PostMapRequestHandler",
+                "AcquireRequestState", "PostAcquireRequestState", 
+                "PreRequestHandlerExecute", "PostRequestHandlerExecute", 
+                 "ReleaseRequestState", "PostReleaseRequestState",
+                "UpdateRequestCache", "LogRequest", "PostLogRequest",
+                "EndRequest", "PreSendRequestHeaders", "PreSendRequestContent"};
+
+
+            MethodInfo methodInfo = GetType().GetMethod("HandleEvent");
+            foreach (string name in events) {
+                EventInfo evInfo = app.GetType().GetEvent(name);
+
+                evInfo.AddEventHandler(app, 
+                    Delegate.CreateDelegate(evInfo.EventHandlerType,
+                        this, methodInfo));
+            }
+
+            app.Error += (src, args) => {
+                System.Diagnostics.Debug.WriteLine("Event: Error");
+            };
+        }
+
+        public void HandleEvent(object src, EventArgs args) {
+            string name = HttpContext.Current.CurrentNotification.ToString();
+            if (HttpContext.Current.IsPostNotification && 
+                !HttpContext.Current.Request
+                    .CurrentExecutionFilePathExtension.Equals("css")) {
+                name = "Post" + name;
+            }
+            if (name == "BeginRequest") {
+                System.Diagnostics.Debug.WriteLine("---------------");
+            }
+            System.Diagnostics.Debug.WriteLine("Event: {0}", new string[] { name });
+        }
+
+        public void Dispose() {
+            // do nothing
+        }
+    }
+```
+# Trace requests
+- Use `Trace.axd` to see logged traces.
+- Use handler to write trace with events.
+- Use third-party library like `Glimpse`.
+# Configuration
+![[Pasted image 20230605221036.png]]
+- Reading from config file: use `WebConfigurationManager.AppSettings` and access it like a dictionary.
+# Application state data
+- Application state data allows small amounts of data to be shared throughout an application and is available to every component.
+- It is available through `HttpContext.Application`
+- When working on Application state data, we should care about the synchronization effect
+![[Pasted image 20230605223138.png]]
+![[Pasted image 20230605223148.png]]
+- Tracking sessions without cookies
+![[Pasted image 20230605223415.png]]
+# Donut and donut-hole caching
+- The content from an action method is cached by the server and supplemented by calls to action methods in every request. The name arises because the part that is cached (the donut) entirely surrounds the parts that are not (the donut holes). The donut is the content from the action method, and the donut holes are the content from the child actions.
+- Donut caching can be useful when the skeletal structure of the content is static and needs to be blended with fragments of dynamic content.
