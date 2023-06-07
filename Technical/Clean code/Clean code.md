@@ -1,46 +1,46 @@
 # Principles
-- # Right tool for right job
-	- Stay Navtive benifit:
-		- Cached 
-		- Code colored
-		- Syntax checked
-		- Separation of concerns
-		- Reusable
-		- Avoid string parsing
-	- How to do:
-		- Avoid using one language to write another language
-		- Leverage libraries
-		- One language per life
-- # Maximize signal to noise ratio
-	- **Signal** follow TED rules
-		- Terse: short and easy to read
-		- Expressive: easy to understand
-		- Do one thing
-- # Don't repeat yourself (DRY)
-	- Copy and paste is often a sign of a design problem
-	- Refactor code
-- # Self-documenting code
-	- Clear intent
-	- Layers of abstraction should be used
-	- Format for readability
-	- Favor code over comments when possible
-# Naming
-- # Class
+## Right tool for right job
+- Stay native benefit:
+	- Cached 
+	- Code colored
+	- Syntax checked
+	- Separation of concerns
+	- Reusable
+	- Avoid string parsing
+- How to do:
+	- Avoid using one language to write another language
+	- Leverage libraries
+	- One language per life
+## Maximize signal to noise ratio
+- **Signal** follow TED rules
+	- Terse: short and easy to read
+	- Expressive: easy to understand
+	- Do one thing
+## Don't repeat yourself (DRY)
+- Copy and paste is often a sign of a design problem
+- Refactor code
+## Self-documenting code
+- Clear intent
+- Layers of abstraction should be used
+- Format for readability
+- Favor code over comments when possible
+## Naming
+- Class
 	- Noun
 	- Be specific
 	- Single responsibility
 	- Avoid generic suffixes
-- # Methods
+- Methods
 	- A good name is one so descriptive that the reader does not have to read the Method to know that it does
-	- Warngin signs for spliting method:
+	- Warning signs for spliting method:
 		- And
 		- Or
 		- If
 	- Watch for Side effects, refactor until the method name completely describes what it does
 	- Avoid abbreviations
 # Conditions
-- Boolean comparisions: short and positive comparision
-- Boolean assignments: make it short by using tenary
+- Boolean comparisons: short and positive comparison
+- Boolean assignments: make it short by using ternary
 - Positive conditionals
 - Ternary is elegant
 - Avoid being "Stringly" typed: use enum instead type string
@@ -52,9 +52,9 @@
 - Be declarative if possible
 - Sometimes code isn't the answer, alternative non coding solution maybe better than code
 # Function
-- # When to create a function:
+- When to create a function:
 	- Duplication
-	- Identation >= 3 level
+	- Indentation >= 3 level
 	- Unclear intent
 	- Bigger than 1 task
 	- Sign it's too long
@@ -72,31 +72,31 @@
 	- Mayfly variables
 		- Initialize variables just-in-time
 		- Do 1 thing
-	- Strive for 0-3 parameters
+	- Strive for 0–3 parameters
 	- Watch for flag arguments - a sign the function doing 2 things
 # Classes
-- # When to create
+- When to create
 	- New concept
 	- Low Cohesion
 	- Promote reuse
 	- Reduce complexity
 	- Clarify parameters
-- # Cohesion - Strongly related methods
-- # When is a class to small?
+- Cohesion - Strongly related methods
+- When is a class to small?
 	-  Inappropriate intimacy
 	- Feature envy
 	- Too many pieces
-- # Primitive obsession
+- Primitive obsession
 	- Helps reader conceptualize
-	- Implicit -> Explicit
+	- Implicit → Explicit
 	- Encapsulation
 	- Aids maintenance
-- # Principle of Proximity
+- Principle of Proximity
 	- Strive to make code read from top to bottom when possible
 	- Keep related actions together
 # Comments
-- Comments can be a signal or a noise depend on how the progammer use it.
-- # Rules:
+- These can be a signal or a noise, depend on how the programer use it.
+- Rules:
 	- Prefer expressive code over comments
 	- Use comments when code alone can't be sufficient
 - TODO comment

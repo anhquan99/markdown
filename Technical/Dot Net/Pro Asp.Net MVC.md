@@ -9,7 +9,7 @@
 - `@:html content` you can insert HTML content directly into a C# code block in razor page.
 # Pagination
 - Example solution:
-```c#
+```C#
 public static MvcHtmlString PageLinks(this HtmlHelper html,
                                               PagingInfo pagingInfo,
                                               Func<int, string> pageUrl) {
