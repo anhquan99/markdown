@@ -54,3 +54,47 @@
 		- Validates, stores, and refreshes OAuth tokens issued by the configured identity provider(s)
 		- Manages the authenticated session
 		- Injects identity information into HTTP request headers
+# Implement Azure functions
+# Develop solution Azure Cosmos DB
+- It's a fully managed NoSQL database designed to provide low latency, elastic scalability of throughput, well-defined semantics for data consistency, and high availability.
+- Consistency levels
+	 ![[Pasted image 20230610211654.png]]
+	 - Strong consistency: Users are always guaranteed to read the latest committed write.
+	 - Bounded staleness consistency: the reads might lag behind writes by at most "K" versions of an item or by "T" time interval, whichever is reached first.
+	 - Session consistency: monotonic reads and writes.
+	 - Consistent prefix consistency: if the operation performs on doc_1 and doc_2 you will get doc_1 ver 1 and doc_2 ver 1 or doc_1 ver 2 and doc_2 ver 2 but never doc_1 ver 1 and doc_2 ver 2.
+	 - Eventual consistency: there's no guarantee for reads. In the absence of any further writes, the replicas eventually converge. It's the weakest form of consistency.
+- Request units (RUs):
+	  ![[Pasted image 20230610214109.png]]
+	- Represents the system resources such as CPU, IOPS, and memory that are required to perform the database operations supported by Azure Cosmos DB.
+	- Azure Cosmos DB account modes:
+		- Provisioned throughput mode: you provision the number of RUs for your application.
+		- Serverless mode: you get billed for the number of RUs consumed.
+		- Autoscale mode
+# Develop solution Blob storage
+- Azure Blob storage is object storage solution for the cloud. It's optimized for storing massive amounts of unstructured data.
+- Types of storage accounts:
+	- Standard: general-purpose v2 account.
+	- Premium: use SSD
+		- Block blob
+		- Page blobs
+- Access tiers for block blob data:
+	- Hot: it's the highest storage costs, but the lowest access cost. New storage accounts are created in the hot tier by default
+	- Cool: infrequently accessed and stored for at least 30 days. It has the lower storage costs and higher access costs compare to the hot tier.
+	- Archive: only for individual block blobs. It's the highest access costs but lowest storage costs.
+- Storage resource types:
+	- Storage accounts
+	- Containers: is a set of blobs, similar to a directory in a file system.
+	- Blobs:
+		- Block blobs
+		- Append blobs: optimized for append operations. Ideal for logging data.
+		- Page blobs: store virtual hard drive (VHD)
+- Security feature:
+	- Automatically encrypt using Storage Service Encryption (SSE).
+	- Manage operations with Azure Active Directory (Azure AD) and Role-Based Access Control (RBAC).
+	- Data can be secure in transit between an application and Azure by using Client-Side Encryption, HTTPS, or SMB 3.0.
+	- Disk encrypt by using Azure Disk Encryption.
+	- Delegate access to the data objects in Azure Storage can be granted using a shared access signature.
+- Encryption key management:
+	- Customer-managed key.
+	- Customer-provided key.
