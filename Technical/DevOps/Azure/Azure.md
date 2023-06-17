@@ -98,3 +98,4 @@
 - Encryption key management:
 	- Customer-managed key.
 	- Customer-provided key.
+# User authentication and authorization
