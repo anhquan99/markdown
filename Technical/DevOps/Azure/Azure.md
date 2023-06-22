@@ -99,4 +99,38 @@
 	- Customer-managed key.
 	- Customer-provided key.
 # User authentication and authorization
-- 
+- Single tenant: only accessible in your tenant.
+- Multi tenant: accessible in other tenants.
+# Secure Azure solutions
+- Azure key vault is used for storing and accessing secrets.
+- Problem solves:
+	- Secrets management
+	- Key management
+	- Certificate management
+- Tiers:
+	- Standard: encrypts with a software key.
+	- Premium: includes hardware security module (HSM) protected keys.
+- Benefits:
+	- Centralized application secrets
+	- Securely store secrets and keys
+	- Monitor access and use
+	- Simplified administration of application secrets
+- Authentication with Azure key vault:
+	- Manage identities for Azure resources: assign an identity to the resources that has access to key vault. This is recommended as a best practice.
+	- Service principal and certificate: Microsoft is not recommend is approach because the application owner or developer must rotate the certificate.
+	- Service principal and secret: another not recommended approach because it's hard to automatically rotate the bootstrap secret that's used to authenticate to key vault.
+- Encryption of data in transit: Azure key vault enforces TLS protocal to protect data when it's traveling between Azure key vault and clients.
+- Best practices:
+	- Use separate key vaults
+	- Control access to your vault
+	- Backup
+	- Logging
+	- Recovery options: turn on soft-delete and purge protection if you want to guard against force deletion.
+# Azure caching solutions
+- Azure cache for Redis
+	- Key scenarios:
+		- Data cache
+		- Content cache
+		- Session store
+		- Job and message queuing
+		- Distributed transactions
