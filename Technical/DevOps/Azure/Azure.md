@@ -101,6 +101,8 @@
 # User authentication and authorization
 - Single tenant: only accessible in your tenant.
 - Multi tenant: accessible in other tenants.
+- Microsoft identity platform:
+	- 
 # Secure Azure solutions
 - Azure key vault is used for storing and accessing secrets.
 - Problem solves:
@@ -119,7 +121,7 @@
 	- Manage identities for Azure resources: assign an identity to the resources that has access to key vault. This is recommended as a best practice.
 	- Service principal and certificate: Microsoft is not recommend is approach because the application owner or developer must rotate the certificate.
 	- Service principal and secret: another not recommended approach because it's hard to automatically rotate the bootstrap secret that's used to authenticate to key vault.
-- Encryption of data in transit: Azure key vault enforces TLS protocal to protect data when it's traveling between Azure key vault and clients.
+- Encryption of data in transit: Azure key vault enforces TLS protocol to protect data when it's traveling between Azure key vault and clients.
 - Best practices:
 	- Use separate key vaults
 	- Control access to your vault
@@ -135,7 +137,7 @@
 		- Job and message queuing
 		- Distributed transactions
 # Event-based solutions
-- Azure event Grid is a serverless event broker that you can use to intergrate applications using events
+- Azure event Grid is a serverless event broker that you can use to integrate applications using events
 	- 5 concepts in event grid
 		- Event: what happened.
 		- Event sources: where the event took place.
@@ -144,7 +146,7 @@
 		- Event handler: the app or service to handle event.
 	- Event schemas:
 		- Event schema: use `"content-type" : "application/json; charset=utf-8` 
-		- Cloud schema: use `"content-type : "application/cloudevents+json"`
+		- Cloud schema: use `"content-type" : "application/cloudevents+json"`
 	- Event delivery durability:
 		- Note: event grid doesn't guarantee order for event delivery, so subscribers may receive them out of order.
 		- Retry schedule:
@@ -157,5 +159,101 @@
 			- Max events per batch
 			- Preferred batch size in kilobytes
 		- Delayed delivery: if an endpoint experiences delivery failures, event grid begin to delay the delivery and retry.
-		- Dead-letter event: after certain time of retries or TTL, the event is sent to a storage account.
-		- 
+		- Dead-letter event: after a certain time of retries or TTL, the event is sent to a storage account.
+	- Control access to events
+		- Build-in roles
+			- Event grid subscription reader: lets you read event grid event subscriptions.
+			- Event grid subscription contributor: lets you manage event grid event subscription operations.
+			- Event grid contributor: lets you create and manage event grid resources.
+			- Event grid data sender: lets you send events to event grid topics.
+		- Permissions for event subscriptions: for event handler isn't a WebHook (such as an event hub or queue storage)
+			- System topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}`
+			- Custom topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.EventGrid/topics/{topic-name}`
+	- Filter events
+		- Event type filtering
+		- Subject filtering
+		- Advanced filtering
+# Message-based solutions
+- Azure support 2 types of queue mechanism
+	- Service Bus queues: is a fully managed enterprise integration message broker, which decouple applications and services.Data is transferred between different applications and services using messages.
+		- Consideration when using:
+			- Receive messages without having to poll the queue, Service Bus support long-polling receive operation using the TCP-based protocols
+			- Required FIFO
+			- Automatic duplicate detection
+			- Your application process messages as parallel long-running streams (messages are associated with a stream using the session ID property on the message). In this model each node in the consuming node, the node can examine the state of the application stream state using transaction.
+			- Required transactional behavior and atomicity when send or receiving multiple messages from a queue.
+			- Handle message > 64 KB and < 256 KB.
+		- Queues
+			- Load-leveling enables producers and consumers to send and receive messages at different rates. The benefit for application or service is it can handle messages at average load instead of peak load.
+		- Receive modes:
+			- Receive and delete: marks the message is consumed as the consumer request and return it to the consumer. This mode is not for failure tolerance.
+			- Peek lock: if the message is unable to process, the Service Bus service abandon the message. Service Bus unlocks the message and make it available to be received again. There is a timeout associated with the lock.
+				1. Find the next message to be consumed, lock is it to prevent other consumers from receiving it, then return to the application or service.
+				2. After the application or service consumes the message, it will tell the message queue the message has been completed, then the message queue mark the message is consumed.
+			- Topics and subscriptions: provide on-to-many form of communication in a publish and subscribe pattern.
+			- Rules and actions
+	- Storage queues
+		- Consideration when using:
+			- Store more than 80 GBs of message.
+			- Required keeping track of the progress message
+# Application insights
+- Application insights is an extension of Azure Monitor provides Application Performance Monitoring (APM) tools are useful to monitor applications from development, test, and production in following ways:
+	- Proactively understand how an application os performing.
+	- Reactively review application execution data to determine the cause of an incident.
+- Feature:
+	- Live metrics.
+	- Availability.
+	- Github or Azure DevOps integration.
+	- Usage.
+	- Smart detection.
+	- Application map.
+	- Distributed tracing.
+- Monitors:
+	- Request rates, response times and failure rates.
+	- Dependency rates, response times, and failure rates
+	- Exceptions.
+	- Page views and load performance.
+	- AJAX calls.
+	- User and session counts.
+	- Performance counters.
+	- Host diagnostics.
+	- Diagnostics trace logs.
+	- Custom evnts and metrics.
+- Log-based metrics:
+	- Log-based metrics are translated into Kusto queries from stored events.
+	- Standard metrics are stored as pre-aggregated time series.
+- Availability test
+	- URL ping test
+	- Standard test: include SSL certificate validity, proactive lifetime check.
+	- Custom TrackAvailability
+	- Multi-step test (only available through Visual Studio 2019)
+# API management
+- Components:
+	- API gateway:
+		- Accepts API call and routes them to appropriate backends.
+		- Verifies API keys and other credentials presented with requests.
+		- Enforces usage quotas and rate limits.
+		- Transforms requests and responses specified in policy statements.
+		- Caches responses to improve response latency and minimize the load on backend services.
+		- Emits log, metrics and traces for monitoring, reporting and troubleshooting.
+	- Management plane:
+		- Provision and configure API management service settings.
+		- Define or import API schema.
+		- Package APIs into products.
+		- Setup policies like quotas or transformations on the API.
+		- Get insights from analytics.
+		- Manage users.
+	- Developer portal:
+		- Read API documentation.
+		- Call an API via the interactive console.
+		- Create an account and subscribe to get API keys.
+		- Access analytics on their own usage.
+		- Download API definitions.
+		- Manage API keys.
+- Polices:
+	- Control flow: conditionally applies policy statements based on the results of the evaluation of Boolean expressions.
+	- Forward request: forward request to a backend service.
+	- Limit concurrency: prevents executing more than specified number of request at a time.
+	- Log to Event Hub: sends messages in the specified format to an Event Hub defined by a Logger entity.
+	- Mock response: aborts pipeline execution and return a mocked response.
+	- Retry: retries execution of the enclosed policy statements, if and until the condition is met. Execution will repeat at the specified time intervals and up to the specified retry count.
