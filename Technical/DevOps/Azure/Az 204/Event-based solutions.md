@@ -1,0 +1,36 @@
+- Azure event Grid is a serverless event broker that you can use to integrate applications using events
+- 5 concepts in event grid
+	- Event: what happened.
+	- Event sources: where the event took place.
+	- Topic: the endpoint publishers send events.
+	- Event subscriptions: the event router, it can route to multiple handler. Subscriptions are also used by handler to filter incoming request.
+	- Event handler: the app or service to handle event.
+- Event schemas:
+	- Event schema: use `"content-type" : "application/json; charset=utf-8` 
+	- Cloud schema: use `"content-type" : "application/cloudevents+json"`
+- Event delivery durability:
+	- Note: event grid doesn't guarantee order for event delivery, so subscribers may receive them out of order.
+	- Retry schedule:
+		- If error occur when sending event, event grid will consider dropping the event to dead-letter queue or drop the event. The dead-letter queue is not config by default.
+		- Event grid will wait for 30 seconds for the response, after 30 seconds the event grid will retry. Event grid uses an exponential backoff retry policy.
+	- Retry policy:
+		- Maximum number of attempts: must be 1 to 30, default value is 30.
+		- Event time to live (TTL): must be 1 to 1440, default value is 1440 minutes.
+	- Output batching:
+		- Max events per batch
+		- Preferred batch size in kilobytes
+	- Delayed delivery: if an endpoint experiences delivery failures, event grid begin to delay the delivery and retry.
+	- Dead-letter event: after a certain time of retries or TTL, the event is sent to a storage account.
+- Control access to events
+	- Build-in roles
+		- Event grid subscription reader: lets you read event grid event subscriptions.
+		- Event grid subscription contributor: lets you manage event grid event subscription operations.
+		- Event grid contributor: lets you create and manage event grid resources.
+		- Event grid data sender: lets you send events to event grid topics.
+	- Permissions for event subscriptions: for event handler isn't a WebHook (such as an event hub or queue storage)
+		- System topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}`
+		- Custom topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.EventGrid/topics/{topic-name}`
+- Filter events
+	- Event type filtering
+	- Subject filtering
+	- Advanced filtering

@@ -1,0 +1,27 @@
+# Azure container registry (ACR)
+- Use cases
+	- Scalable orchestration system that manage containerized applications across clusters of host, including K8s, DC/OS and Docker Swarm.
+	- Azure services that support building and running applications at scale, including Azure Kubernetes Service (AKS), App Service, Batch, Service Fabric, ...
+- Tier
+	- Basic: provide the same with 2 other tiers ( Azure Active Directory authentication integration, image deletion, and webhooks) for learning and lower usage scenarios.
+	- Standard: provide increased storage and image throughput.
+	- Premium: provide the highest amount of resources, adding feature such as geo-replication for managing a single registry across multiple regions, content trust for image tag signing, and private endpoints to restrict access to the registry.
+- Storage capabilities
+	- Encryption-at-rest: Azure automatically encrypts an image before storing it, and decrypts it on the fly.
+	- Regional storage: ACR stores data in the region where the registry is created, except for some regions. If a regional outage occurs, the registry data may become unavailable and isn't automatically recovered, this issue is solved by geo-replication.
+	- Zone redundancy: premium service tier feature, replicate your registry to a minimum of 3 separate zones in each enabled region.
+	- Scalable strage.
+- ACR Tasks 
+	- Quick task: build and push a single container image to a container registry on-demand without needing a local Docker Engine installation. Think `docker build`, `docker push` in the cloud.
+	- Automatically triggered tasks: build image base on triggers
+		- Trigger on source code update: when the code repository updated, an ACR Task creates webhook trigger a build of the container image defined in the repo.
+		- Trigger on base image update: when the updated base image is pushed to your registry, or a base image is updated in a public repo, ACR Tasks can automatically build any application image based on it.
+		- Trigger on a schedule: useful for running container workloads on a defined schedule, or running maintenance operations or tests on images pushed regularly to your registry.
+- Image platforms
+	- Linux:
+		- amd64
+		- arm
+		- arm64
+		- 486
+	- Windows:
+		- amd64

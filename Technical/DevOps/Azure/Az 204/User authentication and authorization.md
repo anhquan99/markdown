@@ -1,0 +1,106 @@
+# Microsoft's identity platform:
+- Helps you build applications for users or customers to sign in using Microsoft identities or social accounts, and provide authorized access to your own APIs or Microsoft APIs like Microsoft Graph.
+- Components:
+	- OAuth 2.0 and OpenID Connect standard-compliant authentication help application authenticate through:
+		- Work or school accounts, provisioned through Azure AD.
+		- Personal Microsoft account.
+		- Social or local accounts using Azure AD B2C.
+	- Open-source libraries: Microsoft Authentication Libraries (MSAL).
+	- Application management portal: a registration and configuration experience in the Azure portal, along with the other Azure management capabilities.
+	- Application configuration API and PowerShell.
+- Service principals:
+	- Single tenant: only accessible in your tenant.
+	- Multi tenant: accessible in other tenants.
+- Application object: an Azure AD application is defined by its one and only application object.
+- Service principle object:
+	- To access resources secured by Azure AD tenant, the entity that requires access must be represented by a security principal, this is true for both users (user principal) and applications (service principal).
+	- Types of service principal:
+		- Application
+		- Managed identity
+		- Legacy
+- Relationship between application objects and service principals:
+	- An application object has:
+		- A one to one relationship with the software application.
+		- A one to many relationship with its corresponding service principal object(s).
+- Permission types:
+	- Delegated permissions make call to the resources on behave of the signed user.
+	- App-only access permissions.
+- Consent types:
+	- Static user consent ask for permission when the application has not granted permission, but it has some issues:
+		- Request all the permission for the first time, this may lead to a long list of permissions that discourages end users from approving the consent.
+		- Application needs to know all the resources it will access ahead of time, this is hard.
+	- Incremental and dynamic user consent:
+		- Ask to the minimum permission first then ask for permission if required later.
+		- A big challenge for permissions that require admin consent, since the admin consent experience doesn't know about those permissions at consent time. If you require admin privileged permissions or if your app uses dynamic consent, you must register all of the permissions in the Azure portal (not just the subset of permissions that require admin consent).
+	- Admin consent
+- Conditional check:
+	- Enables developers and enterprise customers to protect services in a multitude of ways:
+		- Multifactor authentication.
+		- Allowing only Intune enrolled devices to access specific service.
+		- Restricting user locations and IP ranges.
+# MSAL:
+- Provides secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API, gives you many ways to get tokens and benefits:
+	- No need to directly use the OAuth libraries or code against the protocol in your application.
+	- Acquires tokens on behalf of a user or on behalf of an application (when applicable to the platform).
+	- Maintains a token cache and refreshes tokens for you when they're close to expire, you don't need to handle.
+	- Helps you set up your application from configuration files.
+	- Helps you troubleshoot your app by exposing actionable exceptions, logging, and telemetry.
+- Authentication flows:
+	- Authorization code: obtain tokens in the name of the user.
+	- Client credentials: service applications run without user interaction.
+	- On-behalf-of: application calls a service/web API, which in turns calls Microsoft Graph.
+	- Implicit: used in browser-based applications.
+	- Device code: Enables sign-in to a device by using another device that has a browser.
+	- Integrated Windows: Windows computers silently acquire an access token when they're domain joined.
+	- Interactive: Mobile and desktops applications call Microsoft Graph in the name of a user.
+	- Username/password.
+- Shared access signatures (SAS):
+	- Is a signed URI that contains a special set of query parameters to access storage resources.
+	- Types of shared access signatures:
+		- User delegation SAS: secured with Azure AD credentials and also by the permissions specified for the SAS, this applies to Blob storage only.
+		- Service SAS: secured with the storage account key, delegate access to a resource in Azure Storage service: Blob storage, Queue storage, Table storage or Azure Files.
+		- Account SAS: secured with the storage account key, delegate access to resources in one or more of the storage services. All of the operations available via a service or user delegation SAS also available via an account SAS.
+		- Note: Microsoft recommends using Azure AD credentials when possible as a security best practice rather than using the account key.
+	- URI components: ![[Pasted image 20230630224225.png]]
+	- Best practice to reduce the potential risks of using SAS:
+		- Always use HTTPS.
+		- The most secure SAS is a user delegation SAS. Use it wherever possible because it removes the need to store your storage account key in code. You must use Azure Active Directory to manage credentials. This option might not be possible for your solution.
+		- Set expiration time for SAS, if SAS key is stolen it can be exploited for a short time.
+		-  Apply the rule of minimum-required privileges.
+		- Find another solution beside SAS when not situation can not accept the risks of using SAS.
+	- When to use SAS ?
+		- A common scenario where a SAS is useful is a service where users read and write their own data to your storage account.
+	- Stored access policy:
+		- Provide extra level of control over service-level SAS on the server side.
+		- Storage resources support stored access policies:
+			- Blob containers.
+			- File shares.
+			- Queues.
+			- Tables.
+# Microsoft Graph:
+- Is the gateway to data and intelligence in Microsoft 365.
+- Components facilitate the access and flow of data:
+	- REST APIs or SDKs to access Microsoft Graph endpoint `https://graph.microsoft.com`.
+		- HTTP methods:
+			- GET 
+			- POST
+			- PATH: update a resource with new value.
+			- PUT: replace a resource with a new one.
+			- DELETE
+	- Microsoft Graph connectors work in the incoming direction, delivering data external to the Microsoft cloud into Microsoft Graph services and applications.
+	- Microsoft Graph Data Connect provides a set of tools to streamline secure and scalable delivery of Microsoft Graph data to popular Azure data stores.
+# Apply best practices:
+- Authentication:
+	- Use HTTP Authorization request header.
+	- Graph client constructor when using Microsoft Graph client library.
+- Consent and authorization:
+	- Use the least privilege.
+	- Use the correct permission type based on scenarios.
+	- Consider end user and admin experience.
+	- Consider multi-tenant applications.
+		- Tenant admins can disable the ability for end users to consent to application.
+		- Tenant admins can set custom authorization polices.
+	- Handle responses effectively:
+		- Pagination.
+		- Evolvable enumerations.
+	- Storing data locally.

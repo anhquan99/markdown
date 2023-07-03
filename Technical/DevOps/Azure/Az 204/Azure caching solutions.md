@@ -1,0 +1,7 @@
+- Azure cache for Redis
+	- Key scenarios:
+		- Data cache
+		- Content cache
+		- Session store
+		- Job and message queuing
+		- Distributed transactions

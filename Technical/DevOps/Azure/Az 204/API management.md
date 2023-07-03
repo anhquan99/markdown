@@ -1,0 +1,29 @@
+# Components:
+- API gateway:
+	- Accepts API call and routes them to appropriate backends.
+	- Verifies API keys and other credentials presented with requests.
+	- Enforces usage quotas and rate limits.
+	- Transforms requests and responses specified in policy statements.
+	- Caches responses to improve response latency and minimize the load on backend services.
+	- Emits log, metrics and traces for monitoring, reporting and troubleshooting.
+- Management plane:
+	- Provision and configure API management service settings.
+	- Define or import API schema.
+	- Package APIs into products.
+	- Setup policies like quotas or transformations on the API.
+	- Get insights from analytics.
+	- Manage users.
+- Developer portal:
+	- Read API documentation.
+	- Call an API via the interactive console.
+	- Create an account and subscribe to get API keys.
+	- Access analytics on their own usage.
+	- Download API definitions.
+	- Manage API keys.
+# Polices:
+- Control flow: conditionally applies policy statements based on the results of the evaluation of Boolean expressions.
+- Forward request: forward request to a backend service.
+- Limit concurrency: prevents executing more than specified number of request at a time.
+- Log to Event Hub: sends messages in the specified format to an Event Hub defined by a Logger entity.
+- Mock response: aborts pipeline execution and return a mocked response.
+- Retry: retries execution of the enclosed policy statements, if and until the condition is met. Execution will repeat at the specified time intervals and up to the specified retry count.

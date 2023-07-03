@@ -1,0 +1,26 @@
+- Azure Blob storage is object storage solution for the cloud. It's optimized for storing massive amounts of unstructured data.
+- Types of storage accounts:
+	- Standard: general-purpose v2 account.
+	- Premium: use SSD
+		- Block blob
+		- Page blobs
+- Access tiers for block blob data:
+	- Hot: it's the highest storage costs, but the lowest access cost. New storage accounts are created in the hot tier by default
+	- Cool: infrequently accessed and stored for at least 30 days. It has the lower storage costs and higher access costs compare to the hot tier.
+	- Archive: only for individual block blobs. It's the highest access costs but lowest storage costs.
+- Storage resource types:
+	- Storage accounts
+	- Containers: is a set of blobs, similar to a directory in a file system.
+	- Blobs:
+		- Block blobs
+		- Append blobs: optimized for append operations. Ideal for logging data.
+		- Page blobs: store virtual hard drive (VHD)
+- Security feature:
+	- Automatically encrypt using Storage Service Encryption (SSE).
+	- Manage operations with Azure Active Directory (Azure AD) and Role-Based Access Control (RBAC).
+	- Data can be secure in transit between an application and Azure by using Client-Side Encryption, HTTPS, or SMB 3.0.
+	- Disk encrypt by using Azure Disk Encryption.
+	- Delegate access to the data objects in Azure Storage can be granted using a shared access signature.
+- Encryption key management:
+	- Customer-managed key.
+	- Customer-provided key.
