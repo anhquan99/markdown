@@ -25,3 +25,29 @@
 		- 486
 	- Windows:
 		- amd64
+# Azure container instances (ACI)
+- Solution for isolated container, example simple applications, task automation, and build jobs.
+- Benefits:
+	- Fast startup.
+	- Container access: ACI enables exposing your container groups directly to the internet with an IP address and a fully qualified domain name (FQDN).
+	- Hypervisor-level security.
+	- Customer data: stores the minimum customer data required to ensure your container groups are running as expected.
+	- Custom sizes.
+	- Persistent storage.
+	- Linux and Windows: schedule both Windows and Linux containers using the same API.
+- Container groups are collections of containers that get scheduled on the same host machine. The containers in a container group share a lifecycle, resources, local network, and storage volumes. It's like pod in k8s (only available on Linux).
+	- Deployment:
+		- Resource Manager template.
+		- YAML file.
+	- Common scenarios:
+		- A container serving a web application and a container pulling the latest content from source control.
+		- An application container and a logging container.
+		- An application container anda a monitoring container.
+		- A front-end container and a back-end container.
+# Azure container apps
+- Azure container app enables you to run microservices and containerized applications on a serverless platform that runs on top of Azure k8s service. Common uses:
+	- Deploying API endpoints.
+	- Hosting background processing applications.
+	- Handling event-driven processing.
+	- Running microservices.
+- Azure container Apps manages the details of k8s and container orchestration for you.

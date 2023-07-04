@@ -25,3 +25,25 @@
 	- Validates, stores, and refreshes OAuth tokens issued by the configured identity provider(s)
 	- Manages the authenticated session
 	- Injects identity information into HTTP request headers
+# Configure application settings
+- List of available settings:
+	- Stack settings: the software stack to run the app.
+	- Platform settings: config hosting platform
+		- Bitness: 32 or 64 bit.
+		- WebSocket protocol.
+		- Always on: keep app loaded even when there's no traffic.
+		- Managed pipeline version: IIS pipeline mode.
+		- HTTP version.
+		- ARR affinity: In a multi-instance deployment, ensure the client is routed to the same instance for the life of the session.
+	- Debugging: enable remote debugging.
+	- Incoming client certificates.
+# Diagnostic logging
+- Windows supports logging:
+	- Application.
+	- Web server.
+	- Detailed.
+	- Failed request tracing.
+	- Deployment.
+- Linux supports logging:
+	- Application.
+	- Deployment.
