@@ -1,7 +1,35 @@
-- Azure cache for Redis
-	- Key scenarios:
-		- Data cache
-		- Content cache
-		- Session store
-		- Job and message queuing
-		- Distributed transactions
+# Azure cache for Redis
+- Key scenarios:
+	- Data cache
+	- Content cache
+	- Session store
+	- Job and message queuing
+	- Distributed transactions
+# Storage on CDNs
+- Offers developers a global solution for rapidly delivering high-bandwidth content to users by caching their content at strategically placed physical nodes across the world.
+- Benefits:
+	- Better performance and improved user experience for end users, especially when using applications in which multiple round-trips are required to load content.
+	- Large scaling to better handle instantaneous high loads, such as the start of a product launch event.
+	- Distribution of user requests and serving of content directly from edge servers so that less traffic is sent to the origin server.
+- Requirements: to use Azure CDN you need to create at least one CDN profile, which is a collection of CDN endpoints.
+- Limitations:
+	- The number of CDN profiles that can be created.
+	- The number of endpoints that can be created in a CDN profile.
+	- The number of custom domains that can be mapped to an endpoint.
+- Features:
+	- Dynamic site acceleration.
+	- CDN caching rules.
+	- HTTPS custom domain support.
+	- Azure diagnostics logs.
+	- File compression.
+	- Geo-filtering.
+- Controlling caching behavior:
+	- Caching rules:
+		- Ignore query strings, default mode. A CDN POP (point of present) pass the request and any query directly to the origin server on the first request and caches the asset. New request for the same asset will ignore any query string until TTL expires.
+		- Bypass caching for query strings - no caching.
+		- Cache every unique URL.
+	- Query string caching enables you to configure how Azure CDN responds to a query string.
+- TTL:
+	- Generalized web delivery optimizations: 7 days.
+	- Large file optimizations: 1 day.
+	- Media streaming optimizations: 1 year.
