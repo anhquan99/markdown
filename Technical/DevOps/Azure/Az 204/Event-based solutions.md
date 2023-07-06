@@ -34,8 +34,8 @@
 	- Event type filtering
 	- Subject filtering
 	- Advanced filtering
-# Azure event hubs
-- Azure event hubs represents the "front door" for an event pipeline, often called an event ingestor in solution architectures. An event ingestor is a component or service that sits between event publishers and event consumers to decouple the production of an event stream from the consumption of those events. Event hubs provide a unified streaming platform with time retention buffer, decoupling event producers from event consumers.
+# Azure Event Hubs
+- Azure Event Hubs represents the "front door" for an event pipeline, often called an event ingestor in solution architectures. An event ingestor is a component or service that sits between event publishers and event consumers to decouple the production of an event stream from the consumption of those events. Event Hubs provide a unified streaming platform with time retention buffer, decoupling event producers from event consumers.
 - Features:
 	- Fully managed PaaS.
 	- Real-time and batch processing.
@@ -43,20 +43,20 @@
 	- Scalable.
 	- Rich ecosystem.
 - Key concepts:
-	- An Event hubs client is the primary interface for developers interacting with the Event Hubs client library.
-	- An Event hubs provider is a type of client that serves as a producer of events.
-	- An Event hubs consumer is a type of client that reads information from the Event hubs and allows processing of it.
-	- A partition is an ordered sequence of events that is hold in an Event hubs. Partitions are a means of data organization associated with the parallelism required by event consumers. Azure Event Hubs provides message streaming through a partitioned consumer pattern in which each consumer only reads a specific subset, or partition, of the message stream. As newer events arrive, they're added to the end of this sequence. The number of partitions is specified at the time an Event hubs is created and can't be changed.
-	- A consumer group is a view of an entire Event hubs. Consumer groups enable multiple consuming applications to each have a separate view of the event stream, and to read the stream independently at their own pace and from their own position. There can be at most 5 concurrent readers on a partition per consumer group; however it's recommended that there's only one active consumer for a given partition and consumer group paring. Each active reader receives all the events from its partition; if there are multiple readers on the same partition, then they'll receive duplicate events.
+	- An Event Hubs client is the primary interface for developers interacting with the Event Hubs client library.
+	- An Event Hubs provider is a type of client that serves as a producer of events.
+	- An Event Hubs consumer is a type of client that reads information from the Event Hubs and allows processing of it.
+	- A partition is an ordered sequence of events that is hold in an Event Hubs. Partitions are a means of data organization associated with the parallelism required by event consumers. Azure Event Hubs provides message streaming through a partitioned consumer pattern in which each consumer only reads a specific subset, or partition, of the message stream. As newer events arrive, they're added to the end of this sequence. The number of partitions is specified at the time an Event Hubs is created and can't be changed.
+	- A consumer group is a view of an entire Event Hubs. Consumer groups enable multiple consuming applications to each have a separate view of the event stream, and to read the stream independently at their own pace and from their own position. There can be at most 5 concurrent readers on a partition per consumer group; however it's recommended that there's only one active consumer for a given partition and consumer group paring. Each active reader receives all the events from its partition; if there are multiple readers on the same partition, then they'll receive duplicate events.
 	- Event receivers.
 	- Throughput units or processing units.
 	  ![[Pasted image 20230705233943.png]]
-- Event hubs capture
-	- Enables you to capture the streaming data in Event hubs in an Azure Blob storage or Azure Data Lake Storage account of your choice, process real-time and batch-based on the same stream.
+- Event Hubs capture
+	- Enables you to capture the streaming data in Event Hubs in an Azure Blob storage or Azure Data Lake Storage account of your choice, process real-time and batch-based on the same stream.
 	- The key to scaling in Event Hubs is the partitioned consumer model. Each partition is an independent segment of data and is consumed independently.
 	- Captured data is written in Apache Avro format, which is widely used in the Hadoop ecosystem, Stream Analytics and Azure Data factory.
 - Scale your processing application
-	- The key to scale for Event hubs is the idea of partitioned consumers. In contrast to the competing consumers pattern, the partitioned consumer pattern enables high scale by removing the contention bottleneck and facilitating end to end parallelism.
+	- The key to scale for Event Hubs is the idea of partitioned consumers. In contrast to the competing consumers pattern, the partitioned consumer pattern enables high scale by removing the contention bottleneck and facilitating end to end parallelism.
 - Control access to events
 	- Roles:
 		- Data owner.
@@ -64,5 +64,5 @@
 		- Data receiver.
 	- Authorize access with managed identities.
 	- Authorize access with MS identity platform.
-	- Authorize access to Event hubs publishers/consumers with shared access signatures.
+	- Authorize access to Event Hubs publishers/consumers with shared access signatures.
 - 
