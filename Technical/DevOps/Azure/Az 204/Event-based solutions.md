@@ -51,4 +51,18 @@
 	- Event receivers.
 	- Throughput units or processing units.
 	  ![[Pasted image 20230705233943.png]]
-	  
+- Event hubs capture
+	- Enables you to capture the streaming data in Event hubs in an Azure Blob storage or Azure Data Lake Storage account of your choice, process real-time and batch-based on the same stream.
+	- The key to scaling in Event Hubs is the partitioned consumer model. Each partition is an independent segment of data and is consumed independently.
+	- Captured data is written in Apache Avro format, which is widely used in the Hadoop ecosystem, Stream Analytics and Azure Data factory.
+- Scale your processing application
+	- The key to scale for Event hubs is the idea of partitioned consumers. In contrast to the competing consumers pattern, the partitioned consumer pattern enables high scale by removing the contention bottleneck and facilitating end to end parallelism.
+- Control access to events
+	- Roles:
+		- Data owner.
+		- Data sender.
+		- Data receiver.
+	- Authorize access with managed identities.
+	- Authorize access with MS identity platform.
+	- Authorize access to Event hubs publishers/consumers with shared access signatures.
+- 
