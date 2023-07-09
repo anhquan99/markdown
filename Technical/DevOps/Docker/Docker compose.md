@@ -67,3 +67,4 @@ volumes:
 	data:
 	logs:
 ```
+- Docker-compose should not be used in production because of the scaleability could not create new instances.

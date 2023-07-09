@@ -50,4 +50,4 @@
 		- 1 `ENTRY-POINT` per docker file
 		- Last `CMD` is the main CMD all the previous CMD is pass.
 ![[Pasted image 20220815224750.png]]
-- [Docker best practice](https://docs.docker.com/develop/develop-images/dockerfile_best-practice)
+- [Docker best practice](https://docs.docker.com/develop/develop-images/dockerfile_best-practices)

@@ -8,3 +8,11 @@
 - `ENV $environment_variable $value` set default environment variable value.
 - `ARG $arg=$arg_value` create a default argument.
 - `ENTRYPOINT ["$COMMAND"]` create a default prefix command on each command user input. ^4e4524
+- Optimize docker build:
+	- Build time:
+		- Place the most likely to change in the bottom of the file.
+	- Size:
+		- Choose image with slim or alpine tag.
+- Scaling:
+	-  Vertical scale: increase physical resources.
+	- Horizontal scale : increase instances of application.
