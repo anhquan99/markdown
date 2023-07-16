@@ -64,4 +64,4 @@ Data displayed to the user.  <br/>Most user input. | Data that requires local li
 	- Default interpretation: `StringComparison.CurrentCulture`
 - `Array.Sort` and `Array.BinarySearch`
 	- Default interpretation: `StringComparison.CurrentCulture`
-## Read more at [https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-and-localization]
+## https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-and-localization
