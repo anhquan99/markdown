@@ -1,2 +1,24 @@
 # Provision VMs in Azure
--
+- Considerations when provisioning VMs:
+	- Availability
+		- You should avoid running a production workload on a single VM, it wouldn't be resilient in the face of planned or unplanned maintenance.
+		- Fault domains: logical groups of hardware within a data center that share the same power and network hardware. Limitation is the impact of physical hardware failures and power interruptions.
+		- Update domains: are logical groups of hardware within a data center that might undergo maintenance or be rebooted at the same time. Only 1 update domain is rebooted at any 1 time and given 30 minutes to recover before maintenance is initiated across multiple update domains to increase availability.
+		- Infrastructure redundancy selections:
+			- Availability zones
+			- Virtual machine scale sets: distributing VMs across multiple availability zones and fault domains.
+			- Availability sets:  are logical groups of VMs within a data center, where VMs are distributed across fault domains and update domains. Availability sets themselves don't carry any costs, you only need to pay the VM instances that you create.
+	- Disks
+		- Disk type:
+			- Standard: cost effective for development and testing.
+			- Premium: for production.
+		- Disk storage:
+			- Managed disk: managed by Azure.
+			- Unmanaged disk: managed by yourself.
+	- Limits: CPUs limits
+	- Location
+	- Naming: naming conventions for VMs.
+	- Operating system image
+	- Post-provision configuration
+	- Size
+	- Pricing model
