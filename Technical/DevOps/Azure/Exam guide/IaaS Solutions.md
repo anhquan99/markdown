@@ -22,3 +22,49 @@
 	- Post-provision configuration
 	- Size
 	- Pricing model
+# ARM templates
+```
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [],
+    "outputs": {}
+}
+```
+- Structure:
+	- `$schema` (required): describes the version of the template language to be used. The `deploymentTemplate` represents the resource group being used.
+	- `contentVersion` (required): version of your templates.
+	- `parameters`
+	- `functions`: define a custom functions to help control or naming in ARM.
+	- `variables`: unlike parameters, variables don't need their type defined, as it will be inferred from the value of the variable, like functions, but they resolve values and that value is immutable once resolved. Variables don't have their value defined by input at deployment time.
+	- `resources` (required): define the resources you want to deploy or update as part of the template deployment. The required resource elements are:
+		- `type`
+		- `apiVersion`
+		- `name`
+		- `location`
+		- If the child resource is defined separately from the parent, you will need to add the parent's type with a `/`, followed by the child's type. Example:
+	```
+	{
+	
+	  "type": "**Microsoft.Sql/servers**",
+	  "apiVersion": "2021-02-01-preview",
+	  "name": "**parentsqlsvr**",
+	  "location": "North Europe",
+	  "properties": {}
+	},
+	{
+	  "type": "**Microsoft.Sql/servers/databases**",
+	  "apiVersion": "2021-02-01-preview",
+	  "name": "**parentsqlsvr/childsqldb**",
+	  "location": "North Europe",
+	  "properties": {}
+	}
+	```
+	- `outputs`: return values from deployed resources.
+- Deploying multiple resources
+	- Multi-tiered templates: declare an ARM file with multiple resources in 1 file.
+	- Nested templates: declare resources with multiple files.
+	- Parameter file: used to define value for parameters.
