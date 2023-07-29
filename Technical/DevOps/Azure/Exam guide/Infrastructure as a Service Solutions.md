@@ -68,3 +68,19 @@
 	- Multi-tiered templates: declare an ARM file with multiple resources in 1 file.
 	- Nested templates: declare resources with multiple files.
 	- Parameter file: used to define value for parameters.
+# ARC tasks
+- Quick tasks:
+	- Having your image built, tagged, and pushed from within the cloud.
+	- Run your image in a temporary container within ACR itself.
+- Automatically triggered tasks:
+	- Source code update.
+	- Base image update.
+	- Schedule.
+- Multi-step tasks: perform multiple `build` and `push` tasks in series or parallel.
+# Azure container instances (ACI)
+- ACI has the concept of container group, within which multiple containers share a life cycle, resources, network, ... because they will be running on the same host, the same concept of Pod of K8s.
+# Questions
+- Which element can you add to an ARM template to define **apiVersion** for all resources of a specific type, so that you don’t have to specify **apiVersion** for each resource?
+	- `apiVersions`
+- We know we can run Linux containers on a Windows machine; can we also run Windows containers on a Linux machine?
+	- No. With Windows, Docker run as a VM and use linux kernel. But on Linux, Docker does not use the Windows kernel, so Windows containers can not run on Linux.
