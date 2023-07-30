@@ -34,3 +34,11 @@
 		- Assign dedicated IP with SSL.
 		- Access restrictions.
 		- Private endpoint feature, allows private and secure inbound connections to your app via Azure private link.
+# Logging
+- Windows only:
+	- Detailed error logging.
+	- Failed request tracing.
+	- Web server logging.
+- Windows and Linux:
+	- Application logging.
+	- Deployment logging.
