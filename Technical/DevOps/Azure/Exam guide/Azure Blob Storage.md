@@ -1,0 +1,12 @@
+- Blob stand for Binary large object.
+- Availability and durability
+	- Azure Blob storage provides 99.99999999999% durability.
+	- Availability:
+		- Local-Redundant Storage (LRS).
+		- Zone-Redundant Storage (ZRS): always keeps a copy of your data in different buildings, and each building will have a separate source of power and internet.
+		- Geo-Redundant Storage (GRS): offer redundancy in a second region where another copies of your data can be stored.
+			- Read-Access Geo-Redundant Storage (RAGRS): protect your application from data loss. If a data center having an outage, the access will be redirected to the second geo-redundant copy.
+- Performance levels:
+	- Standard (v2).
+	- Premium: has many limitations and expensive.
+- Pricing models
