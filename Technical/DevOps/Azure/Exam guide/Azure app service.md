@@ -27,7 +27,7 @@
 		4. Serve authenticated content: Client code presents authentication token in X-ZUMO-AUTH header.
 # Networking features
 - Outbound flows:
-	- App Service roles that host out workload are called workers, the roles that handle incoming request are called frontends. With Free and Shared App Service plans use multitenant workers (the same worker VMs will be running multiple customer workloads). Other plans will run on workers that are dedicated to single App Service plan. This lead to when you scale your App Service to the dedicated plan the outbound IP will be changed.
+	- App Service roles that host out workload are called workers, the roles that handle incoming request are called frontends. With Free and Shared App Service plans use multi tenant workers (the same worker VMs will be running multiple customer workloads). Other plans will run on workers that are dedicated to single App Service plan. This lead to when you scale your App Service to the dedicated plan the outbound IP will be changed.
 - Inbound flows:
 	- Each App Service will just have a single inbound IP.
 	- Features:

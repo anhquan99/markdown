@@ -5,7 +5,7 @@
 - [[Culture sensitive]]
 - [[Entity Framework]]
 - [[Authentication and Identity Framework]]
-- [[Authentication and Authorization]]
+- [[Technical/Dot Net/Authentication and Authorization]]
 - [[Lambda expressions]]
 - [[LINQ]]
 - [[System.Collections]]
