@@ -1,0 +1,47 @@
+# Caching patterns
+- The cache is a service that stores data, like in the database, but provides the fastest access and does not persist data longer than requested by time-to-live settings. The data stored in the cache is usually the request of previous calculations or commonly requested data retrieved with a higher speed than from the database.
+## Azure Cache for Redis
+- Azure Cache for Redis implements well-know Redis software, Redis means Remote Dictionary Service provides open source NoSQL storage, allowing the persisting of complex data structures for key-value storage. Redis support clustering technology, which prevents it from failing and losing data in memory.
+- Redis technology is based on the TCP protocol.
+- Access key: 
+	- To connect to the Redis instance in Azure from the SDK or console clients, you need to provide a connection key.
+	- There are 2 keys provided to meet compliance requirements for the periodic rotation of key values.
+	- Beware that keys provide you full access to the key values and allow you to read, write and mange the instance.
+- Firewall and virtual network integration:
+	- The 6379 and 6380 TCP ports are used for open and encrypted SSL connections.
+	- Cache Redis uses fast TCP communication instead of slow HTTPS request.
+	- In default, there are no rules are defined in firewall. You config exact IP or IP range.
+- Diagnostic settings:
+	- Important metrics for Azure Cache for Redis you need to monitor during production workload to avoid errors:
+		- Memory consumption: during high memory pressure, your cache may start saving data on disk and significantly decrease performance.
+		- Connected clients: High client connection numbers can also lead to a high server load when responding to repeated reconnection attempts.
+	- A recommended best practice is setting up Azure alerts for these metrics to be notified.
+- Operations with cached data:
+	- For best performance, the value of the keys should be less than 100 KB and bigger values should be splits into multiple keys.
+- How to cache your data effectively?
+	- Choose data for caching based on the data source and workload of your application, the greater the amount of data you have and the greater the number of people that need to access it, the greater the benefits of caching become. You should not utilize the cache as the official repository for crucial information, caches can be restarted or information lost under high memory pressure.
+	- Properly configure the expiration time. If you make it too short, objects will expire too quickly and you will not get any performance gain, if you make it too long, you have a risk of getting inconsistent data.
+	- Implement availability and scalability. Cache is not a critical service in your application, the application should be able to function if it is unavailable. Clustering can increase the availability of cache, if a node fails the second node of cache will still be working and will provide service. You should be aware that the scaling of your cache instance ca take a significant amount of time (up to an hour) and some of the pricing tier will not allow downgrading to a lower tier, but you can scale available memory.
+## Azure Content Delivery Network
+- It is static content caching technology.
+- A CDN is a distributed network of endpoints that can host and deliver web content to users quickly and efficiently. To reduce latency, CNDs cache content on edge servers in point of presence (POP) locations close to end users. POP works like an old-school proxy in corporate networks but is geographically spread across many locations.
+- Caching models
+	- Loading assets on demand: user request assets, initialize loading the asset and asset will be stored in POP server. The first request will be slower than others request.
+	- Pre-populating assets: avoid the slowness of the first request, but will create a traffic spike on the server because the content has to be loaded by the command, not demand.
+- Azure Front Door is the networking service that allows access to the Microsoft global networking edge. This service provides you with fast and secure access to web application deployed in PaaS. It provides scalable and secure entry points for the fast delivery of content and responsible for caching content, as well as for the fastest delivery of content.
+- Dynamic site acceleration (DSA):
+	- DSA is an algorithm, another technology can be leveraged with Azure CDN responsible for delivering dynamic content with techniques:
+		- Route optimization: the route optimization algorithm can measure the latency from the network and use that information to choose the fastest and most reliable path to deliver dynamic content to the end user. It outperforms Border Gateway Protocol (BGP).
+		- TCP optimization: Azur CDN optimizing TCP package parameters and leveraging persistent connections.
+		- Object prefetch (Akamai product only): retrieve assets embedded in the HTML page while the page is rendered in the browser and before the browser requests those objects.
+		- Adaptive image compression (Akamai product only): automatically applies JPEG compression based on the network speed.
+- Advanced CDN configuration:
+	- Caching rules:
+		- Default TTL is 7 days.
+		- Using query string caching.
+		- Global caching.
+	- Purging cached content:
+		- Best practice is generating a new URL for a new version of your assets.
+		- Purge content from edge nodes will remove content from edge node, but not the browser cache and proxy servers can still have content cached.
+	- Preloading
+	- Geo-filter
