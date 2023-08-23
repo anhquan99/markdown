@@ -8,5 +8,5 @@
 - [[Azure caching solutions]]
 - [[Event-based solutions]]
 - [[Message-based solutions]]
-- [[Application insights]]
+- [[Technical/DevOps/Azure/Az 204/Application insights]]
 - [[API management]]
