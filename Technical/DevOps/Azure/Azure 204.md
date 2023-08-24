@@ -9,4 +9,4 @@
 - [[Event-based solutions]]
 - [[Message-based solutions]]
 - [[Technical/DevOps/Azure/Az 204/Application insights]]
-- [[API management]]
+- [[Technical/DevOps/Azure/Az 204/API management]]
