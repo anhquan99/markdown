@@ -22,3 +22,25 @@
 - Networking:
 	- APIM can be connected to a VNet in Azure and on-permises.
 	- If you are going to use Azure VMs, you must be aware of port requirements that allow APIM to monitor the state of the backend and use Load Balancer.
+- Dev portal:
+	- Available for all pricing tiers except the Consumption tier.
+	- The dev portal allows clients who want to integrate with provided APIs to observe its documentation, test, and manage its subscriptions.
+- Self-hosted gateways:
+	- Hybrid and multi-cloud companies need to run APIM instances in an isolated network. By deploying a self-hosted gateway, they can host a local APIM instance on-premises. 
+	- The deployed gateway works as a proxy server and provides connectivity to registered Azure APIM resources for applications from the local environment. The self-hosted gateway is implemented as a Docker image. Then, it can be configured and managed from the Azure portal as a deployment with one or more nodes. 
+	- Accounts are charged a fixed price per deployment, but their nodes run for free. If a company wants to provide access hosted on on-premises web API servers for an application running in Azure, it should consider using networking solutions such as a VPN or Azure Hybrid Connections.
+- External cache:
+	- These functions protect APIM from hammering by client requests.
+	- The customer who owns the API could implement a throttling limit to prevent clients from calling the API often, or implement caching logic to cache the frontend or backend output.
+- Repository integration
+- Monitoring and troubleshooting:
+	- Use Application Insights.
+	- Limited metrics to monitor and persist the history in 1 month.
+	- Metrics recommended being monitored are Capacity and Requests.
+	- To track the subscription, product, or API usage, the best option is to visit the Analytics page in the Monitoring section.
+	- Troubleshooting can be performed from the Azure portal by executing a request to the APIM operation. The Test functionality allows you to send a request to APIM and trace the flow on the Trace tab. The Backend, Inbound, Outbound, and On error tabs let you observe the output of each of the stages and traces.
+- Advanced policies:
+	- Mocking API responses.
+	- Caching API response
+	- Throttling requests
+	- Controlling flow
