@@ -4,6 +4,7 @@
 - **Event consumer, subscriber, or handler:** the services that receive the event for processing or react to the event.
 - **Event schema:** the key-value pairs that must be provided in the event body by the event publisher.
 ## Azure Event Hubs
+- An Event Hubs namespace is a virtual server that you need to deploy in Azure to provision Event Hubs, a namespace works as a logical container for hubs and provides isolation and management feature for access control.
 - An event-based processing service hosted in Azure. Event Hubs is designed to implement the classic publisher-subscriber pattern, where publishers generate millions of events that need to be processed and temporarily stored unless the consuming services can pull those events.
 - Ingress connections are made by services (publishers) to produce the event streams.
 - Egress connection are used by services (consumers) to receive the events for further processing.
