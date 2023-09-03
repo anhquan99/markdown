@@ -30,6 +30,7 @@
 - The authentication and authorization process in Event Grid is handled by Azure AD and access keys or SAS keys.
 - Event Grid event domain is a logical structure that helps manage a high number of event recipients and also provides security isolation for subscribers by managing authorization and authentication settings.
 - While event are being delivered by Event Grid, errors can occur and postpone or prevent delivery. The Event Grid will retry a number of times to delivery events, you can specify the dead-letter container on Azure Storage to persist the events that are not delivered after the retries.
+## Compare services
 
 | Service | Main Pattern | Pros | Cons | 
 | ------- | ------ | ------ | ------ |
