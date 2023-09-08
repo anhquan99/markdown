@@ -14,15 +14,15 @@ Azure Container Registry is used for storing but not running container images, a
 
 5. 4 - C wrong
 To have a name specified at deployment time without hardcoding the value in the template, you should create a parameters section in the template with a parameter for the name. You should also change the name value of the resource to get the value from that parameter. During deployment, the staName parameter (in this example) can be specified to create a new resource with that name, providing the name is available.
-# Createing Azure App Service web apps
+# Creating Azure App Service web apps
 1. 4 - B && C wrong
 Filesystem storage is intended for short-term logging and disables itself after 12 hours, so it won’t be useful in this scenario, leaving Blob storage as the storage solution of choice. Windows apps offer application logging to both Blob and filesystem storage, whereas Linux only offers application logging to filesystem storage, making a Windows App Service plan a requirement to meet the needs of this scenario.
 
 2. 3 - C
-The error indicates that cross-origin resource sharing (CORS) is blocking requests from https://az204.com. The command should be run from myapi rather than myapp because CORS is configured on the destination to specify where requests are accepted from.
+The error indicates that cross-origin resource sharing (CORS) is blocking requests from `https://az204.com`. The command should be run from `myapi` rather than `myapp` because CORS is configured on the destination to specify where requests are accepted from.
 
 3. 4 - B wrong
-Hybrid Connections can be used to provide Azure App Service web apps with access to resources in any network, including on-premises networks. This requires a relay agent within the network, which will relay the request from the web app to the on-premises TCP endpoint. The endpoint will then communicate with the web app over port 443 in an outbound connection from that TCP endpoin
+Hybrid Connections can be used to provide Azure App Service web apps with access to resources in any network, including on-premises networks. This requires a relay agent within the network, which will relay the request from the web app to the on-premises TCP endpoint. The endpoint will then communicate with the web app over port 443 in an outbound connection from that TCP endpoint
 
 4. 1 - A
 When multiple scale-out rules are triggered, autoscale evaluates the new capacity of each rule triggered and takes the scale action that will result in the greatest capacity of those triggered rules. In this scenario, that would be 7. Autoscale doesn’t combine the instance counts of multiple rules – it only selects the single action that provides the greatest capacity.
@@ -57,7 +57,6 @@ The solution using of a single DB and consistency for a single DB makes no sense
 - Versioning for all files in the blob including pages of the website.
 - The option to register custom domains.
 - Minimal cost in comparison with VMs and App Services.
-- Websites hosted on a storage account are discussed in Chapter 6, Developing Solutions That Use Azure Blob Storage, in the Static websites section.
 
 2. 3 - D wrong
 The premium storage account does not have access tiers. The Archive tier will be expensive because of writing transactions to append the log files. The Hot tier will be a more economically sound choice.
