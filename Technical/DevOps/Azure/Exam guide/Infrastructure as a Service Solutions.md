@@ -4,6 +4,7 @@
 		- You should avoid running a production workload on a single VM, it wouldn't be resilient in the face of planned or unplanned maintenance.
 		- Fault domains: logical groups of hardware within a data center that share the same power and network hardware. Limitation is the impact of physical hardware failures and power interruptions.
 		- Update domains: are logical groups of hardware within a data center that might undergo maintenance or be rebooted at the same time. Only 1 update domain is rebooted at any 1 time and given 30 minutes to recover before maintenance is initiated across multiple update domains to increase availability.
+		- Proximity placement groups: ensure that they are physically located close to each other for when you have low latency requirements.
 		- Infrastructure redundancy selections:
 			- Availability zones
 			- Virtual machine scale sets: distributing VMs across multiple availability zones and fault domains.
@@ -37,7 +38,7 @@
 - Structure:
 	- `$schema` (required): describes the version of the template language to be used. The `deploymentTemplate` represents the resource group being used.
 	- `contentVersion` (required): version of your templates.
-	- `parameters`
+	- `parameters`: resolve before starting the deployment operations. Limited to 256 parameters in a template.
 	- `functions`: define a custom functions to help control or naming in ARM.
 	- `variables`: unlike parameters, variables don't need their type defined, as it will be inferred from the value of the variable, like functions, but they resolve values and that value is immutable once resolved. Variables don't have their value defined by input at deployment time.
 	- `resources` (required): define the resources you want to deploy or update as part of the template deployment. The required resource elements are:

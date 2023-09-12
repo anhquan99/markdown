@@ -14,7 +14,7 @@
 - Without provider SDK:
 	- Server flow.
 	- Login steps:
-		1. Sign user in: Redirect client to `/.auth.login/<provider>`.
+		1. Sign user in: Redirect client to `/.auth/login/<provider>`.
 		2. Post authentication: Provider redirects client to `/.auth/<provider>/callback`.
 		3. Establish authenticated session: App Service adds authenticated cookie to response.
 		4. Serve authenticated content: Client includes authenticated cookie in subsequent requests.
