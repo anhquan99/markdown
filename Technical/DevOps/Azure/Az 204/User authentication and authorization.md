@@ -35,8 +35,8 @@
 	- Admin consent
 - Conditional check:
 	- Enables developers and enterprise customers to protect services in a multitude of ways:
-		- Multifactor authentication.
-		- Allowing only Intune enrolled devices to access specific service.
+		- Multi factor authentication.
+		- Allowing only enrolled devices to access specific service.
 		- Restricting user locations and IP ranges.
 # MSAL:
 - Provides secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API, gives you many ways to get tokens and benefits:
@@ -77,6 +77,9 @@
 			- File shares.
 			- Queues.
 			- Tables.
+- Client application:
+	- Confidential client application: apps run on servers, such as web apps, web API apps. They are considered difficult to access, and for that reason can keep an application secret. Confidential clients can hold configuration-time secrets, these values are difficult for end users to extract.
+	- Public client application: apps run on devices, desktop computers or in a web browser. They are not trusted to safety keep application secrets, so they only access web APIs on behalf of the user. They also only support public client flows. Public clients can't hold configuration-time secrets, so they cannot have client secrets.
 # Microsoft Graph:
 - Is the gateway to data and intelligence in Microsoft 365.
 - Components facilitate the access and flow of data:

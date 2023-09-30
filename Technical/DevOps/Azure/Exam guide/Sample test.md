@@ -111,7 +111,7 @@ Application Insights dependency tracking can collect SQL queries and their perfo
 The code snippet represents working code from the controller that handles the client list loading from the DB (Entity Framework). The code tracks custom metrics with the elapsed time of the dependency collected by the Stopwatch class.
 
 3. 1 - D wrong
-The code snippet represents working code from the controller that handles the client list loading from the DB (Entity Framework). The code tracks custom metrics with the elapsed time of the dependency collected by the Stopwatch class.
+To collect logs from Azure VM, you need to connect to VM to the Log Analytics workspace by installing the agent. From the data collection settings, you need to configure the IIS log collection.
 
 4. 5 - D wrong
 Debugging snapshots will help you to investigate the crash in a less invasive way. You can observe the snapshot from the Application Insights page or download and open it in Visual Studio. Live debugging and setting breakpoints can help with investigating the issue but freezes the application when the breakpoint is reached which interrupts request processing.
@@ -122,7 +122,6 @@ Debugging snapshots will help you to investigate the crash in a less invasive wa
 2. 4 - D
 
 3. 1, 2, 3, 5 - D wrong
-Debugging snapshots will help you to investigate the crash in a less invasive way. You can observe the snapshot from the Application Insights page or download and open it in Visual Studio. Live debugging and setting breakpoints can help with investigating the issue but freezes the application when the breakpoint is reached which interrupts request processing.
 # Event based
 1. 6 - C wrong
 To minimize cost and admin efforts, you should leverage out-of-box functionality such as event capturing. Event capturing is only available with the Standard and Premium tiers. The additional service Azure Data Lake should be deployed for storing captured events. The charges for Azure Data Lake are less than the consumption charges from Event Grid per each of the events and storing their content in Cosmos DB. Data Lake is a consumption-based service deployed as an extension for an Azure storage account. Capturing event content is impossible with Azure Monitor, Application Insights, or an Azure Log Analytics workspace.
@@ -141,5 +140,5 @@ The correct name of the metric for Storage Queue is approximate message count be
 2. 2 - D wrong
 Azure Service Bus Queue guaranteed the sequence of messages. The SDK automatically implements a retry pattern when the application experiences transient connection errors.
 
-3. 2. - C wrong
+3. 2 - C wrong
 ServiceBusProcessor provides callback architecture that allows the processing of received messages in real time by registering on ProcessMessagesAsync events.

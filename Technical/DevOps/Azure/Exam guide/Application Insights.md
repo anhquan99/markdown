@@ -21,5 +21,6 @@
 	- Exception troubleshooting.
 	- Availability test.
 	- Application map.
+- Azure SQL Insights can only track query performance for all application requests. Profiler only helps for functions running from code.
 ## Monitor workbooks
 - Azure workbooks can use sophisticated KQL queries, where you can combine different sources of data, support Markdown, and interact with chars, such as with filtering or ordering. Azure workbooks are based on reporting visuals for simplifying observation and printing reports. Notice that updates are not loaded automatically into a workbook. You need to refresh the workbook to observe the latest metric values. Meanwhile, some charts from the workbook do not exist on Azure dashboards and provide rich configuration settings to adjust the context and time interval. Moreover, Azure workbooks have a template you can use instead of starting from scratch.
