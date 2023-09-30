@@ -42,7 +42,7 @@ The Cosmos DB change feed cannot be queried because it is a FIFO queue. Each mod
 2. 3 - B wrong
 There are physical and logical partitions that exist for Cosmos DB. Its structure is controlled internally by Cosmos DB. The number of physical partitions depends on the throughput and storage capacity of the documents stored in the partition.
 
-3. 4 - E
+3. 5 - E
 The client-side encryption (Always Encrypt) meets the requirements because it protects data at rest and in transit and is decrypted only on the client side by using customer-managed keys from Azure Key Vault. When you apply encryption settings, you need to provide the path of a card number field. Full documents cannot be encrypted.
 
 4. 4 - B wrong
