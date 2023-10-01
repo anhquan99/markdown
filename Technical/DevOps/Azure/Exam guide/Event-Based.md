@@ -14,6 +14,10 @@
 - Event Hubs receives events from publishers and persists event based on the retention period before consumers pull them. All events received by Event Hubs can be copied to the buffer and then flashed to the blob. If an event is received or deleted because of the expiration time, its copy still exists in the blob and is available for analysis.
 - Consumer groups are used to perform an independent read of events by the application. Consumer groups represent the view of event's state in the partition for events consumers. Multiple readers of the same consumer group and the same partition can complicate event consumption and cause duplicates. The number of consumers should not exceed 5 consumers per group, per partition.
 - The authentication and authorization of publishers and consumers are implemented based on SAS tokens generated with listen, send and manage rights.
+- Azure Data Lake is used for storing captured events.
+	- The charges for Azure Data Lake are less than the consumption charges from Event Grid per each of the event s and storing their content in Cosmos DB.
+	- It is a consumption based service deployed as extension for an Azure storage account.
+	- Capturing event content is impossible with Azure Monitor, Application Insights, or Azure Log Analytics workspace.
 ## Consuming event streams with Azure IoT Hub
 - Azure IoT Hub platform is very similar to Event Hubs.
 - Designed for consuming streaming telemetry from IoT devices and also managing the devices that produce the streams.
@@ -22,8 +26,7 @@
 - The significant difference is that Event Grid can duplicate an event for all registered subscribers. This means that events can be delivered to each of the services that subscribed to those events. This logic, when one data change is duplicated for all registered subscribers, is known as a topic.
 - Event sources and handlers:
 	- Event source or publisher: For Event Grid, this is one of the following services: Azure Blob storage, Azure Resource Manager, Event Hubs or IoT Hub, Azure Service Bus, Azure Media Services, Azure Maps, or another Azure PaaS service. Moreover, Event Grid can work as a message broker. Your application can submit custom events to the public endpoint, and they can be delivered to subscribers.
-	- Event handlers or subscribers:
-	- The relationship between the event source and the event handler is implemented by an Event Grid topic. The endpoint that's used by the event source to send events is named the event topic. On the other hand, the event subscription is a record that contains event handler registration, the kind of topic it subscribes to, and the type of event it wants to receive.
+	- Event handlers or subscribers:The relationship between the event source and the event handler is implemented by an Event Grid topic. The endpoint that's used by the event source to send events is named the event topic. On the other hand, the event subscription is a record that contains event handler registration, the kind of topic it subscribes to, and the type of event it wants to receive.
 - Schema formats:
 	- Default: presented in JSON format.
 	- CloudEvent: maintained for multi-cloud collaboration.

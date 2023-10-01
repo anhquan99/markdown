@@ -8,5 +8,5 @@
 - [[Azure caching solutions]]
 - [[Technical/DevOps/Azure/Exam guide/Application Insights|Application Insights]]
 - [[Technical/DevOps/Azure/Exam guide/API Management|API Management]]
-- [[Event-based solutions]]
-- [[Message-based solutions]]
+- [[Event-Based]]
+- [[Message Based]]

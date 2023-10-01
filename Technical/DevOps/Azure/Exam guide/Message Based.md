@@ -51,9 +51,9 @@
 - Provision: create a namespace, then provide exact topic or queue.
 ## Relays
 - A relay is an Azure PaaS resource that helps you to expose the services running in private networks to the service running in public clouds, or in another private network.
-- The main advantage of Azure Relay is that it does not require any VON connections to be setup or any firewall to be configured. All traffic can be encrypted vis HTTPS or TCP sockets and transferred that way.
+- The main advantage of Azure Relay is that it does not require any VPN connections to be setup or any firewall to be configured. All traffic can be encrypted vis HTTPS or TCP sockets and transferred that way.
 - Azure Relay supports 2 main technologies:
-	- Hybrid Connection.
+	- Hybrid Connection: uses the open standard web sockets enabling multi-platform scenarios.
 	- The WCF Relay service.
 ## Compare services
 | Service | Main pattern | Pros | Cons |

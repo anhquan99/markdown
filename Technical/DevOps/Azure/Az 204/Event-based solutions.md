@@ -65,4 +65,3 @@
 	- Authorize access with managed identities.
 	- Authorize access with MS identity platform.
 	- Authorize access to Event Hubs publishers/consumers with shared access signatures.
-- 
