@@ -66,3 +66,10 @@
 	- Session (default): ensures all operations inside a user session are monotonic and consistent across primary and replica.
 	- Consistent prefix: ensure updates appear in replicas in the right order and without gap.
 	- Eventual: primary db does not wait for replica but, it will eventually perform operations the same as primary.
+## Notes
+- You need to use the `ReadItemAsync` method to read an item from the Azure Cosmos service, 
+	- You need to provide:
+		- `partitionKey`
+		- `itemId`
+	- The `consistencyLevel`,`eTag`, `sessionKey` parameter is part of the option `requestOptions` parameter of the `ReadItemAsync`.
+	

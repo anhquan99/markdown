@@ -85,3 +85,6 @@
 	- `apiVersions`
 - We know we can run Linux containers on a Windows machine; can we also run Windows containers on a Linux machine?
 	- No. With Windows, Docker run as a VM and use linux kernel. But on Linux, Docker does not use the Windows kernel, so Windows containers can not run on Linux.
+## Notes
+- Command for deleting image from ACR `az acr repository delete --name {registry-name} --image {image-name:tag}`
+- 

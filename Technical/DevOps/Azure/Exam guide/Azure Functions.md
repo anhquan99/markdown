@@ -35,3 +35,10 @@
 - They are a logical container for storage resources used in durable functions orchestration such as the queues, tables, and containers we can see in our storage account.
 # Controlling timing
 - It used for timeout when functions run too long.
+## Notes
+- When using scripting languages, the function.json file for each function contains its triggers and bindings, and it needs to be explicitly created. The file host.json has runtime-specific configurations, not definitions of triggers and bindings. Decorating methods and Decorating parameters are used to define triggers and bindings when using compiled languages, not scripted ones.
+- The fan-out/fan-in pattern enables multiple function to be executed in parallel, waiting for all functions to finish. Often, some aggregation work is done on the results that are returned from the functions.
+- The function chaining pattern is a sequence of functions that execute in a specific order.
+- Using the `dynamicThrottlesEnable` property allows developers to let the system respond dynamically to an increased utilization. This property is defined in the host.json file. The binding section, part of the function.json file, is used to define the bindings and triggers for function.
+-  The `maxConcurrentRequests` property is used to determine the maximum number of function instances to run in parallel, it's defined in the function.json file.
+- The `maxOutstandingRequest` property, defined in the host.json file, defines the maximum number of requests, queued or in progress, held at any given time.
