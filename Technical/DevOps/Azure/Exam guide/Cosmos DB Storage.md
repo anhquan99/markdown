@@ -72,4 +72,33 @@
 		- `partitionKey`
 		- `itemId`
 	- The `consistencyLevel`,`eTag`, `sessionKey` parameter is part of the option `requestOptions` parameter of the `ReadItemAsync`.
-	
+- You plan to implement a storage mechanism for managing state across multiple change feed consumers. You need to configure the change feed processor in the .NET SDK for Azure Cosmos DB for NoSQL API.
+	- Use **lease container**.
+	- The **lease container** component serves as a storage mechanism to manage state across multiple change feed consumers.
+	- The **delegate component** is the code within the client application that implements business logic for each batch of changes.
+	- The **host component** is a client application instance that listens for changes from the change feed.
+	- The **monitored container** component is monitored for any insert or update operations. It does not serve as a storage mechanism to manage state across multiple change feed consumers.
+- You need to transition blobs in the Hot access tier to an online tier if blobs have not been modified in over 90 days
+  ```` json
+{
+	"rules": [
+		{
+		"name": "agingRule",
+		"enabled": true,
+		"type": "Lifecycle",
+		"definition": {
+			"filters": {
+				"blobTypes": [ "blockBlob" ],
+				"prefixMatch": [ "sample-container/blob1" ]
+			},
+			"actions": {
+				"baseBlob": {
+				// code here
+				}
+			}
+		}
+	]
+}
+````
+	- Use `"tierToCool": { "daysAfterModificationGreaterThan": 90 }`
+	- The `tierToArchive` move the blobs to the archive tier which is not an online access tier it is an offline tier.

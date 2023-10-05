@@ -59,3 +59,9 @@
 	- **User delegation SAS**: secured with AAD credentials and provides access to containers and blobs. Because a user delegation SAS is secured using specific AAD credentials, this is recommended type of SAS to use when possible.
 	- **Service SAS**: secured with the storage account key and provides access to a resource (Blob storage, table storage, Azure file).
 	- **Account SAS**: secured with the storage account key and provides access at the storage account level. This provides access to service level operations such as getting and setting service properties, which can't do with a service SAS. It can provide access to more than 1 service within a storage account at the same time.
+## Notes
+- The Application service principal is used to configure application permission for application in tenant to access the Microsoft Graph API.
+- The legacy service principal is a legacy app, which is an app created before app registrations were introduced, or an app created through legacy experiences.
+- Managed identities eliminate the need to manage credentials in code.
+- System-assigned managed identity is restricted to one per resource and is tied to the lifecycle of the resource.
+- A user-assigned managed identity can be created and assigned to one or more instances of an Azure service. The legacy, system-assigned managed identity, and user-assigned managed identity cannot be used to assign permission for an application in the tenant to access the Microsoft Graph API.
