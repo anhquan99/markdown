@@ -18,3 +18,10 @@
 - You plan to generate a shared access signature (SAS) token for read access to blob in a storage account. You need to secure the token from being compromised.
 	- Use Azure AD credentials assigned the Contributor role
 	- Azure AD credentials are required to generate the SAS token. The account used must have the `Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey` permission, which is present in the following built-in roles: Contributor, Storage Account Contributor, Storage Blob Data Contributor, Storage Blob Data Owner, Storage Blob Data Reader, and Storage Blob Delegator. The account key can be used to generate the SAS token, but it can be more easily compromised.
+- The colon character `:` is used to separate names of individual keys when creating a namespace hierarchy in Azure App Configuration.
+- The asterisk `*`, comma `,`, backslash `\` are reserved characters in Azure App Configuration.
+- Rotate key in Azure Key Vault:
+	- The `Rotate` operation will generate a new version of the key based on the policy.
+	- The `Rotation Policy` operation updates the rotation policy of a key value key.
+	- The `Purge Deleted Key` operation is applicable for soft-delete enabled vaults or HSMs.
+	- The `Set Attributes` operation changes specified attributes of a stored key.
