@@ -25,3 +25,13 @@
 	- The `Rotation Policy` operation updates the rotation policy of a key value key.
 	- The `Purge Deleted Key` operation is applicable for soft-delete enabled vaults or HSMs.
 	- The `Set Attributes` operation changes specified attributes of a stored key.
+- Shared access signatures(SAS):
+	- User delegation: secured with Azure AD credentials and also by the permissions specified for the SAS. Apply for Blob storage only
+	- Service: secured with the storage account key, delegates access to a resource in only one of the Azure Storage service: Blob storage, Queue storage, Table storage, or Azure Files.
+	- Account: secured with the storage account key. An account SAS delegates access to resources in one or more of the storage services. All the operations available via a service of user delegation SAS are also available via an account SAS.
+		- You can delegate access to the following:
+			- Service-level operations.
+			- Read, write, and delete operations that aren't permitted with a service SAS.
+		- A shared access signature can take one of the following 2 forms:
+			- Ad hoc SAS: when you create an ad hoc SAS, the start time, expiry time, and permissions are specified in the SAS URI. Any type of SAS 
+			- Service SAS with stored access policy: a stored access policy is defined on a resource container, which can be a blob container, table, queue, or file share. The stored access policy can be used to manage constraints for one or more service shared access signatures. When you associate a service SAS with a stored access policy, the SAS inherits the constraints - that start time, expiry time, and permissions - defined for the stored access policy.

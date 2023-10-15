@@ -44,3 +44,14 @@
 	- Caching API response
 	- Throttling requests
 	- Controlling flow
+## Notes
+- You manage an instance of Azure API Management. You define policies to multiple scopes. You need to enforce a policy evaluation order.
+	- Use `<base />`, it provides the ability to enforce policy evaluation order.
+	- The `<when />` element is part of the choose policy and is evaluated in order of its appearance within the policy.
+	- The `follow-redirects` attribute is part of the forward request policy, so it does not have any impact on the policy evaluation order.
+	- The `condition` attribute is part of the retry policy, so it does not have any impact on the policy evaluation order.
+- You plan to use Azure API Management for Hybrid and multicloud API management. You need to create a self-hosted gateway for production.
+	- Use `2.0.1`. In production, the version must be pinned. The only way tho achieve that is by using a tag that follows the convention `{major}.{minor}.{path}`.
+	- The `V3` tag will result in always running a major version with every new feature and patch.
+	- The latest tag is used for evaluating the self-hosted gateway.
+	- The `V3-preview` tag should be used to run the latest preview container image.

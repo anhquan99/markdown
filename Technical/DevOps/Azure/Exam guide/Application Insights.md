@@ -25,3 +25,14 @@
 - Application Map helps you spot performance bottlenecks or failure hotspots across all components of your distributed application. Each node on the map represents an application component or its dependencies and has health KPI and alert status. You can select any component to het more detailed diagnostics, such as Application Insights events.
 ## Monitor workbooks
 - Azure workbooks can use sophisticated KQL queries, where you can combine different sources of data, support Markdown, and interact with chars, such as with filtering or ordering. Azure workbooks are based on reporting visuals for simplifying observation and printing reports. Notice that updates are not loaded automatically into a workbook. You need to refresh the workbook to observe the latest metric values. Meanwhile, some charts from the workbook do not exist on Azure dashboards and provide rich configuration settings to adjust the context and time interval. Moreover, Azure workbooks have a template you can use instead of starting from scratch.
+## Notes
+- An instrumentation key uniquely designates an Application Insights resource and is the only piece of information required to provide authorized access for the purpose of uploading telemetry from monitored applications to Application Insights.
+- Access keys are used by a variety of Azure resources, such as Azure Storage, but not Application Insights.
+- Azure AD system-assigned managed identities and Azure AD user-assigned managed identities are not supported as an authorization mechanism by Application Insights.
+- The `TrackEvent` API call tracks user action and other events. It is used to track user behavior or to monitor performance.
+- The `TrackMetric` API call is used to track performance measurements such as queue length.
+- The `TrackTrace` API call is used to capture Resource Diagnostic log messages and can also be used to capture third-party logs.
+- You plan to use Application Insights to monitor the performance of an on-premises web application. You need to identify a configuration that satisfies the following requirements:
+	- Minimize the volume of data ingested into Application Insights
+	- Maximize the accuracy of the collected metrics.
+	- **Solution**: Using standard metrics both minimizes the volume of data ingested into Application Insights and maximizes the accuracy of the collected metrics. Applying sampling and filtering would negatively affect the accuracy of the collected metrics. Using log-based metric does not minimize the volume of data ingested into Application Insights.

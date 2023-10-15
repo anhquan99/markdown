@@ -41,3 +41,16 @@
 | IoT Hub | Telemetry steaming | Two-way communication. Device registration and settings management. Free Standard tier. | No flexible pricing models. Sophisticated integration devices with Azure IoT Edge.
 | Notification Hubs | Event broadcasting | Multi-platform support. Free tier. | Lack of troubleshooting tools. A limited number of supported platforms. |
 | Event Grid | Pub/Sub and reactive programming | Consumption-based pricing. Integration with other services. Topic support. | The event delivery sequence can be changed. |
+
+## Notes
+- You have an instance of Azure Event Grid. You need to ensure an application can receive events filtered by values in the advanced filtering options.
+	- Use `advanced`. An advanced filter is used to filter events by values in the data fields and specify the comparison operator.
+	- An event type filter is used to send only certain event types to the endpoint.
+	- A subject filter is used to specify a starting or ending value for the subject.
+	- Topics is not a type filter, the event grid topic provides an endpoint where the source send events.
+- You create an Azure Service Bus topic with a default message time to live of 10 times. You need to send messages to this topic with a time to live of 15 mins. The solution must not affect other applications that are using the topic.
+	- Use create a new topic with a default time to live of 15 mins. Send the message to this topic.
+	- To avoid affecting existing applications, the time to live of the existing topic must not be change. A new topic needs to be created.
+	- Changing the topic's default time to live will affect other applications.
+	- A message-level time to live cannot be higher than the topic's time to live.
+	- To avoid affecting existing applications, the time to live of the existing topic or queue must not be changed.
