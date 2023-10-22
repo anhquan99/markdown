@@ -137,6 +137,20 @@
 	- An app with a managed identity makes this endpoint available by defining 2 environment variables:
 		- `IDNEITY_ENDPOINT`: the URL to the local token service.
 		- `IDENTITY_HEADER`: a header used to help mitigate server-side request forgery (SSRF) attacks.
+# Scaling and performance
+- Scale up: scale the hardware of the App Service plan and changing the pricing tier it belongs to.
+- Scale out: increase the number of VM instances that run your app.
+- The scale settings take only seconds to apply and affect all apps in your App Service plan, and don't require changing your code or redeploy your application.
+- **Automatic scaling**:
+	- It is a new scale out option that automatically handles scaling decisions for your web apps and App Service Plans. It's different from the pre-existing **Azure autoscale**, which lets you define scaling rules based on schedules and resources. With automatic scaling, you can adjust scaling settings to improve your app's performance and avoid cold start issues. 
+	- The platform prewarms instances to act as a buffer when scaling out, ensuring smooth performance transitions.
+	- Automatic scaling doesn't use schedule-based scaling, it always has ready instances (minimum 1) and prewamed instances (default 1).
+	- You enable automatic scaling for an App Service Plan and configure a range of instances for each of the web apps. As you web app starts receiving HTTP traffic, App Service monitors the load and adds instances.
+	- Scenarios:
+		- You don't want to set up autoscale rules based on resource metrics.
+		- You want your web apps within the same App Service Plan to scale differently and independently of each other.
+		- Your web app connected to a databases or legacy system, which may not scale as fast as the web app. Scaling automatically allows you to set the maximum number of instances your App Service Plan can scale to. This setting helps the web app to not overwhelm the backend.
+- Flapping: refers to a loop condition that causes a series of opposing scale events. Flapping happens when one scale event triggers an opposite scale event. Example, scaling in reduces the number of instances causing the CPU to rise in the remaining instances. This in turn triggers scale out event, which causes CPU usage to drop, repeating the process.
 # Notes
 - To load a TLS/SSL certificate in a Windows custom container application, use `WEBSITE_LOAD_CERTIFICATES` configuration.
 - You create an Azure web app locally. The web app consists of a ZIP package. You need to deploy the web app by using the Azure CLI. The deployment must reduce the likelihood of locked files.
