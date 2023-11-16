@@ -35,6 +35,74 @@
 - They are a logical container for storage resources used in durable functions orchestration such as the queues, tables, and containers we can see in our storage account.
 # Controlling timing
 - It used for timeout when functions run too long.
+# Durable Functions
+- Is an extension of Azure Functions that lets you write stateful functions in a serverless environment. The extension manages state, checkpoints, and restarts for you,
+- Models for .NET class library:
+	- Isolated worker model: your function code runs in a separate .NET worker process.
+	- In-process model: your function code runs in the same process as the function's host process.
+# Best practice
+## General
+- Choose the correct hosting plan:
+	- How your function app is scaled based on demand and how instances allocation is managed.
+	- The resources available to each function app instance.
+	- Support for advanced functionality, such as Azure Virtual Network connectivity.
+- Configure storage correctly: used for trigger and logging, if misconfigured file system or storage account can affect the performance and availability of your functions.
+- Storage connection settings:
+	- Function apps that scale dynamically can run either from an Azure Files endpoint in your storage account or from the file servers associated with your scaled-out instances. This behavior is controlled by the following application settings:
+		- `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`
+		- `WEBSITE_CONTENTSHARE`
+- Storage account configuration
+	- To reduce latency, create the storage account in the same region as the function app.
+	- To improve performance in production, use a separate storage account for each function app. This is especially true with Durable Functions and Event Hub triggered function.
+	- For Event Hub triggered functions, don't use an account with Data Lake Storage enabled.
+- Handling large data sets: when running on Linux, you can add extra storage by mounting a file share. Mounting a share is a convenient way for a function to process a large existing data set.
+- Organize your functions:
+	- Functions are often combined into a single function app, but they can also run in separate functions apps. In Premium and Dedicated plans, multiple function apps can also share the same resources by running in the same plan. How you group your functions and functions apps can impact the performance, scaling, configuration, deployment and security of your overall solution.
+- Optimize deployments:
+	- Having your functions run from the deployment package. This run from package approach provides the following benefits:
+		- Reduces the risk of file copy locking issues.
+		- Can be deployed directly to a production app, which does trigger a restart.
+		- Know that all files in the package are available to your app.
+		- Improves the performance of AEM template deployments.
+		- My reduce cold-start times, particularly for JS functions with large npm package trees
+	- Consider using CD in CI/CD to connect deployments to your source control solution. CD also let you run from the deployment package.
+	- For Premium plan hosting, consider adding a warmup trigger to reduce latency when new instance are added.
+	- To minimize deployment downtime and to be able to roll back deployments, consider using deployments slots.
+- Write robust functions:
+	- Avoid long-running functions: large, long-running function cause unexpected timeout issue.
+	- Make sure background tasks complete: when your function starts any tasks, callbacks, threads, processes, they must complete before your function code returns. Because functions doesn't track these background threads, site shutdown ca occur regardless of background thread status, which can cause unintended behavior in your functions.
+	- Plan cross-function communication: Durable Functions and Azure Logic Apps are built to manage state transitions and communication between multiple functions.
+	- Write functions to be stateless: functions should be stateless and idempotent if possible.
+	- Write defensive functions: design your functions with the ability to continue from a previous fail point during the next execution.
+- Design for security.
+- Consider concurrency.
+- Worker process count.
+- Trigger configuration.
+- Plan for connections.
+- Language-specific considerations.
+- Maximize availability.
+- Monitor effectively:
+	- Make sure that AzureWebJobsDashboard application setting is removed. This setting was supported in older version of Functions. If it exists, removing `AzureWebJobsDashboard` improves performance of your functions.
+	- Review the Application Insight logs. If data you expect to find is missing, consider adjusting the sampling settings to better capture your monitoring scenario. You can use the `excludedTypes` setting to exclude certain types from sampling, such as `Request` or `Exception`.
+- Build in redundancy.
+##  Performance and reliability
+- Function organization:
+	- Organize functions for performance and scaling: each function that you create has a memory footprint. While this footprint is usually small, having too many functions within a function app can lead to slower startup of your app on new instances. It also means that the overall memory usage of your function app might be higher.
+	- Organize functions for configuration and deployment: `host.json` is used to configure advanced behavior of function triggers and the Azure Functions runtime, changes to the `host.json` file apply to all functions within the app. If you have some functions that need custom configurations, consider moving them into their own function app.
+	- Organize functions by privilege
+- Scalability:
+	- Share and manage connections: reuse connections to external resources whenever possible.
+		- Connection limit: the number of available connections in a Consumption plan is limited, partly because a function app in this plan runs in a sandbox environment. One of the restrictions that the sandbox impose on your code is a limit on the number of outbound connections (currently 600 active and, 12000 total).
+		- Static clients:
+			- Do not create a new client with every function invocation.
+			- Do create a single, static client that every function invocation can use.
+			- Consider creating a single, static client in a shared helper class if different functions use the same service.
+	- Avoid sharing storage accounts
+	- Don't mix test and production code in the same function app
+	- Use async code but avoid blocking calls
+	- Use multiple worker processes
+	- Receive message in batch whenever possible
+	- Configure host behaviors to better handle concurrency
 ## Notes
 - When using scripting languages, the function.json file for each function contains its triggers and bindings, and it needs to be explicitly created. The file host.json has runtime-specific configurations, not definitions of triggers and bindings. Decorating methods and Decorating parameters are used to define triggers and bindings when using compiled languages, not scripted ones.
 - The fan-out/fan-in pattern enables multiple function to be executed in parallel, waiting for all functions to finish. Often, some aggregation work is done on the results that are returned from the functions.
