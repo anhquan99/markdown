@@ -5,14 +5,33 @@
 	- Trigger on HTTP/webhook and Azure Event Grid events.
 	- More options for languages, development environments, pricing and integrations with Azure services.
 	- Pay-per-use pricing.
+- Always ready instances: in Premium plan, you can have your app always ready on a specified number of instances.
+- Prewarmed instances: prewarmed instance count setting provides warmed instances as a buffer during HTTP scale and activation events. Prewarmed instances continue to buffer until the maximum scale-out limit is reached.
 # Scaling Azure Functions
 - The number of instances that Azure Functions scale to is determined by the number of events that trigger a function.
-- Function apps are the unit of deployment for Azure Functions and also are the unit of scale for Azure Functions. If a function app scales, all functions within the app scale at the same time.
+- Function apps are the unit of deployment for Azure Functions, and also are the unit of scale for Azure Functions. If a function app scales, all functions within the app scale at the same time.
 - The scale controller monitors the rate of events to decide whether to scale in or out with different logic based on the type of trigger being used.
 - Maximum 200 instances on Consumption plan and 100 on Premium plan.
 # Triggers and bindings
 - Triggers cause functions to run, and bindings are how you connect your function to other services.
 - Input binding is the data your function receives, and output binding is the data your function sends.
+- Extension bundles are a way to add a pre-defined set of compatible binding extensions to your function app. Extension bundle are versioned. Each version contains a specific set of binding extensions that are verified to work together.
+- Trigger metadata: in addition to the data payload provided by a trigger (such as the content of the queue message that triggered a function), many triggers provide additional metadata values. These values can be used as input parameters in C# or properties on the `context.bindings` object in JS.
+- JSON payloads: the trigger payload's properties in configuration for other bindings in the same function and function code. This requires that the trigger payload is JSON and is smaller than a threshold specific to each trigger.
+	- Dot notation: If some of the properties in your JSON payload are objects with properties, you can refer to those directly by using dot(`.`) notation. This notation doesn't work for Azure Cosmos DB or Table storage bindings.
+- Error handling and function retries:
+	- Enable Application Insights.
+	- Use structured error handling: capturing and logging errors is critical to monitoring the health of your application. The top-most level of any function code should include a try/catch block.
+	- Plan your try strategy.
+	- Design for idempotency: consider what happens when the error occurs and how to avoid duplicate processing.
+	- Retries:
+		- Available tries:
+			- Built-in retry behaviors of individual trigger extensions.
+			- Retry policies provided by the Functions runtime.
+		- Retry strategies:
+			- Fixed delay.
+			- Exponential backoff: add exponential time to retry for every failed retry.
+		- Max retry counts.
 # Develop Azure Functions
 - The configuration file is created automatically for compiled languages based on annotations in the code, for scripting languages the configuration file needs to be created.
 - Time functions use NCrontab syntax.
@@ -40,6 +59,11 @@
 - Models for .NET class library:
 	- Isolated worker model: your function code runs in a separate .NET worker process.
 	- In-process model: your function code runs in the same process as the function's host process.
+- Types and features:
+	- Orchestrator functions: describe how actions are executed and the order in which actions are executed.
+	- Activity functions: the basic unit of work in a durable function orchestration. Activity functions are functions and task that are orchestrated in the process. In example, you create an orchestrator function to process an order. The task involve checking the inventory, charging the customer, and creating a shipment. Each task would be a separate activity function. These activity functions may be executed serially, in parallel, or some combination of both.
+	- Entity functions: define operations for reading and updating small pieces of state. We often refer to these stateful entities as durable entities.
+	- Client functions: are non-orchestrator functions used to trigger orchestrator. Ex HTTP - triggered function ...
 # Best practice
 ## General
 - Choose the correct hosting plan:
@@ -103,6 +127,55 @@
 	- Use multiple worker processes
 	- Receive message in batch whenever possible
 	- Configure host behaviors to better handle concurrency
+# Reliable event processing
+## Stop and restart execution
+- If your app experiences significant failures, you may want to stop triggering on events until the system reaches a healthy state. Having the opportunity to pause processing is often achieved with a **circuit breaker pattern**.
+- Requirements to implement a circuit breaker in an event process:
+	- Shared state across all instances to track and monitor health of the circuit.
+	- Master process that can manage the circuit sate (open or closed).
+# Security
+## Operations
+- Defender for Cloud.
+- Log and monitor.
+- Require HTTPS.
+- Function access keys.
+- Authorization scopes (function-level):
+	- Function: these keys apply only to the specific functions under which they're defined. When used as an API key, these only allow access to that function.
+	- Host: keys with a host scope can be used to access all functions within the function app. When used as an API key, these allow access to any function within the function app.
+- Master key (admin-level): each function app has an admin-level host key named `_master`, providing host-level access to all functions in the app, the master key also provides administrative access to the runtime REST APIs. This key can't be revoked. When you set an access level of `admin`, request must use the master key, any other key result in access failure.
+- System key: designed for extension-specific function endpoints that called by internal components.
+- Authentication/authorization:
+	- Enable App Service Authentication/Authorization.
+	- Use APIM to authenticate requests.
+- Permissions:
+	- User management permissions.
+	- Organize function by privilege.
+	- Managed identities.
+	- Restrict CORS access
+- Managing secrets:
+	- Application settings.
+	- Key Vault references.
+	- Identity-based connections
+- Set usage quotas.
+- Data validation: the triggers and bindings used by your functions don't provide any additional data validation. Your code must validate any data received from a trigger or input binding.
+- Handle errors.
+- Disable remote debugging.
+- Restrict CORS access.
+- Store data encrypted.
+- Secure related resources.
+- Secure deployment:
+	- Deployment credentials:
+		- User-level credentials.
+		- App-level credentials.
+	- Disable FTP.
+	- Secure the scm endpoint
+- Continuous security validation.
+- Network security:
+	- Set access restrictions.
+- Secure the storage account.
+- Private site access.
+- Deploy your function app in isolation.
+- Use a gateway service.
 ## Notes
 - When using scripting languages, the function.json file for each function contains its triggers and bindings, and it needs to be explicitly created. The file host.json has runtime-specific configurations, not definitions of triggers and bindings. Decorating methods and Decorating parameters are used to define triggers and bindings when using compiled languages, not scripted ones.
 - The fan-out/fan-in pattern enables multiple function to be executed in parallel, waiting for all functions to finish. Often, some aggregation work is done on the results that are returned from the functions.
