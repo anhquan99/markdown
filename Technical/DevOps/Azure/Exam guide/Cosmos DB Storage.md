@@ -66,6 +66,73 @@
 	- Session (default): ensures all operations inside a user session are monotonic and consistent across primary and replica.
 	- Consistent prefix: ensure updates appear in replicas in the right order and without gap.
 	- Eventual: primary db does not wait for replica but, it will eventually perform operations the same as primary.
+# Change feed
+- Is a persistent record of changes to a container in the order they occur. Change feed support Azure Cosmos DB works by listening to an Azure Cosmos DB container for any changes.
+- The persisted changes can be processed asynchronously and incrementally, and the output can be distributed across one or more consumers for parallel processing.
+## Change feed design patterns
+![[Pasted image 20231120155257.png]]
+- Event-computing and Notifications: simplify scenarios that need to trigger a notification or send a call to an API based on a certain event.
+- Real-time stream processing:
+	- Azure Cosmos DB change feed can be used for real-time stream processing for IoT or real-time analytics processing on operational data. 
+	- For example, you might receive and store event data from devices, sensors, infrastructure, and applications, and then process these events in real time by using Spark.![[Pasted image 20231120162504.png]]
+	- Advantages:
+		- Data persistence.
+		- Query ability.
+		- High availability.
+- Data movement: you can read the change feed for real-time data movement.
+- Event sourcing.
+## Change feed modes
+- Latest version change feed mode: is a persistent record of changes made to items from creates and updates. Deletes aren't captured as changes, and when an item is deleted, it's no longer available in the feed. If an item is created and then updated, the version you get is the updated version.
+	- Use cases:
+		- Migrations of an entire container to a secondary container.
+		- Ability to reprocess changes from the beginning of the container.
+		- Real-time processing of changes to items in a container resulting from create update operations.
+		- Workloads that don't need to capture deletes or intermediate changes between reads.
+- All versions and delete change feed mode: lets you read all the changes to the items from create, update, and delete operations. For this mode, you must have continuous backups configured, and you can read all changes made in the backup period.
+	- Use cases:
+		-  Don't need to implement soft-delete.
+		- Triggering logic based on incremental changes if multiple change operations for a given item are expected between change feed polls.
+		- Trigger alerts on delete operations, like in auditing scenarios.
+		- The ability to process item creates, updates, and deletes differently based on operation type.
+## Reading change feed
+- Push model
+	- The change feed processor pushes work to a client that has business logic for processing this work.
+	- Implement read changes:
+		- Using Azure Functions:
+			- Use monitored container and lease container.
+		- Change feed processor library.
+- Pull model:
+	- Allows you to consume the change feed at your own pace. Changes must be requested by then client, and there's no automatic polling for changes.
+	- Reading options:
+		- Container.
+		- Specific FeedRange.
+		- Specific partition key value.
+	- Considerations:
+		- Read changes from a specific partition key.
+		- Control the pace at which your client receives changes for processing.
+		- Perform a one-time read of the existing data in the change feed.
+## Change feed processor
+- Components:
+	- Monitored container: has the data from which the change feed is generated. Any inserts and updates to be monitored container are reflected in the change feed of the container.
+	- Lease container: acts as storage and coordinates processing the change feed across multiple workers. The lease container can be stored in the same account as the monitored container or in a separate account.
+	- Compute instance: a compute instance hosts the change feed processor to listen for changes.
+	- Delegate: is the code defines what the developer want to do with each batch of changes that the change feed processor reads.
+## Current limitations
+- Intermediate updates: 
+	- Latest version mode: if there are multiple updates to the same item in a short period of time, it's possible to miss processing intermediate updates because you read the latest available item version.
+- Deletes:
+	- Latest version mode: this mode doesn't capture delete. The solution to work around this problem is to implement soft delete.
+	- 
+- Retention:
+	- All versions and deletes mode: this mode allows you to read only changes that occurred within the continuous backup retention.
+# Conflict types and resolution when using multiple write regions
+- Update conflict types:
+	- Insert conflict.
+	- Replace conflict.
+	- Delete conflict.
+- Conflict resolution polices:
+	- Last write wins (LWW)
+	- Custom
 ## Notes
 - You need to use the `ReadItemAsync` method to read an item from the Azure Cosmos service, 
 	- You need to provide:

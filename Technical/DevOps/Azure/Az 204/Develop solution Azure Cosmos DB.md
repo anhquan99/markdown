@@ -13,6 +13,14 @@
 	  ![[Pasted image 20230610214109.png]]
 	- Represents the system resources such as CPU, IOPS, and memory that are required to perform the database operations supported by Azure Cosmos DB.
 	- Azure Cosmos DB account modes:
-		- Provisioned throughput mode: you provision the number of RUs for your application.
+		- Provisioned throughput mode: you provision the number of RUs for your application on a per-second basis in increments of 100 RUs per second.
 		- Serverless mode: you get billed for the number of RUs consumed.
-		- Autoscale mode
+		- Autoscale mode: automatically and instantly scale the throughput (RU/s) of database or container based on its usage.
+	- Considerations:
+		- Item size.
+		- Item indexing.
+		- Item property count: number of property index. The bigger the number, the more it costs.
+		- Indexed properties.
+		- Data consistency: more strong consistency the more it costs.
+		- Type of reads.
+		- Query patterns
