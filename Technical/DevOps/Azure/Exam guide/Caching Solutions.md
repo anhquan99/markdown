@@ -22,6 +22,29 @@
 	- Choose data for caching based on the data source and workload of your application, the greater the amount of data you have and the greater the number of people that need to access it, the greater the benefits of caching become. You should not utilize the cache as the official repository for crucial information, caches can be restarted or information lost under high memory pressure.
 	- Properly configure the expiration time. If you make it too short, objects will expire too quickly and you will not get any performance gain, if you make it too long, you have a risk of getting inconsistent data.
 	- Implement availability and scalability. Cache is not a critical service in your application, the application should be able to function if it is unavailable. Clustering can increase the availability of cache, if a node fails the second node of cache will still be working and will provide service. You should be aware that the scaling of your cache instance ca take a significant amount of time (up to an hour) and some of the pricing tier will not allow downgrading to a lower tier, but you can scale available memory.
+- Key scenarios:
+	- Data cache: cache data from database. When the system makes changes to the data, it will update to the cache.
+	- Content cache.
+	- Session store: commonly used with shopping carts and other user history data. Storing too much data in a cookie can have negative effect on performance as the cookie size grows and is passed and validated with every request.
+	- Job and message queuing.
+	- Distributed transactions.
+- Clustering support:
+	- Used for Premium, Enterprise, and Enterprise Flash tiers.
+	- You can automatically split your dataset among multiple nodes.
+	- To implement clustering, you specify the number of shards to a maximum of 10. The cost incurred is the cost of the original node, multiplied by the number of shards.
+### Cache Configure
+- Memory policies:
+	- Eviction policies:
+		- `volatile-lru` default eviction policy, removes the least recently used key out of all the keys with an expiration set.
+		- `allkeys-lru` removes the least recently used key.
+		- `volatile-random` random removes a key that has an expiration set.
+		- `allkeys-random` random removes key.
+		- `volatile-ttl` removes the key with the shortest time to live based on the expiration set for it.
+		- `noeviction` no eviction policy. Returns an error message if you attempt to insert data.
+		- `volatile-lfu` removes the least frequently used keys out of all keys with an expiry field set.
+		- `allkeys-lfu` removes the least frequently used keys out of all keys.
+	- `maxmemory-reserved` set the amount of memory in MB per instance in a cluster that reserved for non-cache operations, such as replication during failover. The higher workload, the higher the setting number should be. Minimum value is 10%.
+	- `maxfragmentationmemory-reserved` reserve memory to accommodate for memory fragmentation.
 ## Azure Content Delivery Network
 - It is static content caching technology.
 - A CDN is a distributed network of endpoints that can host and deliver web content to users quickly and efficiently. To reduce latency, CNDs cache content on edge servers in point of presence (POP) locations close to end users. POP works like an old-school proxy in corporate networks but is geographically spread across many locations.
@@ -45,3 +68,12 @@
 		- Purge content from edge nodes will remove content from edge node, but not the browser cache and proxy servers can still have content cached.
 	- Preloading
 	- Geo-filter
+### Optimization for specific scenarios
+- General web delivery.
+- General media streaming.
+- Video-on-demand media streaming
+- Large file download.
+- Dynamic site acceleration.
+### Object chunking
+- When a large file is requested, the CDN retrieves smaller pieces of the file from the origin. After the CDN POP server receives a full or byte-ranges file request, the CDN edge server request the file from the origin in chunks of 8 MB.
+- After the chunk arrives at the CDN edge, it's cached and immediately served to the user. The CDN then prefetches the next chunk in parallel. This prefetch ensures that the content stays one chunk ahead of the user, which reduces latency. This process continues until the entire file gets downloaded (if requested), all byte ranges are available (if requested), or the client terminates the connection.
