@@ -44,6 +44,61 @@
 	- Caching API response
 	- Throttling requests
 	- Controlling flow
+## Versions
+- Usages:
+	- Publish multiple versions of your API at the same time.
+	- Use path, query string, or header to differentiate between versions.
+	- Use any string value you wish to identify you version, which could be a number, a date, or a name.
+	- Show you API versions grouped together on the developer portal.
+	- Take an existing (non-versioned) API, and create a new version of it without breaking existing clients.
+- Versioning schemes:
+	- Path-based versioning:
+		- Format of an API request URL when using path-based versioning is: `https://{yourDomain}/{apiName}/{versionIdentifier}/{operationId}`
+		- Example:
+			- Version 1: `https://apis/contoso.com/products/v1`
+			- Version 2: `https://apis/contoso.com/products/v2`
+	- Header-based versioning:
+		- The version identifier needs to be included in an HTTP request header for any API requests.
+	- Query string-based versioning
+		- The version identifier is in the query string of the request: `https://{yourDomain}/{apiName}/{operationId}?{queryStringParameterName}={versionIdentifier}`
+		- Note: query parameters are not allowed in the `servers` property of an `OpenAPI` specification.
+- A version can have multiple revisions. You can use revisions without using version, just like a non-versioned API. Versions are used to separate API versions with breaking changes, while revisions can be used for minor and non-breaking changes to an API.
+## Backend API
+- Benefits:
+	- Abstracts information about the backend service, promoting reusability across APIs and improved governance.
+	- Easily used by configuring a transformation policy on an existing API.
+	- Takes advantage of API management functionality to maintain secrets in Azure Key Vault if named values are configured for header or query parameter authentication.
+## Policy management
+- The policy XML configuration is divided into `inbound`, `backend`, `outbound` and `on-error` sections. This series of specified policy statements is executed in order for a request and a response.
+  `````` xml
+<policies>
+  <inbound>
+    <!-- statements to be applied to the request go here -->
+  </inbound>
+  <backend>
+    <!-- statements to be applied before the request is forwarded to 
+         the backend service go here -->
+  </backend>
+  <outbound>
+    <!-- statements to be applied to the response go here -->
+  </outbound>
+  <on-error>
+    <!-- statements to be applied if there is an error condition go here -->
+  </on-error>
+</policies>
+	``````
+- APIM allows you to define policies at the following scopes, from most board to most narrow:
+	- Global (all APIs).
+	- Workspace (all APIs in selected workspace).
+	- Product (all APIs in selected product).
+	- API (all operations in an API).
+	- Operation (single operation in an API).
+	  ![[Pasted image 20231123230813.png]]
+## Things to know
+- For fine-grained control for different API consumers, you can configure policy definition at more than 1 scope.
+- Not all policies are supported at each scope and policy section.
+- When configuring policy definitions at more than 1 scope, you control policy inheritance and the policy evaluation order in each policy section by placement of the `base` element.
+- Policies applied to API requests are also affected by the request context, including the presence or absence of a subscription key used in the request, the API or product scope of the subscription key, and whether the API or product requires a subscription.
 ## Notes
 - You manage an instance of Azure API Management. You define policies to multiple scopes. You need to enforce a policy evaluation order.
 	- Use `<base />`, it provides the ability to enforce policy evaluation order.
