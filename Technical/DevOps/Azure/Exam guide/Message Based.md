@@ -48,6 +48,7 @@
 	- Transaction support: this allows the consumer to complete several operations within the scope of the transaction. Messages can be retrieved, processed and submitted in another queue or topic within the same transaction. If the transaction is canceled, all changes in the transaction scope will be reverted. If the transaction is completed, the changes will be visible to other customers.
 	- Auto-forward: automatically forward the messages from the original queue to another queue or topic and removes the message from the originally received queue. The auto-forwarding can be configured only for the same namespace server.
 	-  Idle auto-delete: automatically deletes the queue after a period of inactivity. The minimum interval can be set to 5 mins.
+	- Filters and actions.
 - Provision: create a namespace, then provide exact topic or queue.
 ## Relays
 - A relay is an Azure PaaS resource that helps you to expose the services running in private networks to the service running in public clouds, or in another private network.

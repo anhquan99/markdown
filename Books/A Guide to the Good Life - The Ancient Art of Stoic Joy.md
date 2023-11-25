@@ -8,6 +8,7 @@
 - <mark style="background: #ADCCFFA6;">Negative visualization: what's the worst that can happen?</mark>
 	- What the worst can happens to you? If you can anwser this question and imagine you in this situtaltion you will get to feel it  and if this ever happens you will feel less suffer from it. And any bad happens will not compare to the worst, you also feel less suffer than the worst.
 - <mark style="background: #ADCCFFA6;">The dichotomy of control: on becoming invincible</mark>
+
 | The dichotomy of control                         | Example                    | Advice                                                                                                                        |
 | ------------------------------------------------ | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Things over which we have complete control       | Goals we set for ourselves | We should concern ourselves with these things                                                                                 |

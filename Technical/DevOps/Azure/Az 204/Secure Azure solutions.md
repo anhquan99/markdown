@@ -24,25 +24,46 @@
 	- Recovery options: turn on soft-delete and purge protection if you want to guard against force deletion.
 # Managed identities
 - Provides an automatically managed identity in Azure AD for application to use when connecting to resources that support Azure AD authentication.
-- Types:
-	- System assigned managed identity: tied to the Azure resource instance.
-	- User assigned managed identity: stand alone Azure resource.
-- How a system-assigned managed identity works with an Azure virtual machine:
-	1. Azure Resource Manager receives a request to enable the system-assigned managed identity on a virtual machine.
-	2. Azure Resource Manager creates a service principal in Azure Active Directory for the identity of the virtual machine. The service principal is created in the Azure Active Directory tenant that's trusted by the subscription.
-	3. Azure Resource Manager configures the identity on the virtual machine by updating the Azure Instance Metadata Service identity endpoint with the service principal client ID and certificate.
-	4. After the virtual machine has an identity and use the service principal information to grant the virtual machine access to Azure resources. To call Azure Resource Manager, use role-based access control in Azure Active Directory to assign the appropriate role to the virtual machine service principal. To call Key Vault, grant your code access to the specific secret or key in Key Vault.
-	5. Your code that's running on the virtual machine can request a token from the Azure Instance Metadata service endpoint, accessible only from within the virtual machine: `http://169.254.169.254/metadata/identity/oauth2/token`
-	6. A call is made to Azure Active Directory to request an access token (as specified in step 5) by using the client ID and certificate configured in step 3. Azure Active Directory returns a JSON Web Token (JWT) access token.
-	7. Your code sends the access token on a call to a service that supports Azure Active Directory authentication.
-- How a user-assigned managed identity works with an Azure virtual machine
-	1. Azure Resource Manager receives a request to create a user-assigned managed identity.
-	2. Azure Resource Manager creates a service principal in Azure Active Directory for the user-assigned managed identity. The service principal is created in the Azure Active Directory tenant that's trusted by the subscription.
-	3. Azure Resource Manager receives a request to configure the user-assigned managed identity on a virtual machine and updates the Azure Instance Metadata Service identity endpoint with the user-assigned managed identity service principal client ID and certificate.
-	4. After the user-assigned managed identity is created, use the service principal information to grant the identity access to Azure resources. To call Azure Resource Manager, use role-based access control in Azure Active Directory to assign the appropriate role to the service principal of the user-assigned identity. To call Key Vault, grant your code access to the specific secret or key in Key Vault.
-	5. Your code that's running on the virtual machine can request a token from the Azure Instance Metadata Service identity endpoint, accessible only from within the virtual machine: `http://169.254.169.254/metadata/identity/oauth2/token`
-	6. A call is made to Azure Active Directory to request an access token (as specified in step 5) by using the client ID and certificate configured in step 3. Azure Active Directory returns a JSON Web Token (JWT) access token.
-	7. Your code sends the access token on a call to a service that supports Azure Active Directory authentication
+## Types:
+- System assigned managed identity: 
+	- Tied to the Azure resource instance.
+	- Created and deleted along with the resource, role assignments can't be created in advance.
+	- If you require that each resource has its own identity, or have resources that require a unique set of permissions and want the identity to be deleted when the resource is deleted.
+	![[Pasted image 20231125171550.png]]
+- User assigned managed identity: 
+	- Stand alone Azure resource.
+	- More efficient in a broader range of scenarios than system assigned.
+	- Can be used in multiple resources, and their life cycles are decoupled from the resource's life cycles.
+	- Administration overhead will be reduced if infrastructure requires multiple resources to access the same resources.
+	![[Pasted image 20231125171612.png]]
+
+| Scenario | Recommendation |
+| -- | --|
+| Rapid creation of resources | User assigned |
+| Replicated resources/applications | User assigned |
+| Compliance | User assigned |
+| Access required before a resource is deployed | User assigned |
+| Audit logging | System assigned |
+| Permissions Lifecycle management | System assigned |
+## Multiple managed identities
+- Resources that support managed identities can have both system and user assigned identity
+  ![[Pasted image 20231125171920.png]]
+## How a system-assigned managed identity works with an Azure virtual machine:
+1. Azure Resource Manager receives a request to enable the system-assigned managed identity on a virtual machine.
+2. Azure Resource Manager creates a service principal in Azure Active Directory for the identity of the virtual machine. The service principal is created in the Azure Active Directory tenant that's trusted by the subscription.
+3. Azure Resource Manager configures the identity on the virtual machine by updating the Azure Instance Metadata Service identity endpoint with the service principal client ID and certificate.
+4. After the virtual machine has an identity and use the service principal information to grant the virtual machine access to Azure resources. To call Azure Resource Manager, use role-based access control in Azure Active Directory to assign the appropriate role to the virtual machine service principal. To call Key Vault, grant your code access to the specific secret or key in Key Vault.
+5. Your code that's running on the virtual machine can request a token from the Azure Instance Metadata service endpoint, accessible only from within the virtual machine: `http://169.254.169.254/metadata/identity/oauth2/token`
+6. A call is made to Azure Active Directory to request an access token (as specified in step 5) by using the client ID and certificate configured in step 3. Azure Active Directory returns a JSON Web Token (JWT) access token.
+7. Your code sends the access token on a call to a service that supports Azure Active Directory authentication.
+## How a user-assigned managed identity works with an Azure virtual machine
+1. Azure Resource Manager receives a request to create a user-assigned managed identity.
+2. Azure Resource Manager creates a service principal in Azure Active Directory for the user-assigned managed identity. The service principal is created in the Azure Active Directory tenant that's trusted by the subscription.
+3. Azure Resource Manager receives a request to configure the user-assigned managed identity on a virtual machine and updates the Azure Instance Metadata Service identity endpoint with the user-assigned managed identity service principal client ID and certificate.
+4. After the user-assigned managed identity is created, use the service principal information to grant the identity access to Azure resources. To call Azure Resource Manager, use role-based access control in Azure Active Directory to assign the appropriate role to the service principal of the user-assigned identity. To call Key Vault, grant your code access to the specific secret or key in Key Vault.
+5. Your code that's running on the virtual machine can request a token from the Azure Instance Metadata Service identity endpoint, accessible only from within the virtual machine: `http://169.254.169.254/metadata/identity/oauth2/token`
+6. A call is made to Azure Active Directory to request an access token (as specified in step 5) by using the client ID and certificate configured in step 3. Azure Active Directory returns a JSON Web Token (JWT) access token.
+7. Your code sends the access token on a call to a service that supports Azure Active Directory authentication
 # Azure app configuration
 - Benefits:
 	- A fully managed service that can be set up in minutes

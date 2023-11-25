@@ -1,4 +1,5 @@
 # Microsoft's identity platform:
+- **Tenant:** is organization that owns and manages a specific instance of MS cloud services.
 - Helps you build applications for users or customers to sign in using Microsoft identities or social accounts, and provide authorized access to your own APIs or Microsoft APIs like Microsoft Graph.
 - Components:
 	- OAuth 2.0 and OpenID Connect standard-compliant authentication help application authenticate through:
@@ -38,6 +39,24 @@
 		- Multi factor authentication.
 		- Allowing only enrolled devices to access specific service.
 		- Restricting user locations and IP ranges.
+## Azure operations:
+- Control plan:
+	- All requests for control plan operations are sent to Azure Resource Manager (ARM) URL.
+	- ARM handles all control plan requests. It automatically applies the Azure features you have implemented to manage your resources:
+		- Azure RBAC.
+		- Azure Policy.
+		- Management Locks.
+		- Activity logs.
+	- After authenticating the request, ARM sends it to the resource provider, which completes the operation.
+	- The control plan includes 2 scenarios for handling request:
+		- Green field: refers to new resources.
+		- Brow field: refers to existing resources.
+- Data plan:
+	- Request for data plan operations are sent to endpoint that's specific to your instance.
+## Object ID:
+- A user security principal identifies an individual who has a profile in Microsoft Entra ID.
+- A group security principal identifies a set of users created in MS Entra ID. Any roles or permissions assigned to the group are granted to all of the users within the group.
+- A service principal is a type of security principal that identifies an application or service, which is to say, a piece of code rather than a user or group. **A service principal's object ID acts like its username; the service principal's client secret acts like its password.**
 # MSAL:
 - Provides secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API, gives you many ways to get tokens and benefits:
 	- No need to directly use the OAuth libraries or code against the protocol in your application.

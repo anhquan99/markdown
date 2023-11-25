@@ -78,7 +78,7 @@ Does not integrate any of new data into working files | Downloads new data and i
 # Cherry pick
 - `git cherry-pick` enables you to pick up commits from a branch within the repo and apply it to another brand. This command is useful to undo changes when any commit is accidentally made to the wrong branch. Then, you can switch to the correct branch and use this command to cherry-pick the commit.
 # Note 
-``````
+``````bash
 - commits ở master luôn luôn theo sau hoặc update to date với dev
 
 - feature branch nên được tạo từ latest dev (lâu lâu cũng có thể tạo từ master), mỗi lần merge xong zô dev thì nên delete, khi nào có nhu cầu thì tạo lại từ dev tránh trường hợp để đó bị out of date rồi bữa sau lại vô đó code tiếp thì ko ổn.
