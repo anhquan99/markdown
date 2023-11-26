@@ -12,6 +12,10 @@
 - Service principals:
 	- Single tenant: only accessible in your tenant.
 	- Multi tenant: accessible in other tenants.
+	- Types:
+		- Application
+		- Managed identity
+		- Kegacy
 - Application object: an Azure AD application is defined by its one and only application object.
 - Service principle object:
 	- To access resources secured by Azure AD tenant, the entity that requires access must be represented by a security principal, this is true for both users (user principal) and applications (service principal).

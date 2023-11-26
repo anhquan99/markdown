@@ -56,9 +56,35 @@
 	- `sv`: sign resource.
 	- `sig`: cryptographic signature.
 - Types:
-	- **User delegation SAS**: secured with AAD credentials and provides access to containers and blobs. Because a user delegation SAS is secured using specific AAD credentials, this is recommended type of SAS to use when possible.
+	- **User delegation SAS**: secured with AAD credentials and provides access to containers and blobs. Because a user delegation SAS is secured using specific AAD credentials, this is the recommended type of SAS to use when possible.
 	- **Service SAS**: secured with the storage account key and provides access to a resource (Blob storage, table storage, Azure file).
 	- **Account SAS**: secured with the storage account key and provides access at the storage account level. This provides access to service level operations such as getting and setting service properties, which can't do with a service SAS. It can provide access to more than 1 service within a storage account at the same time.
+- Forms:
+	- **Ad hoc SAS**: has start time, expiry time and permissions.
+	- **Service SAS with stored access policy**: is defined on a resource container, which can be a blob container, table, queue, or file share.
+- Use cases:
+	- When users read and write their own data to your storage account:
+		- Client uploads and download data via front-end proxy service.
+		- Client authenticate that generates a SAS.
+	- Copy from blob/file to another blob/file that resides in a different storage account.
+- Risks:
+	- SAS is leaked.
+	- A SAS provided to the client application expires, and the application is unable to retrieve a new SAS from your service, then the application's functionality may be hindered.
+- Best practice:
+	- Always use HTTPS.
+	- Use a user delegation SAS when possible: it is secured with MS Entra credentials, so you don't need to store your account key with your code.
+	- Have a revocation plan in place for a SAS.
+	- Configure a SAS expiration policy for the storage account.
+	- Create a stored account policy for service SAS.
+	- Use near-term expiration times on an ad hoc SAS service, service SAS or account SAS.
+	- Have clients automatically renew the SAS if necessary.
+	- Be careful with SAS start time, date time format.
+	- Grant the least possible privileges with the SAS.
+	- Understand that your account will be billed for any usage, including via SAS.
+	- Validate data written using SAS.
+	- Know when not t use a SAS.
+	- Use Azure Monitor and Azure Storage logs to monitor you application.
+	- Configure a SAS expiration policy for the storage account.
 ## Notes
 - The Application service principal is used to configure application permission for application in tenant to access the Microsoft Graph API.
 - The legacy service principal is a legacy app, which is an app created before app registrations were introduced, or an app created through legacy experiences.
