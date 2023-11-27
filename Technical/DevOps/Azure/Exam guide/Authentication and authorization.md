@@ -30,13 +30,20 @@
 	- Provides support for any Microsoft identity.
 	- Helps with troubleshooting your app by exposing actionable exceptions, logging, and telemetry.
 - Authentication flows:
-	- Authorization code: obtains tokens and accesses web APIs on the user's behalf.
-	- Client credentials: access web APIs using the application's identity with no user interaction.
-	- Device code: signs users in to a device without a browser, from another device that has a browser, and accesses web APIs on their behalf.
-	- Implicit grant: used by browser based applications to sign in and access web APIs on behalf of the user.
-	- Integrated Windows authentication (IWA): acquires a token silently when accessed from AAD joined device without user interaction.
-	- On-behalf-of (OBO): accesses a downstream web API from an upstream web API on a user's behalf, sending their identity and delegated permissions.
-	- Username/ password: signs the user in by directly handling their password. This is not recommended.
+	- **Authorization code**: obtains tokens and accesses web APIs on the user's behalf.
+		- The OAuth 2.0 authorization code grant send authorization code to the web application and that can redeem for access token to call web APIs.
+		- Constraints:
+			- SPA require Proof Key for Code Exchange (PKCE).
+			- The OAuth 2.0 specification requires you to use an authorization code to redeem an access token only once.
+	- **Client credentials**: access web APIs using the application's identity with no user interaction.
+	- **Device code**: signs users in to a device without a browser, from another device that has a browser, and accesses web APIs on their behalf.
+	- **Implicit grant**: used by browser based applications to sign in and access web APIs on behalf of the user, has been replaced by the authorization code with PKCE.
+	- **Integrated Windows authentication (IWA)**: acquires a token silently when accessed from AAD joined device without user interaction.
+	- **On-behalf-of (OBO)**: accesses a downstream web API from an upstream web API on a user's behalf, sending their identity and delegated permissions.
+	- **Username/ password**: signs the user in by directly handling their password. This is not recommended.
+- Authentication interactive and non-interactive:
+	- Interactive: user is prompted for input by the authorization server.
+	- Non-interactive: also called "silent" token acquisition, the application get the token and the user may not prompt for input
 ## Microsoft Graph
 - A REST API that interact with the Microsoft 365 data through Microsoft graph.
 - Components:

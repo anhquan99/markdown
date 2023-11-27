@@ -25,24 +25,32 @@
 		- Legacy
 - Relationship between application objects and service principals:
 	- An application object has:
-		- A one to one relationship with the software application.
-		- A one to many relationship with its corresponding service principal object(s).
+		- A one-to-one relationship with the software application.
+		- A one-to-many relationship with its corresponding service principal object(s).
 - Permission types:
-	- Delegated permissions make call to the resources on behave of the signed user.
+	- Delegated permissions make call to the resources on behalf of the signed user.
 	- App-only access permissions.
 - Consent types:
 	- Static user consent ask for permission when the application has not granted permission, but it has some issues:
 		- Request all the permission for the first time, this may lead to a long list of permissions that discourages end users from approving the consent.
 		- Application needs to know all the resources it will access ahead of time, this is hard.
 	- Incremental and dynamic user consent:
-		- Ask to the minimum permission first then ask for permission if required later.
+		- Ask the minimum permission first, then ask for permission if required later.
 		- A big challenge for permissions that require admin consent, since the admin consent experience doesn't know about those permissions at consent time. If you require admin privileged permissions or if your app uses dynamic consent, you must register all of the permissions in the Azure portal (not just the subset of permissions that require admin consent).
 	- Admin consent
 - Conditional check:
 	- Enables developers and enterprise customers to protect services in a multitude of ways:
-		- Multi factor authentication.
-		- Allowing only enrolled devices to access specific service.
+		- Multi-factor authentication.
+		- Allowing only enrolled devices to access a specific service.
 		- Restricting user locations and IP ranges.
+- Glossary of terms:
+	- Identity and access management (IAM): ensures that the right people, machine, and software components get access to the right resources at the right time.
+	- Application (client) ID: is a value the MS identity platform assigns to your application when you register it in MS Entra ID.
+	- Application manifest: is a feature that produces a JSON representation of the application's identity configuration, used as a mechanism for updating its associated Application and Service Principal entities.
+	- Application object: defines the application's identity configuration globally (across all tenants where it has access).
+	- Claim: claims are name/values pairs in a security token that provide assertions made by one entity to another. These entities are typically the client application or a resource owner providing assertions to a resource server. Claims relay facts about the token subject like the ID of the security principal that was authenticated by the authorization server. The claims present in a token can vary and depend on several factors like the type of token, type of the credential used for authenticating the subject, the application configuration, and others.
+	- Consent: the process of a resource owner granting authorization to a client application, to access protected resources under specific permissions, on behalf of the resource owner.
+	- User principal: similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represent the user.
 ## Azure operations:
 - Control plan:
 	- All requests for control plan operations are sent to Azure Resource Manager (ARM) URL.
