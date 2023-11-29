@@ -42,8 +42,8 @@
 		- If query only has UDF in the `WHERE` filter. UDFs do not utilize the index and require loading documents. To improve and avoid loading document, combine a UDF and the additional filter option in the `WHERE` clause.
 - Stored procedures.
 - Triggers:
-	- Pre-trigger: tigger before inserting or modifying an item.
-	- Post-trigger: tigger after inserting or modifying an item.
+	- Pre-trigger: trigger before inserting or modifying an item.
+	- Post-trigger: trigger after inserting or modifying an item.
 - Optimistic concurrency:
 	- SQL API supports Optimistic Concurrency Control (OCC). This control prevents clients from overriding the updates of others and losing valuable information as a result.
 	- It supports OCC through an additional value, an `_etag` system property. It is updated every time a document changes and clients need to verify the `_etag` value, compare it with the current `_etag` value from db.  If the `_etag` value is different, the operation can override the previous changes.
@@ -122,7 +122,6 @@
 	- Latest version mode: if there are multiple updates to the same item in a short period of time, it's possible to miss processing intermediate updates because you read the latest available item version.
 - Deletes:
 	- Latest version mode: this mode doesn't capture delete. The solution to work around this problem is to implement soft delete.
-	- 
 - Retention:
 	- All versions and deletes mode: this mode allows you to read only changes that occurred within the continuous backup retention.
 # Conflict types and resolution when using multiple write regions
@@ -145,8 +144,11 @@
 	- The **delegate component** is the code within the client application that implements business logic for each batch of changes.
 	- The **host component** is a client application instance that listens for changes from the change feed.
 	- The **monitored container** component is monitored for any insert or update operations. It does not serve as a storage mechanism to manage state across multiple change feed consumers.
-- You need to transition blobs in the Hot access tier to an online tier if blobs have not been modified in over 90 days
-  ```` json
+- You need to transition blobs in the Hot access tier to an online tier if blobs have not been modified in over 90 days.
+	- Use `"tierToCool": { "daysAfterModificationGreaterThan": 90 }`
+	- The `tierToArchive` move the blobs to the archive tier which is not an online access tier it is an offline tier.
+
+```` json
 {
 	"rules": [
 		{
@@ -167,5 +169,3 @@
 	]
 }
 ````
-	- Use `"tierToCool": { "daysAfterModificationGreaterThan": 90 }`
-	- The `tierToArchive` move the blobs to the archive tier which is not an online access tier it is an offline tier.

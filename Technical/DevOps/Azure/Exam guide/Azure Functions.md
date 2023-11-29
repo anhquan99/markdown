@@ -87,7 +87,7 @@
 		- Reduces the risk of file copy locking issues.
 		- Can be deployed directly to a production app, which does trigger a restart.
 		- Know that all files in the package are available to your app.
-		- Improves the performance of AEM template deployments.
+		- Improves the performance of ARM template deployments.
 		- My reduce cold-start times, particularly for JS functions with large npm package trees
 	- Consider using CD in CI/CD to connect deployments to your source control solution. CD also let you run from the deployment package.
 	- For Premium plan hosting, consider adding a warmup trigger to reduce latency when new instance are added.

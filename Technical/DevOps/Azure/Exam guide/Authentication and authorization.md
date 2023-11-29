@@ -43,7 +43,7 @@
 	- **Username/ password**: signs the user in by directly handling their password. This is not recommended.
 - Authentication interactive and non-interactive:
 	- Interactive: user is prompted for input by the authorization server.
-	- Non-interactive: also called "silent" token acquisition, the application get the token and the user may not prompt for input
+	- Non-interactive: also called "silent" token acquisition, the application get the token and the user may not prompt for input.
 ## Microsoft Graph
 - A REST API that interact with the Microsoft 365 data through Microsoft graph.
 - Components:

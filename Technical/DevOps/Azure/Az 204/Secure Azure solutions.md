@@ -12,7 +12,7 @@
 	- Monitor access and use
 	- Simplified administration of application secrets
 - Authentication with Azure key vault:
-	- Manage identities for Azure resources: assign an identity to the resources that has access to key vault. This is recommended as a best practice.
+	- Managed identities for Azure resources: assign an identity to the resources that has access to key vault. This is recommended as a best practice.
 	- Service principal and certificate: Microsoft is not recommend is approach because the application owner or developer must rotate the certificate.
 	- Service principal and secret: another not recommended approach because it's hard to automatically rotate the bootstrap secret that's used to authenticate to key vault.
 - Encryption of data in transit: Azure key vault enforces TLS protocol to protect data when it's traveling between Azure key vault and clients.

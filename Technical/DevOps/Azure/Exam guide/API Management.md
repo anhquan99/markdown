@@ -70,23 +70,23 @@
 	- Takes advantage of API management functionality to maintain secrets in Azure Key Vault if named values are configured for header or query parameter authentication.
 ## Policy management
 - The policy XML configuration is divided into `inbound`, `backend`, `outbound` and `on-error` sections. This series of specified policy statements is executed in order for a request and a response.
-  `````` xml
+`````` xml
 <policies>
-  <inbound>
-    <!-- statements to be applied to the request go here -->
-  </inbound>
-  <backend>
-    <!-- statements to be applied before the request is forwarded to 
-         the backend service go here -->
-  </backend>
-  <outbound>
-    <!-- statements to be applied to the response go here -->
-  </outbound>
-  <on-error>
-    <!-- statements to be applied if there is an error condition go here -->
-  </on-error>
+	  <inbound>
+	    <!-- statements to be applied to the request go here -->
+	  </inbound>
+	  <backend>
+	    <!-- statements to be applied before the request is forwarded to 
+	         the backend service go here -->
+	  </backend>
+	  <outbound>
+	    <!-- statements to be applied to the response go here -->
+	  </outbound>
+	  <on-error>
+	    <!-- statements to be applied if there is an error condition go here -->
+	  </on-error>
 </policies>
-	``````
+``````
 - APIM allows you to define policies at the following scopes, from most board to most narrow:
 	- Global (all APIs).
 	- Workspace (all APIs in selected workspace).

@@ -10,7 +10,7 @@
 	- Encryption-at-rest: Azure automatically encrypts an image before storing it, and decrypts it on the fly.
 	- Regional storage: ACR stores data in the region where the registry is created, except for some regions. If a regional outage occurs, the registry data may become unavailable and isn't automatically recovered, this issue is solved by geo-replication.
 	- Zone redundancy: premium service tier feature, replicate your registry to a minimum of 3 separate zones in each enabled region.
-	- Scalable strage.
+	- Scalable stage.
 - ACR Tasks 
 	- Quick task: build and push a single container image to a container registry on-demand without needing a local Docker Engine installation. Think `docker build`, `docker push` in the cloud.
 	- Automatically triggered tasks: build image base on triggers

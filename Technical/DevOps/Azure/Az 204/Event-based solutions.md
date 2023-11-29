@@ -1,4 +1,4 @@
-- Azure event Grid is a serverless event broker that you can use to integrate applications using events
+- Azure event Grid is a serverless event broker that you can use to integrate applications using events.
 - 5 concepts in event grid
 	- Event: what happened.
 	- Event sources: where the event took place.

@@ -21,7 +21,6 @@
 ## Terminology
 - Namespace is a management container for event hubs.
 - Event publishers is any entity that sends data to an event hub.
-- 
 ## Apache Kafka
 - Azure Event Hubs provides an Apache Kafka endpoint on an event hub, which enables users to connect the event hub using the Kafka protocol. You can often use an event hub's Kafka endpoint from your applications without any code changes. You modify only the configuration, that is, update the connection string in configuration to point to a Kafka cluster. Then, you can start streaming events from your applications that use the Kafka protocol into event hubs, which are equivalent to Kafka topics.
 - Similar concept:
@@ -60,7 +59,7 @@
 - Build event-driven serverless solutions.
 - Receive events from Azure services.
 - Receive events from your applications.
-- Receive events from parter (SaaS provider)
+- Receive events from partner (SaaS provider)
 ## Pull delivery of discrete events
 - Receive events at your own pace.
 - Consume events over a private link.

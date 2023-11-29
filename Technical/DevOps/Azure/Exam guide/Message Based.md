@@ -66,4 +66,3 @@
 | Azure Relay | Peer-to-peer communication | The communication is performed through a public network and does not require expensive VPN connectivity. | No message buffering. Both parties of communication must be online. |
 
 ## Notes
-- 
