@@ -43,8 +43,8 @@
 			1. How long will the task take?
 			2. When should it be done?
 			3. Write down it on your canlendar.
-		- **Block your canlendar:** Use daily 'do not schedule' blocks to make room for your important tasks.
-			1. Play offense, not defense. Don't use block schedule for avoiding coworkes or get out of the meetings. This can be used to engergize time.
+		- **Block your canlendar:** Use daily **do not schedule** blocks to make room for your important tasks.
+			1. Play offense, not defense. Don't use block schedule for avoiding co-workers or get out of the meetings. This can be used to energize time.
 			2. Don't be greedy.
 			3. Take it seriously.
 		- **Bulldoze your calendar:** Flexible with your time whenever needed.
@@ -65,8 +65,8 @@
 			- Remove the web browser.
 			- <mark style="background: #FF5582A6;">Keep everthing else:</mark> Keep the necesity apps for productive and searching information, but not keep you in Infinity pools.
 		- **Logout**
-		- **Nix notifications:** turn off notifications.
-		- **Clear your homescreen**
+		- **Fix notifications:** turn off notifications.
+		- **Clear your home-screen**
 		- **Wear a wristwatch**
 		- **Leave devices behind**
 	- <mark style="background: #FFB86CA6;">Stay out of Infinity pools:</mark>
@@ -88,7 +88,7 @@
 		- **Deal with email at the end of the day**
 		- **Schedule email time**
 		- **Empty your inbox once a week**
-		- **Pretned message are letters**
+		- **Pretend message are letters**
 		- **Be slow to response:** make others value your time.
 		- **Reset expectations:** if others want me in urgent situation, they have to call or meetup with me.
 		- **Set up send-only email**
@@ -153,14 +153,14 @@
 			- Don't jet-lag yourself.
 			- Put on your own oxygen mask first: care about yourselft before you care about the others.
 4. <mark style="background: #ADCCFFA6;">Reflection: Adjust and improve your system</mark>
-	- <mark style="background: #FFB86CA6;">Fine-tne your days with the scientific method:</mark>
+	- <mark style="background: #FFB86CA6;">Fine-tune your days with the scientific method:</mark>
 		- **Observer** what's going on.
 		- **Guess** why things are happening the way they are.
 		- **Experiment** to test your hypothesis.
 		- **Measure** the result and decide whether you were right.
 	- <mark style="background: #FFB86CA6;">The Make time hypotheses:</mark>
-		- **The highlight hypothesis:** if you setr a single intension at the start of each day, we predict you'll be more satisfied, joyful and effective.
+		- **The highlight hypothesis:** if you set a single intension at the start of each day, we predict you'll be more satisfied, joyful and effective.
 		- **The laser hypothesis:** If you create barriers around the Busy Bandwagon and The Infinity Pools, we predict you'll focus on your attention like a laser beam.
-		- **The energize hypothesis:** If you live a little more like a perhistoric hunman, we predict you'll enhence your mental and physical energy.
+		- **The energize hypothesis:** If you live a little more like a prehistoric hunman, we predict you'll enhence your mental and physical energy.
 	- Take notes to track your results (and keep you honest) 
 	- Small shift create big result.
