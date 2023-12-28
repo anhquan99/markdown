@@ -74,5 +74,20 @@
 	- Reserve on-demand instances capacity in specific AZ for any duration.
 	- No time commitment (create/cancel anytime), no billing discounts.
 	- Combine with regional reserved instances and saving plans to benefit from billing discounts.
-	- You're charged at on-demand rate whether you run instances or not.
+	- You're charged at an on-demand rate whether you run instances or not.
 	- For short-term, uninterrupted workloads that need to be in a specific AZ.
+# Instance storage
+## Elastic block store (EBS) volume
+- EBS is a network drive you can attach to your instance while they run.
+- It can only mount to 1 instance at a time (at the CCP level).
+- They are bound to a specific availability zone, example an EBS volume in us-east-1a can't be attached to us-east-1b. To move volume across, you need to snapshot it.
+- It's recommended to detach volume when doing snapshot, because the snapshot only capture data that has been written to EBS volume at the time the snapshot command is issued.
+### Snapshot features
+- Archive:
+	- 75% cheaper.
+	- Takes within 24 to 72 hours for restoring the archive.
+- Recycle bin:
+	- Setup rules to retain deleted snapshots for recovery of accidental deletion.
+	- Retention period, 1 day to 1 year.
+- Fast snapshot restore:
+	- Force full initialization of snapshot to have no latency on the first use (expensive).
