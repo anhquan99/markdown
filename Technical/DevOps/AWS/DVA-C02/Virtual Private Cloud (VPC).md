@@ -1,0 +1,3 @@
+- VPC is a private network to deploy your resources (regional resource).
+- Subnets allows you to partition your network inside your VPC.
+- To define access to the internet and between subnets, use Route Tables.
