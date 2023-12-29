@@ -27,7 +27,7 @@
 # VPC peering
 - Connect 2 VPC, privately using AWS network.
 - Must not have overlapping CIDR.
-- VPC peering connection is not transitive. If A connect B and B connect C, it does not mean A connect C and if A want to connect C then A must setup peering to C.
+- VPC peering connection is not transitive. If A connect B and B connect C, it does not mean A connect C and if A want to connect C then A must set up peering to C.
 # VPC endpoints
 - Allows VPC connects to AWS services using a private network instead of the public network.
 # VPN
