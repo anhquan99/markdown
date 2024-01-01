@@ -1,0 +1,78 @@
+# Buckets
+- Allows people to store object (files) in buckets (directory).
+- Buckets must have a globally unique name (across all regions all accounts) and are defined at the region level.
+- Objects (files) have a key, which is the full path of the objects. Because there is no concept of directories in S3, the key will trick you to think like it.
+- Max object size is 5TB, and if more than 5GB user must use **multi-part upload**.
+## Security
+- User based: use with IAM policies.
+- Resource based:
+	- Bucket policies: allows cross account.
+	- Object ACL
+	- Bucket ACL
+- IAM principal can access an S3 object if:
+	- The user IAM permissions allow it or the resource policy allows it.
+	- And there is no explicit deny.
+- Can be set at the account level.
+## Static website hosting
+- Website URL is depending on the region:
+	- `http://bucket-name.s3-website-aws-region.amazonaws.com`
+	- `http://bucket-name.s3-website.aws-region.amazonaws.com`
+- Make sure to allow public read when encounter 403 code.
+## Versioning
+- Enabled at the bucket level.
+- It is best practice to version your buckets:
+	- Protect against unintended deletes (ability to restore a version).
+	- Easy roll back to previous version.
+- Notes:
+	- Any file that is not versioned prior to enabling versioning will have version "null".
+	- Suspending versioning does not delete the previous versions.
+## Replication
+- Must enable versioning in source and destination buckets.
+- Cross Region Replication (CRR) and Same Region Replication (SRR).
+- Must give proper IAM permissions to S3.
+- Copying is asynchronous.
+- Use cases:
+	- CRR: compliance, lower latency access, replication across.
+	- SRR: log aggregation, live replication between production and test accounts.
+- Notes:
+	- After replication is enabled, only new objects are replicated.
+	- You can use S3 Batch Replication to replicates existing objets and objects that failed replication.
+	- Can replicate delete markers from and not replicate object with a version ID.
+	- There is not chaining of replication that means A replicates to B and B replicates C, A not replicates to C.
+## Storage class
+- Standard - General purpose
+	- Used for frequently accessed data.
+	- Low latency and high throughput.
+	- Sustain 2 concurrent facility failures.
+	- Use cases: big data analytics, mobile and gaming applications, content distribution, ...
+- Standard-Infrequent-Access (IA)
+	- Less frequently accessed, but requires rapid access when needed.
+	- Lower cost than standard.
+	- Use cases: disaster recovery, backups.
+- One Zone-Infrequent Access
+	- 99.5% availability.
+	- Data lost when AZ is destroyed.
+	- Use cases: storing secondary backup copies of on-premises data, or data you can recreate.
+	-  Low cost object storage meant for archiving/backup.
+	- Pricing: price for storage + object retrieval cost.
+- Glacier Instant Retrieval
+	- Millisecond retrieval, great for data accessed once a quarter.
+	- Minimum storage duration of 90 days.
+- Glacier Flexible Retrieval
+	- Expedited (1 to 5 minutes), standard (3 to 5 hours), bulk (5 to 12 hours) - free.
+	- Minimum storage duration of 90 days.
+- Glacier Deep Archive
+	- For long term storage.
+	- Standard (12 hours), bulk (48 hours).
+	- Minimum storage duration of 180 days.
+- Intelligent Tiering
+	- Small monthly monitoring and auto-tiering fee.
+	- Moves object automatically between Access Tiers based on usage.
+	- There are no retrieval charges in Intelligent-Tiering.
+	- Frequent Access tier (automatic): default tier.
+	- Infrequent Access tier (automatic): objects not accessed for 30 days.
+	- Archive Instant Access tier (automatic): objects not accessed for 90 days.
+	- Archive Access tier (optional): config from 90 days to 700+ days.
+	- Depp Archive Access tier (optional): config from 180 days to 700+ days.
+## Durability
+- High durability and same for all storage classes.
