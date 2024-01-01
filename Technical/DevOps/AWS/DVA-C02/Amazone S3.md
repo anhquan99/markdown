@@ -2,7 +2,7 @@
 - Allows people to store object (files) in buckets (directory).
 - Buckets must have a globally unique name (across all regions all accounts) and are defined at the region level.
 - Objects (files) have a key, which is the full path of the objects. Because there is no concept of directories in S3, the key will trick you to think like it.
-- Max object size is 5TB, and if more than 5GB user must use **multi-part upload**.
+- Max object size is 5TB, and if more than 5GB, user must use **multipart upload**.
 ## Security
 - User based: use with IAM policies.
 - Resource based:
@@ -76,3 +76,44 @@
 	- Depp Archive Access tier (optional): config from 180 days to 700+ days.
 ## Durability
 - High durability and same for all storage classes.
+# Lifecycle rules
+- Automate moving objects.
+### Rules
+- Transition actions: configure objects to transition to another storage class.
+- Expiration action: configure objects to expire (delete) after some time.
+	- Access log files can be set to delete after 365 days.
+	- Can be used to delete old versions of files (if versioning is enabled).
+	- Can be used to delete incomplete Multi-Part uploads.
+- Apply rules for prefix and tags.
+# Storage class analysis
+- Help you decide when to transition objects to the right storage class.
+- Recommendations for Standard and Standard IA, does not work for One-Zone IA or Glacier.
+- 24 to 48 hours to start seeing data analysis.
+# Event notification
+- Send to SNS, SQS, EventBridge, lambda function, ...
+- Deliver in seconds, but sometimes take a minute.
+# Baseline performance
+- Auto scales to high request rates, latency 100-200 ms.
+- At least 3500 PUT/COPY/POST/DELETE or 5500 GET/HEAD requests per second per prefix in a bucket.
+- There are no limits to the number of prefixes in a bucket.
+### Multi-Part upload
+- Recommended for files > 100MB, must use for files > 5GB.
+- Can help parallelize uploads.
+### Transfer acceleration
+- Transfer file to AWS edge location and from there forward to S3 bucket in the target location by using AWS private network.
+- Compatible with multipart upload
+### S3 byte-range fetches
+- Parallelize GETs by requesting specific byte ranges.
+- Better resilience in case of failures.
+- Can be used to retrieve only partial data (like get header of a file).
+### Select and Glacier select
+- Retrieve less data using SQL by performing **server-side filtering**.
+- Can filter by rows and columns.
+- Less network transfer, less CPU cost client-side.
+# User defined
+- You can not search the object metadata or object tags, instead you must use an external DB as a search index like DynamoDB.
+## Object metadata
+- Assign a custom metadata with name-value and name begin with `x-amz-meta-`.
+## S3 object tags
+- Key-value pairs for objects.
+- Used for fine-grained permissions and useful for analytics purposes.
