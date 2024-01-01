@@ -232,3 +232,10 @@
 - In order to update launch template, then re-creating all EC2 instances:
 	1. A setting of minimum healthy percentage is set.
 	2. Replace instances with old template.
+# Instance metadata (IMDS)
+- Retrieve metadata of the EC2 instance, but not the IAM Policy.
+- IMDSv1 can be accessed directly through `http://169.254.196.254/lastest/metadata`.
+- IMDSv2 is more secure:
+	1. Get session token using headers and PUT.
+	2. Use session token in IMDSv2 calls using headers `X-aws-ec2-metadata-token: $TOKEN`.
+# 
