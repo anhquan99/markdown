@@ -117,3 +117,48 @@
 ## S3 object tags
 - Key-value pairs for objects.
 - Used for fine-grained permissions and useful for analytics purposes.
+# Security
+- Server side encryption (SSE)
+	- S3-Managed Keys (SSE-S3) enable by default, handled, managed and owned by AWS.
+		- Encryption type is AES-256.
+		- Must set header `"x-amz-server-side-encryption": "AES256"`.
+		- Enabled by default.
+	- KMS Keys stored in AWS KMS (SSE-KMS) leverage AWS Key Management Service (AWS KMS) to manage encryption keys.
+		- KMS advantages: user control + audit key usage using CloudTrail.
+		- Must set header `"x-amz-server-side-encryption": "aws:kms"`.
+		- Limitation:
+			- Limit by the KMS limits.
+			- When uploading, S3 calls the `GenerateDataKey` KMS API, and when downloading, S3 calls `Decrypt` KMS API.
+			- Can increase quota by request service ticket.
+	- Customer-Provided Keys (SSE-C) bring your own key.
+		- HTTPS must be used.
+		- Encryption keys must be provided in HTTP headers for every request made.
+- Client side encryption
+	- Client must handle data themselves before sending to and after downloading from S3.
+- Encryption in transit (SSL/TLS).
+- Force encryption in transit, `aws:SecureTransport`.
+- Bucket policies are evaluated before `Default Encryption`.
+- MFA delete on S3 
+	- Required to:
+		- Permanently delete an object version.
+		- Suspend Versioning on the bucket.
+	- Not required to:
+		- Enable Versioning.
+		- List deleted versions.
+	- Only root account can enable/disable on bucket.
+# Access logs
+- Do not set your logging bucket to be the monitored bucket, it will create a logging loop, and your bucket will grow exponentially.
+# Pre-signed URLs
+- Using S3 Console, AWS CLI or SDK.
+- Expiration:
+	- S3 Console: 1 min up to 720 mins (12 hours).
+	- AWS CLI: config with `--expires-in` parameter in seconds, default 3600 secs, max 604800 secs (168 hours).
+# Access points
+- Simplify security management for S3 buckets.
+- Each Access Point has:
+	- DNS name (Internet Origin or VPC Origin).
+		- For the VPC Origin, first create a VPC Endpoint to access the Access Point (Gateway or Interface Endpoint) then VPC Endpoint Policy must allow access to the target bucket and Access Point.
+	- Access point policy (similar to bucket policy) to manage security at scale.
+#  Object lambda
+- Use AWS Lambda Functions to change the object before it is retrieved by the caller application.
+- Create S3 Access Point and S3 Object Lambda Access Points on top of S3.
