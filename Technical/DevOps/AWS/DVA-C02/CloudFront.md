@@ -56,3 +56,59 @@
 - Ability to add CloudFront HTTP headers and Custom Headers to an origin request that were not included in the viewer request.
 # Cache invalidation
 - Purge cache with CloudFront Invalidation with all files (\*) or special path (/images/\*)
+# Behaviors
+- Configure different settings for a given URL path pattern.
+- Route to different kind of origin(s) groups based on the content type or path pattern (multiple origin)
+	- /images/*
+	- /api/*
+	- /* (default cache behavior, last to be processed and is always /\*)
+- You can maximize cache hits by separating static and dynamic distributions.
+# Geo restriction
+- Restrict who can access your distribution:
+	- Allowlist: allow users in the allowed countries to access content.
+	- Blocklist.
+- The country is determined using a third party Geo-IP database.
+- Use case: copyright laws to control access to content.
+# Signed URL / signed cookies
+- Attach a policy with:
+	- Includes URL expiration.
+	- Includes IP ranges to access the data from.
+	- Trusted signers (which AWS accounts can created signed URLs).
+- Valid time:
+	- Shared content (movie, music): short (minutes).
+	- Private content (private to the user): long (years).
+- Singed URL: access to individual files (per file per URL).
+- Singed cookies: access to multiple files.
+
+| CloudFront Signed URL | S3 Pre-Signed URL |
+| --- | --- |
+| Allow access to a path, no matter the origin | Issue a request as the person who pre-signed the URL |
+| Account wide key-pair, only the root can manage it | Uses the IAM key of the signing IAM principal |
+| Can filter by IP, path, date, expiration | Limited lifetime |
+| Can leverage caching features | |
+### Process
+- Type of signers:
+	- Trusted key group (recommended): can leverage APIs to create and rotate keys (and IAM for API security).
+	- AWS account that contains a CloudFront Key Pair
+		- Need to managed keys using the root account and the AWS console.
+		- Not recommended because it is using root account.
+- Public key is used by your applications to sign URLs.
+- Private key (uploaded) is used by the CloudFront to verify URLs. 
+# Price classes
+- All: all region - best performance.
+- 200: excludes most expensive regions.
+- 100: only the least expensive regions.
+# Origin groups
+- To increase high-availability and do failover.
+- 1 primary and 1 secondary origin.
+# Field level encryption
+- Protect user sensitive information through application stack.
+- Adds an additional layer of security along with HTTPS.
+- Sensitive information encrypted at the edge close to user.
+- Uses asymmetric encryption.
+# Real time logs
+- Real-time requests are sent to Kinesis Data Streams.
+- Monitor, analyze and take actions based on content delivery performance.
+- Allows you to choose:
+	- Sampling rate: percentage of requests for which you want to receive.
+	- Specific fields and specific Cache Behaviors (path patterns).
