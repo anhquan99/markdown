@@ -102,5 +102,5 @@
 # Drift
 - Used to compare all the resources between versions.
 # Stack policies
-- A Stack policies is a JSON document that defines the update actions that are allowed on specific resources during stack updates to protect resources from unintentional updates.
+- Stack policies is a JSON document that defines the update actions that are allowed on specific resources during stack updates to protect resources from unintentional updates.
 - Specify an explicit ALLOW for the resources you want to be allowed to be updated.
