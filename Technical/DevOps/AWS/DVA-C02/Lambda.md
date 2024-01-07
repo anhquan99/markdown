@@ -131,3 +131,76 @@
 # Layers 
 - Externalize dependencies to re-use them (docker onion layer architecture alike).
 - Custom runtimes.
+# File system mounting
+- Lambda functions can access EFS file system if they are running in a VPC.
+- Configure Lambda to mount EFS file system to local directory during initialization.
+- Limitations: watch out for the EFS connection limits.
+# Concurrency and throttling
+- Concurrency limit: up to 1000 concurrent executions.
+- Can set a reversed concurrency at the function level, which is the max number of concurrent instances that you want to allocate to your function.
+- Throttle behavior:
+	- Sync return `ThrottleError` - 429
+	- Async retry and go to DLQ
+- Provisioned concurrency:
+	- Allocated before the function is invoked (in advance) to avoid cold start happens, and all invocations have low latency.
+	- Application Auto Scaling can manage concurrency.
+# Function dependencies
+- You need to install packages alongside your code and zip it together.
+- Upload the zip to Lambda if less than 50MB, else to S3.
+# Wit CloudFormation
+- Simple inline functions and it can not include function dependencies.
+- Use `Code.ZipFile` property.
+### S3
+- You must store the Lambda zip in S3 and refer S3 zip location in the CloudFormation code.
+- If you update the code in S3, but don't update S3Bucket, S3Key or S3ObjectVersion, CloudFormation will not update your function.
+# With container images
+- Deploy Lambda function as container images up to 10GB from ECR.
+- Pack complex dependencies, large dependencies in a container.
+- Test the containers locally using the Lambda Runtime Interface Emulator.
+- Unified workflow to build apps.
+## Best practice for optimizing container images
+- **Use AWS-provided base images**.
+- **Use multi-stage build:** build your code in larger preliminary images, copy only the artifacts you need in your final container image, discard the preliminary steps.
+- **Build from stable to frequently changing:** take advantages of onion architecture in docker.
+- **Use a single repository for functions with large layers.**
+# Aliases
+- They are pointers to Lambda function versions.
+- Aliases are mutable, have their own ARNs and can not reference aliases.
+- Enable canary deployment by assigning weights to lambda functions or stable configuration of your event triggers / destinations.
+# With CodeDeploy
+- CodeDeploy can help you automate traffic shift for Lambda aliases.
+- The feature is integrated with the SAM framework.
+- Can create Pre and Post traffic hooks to check the health of the Lambda function.
+## Types:
+- **Linear**: grow traffic every N minutes until 100%.
+- **Canary**: try X percent then 100%.
+- **AllAtOnce**: immediate.
+## AppSpec.yml
+- Name
+- Alias
+- CurrentVersion
+- TargetVersion
+# Function URL
+- `https://<url-id>.lambda-url.<region>.on.aws`
+- Can be applied to any function alias or to $LATEST.
+## Security
+- Resource-based Policies
+	- Authorize other account / specific CIDR / IAM principals.
+- CORS
+- `AuthTye NONE` - allow public and authenticated access.
+- `AuthTye AWS_IAM` - IAM is used to authenticate and authorize requests.
+	- Both Principal's Identity-based Policy and Resource-based Policy are evaluated.
+	- Principal must have `lambda:InvokeFunctionUrl` permissions.
+	- **Same account** = Identity-based policy **OR** Resource-based Policy as ALLOW.
+	- **Cross account** = Identity-based policy **AND** Resource-based Policy as ALLOW.
+# CodeGuru profiling
+- Gain insights runtime performance of your Lambda functions using CodeGuru Profiler.
+- CodeGuru creates a Profiler Group for your Lambda function.
+- Support Java and Python runtimes.
+# Best practice
+- Perform heavy-duty work outside of your function handler
+- Use env variables for
+	- DB connection string, S3, ...
+	- Passwords, sensitive values, ...
+- Minimize your deployment package size to its runtime necessities.
+- Avoid using recursive code, never have a Lambda function call itself.
