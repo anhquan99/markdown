@@ -70,3 +70,16 @@
 - Checks the availability and latency of your endpoints and can store load time data and screenshots of the UI.
 - Integration with CW Alarms.
 - Can run once or on a regular schedule.
+# EventBridge
+- Former CloudWatch Event.
+- Sent event to another service.
+- You can archive events (all / filter) sent to an event bus (indefinitely or set period).
+- Ability to replay archived events.
+## Trigger
+- Schedule: Cron jobs.
+- Event pattern: event rules to react to a service doing something.
+- Trigger Lambda functions.
+## Schema registry
+- EventBridge can analyze the events in your bus and infer the schema.
+-  The schema registry allows you to generate code for your application, that will know in advance how data is structured in the event bus.
+- Schema can be versioned.

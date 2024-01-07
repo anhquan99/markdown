@@ -1,4 +1,4 @@
 # Monitoring
-- AWS CloutWatch
-- AWS X-Ray
+- [[CloudWatch |AWS Cloud Watch]]
+- [[X-Ray | AWS X-Ray]]
 - AWS CloudTrail
