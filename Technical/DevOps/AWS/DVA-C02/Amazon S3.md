@@ -12,6 +12,7 @@
 - IAM principal can access an S3 object if:
 	- The user IAM permissions allow it or the resource policy allows it.
 	- And there is no explicit deny.
+	- Explicit deny in an IAM policy will take precedence over an S3 bucket policy.
 - Can be set at the account level.
 ## Static website hosting
 - Website URL is depending on the region:

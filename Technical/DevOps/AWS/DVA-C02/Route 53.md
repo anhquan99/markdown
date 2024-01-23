@@ -7,6 +7,7 @@
 - Name Server: resolves DNS queries (Authoritative or None-Authoritative).
 - Top Level Domain (TLD): .com, .us, .vn, ...
 - Second Level Domain (SLD): amazon.com, google.com, ...
+- Domain apex is the root level of a domain.
 ## Records
 - How you want to route traffic for a domain.
 - Each domain contains:
@@ -20,6 +21,7 @@
 			- Example: you can't create for `example.com`, but you can create for `www.example.com`
 		- NS - name servers for the hosted zone
 			- Control how traffic is routed for a domain.
+		- Alias - is a Route 53 specific feature in AWS, wherein the target can be some other AWS resource for which the Route 53 service determines the IP(s) and returns it as the answer thereby eliminating the need for any subsequent queries.
 	- Value
 	- Routing policy
 	- TTL

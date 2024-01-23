@@ -34,6 +34,17 @@
 - If the function is retried, you will see duplicate logs entries in CW Logs.
 - Can define a DLQ - SNS or SQS for failed processing.
 - Asynchronous invocations allow you to speed up the processing if you don't need to wait for the result.
+## Concurrency
+- By default, an account can provision 1000 concurrent executions across all functions in an AWS region.
+- Concurrency is the number of in-flight requests that your function is handling at the same time.
+- Formula to calculate the concurrency: $$Concurrency = (average requests per second) * (average request duration in seconds) $$
+- Each instance of your execution env can handle at most 10 requests per second.
+- **Reserved concurrency:** reserve a portion of your account's concurrency for a function to avoid other functions taking up all the available unreserved concurrency.
+	- Your function can scale independently of other functions in your account.
+	- Your function can't scale out of control.
+	- You may not be able to use all of your account's available concurrency.
+- **Provisioned concurrency:** pre-initialize a number of env instance for a function to avoid cold start.
+	- Lambda can provision between 500 and 3000 execution envs at once, depending on the region.
 ## Services
 - S3
 - SNS

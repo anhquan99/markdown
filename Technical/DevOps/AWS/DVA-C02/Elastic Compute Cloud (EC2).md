@@ -236,6 +236,9 @@
 - Retrieve metadata of the EC2 instance, but not the IAM Policy.
 - IMDSv1 can be accessed directly through `http://169.254.196.254/lastest/metadata`.
 - IMDSv2 is more secure:
-	1. Get session token using headers and PUT.
-	2. Use session token in IMDSv2 calls using headers `X-aws-ec2-metadata-token: $TOKEN`.
-# 
+	1. Get session token using headers and PUT
+	2. Use session token in IMDSv2 calls using headers `X-aws-ec2-metadata-token: $TOKEN`
+# Questions
+- For compliance purposes, you would like to expose a fixed static IP address to your end-users so that they can write firewall rules that will be stable and approved by regulators. What type of Elastic Load Balancer would you choose?
+	- NLB
+	- Network Load Balancer has one static IP address per AZ and you can attach an Elastic IP address to it. Application Load Balancers and Classic Load Balancers as a static DNS name.

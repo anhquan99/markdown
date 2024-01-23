@@ -35,3 +35,4 @@
 		- Lambda roles for lambda functions.
 	- If working outside of AWS, use env variables/named profiles.
 - You should sign an AWS HTTP request using Signature v4 (SigV4).
+- You can retrieve the IAM role name attached to your EC2 instance using Instance Metadata service, but your can not retrieve the IAM policies themselves.
