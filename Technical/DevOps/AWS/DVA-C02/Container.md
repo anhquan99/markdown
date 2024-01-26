@@ -146,3 +146,7 @@
 	- EFS
 	- FSx For Lustre
 	- FSx for NetApp ONTAP
+## Notes
+- You have a containerized application stored as Docker images in an ECR repository, that you want to run on an ECS cluster. You're trying to launch two copies of the same Docker container on the same EC2 container instance. The first container successfully starts, but the second container doesn't. You have checked that there's enough CPU and RAM on the EC2 container instance. What is the problem here?
+	- The host port defined in the task definition.
+	- To enable random host port, set host port = 0 (or empty), which allows multiple containers of the same type to launch on the same EC2 container instance.
