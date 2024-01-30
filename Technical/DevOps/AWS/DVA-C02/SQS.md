@@ -5,6 +5,7 @@
 - Limitation of 256KB per message sent.
 - Can have duplicate message (at least once delivery, occasionally).
 - Can have out of order message (the best effort ordering).
+- Max retention period is 14 days.
 # Producing message
 - SQS standard s unlimited throughput.
 # Consuming message
