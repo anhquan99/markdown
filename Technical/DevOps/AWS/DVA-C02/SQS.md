@@ -5,9 +5,8 @@
 - Limitation of 256KB per message sent.
 - Can have duplicate message (at least once delivery, occasionally).
 - Can have out of order message (the best effort ordering).
-- Max retention period is 14 days.
 # Producing message
-- SQS standard s unlimited throughput.
+- SQS standard is unlimited throughput.
 # Consuming message
 - Poll SQS for message (receive up to 10 message at a time).
 # Multiple consumers
@@ -54,7 +53,7 @@
 - Can set a default at queue level.
 - Can override the default on sending using the `DelaySeconds` parameter.
 # Long polling
-- When a consumer requests messages from the queue, it can optionally wait for messages to arrive if there are none in. the queue.
+- When a consumer requests messages from the queue, it can optionally wait for messages to arrive if there are none in the queue.
 - `LongPolling` decrease the number of API calls made to SQS while increasing the efficiency and decreasing the latency of your application.
 - Long polling is preferable to short polling.
 - Long polling can be enabled at the queue level or at the API level using `ReceiveMessageWaitTimeSeconds`.

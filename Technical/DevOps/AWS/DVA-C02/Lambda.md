@@ -37,7 +37,7 @@
 ## Concurrency
 - By default, an account can provision 1000 concurrent executions across all functions in an AWS region.
 - Concurrency is the number of in-flight requests that your function is handling at the same time.
-- Formula to calculate the concurrency: $$Concurrency = (average requests per second) * (average request duration in seconds) $$
+- Formula to calculate the concurrency: $$Concurrency = (Average Requests Per Second) * (Average Request Duration In Seconds) $$
 - Each instance of your execution env can handle at most 10 requests per second.
 - **Reserved concurrency:** reserve a portion of your account's concurrency for a function to avoid other functions taking up all the available unreserved concurrency.
 	- Your function can scale independently of other functions in your account.
@@ -55,6 +55,7 @@
 - If 2 writes are made to a single non-versioned object at the same time, it is possible that only a single event notification will be sent.
 - If you want to ensure that an event notification is sent for every successful write, you can enable versioning on your bucket.
 # Event source mapping
+## <mark style="background: #BBFABBA6;">Kinesis DynamoDB Streams</mark>
 ## <mark style="background: #BBFABBA6;">Kinesis data streams</mark>
 - An event source mapping creates an iterator for each shard, processes items in order.
 - Start with new item, from the beginning or from timestamp.
@@ -215,3 +216,5 @@
 	- Passwords, sensitive values, ...
 - Minimize your deployment package size to its runtime necessities.
 - Avoid using recursive code, never have a Lambda function call itself.
+## Notes
+- Environment variables max size = 4KB.

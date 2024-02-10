@@ -56,7 +56,7 @@
 	- ALARM
 - Period:
 	- Length of time in seconds to evaluate the metric.
-	- High resolution custom metric.
+	- High resolution custom metric: 10 or 30 seconds. You can set a regular alarm with a period of any multiple of 60 seconds.
 ## Targets
 - Stop, Terminate, Reboot, or Recovery an EC2 instance.
 - Trigger Auto Scaling Action.

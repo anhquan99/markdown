@@ -82,7 +82,7 @@
 ## Shard splitting
 - Used to increase the Stream capacity (1 MB/s data in per shard).
 - Used to divide a hot shard.
-- the old shard is close and will be deleted once the data is expired.
+- The old shard is close and will be deleted once the data is expired.
 - No automatic scaling (manual increase/decrease capacity).
 - Can't split into more than 2 shards in a single operation.
 ## Merging shards

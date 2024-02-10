@@ -84,3 +84,9 @@
 - Process highly sensitive data in an isolated compute environment.
 - Fully isolated virtual machines, hardened, and highly constrained.
 - Help reduce the attack surface for sensitive data processing apps.
+## Notes
+- What should you use to control access to your KMS CMKs?
+	- KMS Key Policies.
+- You have critical data stored in an S3 bucket with `SSE:KMS` encryption enabled. You're running an application on an EC2 instance in which you want to download some files from the bucket. So, you have created an IAM role with `s3:GetObject` permissions and attached it to the EC2 instance, but when the application tries to download files from the S3 bucket, it gets a denied exception. What is a possible cause for this issue?
+	- Add permission for `KMS:Decrypt`
+	- Because the bucket encrypted using SSE:KMS, you must give permissions to the EC2 instance to access the KMS Keys and to make decrypt operations.

@@ -48,7 +48,7 @@
 	  - Method request
 	  - Integration request
 	  - Method response
-	  - + AWS extensions for API gateway and setup every single option.
+	  - AWS extensions for API gateway and setup every single option.
   - Can export current API as OpenAPI spec which can be written in YAML or JSON.
   - Using OpenAPI we can generate SDK for our applications.
   # Request Validation
@@ -82,7 +82,7 @@
 # Erros
 - 4xx means client errors
 - 5xx means server errors:
-	- 502L Bad Gateway Exception, usually for an incompatible output returned from a Lambda proxy integration backend and occasionally for out-of-order invocations due to heavy loads.
+	- 502 Bad Gateway Exception, usually for an incompatible output returned from a Lambda proxy integration backend and occasionally for out-of-order invocations due to heavy loads.
 	- 504: integration failure - ex endpoint request timed-out exception.
 # CORS
 - The OPTIONS pre-flight request must contain the following headers:

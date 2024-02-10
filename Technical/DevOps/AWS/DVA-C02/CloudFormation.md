@@ -79,7 +79,7 @@
 	- Automatically rolls back to the previous known working state.
 	- Write log
 # Stack notifications
-- Send stack events to SNSTopic.
+- Send stack events to SNS Topic.
 - Enable SNS Integration using Stack Options.
 # ChangeSets
 - When you update a stack, you need to know what changes before it happens for greater confidence.

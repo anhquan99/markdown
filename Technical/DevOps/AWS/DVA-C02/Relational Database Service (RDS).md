@@ -6,7 +6,7 @@
 	- MySQL
 	- MariaDB
 	- Oracle
-	- Ms SQL Server
+	- MS SQL Server
 	- Aurora (AWS proprietary database)
 ### Storage auto-scaling
 - Increase storage on your RDS DB instance dynamically.
@@ -21,7 +21,7 @@
 - AWS cloud optimized, claim to be 5x performance improvement than MySQL and 3x than Postgres.
 - Can have up to 15 replicas and replication process is faster than MySQL (sub 10 ms replica lag).
 - Failover is instantaneous.
-- Cost more thang RDS 20%.
+- Cost more than RDS 20%.
 - Backtrack: restore data at any point of time without using backups.
 ## Amazone RDS Proxy
 - Managed service.
@@ -63,4 +63,3 @@
 - Delete item explicitly.
 - Memory full and LRU.
 - Set TTL.
-- 
