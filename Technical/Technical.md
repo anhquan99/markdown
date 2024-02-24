@@ -1,5 +1,5 @@
 - [[Data structure]]
-- [[Algorithms]]
+- [[Algorithms 1]]
 - [[Bit operations]]
 - [[Unit test]]
 - [[Restfull API]]
@@ -7,10 +7,10 @@
 - [[Design pattern]]
 - [[OOP]]
 - [[Graph]]
-- [[Software architectual pattern]]
-- [[Programming principle]]``
+- [[Software architecture]]
+- [[Software development principle]]``
 - [[CSharp]]
-- [[Javascript and Frameworks]]
+- [[Javascript]]
 - [[Dot NET]]
 - [[React JS]]
 - [[Git]]

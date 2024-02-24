@@ -1,2 +1,5 @@
-- [[Docker]]
-- [[Kubernetes]]
+- [[Docker map|Docker]]
+- [[K8s|Kubernetes]]
+- [[Azure]]
+- [[AWS]]
+- [[Web server]]

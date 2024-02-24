@@ -1,4 +1,4 @@
-- [[Technical/DevOps/Azure/Exam guide/API Management|API Management]] alike.
+- [[Technical/DevOps/Azure/Az 204/Exam guide/API Management|API Management]] alike.
 - Handle different env.
 - Handle security (authentication and authorization).
 # EndPoint types

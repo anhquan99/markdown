@@ -13,8 +13,8 @@
 - [[Heap sort]]
 - [[Priority Queue]]
 - [[Binary heap]]
-- [[Prims's algorithms]]
-- [[Dijkstra's algorithms]]
+- [[Prims's algorithms 1]]
+- [[Dijkstra's algorithms 1]]
 # Variations
 - [[Binomoial heap]]
 - [[Fibonacco heap]]

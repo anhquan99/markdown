@@ -1,0 +1,4 @@
+- [[Clean code]]
+- [[Software development principle]]
+- [[OOP]]
+- [[Object Oriented Analysis and Design]]

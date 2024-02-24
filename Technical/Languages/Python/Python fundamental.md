@@ -27,7 +27,7 @@
 # Tuple vs list
 - List have some reference to object but tuple does not so the size of tuple will smaller than list and the iteration time will be smaller
 # Scope
-- Like scope in [[Javascript and Frameworks | JS]]
+- Like scope in [[Javascript| JS]]
 - `global` keyword will use global variable
 - `inner function` available in the function scope, we can use `nonlocal` keyword to access the outer function variable.
 - We should not name the same name variable in the same file, it's hard to read.
