@@ -1,5 +1,5 @@
-- INumber<T>
+- `INumber<T>`
 - Static abstract
-- Matching parttern
+- Matching pattern
 - Constructor init field
 - Litteral string

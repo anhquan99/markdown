@@ -1,16 +1,4 @@
-# JS
-[[Javascript Fundamentals]]
-[[Objects the basics]]
-[Garbage collection][https://javascript.info/garbage-collection]
-[[Symbol]]
-[[Data types]]
-[[Array and functions]]
-[[Map and Set]]
-[[JSON]]
-[[ES5]]
-[[ES6]]
-[[Prototype]]
-[[Class]]
-
-# Framework
-[[React JS]]
+- [[Javascript fundamental map]]
+## Framework
+- [[React JS]]
+- [[React native]]

@@ -1,4 +1,4 @@
-- **Covariance and contravariance enable implicit refernce conversion for array types, delegate types and generic type arguments.
+- **Covariance and contravariance enable implicit reference conversion for array types, delegate types and generic type arguments.
 # Covariance
 -  Preserves assignment compatibility
 ```c#
@@ -28,7 +28,7 @@ Action <string> actString = actObject;
 - The `in` keyword for generic interface
 ```c#
 // Contravariant delegate
-	public delegate void DContravar<in A>(A argument);
+public delegate void DContravar<in A>(A argument);
 // Methods that match the delegate signature
 public static void SampleControl(Control control);{}
 public static void SampleButton(Button button){}

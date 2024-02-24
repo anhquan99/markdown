@@ -1,1 +1,4 @@
-- [[Bit operations]]
+- [[Operation map|Operation]]
+- [[Algorithms]]
+- [[Data structure]]
+- [[Concept]]
