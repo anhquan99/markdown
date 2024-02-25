@@ -67,6 +67,15 @@
 	- `HalfAtATime` reduced capacity by 50%
 	- `OneAtATime` slowest, lowest availability impact
 	- `Custom` define your %
+- Life cycle event hooks
+	- **Auto scaling launch deployments:**
+	  ![[Pasted image 20240224215909.png]]
+	- **Auto scaling termination deployments:**
+	  ![[Pasted image 20240224215925.png]]
+	- **In-place deployment:**
+	  ![[Pasted image 20240224215937.png]]
+	- **Blue/green deployment:**
+	  ![[Pasted image 20240224215826.png]]
 ## Lambda platform
 - Automate traffic shift for Lambda aliases.
 - Liner: grow traffic every N minutes until 100%.

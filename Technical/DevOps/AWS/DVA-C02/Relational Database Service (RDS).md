@@ -35,13 +35,13 @@
 	- DB Cache
 	- User session store
 
-| Redis | Memcached |
-| --- | --- |
-| Multi AZ with auto-failover | Multi-node for partitioning of data (sharding) |
-| Read replicas to scale reads and have high availability | No high availability (replication)| 
-| Data durability using AOF (Append Only File) persistence | Non persistent |
-| Backup and restore features | No backup and restore |
-| Supports set and sorted sets | Multi-threaded architecture |
+| Redis                                                    | Memcached                                      |     |
+| -------------------------------------------------------- | ---------------------------------------------- | --- |
+| Multi AZ with auto-failover                              | Multi-node for partitioning of data (sharding) |     |
+| Read replicas to scale reads and have high availability  | No high availability (replication)             |     |
+| Data durability using AOF (Append Only File) persistence | Non persistent                                 |     |
+| Backup and restore features                              | No backup and restore                          |     |
+| Supports set and sorted sets                             | Multi-threaded architecture                    |     |
 - Consideration: ref https://aws.amazon.com/caching/best-practices/
 ### Caching pattern
 - Lazy loading/ Cache-Aside/ Lazy population:

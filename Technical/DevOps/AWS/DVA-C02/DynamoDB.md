@@ -150,6 +150,7 @@
 ## <mark style="background: #FF5582A6;">LSI</mark>
 - Uses the WCUs and RCUs of the main table.
 - No special throttling considerations.
+- Created with the table, can not create when the table is created.
 # DAX
 - Fully managed cache for DynamoDB.
 - 5 mins TTL for cache (default).
@@ -200,3 +201,8 @@
 - Option 1: using AWS Data Pipeline.
 - Option 2: backup and restore into a new table - take some time.
 - Option 3: `Scan` + `PutItem` or `BatchWriteIterm` - write your own code.
+# Notes
+- Looking for just a single item on the main table index? Use GetItem.
+- Looking for just a single item on a GSI? Use Query.
+- Looking for multiple items with different partition key and sort key combinations at once? Use BatchGetItem.
+- Looking for multiple items that share the same partition key? Use Query.
