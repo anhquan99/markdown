@@ -5,13 +5,31 @@
 - Internet Gateways helps VPC instances connect with the internet.
 - Public subnets have a route to the internet gateway.
 - Network Address Translation (NAT) Gateways (AWS managed) and NAT Instances (self-managed) allows instances in private subnets to access the internet while remaining private.
+# Subnets
+- A range of IP addresses in your VPC. Each subnet must reside entirely within one Availability Zone and can not span zones. By launching AWS resources in a separate Availability Zone, you can protect your applications from the failures of a single Availability Zone.
+## Subnet IP address range
+- IPv4 only.
+- Dual stack: has both IPv4 and IPv6.
+- IPv6 only.
+## Types
+- Public subnet: the subnet has direct route to an internet gateway, resources in a public subnet can access the public internet.
+- Private subnet: has no direct route to an internet gateway, resources in a private subnet require a NAT device to access the public internet.
+- VPN-only subnet: has a route to a Site-to-Site VPN connection through a virtual private gateway and does not have a route to an internet gateway.
+- Isolated subnet: has no routes to destinations outside its VPC. Resources in an isolated subnet can only access or be accessed by other resources in the same VPC.
+## Subnet CIDR reservations
+- A range of IPv4 and IPv6 addresses that you set aside so that AWS can't assign them to your network interfaces.
+- Options:
+	- Prefix: AWS assigns address from the reserved IP address range to network interfaces.
+	- Explicit: manual.
 # Network Access Control List (ACL)
 - A firewall controls traffic from and to a subnet.
 - Only allow, deny rules and attached at the subnet level.
 - Only include IP.
 # Security groups
 - A firewall controls traffic to and from an Elastic Network Interface (ENI) / an EC2 instance.
-- Only allow rules, include IP and other security groups.
+- Only allow rules, include IP and other security groups
+# NAT gateways
+- Enables instances in a private subnet to send outbound traffic the internet, but prevents resources on the internet from connecting to the instances.
 
 | Security group | Network ACL |
 | --- | --- |

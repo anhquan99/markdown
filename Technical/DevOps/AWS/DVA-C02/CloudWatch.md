@@ -83,3 +83,5 @@
 - EventBridge can analyze the events in your bus and infer the schema.
 -  The schema registry allows you to generate code for your application, that will know in advance how data is structured in the event bus.
 - Schema can be versioned.
+# Evidently
+- 
