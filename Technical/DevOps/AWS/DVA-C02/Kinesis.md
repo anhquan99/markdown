@@ -1,4 +1,6 @@
 - Makes easy to collect, process, and analyze streaming data in real-time. Ingest real-time data.
+# Streaming data
+- Streaming data is data that is emitted at high volume in a continuous, incremental manner with the goal of low-latency processing.
 # Kinesis service
 - **Data streams:** capture, process, and store data streams.
 - **Data Firehose:** load data stream into AWS data stores.
@@ -9,6 +11,31 @@
 - Ability to reprocess (replay) data.
 - Once data is inserted in Kinesis, it can not be deleted (immutability).
 - Data that shares the same partition goes to the same shard (ordering).
+- You can create data-processing applications, known as Kinesis Data Streams applications (consumer).
+## High-level architecture
+- The producers continually push data to Kinesis Data Stream, and the consumers process the data in real time.
+  ![[Pasted image 20240305074334.png]]
+## Terminology
+- Data record: the unit of data stored in a Kinesis data stream. Data records are composed of a sequence number, a partition key, and a data blob, which is an immutable sequence of bytes. Kinesis Data Streams does not inspect, interpret, or change the data in the blob in any way. A blob of data can be up to 1 MB.
+- Data stream application: 
+	- Is a consumer of a stream.
+	- There are 2 types of consumers that you can develop: shared fan-out consumers and enhanced fan-out consumers.
+- Shard: 
+	- Is a uniquely identified sequence of data records in a stream.
+	- A stream is composed of 1 or more shards, each of which provides a fixed unit of capacity.
+	- Each shard can support up to 5 transactions per second for rads, up to maximum total data read rate of 2 MB per second and up to 1000 record per second for writes, up to maximum total data write rate of 1 MB per second (including partition keys).
+## Scenarios:
+- Accelerated log and data feed intake and processing.
+- Real-time metrics and reporting.
+- Real-time data analytics.
+- Complex stream processing.
+## Resharding a Stream
+- Resharding lets you adjust the number of shards in your stream to adapt to changes in the rate of data flow through the stream.
+- Identify the hot or cold shards which is shards are receiving much more data, or much less data than expected by using metrics.
+- Hot shards can be split to increase capacity, and cold shards can be merged to make better use of their unused capacity.
+### Operations
+- Splitting.
+- Merging.
 ## Capacity modes
 ### Provisioned mode:
 - You choose the number of shards provisioned, scale manually or using API.
@@ -77,6 +104,11 @@
 	- Versions:
 		- KCL 1.x(supports shared consumer).
 		- KCL 2.x (supports shared and enhanced fan-out consumer).
+### Enhanced Fan-out
+- Enables consumers to receive records from a stream with throughput up to 2 MB of data per second per shard.
+- This throughput is dedicated, which means that consumers that use enhanced fan-out don't have to contend with other consumers that are receiving data from the stream.
+- Kinesis Data Streams pushes data records from the stream to consumers that use enhanced fan-out, there for these consumers don't need to poll for data.
+  ![[Pasted image 20240306063227.png]]
 # Kinesis operations
 - The same key will always go to the same shard.
 ## Shard splitting

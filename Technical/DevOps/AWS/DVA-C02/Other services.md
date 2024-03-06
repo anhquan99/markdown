@@ -9,6 +9,7 @@
 - It's common to use OpenSearch as a complement to another database.
 - 2 modes: managed cluster or serverless cluster.
 # Athena
+- Amazon Athena is an interactive query service that makes it easy to analyze data directly in S3 using standard SQL.
 - Serverless query service to analyze data stored in S3.
 - Used for Business intelligence / analytics / reporting, ...
 ## Performance improvement

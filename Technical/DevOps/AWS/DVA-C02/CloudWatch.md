@@ -75,6 +75,26 @@
 - Sent event to another service.
 - You can archive events (all / filter) sent to an event bus (indefinitely or set period).
 - Ability to replay archived events.
+## Event buses
+- An event bus is a router that receive events and delivers them to destinations, or targets.
+  ![[Pasted image 20240306213727.png]]
+  - You can archive, or save, events and then replay events at a later time from the archive.
+  - Default event bus in AWS account only allows events from 1 account, you can attach policies to an IAM role to grant permission to send events to a different account or Region.
+## Event
+- An event indicates a change in an environment.
+### Structure
+- version
+- id
+- detail-type
+- source
+- account
+- time
+- region
+- resource
+- detail
+## Pipe
+- A pipe routes events from a single source to a single target. The pipe also includes the ability to filter for specific events, and to perform enrichments on the event data before it is sent to the target.
+  ![[Pasted image 20240306222039.png]]
 ## Trigger
 - Schedule: Cron jobs.
 - Event pattern: event rules to react to a service doing something.
@@ -84,4 +104,3 @@
 -  The schema registry allows you to generate code for your application, that will know in advance how data is structured in the event bus.
 - Schema can be versioned.
 # Evidently
-- 
