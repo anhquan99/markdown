@@ -6,6 +6,11 @@
 - Easy monitoring through AWS CloudWatch.
 - Easy to get more resources per functions (up to 10GB of RAM).
 - Increasing RAM will also improve CPU and network.
+# Concept
+- Event: is a JSON formatted document that contains data for Lambda function to process.
+- Qualifier: when you invoke or view a function, you can include a qualifier to specify a version or alias.
+# Lifeycycle
+![[Pasted image 20240307180005.png]]
 # Language support
 - Can use Custom Runtime API (community supported, example Rust).
 - Container image
@@ -115,13 +120,13 @@
 	- Origin response: after CloudFront receives the response from the origin.
 	- Viewer response.
 
-| CloudFront Functions | Lambda@Edge |
-| -- | -- |
-|Cache key normalization | Longer execution time (several ms) |
-| Header manipulation | Adjustable CPI or memory | 
-| URL rewrites or redirects | Your code depends on a 3rd libraries |
-| Request authentication and authorization | Network access to use external services for processing |
-| | File system access or access. to the body of HTTP requests |
+| CloudFront Functions                     | Lambda@Edge                                                |
+| ---------------------------------------- | ---------------------------------------------------------- |
+| Cache key normalization                  | Longer execution time (several ms)                         |
+| Header manipulation                      | Adjustable CPI or memory                                   |
+| URL rewrites or redirects                | Your code depends on a 3rd libraries                       |
+| Request authentication and authorization | Network access to use external services for processing     |
+|                                          | File system access or access. to the body of HTTP requests |
 # With VPC
  - You must define the VPC ID, the subnets and the security groups.
  - Lambda will create an ENI in your subnets.
@@ -162,7 +167,7 @@
 # Wit CloudFormation
 - Simple inline functions and it can not include function dependencies.
 - Use `Code.ZipFile` property.
-### S3
+# S3
 - You must store the Lambda zip in S3 and refer S3 zip location in the CloudFormation code.
 - If you update the code in S3, but don't update S3Bucket, S3Key or S3ObjectVersion, CloudFormation will not update your function.
 # With container images

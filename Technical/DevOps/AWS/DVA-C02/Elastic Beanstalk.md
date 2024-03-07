@@ -12,6 +12,10 @@
 	- Collection of AWS resources running an application version (only 1 application version at a time).
 	- Tiers: web server environment tier and worker environment tier.
 	- Multiple environment.
+# Permissions
+- **Service role:** is the IAM role that Elastic Beanstalk assumes when calling other services on your behalf.
+- **Instance profile:** is an IAM role that's applied to Amazon EC2 instances that are launched in your Elastic Beanstalk environment.
+- **User policy:** create IAM user for each user who uses Elastic Beanstalk to avoid using your root account for sharing credentials.
 # Deployment options for updates
 ### All at once
 - Deploy all in 1 go
@@ -41,6 +45,9 @@
 ### Traffic splitting
 - Canary testing - send a small % of traffic to new deployment.
 - Like blue-green.
+### Blue/Green deployments
+- Create separate, but identical environment. One environment (blue) is running the current application version and one environment (green) is running the new application version.
+- Using a blue/green deployment strategy increases application availability and reduces deployment risk by simplifying the rollback process if a deployment fails. Once testing has been com
 # Lifecycle policy
 - Elastic Beanstalk can store at most 1000 application versions, you can not deploy if the number of version is exceeded unless you remove the old versions.
 - Lifecycle policy

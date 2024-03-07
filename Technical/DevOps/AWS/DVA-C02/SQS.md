@@ -1,4 +1,42 @@
 - Fully managed service, used to decouple applications.
+# Architecture
+- There are 3 main parts in a distributed messaging system:
+	- Components of distributed system.
+	- Queue.
+	- Message in the queue.
+# Types
+## Standard queue 
+### Attributes:
+- Unlimited throughput: standard queues.
+- At-least-once delivery: a message is delivered at least once, but occasionally more than one copy of a message is delivered.
+- Best-effort-ordering: occasionally, messages are delivered in an order different from which they were sent.
+### Best practices
+- Working with messages:
+	- Processing messages in a timely manner.
+	- Handling request errors: retry and backoff.
+	- Setting up long polling.
+	- Capturing problematic messages: configure dead-letter queue for messages that can't be processed.
+	- Setting up dead-letter queue retention.
+	- Avoiding inconsistent message processing.
+	- Implementing request-response system:
+		- Don't create reply queues per message. Instead, create reply queues on startup, per producer, and use a correlation ID message attribute to map replies to requests.
+		- Don't let your producers share reply queues. This can cause a producer to receive response messages intended for another producer.
+## FIFO queue:
+### Attributes:
+- High throughput: support up to 3000 messages per second.
+- Exactly-once processing: a message is delivered once and remains available until a consumer processes and deletes it. Duplicates aren't introduced into the queue.
+- FIFO delivery.
+### Best practices:
+- Using the message deduplication ID:
+	- Providing the message deduplication ID
+	- Enabling deduplication for a single-producer/consumer system
+	- Designing for outage recovery scenarios.
+	- Working with visibility timeouts.
+- Using the message group ID:
+	- Interleaving multiple ordered message groups.
+	- Avoid processing duplicates in a multiple producer/consumer system.
+	- Avoid having a large backlog of messages with the same message group ID.
+	- Avoid reusing the same message group ID with virtual queues.
 # Attributes
 - Unlimited throughput, unlimited number of messages in queue.
 - Default retention of message: 4 days, max 14 days.
