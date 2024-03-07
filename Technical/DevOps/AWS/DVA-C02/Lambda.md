@@ -9,9 +9,32 @@
 # Concept
 - Event: is a JSON formatted document that contains data for Lambda function to process.
 - Qualifier: when you invoke or view a function, you can include a qualifier to specify a version or alias.
-# Lifeycycle
+# Lifecycle
 ![[Pasted image 20240307180005.png]]
-# Language support
+# Deployment package
+- Container images.
+- .zip file archives.
+- Layers
+- If your deployment package is larger than 50 MB, upload your function code and dependencies to a S3 bucket.
+# IaC tools
+- [[CloudFormation]]
+- [[Serverless Application Model (SAM)]]
+- [[Cloud Development Kit (CDK)]]
+# Private networking
+- To connect to another AWS service, you can use VPC endpoints for private communication between your VPC and supported AWS service. Alternative approach is to use a NAT gateway to route outbound traffic to another AWS service.
+- When you connect a function to a VPC, Lambda assigns your function to a Hyperplane ENI (elastic network interface) for each subnet in your function's VPC configuration. Lambda creates a Hyperplane ENI the first time a unique subnet and security group combination is defined for a VPC-enabled function in an account.
+- To connect to a VPC, a function must have the following permissions:
+	- Execution role permissions:
+		- `ec2:CreateNetworkInterface`
+		- `ec2:DescribeNetworkInterfaces`
+		- `ec2:DeleteNetworkInterface`
+		- `ec2:AssignPrivateIpAddresses`
+		- `ec2:UnassignPrivateIpAddresses`
+	- User permission:
+		- `ec2:DescribeSecurityGroups`
+		- `ec2:DescribeSubnets`
+		- `ec2:DescribeVpcs`
+# Language support 
 - Can use Custom Runtime API (community supported, example Rust).
 - Container image
 	- The container image must implement the Lambda runtime API.
@@ -48,6 +71,7 @@
 	- Your function can scale independently of other functions in your account.
 	- Your function can't scale out of control.
 	- You may not be able to use all of your account's available concurrency.
+	  ![[Pasted image 20240307223514.png]]
 - **Provisioned concurrency:** pre-initialize a number of env instance for a function to avoid cold start.
 	- Lambda can provision between 500 and 3000 execution envs at once, depending on the region.
 ## Services
@@ -60,6 +84,7 @@
 - If 2 writes are made to a single non-versioned object at the same time, it is possible that only a single event notification will be sent.
 - If you want to ensure that an event notification is sent for every successful write, you can enable versioning on your bucket.
 # Event source mapping
+- Is a Lambda resource that reads from an event source and invokes a Lambda function.
 ## <mark style="background: #BBFABBA6;">Kinesis DynamoDB Streams</mark>
 ## <mark style="background: #BBFABBA6;">Kinesis data streams</mark>
 - An event source mapping creates an iterator for each shard, processes items in order.
@@ -145,9 +170,14 @@
 - Max size is 10GB.
 - The directory content remains when the execution context is frozen, providing a transient cache that can be used for multiple invocation (checkpoint).
 - To encrypt content you must generate KMS Data keys.
-# Layers 
+# Layers
 - Externalize dependencies to re-use them (docker onion layer architecture alike).
 - Custom runtimes.
+## Considerations
+- To reduce the size of your deployment packages.
+- To separate core function logic from dependencies.
+- To share dependencies across multiple functions.
+- To use the Lambda console code editor.
 # File system mounting
 - Lambda functions can access EFS file system if they are running in a VPC.
 - Configure Lambda to mount EFS file system to local directory during initialization.
@@ -184,6 +214,10 @@
 - They are pointers to Lambda function versions.
 - Aliases are mutable, have their own ARNs and can not reference aliases.
 - Enable canary deployment by assigning weights to lambda functions or stable configuration of your event triggers / destinations.
+> [!info] Notes
+> You can't publish your function and create a new version if the unpublished version ($LATEST) is the same as the previous published version. You need to deploy code changes or make updates to your function's environment variables in $LATEST before you can create a new version.
+
+
 # With CodeDeploy
 - CodeDeploy can help you automate traffic shift for Lambda aliases.
 - The feature is integrated with the SAM framework.
@@ -221,5 +255,24 @@
 	- Passwords, sensitive values, ...
 - Minimize your deployment package size to its runtime necessities.
 - Avoid using recursive code, never have a Lambda function call itself.
+## Function code
+- Separate the Lambda handler from your core logic.
+- Take advantage of execution env reuse to improve performance of your function.
+- Use a keep-alive directive to maintain persistent connections.
+- Use env variables to pass operational parameters to your function.
+- Control the dependencies in your function's deployment package.
+- Minimize your deployment package size to its runtime necessities.
+- Reduce the time it takes Lambda to unpack deployment packages.
+- Minimize the complexity of your dependencies.
+- Avoid using recursive code.
+- Do not use non-documented, non-public APIs.
+- Write idempotent code: ensure duplicate events are handled the same way.
+## Function configuration
+- Performance testing your Lambda function: any increase in memory size triggers an increase in CPU.
+- Load test your Lambda function to determine an optimum timeout value.
+- Use most-restrictive permissions when setting IAM policies.
+- Be familiar with your Lambda quotas.
+- Be familiar with your upstream and downstream throughput constraints.
+- Delete Lambda function that you are no longer using.
 ## Notes
 - Environment variables max size = 4KB.
