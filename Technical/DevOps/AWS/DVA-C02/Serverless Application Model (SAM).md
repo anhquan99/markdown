@@ -1,6 +1,43 @@
 - Framework for developing and deploying serverless applications.
 - All the configuration is YAML code.
 - Generate complex CloudFormation from SAM YAML file.
+# Specification
+- Build on [[CloudFormation]].
+- An extension of CloudFormation.
+- An abstract, short-hand syntax.
+- Transformational.
+## Anatomy
+```yaml
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  set of globals
+
+Description:
+  String
+
+Metadata:
+  template metadata
+
+Parameters:
+  set of parameters
+
+Mappings:
+  set of mappings
+
+Conditions:
+  set of conditions
+
+Resources:
+  set of resources
+
+Outputs:
+  set of outputs
+
+```
+- Transform is required to identify an AWS CloudFormation template.
+- Global is optional to defines properties that are common to all serverless function.
+- Resource is required, contains a combination of CloudFormation and SAM resources.
 # Recipe
 - Transform header indicates: `Transform: 'AWS::Serverless-2016-10-31'`.
 - Write code:

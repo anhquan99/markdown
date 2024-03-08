@@ -146,6 +146,15 @@
 	- EFS
 	- FSx For Lustre
 	- FSx for NetApp ONTAP
+# ECS
+## Terminology and components
+- Layers:
+	- Capacity: the infrastructure where your containers run.
+	- Controller: deploy and manage your applications that run on the containers.
+	- Provisioning: the tools you can use to interface with the scheduler to deploy and manage your application containers.
+	  ![[Pasted image 20240308080029.png]]
+	  ![[Pasted image 20240308080108.png]]
+- Task definition: is like a blueprint for your application. Each time you launch a task in Amazon ECS, you specify a task definition. The service then knows which Docker image to use for containers, how many containers to use in the task, and the resource allocation for each container.
 ## Notes
 - You have a containerized application stored as Docker images in an ECR repository, that you want to run on an ECS cluster. You're trying to launch two copies of the same Docker container on the same EC2 container instance. The first container successfully starts, but the second container doesn't. You have checked that there's enough CPU and RAM on the EC2 container instance. What is the problem here?
 	- The host port defined in the task definition.

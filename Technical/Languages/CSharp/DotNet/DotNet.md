@@ -1,5 +1,5 @@
 - [[ASP.NET Fundamental]]
-- [[Technical/Languages/CSharp/Dot net/Authentication and Authorization|Authentication and Authorization]]
+- [[Technical/Languages/CSharp/DotNet/Authentication and Authorization|Authentication and Authorization]]
 - [[Authentication and Identity Framework]]
 - [[Best practice for comparing strings in .NET]]
 - [[Covariance and Contravariance]]
