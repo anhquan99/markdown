@@ -12,9 +12,36 @@
 - Partition key (hash):
 	- Partition key must be unique for each item.
 	- Partition key must be diverse so that the data is distributed.
+	- DynamoDB uses the partition key's value as input to an internal hash function. The output from the hash function determines the partition (physical storage internal to DynamoDB) in which the item will be stored.
 - Partition key + sort key (hash + range):
 	- The combination must be unique for each item.
 	- Data is grouped by partition key.
+# Secondary indexes
+- You can create one or more secondary indexes on a table. A secondary index lets you query the data in the table using an alternate key, in addition to queries against the primary key. DynamoDB doesn't require that you use indexes, but they give your applications more flexibility when querying your data. After you create a secondary index on a table, you can read data from the index in much the same way as you do from the table.
+- Quotas:
+	- LSI: 5 indexes.
+	- GSI: 20 indexes.
+## Local Secondary Index (LSI)
+- Alternative sort key for table (same partition key as that of base table).
+- The sort key consists of 1 scalar attribute (string, number, or binary).
+- Up to 5 local secondary indexes per table.
+- Must be defined at table creation time.
+- Attribute projections can contain some or all the attributes of the base table (`KEYS_ONLY, INCLUDE, ALL`).
+## Global Secondary Index(GSI)
+- Alternative primary key (hash or hash + range) from the base table.
+- Speed up queries on non-key attributes.
+- The index key consists of scalar attributes (string, number, or binary).
+- Attribute projections - some or all the attributes of the base table (`KEYS_ONLY, INCLUDE, ALL`).
+- Must provision RCUs and WCUs for the index.
+- Can be added/modified after table creation.
+## Indexes and throttling
+### <mark style="background: #FF5582A6;">GSI</mark>
+- If the writes are throttled on the GSI, then the main table will be throttled, even if the WCU on the main tables are fine.
+- Choose your GSI partition key and WCU capacity carefully!
+### <mark style="background: #FF5582A6;">LSI</mark>
+- Uses the WCUs and RCUs of the main table.
+- No special throttling considerations.
+- Created with the table, can not create when the table is created.
 # Read/write capacity modes
 - You can switch between different modes once every 24 hours.
 ## <mark style="background: #BBFABBA6;">Provisioned mode (default)</mark>
@@ -129,34 +156,14 @@
 	- `begins_with` (for string)
 	- `in, and between`
 	- `size` (string length)
-- Note: Filter expression filters the results of read queries, while condition expressions are for write operations.
-# Local Secondary Index (LSI)
-- Alternative sort key for table (same partition key as that of base table).
-- The sort key consists of 1 scalar attribute (string, number, or binary).
-- Up to 5 local secondary indexes per table.
-- Must be defined at table creation time.
-- Attribute projections can contain some or all the attributes of the base table (`KEYS_ONLY, INCLUDE, ALL`).
-# Global Secondary Index(GSI)
-- Alternative primary key (hash or hash + range) from the base table.
-- Speed up queries on non-key attributes.
-- The index key consists of scalar attributes (string, number, or binary).
-- Attribute projections - some or all the attributes of the base table (`KEYS_ONLY, INCLUDE, ALL`).
-- Must provision RCUs and WCUs for the index.
-- Can be added/modified after table creation.
-# Indexes and throttling
-## <mark style="background: #FF5582A6;">GSI</mark>
-- If the writes are throttled on the GSI, then the main table will be throttled, even if the WCU on the main tables are fine.
-- Choose your GSI partition key and WCU capacity carefully!
-## <mark style="background: #FF5582A6;">LSI</mark>
-- Uses the WCUs and RCUs of the main table.
-- No special throttling considerations.
-- Created with the table, can not create when the table is created.
+- Note: Filter expression filters the results of read queries, while condition expressions are for write operations
 # DAX
 - Fully managed cache for DynamoDB.
 - 5 mins TTL for cache (default).
 - Up to 10 nodes in the cluster.
 - For individual object cache, query and scan cache.
 # Streams
+- DynamoDB Streams is an optional feature that capture data modification events in DynamoDB tables.
 - Ordered stream of item-level modification (create/update/delete) in a table.
 - Data retention for up to 24 hr.
 - Choose the information is going to be written to the stream:

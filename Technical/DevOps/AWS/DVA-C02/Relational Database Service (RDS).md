@@ -8,6 +8,15 @@
 	- Oracle
 	- MS SQL Server
 	- Aurora (AWS proprietary database)
+# Instance class type
+- General-purpose
+- Memory-optimized
+- Burstable-performance
+- Optimized reads
+# Instance storage
+- General purpose SSD.
+- Provisioned IOPS SSD: I/O intensive workloads.
+- Magnetic
 ### Storage auto-scaling
 - Increase storage on your RDS DB instance dynamically.
 - You have to set maximum storage threshold (maximum limit for DB storage).

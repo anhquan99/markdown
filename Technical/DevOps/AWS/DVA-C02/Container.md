@@ -7,6 +7,11 @@
 - Fargate
 	- Amazon's own Serverless container platform.
 	- Works with ECS and EKS.
+	- Scenarios:
+		- Large workloads that require low operational overhead.
+		- Small workloads that have occasional burst.
+		- Tiny workloads.
+		- Batch workloads.
 - Elastic Container Registry (ECR)
 	- Store container images.
 # Launch types
