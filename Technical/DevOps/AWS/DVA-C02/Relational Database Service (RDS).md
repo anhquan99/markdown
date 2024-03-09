@@ -37,12 +37,27 @@
 - Allows apps to pool and share DB connections established with the database.
 - Improving database efficiency by reducing the stress on database resources and minimize open connections (and timeouts).
 - RDS proxy is never publicly accessible (must be accessed from VPC),
-# Amazone ElastiCache
+# Amazone ElasticCache
 - Managed Redis or Memcached.
-- Using ElastiCache involves heavy application code changes.
+- Using ElasticCache involves heavy application code changes.
 - Usage:
 	- DB Cache
 	- User session store
+## Redis
+### Components
+#### Nodes:
+- Node is the smallest building block of an ElasticCache deployment, fixed-size chuck of secure, network-attached RAM.
+#### Shards:
+- Grouping of 1 node to 6 related nodes.
+#### Clusters:
+- Logical grouping of 1 or more shards.
+- Data is partitioned across the shards in a Redis cluster.
+## Memcached
+### Usage
+- Simplest model possible.
+- Run large nodes with multiple cores and threads.
+- Scale out and in, adding and removing nodes as demand on system increases and decreases.
+- Cache objects.
 
 | Redis                                                    | Memcached                                      |     |
 | -------------------------------------------------------- | ---------------------------------------------- | --- |
