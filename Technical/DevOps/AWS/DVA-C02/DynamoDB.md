@@ -16,6 +16,7 @@
 - Partition key + sort key (hash + range):
 	- The combination must be unique for each item.
 	- Data is grouped by partition key.
+	- DynamoDB calculates the hash value of the partition key and keeps items which have the same value of partition key close together and in sorted order by the sort key attribute's value.
 # Secondary indexes
 - You can create one or more secondary indexes on a table. A secondary index lets you query the data in the table using an alternate key, in addition to queries against the primary key. DynamoDB doesn't require that you use indexes, but they give your applications more flexibility when querying your data. After you create a secondary index on a table, you can read data from the index in much the same way as you do from the table.
 - Quotas:
