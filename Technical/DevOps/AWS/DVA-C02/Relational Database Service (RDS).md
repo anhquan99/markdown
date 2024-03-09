@@ -37,7 +37,11 @@
 - Allows apps to pool and share DB connections established with the database.
 - Improving database efficiency by reducing the stress on database resources and minimize open connections (and timeouts).
 - RDS proxy is never publicly accessible (must be accessed from VPC),
-# Amazone ElasticCache
+# Amazon MemoryDB for Redis
+## Usage
+- MemoryDB for Redis is a durable, in-memory database for workloads that require an ultra-fast, primary database. You should consider using MemoryDB if your workload requires a durable database that provides ultra-fast performance (microsecond read and single-digit millisecond write latency). MemoryDB may also be a good fit for your use case if you want to build an application using Redis data structures and APIs with a primary, durable database. Finally, you should consider using MemoryDB to simplify your application architecture and lower costs by replacing usage of a database with a cache for durability and performance.
+- ElastiCache for Redis is a service that is commonly used to cache data from other databases and data stores using Redis. You should consider ElastiCache for Redis for caching workloads where you want to accelerate data access with your existing primary database or data store (microsecond read and write performance). You should also consider ElastiCache for Redis for use cases where you want to use the Redis data structures and APIs to access data stored in a primary database or data store.
+# Amazon ElasticCache
 - Managed Redis or Memcached.
 - Using ElasticCache involves heavy application code changes.
 - Usage:

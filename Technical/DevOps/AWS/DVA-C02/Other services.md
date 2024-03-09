@@ -35,6 +35,8 @@
 - Configure, validate, and deploy dynamic configurations.
 - Deploy dynamic configuration changes to your applications independently of any code deployments.
 - Feature flag, application, tuning, allow/block listing, ...
+> [!info] Note
+> AppConfig is a capability of System Manager
 # CloudWatch Evidently
 - Safely validate new features by serving them to a specified % of your users.
 - **Launches** (= feature flags).

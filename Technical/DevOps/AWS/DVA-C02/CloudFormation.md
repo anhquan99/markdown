@@ -1,5 +1,9 @@
 - Managing your infrastructure as code.
 - CloudFormation is a declarative way of outlining your AWS Infrastructure, for any resources (most of them are supported).
+# Concepts
+- Template
+- Stacks
+- Change sets
 # Benefits
 - Infrastructure as code
 	- No resources are manually created.
@@ -77,7 +81,7 @@
 	- Option to disable rollback to troubleshoot what happened.
 - Stack update fails:
 	- Automatically rolls back to the previous known working state.
-	- Write log
+	- Write log.
 # Stack notifications
 - Send stack events to SNS Topic.
 - Enable SNS Integration using Stack Options.
@@ -97,10 +101,32 @@
 # StackSets
 - Create, update, or delete stacks across multiple accounts and regions with a single operation.
 - Require admin to create StackSets.
-- Trusted account to create, update ,delete stack instances from StackSets.
+- Trusted account to create, update, delete stack instances from StackSets.
 - When you update a stack set, all associated stack instances are updated throughout all accounts and regions.
 # Drift
 - Used to compare all the resources between versions.
 # Stack policies
 - Stack policies is a JSON document that defines the update actions that are allowed on specific resources during stack updates to protect resources from unintentional updates.
 - Specify an explicit ALLOW for the resources you want to be allowed to be updated.
+# Best practices
+## Planning and organizing
+- Shorten the feedback loop to improve delivery velocity: adopt practices and tools that help you shorten the feedback loop in your infrastructure you describe with CloudFormation templates.
+- Organize your stacks by lifecycle and ownership.
+- Use cross-stack references to export shared resources.
+- Verify quotas for all resource types.
+- Reuse templates to replicate stack in multiple env.
+- Use modules to reuse resource configuration.
+## Creating templates
+- Use AWS-specific parameter types.
+- Use parameter constraints.
+- Use pseudo parameters to promote portablity.
+- Use `AWS::CloudFormation::Init` to deploy software applications on Amazon EC2 instances.
+- Use the latest helper script.
+- Validate templates before using them.
+## Managing stack
+- Manage all stack resources through AWS CloudFormation.
+- Create change sets before updating your stacks.
+- Use stack policies.
+- Use AWS CloudTrail to log AWS CloudFormation calls.
+- Use code reviews and revision controls to manage your template.
+- Update your EC2 instances regularly.

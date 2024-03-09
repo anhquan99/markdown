@@ -13,6 +13,8 @@
 	- Example:
 		- S3 object-level activity
 		- Lambda function execution activity
+- Insights Events:
+	- Capture unusual API call rate or error rate activity in you AWS account by analyzing CloudTrail management activity.
 # CloudTrail insights
 - Enable insights to detect unusual activity in your account:
 	- Inaccurate resource provisioning

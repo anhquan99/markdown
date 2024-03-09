@@ -35,6 +35,7 @@
 - Use CW Metrics to monitor build statistics.
 - Use EventBridge to detect failed build and trigger notifications.
 - Use CW Alarms to notify if you need thresholds for failures.
+  ![[Pasted image 20240309162953.png]]
 ## `buildspec.yml`
 - Must be at the root of your code.
 - `env` define env variables:
@@ -61,12 +62,25 @@
 - Gradual deployment control.
 - A file named `appspec.yml` defines how the deployment happens.
 - Perform in-place deployments or blue/green deployments.
+- Deployable compute platforms:
+	- EC2/On premises
+	- Lambda
+	- ECS
 - Must run the **CodeDeploy Agent** on the target instances.
-- Define deployment speed:
-	- `AllAtOnce`
-	- `HalfAtATime` reduced capacity by 50%
-	- `OneAtATime` slowest, lowest availability impact
-	- `Custom` define your %
+## Deployment
+### Types
+- In-place deployment:
+	- In this strategy, the previous version of the application on each compute resource is stopped, the latest application is installed, and the new version of the application is started and validated.
+>[!info] Notes
+>ECS can not use in-place deployment
+- Blue/green deployment
+	- On EC2/premises, the instances in a deployment group (original env) are replaced by a different set of instances.
+	- Traffic shifted.
+	- Define deployment speed:
+		- `AllAtOnce`
+		- `HalfAtATime` reduced capacity by 50%
+		- `OneAtATime` slowest, lowest availability impact
+		- `Custom` define your %
 - Life cycle event hooks
 	- **Auto scaling launch deployments:**
 	  ![[Pasted image 20240224215909.png]]
@@ -106,6 +120,15 @@
 # CodeArtifact
 - Storing and retrieving dependencies is called artifact management.
 - Developers and CodeBuild can retrieve dependencies straight from CodeArtifact.
+## Concepts
+- **Asset:** is an individual file stored in CodeArtifact that's associated with a package version.
+- **Domain:** repositories are aggregated into a higher-level entity known as a domain.
+- **Repository:** contains a set of package versions, each of which maps to a set of assets.
+- **Package:** is a bundle of software and the metadata that is required to resolve dependencies and install the software.
+- **Package namespace**
+- **Package version**
+- **Upstream repository:** when the package versions in it can be accessed from the repository endpoint of the downstream repository.
+  ![[Pasted image 20240309162510.png]]
 ## Resource policies
 - Used to authorize another account to access CodeArtifact.
 - A given principal can either read all the packages in a repository or none of them.
@@ -123,7 +146,13 @@
 - **Easy sharing across repos and team.**
 - **Apply policy across multiple repos**: domain admin can apply policy across the domain.
 # CodeGuru
-- An ML-powered service for automated code reviews and application performance recommendations.
+- An ML-powered service for automated code reviews, application performance recommendations, detect security violations and vulnerabilities.
+## Integration
+- GitHub
+- GitLab
+- Bitbucket
+- AWS CLI
+- AWS CodePipeline
 ## Reviewer
 ## Profiler
 - Features:
@@ -141,3 +170,4 @@
 - `SamplingIntervalInMilliseconds`
 # Cloud9
 - Cloud based IDE.
+  ![[Pasted image 20240309150632.png]]

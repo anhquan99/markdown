@@ -4,6 +4,22 @@
 - Dimension is an attribute of a metric (instance id, env, ...).
 - Up to 30 dimensions per metric.
 - Metrics have **timestamps**.
+# Concepts
+- Namespaces: is a container for CW metrics
+- Metrics.
+- Time stamps.
+- Metric retention.
+- Dimensions: is a name/value pair that is part of the identity of a metric.
+- Dimension combinations.
+- Resolution:
+	- Standard: 1 minute granularity.
+	- High: 1 second granularity.
+- Statistics: are metric data aggregations over specified periods of time.
+- Units: each statistic has a unit of measure. Example `Bytes, Seconds, Count, Percent`.
+- Periods.
+- Aggregation: aggregates statistics according to the period length that specify when retrieving statistics.
+- Percentiles: a percentile indicates the relative standing of a value in a dataset. For example, the 95th percentile means that 95 percent of the data is lower than this value and 5 percent of the data is higher than this value. Percentiles help you get a better understanding of the distribution of your metric data.
+- Alarms.
 # EC2 detailed monitoring
 - EC2 instance metrics have metrics every 5 mins.
 - With detailed monitoring (for a cost), you get data every 1 min which you can scale ASG faster.

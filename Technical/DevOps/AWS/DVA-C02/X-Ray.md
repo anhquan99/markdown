@@ -1,4 +1,10 @@
 - Debugging service of AWS.
+# Concepts
+- Segments: the compute resources running your application logic send data about their work as segments.
+- Subsegments:
+	- A segment can break down the data about the work done into subsegments.
+	- Subsegment provide more granular timing information and details about downstream calls that your application made to fulfill the original request.
+- Traces: track the path of a request through your application.
 # Advantages
 - Troubleshooting performance (bottlenecks).
 - Understand dependencies in a microservice architecture.

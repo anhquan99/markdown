@@ -1,5 +1,12 @@
 - Define your cloud infrastructure using a familiar language.
 - The code is compiled into a CloudFormation template (JSON/YAML).
+- Lifecycle
+  ![[Pasted image 20240309205235.png]]
+# Benefits
+- Develop and manage your IaC.
+- Define your cloud infrastructure using general programming languages.
+- Deploy infrastructure through CloudFormation.
+- Get started developing your application quickly with constructs.
 # CDK vs SAM
 - SAM:
 	- Serverless focused.
