@@ -77,8 +77,14 @@
 - Valid time:
 	- Shared content (movie, music): short (minutes).
 	- Private content (private to the user): long (years).
-- Singed URL: access to individual files (per file per URL).
-- Singed cookies: access to multiple files.
+- Singed URL:
+	- Access to individual files (per file per URL).
+	- You want to restrict access individual files.
+	- Your users are using a client that doesn't support cookies.
+- Singed cookies: 
+	- Access to multiple files.
+	- You want to provide access to multiple restricted files.
+	- You don't want to change your current URLs.
 
 | CloudFront Signed URL | S3 Pre-Signed URL |
 | --- | --- |

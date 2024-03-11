@@ -198,6 +198,7 @@
 - CLB:
 	- Disabled by default.
 	- No charges for inter AZ data.
+  ![[Pasted image 20240310222821.png]]
 ## SSL/TLS
 - The load balancer uses an X.509 certificate.
 - You can manage certificates using AWS Certificate Manager (ACM).

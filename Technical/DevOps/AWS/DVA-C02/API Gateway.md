@@ -1,6 +1,8 @@
 - [[Technical/DevOps/Azure/Az 204/Exam guide/API Management|API Management]] alike.
 - Handle different env.
 - Handle security (authentication and authorization).
+# Concepts
+- Callback URL: when  a new client is connected through a WebSocket connection, you can call integration in API Gateway to store the client's callback URL. You can then use that callback URL to send messages to the client from the backend system.
 # EndPoint types
 ## Edge-optimized (default)
 - For global clients.
