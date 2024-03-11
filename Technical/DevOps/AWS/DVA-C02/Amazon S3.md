@@ -19,6 +19,8 @@
 	- `http://bucket-name.s3-website-aws-region.amazonaws.com`
 	- `http://bucket-name.s3-website.aws-region.amazonaws.com`
 - Make sure to allow public read when encounter 403 code.
+> [!warning] Important
+> S3 website endpoints do not support HTTPS or access points. If you want to use HTTPS, you can use CloudFront to serve a static website hosted on S3.
 ## Versioning
 - Enabled at the bucket level.
 - It is best practice to version your buckets:
@@ -75,6 +77,12 @@
 	- Archive Instant Access tier (automatic): objects not accessed for 90 days.
 	- Archive Access tier (optional): config from 90 days to 700+ days.
 	- Depp Archive Access tier (optional): config from 180 days to 700+ days.
+
+|Storage class|Expedited|Standard|Bulk|
+|---|---|---|---|
+|S3 Glacier Instant Retrieval|Not applicable|Not applicable|Not applicable|
+|S3 Glacier Flexible Retrieval|1–5 minutes|3–5 hours|5–12 hours|
+|S3 Glacier Deep Archive|Not available|Within 12 hours|Within 48 hours|
 ## Durability
 - High durability and same for all storage classes.
 # Lifecycle rules

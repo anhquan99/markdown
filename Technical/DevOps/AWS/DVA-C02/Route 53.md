@@ -1,5 +1,11 @@
 - Highly available, scalable, fully managed and authoritative DNS (the customer can update the DNS records).
 - The only AWS service provides 100% available SLA.
+# Functions
+- Register domain names.
+- Route internet traffic to the resources for your domain.
+  ![[Pasted image 20240311221607.png]]
+- Check the health of your resources.
+  ![[Pasted image 20240311221633.png]]
 ## DNS terminologies
 - Domain registrar: Route 53, GoDaddy, ...
 - DNS records: A, AAAA, CNAME, NS, ...

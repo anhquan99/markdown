@@ -1,4 +1,5 @@
 - Infrastructure as a Service.
+  ![[Pasted image 20240311222331.png]]
 # Capability
 - Renting virtual machines (EC2).
 - Storing data on virtual drives
@@ -77,12 +78,23 @@
 	- You're charged at an on-demand rate whether you run instances or not.
 	- For short-term, uninterrupted workloads that need to be in a specific AZ.
 # Instance storage
+![[Pasted image 20240311230449.png]]
 ## Elastic block store (EBS) volume
 - EBS is a network drive you can attach to your instance while they run.
 - It can only mount to 1 instance at a time (at the CCP level).
 - They are bound to a specific availability zone, example an EBS volume in us-east-1a can't be attached to us-east-1b. To move volume across, you need to snapshot it.
 - It's recommended to detach volume when doing snapshot, because the snapshot only capture data that has been written to EBS volume at the time the snapshot command is issued.
+### Benefits
+- Data availability.
+- Data persistence.
+- Data encryption.
+- Snapshots.
+- Flexibility: live config changes while in production, you can modify volume type, volume size, and IOPS capacity without service interruptions.
 ### Snapshot features
+- The first snapshot is always a full snapshot. It includes all of the data blocks written to the volume at the time of creating the snapshot. Subsequent snapshots of the same volume are incremental snapshots. They include only changed and new data blocks written to the volume since the last snapshot was created.
+- The size of a full snapshot is determined by the size of the data being backed up.
+- Snapshot lock: protect against accidental or malicious deletions, or to store them in WORM (write-once-read-many).
+- Only access in a region.
 - Archive:
 	- 75% cheaper.
 	- Takes within 24 to 72 hours for restoring the archive.
@@ -91,16 +103,23 @@
 	- Retention period, 1 day to 1 year.
 - Fast snapshot restore:
 	- Force full initialization of snapshot to have no latency on the first use (expensive).
+> [!warning] Important
+> AWS does not automatically back up the data stored on your EBS volumes. For data resiliency and disaster recovery, it is your responsibility to create EBS snapshots on a regular basis, or to set up automatic snapshot creation by using AWS Data Lifecycle Manager or AWS Backup.
 ### Types
-- `gp2 / gp3 (SSD)`: 
+- `gp2/gp3 (SSD)`
 	- General purpose SSD.
 	- Cost-effective storage, low-latency.
-- `io1 / io2 (SSD)`: 
+- `io1/io2 (SSD)`
 	- Highest performance SSD.
 	- Critical business applications with sustained provisioned IOPS (IOPS) performance.
 	- Support EBS Multi-attach, up to 16 EC2 instance at a time.
-- `st1 (HDD)`: low cost HDD for frequently accessed, throughput-intensive workloads.
-- `sc1 (HDD)`: lowest cost HDD for less frequently accessed workloads.
+- `st1 (HDD)` low cost HDD for frequently accessed, throughput-intensive workloads.
+- `sc1 (HDD)` Cold HDD, the lowest cost HDD for less frequently accessed workloads.
+### EC2 EBS-backed instances
+- The root volume automatically have an EBS volume attached.
+- An Amazon EBS-backed instance can be stopped and later restarted without affecting data stored in the attached volumes.
+- You can't use `st1` or `sc1` volumes as root volumes.
+  ![[Pasted image 20240311234111.png]]
 ## EC2 instance store
 - High performance hardware, lose their storage if they're stopped (ephemeral).
 ## Elastic File System (EFS)
@@ -110,7 +129,12 @@
 - Use for content management, web serving, data sharing, ...
 - Uses NFSv4.1 protocol.
 - Compatible with Linux based AMI (POSIX).
+> [!info] Note
+> EFS is not supported on Windows instances.
 - Scales automatically, pay-per-use, no capacity planning.
+### Types
+- Regional
+- One Zone
 ### Scale
 - 1000s of concurrent NFS clients, 10 GB+ /s throughput.
 - Grow to Petabyte-scale network file system, automatically.
@@ -125,11 +149,13 @@
 ### Storage classes
 - Standard.
 - Infrequent access (EFS-IA): lower cost, should use with one zone, enable with a lifecycle policy.
+- Archive.
 # Amazon Machine Image (AMI)
 - AMI are a customization of an EC2 instance:
 	- You add your own software, configuration, operating system, ...
 	- Faster boot / configuration time because all your software is pre-packaged.
 - AMI are build for a specific region.
+- AMIs that are backed by EFS snapshot can take advantage of EBS encryption
 - Launch EC2 instances from:
 	- Public AMI.
 	- Your own AMI.
