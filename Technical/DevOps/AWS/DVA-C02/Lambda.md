@@ -101,7 +101,7 @@
 	- Discarded event can go to a destination (where failed event can go to).
 ## <mark style="background: #BBFABBA6;">SQS and SQS FIFO</mark>
 - Event source mapping will pool SQS (long polling) and specify batch size (1-10 messages).
-- Recommended set the queue visibility timeout t 6x the timeout of your Lambda function, can use with DQL.
+- Recommended set the queue visibility timeout 6x the timeout of your Lambda function, can use with DQL.
 ## <mark style="background: #BBFABBA6;">Queue</mark>
 - Lambda supports in-order processing for FIFO queues, scaling up to the number of active **message groups**.
 - Lambda scales up to process a standard queue as quickly as possible.
@@ -148,7 +148,7 @@
 | CloudFront Functions                     | Lambda@Edge                                                |
 | ---------------------------------------- | ---------------------------------------------------------- |
 | Cache key normalization                  | Longer execution time (several ms)                         |
-| Header manipulation                      | Adjustable CPI or memory                                   |
+| Header manipulation                      | Adjustable CPU or memory                                   |
 | URL rewrites or redirects                | Your code depends on a 3rd libraries                       |
 | Request authentication and authorization | Network access to use external services for processing     |
 |                                          | File system access or access. to the body of HTTP requests |

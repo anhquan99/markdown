@@ -41,7 +41,7 @@
 	- After replication is enabled, only new objects are replicated.
 	- You can use S3 Batch Replication to replicates existing objets and objects that failed replication.
 	- Can replicate delete markers from and not replicate object with a version ID.
-	- There is not chaining of replication that means A replicates to B and B replicates C, A not replicates to C.
+	- There is no chaining of replication that means A replicates to B and B replicates C, A not replicates to C.
 ## Storage class
 - Standard - General purpose
 	- Used for frequently accessed data.

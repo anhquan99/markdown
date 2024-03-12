@@ -20,7 +20,6 @@
 - Login sends back JWT.
 - Sign-up/sign-in.
 - Hosted UI.
-- 
 ## Integrations
 - Integrates with API Gateway and ALB.
 ## Lambda triggers
@@ -35,7 +34,7 @@
 ## Adaptive authentication
 - For authentication.
 - Block sign-ins or require MFA if the login appears suspicious.
-- Cognito examines each sing-in attempt and generates a risk score for how likely the sign-in request is to be from a malicious attacker.
+- Cognito examines each sign-in attempt and generates a risk score for how likely the sign-in request is to be from a malicious attacker.
 - User is prompted for second MFA only when the risk is detected.
 # Cognitor Identity pools
 - For authorization.
@@ -43,7 +42,7 @@
 ## Authentication flow
 - External provider flow.
   ![[Pasted image 20240311075511.png]]
-  - Developer authenticated identities flow.
+- Developer authenticated identities flow.
     ![[Pasted image 20240311075533.png]]
 
 # Temporary security credentials (AWS Security Token Service/ AWS STS)

@@ -1,3 +1,12 @@
+# Identity-based policies
+- JSON permissions policy documents that control what actions an identity (users, groups of users, and roles) can perform on which resource, and under what conditions.
+## Category
+- <mark style="background: #FF5582A6;">Managed policies:</mark> standalone identity-based that you can attach to multiple users, groups and roles.
+	- AWS managed policies.
+	- Customer managed policies: users create policies.
+- <mark style="background: #FF5582A6;">Inline policies:</mark> add directly to a single user, group, or role.
+# Resource-based policies
+- JSON policy documents that you attach to a resource to grant the specified principal permission to perform specific action on that resource under what condition this applies.
 # Users and groups
 - It's a global service
 - Root account created by default, shouldn't be used or shared.
@@ -22,8 +31,8 @@
 # IAM Roles for Services
 - Some AWS service will need to perform actions on your behalf, you need to assign permissions to AWS services with IAM Roles.
 # IAM Security Tools
-- IAM Credentials Report (account-level): list all your account's users and the status of their various credentials.
-- IAM Access Advisor (user-level): show the service permissions granted to a user and when those services were last accessed.
+- <mark style="background: #FFB86CA6;">IAM Credentials Report (account-level):</mark> list all your account's users and the status of their various credentials.
+- <mark style="background: #FFB86CA6;">IAM Access Advisor (user-level):</mark> show the service permissions granted to a user and when those services were last accessed.
 # Guidelines & Best Practices
 - Don't use the root account except for AWS account setup.
 - Per AWS account per user.

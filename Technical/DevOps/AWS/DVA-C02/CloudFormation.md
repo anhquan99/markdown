@@ -104,7 +104,7 @@
 - Trusted account to create, update, delete stack instances from StackSets.
 - When you update a stack set, all associated stack instances are updated throughout all accounts and regions.
 # Drift
-- Used to compare all the resources between versions.
+- Used to compare all the resources between versions, changes that you have manually made to your infrastructure.
 # Stack policies
 - Stack policies is a JSON document that defines the update actions that are allowed on specific resources during stack updates to protect resources from unintentional updates.
 - Specify an explicit ALLOW for the resources you want to be allowed to be updated.

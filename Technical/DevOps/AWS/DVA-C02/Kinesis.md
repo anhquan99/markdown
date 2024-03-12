@@ -16,14 +16,14 @@
 - The producers continually push data to Kinesis Data Stream, and the consumers process the data in real time.
   ![[Pasted image 20240305074334.png]]
 ## Terminology
-- Data record: the unit of data stored in a Kinesis data stream. Data records are composed of a sequence number, a partition key, and a data blob, which is an immutable sequence of bytes. Kinesis Data Streams does not inspect, interpret, or change the data in the blob in any way. A blob of data can be up to 1 MB.
-- Data stream application: 
+- <mark style="background: #FFB86CA6;">Data record:</mark> the unit of data stored in a Kinesis data stream. Data records are composed of a sequence number, a partition key, and a data blob, which is an immutable sequence of bytes. Kinesis Data Streams does not inspect, interpret, or change the data in the blob in any way. A blob of data can be up to 1 MB.
+- <mark style="background: #FFB86CA6;">Data stream application: </mark>
 	- Is a consumer of a stream.
 	- There are 2 types of consumers that you can develop: shared fan-out consumers and enhanced fan-out consumers.
-- Shard: 
+- <mark style="background: #FFB86CA6;">Shard: </mark>
 	- Is a uniquely identified sequence of data records in a stream.
 	- A stream is composed of 1 or more shards, each of which provides a fixed unit of capacity.
-	- Each shard can support up to 5 transactions per second for rads, up to maximum total data read rate of 2 MB per second and up to 1000 record per second for writes, up to maximum total data write rate of 1 MB per second (including partition keys).
+	- Each shard can support up to 5 transactions per second for read, up to maximum total data read rate of 2 MB per second and up to 1000 record per second for writes, up to maximum total data write rate of 1 MB per second (including partition keys).
 ## Scenarios:
 - Accelerated log and data feed intake and processing.
 - Real-time metrics and reporting.

@@ -75,7 +75,7 @@
 	- **Latency based**: redirect to the resource that has the least latency.
 	- **Geolocation**: routing is based on user location.
 	- **Multi-value answer** (can be associated with Health checks).
-	- **Geoproximity** (using Route 54 traffic flow feature): shift more traffic to resources based on the defined bias.
+	- **Geoproximity** (using Route 53 traffic flow feature): shift more traffic to resources based on the defined bias.
 	- **IP based**
 		- Routing based on client's IP.
 		- Using a list of CIDRs (Classless Inter-Domain Routing) and mapping to the corresponding endpoints.

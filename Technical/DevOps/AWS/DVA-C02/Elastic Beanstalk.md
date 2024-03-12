@@ -47,7 +47,7 @@
 - Like blue-green.
 ### Blue/Green deployments
 - Create separate, but identical environment. One environment (blue) is running the current application version and one environment (green) is running the new application version.
-- Using a blue/green deployment strategy increases application availability and reduces deployment risk by simplifying the rollback process if a deployment fails. Once testing has been com
+- Using a blue/green deployment strategy increases application availability and reduces deployment risk by simplifying the rollback process if a deployment fails.
 # Lifecycle policy
 - Elastic Beanstalk can store at most 1000 application versions, you can not deploy if the number of version is exceeded unless you remove the old versions.
 - Lifecycle policy

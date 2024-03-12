@@ -69,8 +69,7 @@
 - Must run the **CodeDeploy Agent** on the target instances.
 ## Deployment
 ### Types
-- In-place deployment:
-	- In this strategy, the previous version of the application on each compute resource is stopped, the latest application is installed, and the new version of the application is started and validated.
+- In-place deployment: In this strategy, the previous version of the application on each compute resource is stopped, the latest application is installed, and the new version of the application is started and validated.
 >[!info] Notes
 >ECS can not use in-place deployment
 - Blue/green deployment
