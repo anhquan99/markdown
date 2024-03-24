@@ -15,4 +15,3 @@
 - Load-balacing.
 - Manage and optimize resource usage.
 - Implement policies to secure access to application running inside containers.
-- 

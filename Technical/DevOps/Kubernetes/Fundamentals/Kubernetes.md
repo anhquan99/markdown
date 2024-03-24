@@ -20,27 +20,12 @@
 - Storage orchestration.
 - Batch execution.
 - IPv4/IPv6 dual-stack.
-# Concepts and architecture
+# Concepts and [[Architecture]]
 - Pod:
 	- Smallest unit of k8s contain container or multiple containers.
 	- Multiple pods can be created and removed to scale your app and distributed across all available worker node.
-- Worker node:
-	- Architecture:
-		- API Server: API for the kubelets to communicate. 
-		- Scheduler: Watches for new pods, select worker nodes to run them on.
-		- Kube-controller-manager: Watches and controls worker nodes, correct number of pods and more.
-		- Cloud-controller-manager: Like kube-controller-manager but for specific cloud provider, knows how to interact with cloud provider resources.
-	- Think it as a computer.
-	- Run the containers of your application.
-	- Nodes are your machines/virtual instances.
-	- Multiple worker nodes are controlled by the master node.
-	- The master node is a running instance in a different worker node so that if the worker node goes down, the master node will not go down.
 - Proxy/config:
 	- Connect to outside request and response.
-- Kubelet:
-	- A software help communicates between master and worker node.
-- Kube-proxy:
-	- Managed node and pod network communication.
 ![[Pasted image 20240324113009.png]]
 # Terms
 - Cluster: a set of node machines which are running the containerized application (worker nodes) or control other nodes (master node).
@@ -58,12 +43,12 @@
 - Create your objects (e.g. pods) and manage them.
 - Monitor pods and re-create them, scale pods, ...
 - K8s utilizes the provided (cloud) resources to apply your config/goals.
-# How to build a kubernetest service:
+# How to build a kubernetes service:
 1. Create image and push it to repository.
 2. Start create service by file (Declarative) or by CLI (Imperative)
 	- Declarative:
 		- Create deployment and service file with extension is .yaml or .yml, here you can have multile file for multiple resources.
 		- Use `kubectl apply -f $deployment_file -f $service_file` to apply resource to k8s.
 	- Imperative:
-3. Use `$service_provider service $service_name` like `minikube service backend` to start start service from service provider.
+3. Use `$service_provider service $service_name` like `minikube service backend` to start service from service provider.
 ## [[Object]]

@@ -21,6 +21,15 @@
 - The API Server intercepts **RESTfull** calls from users, then validates and processes them.
 - Durning processing the API Server reads the K8s cluster's current state from the key-value store, and after a call's execution, the resulting state of the K8s is saved in the key-value store for persistence.
 - **It is the only component can communicate (both read and save) to the key-value store.**
+### API directory
+- Directory tree
+  ![[Pasted image 20240324184154.png]]
+- Group types:
+	- **Core group `(/api/v1)`**: includes objects such as Pods, Services, Nodes, Namespaces, ConfigMaps, Secrets, ...
+	- **Name group**: Includes objects in `/apis/$NAME/$VERSION` format. These different API versions imply different levels of stability and support:
+		- Alpha-level: may be dropped at any point in time, without notice. Ex: `/apis/batch/v2alpha1`
+		- Beta-level: well-tested, but semantics of objects may change in incompatible ways in a subsequent beta or stable release. Ex: `/apis/certificates.k8s.io/v1beta1`.
+	- **System-wide**: consists of system-wide API endpoints, like `/healthz`, `/logs`, `/metrics`, `/ui`, ...
 ## Scheduler
 - The role of the `kube-scheduler` is to assign new workload objects such as pods encapsulating container, to nodes - typically worker nodes.
 - During the scheduling process, decisions are made based on current K8s current cluster state (via [[Control plane#API Server|API Server]]) and new workload [[Object|object's]] requirements (which are part of its configuration data). Requirements may include constraints that users and operator set, such as scheduling work on a node labeled with `disk==ssd` key-value.

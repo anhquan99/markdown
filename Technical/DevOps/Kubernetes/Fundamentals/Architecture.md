@@ -14,3 +14,9 @@
 ## External-to-Service communication for client to access applications in a cluster.
 - K8s enables external accessibility through Services, complex encapsulations of network routing rule definitions stored in `iptables` on the cluster nodes and implement by `kube-proxy` agent.
 - By exposing services to the external world with the aid of `kube-proxy`, applications become accessible from outside the cluster over a virtual IP address and a dedicated port number.
+# Cluster configuration
+- **All-in-One Single-Node installation**: control plane and worker components are installed and running on a single-node. Useful for learning, but not recommended for production.
+- **Single-Control Plane and Multi-Worker installation**: single-control plane node running a stacked `etcd` instance with multiple worker nodes.
+- **Single-Control Plane with Single-Node `etcd`, and Multi-Worker installation**: single control plane with external `etcd` and multiple worker nodes.
+- **Multi-Control Plane and Multi-Worker installation**: multiple control plane with stacked `etcd` and multiple worker nodes.
+- **Multi-Control Plane with Multi-Node `etcd` and Multi-Worker installation**.

@@ -1,5 +1,5 @@
 - [[Kubectl]]
-- [[Kubernetes]]
+- [[Technical/DevOps/Kubernetes/Fundamentals/Kubernetes]]
 - [[Technical/DevOps/Kubernetes/Fundamentals/Network|Network]]
 - [[Object]]
 - [[Resource definition]]
