@@ -1,4 +1,4 @@
-## Definition
+# Definition
 - Kubernetes (k8s) is an open-source system for automating deployment, scaling, and management of containerized applications.
 - Manual deploy problem:
 	- Hard to maintain, error-prone and annoying.
@@ -9,11 +9,18 @@
 	- Container health checks + automatic re-deployment.
 	- Autoscaling.
 	- Load balancer (if 2 or more containers running).
-- K8s helps:
-	- Automatic deployment.
-	- Scaling and load balancing.
-	- Management.
-## Concepts and architecture
+## Kubernetes features:
+- Automatic bin packing: automatically schedules containers based on resource needs and constraints, to maximize utilization without sacrificing availability.
+- Designed for extensibility: cluster can be extended with new custom features without modifying the upstream source code.
+- Self-healing.
+- Horizontal scaling.
+- Service discovery and load balancing.
+- Automated rollouts and rollbacks.
+- Secret and configuration management.
+- Storage orchestration.
+- Batch execution.
+- IPv4/IPv6 dual-stack.
+# Concepts and architecture
 - Pod:
 	- Smallest unit of k8s contain container or multiple containers.
 	- Multiple pods can be created and removed to scale your app and distributed across all available worker node.
@@ -34,8 +41,8 @@
 	- A software help communicates between master and worker node.
 - Kube-proxy:
 	- Managed node and pod network communication.
-![[Pasted image 20230214120545.png]]
-## Terns
+![[Pasted image 20240324113009.png]]
+# Terms
 - Cluster: a set of node machines which are running the containerized application (worker nodes) or control other nodes (master node).
 - Nodes: physical or virtual machine with a certain hardware capacity which hosts one or multiple pods and communicates with the cluster.
 	- Master node: Cluster control pane, managing the pods across worker nodes.
@@ -43,15 +50,15 @@
 - Pods: holds the actual running app containers + their required resources (e.g. volumes).
 - Containers: docker containers.
 - Services: a logical (group) of pods with a unique, pod and container independent IP address.
-## What you need to do/setup?
+# What you need to do/setup?
 - Create the Cluster and the node instances (worker + master nodes)
 - Setup API Server, kubelet and other k8s services/ software on nodes.
 - Create other (cloud) provider resources that might be needed (e.g. load balancer, file system).
-## What k8s will do?
+# What k8s will do?
 - Create your objects (e.g. pods) and manage them.
 - Monitor pods and re-create them, scale pods, ...
 - K8s utilizes the provided (cloud) resources to apply your config/goals.
-## How to build a kubernetest service:
+# How to build a kubernetest service:
 1. Create image and push it to repository.
 2. Start create service by file (Declarative) or by CLI (Imperative)
 	- Declarative:

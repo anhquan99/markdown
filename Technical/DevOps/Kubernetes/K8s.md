@@ -1,6 +1,6 @@
 - [[Kubectl]]
 - [[Kubernetes]]
-- [[Technical/DevOps/Kubernetes/Network|Network]]
+- [[Technical/DevOps/Kubernetes/Fundamentals/Network|Network]]
 - [[Object]]
 - [[Resource definition]]
-- [[Technical/DevOps/Kubernetes/Volumes|Volumes]]
+- [[Technical/DevOps/Kubernetes/Fundamentals/Volumes|Volumes]]
