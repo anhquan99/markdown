@@ -1,4 +1,4 @@
-## Definition
+# Definition
 - What is [[Technical/DevOps/Docker/Container|container]]? ^d2bd26
 	- Container: a package of code where you put code, tools - dependencies to run that code.
 	- Like the real life container, it contains the goods. And whenever needed to move those goods around, you just need to take that container move to where you want. You don't get any unexpected when opening the container. The same with container always yields the exact same application and execution behavior. No matter where or by whom, it might be executed.
@@ -21,12 +21,12 @@
 		- It's hard to share the VM and can be challenging.
 	- A docker container solves the problem of VM problems. 
 		- A docker container runs on OS built-in container support and a docker engine. 
-		- The container is a small running OS but not whole OS itselft, there the resources are not going to be wasted and runs faster than VM.
+		- The container is a small running OS but not whole OS itself, there the resources are not going to be wasted and runs faster than VM.
 		- Docker help you to create image, it is easy to share the image.
-## [[Docker tools and building blocks]]
-## [[Technical/DevOps/Docker/Volumes]]
-## [[Technical/DevOps/Docker/Network]]
-## [[Docker compose]]
-## [[Utility container]]
-## [[From development to production]]
-## [[Note]]
+# [[Docker tools and building blocks]]
+# [[Technical/DevOps/Docker/Volumes]]
+# [[Technical/DevOps/Docker/Network]]
+# [[Docker compose]]
+# [[Utility container]]
+# [[From development to production]]
+# [[Note]]

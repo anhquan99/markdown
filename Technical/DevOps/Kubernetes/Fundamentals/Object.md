@@ -1,3 +1,11 @@
+# Object model
+- Kubernetes became popular due to its advanced application lifecycle management capabilities, implemented through a rich object model, representing different persistent entities in the Kubernetes cluster. Those entities describe:
+	- What containerized applications we are running.
+	- The nodes where the containerized applications are deployed.
+	- Application resource consumption.
+	- Policies attached to applications, like restart/upgrade policies, fault tolerance, ingress/egress, access control, etc.
+- With each object, we declare our intent, or the desired state of the object, in the **spec** section. The Kubernetes system manages the **status** section for objects, where it records the actual state of the object. At any given point in time, the Kubernetes Control Plane tries to match the object's actual state to the object's desired state. An object definition manifest must include other fields that specify the version of the API we are referencing as the **apiVersion**, the object type as **kind**, and additional data helpful to the cluster or users for accounting purposes - the **metadata**.
+- Examples of Kubernetes object types are Nodes, Namespaces, Pods, ReplicaSets, Deployments, DaemonSets, ...
 # Pod
 - The smallest "unit" k8s interacts with:
 	- Contains and runs one or multiple containers.
@@ -21,4 +29,9 @@
 - Reaching a Pod from outside the Cluster is not possible at all without Services
 # [[Technical/DevOps/Kubernetes/Fundamentals/Volumes|Volume]]
 # [[Technical/DevOps/Kubernetes/Fundamentals/Network|Network]]
-# ConfigMap
+Kubernetes became popular due to its advanced application lifecycle management capabilities, implemented through a rich object model, representing different persistent entities in the Kubernetes cluster. Those entities describe:
+
+- What containerized applications we are running.
+- The nodes where the containerized applications are deployed.
+- Application resource consumption.
+- Policies attached to applications, like restart/upgrade policies, fault tolerance, ingress/egress, access control, etc.# ConfigMap
