@@ -1,0 +1,5 @@
+- Expose Pods to the Cluster or Externally.
+	- Pods have an internal IP by default - it changes when a Pod is replaced.
+	- Services group Pods with a shared IP.
+	- Services can allow external access to Pods.
+- Reaching a Pod from outside the Cluster is not possible at all without Services
