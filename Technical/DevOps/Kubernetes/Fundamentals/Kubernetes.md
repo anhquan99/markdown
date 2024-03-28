@@ -28,13 +28,13 @@
 	- Connect to outside request and response.
 ![[Pasted image 20240324113009.png]]
 # Terms
-- Cluster: a set of node machines which are running the containerized application (worker nodes) or control other nodes (master node).
-- Nodes: physical or virtual machine with a certain hardware capacity which hosts one or multiple pods and communicates with the cluster.
+- **Cluster**: a set of node machines which are running the containerized application (worker nodes) or control other nodes (master node).
+- **Nodes**: physical or virtual machine with a certain hardware capacity which hosts one or multiple pods and communicates with the cluster.
 	- Master node: Cluster control pane, managing the pods across worker nodes.
 	- Worker node: host pods, running app containers (+ resources).
-- Pods: holds the actual running app containers + their required resources (e.g. volumes).
-- Containers: docker containers.
-- Services: a logical (group) of pods with a unique, pod and container independent IP address.
+- **Pods**: holds the actual running app containers + their required resources (e.g. volumes).
+- **Containers**: containers running application.
+- **Services**: a logical (group) of pods with a unique, pod and container independent IP address.
 # What you need to do/setup?
 - Create the Cluster and the node instances (worker + master nodes)
 - Setup API Server, kubelet and other k8s services/ software on nodes.
@@ -51,4 +51,3 @@
 		- Use `kubectl apply -f $deployment_file -f $service_file` to apply resource to k8s.
 	- Imperative:
 3. Use `$service_provider service $service_name` like `minikube service backend` to start service from service provider.
-## [[Object]]

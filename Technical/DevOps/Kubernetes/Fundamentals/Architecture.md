@@ -20,3 +20,5 @@
 - **Single-Control Plane with Single-Node `etcd`, and Multi-Worker installation**: single control plane with external `etcd` and multiple worker nodes.
 - **Multi-Control Plane and Multi-Worker installation**: multiple control plane with stacked `etcd` and multiple worker nodes.
 - **Multi-Control Plane with Multi-Node `etcd` and Multi-Worker installation**.
+# [[Object]]
+# [[Autoscaling]]

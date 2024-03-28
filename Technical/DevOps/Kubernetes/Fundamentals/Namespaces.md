@@ -5,3 +5,4 @@
 - `default`: contains the objects and resources created by admins and devs, and objects are assigned to it by default unless another Namespace name is provided by the user.
 - `kube-public`: unsecured and readable by anyone, used for special purposes, such as exposing public (non-sensitive) information about the cluster.
 - `kube-node-lease`: holds node lease objects used for node heartbeat data.
+# [[Quota and limit management]]
