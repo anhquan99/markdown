@@ -2,4 +2,4 @@
 - [[Authentication]]
 - [[Authorization]]
 - [[Admission control]]: software modules that validate and/or modify user requests
-	![[Pasted image 20240327203319.png]]
+![[Pasted image 20240327203319.png]]

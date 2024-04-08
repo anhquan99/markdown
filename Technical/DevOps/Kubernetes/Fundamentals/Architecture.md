@@ -3,6 +3,7 @@
 - [[Control plane| Control plan nodes]]
 - [[Worker node|Worker nodes]] (more then 1 worker nodes is optional but recommended)
 ![[Pasted image 20240324113009.png]]
+![[Pasted image 20240402220058.png]]
 # Network challenges
 ## Container-to-Container communication inside Pods
 - When grouping of containers defined by a Pod is started, special infrastructure **Pause container** is initialized by the [[Worker node#Container Runtime|Container Runtime]] for the sole purpose of creating a network namespace for the Pod so that containers can communicate via localhost.
