@@ -33,6 +33,11 @@ rules:
   resources: ["pods"]  
   verbs: ["get", "watch", "list"]
 ```
+## Resources
+- ClusterRole
+- Role
+- ClusterRoleBinding
+- RoleBinding
 ## Role types
 - Role: grants access to resources within a specific Namespace.
 - ClusterRole: grants the same permissions as Role does, but its scope is cluster-wide.

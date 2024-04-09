@@ -1,4 +1,5 @@
 
+- Jobs are part of the `batch` API group.
 - A Job creates one or more Pods to perform a given task. The Job object takes the responsibility of Pod failures. It makes sure that the given task is completed successfully. Once the task is complete, all the Pods have terminated automatically. Job configuration options include:
 	- `parallelism` - to set the number of pods allowed to run in parallel;
 	- `completions` - to set the number of expected completions;
