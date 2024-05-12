@@ -31,9 +31,7 @@ Heap | insert() | remove() | peek()
 ------------ | ------------| ------------| ------------
 Time complexity | O(logn) | O(logn) | O(1)
 
-
 - [[Binary tree]]
-
 
 Binary tree | enqueue() | dequeue() | peek()
 ------------ | ------------| ------------| ------------
