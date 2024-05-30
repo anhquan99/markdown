@@ -35,7 +35,7 @@ A | B | A XOR B
 
 # Bit shifts
 - **Bit addressing**  
-- **Arithmetic shift:** tge bits that are shifted out either end are discarded.
+- **Arithmetic shift:** the bits that are shifted out either end are discarded.
 	- Left shift
 	- Right shift
 - **Logical shift:** the same as the **Arithmetic shift**

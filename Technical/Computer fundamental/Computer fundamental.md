@@ -1,4 +1,4 @@
 - [[Operation map|Operation]]
 - [[Algorithms]]
 - [[Data structure]]
-- [[Concept]]
+- [[Technical/Computer fundamental/Concept/Concept]]
