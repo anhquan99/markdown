@@ -29,4 +29,4 @@
 - [[Virtual Private Cloud (VPC)]]
 - [[X-Ray]]
 # Notes
-- [[Notes]]
+- [[Technical/DevOps/AWS/DVA-C02/Notes]]

@@ -37,3 +37,9 @@
 - `ReadWriteMany`: read-write by many nodes.
 - `ReadWriteOncePod`: read-write by a single pod.
 ## Storage cluster
+## Phases to Persistent Storage
+- Provisioning
+- Binding
+- Using
+- Releasing
+- Reclaiming
