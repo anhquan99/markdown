@@ -8,3 +8,10 @@
 - Set storage request limits per PersistentVolumeClaim in a namespace.
 - Set a request to limit ratio for a resource in a namespace.
 - Set default requests and limits and automatically inject them into Containers' environments at runtime.
+# Notes
+- **CPU Limits:**
+	- **Throttling:** If a container exceeds its CPU limit, Kubernetes will throttle the container's CPU usage. This means that the container's processes will be slowed down, and it will not be able to use more CPU than the limit allows.
+	- **No Termination:** Kubernetes will not terminate a container that exceeds its CPU limit. Instead, it will continue to throttle the container's CPU usage until the container's usage falls below the limit.
+- **Memory Limits:**
+	- **OOMKilled:** If a container exceeds its memory limit, Kubernetes will terminate the container with an "Out of Memory" (OOMKilled) error. This is a hard limit, and Kubernetes will not allow a container to use more memory than the limit allows.
+	- **Eviction:** In some cases, if a node is running low on memory, Kubernetes may evict a Pod that is exceeding its memory limit. This will free up memory on the node and allow other Pods to run.
