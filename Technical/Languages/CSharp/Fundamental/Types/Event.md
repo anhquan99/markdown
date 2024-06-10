@@ -26,6 +26,36 @@ showLog += Warning;
 showLog += Info;
 showLog += Warning;
 ```
+### Multicast delegates
+- The multicast delegate contains a list of the assigned delegates. When the multicast delegate is called, it invokes the delegates in the list in order.
+```c#
+delegate void CustomCallback(string s);
+CustomCallback multicast;
+
+multicast += Hello;
+multicast += Goodbye;
+
+multicast("A"); // this invoke Hello and Goodbye
+
+static void Hello(string s) 
+{
+	Console.WriteLine($" Hello, {s}!"); 
+} 
+static void Goodbye(string s) 
+{ 
+	Console.WriteLine($" Goodbye, {s}!"); 
+}
+```
+### Anonymous method
+```c#
+delegate void NotifyCallback(string str);
+
+// anonymous
+NotifyCallback delegate1 = delegate(string s){ Console.WriteLine(s); };
+
+// lambda
+NotifyCallback delegate2 = s => { Console.WriteLine(s);}; 
+```
 ## Func
 - A pre-defined delegate type in C# where it must have a return type and parameter is optional.
 - The last data type declared in the Func is the return type.
