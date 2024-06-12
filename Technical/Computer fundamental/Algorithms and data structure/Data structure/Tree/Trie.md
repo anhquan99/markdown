@@ -12,6 +12,13 @@
 - Each trie has an empty root node, with links to other nodes.
 - Each node of a trie represents a string and each edge represent a character.
 - Every node consists of an array of pointers, with each index represent a character and a flag to indicate if any string ends at the current node.
+# Advantages
+- Fast search.
+- Space-efficient.
+- Efficient insertion and deletion.
+- Compact representation.
+# Disadvantages
+- Need a lot of memory for storing the string.
   
   # Operations
   - `Insert`
@@ -23,6 +30,6 @@
 | --------- | ------ | --------------- |
 | Insertion | `O(n)` | `O(n*m)`        |
 | Search    | `O(n)` | `O(1)`          |
-| Delete    | `O(n)` | `O(n*m)`        |
+| Delete    | `O(n)` | `O(1)`          |
 
   
