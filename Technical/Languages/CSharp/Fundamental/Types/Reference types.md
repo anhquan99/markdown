@@ -41,6 +41,7 @@ Person person2 = person with { FirstName = "Janet" };
 ## Inheritance
 - Only apply for `record class`.
 # `class`
+- **C# does not support multiple inheritance, but a class can implement multiple interfaces.**
 ## Constructors
 ## Private constructor
 - A private constructor is a special instance constructor. It is generally used in classes that contain static members only.
