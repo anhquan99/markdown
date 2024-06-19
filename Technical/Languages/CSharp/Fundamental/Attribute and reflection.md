@@ -1,7 +1,7 @@
 - Attributes provide a powerful method of associating metadata, or declarative information, with code (assemblies, types, methods, properties, and so forth). After an attribute is associated with a program entity, the attribute can be queried at run time by using a technique called reflection. 
 # Attribute
 ## Parameters
-- Parameters on an attribute constructor are limited to simple types/literals like `bool, int, double, ...`
+- Parameters on an attribute constructor are limted to simple types/literals like `bool, int, double, ...`
 ## Properties
 - Attributes add metadata to your program. Metadata is information about the types defined in a program. All .NET assemblies contain a specified set of metadata that describes the types and type members defined in the assembly. You can add custom attributes to specify any additional information that is required.
 - You can apply one or more attributes to entire assemblies, modules, or smaller program elements such as classes and properties.
@@ -49,5 +49,55 @@ class ClassC { }
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
 public class MyAttributeForClassAndStructOnly : Attribute {}
 ```
+## Retrie attribute
+- Initialize the new attribute instance to the value of the attribute you want to retrieve.
+### Single
+- Use `Attribute.GetCustomAttribute`.
+### Multiple with same scope
+- Use `Attribute.GetCustomAttributes`.
+### Multiple with different scope
+- Access each scope to get the custom attributes.
+```c#
+var attrs = Attribute.GetCustomAttribute(typeof(TestClass), typeof(TestAttribute));
+Console.WriteLine(attrs.ToString());
+var t = typeof(TestClass);
+var memberInfo = t.GetFields();
+foreach (var member in memberInfo)
+{
+    var attr = Attribute.GetCustomAttribute(member, typeof(TestAttribute));
+    Console.WriteLine(attr.ToString());
+}
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Field, AllowMultiple = false)]
+public class TestAttribute : Attribute
+{
+    public string Name;
+    public TestAttribute(string name)
+    {
+        Name = name;
+    }
+    public override string ToString()
+    {
+        return Name;
+    }
+}
+[Test("Test 1")]
+public class TestClass{
+    [Test("Test 2")]
+    public int Field1;
+}
+```
 # Reflection
-- Reflection provides objects (of type Type) that describe assemblies, modules, and types. You can use reflection to dynamically create an instance of a type, bind the type to an existing object, or get the type from an existing object and invoke its methods or access its fields and properties. If you're using attributes in your code, reflection enables you to access them
+- Reflection provides objects (of type Type) that describe assemblies, modules, and types. You can use reflection to dynamically create an instance of a type, bind the type to an existing object, or get the type from an existing object and invoke its methods or access its fields and properties. If you're using attributes in your code, reflection enables you to access them.
+## Types
+- `Assembly`: used to load assemblies,to explore the metadata and constituent parts of assemblies, to discover the types contained in assemblies, and to create instances of those types.
+- `Module`: is a portable executeable file, such as `.dll or .exe`
+- `ConstructorInfo`
+- `MethodInfo`
+- `FieldInfo`
+- `EventInfo`
+- `PropertyInfo`
+- `ParameterInfo`
+- `CustomAttributeData`
+## Dynamically load and use types
+- `Type.InvokeMember` function is used to invoke memeber of a type.
+- `CreateInstance` function is used create instance of a type.
