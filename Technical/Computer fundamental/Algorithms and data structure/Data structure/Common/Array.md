@@ -32,22 +32,22 @@ Must initialized separately each array | Can be initialized single time
 # Resize array
 - In .NET 3.5 and higher  array can be resized by using `Array.Resize()`
 # Function
-- size()
-- capacity()
-- is_empty()
-- at(inex)
-- push(item)
-- insert(index,item)
-- prepend(item)
-- pop()
-- delete(index)
-- find(item)
-- resize(new_capacity)
+- `size()`
+- `capacity()`
+- `is_empty()`
+- `at(inex)`
+- `push(item)`
+- `insert(index,item)`
+- `prepend(item)`
+- `pop()`
+- `delete(index)`
+- `find(item)`
+- `resize(new_capacity)`
 	- When you reach capcity, double the size
 	- When popping an item, if size is 1/4 of capacity, resize to half
-# Time complexcity
-- O(1) add/remove at the end, index or update
-- O(n) add/remove at anywhere
-# Space complexcity
-- Contiguous in memory, high performace
+# Time complexity
+- `O(1)` add/remove at the end, index or update
+- `O(n)` add/remove at anywhere
+# Space complexity
+- Contiguous in memory, high performance
 - space need = (array capacity, which is >= n) * size of item, but even if 2n, still O(n) 
