@@ -1,4 +1,8 @@
-"If you can't build a well-structured monolith, what makes you think mircoservices is the answer"
+"If you can't build a well-structured monolith, what makes you think microservice is the answer"
+# Definition
+- Small
+- Does one thing
+- Autonomous
 # Principles
 - Rely only the public API
 - Use the right tool for the job

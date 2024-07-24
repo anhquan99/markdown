@@ -12,12 +12,14 @@
 # What is good architechture
 - Your architectures should tell readers about the system, not about the frameworks you used in your system.
 - A good architecture allows major decisions to be deferred. A good architect maximizes the number of decisions not made
+
 Good architecture | Bad architecture 
 ------------ | ------------
 Easy to understand | Hard to understand
 Easy to test | Hard to test
 Easy to maintain | Hard to maintain
 Flexible | Rigid
+
 # Traditional Database Centric Architecture
 - Create unecessary coupling
 - Business logic tends to be placed as close to the data as possible. In case of relational databases, it is usually DB functions and stored procedures
