@@ -11,3 +11,12 @@
 3. Write down a recurrence relation for the optimized objective function
 4. What's the order of execution?
 5. Where to look for the answer?
+# Recurrence
+## Top down
+- Memorization and recursion.
+## Bottom up
+- Tabular: solve all the sub problems, from the base case to the problem.
+### Forward DP
+- Knows result of some sub problems, from there calculate the next values.
+### Backward DP
+- Knows only result in 1 sub problem, from there calculate the next values.
