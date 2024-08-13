@@ -1,0 +1,11 @@
+# Degree of parallelism
+- Degree of parallelism is the number that specifies the maximum number of tasks that can be created by your parallel loops.
+- The default value for the degree of parallelism is 64, which means that the parallel loops can utilize up to 64 processors in a system by creating that many tasks. This setting should be modified in advanced scenarios, where a running algorithm cannot span more than a certain number of processors.
+# Partitioning strategy
+- To achieve parallelism in the source collection, it needs to be partitioned into smaller section called ranges or chunks, which can be concurrently accessed by various threads.
+## Categories
+- **Range partitioning:** used with collections where the length is known in advance. Some bits of performance are lost initially while creating ranges. This works best where the number of elements in each range is the same so that they will take a similar length of time to finish.
+- **Chunk partitioning:** used with collection length isn't known in advance. Chunk partitioning provides more load balancing in case you have uneven collections. Every thread picks up a chunk of elements, processes them, and then comes back to pick up another chunk that hasn't been picked up by other threads yet. The size of the chunk depends on the partitioner's implementation and there is synchronization overhead to make sure that the chunks that are allocated to two threads don't contain duplicates
+# Thread storage in parallel loops
+- **Thread local variables:** are like global variables for a particular task. They have a lifetime that spans the number of iterations the loop is going to execute.
+- **Partition local variables:** similar to the thread local variable but works with partitions. Each partition will have its own copy of the partition local variable. With the thread local variable, there is a single copy of the variable per thread. Here, however, we can have multiple copies per thread since multiple partitions can be run on a single thread.
