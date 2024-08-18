@@ -4,6 +4,6 @@
 - [[Interview questions]]
 - [[Lambda expressions]]
 - [[LINQ]]
-- [[Specification pattern]]
+- [[Technical/Languages/CSharp/Fundamental/Specification pattern]]
 - [[System.Collections]]
 - [[Technical/Languages/CSharp/Fundamental/What new on c#|What new on c#]]

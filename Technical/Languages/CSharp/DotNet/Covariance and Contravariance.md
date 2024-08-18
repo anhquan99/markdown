@@ -46,4 +46,4 @@ public void Test(){
 	dButton(new Button());
 }
 ```
-- This pattern can be apply to [[Specification pattern]]
+- This pattern can be apply to [[Technical/Languages/CSharp/Fundamental/Specification pattern]]
