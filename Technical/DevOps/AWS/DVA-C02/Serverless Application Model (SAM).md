@@ -52,6 +52,7 @@ Outputs:
 - Locally invoke Lambda function.
 - Locally Start an API Gateway Endpoint.
 - Generate AWS Events for Lambda functions.
-## Notes
+```ad-note
 - Which AWS service allows you to share your Serverless applications packages using SAM with other AWS accounts?
 	- AWS Serverless Application Repository (AWS SAR)
+```

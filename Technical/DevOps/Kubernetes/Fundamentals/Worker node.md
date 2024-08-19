@@ -100,6 +100,8 @@ spec:
 	- Dynamic updates and maintenance of all networking rules on the node
 	- Abstracts the details of Pods networking and forwards connection request (TCP, UDP, and SCTP stream) to the containers in the Pods.
 ![[Pasted image 20240328012709.png]]
-# Notes
+
+```ad-note
 - Imagine a pod as a shipping container. It can hold various individual packages (containers) that are all delivered together to a destination (deployment on a server). The packages might be dependent on each other, like parts for a machine.
 - In essence, containers are the building blocks of applications, while pods are the units that Kubernetes manages and schedules for deployment.
+```

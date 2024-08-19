@@ -28,9 +28,11 @@
 
 - When a delegate doesn't pass a request to the next delegate, it's called **short-circuiting the request pipeline**. It is often desirable because it avoid unnecessary work.
 
-- **NOTE:** Don't call `next.Invoke` after the response as been sent to the client.Changes to `HttpResponse` after the response has started throw an exception.
+```ad-note
+Don't call `next.Invoke` after the response as been sent to the client.Changes to `HttpResponse` after the response has started throw an exception.
+```
 
-- The order that middleware components are added in the `Program.cs` file defines the order in which the middleware components are invoked on requests and the reverse order for the response. The order is critical for security, performace and functionality.
+- The order that middleware components are added in the `Program.cs` file defines the order in which the middleware components are invoked on requests and the reverse order for the response. The order is critical for security, performance and functionality.
 
 ``````C#
 

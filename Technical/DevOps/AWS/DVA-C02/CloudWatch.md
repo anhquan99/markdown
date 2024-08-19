@@ -24,7 +24,9 @@
 - EC2 instance metrics have metrics every 5 mins.
 - With detailed monitoring (for a cost), you get data every 1 min which you can scale ASG faster.
 - Free tier allows user to have 10 detailed monitoring metrics.
-- Note: EC2 Memory usage is by default not pushed (must be pushed from inside the instance as a custom metric).
+```ad-note
+EC2 Memory usage is by default not pushed (must be pushed from inside the instance as a custom metric).
+```
 - You need to run a CW agent on EC2 to push the log files you want and make sure IAM permissions are correct.
 ## Agent
 - CW Logs Agent

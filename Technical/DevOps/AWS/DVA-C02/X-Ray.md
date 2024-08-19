@@ -24,7 +24,7 @@
 # Tracing
 - Tracing is an end to end way to following a request.
 - Each component dealing with the request adds its own trace.
-- Tracing is made of segments ( + sub segments).
+- Tracing is made of segments ( + sub-segments).
 - Annotations can be added to traces to provide extra-information.
 - Ability trace:
 	- Every request
@@ -71,7 +71,9 @@
 - `GetTraceGraph`: retrieves a service graph for one or more specific trace IDs.
 # With Elastic Beanstalk
 - Run daemon by setting an option in `.ebextensions/xray-daemon.config`.
-- <mark style="background: #FF5582A6;">Note:</mark> the X-Ray daemon is not provided for multi-container Docker.
+```ad-note
+The X-Ray daemon is not provided for multi-container Docker.
+```
 # With ECS
 ## ECS cluster
 - X-Ray container as a daemon.

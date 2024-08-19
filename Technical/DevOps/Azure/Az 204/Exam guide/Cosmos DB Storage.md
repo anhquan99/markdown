@@ -132,7 +132,7 @@
 - Conflict resolution polices:
 	- Last write wins (LWW)
 	- Custom
-## Notes
+# Notes
 - You need to use the `ReadItemAsync` method to read an item from the Azure Cosmos service, 
 	- You need to provide:
 		- `partitionKey`

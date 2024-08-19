@@ -92,5 +92,6 @@ public void Deadlock()
 ```
 - If we call the Deadlock() method from any ASP.NET or GUI-based application, it would create a deadlock, although the same code would run fine in a console application. When we call the DelayAsync() method, it captures the current SynchronizationContext, or the current TaskScheduler if the SynchronizationContext is null. When the awaited task is complete, it tries to execute the remainder of the method with the captured context. The problem here is that there is already a thread that's waiting synchronously for the async method to finish. In this situation, both threads will be waiting for the other thread to finish, thus causing a deadlock. This problem is raised only in GUI-based or ASP.NET applications because they rely on the SynchronizationContext that can only execute one chunk of code at a time. Console applications, on the other hand, utilize ThreadPool instead of SynchronizationContext. When the await finishes, the pending async method part is scheduled on a ThreadPool thread. The method is completed on a separate thread and returns the task back to the caller, so there is no deadlock.
 ## Using `ConfigureAwait` wherever possible
-# Notes
+```ad-note
 - Never try to create sample `async/await` code in a console application and copy and paste it in a GUI or ASP.NET application, as they have different models for executing async code.
+```

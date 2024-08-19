@@ -8,8 +8,9 @@
 ## Folder mapping
 - The local host machine folder will override the container folder, <mark style="background: #FF5582A6;">but docker will not do the reverse.</mark>
 - Hence, this will make all the folder in the container will be overridden. In some cases, you don't want some folder to be overridden, like when then installed package from node_modules folder of Node.js, ... For those cases, the anonymous volume is to come in handy, it will prevent the folder from overridden. You can declare the anonymous volume in [[Dockerfile]] or in the [[CLI]].
-## Note
+```ad-note
 - The command `COPY` in [[Dockerfile]] can not be replaced by folder mapping because the intention is to make changes to the source code when you are in development, but in deployment these changes will not be happened so the `COPY` command remain in the [[Dockerfile]].
+```
 ## [[CLI#^042429|CLI]]
 ```shell
 # example of mapping volume

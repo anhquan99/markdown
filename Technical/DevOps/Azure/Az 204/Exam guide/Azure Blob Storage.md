@@ -43,10 +43,11 @@
 - Capacity
 - Transactions
 - Data transfer
-# Notes
+```ad-note
 - For HTTPS access, Azure CDN must be used.
 - You plan to use a shared access signature to protect access to services within a general-purpose v2 storage account.
 	- Use `Blob`, the blob service, is the only one that supports user delegation shared access signature.
 	- The file service supports account and service shared access signatures.
 	- The queue service supports account and service share access signatures.
 	- The table service supports account and service shared access signatures.
+```

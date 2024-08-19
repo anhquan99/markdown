@@ -32,7 +32,7 @@
 - All settings within App Configuration are encrypted at rest and in transit, but this doesn't make App Configuration replace Key Vault because of the hardware-level encryption, access policy mode and features such as certificate rotation, .... You can create an App Configuration setting that pulls a value from a Key Vault secret, so your application can reference the App Configuration key and the value will come from Key Vault.
 - Compare with the App Setting in Web App. When changing any value in App Setting, the application needs to reset to apply new setting but with App Configuration the application is not needed to reset.
 - Feature flags: it is a Boolean variable which has some code that executes based on the value of the flag.
-# Notes
+```ad-note
 - You plan to generate a shared access signature (SAS) token for read access to blob in a storage account. You need to secure the token from being compromised.
 	- Use Azure AD credentials assigned the Contributor role
 	- Azure AD credentials are required to generate the SAS token. The account used must have the `Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey` permission, which is present in the following built-in roles: Contributor, Storage Account Contributor, Storage Blob Data Contributor, Storage Blob Data Owner, Storage Blob Data Reader, and Storage Blob Delegator. The account key can be used to generate the SAS token, but it can be more easily compromised.
@@ -53,3 +53,4 @@
 		- A shared access signature can take one of the following 2 forms:
 			- Ad hoc SAS: when you create an ad hoc SAS, the start time, expiry time, and permissions are specified in the SAS URI. Any type of SAS 
 			- Service SAS with stored access policy: a stored access policy is defined on a resource container, which can be a blob container, table, queue, or file share. The stored access policy can be used to manage constraints for one or more service shared access signatures. When you associate a service SAS with a stored access policy, the SAS inherits the constraints - that start time, expiry time, and permissions - defined for the stored access policy.
+```

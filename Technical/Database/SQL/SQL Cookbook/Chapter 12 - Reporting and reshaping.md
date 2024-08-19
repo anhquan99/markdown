@@ -1,4 +1,4 @@
-## Pivoting a result set into one row
+# Pivoting a result set into one row
 ^a6f205
 - Problem: you want to take values from groups of rows and turn those values into columns in a single row per group.
 - Solution: transpose the result set using CASE and the aggregate function SUM. When using CASE expression, we must know how many columns returned.
@@ -11,7 +11,7 @@ SELECT SUM(CASE WHEN DEPTNO = 10 THEN 1 ELSE 0 END) AS DEPTNO_10,
         SUM(CASE WHEN DEPTNO = 30 THEN 1 ELSE 0 END) AS DEPTNO_30
 FROM EMP
 ```
-## Pivoting a result set into multiple rows
+# Pivoting a result set into multiple rows
 - Problem: you want to turn rows into columns by creating a column corresponding to each of the values in a single given column. However, you need multiple rows of output.
 - Solution: use the rankning function `ROW_NUMBER OVER` to make each combination unique. Pivot the result set using a CASE expression and the aggregate function `MAX` while grouping on the value returned by the window function. The technique of using `ROW_NUMBER OVER` to create unique combinations of rows is extremely useful for formatting query result.
 ```sql
@@ -37,7 +37,7 @@ from
   ) x 
 group by rn
 ```
-## Reverse of [[Chapter 12 - Reporting and reshaping#^a6f205|Pivoting a result set into one row]]
+# Reverse of [[Chapter 12 - Reporting and reshaping#^a6f205|Pivoting a result set into one row]]
 ```sql
 select dept.deptno, 
   case dept.deptno 
@@ -55,7 +55,7 @@ from
     ) dept
   )
 ```
-## Reverse pivoting a result set into one column
+# Reverse pivoting a result set into one column
 - Problem: you want to return all columns from a query as just 1 column.
 - Solution: the key is to use CTE combine with Cartesian product to return rows and the window function `ROW_NUMBER OVER` to rank each row.
 ```sql
@@ -82,7 +82,7 @@ select
 from 
   x_tab
 ```
-## Supressing repeating values from a result set
+# Supressing repeating values from a result set
 - Problem: when 2 tows have the same value in a column, you want to display that value only once.
 - Solution: use `LAG OVER` function to access previos rows.
 ```sql
@@ -93,16 +93,16 @@ case when
 , ename
 from emp
 ```
-## Creating a predefined number of buckets
+# Creating a predefined number of buckets
 - Problem: you want to organize your data into a fixed number of buckets.
 - Solution: use `NTILE OVER` function to organizes ordered set into the number of buckets you specify.
 ```sql
 select NTILE(4) over (order by empno) grp, empno, ename from emp
 ```
-## Returning non-group by columns
+# Returning non-group by columns
 - Problem: while executing a GROUP BY query, and you want to return columns in your select list that are not also listed in your GROUP BY clause. This is not normally possible, as such ungrouped columns would not represent a single value per row.
 -  Solution: depending on the result, usually with non-group columns invole with calculation, you can use `MIN OVER` and `MAX OVER` function.
-## Calculating simple subtotals
+# Calculating simple subtotals
 - Solution: use the [[SQL#^4874b1|rollup]] extension to the `GROUP BY` clause solves this problem perfectly. With the help of [[SQL#^1e5537|grouping]] you can find you which row is grouped or not.
 ```sql
 select case grouping(job) 
@@ -111,7 +111,7 @@ select case grouping(job) 
 	sum(sal) sal 
 from emp group by rollup(job)
 ```
-## Calculating subtotal for all possible expression combinations
+# Calculating subtotal for all possible expression combinations
 - Problem: example use case you want to find the sum of all salaries by DEPTNO, and by JOB, for every JOB/DEPTNO combination.
 - Solution: take advantages of [[SQL#^c8ce95|cube]] extension added to `GROUP BY`.
 ```sql
@@ -129,7 +129,7 @@ order by
   grouping(job), 
   grouping(deptno)
 ```
-## Note
+# Note
 ```sql
 select ename, deptno, 
   count(*) over(partition by deptno) deptno_cnt, 

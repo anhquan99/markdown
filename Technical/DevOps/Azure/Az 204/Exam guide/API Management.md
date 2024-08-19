@@ -61,7 +61,9 @@
 		- The version identifier needs to be included in an HTTP request header for any API requests.
 	- Query string-based versioning
 		- The version identifier is in the query string of the request: `https://{yourDomain}/{apiName}/{operationId}?{queryStringParameterName}={versionIdentifier}`
-		- Note: query parameters are not allowed in the `servers` property of an `OpenAPI` specification.
+```ad-note
+query parameters are not allowed in the `servers` property of an `OpenAPI` specification.
+```
 - A version can have multiple revisions. You can use revisions without using version, just like a non-versioned API. Versions are used to separate API versions with breaking changes, while revisions can be used for minor and non-breaking changes to an API.
 ## Backend API
 - Benefits:
@@ -99,7 +101,7 @@
 - Not all policies are supported at each scope and policy section.
 - When configuring policy definitions at more than 1 scope, you control policy inheritance and the policy evaluation order in each policy section by placement of the `base` element.
 - Policies applied to API requests are also affected by the request context, including the presence or absence of a subscription key used in the request, the API or product scope of the subscription key, and whether the API or product requires a subscription.
-## Notes
+```ad-note
 - You manage an instance of Azure API Management. You define policies to multiple scopes. You need to enforce a policy evaluation order.
 	- Use `<base />`, it provides the ability to enforce policy evaluation order.
 	- The `<when />` element is part of the choose policy and is evaluated in order of its appearance within the policy.
@@ -110,3 +112,4 @@
 	- The `V3` tag will result in always running a major version with every new feature and patch.
 	- The latest tag is used for evaluating the self-hosted gateway.
 	- The `V3-preview` tag should be used to run the latest preview container image.
+```

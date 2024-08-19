@@ -26,9 +26,11 @@
 - It is best practice to version your buckets:
 	- Protect against unintended deletes (ability to restore a version).
 	- Easy roll back to previous version.
-- Notes:
-	- Any file that is not versioned prior to enabling versioning will have version "null".
-	- Suspending versioning does not delete the previous versions.
+```ad-note
+- Any file that is not versioned prior to enabling versioning will have version "null".
+- Suspending versioning does not delete the previous versions.
+```
+	
 ## Replication
 - Must enable versioning in source and destination buckets.
 - Cross Region Replication (CRR) and Same Region Replication (SRR).
@@ -37,11 +39,12 @@
 - Use cases:
 	- CRR: compliance, lower latency access, replication across.
 	- SRR: log aggregation, live replication between production and test accounts.
-- Notes:
-	- After replication is enabled, only new objects are replicated.
-	- You can use S3 Batch Replication to replicates existing objets and objects that failed replication.
-	- Can replicate delete markers from and not replicate object with a version ID.
-	- There is no chaining of replication that means A replicates to B and B replicates C, A not replicates to C.
+```ad-note
+- After replication is enabled, only new objects are replicated.
+- You can use S3 Batch Replication to replicates existing objets and objects that failed replication.
+- Can replicate delete markers from and not replicate object with a version ID.
+- There is no chaining of replication that means A replicates to B and B replicates C, A not replicates to C.
+```
 ## Storage class
 - Standard - General purpose
 	- Used for frequently accessed data.

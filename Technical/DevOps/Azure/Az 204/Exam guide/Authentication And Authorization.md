@@ -92,9 +92,10 @@
 	- Know when not t use a SAS.
 	- Use Azure Monitor and Azure Storage logs to monitor you application.
 	- Configure a SAS expiration policy for the storage account.
-## Notes
+```ad-note
 - The Application service principal is used to configure application permission for application in tenant to access the Microsoft Graph API.
 - The legacy service principal is a legacy app, which is an app created before app registrations were introduced, or an app created through legacy experiences.
 - Managed identities eliminate the need to manage credentials in code.
 - System-assigned managed identity is restricted to one per resource and is tied to the lifecycle of the resource.
 - A user-assigned managed identity can be created and assigned to one or more instances of an Azure service. The legacy, system-assigned managed identity, and user-assigned managed identity cannot be used to assign permission for an application in the tenant to access the Microsoft Graph API.
+```

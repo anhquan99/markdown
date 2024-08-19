@@ -68,5 +68,6 @@
 ## Direct connect (DX)
 - Establish a physical connection between on-premises and AWS.
 - Goes over a private network.
-## Notes
+```ad-note
 - S3 and DynamoDB are the only 2 services that have a Gateway Endpoint available. All the other services have an interface endpoint (powered by Private Link).
+```

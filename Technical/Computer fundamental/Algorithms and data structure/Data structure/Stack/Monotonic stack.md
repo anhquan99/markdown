@@ -20,5 +20,7 @@ public static void MonoStack(List<int> insertEntries)
     }
 }
 ```
-# Note
+
+```ad-note
 - A monotonic stack stores both the position and value. The indices of the element in the monotonic stack are always increasing. The value of the element are always meet the property of the monotonic stack.
+```

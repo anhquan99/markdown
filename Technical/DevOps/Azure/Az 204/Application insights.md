@@ -47,4 +47,6 @@
 - Standard test: similar URL ping test but include SSL certificate validity, proactive lifetime check.
 - Custom TrackAvailability: create a custom application o run availability tests, you can use the `TrackAvailability()` method to send the result to Application Insights.
 - Multi-step test (only available through Visual Studio 2019: is the long term supported solution request for multi request or authentication test scenarios.
-- <mark style="background: #ADCCFFA6;">Note:</mark> URL ping test relies on the DNS infrastructure of the public internet to resolve the domain names of the tested endpoints. If you can not  resolve the DNS, you can use the TrackingAvailability test instead.
+```ad-note
+URL ping test relies on the DNS infrastructure of the public internet to resolve the domain names of the tested endpoints. If you can not  resolve the DNS, you can use the TrackingAvailability test instead.
+```

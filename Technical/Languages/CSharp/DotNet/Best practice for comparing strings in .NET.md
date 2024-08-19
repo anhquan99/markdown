@@ -1,3 +1,4 @@
+Reference https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-and-localization
 ## Recommendations for string usage
 - Use overloads that explicitly specify the string comparison rules for string operations.
   Ex: string.Equals();
@@ -64,4 +65,3 @@ Data displayed to the user.  <br/>Most user input. | Data that requires local li
 	- Default interpretation: `StringComparison.CurrentCulture`
 - `Array.Sort` and `Array.BinarySearch`
 	- Default interpretation: `StringComparison.CurrentCulture`
-## https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-and-localization

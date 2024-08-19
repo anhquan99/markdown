@@ -151,7 +151,7 @@
 		- You want your web apps within the same App Service Plan to scale differently and independently of each other.
 		- Your web app connected to a databases or legacy system, which may not scale as fast as the web app. Scaling automatically allows you to set the maximum number of instances your App Service Plan can scale to. This setting helps the web app to not overwhelm the backend.
 - Flapping: refers to a loop condition that causes a series of opposing scale events. Flapping happens when one scale event triggers an opposite scale event. Example, scaling in reduces the number of instances causing the CPU to rise in the remaining instances. This in turn triggers scale out event, which causes CPU usage to drop, repeating the process.
-# Notes
+```ad-note
 - To load a TLS/SSL certificate in a Windows custom container application, use `WEBSITE_LOAD_CERTIFICATES` configuration.
 - You create an Azure web app locally. The web app consists of a ZIP package. You need to deploy the web app by using the Azure CLI. The deployment must reduce the likelihood of locked files.
 	- Run `az webapp deploy`
@@ -170,3 +170,4 @@
 	- Free App Service certificates offer basic functionalities and cannot be exported.
 	- Obtaining the certificate from a third party and uploading it to Azure App Service is also an option but lacks the automation and integration offered by the App Service certificates.
 	- It's recommended to store certificates in and retrieve them from a Key Vault, but if they are obtained from a third party, the renewal and synchronization with the App Service apps need to be automated in other ways.
+```

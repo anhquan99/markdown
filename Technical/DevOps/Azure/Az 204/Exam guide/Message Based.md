@@ -64,5 +64,3 @@
 | Queue Storage | Simple messaging | Unlimited queue size. Pay-as-you-go. Serverless architecture with geo-redundancy. | FIFO only. The small size of the message. No advanced messaging. The delivery sequence can be changed. |
 | Service Bus | Enterprise messaging | Scalable service. Variety of advanced messaging services. Access management. | Cost 5 GB total message limit. |
 | Azure Relay | Peer-to-peer communication | The communication is performed through a public network and does not require expensive VPN connectivity. | No message buffering. Both parties of communication must be online. |
-
-## Notes

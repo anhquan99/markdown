@@ -157,7 +157,9 @@
 	- `begins_with` (for string)
 	- `in, and between`
 	- `size` (string length)
-- Note: Filter expression filters the results of read queries, while condition expressions are for write operations
+```ad-note
+Filter expression filters the results of read queries, while condition expressions are for write operations
+```
 # DAX
 - Fully managed cache for DynamoDB.
 - 5 mins TTL for cache (default).
@@ -209,8 +211,9 @@
 - Option 1: using AWS Data Pipeline.
 - Option 2: backup and restore into a new table - take some time.
 - Option 3: `Scan` + `PutItem` or `BatchWriteIterm` - write your own code.
-# Notes
+```ad-note
 - Looking for just a single item on the main table index? Use GetItem.
 - Looking for just a single item on a GSI? Use Query.
 - Looking for multiple items with different partition key and sort key combinations at once? Use BatchGetItem.
 - Looking for multiple items that share the same partition key? Use Query.
+```
