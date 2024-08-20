@@ -25,4 +25,30 @@
 		- Use multiple cache server.
 		- Overprovision the required memory by certain percentages.
 	- Eviction policy: use eviction policy when the cache is full to remove existing items.
-- 
+# Database scaling
+## Vertical
+- Scaling by adding more power.
+- Drawbacks:
+	- You can't add more resource once you maxed out.
+	- Greater risk of single point of failures.
+	- High cost.
+## Horizontal
+- Sharding separates large databases into smaller, more easily managed parts called shards. Each shard shares the same schema, though the actual data on each shard is unique to the shard.
+- When choosing a sharding key, one of the most important criteria is to choose a key that can evenly distributed data.
+### Challendges
+- Resharding data is needed when:
+	- A single shard could no longer hold more data due to rapid growth.
+	- Certain shards might experience shard exhaustion faster than others due to uneven data distribution. When shard exhaustion happens, it requires updating the sharding function and moving data around.
+- Celebrity problem: this is also called a hotspot problem. Excessive access to specific shard could cause server overload.
+- Join and de-normalization: once a database has been sharded across multiple servers, it's hard perform join operations across database shards. A common workaround is to de-normalize the database so that queries can be performed in a single table.
+# Millions of users and beyond
+- Scaling a system is an iterative process.
+- Summary:
+	- Keep web tier stateless
+	- Build redundancy at every tier
+	- Cache data as much as you can
+	- Support multiple data centers
+	- Host static assets in CDN
+	- Scale your data tier by sharding
+	- Split tiers into individual services
+	- Monitor your system and use automation tools

@@ -9,7 +9,7 @@
 	- Enterprise Architecture: level where people are diveded like marketing team, dev team, ... 
 	- System Architecture: high level structure like ip, devices, ...
 	- Application Architecture: the internal structure of an application (classes, components and design patterns)
-# What is good architechture
+# What is good architecture
 - Your architectures should tell readers about the system, not about the frameworks you used in your system.
 - A good architecture allows major decisions to be deferred. A good architect maximizes the number of decisions not made
 
@@ -21,10 +21,10 @@ Easy to maintain | Hard to maintain
 Flexible | Rigid
 
 # Traditional Database Centric Architecture
-- Create unecessary coupling
+- Create unnecessary coupling
 - Business logic tends to be placed as close to the data as possible. In case of relational databases, it is usually DB functions and stored procedures
 - Application code is often considered to be secondary. The development is usually started with modeling the database structure. Application code conforms to the model built in DB
-# Loose coupling and High chesion
+# Loose coupling and High cohesion
 
 Cohesion | Coupling
 ------------ | ------------

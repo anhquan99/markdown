@@ -1,13 +1,13 @@
 # Overview of Python
-- Interpreted, high-level, general-purpose progamming language
+- Interpreted, high-level, general-purpose programming language
 - Dynamically type and garbage-collected
-- Support multiple progamming paradigms
+- Support multiple programming paradigms
 	- Procedure
 	- OOP
 	- Functional
-- Default implementation: CPython
-	- Jython-Java
-	- IronPython-.NET
+- Default implementation: `CPython`
+	- `Jython-Java`
+	- `IronPython-.NET`
 # Virtual Environment
 - Virtual environment is an isolated environment
 - We can config different environment with diffrents version to run python
@@ -39,7 +39,7 @@
 - Pass `\` as the positional argument
 #  OOP
 - `__` keyword is an internal property
-- Use ABC (abstractmethod) package for abtract class
+- Use ABC (`abstract_method`) package for abstract class
 # Closure
 - Everything in Python are objects
 - Nested function
@@ -59,7 +59,7 @@
 - Object generate state when iterate to next object then iterator will generate next state, that makes object light and fast.
 - Lazy load next value
 # Modules and Import
-- `__init__/py` is the top-level package
+- `__init__.py` is the top-level package
 # Plugins for python
 - `pylint`
 - `pycodestyle`
