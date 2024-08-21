@@ -2,3 +2,4 @@
 # Chapters
 1. [[Crunching knowledge]]
 2. [[Communication and the Use of Language]]
+3. [[Binding Model and Implementation]]

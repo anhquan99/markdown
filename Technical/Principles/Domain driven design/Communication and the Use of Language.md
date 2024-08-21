@@ -16,3 +16,16 @@
 - Domain experts should object to terms or structures that are awkward or inadequate to convey domain understanding; developers should watch for ambiguity or inconsistency that will trip up design.
 # Modeling out loud
 Play with the model as you talk about the system. Describe scenarios out loud using the elements and interactions of the model, combining concepts in ways allowed by the model. Find easier ways to say what you need to say, and then take those new ideas back down to the diagrams and code.
+# Documents and Diagrams
+## Problem
+- The trouble comes when people feel compelled to convey the whole model or design through UML. A lot of object model diagrams are too complete and, simultaneously, leave too much out.
+- The attributes and relationships are only half the story of an object model. The behavior of those objects and the constraints on them are not so easily illustrated. Object interaction diagrams can illustrate some tricky hotspots in the design, but the bulk of the interactions can't be shown that way
+- No one can see the forest for the trees.
+## Solutions
+- Diagrams are a means of communication and explanation, and they facilitate brainstorming. They serve these ends best if they are minimal.
+- *The vital detail about the design is captured in the code.*
+- Supplemental diagrams and documents can guide people's attention to the central points. Natural language discussion can fill in the nuances of meaning.
+- *The model is not the diagram.*
+-  Documents Should Complement Code and Speech:
+	- *A document shouldn't try to do what the code already does well.*
+- Documents Should Work for a Living and Stay Current.
