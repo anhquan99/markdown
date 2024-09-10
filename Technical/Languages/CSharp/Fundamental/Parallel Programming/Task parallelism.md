@@ -12,3 +12,12 @@
 	2. If **task 1 and task 2** generate more tasks, the new task will be stored in the thread-local queue. 
 	3. Once the thread 1 finished with task 1, it will look into its local queue and pick up the last task (LIFO). This make the last task may still be cache and so it doesn't need to be reloaded.
 	- Once thread 1 finish all task in its local queue it will search the global queue, if there are no items in the global queue, it will search in the local queues in other threads but this time it will not take the last task from other thread to preserve other thread cache.
+# `ValueTask`
+- `ValueTask` is a type in .NET that represent an async operation that may or may not be completed async.
+- More lightweight alternative to Task when the operation might complete sync, avoiding the overhead of creating a Task object.
+- Use `ValueTask` instead of Task when the operation might complete sync. This avoids the overhead of creating a Task object when not needed.
+- Always use await when calling a `ValueTask` returning method. This ensures that the async operation is properly awaited, even if it completes sync.
+- Beware of the potential for sync completion.
+# Note
+- Thread is not task and thread is more expensive than task.
+- `await` signals the program at that point, you're waiting for an async operation to complete, the current thread will pause execute which allows other tasks is executed and the code block after the `await` will be queued to be executed (it will not executed immediately).
