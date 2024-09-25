@@ -31,3 +31,7 @@
 ### Types
 - Agent nodes: static agents which is up and running all the time and stay connected to the Jenkins server.
 - Agent clouds: dynamic agent. Whenever you trigger a job, an agent gets deployed on demand and get deleted once the job is completed. 
+# General terms
+- Artifact: An immutable file generated during a Build or Pipeline run which is **archived** onto the Jenkins Controller for later retrieval by users.
+- Core: The primary Jenkins applications (`jenkins.war`) which provides the basic web UI, configuration, and foundation upon which Plugins can be built.
+- 
