@@ -34,4 +34,5 @@
 # General terms
 - Artifact: An immutable file generated during a Build or Pipeline run which is **archived** onto the Jenkins Controller for later retrieval by users.
 - Core: The primary Jenkins applications (`jenkins.war`) which provides the basic web UI, configuration, and foundation upon which Plugins can be built.
-- 
+- Fingerprint:A hash considered globally unique to track the usage of an Artifact or other entity across multiple pipelines or jobs.
+- Job: A user-configured description of work which Jenkins should perform, such as building a piece of software, etc.

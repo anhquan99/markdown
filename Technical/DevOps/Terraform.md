@@ -99,3 +99,53 @@ resource "aws_instance" "example" {
 	- Destroy resources that exist in the state but no longer exist in the configuration.
 	- Update in-place resources whose arguments have changes.
 	- Destroy and re-create resources whose arguments have changed but which can not be updated in-placed due to API limitations.
+# Data sources
+- Data sources allow Terraform to use information defined outside of Terraform defined by another separate Terraform configuration, or modified by functions.
+- Data source are used to fetch data from the provider end, so that it can be used configuration in `/tf` files instead of hardcoding it.
+```terraform
+data "aws_ami" "std_ami" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+resource "aws_instance" "myec2" {
+  ami           = data.aws_ami.std_ami.id
+  instance_type = "t2.micro"
+}
+```
+## Lifecycle
+- If the arguments of a data instance contain does not reference to any place, then the data instance will be read, and its state updated during Terraform's "refresh" phase, which by default runs prior to creating a plan. This ensures that the retrieved data is available for use during planning and the diff will show the real values obtained.
+- Data instance arguments may refer to computed values, in which case the attributes of the instance itself cannot be resolved until all of its arguments are defined. In this case, refreshing the data instance will be deferred until the "apply" phase, and all interpolations of the data instance attributes will show as "computed" in the plan since the values are not yet known.
+# Variables and Outputs
+- **Input variables** are like function arguments
+- **Output variables** are like function return value
+- **Local values** are like function's temporary local variables
+# Modules
+- Modules are containers for multiple resources that are used together.
+- They are the main way to package and reuse resource configurations with Terraform.
+## Root module
+- Every Terraform configuration has at least one module, known as its root module, which consists of the resources defined in the `.tf` files in the main working directory.
+## Child modules
+- A Terraform module (usually the root module of a configuration) can _call_ other modules to include their resources into the configuration. A module that has been called by another module is often referred to as a _child module._
+- Child modules can be called multiple times within the same configuration, and multiple configurations can use the same child module.
+# Backend block
+- The `backend` defines where Terraform stores it state data files in a remote object.
+## Kind
+- Local: stores state on the local filesystem, locks that state using system API and performs operations locally.
+- Remote: stores state snapshots and execute operation.
+# Import
+- Used to import existing infrastructure resources into Terraform, bringing them under Terraform's management.
+# Notes
+- **Resource:** Provisioning of resources/infra on our platform. Create, Update and delete!
+- **Variable:** Provides predefined values as variables on our IAC. Used by resource for provisioning.
+- **Data Source:** Fetch values from our infra/provider and provides data for our resource to provision infra/resource.
