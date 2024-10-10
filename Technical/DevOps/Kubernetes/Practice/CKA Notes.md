@@ -36,3 +36,9 @@ kubeadm token create --print-join-command
 ```plain
 apt-cache show kubeadm
 ```
+# Opt out of API credential automounting when creating Service Account
+- Set the flag `automountServiceAccountToken` to false in yaml file.
+- Folder to check `/var/run/secrets/kubernetes.io/serviceaccount/token`.
+# Kubelet configuration location
+- `/var/lib/kubelet/config.yaml`
+- `/etc/kubernetes/kubelet.conf`
