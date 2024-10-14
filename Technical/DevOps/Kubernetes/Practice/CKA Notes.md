@@ -117,3 +117,17 @@ openssl x509  -noout -text -in apiserver.crt
 |TCP|Inbound|10250|Kubelet API|Self, Control plane|
 |TCP|Inbound|10256|kube-proxy|Self, Load balancers|
 |TCP|Inbound|30000-32767|NodePort Services†|All|
+# Inter-pod affinity and anti-affinity
+- Inter-pod affinity and anti-affinity allow you to constrain which nodes your Pods can be scheduled on based on the labels of Pods already running on that node, instead of the node labels.
+- The node topology is the domain like node rack, cloud provider zone or region, etc.
+- Inter-pod affinity helps schedule pods into node based on its topology, where pods are group into same node.
+- Anti-affinity helps schedule pod into multiple nodes based on its topology, where a node only is scheduled to run single pod only.
+```ad-note
+Pod anti-affinity requires nodes to be consistently labeled.
+
+If you specify multiple terms in `nodeSelectorTerms` associated with `nodeAffinity` types, then the pod can be scheduled onto a node if one of the specified terms can be satisfied (terms are ORed).
+
+If you specify multiple expression in a single `matchExpression` field associated with a term in `nodeSelectorTerms`, then the pod can be scheduled onto a node only if all the expressions are satisfied (expression are ANDed).
+```
+# Pod topology spread constraints
+- Used to control how pods are spread across your cluster among failure-domains such as regions, zones, nodes, and other user-defined topology domains. This can help to achieve HA as well as efficient resource utilization.
