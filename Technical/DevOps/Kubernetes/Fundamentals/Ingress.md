@@ -1,4 +1,4 @@
-- With [[Services]]], routing rules are associated with a given Service. They exist for as long as the Service exists, and there are many rules because there are many Services in the cluster. If we can somehow decouple the routing rules from the application and centralize the rules management, we can then update our application without worrying about its external access. This can be done using the **Ingress** resource.
+- With [[Services]], routing rules are associated with a given Service. They exist for as long as the Service exists, and there are many rules because there are many Services in the cluster. If we can somehow decouple the routing rules from the application and centralize the rules management, we can then update our application without worrying about its external access. This can be done using the **Ingress** resource.
 - _"An Ingress is a collection of rules that allow inbound connections to reach the cluster Services"._
 - Ingress configures a Layer 7 HTTP/HTTPS load balancer for Services and provides:
 	- TLS

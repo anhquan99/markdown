@@ -6,4 +6,4 @@
 - Controller and Services use label selectors to select a subset of objects.
 - Types
 	- Equality-based selectors: using `=, ==, !=`.
-	- Set-based selectors: using `in/notin.
+	- Set-based selectors: using `in/notin`.

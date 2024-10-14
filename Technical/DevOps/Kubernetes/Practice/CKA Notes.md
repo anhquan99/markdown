@@ -20,7 +20,7 @@
 k -n ingress-nginx get svc ingress-nginx-controller
 ```
 # Label selector
-- Keyword: `Well-Known Labels, Annotations and Taints`
+- Keyword: `Well-Known Labels, Annotations and Taints`x
 # Pod priority
 - `PriorityClass`
 # Certificate
@@ -79,7 +79,7 @@ Keyword `Certificates and Certificate Signing Requests` and `openssl`
 ```
 openssl x509  -noout -text -in apiserver.crt
 ```
-	- `/etc/kubernetes/pki/apiserver.crt` and `/var/lib/kubelet/pki/kubelet.crt` are server certificates
+- `/etc/kubernetes/pki/apiserver.crt` and `/var/lib/kubelet/pki/kubelet.crt` are server certificates
 - `/etc/kubernetes/pki/apiserver-kubelet-client.crt` and `/var/lib/kubelet/pki/kubelet-client-current.pem` are client certificates
 ## 1. TLS traffic to API server (serving certificates)
 `--tls-cert-file, --tls-private-key-file, --tls-sni-cert-key`
