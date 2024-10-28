@@ -1,5 +1,7 @@
 # Vim
 - Set row number: `set nu`
+# Grep
+- Find content in file with folder recursively: `grep -r "file content" /folder`
 # Log location
 - System logs: `/var/log`, find folder k8s
 - K8s logs: `/var/log/syslog`
@@ -20,7 +22,7 @@
 k -n ingress-nginx get svc ingress-nginx-controller
 ```
 # Label selector
-- Keyword: `Well-Known Labels, Annotations and Taints`x
+- Keyword: `Well-Known Labels, Annotations and Taints`
 # Pod priority
 - `PriorityClass`
 # Certificate
