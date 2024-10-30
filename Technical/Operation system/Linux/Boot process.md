@@ -19,3 +19,13 @@
 - The second stage:  
 	- Resides under `/boot`. A splash screen is displayed, which allows us to choose which OS and/or kernel to boot. After the OS and kernel are selected, the boot loader loads the kernel of the operating system into RAM and passes control to it.
 	- Kernel are almost always compressed, so the first job they have is to uncompress themself. After this, it will check and analyze the system hardware and initialize any hardware device drivers build into the kernel.
+# Initial RAM Disk
+*The only purpose of an initramfs is to mount the root filesystem. The initramfs is a complete set of directories that you would find on a normal root filesystem. It is bundled into a single cpio archive and compressed with one of several compression algorithms.*
+- The `initramfs` filesystem image contains programs and binary files that perform all actions needed to mount the proper root filesystem, that will be used, and loading the device drivers for mass storage controllers, by taking advantage of the `udev` system (for user device), which is responsible for figuring out which devices are present, locating the device drivers they need to operate properly, and loading them. After the root filesystem has been found, it is checked for errors and mounted.
+- The **mount** program instructs the operating system that a filesystem is ready for use and associates it with a particular point in the overall hierarchy of the filesystem (the **mount point**). If this is successful, the `initramfs` is cleared from RAM, and the **init** program on the root filesystem (**/sbin/init**) is executed.
+
+- init handles the mounting and pivoting over to the final real root filesystem. If special hardware drivers are needed before the mass storage can be accessed, they must be in the `initramfs` image.
+![[Pasted image 20241030075937.png]]
+# Linux Kernel
+- The boot loader loads both the kernel and an initial RAM-based file system (`initramfs`) into memory, so it can be used directly by the kernel.
+- When the kernel is loaded in RAM, it immediately initializes and configures the computer’s memory and also configures all the hardware attached to the system. This includes all processors, I/O subsystems, storage devices, etc. The kernel also loads some necessary user space applications.
