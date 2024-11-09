@@ -29,3 +29,31 @@
 # Linux Kernel
 - The boot loader loads both the kernel and an initial RAM-based file system (`initramfs`) into memory, so it can be used directly by the kernel.
 - When the kernel is loaded in RAM, it immediately initializes and configures the computer’s memory and also configures all the hardware attached to the system. This includes all processors, I/O subsystems, storage devices, etc. The kernel also loads some necessary user space applications.
+# `/sbin/init` and Services
+- Once the kernel has set up all its hardware and mounted the root filesystem, the kernel run `/sbin/init`. This then becomes the initial process, which then starts other processes to get the system running. Most other processes on the system trace their origin ultimately to `init`; exceptions include the so-called kernel processes. These are started by the kernel directly, and their job is to manage internal operating system detail.
+- `init` is responsible for:
+	- Starting the system
+	- Act when necessary as a manager for all non-kernel processes
+	- Cleans up after upon completion
+	- Restarts user login services as needed when login, logout and same for other background system services
+- Traditionally, this process startup was done using `SysVinit` which pass the system through a sequence of `runlevels` containing collections of scripts that start and stop services. However, all major distributions have moved away from this method of system initialization because it did not take advantage of the parallel processing.
+- There are 2 main startup alternatives:
+	- `Upstart`
+	- `systemd`
+# `systemd`
+- `systemd` start up faster than those with earlier `init` methods because it replaces a serialized set of steps with aggressive parallelization techniques, which permits multiple services to be initiated simultaneously.
+- `/sbin/init` points to `/lib/systemd/systemd`.
+# Filesystems
+- Linux uses the `/` character to separate paths and does not have drive letters.
+  ![[Pasted image 20241109161937.png]]
+  # Choosing a Linux Distro
+  ![[Pasted image 20241109162113.png]]
+# Questions worth thinking about before deciding on a distribution include:
+  - What is the main function of the system (server or desktop)?
+  - What types of packages are important to the organization? For example, web server, word processing, etc.
+  - How much storage space is required, and how much is available? For example, when installing Linux on an embedded device, space is usually constrained.
+  - How often are packages updated?
+  - How long is the support cycle for each release? For example, LTS releases have long-term support.
+  - Do you need kernel customization from the vendor or a third party?
+  - What hardware are you running on? For example, it might be **X86**, **RISC-V**, **ARM**, **PPC**, etc.
+  - Do you need long-term stability? Or can you accept (or need) a more volatile cutting-edge system running the latest software versions?
