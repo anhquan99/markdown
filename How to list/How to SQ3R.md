@@ -1,5 +1,5 @@
-- Survey: Read all the key terms, headings, pictures, ... quickly.
-- Question: if there is a question in the end of the chapter, then go for it first, then you will have to search for answers.
-- Rephrase: take note with your own words from complex to simple that 5 years old kid can understand.
-- Recall: look back all your question and try to answer it without looking at the answer. (Flashcard)
-- Repetition: make time for recall in an amount of time for the brain to digest information.
+- **Survey**: Read all the key terms, headings, pictures, ... quickly.
+- **Question**: if there is a question in the end of the chapter, then go for it first, then you will have to search for answers.
+- **Rephrase**: take note with your own words from complex to simple that 5 years old kid can understand.
+- **Recall**: look back all your question and try to answer it without looking at the answer. (Flashcard)
+- **Repetition**: make time for recall in an amount of time for the brain to digest information.

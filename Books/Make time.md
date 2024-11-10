@@ -1,8 +1,8 @@
 <mark style="background: #FFB86CA6;">by Jake Knapp and John Zeratsky</mark>
-- This technique is based on sprint. It has 4 steps and those steps will make an efftive day, but before planning for a day it must be planning for the whole week.
+- This technique is based on sprint. It has 4 steps and those steps will make an effective day, but before planning for a day it must be planning for the whole week.
 - Each sprint will have their owns goals, in the end of the week its goals must be done.
-- There will be some task are not importance, but it must have a due date for the completion of the task. Throughout the week the task can be defered but must be finished.
-- Be aware that focus need energy and while you are focus on something it will also consume your engery.
+- There will be some task are not importance, but it must have a due date for the completion of the task. Throughout the week the task can be deferred but must be finished.
+- Be aware that focus need energy and while you are focus on something it will also consume your energy.
 ### Infinity pools
 - <mark style="background: #FF5582A6;">Endless distration.</mark>
 - Apps and other sources of endlessly replenishing content. If you can pull to refesh, or it streams, it's an Infinity pool. This always-available, always-new entertainment is your reward for the exhaustion of constant busyness.
@@ -11,10 +11,10 @@
 ### Lesson from the Design Sprint Lab
 - Something magic happens when you start the day with one high-priority goal.
 - We got more done when we banned devices.
-- The importance of energy for focused work and clear thingking.
+- The importance of energy for focused work and clear thinking.
 - Experimenting allowed us to improve the process.
 ### Every day mindset
-- These techniques are not for all, but it can be tested and enhenced and make a new technique. It must be tested and repeat every day.
+- These techniques are not for all, but it can be tested and enhanced and make a new technique. It must be tested and repeat every day.
 ## 4 steps of a day:
 1. <mark style="background: #ADCCFFA6;">Highlight : start each day by choosing a focal point</mark>
 	- <mark style="background: #D2B3FFA6;">3 ways make the task importance:</mark>
@@ -161,6 +161,6 @@
 	- <mark style="background: #FFB86CA6;">The Make time hypotheses:</mark>
 		- **The highlight hypothesis:** if you set a single intension at the start of each day, we predict you'll be more satisfied, joyful and effective.
 		- **The laser hypothesis:** If you create barriers around the Busy Bandwagon and The Infinity Pools, we predict you'll focus on your attention like a laser beam.
-		- **The energize hypothesis:** If you live a little more like a prehistoric hunman, we predict you'll enhence your mental and physical energy.
+		- **The energize hypothesis:** If you live a little more like a prehistoric hunman, we predict you'll enhance your mental and physical energy.
 	- Take notes to track your results (and keep you honest) 
 	- Small shift create big result.

@@ -1,3 +1,4 @@
+# Boot Process
 ![[Pasted image 20241027233004.png|200]]
 # BIOS
 - Basic Input/Output System (BIOS) initializes the hardware, aka POST (Power On Self Test)

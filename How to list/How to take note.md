@@ -1,7 +1,7 @@
-- Split the note into 2 part
+- **Split the note into 2 part**
 	- Note the importance information in the book or something else.
 	- Note for your own idea. (Question, agree or disagree, ...)
-- For meeting:
+- **For meeting**:
 	- Before meeting note out your question, note for meeting.
 	- Note the importance information while meeting.
 	- Note your idea or question for later, finally note down all your answer for the question before.
