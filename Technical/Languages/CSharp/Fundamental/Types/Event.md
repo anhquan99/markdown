@@ -1,4 +1,5 @@
-# Delegate
+# Event
+## Delegate
 - It is a function pointer points to a function with the same return type and parameters.
 - Event can be called through delegate.
 ```c#
@@ -56,20 +57,20 @@ NotifyCallback delegate1 = delegate(string s){ Console.WriteLine(s); };
 // lambda
 NotifyCallback delegate2 = s => { Console.WriteLine(s);}; 
 ```
-## Func
+### Func
 - A pre-defined delegate type in C# where it must have a return type and parameter is optional.
 - The last data type declared in the Func is the return type.
 ```c#
 Func<string> func_1; // return string
 Func<int, int, string> func_2; // parameters are int return string.
 ```
-## Action
+### Action
 - A pre-defined delegate type in C# where it returns void.
 ```c#
 Action<string> action_1;
 Action action_2;
 ```
-# Event
+## Event
 - Event is a communication technique for class where a class wants to notify other class has interest in an event.
 - The same with delegate, event only allow user to use `+=` or `-=` operation (Pub/sub).
 - The class containing the event raises (trigger) the event, which in turn invokes the delegate associated with the event.

@@ -1,9 +1,10 @@
-# Reference equality
+# Equality comparisons
+## Reference equality
 - 2 object references to refer to the same underlying object.
 - Should always use the `ReferenceEquals` when checking the reference equality.
-# Value equality
+## Value equality
 - Value equality means that two objects contain the same value or values.
-# Define equality
+## Define equality
 - Record automatically implement value equality.
 - Equality implementation should follow the five guarantees of equivalence (for the following rules, assume that `x`, `y` and `z` are not null):
 	1. 1. The reflexive property: `x.Equals(x)` returns `true`.

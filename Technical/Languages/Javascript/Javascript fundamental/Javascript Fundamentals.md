@@ -408,21 +408,14 @@ alert( double(3) ); // 6
     }
     ````
     - If you want to use the `this` of the object we have to use the old school functions
-      ````js
-      ...
-	      ...
-	      hello: function(){
-		      ...
-	      }
-	````  
-		or
-	````js
-	...
-		...
-		hello(){
+  ````js
+		hello: function(){
 			...
 		}
-		
+		// or
+		hello(){
+			...
+		}	
 	````
 
 

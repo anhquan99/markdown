@@ -1,14 +1,14 @@
 # Objects
 - Objects are used to store keyed collections of various data and more complex entities.
 - An object can be created with figure brackets `{...}` with an optional list of properties. A property is a "key: value" pair, where `key` is a string (also called a "property name"), and `value` can be anything.
-  ``````js
+``````js
   var sample = {
 	key1 : "value1",
 	key2 : 2,
 	key3 : 0.3,
 	...
   }
-  ``````
+``````
 - An empty object ("empty cabinet") can be created using one of 2 syntaxes
   ``````js
   let user = new Object(); // "object contructor syntax"
@@ -20,13 +20,13 @@
   ``````
 # Multiword
 - We can use multiword property names, but then they must be quoted
-  ``````js
+``````js
   let user = {
 	name: 'John',
 	age : 30,
 	"like birds": true  
   };
-  ``````
+``````
 - When we want to access multiword property we use square brackets
   ``````js
   let user = {};
@@ -100,13 +100,11 @@ alert(user.name); // John
   ``````
 ## The "for ... in" loop
 - Walk over all keys of an object
-  ``````js
-  for (key in object) { 
-  // executes the body for each key among object properties 
-  }
-  ``````
-
 ``````js
+for (key in object) { 
+// executes the body for each key among object properties 
+}
+  
 let user = {
 	name: "John", 
 	age: 30, 
@@ -133,15 +131,15 @@ for (let key in user) {
   let admin = user; // copy reference
   ``````
   ![[Pasted image 20220331105134.png]]
-  ``````js
+``````js
   let user = { name: 'John' };
   let admin = user;
   admin.name = 'Pete'; // changed by the "admin" reference
   alert(user.name); // 'Pete', changes are seen from the "user" reference
-  ``````
+``````
 ## Cloning and merging, Object.assign
 - If object contains only ***value type data***, when you clone that object using `for(key in object)` is equivalent to `Object.Assign`
-  ``````js
+``````js
 let user = {
  name: "John",
  age: 30
@@ -160,7 +158,7 @@ alert( user.name ); // still John in the original object
 let cloneUsingAssign = new Object();
 cloneUsingAssign = Object.assign(cloneUsingAssign, user);
 cloneUsingAssign = Object.assign({}, user); // equivalent to for loop
-  ``````
+``````
 - Syntax for `Object.assign`
   ``````js
   Object.assign(dest, [src1, src2, src3...])
@@ -320,26 +318,16 @@ alert(john.name); // John
 	- Object has more properties than we have variables, we can take some and then assign the `rest` somewhere
 ``````js
 let options = {
-
  title: "Menu",
-
  height: 200,
-
  width: 100
-
 };
 
 // title = property named title
-
 // rest = object with the rest of properties
-
 let {title, ...rest} = options;
-
 // now title="Menu", rest={height: 200, width: 100}
-
 alert(rest.height); // 200
-
 alert(rest.width); // 100
-
 alert(title); // Menu
 ``````

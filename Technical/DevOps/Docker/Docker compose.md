@@ -1,3 +1,4 @@
+# Docker compose
 ## Definition
 - A orchestration command for building and running multiple docker container in the CLI.
 - Docker compose is not suited for managing multiple containers on different hosts (machines)

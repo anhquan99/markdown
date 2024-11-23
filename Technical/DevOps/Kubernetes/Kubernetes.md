@@ -4,3 +4,17 @@
 - [[Object]]
 - [[Resource definition]]
 - [[Technical/DevOps/Kubernetes/Fundamentals/Volumes|Volumes]]
+# Notes
+- Ingress controller
+- Type of services
+	- Load balancer: 
+		- Provides public IP 
+		- Pros: Simple setup
+		- Cons: Cost
+- Dev:
+	- Constraint resource
+	- Graceful shutdown
+	- Fast startup
+	- Expose service load balancer: `sessionAffinity`
+	- Optimize docker image
+	- Logs service push to `stdout`

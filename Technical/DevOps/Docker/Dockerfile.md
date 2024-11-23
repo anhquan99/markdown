@@ -71,3 +71,13 @@ COPY --from=builder /dist/css ./dist/css
 # Execute NodeJS (not NPM script) to handle SIGTERM and SIGINT signals.
 CMD ["node", "./src/index.js"]
 ```
+# Notes
+- Optimize:
+	- Size:
+		- Multi-state build
+		- Image tag
+		- Docker.ignore
+	- Build speed:
+		- Caching
+		- Image size: small image faster download
+		- Copy unfrequently change file first (.csproj)

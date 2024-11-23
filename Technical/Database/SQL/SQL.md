@@ -20,7 +20,7 @@
 - Foreign key
 # Join
 - Types of join:
-	- <mark style="background: #FFB8EBA6;">Inner join:</mark> theta, natual, [[SQL Cookbook#^abdd24|equi]].
+	- <mark style="background: #FFB8EBA6;">Inner join:</mark> theta, natural, [[SQL Cookbook#^abdd24|equi]].
 	- <mark style="background: #FFB8EBA6;">Outer join:</mark> left, right, full.
 - Is used to combine records from two or more tables in SQL database
   ![[Pasted image 20220315231848.png | 300]]

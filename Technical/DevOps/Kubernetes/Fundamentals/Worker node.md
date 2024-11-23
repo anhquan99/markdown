@@ -1,7 +1,7 @@
 - Provides a running env for client application.
 - In K8s the application containers are encapsulated in Pods, controlled by the cluster control plane agents running on the control plane node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world.
 ![[Pasted image 20240324123939.png]]
-- A Pod is the smallest scheduling work unit in K8s, isa logical collection of 1 or more containers scheduled together, and the collection can be started, stopped, or rescheduled as a single unit of work.
+- A Pod is the smallest scheduling work unit in K8s, is a logical collection of 1 or more containers scheduled together, and the collection can be started, stopped, or rescheduled as a single unit of work.
 - In a multi-worker K8s cluster, the network traffic between client users and the containerized applications deployed in Pod is handled directly by the worker nodes, and is not routed through the control plane node.
 # Components
 - [[Worker node#Container Runtime|Container Runtime]]

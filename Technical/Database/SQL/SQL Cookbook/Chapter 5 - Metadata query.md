@@ -30,6 +30,3 @@ WHERE A.TABLE_NAME = 'EMP'
 ```
 ## Dynamic query
 - Use string to build SQL statements and pass value you need to query.
-```sql
-
-```

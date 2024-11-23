@@ -1,3 +1,4 @@
+# Lambda expressions
  - Used to create anonymous function.
  - To create a lambda expression, use `=>` to separate the lambda parameter list from its body.
    `(input-parameters) => {<sequence of statements>}`
@@ -23,7 +24,7 @@
   ``````
 - In C# 9 you can use discards to specify two or more input parameters of a lambda expression that aren't used in the expression
   `Fun<int, int, int> constant = (_, _) => 42;`
-# Extension methods
+## Extension methods
 - Extension methods enable you to "add" methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type.
 - Binding extension methods at compile time, you can use extension methods to extend a class or interface, but not to override them. An extension method with the same name and signature as an interface or class method will never be called.  At compile time, extension methods always have lower priority than instance methods defined in the type itself.
 - **Common usage pattern:**

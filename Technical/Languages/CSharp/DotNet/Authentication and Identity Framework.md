@@ -1,12 +1,12 @@
 # Claim 
-- Claim based authorization, checks the value of claim and allows acces to a resource based upon that value.
+- Claim based authorization, checks the value of claim and allows access to a resource based upon that value.
 - Claim is the information about the subject. It represents what the subject is, not what subject can do.
 - For example, if you want access to a nightclub, the authorization process might be
 	- The door security officer would evaluate the value of the date of birth claim and whether they trust the issuer (the driving license authority) before granting you access
 - 3 standard claims:
-	- nameidentitfier: user id
-	- name: username
-	- amr - authentication method reference
+	- `nameidentitfier`: user id
+	- `name`: username
+	- `amr` - authentication method reference
 # Security stamp
 - When user login into the system, it will create and pass security stamp to user cookie. When user change password or make modify on the account, this security stamp will be changed and user can't use the old security stamp to access.
 # Role based
@@ -20,14 +20,14 @@ Represent a subject via a collection of claims.
 - Track to which user a request belongs to
 - Safety stores user information
 - Symmetric encryption, key only on server
-- Used tp re-construct the ClaimsPrincipal object on each request
+- Used to re-construct the ClaimsPrincipal object on each request
 - Secured by ASP.NET Core Data Protection
 # Scheme actions
 - **Authenticate:** How claim and principal is created
 - **Challenge:** Define what happen if user access url or resources that need to authorize.
-- **Forbid:** Define what happen if user access forbiden url or resources.
+- **Forbid:** Define what happen if user access forbidden url or resources.
 # Claim identity
-- `ClaimsIdentity` is a class contains claims, it describle the entity that the corresponding identity represents, and can be used to make authorization and authentication decisions.
+- `ClaimsIdentity` is a class contains claims, it describe the entity that the corresponding identity represents, and can be used to make authorization and authentication decisions.
 ```ad-danger
 The **ClaimsPrincipal** class has a Claims property as well. In the majority of cases you should access the user's claims through the ClaimsPrincipal.Claims collection rether than through the **Claims** collection. You will need to access the claims of an individual **ClaimsIdentity** only in the cases wherer the principal contains more than one **ClaimsIdentity** and you need to evaluate or modify a specific identity.
 ```

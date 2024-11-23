@@ -1,7 +1,7 @@
 # Problem
 - Pods are ephemeral in nature, resources like IP addresses allocated to them can not be static. Pods could be terminated abruptly or rescheduled based on existing requirements.
 # Solution
-- K9s provides a higher-level abstraction called **Service**, which logically groups Pods and defines a policy to access them.
+- K8s provides a higher-level abstraction called **Service**, which logically groups Pods and defines a policy to access them.
 - These grouping is achieved via **Labels** and **Selectors**.
 - Using the Labels and Selectors, a logical grouping is assigned with a name, referred as Service. The Service name is also registered with the cluster's internal DNS service.
 ![[Pasted image 20240328005603.png]]

@@ -34,13 +34,11 @@ alert(rabbit.jumps); // true
 - **No matter where the method is found: in an object or its prototype. In a method call `this` is always the object before the dot**
 ``````js
 let animal = {
-
 	walk() {
 		if (!this.isSleeping) {
 		alert(`I walk`);
 		}
 	},
-
 	sleep() {
 		this.isSleeping = true;
 	}
@@ -54,9 +52,7 @@ let rabbit = {
 
 rabbit.sleep();
 
-
 alert(rabbit.isSleeping); // true
-
 alert(animal.isSleeping); // if animal call sleep it will not be undefined 
 // undefined (no such property in the prototype
 ``````

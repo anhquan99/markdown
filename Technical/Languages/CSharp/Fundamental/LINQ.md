@@ -1,5 +1,6 @@
+# LINQ
 - A query is not executed until you iterate over the query variable.
-# 3 parts of a Query operation
+## 3 parts of a Query operation
 1. Obtain the data source
 	- The first step is to specify the data source. The `from` clause comes first in order to introduce the data source `customers` and the range variable `cust`
 	```c#
@@ -16,13 +17,13 @@
 - With LINQ to SQL. First, you create an object-relational mapping. Then you write your queries agains the object, and at run-time LINQ to SQL handles the communication with the database
 - To force immediate execution of any query and cache its results, you can call  `ToList()` or `ToArray()` methods 
 - Deferred execution: Delay the execution query
-# Standard query operators
+## Standard query operators
 - Standard query operators are the methods that form the LINQ pattern. Most of the methods operate on sequences, where a sequence is an object whose type implements the `IEnumerable<T>` or `IQueryable<T>` interface
-## `IEnumerable<T>`
+### `IEnumerable<T>`
 - When query from a database, `IEnumerable` execute a select query on the server side, load data in-memory on a client side and then filter data
 - Suitable for LINQ to Object and LINQ to XML queries
 -  Does not support custom query, lazy loading hence not suitable for paging like scenarios
-## `IQeuryable<T>`
+### `IQeuryable<T>`
 - When query from a database, `IQueryable` execute the select query on the server side with all filters
 - Suitable for **LINQ to SQL** queries
 - Support custom query, lazy loading
@@ -39,24 +40,24 @@
 				select new {Length = gr.Key, Words = gr}
 	``````
 	- <mark style="background: #BBFABBA6;">Method-based</mark>
-	  ``````c#
+  ``````c#
 	  var query = words.GroupBy(w => w.Length, w => ToUpper())
 				  .Select(g => new {Length = g.Key, Words = g})
 				  .OrderBy(x => x.Length);
-		  ``````
-# `Equijoins`
+	  ``````
+## `Equijoins`
 - Performs a join against equality or matching columns values of the associated tables.
 - An equal sign `=` is used as comparison operator
 - You can perform `equijoins` by using `join` keyword followed by `on`.
-# Non `equijoins`
-- Like [[LINQ#Equijoins | Equijoins]], non equijoin performs a join with comparision operator instead of the equal sign like `>`, `<`, ... along with conditions.
-# Query keyword
-## `orderby`
+## Non `equijoins`
+- Like [[LINQ#Equijoins | Equijoins]], non `equijoin` performs a join with comparison operator instead of the equal sign like `>`, `<`, ... along with conditions.
+## Query keyword
+### `orderby`
 - Sort the returned data by using `orderby`
 ```c#
   orderby element.property ascending
 ```
-## `group`
+### `group`
 ### `group...by...`
   - Enables you to group your results based on a key that you specify. Return collection of collections where the all element in inner collection have the same key.
   - **Grouping by string**
@@ -87,7 +88,7 @@
 ```c#
   group person by new {name = person.surname, city = person.city}
 ```
-##  `join`
+###  `join`
 - Take 2 data source as input. Compare elements in each sequence must either be or contain a property that can be compared to a corresponding property in the other sequence. Using `equals` keyword to compare specified keys. All joins performed by `join` clause are [[LINQ#Equijoins | Equijoins]] 
 ```c#
 	from data_1 from dataset_1

@@ -1,5 +1,6 @@
+# Interface
 - Coding convention for naming an interface must begin with a capital `I`.
-# Instance members
+## Instance members
 - Method
 - Properties: provide controlled access to data (like variables)
 - Events
@@ -12,7 +13,7 @@ public interface IShapeOperations
 	event EventHandler ShapeModified; // event
 }
 ```
-# Static member (C# 8+)
+## Static member (C# 8+)
 - Static constructors: for 1 time initialization of static member
 - Static fields: hold shared data for all implementers of the interface
 	- Uniqueness: if an interface has a static member and an implementing class also declares a static member with the same signature these are considered separate entities.
@@ -59,13 +60,13 @@ public class Counter : ICounter<Counter>
 }
 ```
 - Static abstract members (C# 11+): like abstract methods but are static, so the implementing type must provide a static implementation
-# Restrictions
+## Restrictions
 - Interfaces can not have:
 	- Instance fields
 	- Instance constructors
 	- Finalizer
-# Accessibility
+## Accessibility
 - Default public, but you can use explicit modifiers like `private`, `protected`, ...
 - Private member with default: private interface members must have a default implementation right in the interface, as the implementer can not provide it.
-# Implementation rules
+## Implementation rules
 - Public and Non-static

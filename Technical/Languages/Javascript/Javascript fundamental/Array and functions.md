@@ -12,7 +12,7 @@ let arr = [];
 - `unshift` add the element to be beginning of the array
 ## Internals
 - Array is an object, so it behaves like an object
-- Array store its elements in the contiguous memory area, one after another. So if you make array behaves like an object it will losse its optimizations
+- Array store its elements in the contiguous memory area, one after another. So if you make array behaves like an object it will lose its optimizations
 ## Loop in array
 - Using for loop and iterate by variable that smaller than array.length
   ``````js
@@ -20,13 +20,13 @@ let arr = [];
 	  //
   }
   ``````
-  - Using `for...of`, i will be the value of the current array$[index]$
+- Using `for...of`, `i` will be the value of the current array$[index]$
     ``````js
     for(let i of array){
 	    alert(i) // array[index]
     }
     ``````
-  - Using `for...in`, i will be the index of the current array
+- Using `for...in`, `i` will be the index of the current array
   ``````js
   for(let i in array){
 	  alert(i) // index 0, 1, 2, 3,...
