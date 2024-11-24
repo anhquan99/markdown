@@ -18,7 +18,7 @@
   `var choose = object (bool b) => b ? 1 : "two"; // Func<bool, object>`
 ## Input parameters of a lambda expression
 - You enclose input parameters of a lambda expression in parentheses or none parentheses
-  ``````c#
+  ``````csharp
   Action line = () => Console.Writeline();
   Func<double, double> cube = x => x*x*x;
   ``````

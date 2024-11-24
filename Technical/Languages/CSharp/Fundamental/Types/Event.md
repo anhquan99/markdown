@@ -2,7 +2,7 @@
 ## Delegate
 - It is a function pointer points to a function with the same return type and parameters.
 - Event can be called through delegate.
-```c#
+```csharp
 // declare a delegate type
 public delegate void ShowLog(string message);
 
@@ -22,14 +22,14 @@ public static void Main()
 }
 ```
 - A delegate assign multiple functions, including lambda functions.
-```c#
+```csharp
 showLog += Warning;
 showLog += Info;
 showLog += Warning;
 ```
 ### Multicast delegates
 - The multicast delegate contains a list of the assigned delegates. When the multicast delegate is called, it invokes the delegates in the list in order.
-```c#
+```csharp
 delegate void CustomCallback(string s);
 CustomCallback multicast;
 
@@ -48,7 +48,7 @@ static void Goodbye(string s)
 }
 ```
 ### Anonymous method
-```c#
+```csharp
 delegate void NotifyCallback(string str);
 
 // anonymous
@@ -60,13 +60,13 @@ NotifyCallback delegate2 = s => { Console.WriteLine(s);};
 ### Func
 - A pre-defined delegate type in C# where it must have a return type and parameter is optional.
 - The last data type declared in the Func is the return type.
-```c#
+```csharp
 Func<string> func_1; // return string
 Func<int, int, string> func_2; // parameters are int return string.
 ```
 ### Action
 - A pre-defined delegate type in C# where it returns void.
-```c#
+```csharp
 Action<string> action_1;
 Action action_2;
 ```
@@ -75,13 +75,13 @@ Action action_2;
 - The same with delegate, event only allow user to use `+=` or `-=` operation (Pub/sub).
 - The class containing the event raises (trigger) the event, which in turn invokes the delegate associated with the event.
 - All the event in .NET is build from a delegate `EventHandler`
-```c#
+```csharp
 public delegate void EventHandler(object sender, EventArgs e);
 public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e);
 ```
 - `EventArgs` can be inherited to add more custom data. 
 - Example:
-```c#
+```csharp
 using System;
 
 namespace ConsoleApplication1

@@ -5,7 +5,7 @@
 	- In the first developments your application has created class A. Now you use 3rd party library or something else, your application need to use a class B. But class A is not compatible with class B. The adapter pattern converts the interface of A class into another interface as expected by the client application here we have B class.  
 	- ![[Pasted image 20220313004931.png]]
 - <span style="color:lime; font-weight:bold">Code:</span>
-``````C#
+``````csharp
 using System;
 
 namespace Adapter

@@ -7,7 +7,7 @@
 - On singlecore processors, only one thread gets a CPU slice while other threads wait for their turn. This ensures that whenever a thread accesses the memory (for loading and storing), it is in the right order. This model is also known as a **sequential consistency model**. In the case of multicore processor systems, multiple threads run concurrently. Sequential consistency is not guaranteed in these systems since either the hardware or the **Just in Time (JIT)** compiler might reorder the memory instructions to improve performance. The memory instructions may also be reordered for performance purposes for caching, load speculations, or delaying store operations.
 ### What is reordering?
 - For a given sequence of code statements, the compiler can choose to either execute them in the same order as they are received or reorder them to gain performance if multiple threads are working on the same code.
-```C#
+```csharp
 a = b;
 c = 1;
 // can be change to this

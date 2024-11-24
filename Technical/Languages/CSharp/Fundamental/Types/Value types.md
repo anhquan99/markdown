@@ -4,7 +4,7 @@
 - *decimal*: without any prefix.
 - *hexadecimal*: with the `0x` or `0X` prefix.
 - *binary*: with the `0b` or `0B` prefix.
-```c#
+```csharp
 var decimalLiteral = 42;
 var hexLiteral = 0x2A;
 var binaryLiteral = 0b_0010_1010;
@@ -20,7 +20,7 @@ var binaryLiteral = 0b_0010_1010;
 	- `NaN` is return when the result of a method or operation is undefined.
 	- `PositiveInfinity` is return when the result of a method or operation is greater than max value.
 	- `NegativeInfinity`is return when the result of a method. or operation is smaller than min value
-```c#
+```csharp
 Double zero = 0;
   
 // This condition will return false.
@@ -41,7 +41,7 @@ Console.WriteLine("10.0 minus NegativeInfinity equals {0}.", (10.0 - Double.Nega
 - The literal with the `m` or `M` suffix is of type `decimal`
 # Tuple
 - The _tuples_ feature provides concise syntax to group multiple data elements in a lightweight data structure.
-```c#
+```csharp
 (double, int) t1 = (4.5, 3);
 Console.WriteLine($"Tuple with elements {t1.Item1} and {t1.Item2}.");
 // Output:
@@ -77,7 +77,7 @@ Console.WriteLine($"Sum of {t2.Count} elements is {t2.Sum}.");
 
 ## Equality
 - Tuple types support the `==` and `!=` operators. These operators compare members of the left-hand operand with the corresponding members of the right-hand operand following the order of tuple elements.
-```c#
+```csharp
 (int a, byte b) left = (5, 10);
 (long a, int b) right = (5, 10);
 Console.WriteLine(left == right);  // output: True

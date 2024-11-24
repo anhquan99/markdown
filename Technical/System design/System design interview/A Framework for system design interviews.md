@@ -1,18 +1,19 @@
-# 4-step process for effective system design interview
-## 1. Understand the problem and establish design scope
+# A Framework for system design interviews
+## 4-step process for effective system design interview
+### 1. Understand the problem and establish design scope
 - Don't give out an answer quickly, instead a thorough understanding of the requirements.
 - Ask the right questions and don't be afraid to ask questions. Examples:
 	- What specific features are we going to build?
 	- How many users does the product have?
 	- How fast does the company anticipate to scale up? What are the anticipated scales in 3 months, 6 months, and a year?
 	- What is the company’s technology stack? What existing services you might leverage to simplify the design?
-## 2. Propose high-level design and get buy-in
+### 2. Propose high-level design and get buy-in
 - Come up with an initial blueprint for the design. Ask for feedback. Treat your interviewer as a teammate and work together. Many good interviewers love to talk and get involved.
 - Draw box diagrams with key components on the whiteboard or paper. This might include clients (mobile/web), APIs, web servers, data stores, cache, CDN, message queue, etc.
 - Do back-of-the-envelope calculations to evaluate if your blueprint fits the scale constraints. Think out loud. Communicate with your interviewer if back-of-the-envelope is necessary before diving into it.
-## 3. Design deep dive
+### 3. Design deep dive
 - Identify and prioritize components in the architecture.
-## 4. Wrap up
+### 4. Wrap up
 - Follow-up questions can be asked:
 	- The interviewer might want you to identify the system bottlenecks and discuss potential improvements. Never say your design is perfect and nothing can be improved. There is always something to improve upon. This is a great opportunity to show your critical thinking and leave a good final impression.
 	- It could be useful to give the interviewer a recap of your design. This is particularly important if you suggested a few solutions. Refreshing your interviewer’s memory can be helpful after a long session.
@@ -36,7 +37,7 @@
 	- If you get stuck, don't hesitate to ask for hints.
 	- Again, communicate. Don't think in silence.
 	- Don’t think your interview is done once you give the design. You are not done until your interviewer says you are done. Ask for feedback early and often.
-# Time allocation
+## Time allocation
 - Step 1 Understand the problem and establish design scope: 3 - 10 minutes
 - Step 2 Propose high-level design and get buy-in: 10 - 15 minutes
 - Step 3 Design deep dive: 10 - 25 minutes

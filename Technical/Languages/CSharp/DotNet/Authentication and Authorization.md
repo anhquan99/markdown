@@ -34,7 +34,7 @@
 - Reference token contain Unique ID
 - When API recive reference token it need access introspection endpoint in Identity Provider
 #  Check claims on view
-``````c#
+``````csharp
 @using Microsoft.AspNetCore.Authorization
 @inject IAuthorizationService AuthorizationService
 var checkClaims = AuthorizationService.AuthorizeAsync(User, claimName);

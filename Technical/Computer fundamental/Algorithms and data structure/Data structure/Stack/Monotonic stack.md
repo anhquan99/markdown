@@ -2,7 +2,7 @@
 - Monotonic stack has the same idea of [[Monotonic Queue]] (same implementation but different data structure).
 - The stack need to be satisfied the monotonic condition when pushing the new element into the stack, if it is not pop the top element off the stack until pushing new element into the stack satisfy the monotonic condition.
 - Example:
-```c#
+```csharp
 public static void MonoStack(List<int> insertEntries)
 {
     List<int> stack = new List<int>();

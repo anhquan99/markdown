@@ -17,15 +17,10 @@
 # Middleware
 
 - Middleware is software that's assembled into an app pipeline to handle requests and responses. Each component
-
 - Chooses whether to pass the request to the next component in the pipeline
-
 - Can perform work before and after the next component in the pipeline
-
 - Request delegates are used to build the request pipeline. The request delegates handle each HTTP request
-
 - Each delegate can perform operations before and after the next delegate. Exception handling delegates should be called early in the pipeline so they can catch exceptions that occur in later stages of the pipeline.
-
 - When a delegate doesn't pass a request to the next delegate, it's called **short-circuiting the request pipeline**. It is often desirable because it avoid unnecessary work.
 
 ```ad-note
@@ -34,46 +29,28 @@ Don't call `next.Invoke` after the response as been sent to the client.Changes t
 
 - The order that middleware components are added in the `Program.cs` file defines the order in which the middleware components are invoked on requests and the reverse order for the response. The order is critical for security, performance and functionality.
 
-``````C#
-
+``````csharp
 // Configure the HTTP request pipeline.
-
 if (app.Environment.IsDevelopment()) {
-
      app.UseMigrationsEndPoint();
-
 }
-
 else {
-
      app.UseExceptionHandler("/Error");
-
      // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-
      app.UseHsts(); } app.UseHttpsRedirection();
-
      app.UseStaticFiles();
-
      // app.UseCookiePolicy();
-
      app.UseRouting();
-
      // app.UseRequestLocalization();
-
      // app.UseCors();
-
      app.UseAuthentication();
-
      app.UseAuthorization();
 
      // app.UseSession();
-
      // app.UseResponseCompression();
-
      // app.UseResponseCaching();
 
      app.MapRazorPages();
-
      app.MapControllerRoute( name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
      app.Run();

@@ -3,7 +3,7 @@
 - It incrementally builds candidates to the solution, and abandons a candidate ("backtracks") as soon as determines that the candidate cannot possibly be completed to a valid solution.
 # Example:
 - Problem: generate binary number with k length
-```c#
+```csharp
 void backtrack(int position, int k, List<char> result)
 {
 	if(position == k)

@@ -4,7 +4,7 @@
 	- **Increasing monotonic queue**: keeps elements in increasing order, and any element that is smaller than the current minimum is removed.
 	- **Decreasing monotonic queue**: keeps elements in decreasing order, and any element that is larger than the current maximum is removed.
 - Example of increasing monotonic queue:
-```c#
+```csharp
 static LinkedList<int> decreasing_monotonic_queue(int[] arr, int n)
 {
 	LinkedList<int> q = new LinkedList<int>();

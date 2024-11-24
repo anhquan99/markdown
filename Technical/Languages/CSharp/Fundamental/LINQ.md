@@ -3,13 +3,13 @@
 ## 3 parts of a Query operation
 1. Obtain the data source
 	- The first step is to specify the data source. The `from` clause comes first in order to introduce the data source `customers` and the range variable `cust`
-	```c#
+	```csharp
 	  var query = from cust in customers
 				  select cust;
 	```
 	  - The range variable is like the iteration variable in a `foreach` loop, except that no actual iteration occurs in a query expression. Additional range variables can be introduced by `let`
 	  - For non-generic data sources such as ArrayList, the range variable must be explicitly type
-	```c#
+	```csharp
 		var query = from Student s in students ...
 	```
 	2. Create query
@@ -33,14 +33,14 @@
 	- Query returns sequence of value, depend on data type of the result `IEnumerable` or `IQueryable` will defer the result
 - 2 types of syntax:
 	- <mark style="background: #BBFABBA6;">Query expression</mark> 
-	``````c#
+	``````csharp
 	var query = from word in words
 				group word.ToUpper() by word.Length into gr
 				orderby gr.Key
 				select new {Length = gr.Key, Words = gr}
 	``````
 	- <mark style="background: #BBFABBA6;">Method-based</mark>
-  ``````c#
+  ``````csharp
 	  var query = words.GroupBy(w => w.Length, w => ToUpper())
 				  .Select(g => new {Length = g.Key, Words = g})
 				  .OrderBy(x => x.Length);
@@ -54,7 +54,7 @@
 ## Query keyword
 ### `orderby`
 - Sort the returned data by using `orderby`
-```c#
+```csharp
   orderby element.property ascending
 ```
 ### `group`
@@ -62,12 +62,12 @@
   - Enables you to group your results based on a key that you specify. Return collection of collections where the all element in inner collection have the same key.
   - **Grouping by string**
   - **Grouping by bool**
-    ``````c#
+    ``````csharp
     var query = from student in students
 			    group student by student.Scores.Average() > 80;
     ``````
 - **Grouping by numeric range**
-  ``````c#
+  ``````csharp
       var query = from student in students
 			      let avg = (int) student.Scores.Average()
 			      group student by (avg/10) into g
@@ -85,12 +85,12 @@
 	*/
   ``````
 - **Grouping by composite keys**
-```c#
+```csharp
   group person by new {name = person.surname, city = person.city}
 ```
 ###  `join`
 - Take 2 data source as input. Compare elements in each sequence must either be or contain a property that can be compared to a corresponding property in the other sequence. Using `equals` keyword to compare specified keys. All joins performed by `join` clause are [[LINQ#Equijoins | Equijoins]] 
-```c#
+```csharp
 	from data_1 from dataset_1
 	join data_2 from dataset_2 
 	on data_1.property equals data_2.property
@@ -98,7 +98,7 @@
 ```
 - `join` takes which side you choose to take. In this code above it will return data from `dataset_1`. You can merge 2 datasets by using anonymous `new{}`
 ### Composite key join
-```c#
+```csharp
 from data_1 from dataset_1
 join data_2 from dataset_2 
 on new {data_1.property_1, data_1.property_2} 
@@ -109,14 +109,14 @@ equals new {data_2.property_1, data_2.property_2}
 #### `Group join`
 - A `join` clause with an `into` expression is called a group join.
 - If no elements from the right source sequence are found to match an element in the left source, the `join` will produce an empty array for that item. Basically it is an inner-`equijoin` except that the result sequence is organized into groups.
-```c#
+```csharp
 from data_1 from dataset_1
 join data_2 from dataset_2 
 on data_1.property equals data_2.property
 into dataGroup
 ```
   - In the query above, the dataGroup will be the collection of each element key in data_1
-```C#
+```csharp
 var query = from person in people 
 			join pet in pets on 
 			person equals pet.Owner into gj 
@@ -128,7 +128,7 @@ var query = from person in people
 #### Left outer join
 - The first step in producing a left outer join of two collections is to perform an inner join. 
 - The second step is to inlcude each element of the first (left) collection in the result set, even if that element has no matches in the right collection. By using `DefaultIfEmpty()` .
-```c#
+```csharp
  var query = from Owner in people
 		  join pet in pets on Owner equals pet.Owner
 		  into gj
@@ -154,7 +154,7 @@ var query = from person in people
 		- A local range variable that represent each element in the source sequence like array
 #### Compound from clauses
 - An element contain a sequence. For example students where each student contains a list of test scores. To access each element in test scores, we use compound from clauses, using this like using nested for each loop.
-```c#
+```csharp
 var scoreQuery = from student in students
 				from score in student.Scores
 					where ...
@@ -168,7 +168,7 @@ var scoreQuery = from student in students
 - Used to create temporary identifier to store the results of a `group`, `join` or `select` into a new identifier.
 ##### `let`
 - In query expression, it is sometimes useful to store the result of a sub expression in order to use it in subsequent clauses. You can do this by using `let` clause
-```c#
+```csharp
 var query = from  sentence in strings
 		  let words = sentence.Split(' ')
 		  from word in words

@@ -18,7 +18,7 @@
 	3. Optional but recommended: overload the `==` and `!=` operators.
 	4. Override `Object.GetHashCode` so the 2 objects that have value equality produce the same has code.
 	5. Optional: to support definitions for `>` or `<` implement the `IComparable<T>` interface, and overload the `<=` and `>=` operators.
-```c#
+```csharp
 namespace ValueEqualityClass;
 
 class TwoDPoint : IEquatable<TwoDPoint>

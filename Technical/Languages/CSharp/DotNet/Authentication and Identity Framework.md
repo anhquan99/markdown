@@ -37,10 +37,11 @@ To add or remove claims from the **Claims** collection, a caller must have full 
 # Claim principal
 - The principal object represents the security context under which code is running. Applications that implement role-based security grant rights based on the role associated with a principal object.
 - The `ClaimsPrincipal` in context will always have more than 1 identity if your application requires n factor authentication (n > 1)
-``````
+```ad-note
 Principal = User
+
 Identity = Driver's License, Passport, Credit Card, Google Account, Facebook Account, RSA SecurID, Finger print, Facial recognition, etc.
-``````
+```
 - If you are pulled over by the police, they don't verify you're who claim to be, based on your driver's license alone. They also need to see your face. Otherwise, you could show anyone driver's license.
 -  Hence, it makes sense, why authentication can and sometimes should be based on multiple identities.
 # Identity framework use SHA256 to hash password

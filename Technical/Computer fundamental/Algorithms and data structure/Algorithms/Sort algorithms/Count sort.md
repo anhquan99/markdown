@@ -17,7 +17,7 @@
 - Handling duplicate values correctly
 - Maintaining the stability of the sort
 - Doing all this while preserving the algorithm's efficiency
-```c#
+```csharp
 int[] CountSort(int[] arr)
 {
     var max = int.MinValue;

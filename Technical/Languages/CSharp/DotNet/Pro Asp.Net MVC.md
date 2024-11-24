@@ -1,6 +1,6 @@
 # Razor page
 - The layout will be applied for every page if it is defined in the `_ViewStart.cshtml`
-```c#
+```csharp
 @{
  Layout = "∼/Views/_BasicLayout.cshtml";
 }
@@ -9,7 +9,7 @@
 - `@:html content` you can insert HTML content directly into a C# code block in razor page.
 # Pagination
 - Example solution:
-```C#
+```csharp
 public static MvcHtmlString PageLinks(this HtmlHelper html,
                                               PagingInfo pagingInfo,
                                               Func<int, string> pageUrl) {
@@ -33,7 +33,7 @@ public static MvcHtmlString PageLinks(this HtmlHelper html,
 ```
 # Model binding
 - The MVC framework uses a system called model binding to create C# objects from HTTP requests in order to pass them as parameter values to action methods. Model binders can create C# types from any information that is available from the request.
-```C#
+```csharp
 public class DataModelBinder : IModelBinder
     {
         private const string sessionKey = "Data";
@@ -63,7 +63,7 @@ ModelBinders.Binders.Add(typeof(Data), new DataModelBinder());
 - It must be registered in the Global.asax.cs file 
 - The order of route mapping is based on the order of route appear in the `RouteCollection`.
 - Register routes in `RouteConfig.cs`
-```C#
+```csharp
 // add route with constructor
 Route myRoute = new Route("{controller}/{action}", new MvcRouteHandler());
 routes.Add("MyRoute", myRoute);
@@ -95,7 +95,7 @@ routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",
                new[] { "URLsAndRoutes.Controllers" });
 ```
 - Route can be registered from the controller and action by declearing a attribute routing to them.
-```C#
+```csharp
 // register this in the RouteConfig.cs to use attribute routing feature 
 routes.MapMvcAttributeRoutes();
 //
@@ -122,7 +122,7 @@ public class CustomerController : Controller {
 }
 ```
 - Generate fully qualified URLs in Links
-```C#
+```csharp
 @Html.ActionLink("This is an outgoing URL", "Index", "Home",  
             "https", "[myserver.mydomain.com](http://myserver.mydomain.com/)", " myFragmentName",  
             new { id = "MyId" },  
@@ -133,7 +133,7 @@ public class CustomerController : Controller {
      id="myAnchorID">This is an outgoing URL</a>
 ```
 - Generate a URL from a specific route
-```C#
+```csharp
 // register route
 routes.MapRoute("MyOtherRoute", "App/{action}", new { controller = "Home" });
 // route link
@@ -145,7 +145,7 @@ routes.MapRoute("MyOtherRoute", "App/{action}", new { controller = "Home" });
 - `GetVirtualPath (RequestContext requestContext, RouteValueDictionary values)`: This is the mechanism by which _outbound URL generation_ works. The framework calls this method on each `RouteTable.Routes` entry in turn, until one of them returns a non-null value
 # Controller
 - Class names that end with base
-```C#
+```csharp
 // convert back to base class
 HttpContext myContext = getOriginalObjectFromSomewhere();  
 HttpContextBase myBase = new HttpContextWrapper(myContext);
@@ -157,7 +157,7 @@ HttpContextBase myBase = new HttpContextWrapper(myContext);
 ![[Pasted image 20230528143020.png]]
 - There are build-in value providers that fech items from `Request.Form`, `Request.QueryString`, `Request.Files` and `RouteData.Values`. The values are then passed to model binders that try to map them to the types that your action methods require as parameters.
 - When the MVC framework receives an `ActionResult` object from an action method, it calls the `ExecuteResult` method defined by that object. The action result implementation then deals with the `Response` object for you, generating the output that corresponds to your intention.
-```C#
+```csharp
 public class CustomRedirectResult : ActionResult {  
 
 	public string Url { get; set; }  
@@ -188,7 +188,7 @@ public class CustomRedirectResult : ActionResult {
 		- To create a controller invoker the class must inherite the `IActionInvoker`
 		- There is the built-in action invoker `ControllerActionInvoker`
 - Custom action name can override the action name.
-```C#
+```csharp
 [ActionName("Enumerate")]  
 public ViewResult List() {  
 	return View("Result", new Result {  
@@ -198,7 +198,7 @@ public ViewResult List() {
 }
 ```
 - Custom action method selector
-```C#
+```csharp
 public class LocalAttribute : ActionMethodSelectorAttribute
 {
 	public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
@@ -214,7 +214,7 @@ public class LocalAttribute : ActionMethodSelectorAttribute
 # Templated helper method
 - Applying Metadata to a Buddy class
 	- It is not always possible to apply metadata to an entiy model class. Example with Entity Framework the class would change if an update applies. The solution to this problem is to use buddy class.
-```C#
+```csharp
 [MetadataType(typeof(PersonMetaData)]  
 public partial class Person {  
 	public int PersonId { get; set; }  
@@ -260,7 +260,7 @@ public partial class PersonMetaData {
 - Specifying custom prefixes
 	- The object binding is complex for MVC framework to understand, to solve this problem use `Bind(Prefix="class")]` in the action method.
 	- Binding can be selective by using `Exclude` or `Include` 
-```C#
+```csharp
 public class Person {
 	public int PersonId { get; set; }
 	public string FirstName { get; set; }
@@ -289,7 +289,7 @@ public ActionResult DisplaySummary([Bind(Prefix = "HomeAddress", Exclude = "Coun
 }
 ```
 - Manually invoking model binding: use `UpdateModel()`
-```C#
+```csharp
 // use try catch
 public ActionResult Address(FormCollection formData) {  
     IList<AddressSummary> addresses = new List<AddressSummary>();  
@@ -312,7 +312,7 @@ public ActionResult Address(FormCollection formData) {
 }
 ```
 - Custom value provider
-```C#
+```csharp
 // Implement IValueProvider
 public class CountryValueProvider : IValueProvider {  
 
@@ -335,7 +335,7 @@ ValueProviderFactories.Factories.Insert(0, new CustomValueProviderFactory());
 ```
 - Custom model binder
 ![[Pasted image 20230528231110.png]]
-```C#
+```csharp
 // implement IModelBinder
 public class AddressSummaryBinder : IModelBinder {  
 
@@ -373,7 +373,7 @@ public class AddressSummary {
 - Defining self-validating methods:
 	- `IValidatableObject`
 - Enable client side validation:
-```C#
+```csharp
 // Web.Config
   <add key="ClientValidationEnabled" value="true" />  
   <add key="UnobtrusiveJavaScriptEnabled" value="true" />
@@ -427,7 +427,7 @@ public class AddressSummary {
 	  - `PreRequestHandlerExecute`:  trigger immediately before the `ProcessRequest()` called
 	  - `PostRequestHandlerExecute`: trigger immediately after the `ProcessRequest()` called
   - `IRouteHandler` map the route with the `IHttppHandler`
-```C#
+```csharp
 // how to use IHttpModule with IHttpHandler
 namespace SimpleApp.Infrastructure {
   public class DayModule: IHttpModule {
@@ -454,7 +454,7 @@ namespace SimpleApp.Infrastructure {
 - Transfer a request to a different handler using `TransferRequest()`.
 - Terminating requests using `CompleteRequest()`
 - Add handle event method with delegation
-```C#
+```csharp
 public class EventListModule : IHttpModule {
 
         public void Init(HttpApplication app) {

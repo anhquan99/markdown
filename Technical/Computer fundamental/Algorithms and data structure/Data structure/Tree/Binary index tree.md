@@ -27,7 +27,7 @@
 	- Multiplication has inverse division.
 	- GCD has no inverse so can not use binary index tree.
 	- ...
-```c#
+```csharp
 class BIT
 {
     private int[] bit;

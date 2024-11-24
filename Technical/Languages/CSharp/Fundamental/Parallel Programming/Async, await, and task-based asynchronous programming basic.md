@@ -15,7 +15,7 @@
 - In the case of Windows applications, however, (including both WinForms and WPF), which work in **Single-Threaded Apartment (STA)** mode, it becomes important that an async call gets returned to the same thread that started it (normally a UI thread). Every UI thread in a Windows application has a SynchronizationContext that makes sure that the code is always executed by the correct thread. This is important due to control ownership. To avoid cross-threading issues, only the owner thread can change the values of the controls. The most important method of the `SynchronizationContext` class is Post, which can make a delegate run in the right context, thus avoiding cross-threading issues.
 - Whenever we await a task, the current `SynchronizationContext` is captured. Then, when the method needs to be resumed, the await keyword internally uses the Post method to resume the method in the captured `SynchronizationContext`. Calling the Post method is very costly, however, but there is a built-in performance optimization provided by the framework. The Post method doesn't get called if the captured `SynchronizationContext` is the same as the current `SynchronizationContext` of the returning thread.
 ## Parallelism vs async await
-```c#
+```csharp
 // async await code
 using System.Diagnostics;
 
@@ -81,7 +81,7 @@ static async Task<int> Task3()
 ## Guidelines for using async code
 ### Avoid using async avoid.
 ### Async chain all the way
-```C#
+```csharp
 private async Task DelayAsync() 
 { 
 	await Task.Delay(2000); 

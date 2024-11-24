@@ -13,7 +13,7 @@
 - Hashtable
 - BitArray
 # IEnumerable and IEnumerator
-``````c#
+``````csharp
 ItemEnumerable items = new ItemEnumerable(data);
 foreach(var i in items){
 	// iterate items
@@ -23,7 +23,7 @@ foreach(var i in items){
 - Help user can iterate items using `foreach()`
 - It exposes an enumerator, which supports a simple iteration over a non-generic collection.
 - When implementing **IEnumerable**, that class must implement `IEnumerator GetEnumerator()` to expose an Enumerator.
-``````c#
+``````csharp
 class ItemEnumerable : IEnumerable{
 	private Item[] _items;
 	public ItemEnumerable(Item[] items){
@@ -47,7 +47,7 @@ class ItemEnumerable : IEnumerable{
 	- `Reset()`
 - Properties:
 	- `Current`
-``````c#
+``````csharp
 public ItemEnum : IEnumerator
 {
 	public Item[] items;

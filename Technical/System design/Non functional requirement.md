@@ -1,3 +1,4 @@
+# Non functional requirement
 ![[Pasted image 20240822223719.png]]
 The priority order of NFR in this list is from top to bottom
 - Security

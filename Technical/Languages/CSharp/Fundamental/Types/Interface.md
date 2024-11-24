@@ -5,7 +5,7 @@
 - Properties: provide controlled access to data (like variables)
 - Events
 - Indexers
-```c#
+```csharp
 public interface IShapeOperations
 {
 	double CalculateArea(); // instance method
@@ -17,7 +17,7 @@ public interface IShapeOperations
 - Static constructors: for 1 time initialization of static member
 - Static fields: hold shared data for all implementers of the interface
 	- Uniqueness: if an interface has a static member and an implementing class also declares a static member with the same signature these are considered separate entities.
-```c#
+```csharp
 interface IExample
 {
     static int Data = 1;
@@ -33,7 +33,7 @@ class Example : IExample
 ```
 - Constants
 - Operators: define custom operators for types implementing the interface (C# 11+)
-```c#
+```csharp
 public interface ICounter<T> where T : ICounter<T>
 {
     int Value { get; }

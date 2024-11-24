@@ -12,7 +12,7 @@
 - Slower to allocate, when object is no longer needed, it must be deallocated (garbage collect).
 - No fixed size, so the garbage collector must constantly monitor and manage the memory being used.
 - For large, long-lived objects.
-```c#
+```csharp
 int x = 5; // x is a local variable and is stored on the stack  
   
 // y is a reference to an object and is stored on the stack  

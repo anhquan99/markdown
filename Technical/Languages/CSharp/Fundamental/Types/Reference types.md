@@ -6,12 +6,12 @@
 - You can use positional parameters to declare properties of a record and to initialize the property values when you create an instance.
 - Note when you use the positional syntax for property definition, the compiler creates :
     - A `Deconstruct` method with an out parameter for each positional parameter provided in the record declaration. The method deconstructs properties defined by using positional syntax; it ignores properties that are defined by using standard property syntax.
-```c#
+```csharp
 Person person = new("Nancy", "Davolio");
 public record Person(string FirstName, string LastName);
 ```
 - Add attributes to positional properties:
-```c#
+```csharp
 public record Person([property: JsonPropertyName("firstName")] string FirstName, [property: JsonPropertyName("lastName")] string LastName);
 ```
 ### Value equality:
@@ -28,7 +28,7 @@ public record Person([property: JsonPropertyName("firstName")] string FirstName,
 ### Nondestructive mutation
 - Copy an instance with some modification, use `with` expression.
 - The result of a `with` expression is a *shallow copy*, which copy the value properties but still reference to the same instance.
-```c#
+```csharp
 Person person2 = person with { FirstName = "Janet" };
 ```
 ### Applications
@@ -65,7 +65,7 @@ Person person2 = person with { FirstName = "Janet" };
 
 ### Indexers
 - Indexers allow instances of a class or struct to be indexed just like arrays
-```c#
+```csharp
 using System;
 
 var stringCollection = new SampleCollection<string>();
@@ -88,7 +88,7 @@ class SampleCollection<T>
 ### Indexer in interfaces
 - Interface accessors do not use modifiers.
 - An interface accessor typically does not have a body.
-```c#
+```csharp
 // Indexer on an interface:
 public interface IIndexInterface
 {

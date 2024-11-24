@@ -9,7 +9,7 @@
 - To store history in browsers.
 # Example
 - In `C#` dequeue is implemented in `LinkedList<T>`
-```c#
+```csharp
 public class Deque
 {
     private Node _front;

@@ -9,7 +9,7 @@
 # Nullable value type
 - Allow variable reference type null
 - We can check null value by using operator `?`
-  ``````c#
+  ``````csharp
   a?.property;
   a?.property1?.property2 ?? default value;
   ``````
@@ -31,7 +31,7 @@
 	- Contract more than abstract
 - Define function in interface, if an object from a class implement from a interface an not implementing defined function, it will not throw an error.
 # init only for property
-``````c#
+``````csharp
 public class user{
 	public string Username {get; init;} // username can be set when initialize in constructor
 	public user(string username){

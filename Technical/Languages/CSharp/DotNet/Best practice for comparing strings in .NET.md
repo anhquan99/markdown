@@ -16,7 +16,7 @@ Reference https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-
 ## Select an overload that does not use default values
 - Some overloads with default parameters (char search) perform an ordinal comparison, while other (string search) are culture-sensitive
 - Know the intent of the code
-  ``````C#
+  ``````csharp
 	// bad usage
 	string protocol = GetProtocol(url);
 	if (String.Equals(protocol, "http")) {
@@ -27,7 +27,7 @@ Reference https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-
 	}
   ``````
 
-  ``````C#
+  ``````csharp
 	// good usage
 		string protocol = GetProtocol(url);
 		if (String.Equals(protocol, "http", StringComparison.OrdinalIgnoreCase)) {

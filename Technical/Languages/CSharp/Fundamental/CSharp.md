@@ -26,7 +26,7 @@
 ## Delegate
 - Create delegate variable reference to a function with the same input arguments.![[Pasted image 20220313165658.png]]
 - Multicast delegate
-``````c#
+``````csharp
 using System;
 
 // Define a custom delegate that has a string parameter and returns void.
@@ -95,7 +95,7 @@ Invoking delegate multiMinusHiDel:
 
 ## Indexers
 - Indexers allow instances of a class or struct to be indexed just like arrays. The indexed value can be set or retrieved without explicitly specifying a type or instance member.
-``````c#
+``````csharp
 using System;
 
 class SampleCollection<T>
@@ -133,7 +133,7 @@ class Program
 ## Attribute
 - Define declarative tags on certain entities class, method,... Retrieved at runtime using Reflection.
 - Example:
-``````c#
+``````csharp
 [Route("path")]
 public class HomeController{}
 ``````
@@ -156,7 +156,7 @@ public class HomeController{}
 - An object pool is a container having objects ready to be used. It tracks the object that is currently in use, total number of objects in the pool. This reduces the overhead of creating and re-creating objects.
 ## Anonymous type 
 - Initialize and type interference (`var`), c# can create anonymous type object has a class is an object. but that does not mean it is dynamic like a Javascript variable. The compiler generate the class based on the name and type of the parameters in the initializer.
-```c#
+```csharp
 var myAnonType = new {  
     Name = "MVC",  
     Category = "Pattern"  

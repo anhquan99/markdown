@@ -10,7 +10,7 @@
 - Your program can examine its own metadata or the metadata in other programs by using reflection.
 ### Targets
 - The target of an attribute is the entity that the attribute applies to.
-```c#
+```csharp
 // default: applies to method
 [ValidatedContract]
 int Method1() { return 0; }
@@ -30,7 +30,7 @@ int Method4() { return 0; }
 - You can apply attributes only on:
     - Open generic types: the type is not specified like `List<T>`
     - Closed constructed generic types: the type is specified like `List<Int>`
-```c#
+```csharp
 // open generic types
 public class GenericClass1<T> { }
 
@@ -46,7 +46,7 @@ class ClassC { }
 ### Restriction
 - Attribute can be restricted for certain targets.
 - By default, if you don't restrict any type on an attribute it can be used to any targets.
-```c#
+```csharp
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
 public class MyAttributeForClassAndStructOnly : Attribute {}
 ```
@@ -58,7 +58,7 @@ public class MyAttributeForClassAndStructOnly : Attribute {}
 - Use `Attribute.GetCustomAttributes`.
 #### Multiple with different scope
 - Access each scope to get the custom attributes.
-```c#
+```csharp
 var attrs = Attribute.GetCustomAttribute(typeof(TestClass), typeof(TestAttribute));
 Console.WriteLine(attrs.ToString());
 var t = typeof(TestClass);

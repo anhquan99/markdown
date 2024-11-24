@@ -17,7 +17,7 @@ Else if max endpoint in left subtree is less than low, go right
 Else go left
 ```
 # Code
-```c#
+```csharp
 public class IntervalNode
 {
     public Interval Range;
