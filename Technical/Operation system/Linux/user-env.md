@@ -23,3 +23,47 @@
 ### Root user
 - `su` for switch or substitute user, which is used for switch user account.
 - `sudo` configuration files are stored in the `/etc/sudoers` file and in the `/etc/sudoers.d/` directory.
+## Env variable
+- `$HOME`
+- `$PATH` is an ordered list of directories which is scanned when a command is given to find the appropriate or script to run.
+- `$SHELL` points to the user's default command shell.
+- `$PS` (prompt statement) is used to customize your prompt string in your terminal windows to display the information you want.
+## Command history
+- To view the list of previously executed commands, you can type `history` at the command line, the history is saved in `~/.bash_history`.
+- If you have multiple terminals open, the commands typed in each session are not saved until the session terminates.
+### Env variables for history
+- `HISTFILE`: location of history file.
+- `HISTFILESIZE`: max number of lines in the history file (default 500).
+- `HISTSIZE`: max number of commands in the history file.
+- `HISTIGNORE`: which command is ignored.
+## Previous command
+- Use `!!` to execute the previous command.
+- Use `CTRL-R` to search previously used commands.
+
+| Syntax    | Task                                                  |
+| --------- | ----------------------------------------------------- |
+| `!`       | Start a history substitution                          |
+| `!$`      | Refer to the last argument in a line                  |
+| `!n`      | Refer to the nth command line                         |
+| `!string` | Refer to the most recent command starting with string |
+## Keyboard shortcuts
+| Shortcut | Task                                                                  |
+| -------- | --------------------------------------------------------------------- |
+| `CTRL-L` | Clear the screen                                                      |
+| `CTRL-S` | Temporarily halt output to the terminal window                        |
+| `CTRL-Q` | Resume output to the terminal window                                  |
+| `CTRL-D` | Exits the current shell                                               |
+| `CTRL-Z` | Puts the current process into suspended background and back to prompt |
+| `CTRL-C` | Kills the current process                                             |
+| `CTRL-H` | Works the same as backspace                                           |
+| `CTRL-A` | Goes to the beginning of the line                                     |
+| `CTRL-W` | Deletes the word before the cursor                                    |
+| `CTRL-U` | Deletes from beginning of line to cursor position                     |
+| `CTRL-E` | Goes to the end of the line                                           |
+| `Tab`    | Auto-completes files, directories, and binaries                       |
+## File ownership
+| Command | Usage                                                                                                                                          |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `chown` | Change user ownership of a file or directory                                                                                                   |
+| `chgrp` | Change group ownership                                                                                                                         |
+| `chmod` | Change permissions on the file, which can be done separately for **owner**, **group** and the rest of the **world** (often named as **other**) |
