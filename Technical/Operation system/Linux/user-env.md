@@ -67,3 +67,28 @@
 | `chown` | Change user ownership of a file or directory                                                                                                   |
 | `chgrp` | Change group ownership                                                                                                                         |
 | `chmod` | Change permissions on the file, which can be done separately for **owner**, **group** and the rest of the **world** (often named as **other**) |
+## File permission modes
+- Permissions `rwx`
+	- `r`: read
+	- `w`: write
+	- `w`: execute
+- Groups of 3 permissions:
+	- `u`: user/owner
+	- `g`: group
+	- `o`: others
+```
+rwx: rwx: rwx
+ u:    g:   o
+```
+- Shorthand to set the permissions by using single digit suffices to specify all 3 permissions bits for each entity:
+	- 4 for read
+	- 2 for write
+	- 1 for execute
+- Single digit suffices sum:
+	- 7 means `rwx`
+	- 6 means `rw`
+	- 5 means `rx`
+```bash
+# set rwx to user rx to groups and others
+chmod 755 <file>
+```
