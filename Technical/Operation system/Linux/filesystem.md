@@ -33,6 +33,8 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 - Use `mount <servername>:/<folder> <local-folder>` to mount the other filesystem to local folder.
 - You may want to use `nofail` option in `fstab` in case the NFS server is not live at boot.
 ## Directories
+### `/`
+- `/` is not `/root`, the home directory of root, the superuser.
 ### `/bin`
 - `/bin` contains executable binaries, essential commands used to boot the system or in single-user mode, and essential commands required by all system users, such as **cat**, **cp**, **ls**, **mv**, **ps**, and **rm**.
 - `/sbin` contains essential binaries related to system administration.
@@ -43,7 +45,8 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 ### `/dev`
 - It contains **device nodes**, a type of pseudo-file used by most hardware and software devices, except for network devices, which is:
 	- Empty on the disk partition when it is not mounted.
-	- Contains entries which are created by the **udev** system, which creates and manages device nodes on Linux, creating them dynamically when devices are found.
+	- Contains entries which are created by the `udev` system, which creates and manages device nodes on Linux, creating them dynamically when devices are found.
+![[Pasted image 20250105190120.png]]
 ### `/var`
 - It contains files that are expected to change in size and content as the system is running - variable.
 	- System log files: `/var/log`
@@ -53,6 +56,10 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 ### `/etc`
 - Used for system configuration files.
 - It contains no binary programs, although there are some executable scripts.
+- Subdirectories:
+	- `/etc/skel`: contains skeleton files used to populate newly created home directories.
+	- `/etc/systemd`: contains or points to configuration scripts for starting, stopping, and controlling system services when using `systemd`.
+	- `/etc/init.d`: contains startup and shutdown scripts for when using System V initialization.
 ### `/boot`
 - It contains few essential files needed to boot the system.
 - For every alternative kernel installed on the system there are 4 files, each of theses files has a kernel version appended to its name:
@@ -60,10 +67,29 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 	- `initramfs`: The initial ram filesystem, required for booting, sometimes called initrd, not initramfs.
 	- `config`: The kernel configuration file, only used for debugging and bookkeeping.
 	- `System.map`: Kernel symbol table, only used for debugging.
-- The Rand Unified Bootloader (GRUB) files are also found under the `/boot` directory.
+- The GRand Unified Bootloader (GRUB) files are also found under the `/boot` directory.
 ### `/lib`
 - `/lib` contains 32-bit libraries for the essential programs in `/bin` and `/sbin`.
 - On some Linux distributions there exists a `/lib64` directory containing 64-bit libraries.
+- Recent distributions, `/lib` and `/usr/lib` (as well as `/lib64` and `/usr/lib64`) are symbolic link.
+### `/mnt`
+- System administrator can temporarily mount a filesystem when needed.
+- Historically, `/mnt` was also used for the kinds of files which are now mounted under `/media` (or `/run/media`) in modern systems.
+### `/opt`
+- Designed for software packages that wish to keep all or most of their files in 1 isolated place, rather than scatter them all over the system in directories shared by other software.
+### `/sys`
+- This directory is the mount point for the `sysfs` pseudo-filesystem where all information resides only in memory.
+- It contains information about devices and drivers, kernel modules, system configuration structures, ...
+-  `sysfs` is used both to gather information about the system, and modify its behavior while running. In that sense, it resembles `/proc`, but it is younger than and has adhered to strict standards about what kind of entries it can contain.
+### `srv`
+- It contains site-specific data which is served by this system.
+- This main purpose of specifying this is so that users may find the location of the data files for particular service, and so that services which require a single tree for readonly data, writable data and scripts (such as cgi scripts) can be reasonably placed.
+### `/tmp`
+- Used to store temporary files, and can be accessed by ant user or application.
+- You must avoid creating large file on `/tmp`, it will occupy space in memory rather than disk, and it is easy to ham or crash the system through memory exhaustion.
+### `/run`
+- Used to store **transient files**, which are contain runtime information, which may need to be written early in system startup, and which do not need to be preserved when rebooting.
+- Some existing locations, such as `/var/run` and `/var/lock`, will be now just symbolic links to directories under `/run`. Other locations, depending on distribution taste, may also just point to locations under `/run`.
 ### Removable media
 - Historically it was mounted under the `/media` directory, modern Linux distributions place these mount points under the `/run` directory.
 - The `/mnt` directory has been used since the early days of UNIX for temporarily mounting filesystems. These can be those on removable media, but more often might be network filesystems, which are not normally mounted. Or these can be temporary partitions, or so-called **loopback** filesystems, which are files which pretend to be partitions.

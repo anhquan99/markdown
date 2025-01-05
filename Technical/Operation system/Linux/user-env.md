@@ -23,11 +23,15 @@
 ### Root user
 - `su` for switch or substitute user, which is used for switch user account.
 - `sudo` configuration files are stored in the `/etc/sudoers` file and in the `/etc/sudoers.d/` directory.
-## Env variable
+## Env variables
 - `$HOME`
 - `$PATH` is an ordered list of directories which is scanned when a command is given to find the appropriate or script to run.
 - `$SHELL` points to the user's default command shell.
 - `$PS` (prompt statement) is used to customize your prompt string in your terminal windows to display the information you want.
+### Listing env variables
+- `env`
+- `set`
+- `printenv`
 ## Command history
 - To view the list of previously executed commands, you can type `history` at the command line, the history is saved in `~/.bash_history`.
 - If you have multiple terminals open, the commands typed in each session are not saved until the session terminates.
