@@ -44,6 +44,7 @@ make && make install && make clean # abort subsequent commands when an earlier o
 - Use `$(<command>)`.
 ## Export variables
 - By default, the variables created within a script are available only to the subsequent steps of that script. Any child processes (sub-shells) do not have automatic access to the values of these variables. To make them available to child processes, they must be promoted to environment variables using the export statement.
+- The child process is allowed to modify exported variables, but the change in this case will not propagate back to the parent shell since exported variables are not shared, but only copied.
 ## Arithmetic expressions
 - Using `expr`.
 ```bash

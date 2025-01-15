@@ -35,6 +35,12 @@
 ## Command history
 - To view the list of previously executed commands, you can type `history` at the command line, the history is saved in `~/.bash_history`.
 - If you have multiple terminals open, the commands typed in each session are not saved until the session terminates.
+### Using `!`
+- All history substitutions start with `!`:
+	- To start a history substitution: `!`
+	- To refer to the last argument in a line: `!$`
+	- To refer to the n-th command line: `!n`
+	- To refer to the most recent command starting with `!string`
 ### Env variables for history
 - `HISTFILE`: location of history file.
 - `HISTFILESIZE`: max number of lines in the history file (default 500).
@@ -65,34 +71,3 @@
 | `CTRL-U` | Deletes from beginning of line to cursor position                     |
 | `CTRL-E` | Goes to the end of the line                                           |
 | `Tab`    | Auto-completes files, directories, and binaries                       |
-## File ownership
-| Command | Usage                                                                                                                                          |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `chown` | Change user ownership of a file or directory                                                                                                   |
-| `chgrp` | Change group ownership                                                                                                                         |
-| `chmod` | Change permissions on the file, which can be done separately for **owner**, **group** and the rest of the **world** (often named as **other**) |
-## File permission modes
-- Permissions `rwx`
-	- `r`: read
-	- `w`: write
-	- `w`: execute
-- Groups of 3 permissions:
-	- `u`: user/owner
-	- `g`: group
-	- `o`: others
-```
-rwx: rwx: rwx
- u:    g:   o
-```
-- Shorthand to set the permissions by using single digit suffices to specify all 3 permissions bits for each entity:
-	- 4 for read
-	- 2 for write
-	- 1 for execute
-- Single digit suffices sum:
-	- 7 means `rwx`
-	- 6 means `rw`
-	- 5 means `rx`
-```bash
-# set rwx to user rx to groups and others
-chmod 755 <file>
-```

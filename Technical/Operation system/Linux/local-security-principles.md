@@ -62,3 +62,20 @@ Jan  3 16:01:07 ubuntu sudo:     root : TTY=pts/0 ; PWD=/root ; USER=root ; COMM
 - Password is stored and encrypted in the `/etc/shadow` file.
 - Only those with root access can read or modify this file.
 - Password aging can be implemented using the `chage`, which configures the password expiry information for a user.
+### `/etc/shadow`
+- Contains 1 record (1 line) for each use.
+```
+daemon:*:16141:0:99999:7:::
+```
+- Each record contains fields separated by colons ( : ):
+	- **username**: unique user name
+	- **password**: the hashed (sha512) value of the password
+	- **lastchange**: days since Jan 1, 1970 that password was last changed
+	- **mindays**: minimum days before password can be changed
+	- **maxdays**: maximum days after which password must be changed
+	- **warn**: days before password expires that the user is warned
+	- **grace**: days after password expires that account is disabled
+	- **expire**: date that account is/will be disabled
+	- **reserved**: reserved field
+## Notes
+- `/etc/skel`
