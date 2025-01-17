@@ -5,13 +5,27 @@
 - **Architecture-Independent packages**: contain files and scripts that run under script interpreters, as well as documentation and configuration files.
 - **Meta packages**: are groups of associated packages that collect everything needed to install a relatively large subsystem, such as a desktop environment, or an office suite, etc.
 ## Debian packaging
-- `dpkg` is the underlying package manager the Debian family, which used for install, remove, and build packages but it does not automatically download and install packages and satisfy their dependencies.
-![[Pasted image 20241110130753.png|200]]
 - Higher-level package management system is the Advanced Package Tool (APT) system.
+
+![[Pasted image 20241110130753.png|200]]
+### `dpkg`
+- `dpkg` is the underlying package manager the Debian family, which used for install, remove, and build packages but it does not automatically download and install packages and satisfy their dependencies.
+```bash
+dpkg -s dpkg | grep -i version # see what version of a particular package is installed
+sudo dpkg -V # verify all packages on the system
+dpkg -V package # verify the installed package's integrity
+dpkg -I <filename>.deb # show information about a package file
+dpkg -c <filename>.deb # list files in a package file
+dpkg -s wget # show information about an installed package
+sudo dpkg -i <package-name>.deb # install or upgrade package
+sudo dpkg -r package # remove installed package
+sudo dpkg -P package # remove installed package, including its config files. P stand for purge
+```
 ## Red Hat Package Manager (RPM)
 ![[Pasted image 20241110131120.png|200]]
 ## openSUSE's YaST Software Management
 - The Yet another Setup Tool (YaST) software manager is similar to other graphical package managers.
+
 ![[Pasted image 20241110131310.png|200]]
 ## Tool level
 ### Low level
