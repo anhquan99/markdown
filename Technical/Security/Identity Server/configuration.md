@@ -12,3 +12,14 @@ On first startup, IdentityServer will use its automatic key management feature t
 ## IdentityModel
 - Nuget package `IdentityModel`.
 - The token endpoint at IdentityServer implements the OAuth protocol, and you could use raw HTTP to access it. However, we have a client library called IdentityModel that encapsulates the protocol interaction in an easy to use API.
+## Authentication services
+### `AddAuthentication`
+- The `DefaultChanllengeScheme` is used when an unauthenticated user must login.
+## `AccessTokenManagement`
+- Is a package for token management.
+- Automatically handle refresh token.
+## Using EF Core for configuration and operational data
+- `ConfigurationDbContext`: used for configuration data such as clients, resources, and scopes.
+- `PersistedGrandDbContext`: used for dynamic operational data such as authorization codes and refresh token.
+## Notes
+- `AllowedCorsOrigins`
