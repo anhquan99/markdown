@@ -102,6 +102,12 @@ Never remove the rmp package itself. The only way to fix this problem is to re-i
 	- If the version on the system is the same as the one in the directory, nothing happens.
 	- If there is no version of a package installed, the package in the directory is ignored.
 - The `-F` option is useful when you have downloaded several new patches and want to upgrade the packages that are already installed, but not install any new ones.
+### `yum` and `dnf`
+- `dnf` replaced `yum` during the RHEL/CentOS 7 to 8 transition.
+- `dnf` is backwards compatible - almost all common `yum` commands still work.
+### `zypper`
+- `zypper` is the command line tool for installing and managing packages in SUSE Linux and openSUSE. It is very similar to `dnf` in its functionality and even in its basic command syntax, and also works with `rpm` packages.
+- Sometimes, a number of `zypper` commands must be run in a sequence. To avoid re-reading all the databases for each command, you can run `zypper` in shell mode using `sudo zypper shell`.
 ## openSUSE's YaST Software Management
 - The Yet another Setup Tool (YaST) software manager is similar to other graphical package managers.
 

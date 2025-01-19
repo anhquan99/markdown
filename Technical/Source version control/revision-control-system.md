@@ -1,0 +1,14 @@
+# Revision Control System
+- Used to track changes by storing versions of the file at a point in time capturing:
+	- When – a timestamp of the point in time
+	- What – a version of the file at the point in time
+	- Who – what user was associated with recording the change
+	- Why – what extra information would be useful to know about the change
+- Even very early systems like RCS tracked this information. In this early system, the changes were tracked per file in a text file with the same name but with an appended _,v_ in a subdirectory _RCS/_. This system lacked the ability to group a change across multiple files and had drawbacks in file locking and storage efficiency, but the basic precepts above still made this a powerful tool.
+- The next step in the evolution from our one file, one change system was to allow multiple changes to be tracked at the same time and for the source of truth to be a centralized network server. CVS used the same underlying mechanism for storing file changesets, but allowed developers with access to the same network to work together. Unfortunately, problems with exclusive access and changes applying to the same files made this system a hardship at times.
+- A Distributed Revision Control System allows for many contributors (thousands in the case of the Linux kernel).
+- Many projects have developers working separately, united by a common version control system. This is possible even when there is a central authoritative repository, such as with CVS.
+- What makes git different is that on a technical level, there is no such thing as central authoritative repository; the underlying framework is actually peer-to-peer in nature. The importance and central role played by one particular location is political and sociological, not technical.
+- Distributed development is not defined by various parts of a project being worked on separately, with a partition between different host repositories. In git, distributed development means every repository is authoritative, and contains not just one part of the project, but the entire code base.
+- git has no politics, and has no preferred model for organization. The hierarchy of the development community can be very centralized and top down, or it can be very flat. The exchange of information and changes can be pyramidal, with a number of development trees coalescing into a top level one, or it can be very egalitarian.
+- git is a tool, not a rigid method, and it can be used in any way that fits the needs and philosophy of a project.
