@@ -28,3 +28,19 @@
 	- `swapoff`: deactivate swap partitions or files
 - It is pointless to swap out file caching contents because it will be moved to disk again. Instead, dirty pages (memory containing updated file contents that no longer reflect the stored data) are flushed out to disk.
 - It is also worth pointing out that in Linux, memory used by the kernel itself, as opposed to application memory, is _never swapped out_, in distinction to some other operating systems.
+## OOM Killer
+### Common solutions
+- The simplest way to deal with memory pressure would be to permit memory allocations to succeed as long as free memory is available and then fail when all memory is exhausted.
+- The second simplest way is to use swap space on disk to push some of the resident memory out of core; in this case, the total available memory (at least in theory) is the actual RAM plus the size of the swap space. The hard part of this is to figure out which pages of memory to swap out when pressure demands. In this approach, once the swap space itself is filled, requests for new memory must fail.
+### Linux solution
+- Linux permits the system to overcommit memory, so that it can grant memory requests that exceed the size of RAM plus swap. While this might seem foolhardy, many (if not most) processes do not use all requested memory.
+- The kernel permits overcommission of memory, but only for pages dedicated to user processes; pages used within the kernel are not swappable and are always allocated at request time.
+- Which processes are terminated is selected by the OOM (Out of Memory) killer.
+### OOM Killer Algorithms
+- Set value of `/proc/sys/vm/overcommit_memory`:
+	- **0 (default)**: Permit overcommission, but refuse obvious overcommits, and give root users somewhat more memory allocation than normal users.
+	- **1**: All memory requests are allowed to overcommit.
+	- **2**: Turn off overcommission. Memory requests will fail when the total memory commit reaches the size of the swap space plus a configurable percentage (50 by default) of RAM. This factor is modified changing `/proc/sys/vm/overcommit_ ratio`.
+- Process selection depends on a **badness** value, which can be read from `/proc/[pid]/oom_score` for each process.
+- Adjustments can be made to a process’s `oom_adj_score` in the same directory for each task.
+ 
