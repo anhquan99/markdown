@@ -1,5 +1,37 @@
 # Filesystem
+- Filesystems create a usable format on a physical partition.
+- Files and their names are an abstraction camouflaging the physical I/O layer. Directly writing to disk from the command line (ignoring the filesystem layer) is very dangerous and is usually only done by low-level operating system software and not by user applications. An exception is some very high-end software such as enterprise data bases that do such **cmd** access to skip filesystem-related latency.
+- Multiple filesystems may be (usually are) merged together into a single tree structure. Linux uses a virtual filesystem layer (VFS) to communicate with the filesystem software.
+- Local filesystems generally reside within a disk partition which can be a physical partition on a disk, or a logical partition controlled by a Logical Volume Manager (LVM).
+## Inodes
+- An inode is a data structure on disk that describes and stores file attributes, including its location.
+- The inocde is used by the operating system to keep track of properties such as location, file attributes (permissions, ownership, etc.), access time and other items.
+- Inodes describe and store information about a file, including:
+	- Permissions​
+	- User and group ownership​
+	- Size​
+	- Timestamps (nanosecond)
+![[Pasted image 20250121200334.png]]
+```ad-note
+Filenames are not stored in the inode; they are stored in the direcroty.
+```
+## Hard and soft links
+- Each association of a directory file contents and an inode is known a link.
+### Hard links
+- Hard links point to an inode. They are made by using `In` without an option.
+- All hard linked files have to be on the same filesystem.
+- Changing the content of a hard linked file in 1 place may not change it in other places.
+### Soft links
+- Soft (or symbolic) links point to a file name which has an associated inode.
+- Soft linked files may be on different filesystems.
+- If the target does not yet exist or is not yet mounted, it can be dangling.
+## Virtual Filesystem (VFS)
+- When an application needs to access a file, it interacts with the VFS abstraction layer, which then translates the I/O system calls into specific code relevant to particular actual filesystem.
+## Journaling filesystems
+- Journaling filesystems recover from system crashes or ungraceful shutdowns with little or no corruption, and do so very rapidly. While this comes at the price of having some more operations to do, additional enhancements can more than offset the price.
+- In a journaling filesystem, operations are grouped into transactions. A transaction must be completed without error, atomically; otherwise, the filesystem is not changed. A log file is maintained of transactions. When an error occurs, usually only the last transaction needs to be examined.
 ## Varieties
+- A list of currently supported kernel filesystems is available at `/proc/filesystems`.
 - Linux supports:
 	- `ext3`
 	- `ext4`
