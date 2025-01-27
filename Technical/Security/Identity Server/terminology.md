@@ -12,7 +12,7 @@
 ## User
 - A human that is using a registered client to access resources.
 ## Client
-- A client is a piece of software that requests tokens from IdentityServer - either for authenticating a user (requesting an identity token) or for accessing a resource (requesting an access token). A client must be first registered with IdentityServer before it can request tokens.
+- A [[oauth#Client|client]] is a piece of software that requests tokens from IdentityServer - either for authenticating a user (requesting an identity token) or for accessing a resource (requesting an access token). A client must be first registered with IdentityServer before it can request tokens.
 - Common settings for a client:
 	- a unique client ID
 	- a secret if needed
@@ -85,6 +85,6 @@ var customerResource = new ApiResource("customer", "Customer API")
 - Based on user or client identity.
 - Always emit certain claims.
 ## Identity token
-- An identity token represents the outcome of an authentication process.
+- An [[openid-connect#ID Token|ID Token]] represents the outcome of an authentication process.
 ## Access token
 - An access token allows access to an API resource. Clients request access tokens and forward them to the API. Access tokens contain information about the client and the user (if present). APIs use that information to authorize access to their data.
