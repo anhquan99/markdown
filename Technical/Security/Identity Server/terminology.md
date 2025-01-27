@@ -13,6 +13,12 @@
 - A human that is using a registered client to access resources.
 ## Client
 - A client is a piece of software that requests tokens from IdentityServer - either for authenticating a user (requesting an identity token) or for accessing a resource (requesting an access token). A client must be first registered with IdentityServer before it can request tokens.
+- Common settings for a client:
+	- a unique client ID
+	- a secret if needed
+	- the allowed interactions with the token service (called a grant type)
+	- a network location where identity and/or access token gets sent to (called a redirect URI)
+	- a list of scopes (aka resources) the client is allowed to access
 ## Resources
 - Resources are things to protect, like data of users, or APIs.
 - Every resource has a unique name, and clients use this name to specify to which resources they want to get access to.
@@ -66,6 +72,18 @@ var customerResource = new ApiResource("customer", "Customer API")
         }
     }
 ```
+## Claims
+- A claim is a piece of information about a user, represented as a key-value pair.
+- These claims are used to describe the user's identity and attributes, such as their name, email address, role, or any other relevant information.
+- IdentityServer emits claims about users and clients into tokens. You are in full control of which claims you want to emit, in which situations you want to emit those claims, and where to retrieve those claims from.
+### User claims
+- User claims can be emitted in both identity and access tokens and in the [[components#User endpoint|userinfo endpoint]]. The central extensibility point to implement to emit claims is called the [[components#Profile service|profile service]]. The profile service is responsible for both gathering claim data and deciding which claims should be emitted.
+### Client claims
+- Client claims are a set of pre-defined claims that are emitted in access tokens. They are defined on a per-client basis, meaning that each client can have its own unique set of client claims.
+### Strategies for emitting claims
+- Based on the requested claim types.
+- Based on user or client identity.
+- Always emit certain claims.
 ## Identity token
 - An identity token represents the outcome of an authentication process.
 ## Access token

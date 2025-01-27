@@ -1,0 +1,5 @@
+## Authorization Endpoint and Login Page Workflow
+- When a user must login, the client application will redirect the user to the protocol endpoint called the [[components#Authorization endpoint|authorization endpoint]] in your IdentityServer server to request authentication. As part of the authorize request, your IdentityServer will typically display a login page for the user to enter their credentials. Once the user has authenticated, your IdentityServer will redirect the user back to the application with the protocol response.
+- When IdentityServer receives an authorize request, it will inspect it for a current authentication session for a user. This authentication session is based on ASP.NET Core’s authentication system and is ultimately determined by a cookie issued from your login page.
+- If the user has never logged in there will be no cookie, and then the request to the authorize endpoint will result in a redirect to your login page. This is the entry point into your custom workflow that can take over to get the user logged in.
+![[Pasted image 20250126201626.png]]
