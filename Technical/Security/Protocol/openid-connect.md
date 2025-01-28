@@ -11,13 +11,19 @@
 - An **ID Token** is a specifically formatted string of characters known as a JSON Web Token (JWT).
 - The **Client** can extract information embedded in the JWT such as your ID, name, when you logged in, the **ID Token** expiration, and if anything has tried to tamper with the JWT. The data inside the **ID Token** are called _claims_.
 - The ID token is signed by the issuer with its private key. This guarantees you the origin of the token and ensures that it has not been tampered with. You can verify these thing by using the issuer's public key.
-- Compare to [[oauth#Access token|access token]].
+- Compare to [[oauth#Access token|access token]]
 ![[Pasted image 20250127143802.png]]
 ### Claims
 - `aud`: audience, which is the client ID of the application that should consume the token.
 - `sub`: unique ID of the user (identity).
 - `iss`: identity provider who provide the token.
 ![[Pasted image 20250127140620.png]]
+## Flow
+### Types
+- Authorization code flow
+- Authorization code flow with PKCE
+- Implicit flow
+- Client credentials flow
 ## References
 - https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc
 - https://auth0.com/blog/id-token-access-token-what-is-the-difference/

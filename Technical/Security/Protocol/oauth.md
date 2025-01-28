@@ -35,6 +35,13 @@
 ```ad-note
 Sometimes the **Authorization Server** and the **Resource Server** are the same server. However, there are cases where they will _not_ be the same server or even part of the same organization. For example, the **Authorization Server** might be a third-party service the **Resource Server** trusts.
 ```
+### Back channel
+- Highly secure channel for servers to communicate each others.
+- Used with requests that have [[oauth#Authorization code|authorization code]] and [[oauth#Access token|access token]].
+### Front channel
+- Less secure channel for client applications.
+- Used with requests that have [[openid-connect#ID Token|id token]].
+- Used with implicit flow (only have a front channel only - SPA).
 ## OAuth Flow
 ![[Pasted image 20250127114632.png]]
 1. You, the **Resource Owner**, want to allow “Terrible Pun of the Day,” the **Client**, to access your contacts so they can send invitations to all your friends.
