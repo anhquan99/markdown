@@ -17,6 +17,7 @@
 - The type of information the client expects to receive, The most common **Response Type** is **Code**, where the **Client** expects an **Authorization Code**.
 ### Scope
 - These are the granular permission the client wants, such as access to data or to perform actions.
+- Scopes enable a mechanism to define what an application can do on behalf of the user.
 ### Consent
 - The **Authorization Server** takes the **Scopes** the **Client** is requesting, and verifies with the **Resource Owner** whether or not they want to give the client permission.
 ### Client ID
@@ -42,6 +43,12 @@ Sometimes the **Authorization Server** and the **Resource Server** are the same 
 - Less secure channel for client applications.
 - Used with requests that have [[openid-connect#ID Token|id token]].
 - Used with implicit flow (only have a front channel only - SPA).
+### Access control
+- The selective restriction of access to a resource.
+### Permission
+- A declaration of an action that can be executed on a resource.
+### Privilege
+- Assigned permissions.
 ## OAuth Flow
 ![[Pasted image 20250127114632.png]]
 1. You, the **Resource Owner**, want to allow “Terrible Pun of the Day,” the **Client**, to access your contacts so they can send invitations to all your friends.
