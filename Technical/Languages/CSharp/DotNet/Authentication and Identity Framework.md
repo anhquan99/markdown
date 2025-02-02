@@ -15,7 +15,10 @@
 # Policy based
 - Underneath the covers, role-based authorization and claims-based authorization use a requirement, a requirement handler, and a preconfigured policy.
 # Principal
-Represent a subject via a collection of claims.
+- A principal represents the identity and role of a user and acts on the user's behalf. Role-based security in .NET supports three kinds of principals:
+	- Generic principals represent users and roles that exist independent of Windows users and roles.
+	- Windows principals represent Windows users and their roles (or their Windows groups). A Windows principal can impersonate another user, which means that the principal can access a resource on a user's behalf while presenting the identity that belongs to that user.
+	- Custom principals can be defined by an application in any way that is needed for that particular application. They can extend the basic notion of the principal's identity and roles.
 # Identity cookie
 - Track to which user a request belongs to
 - Safety stores user information
