@@ -27,7 +27,7 @@
 ### Identity resources
 - An identity resource is a named group of claims about a user that can be requested using the _scope_ parameter.
 - The OpenID Connect specification suggest a couple of standard scope name to claim type mappings. One of them is mandatory, the `openid` scope, which tells provider to return the `sub` (subject id) claim in the identity token.
-```C#
+```csharp
 // a custom identity resource represents the display namem email address and website claim.
 new IdentityResource( 
 	name: "profile", 
@@ -35,7 +35,7 @@ new IdentityResource(
 	displayName: "Your profile data")
 ```
 - Once the resource is defined, you can give access to it to a client via `AllowedScopes` option.
-```C#
+```csharp
 var client = new Client
 {
 	ClientID = "client",
@@ -59,7 +59,7 @@ Be aware, that scopes are purely for authorizing clients, not users. In other wo
 	- support for introspection by assigning an API secret to the resource
 	- support for configuring the access token signing algorithm for the resource
 - You can add user claims to an API resource.
-```C#
+```csharp
 var customerResource = new ApiResource("customer", "Customer API")
     {
         Scopes = { "customer.read", "customer.contact", "manage", "enumerate" },
