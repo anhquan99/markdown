@@ -44,6 +44,22 @@ Filenames are not stored in the inode; they are stored in the direcroty.
 	- macOS (`hfs, hfs+`)
 - It is often the case that more than 1 filesystem type is used on a machine, based on considerations such as the size of files, how often they are modified, what kind of hardware they it on and what kind of access speed is needed, ...
 - The most advanced filesystem types in common use are the `journaling` varieties: `ext4, xfs, btrfs and jfs`. These have many state-of-the-art features and high performance, and are not easy to corrupt accidentally.
+### ext4
+#### Features
+- Supports volumes up to 1 EB and file sizes up to 16 TB.
+- Backwards compatible with ext3 and ext2.
+- The allocated space is usually guaranteed and contiguous. It also uses a performance technique called allocate-on-flush (delays block allocation until it writes data to disk). ext4 breaks the 32,000 subdirectory limit of ext3.
+- ext4 uses checksums for the journal which improves reliability. This can also safely avoid a disk I/O wait during journalling, which results in a slight performance boost.
+- Another feature is the use of improved timestamps. ext4 provides timestamps measured in nanoseconds.
+#### Super block and block groups
+- The **superblock** at the beginning contains information about the entire filesystem, which followed by block groups composed of sets of contiguous block:
+	- Include administrative information
+	- High redundancy of information in block groups
+	- Other blocks store file data
+- The block size is specified when the filesystem is created. It may be 512, 1K, 2K, 4K, 8K, etc. bytes, but not larger than a page of memory (4kB on x86).
+- The default block size is 4 KB, which would create a block group of 128 MB.
+![[Pasted image 20250204210232.png]]
+- The first 1024 bytes are unused (to allow for boot sectors). The superblock will sstart the first block, except for block group 0. This is followed by the group descriptors and a number of GDT (Group Descriptor Table) blocks. These are followed by the data block bitmap, the inode bitmap, the inode table, and the data blocks.
 ## Partitions
 - Partitions help to organize the contents of disks according to the kind and use of the data contained.
 - Advantage of this kind of isolation by type and variability is that when all available space on a particular partition is exhausted, the system still operates normally.
