@@ -81,6 +81,36 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 - It breaks up 1 virtual partition into multiple chucks, each of which can be on different partitions and/or disks.
 - Advantage when using LVM is easy to change the size of the logical partitions and filesystems, to add more storage space, rearrange things.
 - LVM impact performance. However, even on non-RAID system, if you use striping (splitting of data to more than 1 disk), you can achieve some parallelization improvements.
+### Volume groups
+- Partitions are converted to physical volumes and multiple physical volumes are grouped into volume groups.
+- Logical volumes are allocated from volume groups:
+	- Can be defined by the size or number of extents.
+	- Filesystems are built on logical volumes.
+	- Can be named anything.
+![[Pasted image 20250209190338.png]]
+#### Utilities
+- Manipulate volume group. The name always starts with `vg`:
+	- `vgcreate`: creates volume groups
+	- `vgextend`: adds to volume groups
+	- `vgreduce`: shrinks volume groups
+- Manipulate physical partitions. The name starts with `pv`:
+	- `pvcreate`: converts a partition to a physical volume
+	- `pvdisplay`: shows the physical volumes being used
+	- `pvmove`: Moves the data from one physical volume within the volume group to others; this might be required if a disk or partition is being removed for some reason. It would then be followed by:
+	- `pvremove`: remove a partition from a physical volume
+- `man lvm`: gives a full list of LVM utilities.
+- Manipulate logical volumes. The name always starts with `lv`:
+	- `lvcreate`: allocates logical volumes from within volume groups
+	- `lvdisplay`: reports on available logical volumes
+	- `lvresize`: resizes logical volumes
+	- `lvremove`: remove logical volumes
+- Create a new volume group:
+	1. 1. Create partitions on disk drives (type **8e** in **fdisk**).
+	2. Create physical volumes from the partitions.
+	3. Create the volume group.
+	4. Allocate logical volumes from the volume group.
+	5. Format the logical volumes.
+	6. Mount the logical volumes (also update the **/etc/fstab** file as needed).
 ## Network filesystem (NFS)
 ### Server
 - NFS uses **daemons** (built-in networking and service processes in Linux).
