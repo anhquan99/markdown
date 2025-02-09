@@ -60,6 +60,12 @@ Filenames are not stored in the inode; they are stored in the direcroty.
 - The default block size is 4 KB, which would create a block group of 128 MB.
 ![[Pasted image 20250204210232.png]]
 - The first 1024 bytes are unused (to allow for boot sectors). The superblock will sstart the first block, except for block group 0. This is followed by the group descriptors and a number of GDT (Group Descriptor Table) blocks. These are followed by the data block bitmap, the inode bitmap, the inode table, and the data blocks.
+- The block size is used  to set the maximum number of:
+	- Blocks
+	- Inodes
+	- Superblocks
+- You can use `dumpe2fs` program to get information about a particular partition.
+- `tune2fs` can be used to change filesystem parameters.
 ## Partitions
 - Partitions help to organize the contents of disks according to the kind and use of the data contained.
 - Advantage of this kind of isolation by type and variability is that when all available space on a particular partition is exhausted, the system still operates normally.
@@ -71,7 +77,11 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 - To mount a filesystem, use `mount <device-node> <folder>`.
 - To unmount, use `unount <folder>` where user must be a root user.
 - To enable automatically mount the filesystem when starting up, edit the `/etc/fstab` (**f**ile**s**ystem **tab**le).
-## Network filesystem (NFS
+## Logical volume management (LVM)
+- It breaks up 1 virtual partition into multiple chucks, each of which can be on different partitions and/or disks.
+- Advantage when using LVM is easy to change the size of the logical partitions and filesystems, to add more storage space, rearrange things.
+- LVM impact performance. However, even on non-RAID system, if you use striping (splitting of data to more than 1 disk), you can achieve some parallelization improvements.
+## Network filesystem (NFS)
 ### Server
 - NFS uses **daemons** (built-in networking and service processes in Linux).
 - The `/etc/exports` contains the directions and permissions that a host is willing to share with other system over NFS.
