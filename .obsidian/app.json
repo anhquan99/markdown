@@ -1,0 +1,28 @@
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "spellcheckDictionary": [
+    "Creational",
+    "Const",
+    "readonly",
+    "Readonly",
+    "Cient-Server",
+    "BigInt",
+    "Javascript",
+    " Cons",
+    "Macvlan",
+    "Kubelet",
+    "Kube-proxy",
+    "knight",
+    "setup"
+  ],
+  "vimMode": false,
+  "readableLineLength": true,
+  "strictLineBreaks": true,
+  "rightToLeft": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "",
+  "attachmentFolderPath": "Image"
+}
