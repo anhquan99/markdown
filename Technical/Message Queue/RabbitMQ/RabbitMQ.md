@@ -1,2 +1,3 @@
 - [[Concept]]
-- [[Message acknowledgement]]
+- [[message-acknowledgement]]
+- [[publisher-confirms]]
