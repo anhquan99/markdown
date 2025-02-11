@@ -21,7 +21,7 @@
 	- Resides under `/boot`. A splash screen is displayed, which allows us to choose which OS and/or kernel to boot. After the OS and kernel are selected, the boot loader loads the kernel of the operating system into RAM and passes control to it.
 	- Kernel are almost always compressed, so the first job they have is to uncompress themself. After this, it will check and analyze the system hardware and initialize any hardware device drivers build into the kernel.
 # Initial RAM Disk
-*The only purpose of an initramfs is to mount the root filesystem. The initramfs is a complete set of directories that you would find on a normal root filesystem. It is bundled into a single cpio archive and compressed with one of several compression algorithms.*
+*The only purpose of an `initramfs` is to mount the root filesystem. The `initramfs` is a complete set of directories that you would find on a normal root filesystem. It is bundled into a single `cpio` archive and compressed with one of several compression algorithms.*
 - The `initramfs` filesystem image contains programs and binary files that perform all actions needed to mount the proper root filesystem, that will be used, and loading the device drivers for mass storage controllers, by taking advantage of the `udev` system (for user device), which is responsible for figuring out which devices are present, locating the device drivers they need to operate properly, and loading them. After the root filesystem has been found, it is checked for errors and mounted.
 - The **mount** program instructs the operating system that a filesystem is ready for use and associates it with a particular point in the overall hierarchy of the filesystem (the **mount point**). If this is successful, the `initramfs` is cleared from RAM, and the **init** program on the root filesystem (**/sbin/init**) is executed.
 
@@ -44,11 +44,23 @@
 # `systemd`
 - `systemd` start up faster than those with earlier `init` methods because it replaces a serialized set of steps with aggressive parallelization techniques, which permits multiple services to be initiated simultaneously.
 - `/sbin/init` points to `/lib/systemd/systemd`.
+- System unit files: `/etc/systemd/system` and `/lib/systemd/system`.
+- User unit files: `/etc/systemd/user` and `~/.config/systemd/user`.
 # Filesystems
 - Linux uses the `/` character to separate paths and does not have drive letters.
   ![[Pasted image 20241109161937.png]]
   # Choosing a Linux Distro
   ![[Pasted image 20241109162113.png]]
+## Single user mode
+- In this mode, system boots to `runlevel` 1. Because single user mode automatically tries to mount your filesystem, you cannot use it when your root filesystem cannot be mounted successfully, or if the init configuration is corrupted.
+- In single user mode:
+	- init is started
+	- Services are not started
+	- Network is not activated
+	- All possible filesystems are mounted
+	- root access is granted without a password
+	- A system maintenance command line shell is launched
+- To boot into single user mode, you use the same method as described for emergency mode with one exception, replace the keyword **emergency** with the keyword **single**.
 # Questions worth thinking about before deciding on a distribution include:
   - What is the main function of the system (server or desktop)?
   - What types of packages are important to the organization? For example, web server, word processing, etc.
