@@ -31,4 +31,15 @@ default:
 	fmt.Print("Something else")
 }
 ```
+## Non-struct types
+- Define a non-struct types which you can use as an alias for a built-in type declaration, and you can define receiver functions on them to extend them in the same way as struct types.
+```go
+// define struct
+type File struct {
+	Name string
+}
+
+// define non-struct
+type File string
+```
 
