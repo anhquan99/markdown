@@ -1,11 +1,11 @@
-<span style="color:aqua; font-weight:bold">Structual->Adapter:</span>
+# Adapter
 - Change the interface of a class into the interface that client required
 - Adapter is in the middle to connect 2 interface does not compatible to each other
-- <span style="color:#d966ff; font-weight:bold">Problem:</span>
-	- In the first developments your application has created class A. Now you use 3rd party library or something else, your application need to use a class B. But class A is not compatible with class B. The adapter pattern converts the interface of A class into another interface as expected by the client application here we have B class.  
-	- ![[Pasted image 20220313004931.png]]
-- <span style="color:lime; font-weight:bold">Code:</span>
-``````csharp
+## Problem
+- In the first developments your application has created class A. Now you use 3rd party library or something else, your application needs to use a class B. But class A is not compatible with class B. The adapter pattern converts the interface of A class into another interface as expected by the client application here we have B class.  
+![[Pasted image 20220313004931.png]]
+## Code
+```csharp
 using System;
 
 namespace Adapter
@@ -54,4 +54,4 @@ namespace Adapter
         }
     }
 }
-``````
+```

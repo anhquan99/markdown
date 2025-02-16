@@ -52,7 +52,7 @@
 - Drawbacks:
 	- Inefficient in-memory join of large datasets.
 	- Performance.
-### [[CQRS]]
+### [[cqrs]]
 - Solution:
 	- Define a view database, which is a read-only replica that is designed to support that query.
 	- The application keeps the replica up to date by subscribing to Domain event published by the service that own the data.

@@ -4,7 +4,7 @@
 - [[Iterator]]
 - [[Mediator]]
 - [[Memetor]]
-- [[Observer]]
+- [[observer|Observer]]
 - [[State]]
 - [[Strategy]]
 - [[Template method]]

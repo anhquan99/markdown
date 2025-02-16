@@ -1,4 +1,4 @@
-- [[Adapter]]
+- [[adapter]]
 - [[Bridge]]
 - [[Composite]]
 - [[Decorator]]

@@ -9,10 +9,10 @@
 	3. Whether you realize it or not, you are always choosing what to give a fuck about.
 ## Happiness is a problem
 - The rich suffer because of their riches. The poor suffer because of their poverty. People who abstains from worldly pleasures suffer because of their abstention. This isn't to say that all suffering is equal. Some suffering is certainly more painful than other suffering.<mark style="background: #FFB86CA6;"> But we all must suffer nonetheless.</mark>
-- There is a premise which we assump and belief that if I achieve X, then I can be happy. If I look like Y then I can be happy. If I can be with person Z then I will be happy. This premise is the problem, happiness is not a solvable equation. Dissatisfaction and unease are inherent parts of human nature and necessary components to creating happiness.
+- There is a premise which we assum and belief that if I achieve X, then I can be happy. If I look like Y then I can be happy. If I can be with person Z then I will be happy. This premise is the problem, happiness is not a solvable equation. Dissatisfaction and unease are inherent parts of human nature and necessary components to creating happiness.
 - Problems are a constant in life, and happiness comes from solving those problems. You take action to solve problems, it will lay the foundation for tomorrow's problems, and so on. True happiness accurs only when you find the problems you can feel good about.
 - Question yourself, what do you want and what pain do you want in your life. Because there will no free lunch, you want something you will suffer for it, so choose wisely.
-- Emotions are overrated. People suffers from what they want, and emotional are the feedback mechanisms telling they that something is either likely right or likely wrong, and it is a part of the equation but not all. Just something feels good doesn't mean it is good, just becase something feels bad doesn't mean it is bad. Emotions are merely signposts, suggestions that our neurobiology gives us, not command. Therefore, we shouldn't always trust our emotions and always question them.
+- Emotions are overrated. People suffers from what they want, and emotional are the feedback mechanisms telling they that something is either likely right or likely wrong, and it is a part of the equation but not all. Just something feels good doesn't mean it is good, just because something feels bad doesn't mean it is bad. Emotions are merely signposts, suggestions that our neurobiology gives us, not command. Therefore, we shouldn't always trust our emotions and always question them.
 - You could fuck things up at least one of 2 ways:
 	- Denial: you can deny the reality, in short term it feels good, but it leads to insecurity, neuroticism and emotional repression.
 	- Victim mentality: you always blame the others, outside circumstances which you feel better in the short term, but it leads to a life of anger, helplessness and despair. 
@@ -32,7 +32,7 @@
 	- Socially constructive
 	- Immediate and controllable
 - <mark style="background: #ADCCFFA6;">Bad values:</mark>
-	- Supertitious
+	- Superstitious
 	- Socially destructive
 	- Not immediate or controllable
 ## You are always choosing

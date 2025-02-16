@@ -1,3 +1,4 @@
+# A Guide to the Good Life - The Ancient Art of Stoic Joy
 <mark style="background: #FF5582A6;">by William B.Irvine</mark>
 ## Part 1: The rise of stoicism
 - <mark style="background: #ADCCFFA6;">Philosophy takes an interest in life</mark>

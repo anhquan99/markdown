@@ -1,4 +1,4 @@
 - [[How to read a book]]
 - [[How to take note]]
-- [[How to create a mind map]]
+- [[mind-map]]
 - [[How to SQ3R]]

@@ -1,11 +1,11 @@
-# <mark style="background: #BBFABBA6;">Observer</mark> 
+# Observer
 - Notify many objects in the system
 - publisher subscriber model. The subscriber subscribe to the publisher to get notification.
-- <span style="color:#d966ff; font-weight:bold">Problem:</span>
-	- In weather system, the weather data changes every minute or second that make the prediction changes every time the data change. The user uses the weather system wants to know when the prediction changes. The observer pattern defines one-to-many dependency between objects to that when one object changes its state all the other are notified about the change.
-	- ![[Pasted image 20220313010640.png]]
-- <span style="color:lime; font-weight:bold">Code:</span>
-``````java
+## Problem
+- In weather system, the weather data changes every minute or second that make the prediction changes every time the data change. The user uses the weather system wants to know when the prediction changes. The observer pattern defines one-to-many dependency between objects to that when one object changes its state all the other are notified about the change.
+![[Pasted image 20220313010640.png]]
+## Code
+```java
 public interface Subject {
     public void registerObserver(Observer o);
     public void removeObserver(Observer o);
@@ -20,9 +20,9 @@ public interface DisplayElement {
     public void display();
 }
 
-``````
+```
 
-``````java
+```java
 public class WeatherData implements Subject {
     // Chúng ta thêm một ArrayList để lưu danh sách cách Observer, khởi tạo nó ở constructor.
     private ArrayList observers;
@@ -70,9 +70,9 @@ public class WeatherData implements Subject {
     
     // other WeatherData methods here
 }
-``````
+```
 
-``````java
+```java
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
     private float temperatur;
     private float humidity;
@@ -93,4 +93,4 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
         System.out.println("Current conditions: " + temperature + " F degrees and " + humidity + "% humidity");
     }
 }
-``````
+```

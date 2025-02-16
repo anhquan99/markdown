@@ -1,2 +1,2 @@
-- [[GraphQL]]
+- [[graphql]]
 - [[SQL Map|SQL]]

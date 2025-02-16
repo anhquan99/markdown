@@ -1,3 +1,4 @@
+# How to create a mind map
 ## What is a mind map?
 - A map that map out ideas in non line near way.
 ## Benefits of mind mapping
@@ -12,7 +13,7 @@
 6. Be expressive.
 7. Be efficient.
 8. Thought process. (review your mind map)
-9. <mark style="background: #FF5582A6;">Simplifies the mind map or breaking the mind map into smaller mind map.</mark>
+9. Simplifies the mind map or breaking the mind map into smaller mind map.
 ## Mind map rules
 -   Use symbols to classify different types of thoughts and ideas.
 -   Use keywords on lines. Short phrases can also work well.

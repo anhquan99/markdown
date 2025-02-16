@@ -1,5 +1,6 @@
-- <mark style="background: #FF5582A6;">Fields:</mark> what you want to see in the result when a query is return.
-
+# Query and Mutation
+## Fields 
+- What you want to see in the result when a query is return.
 ````js
 // query for hero name and their friends name. Fields also refer to an object, with GraphQl queries can traverse related objects and their fields, letting client fetch lots of related data in one request, instead of serveral roundtrips as one would need in a classic REST architecture.
 #Query
@@ -33,7 +34,8 @@
 }
 ````
 
-- <mark style="background: #FF5582A6;">Arguments:</mark> specific data queries. ^eb8020
+## Arguments
+- Specific data queries.
 
 ````js
 #Query
@@ -54,7 +56,8 @@
 }
 ````
 
-- <mark style="background: #FF5582A6;">Aliases:</mark> rename the result fields to anything you want.
+## Aliases
+- Rename the result fields to anything you want.
 
 ````js
 #Query
@@ -73,7 +76,8 @@
 }
 ````
 
-- <mark style="background: #FF5582A6;">Fragments:</mark> let you construct sets of fields, and then include them in queries where you don't need to repeat those fields again. Fragments can take [[Query and Mutation#^eb8020|arguments]] ^a7289c
+## Fragments
+- Let you construct sets of fields, and then include them in queries where you don't need to repeat those fields again. Fragments can take [[query-mutation#Arguments|arguments]]
 
 ````js
 #Query
@@ -113,8 +117,10 @@ fragment comparisonFields on Character {
 }
 ````
 
-- <mark style="background: #FF5582A6;">Operation name:</mark> the default operation name is `query` where there are `mutaion` and `subcription` operation. Every query should have the operartion name for debugging and logging.
-- <mark style="background: #FF5582A6;">Variable:</mark> Like [[Query and Mutation#^a7289c|fragments]], query could be passed a variable.
+## Operation name
+- The default operation name is `query` where there are `mutaion` and `subcription` operation. Every query should have the operation name for debugging and logging.
+## Variable
+- Like [[query-mutation#Fragments|fragments]], query could be passed a variable.
 
 ```js
 #Query
@@ -150,11 +156,9 @@ query HeroNameAndFriends($episode: Episode) {
   }
 }
 ```
-
-- <mark style="background: #FF5582A6;">Directives:</mark> is a function to query with conditions.
-
-- <mark style="background: #FF5582A6;">Mutation: </mark> a request to modify data. While query fields are executed in parallel, mutation fields run in series, one after others.
-
-- <mark style="background: #FF5582A6;">Inline Fragments</mark>
-
-- <mark style="background: #FF5582A6;">Meta fields</mark>
+## Directives
+- Is a function to query with conditions.
+## Mutation
+- A request to modify data. While query fields are executed in parallel, mutation fields run in series, one after others.
+## Inline Fragments
+## Meta fields
