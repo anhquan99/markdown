@@ -20,7 +20,7 @@
 - Storage orchestration.
 - Batch execution.
 - IPv4/IPv6 dual-stack.
-# Concepts and [[Architecture]]
+# Concepts and [[Technical/DevOps/Kubernetes/Fundamentals/Architecture]]
 - Pod:
 	- Smallest unit of k8s contain container or multiple containers.
 	- Multiple pods can be created and removed to scale your app and distributed across all available worker node.
