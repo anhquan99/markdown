@@ -33,4 +33,39 @@ POST /index_name/_update/id
 		# new document
 	}
 }
+
+# Scripted update
+POST /index_name/_update/id
+{
+	"script": {
+		"source": "# document"
+	},
+	"params": { # optional
+		# parameters
+	}
+}
+
+# Upsert, when no document is found then create a new document with document in upsert
+POST /index_name/_update/id
+{
+	"script": {
+		"source": "# document"
+	},
+	"upsert": {
+		# new document
+	}
+}
+
+# Replace document
+PUT /index_name/_doc/id
+{
+	# document
+}
+
+# Delete document
+DELETE /index_name/_doc/id
 ```
+## Operation
+- Used with scripted update by setting the `ctx.op`.
+- `noop`: no operation, cancel operation using with `ctx.op = 'noop`
+- `delete`: delete operation.
