@@ -64,6 +64,34 @@ PUT /index_name/_doc/id
 
 # Delete document
 DELETE /index_name/_doc/id
+
+# Update by query
+POST /index_name/_update_by_query
+{
+	"script": {
+		"source": "# document"
+	},
+	"query": {
+		# query
+	}
+}
+
+# Delete by query
+POST /index_name/_delete_by_query
+{
+	"query": {
+		# query
+	}
+}
+
+# Batch process
+POST /_bulk
+{ "action": {document} }
+{ "action": {document} }
+{ "action": {document} }
+
+# CURL bulk
+curl --cacert ca.crt -u elastic -H "Content-Type:application/x-ndjson" -XPOST https://localhost:9200/products/_bulk --data-binary "@products-bulk.json"
 ```
 ## Operation
 - Used with scripted update by setting the `ctx.op`.
