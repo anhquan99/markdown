@@ -24,5 +24,6 @@
   "rightToLeft": false,
   "newFileLocation": "folder",
   "newFileFolderPath": "",
-  "attachmentFolderPath": "Image"
+  "attachmentFolderPath": "Image",
+  "useMarkdownLinks": true
 }
