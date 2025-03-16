@@ -61,6 +61,35 @@ POST /_analyzer
 - Define the structure of documents and used to configure how values are indexed.
 - Similar to a table's schema in SQL.
 - You can use explicit mapping or dynamic mapping, or both interchange.
+### Update mappings
+- ES mappings can't be changed.
+- New filed mappings can be added.
+- A few mapping parameters can be updated for existing mappings.
+- To update a mapping, the solution is to reindex documents into a new index.
+#### Reindexing API
+- The data type doesn't reflect how the values are indexed.
+- Fields can be removed using filter.
+- Documents can be queried or deleted.
+- A snapshot is created before reindexing documents.
+- A version conflict causes the query to be aborted by default.
+- Performs operations in batches.
+- Throttling can be configured to limit the performance impact.
+```http
+POST /_reindex
+{
+	"source": {
+		"index": "index_name",
+		"query": {}
+		
+	},
+	"dest": {
+		"index": "new_index_name"
+	},
+	"script": {
+		"source": "# script"
+	}
+}
+```
 ### Data types
 - ES store data with data types, not only text.
 #### Object
@@ -78,6 +107,20 @@ POST /_analyzer
 - Analyzed with the keyword analyzer, which is a no-op analyzer
 	- Outputs if the unmodified string as a single token
 	- This token is then placed into the inverted index.
+#### Datetime
+-  Specified in 3 ways:
+	- String
+	- Milliseconds since the epoch
+	- Second since the epoch
+- Epoch is 1/1/1970
+- Custom format supported:
+	- Date without time
+	- A date with time
+	- Millisecond since the epoch
+- Default UTC timezone assumed if not specified.
+- Date must be formatted according to the ISO 8601 specification.
+- ES store datetime internally as milliseconds since the epoch.
+- Dates are converted to the UTC timezone.
 ### Type coercion
 - Data types are inspected when indexing documents.
 - ES resolves the data type that was first supplied for a given field.
@@ -89,8 +132,34 @@ POST /_analyzer
 ```ad-note
 There is no dedicated array data type. Query an array of objects, ES would look for match fields across different objects in the array, leading unexecpted results, to ensure queries match values within the same object, use the nested data type instead of the object data type. By default, arrays of objects are flattened during indexing. Array values must be the same type.
 ```
-## Queries
-### Explicit mappings
+### Parameter
+#### `format`
+- Used to customize the format for `date` fields.
+#### `properties`
+- Defines nested fields for `object` and `nested` fields.
+#### `coerce`
+- Used to enable or disable coercion of values.
+#### `doc_value`
+- `doc_value` is another data structure used by Apache Lucene, optimized for a different data access pattern (aggregation, sorting, ...).
+- Disable `doc_value` to save disk space and slightly increase the indexing throughput when you don't need to use aggregation, sorting, or scripting.
+- Useful for large indices.
+- Must be reindex when change `doc_value`.
+#### `norms`
+- Normalization factor used for relevance scoring.
+- Norms can be disabled to save disk space.
+#### `index`
+- Used for ES indexes a field.
+- Disabling `index` is useful when you don't need to search a field, which helps save disk space and slightly improves indexing throughput and the field can still be used for aggregations.
+- Often used for time series data.
+#### `null_value`
+- `NULL` value cannot be indexed or searched.
+- Use this parameter to replace `NULL` values with another value, but the replacement value must be the same as the field, and it's only works for explicit `NULL` values.
+#### `copy_to`
+- Used to copy multiple field values into a **group field**.
+- **Values** are copies, not terms/tokens, and it is not a part of `_source`.
+- Example: `first_name` and `last_name` → `full_name`.
+### Queries
+#### Explicit mappings
 ```http
 PUT /index_name
 {
@@ -102,4 +171,7 @@ PUT /index_name
 	}
 }
 ```
-### 
+#### Retrive mappings
+```http
+GET  /index_name/_mapping
+```
