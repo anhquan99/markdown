@@ -211,6 +211,6 @@ PUT _index_template/template_name
 }
 ```
 #### Index document with index template
-![Auto create index with index template when index document|402x459](../../../../Image/elk-index-template-auto.excalidraw.png)
+![Auto create index with index template when index document|402x459](/Image/elk-index-template-auto.excalidraw.png)
 
-![[elk-index-template-manual.excalidraw| Manual create index with index template]]
+![Manual create index with index template|402x459](/Image/elk-index-template-manual.excalidraw.png)
