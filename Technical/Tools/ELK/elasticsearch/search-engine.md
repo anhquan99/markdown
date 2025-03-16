@@ -35,6 +35,84 @@ GET /index_name/_search
   }
 }
 ```
+### Other searches
+```http
+# prefix
+GET /index_name/_search
+{
+  "query": {
+    "prefix": {
+      "field.keyword": {
+        "value": "# value"
+      }
+    }
+  }
+}
+
+# wildcards search includes ? - match 1 or more value and * - match 0 or more value 
+GET /index_name/_search
+{
+  "query": {
+    "wildcard": {
+      "field.keyword": {
+        "value": "# value"
+      }
+    }
+  }
+}
+
+# regex
+GET /index_name/_search
+{
+  "query": {
+    "regexp": {
+      "field.keyword": {
+        "value": "# regex"
+      }
+    }
+  }
+}
+
+# case insensitive
+GET /index_name/_search
+{
+  "query": {
+    "prefix": {
+      "field.keyword": {
+        "value": "# value",
+        "case_insensitive": true
+      }
+    }
+  }
+}
+
+# Query existing field
+# NULL and [] (empty array) are considered as not exist value
+GET /index_name/_search
+{
+  "query": {
+    "exists": {
+      "field": "# field"
+    }
+  }
+}
+
+# Query existing field
+index_name/_search
+{
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "exists": {
+            "field": "# field"
+          }
+        }
+      ]
+    }
+  }
+}
+```
 ## Range searches
 ```http
 # numberic
@@ -158,81 +236,119 @@ GET /index_name/_search
   }
 }
 ```
-## Other searches
+## Compound query - `bool`
+### `should`
+- If `bool` query only contains `should` clauses, at least one must match.
+- Useful if you just want something to match and reward matching documents.
+- If a query clause exists for `must`, `must_not`, or `filter`, no `should` clause is required to match.
 ```http
-# prefix
+# should clause must match
 GET /index_name/_search
-{
-  "query": {
-    "prefix": {
-      "field.keyword": {
-        "value": "# value"
-      }
-    }
-  }
-}
-
-# wildcards search includes ? - match 1 or more value and * - match 0 or more value 
-GET /index_name/_search
-{
-  "query": {
-    "wildcard": {
-      "field.keyword": {
-        "value": "# value"
-      }
-    }
-  }
-}
-
-# regex
-GET /index_name/_search
-{
-  "query": {
-    "regexp": {
-      "field.keyword": {
-        "value": "# regex"
-      }
-    }
-  }
-}
-
-# case insensitive
-GET /index_name/_search
-{
-  "query": {
-    "prefix": {
-      "field.keyword": {
-        "value": "# value",
-        "case_insensitive": true
-      }
-    }
-  }
-}
-
-# Query existing field
-# NULL and [] (empty array) are considered as not exist value
-GET /index_name/_search
-{
-  "query": {
-    "exists": {
-      "field": "# field"
-    }
-  }
-}
-
-# Query existing field
-index_name/_search
 {
   "query": {
     "bool": {
-      "must_not": [
+      "should": [
         {
-          "exists": {
-            "field": "# field"
+          "term": {
+            "field": "foo"
           }
         }
       ]
     }
   }
 }
+
+# shoud clauses are optional
+GET /index_name/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "field": "foo"
+          }
+        }
+      ]
+      "should": [
+        {
+          "term": {
+            "field": "bar"
+          }
+        }
+      ]
+    }
+  }
+}
+
+# minimum should match
+# it should match 1 should clause
+GET /index_name/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "field": "foo"
+          }
+        }
+      ], 
+      "should": [
+        {
+          "term": {
+            "field": "bar"
+          }
+        },
+        {
+          "match": {
+            "name": "baz"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}
 ```
+### `filter`
+- Query clause must match, but ignores relevance scores, which leads to improves query performance and query result can be cached and reused.
+
+| Occurrence type | Description                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| must            | Required to match and contribute to relevance scores                                                                                           |
+| filter          | Required to match and not contribute to relevance scores, which leads to improves query performance and query result can be cached and reused. |
+| must_not        | Must not match and not contribute to relevance scores, which leads to improves query performance and query result can be cached and reused.    |
+| should          | Should or must match in some cases and contribute to relevance scores.                                                                         |
+## Boosting query
+- Increase or decrease relevance scores with boosting query.
+```http
+# I like foo but not bar
+GET /index_name/_search
+{
+  "query": {
+    "boosting": {
+      "positive": {
+        "term": {
+          "field": "food"
+        }
+      },
+      "negative": {
+        "term": {
+          "field": "bar"
+        }
+      },
+      "negative_boost": 0.5
+    }
+  }
+}
+```
+## Query array of objects
+### Problem
+- When indexing arrays of objects, the relationships between values are not maintained.
+- Queries can yield **unpredictable** results.
+### Solution
+- Use nested data type and the nested query,
+- Create a new index to update the field mapping and reindex document.
+#### Nested inner hits
+- Nested inner hits tell use which nested object(s) matched a query, without it we only know that something matched.

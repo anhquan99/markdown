@@ -90,6 +90,61 @@ POST /_bulk
 { "action": {document} }
 { "action": {document} }
 
+# Source filtering
+GET /index_name/_search
+{
+	"source": ["field_1", "field_2"],
+	"query": {
+		# query
+	}
+}
+
+# Result size
+GET /index_name/_search
+{
+	"size": # size
+	"query": {
+		# query
+	}
+}
+
+# Offet - pagination
+GET /index_name/_search
+{
+	"size": # size,
+	"from": # page number,
+	"query": {
+		# query
+	}
+}
+# Sort resuslt
+GET /index_name/_search
+{
+	"query": {
+		# query
+	},
+	"sort": [
+		{ "field_1": "asc" },
+		{ "field_2": "desc" }
+	]
+}
+
+# Sort result by multi-value field
+GET /index_name/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "sort": [
+    {
+      "field": {
+        "order": "desc",
+        "mode": "avg"
+      }
+    }
+  ]
+}
+
 # CURL bulk
 curl --cacert ca.crt -u elastic -H "Content-Type:application/x-ndjson" -XPOST https://localhost:9200/products/_bulk --data-binary "@products-bulk.json"
 ```
