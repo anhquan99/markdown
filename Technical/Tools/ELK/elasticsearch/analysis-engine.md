@@ -198,6 +198,7 @@ GET  /index_name/_mapping
 ### Index templates
 - It is a way to automatically apply settings and mappings on index creation, which works by matching index names against an **index pattern**.
 - Typically used for data sets that stored in multiple indices (time series data, ...).
+- Index templates can not be overlapping, using `priority` to handle overlapping index patterns. The index template with the highest priority wins.
 ```http
 PUT _index_template/template_name
 {
@@ -215,3 +216,62 @@ PUT _index_template/template_name
 ![Auto create index with index template when index document|402x459](/Image/elk-index-template-auto.excalidraw.png)
 - Manual create index with index template
 ![Manual create index with index template|402x459](/Image/elk-index-template-manual.excalidraw.png)
+#### Reserved index patterns
+- `logs-*-*`
+- `metrics-*-*`
+- `synthetics-*-*`
+- `profiling-*`
+#### Mapping recommendations 
+- Use explicit mapping, set `dynamic` to `strict` to avoid surprises and unexpected results.
+- Don't always map strings as both `text` and keyword:
+	- Each mapping requires disk space.
+	- Typically only one is needed.
+	- To perform full-text searches - add `text` mapping.
+	- To do aggregations, sorting, or filtering on exact values - add `keyword` mapping.
+- Disable coercion because coercion forgives you for not doing the right thing.
+## Stemming
+- Stemming reduces words to their root form.
+- Not all words are stemmed to valid words.
+- Example: `loved -> love`
+## Stop words
+- Words that are filtered out during text analysis.
+- Common words such as **a, the, at, of, on, etc**.
+- They provide little to no value for relevance scoring.
+## Custom analyzer
+```http
+PUT /analyzer_name
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        # Add filters here
+      },
+      "char_filter": {
+        # Add character filters here
+      },
+      "tokenizer": {
+        # Add tokenizers here
+      },
+      "analyzer": {
+        "custom_analyzer_name": {
+          "type": "custom",
+          "char_filter": [# char filters],
+          "tokenizer": # tokenizer,
+          "filter": [ # filters]
+        }
+      }
+    }
+  }
+}
+```
+### Open and closed indices
+- An open index is available for indexing and search requests
+- A closed index will refuse requests
+	- Read and write requests are blocked
+	- Necessary for performing some operations
+### Dynamic and static settings
+- Dynamic settings can be changed without closing the index first
+	- Requires no downtime
+- Static settings require the index to be closed first
+	- The index will be briefly unavailable
+- Analysis settings are static settings
