@@ -158,6 +158,26 @@ There is no dedicated array data type. Query an array of objects, ES would look 
 - Used to copy multiple field values into a **group field**.
 - **Values** are copies, not terms/tokens, and it is not a part of `_source`.
 - Example: `first_name` and `last_name` → `full_name`.
+### Multiple mappings
+- Used for multiple search purpose.
+- Example: full-text search and keyword search.
+```http
+POST /index_name
+{
+	"mappings": {
+		"properties": {
+			"field_name": {
+				"type": "text",
+				"fields": {
+					"keyword": { # this field name can be optionally changed
+						"type": "keyword"
+					}
+				}
+			}
+		}
+	}
+}
+```
 ### Queries
 #### Explicit mappings
 ```http
@@ -175,3 +195,22 @@ PUT /index_name
 ```http
 GET  /index_name/_mapping
 ```
+### Index templates
+- It is a way to automatically apply settings and mappings on index creation, which works by matching index names against an **index pattern**.
+- Typically used for data sets that stored in multiple indices (time series data, ...).
+```http
+PUT _index_template/template_name
+{
+  "index_patterns": ["foo-*", "bar-*"],
+  "template": {
+    "settings": {},
+    "mappings": {},
+ 
+  },
+  "priority": 1, # this can be changed
+}
+```
+#### Index document with index template
+![[/Image/elk-index-template-auto.excalidraw | Auto create index with index template when index document]]
+
+![[elk-index-template-manual.excalidraw| Manual create index with index template]]

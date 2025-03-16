@@ -1,5 +1,5 @@
 # Query
-```
+```http
 # Create index
 PUT /index_name
 {
