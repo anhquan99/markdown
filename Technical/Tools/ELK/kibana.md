@@ -36,4 +36,4 @@
 - It is where user with appropriate role can access and read data.
 ### Role
 - Each user can be set to number of appropriate roles.
-- Role can be inherit from space.
+- Role can be inherited from space.
