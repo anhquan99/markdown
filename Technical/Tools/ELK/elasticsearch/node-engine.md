@@ -5,7 +5,7 @@
 - The default routing strategy ensures that documents are distributed evenly.
 - When changing number of shards, the routing formula return a different result with the old document leading the old document can not be found. Adding new shards requires creating a new index and reindex document into it. The **Split API** helps add shards with larger number of shard or **Shrink API** helps remove shards. 
 
-![[image-8.png|422x418]]
+![Routing formular|422x418](/Image/image-8.png)
 ##  Read and write data
 - ES data replication model is based on the **primary-backup model**.
 - The primary shard serves as the main entry point for all indexing operations, which in charge of validating and making sure indexes are correct.
