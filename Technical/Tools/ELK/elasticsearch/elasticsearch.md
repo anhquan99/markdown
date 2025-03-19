@@ -7,7 +7,7 @@
 - Security analytics and threat detection
 - Application performance monitoring
 ## Architecture and engine
-- [Architecture](Technical/Tools/ELK/elasticsearch/architecture.md)
+- [Architecture](architecture.md)
 - [Node engine](node-engine.md)
 - [Sharding](sharding.md)
 - [Replication](replication.md)
@@ -15,3 +15,4 @@
 - [Search engine](search-engine.md)
 - [Aggregation](aggregation.md)
 - [Query](query.md)
+- [Improve search result](improve-search-result.md)
