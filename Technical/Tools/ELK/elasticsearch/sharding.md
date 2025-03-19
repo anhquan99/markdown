@@ -6,7 +6,7 @@
 ```ad-note
 A shard can be placed on any node, even mutiple shards in a single node.
 ```
-![[image-6.png]]
+![Sharding](/Image/image-6.png)
 ```ad-example
 An index has 600GB of data and 2 nodes, each node has capacity 500GB. A single node can't handle amount data of the index. Sharding come to help where index is divied into 2 shards, each node can store a shard that requires 300GB of data, distributed data evenly to each node. 
 ```

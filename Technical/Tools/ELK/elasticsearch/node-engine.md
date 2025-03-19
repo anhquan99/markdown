@@ -15,7 +15,7 @@
 	2. Select an active copy of each relevant shard, from the shard replication group. This can be either the primary or a replica. By default, ES uses [[engine#Adaptive replica selection|]] to select the shard copies.
 	3. Send shard level read requests to the selected copies.
 	4. Combine the results and respond. Note that in the case of get by ID look up, only one shard is relevant, and this step can be skipped.
-![[elk-read-model.excalidraw]]
+![Elasticsearch read model|178x258](/Image/elk-read-model.excalidraw.png)
 #### Adaptive replica selection
 - Response time of prior requests between the coordinating node and the eligible node.
 - How long the eligible node took to run previous searches.
@@ -27,7 +27,7 @@
 	2. Execute the operation locally (index, delete, ...), it also validates the content of the fields and reject if needed.
 	3. Forward the operation to each replica in the current in-sync copies set in parallel.
 	4. Once all in-sync replicas have successfully performed the operation and responded to the primary, the primary acknowledges the successful completion of the request to the client.
-![[image-9.png]]
+![](/Image/image-9.png)
 ### Shard failure recovery
 #### Primary terms
 - A way to distinguish between old and new primary shards.

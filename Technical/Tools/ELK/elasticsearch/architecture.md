@@ -4,12 +4,7 @@
 - A node refers to an instance of ES and not a machine, so multiple nodes can be run on the same machine.
 - Each node belong to a cluster - a collection of related nodes. Clusters are completely independent of each other by default. The separation of cluster is usually to separate things logically and configure differently.
 - When a node start up, it will either join an existing cluster if configured to do, or create its own cluster consisting of just that node.
-### Document
-- Each unit of data that you store within a cluster is called a document - a JSON object.
-- When you index a document, the original JSON object that you send to ES is stored along with some metadata that ES uses internally.
-- The data you send to ES is stored under field `_source`.
-- Every document is stored within an index - a collection of documents that have similar characteristics and are logically related.
-- Queries are run against indices.
+![Elasticsearch. architecture|367x363](/Image/image-13.png)
 ### Node roles
 #### Master
 - This role is eligible, whereas a node may be elected as the cluster's master node.
@@ -71,6 +66,11 @@ curl --cacert ca.crt -X GET -u elastic -H "Content-Type:application/json" https:
 	- ES → Clusters → Indices → Shards → Documents with key-value pairs
 - ES is built on top of Apache Lucene, each index is a Lucene index
 ## Document
+- Each unit of data that you store within a cluster is called a document - a JSON object.
+- When you index a document, the original JSON object that you send to ES is stored along with some metadata that ES uses internally.
+- The data you send to ES is stored under field `_source`.
+- Every document is stored within an index - a collection of documents that have similar characteristics and are logically related.
+- Queries are run against indices.
 - Documents are immutable.
 - When update the document, behind the scene ES replaces the document when using update API.
 	- The current document is retrieved.
