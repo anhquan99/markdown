@@ -37,9 +37,9 @@
 ### SELinux
 - SELinux is a set of security rules that are used to determine which processes can access which files, directories, ports, and other items on the system. As all objects in Linux are some sort of file and everything that is done is some sort of process, SELinux can be used to control everything.
 - SELinux works with 3 conceptual quantities:
-	- Context: these are labels to files, processes and ports. Examples of contexts are SELinux user, role and type. 
-	- Rules: they describe access control in terms of contexts, processes, files, ports, users, etc.
-	- Policies: they are a set of rules that describe what system-wide access control decisions should be made by SELinux.
+	- **Context**: these are labels to files, processes and ports. Examples of contexts are SELinux user, role and type. 
+	- **Rules**: they describe access control in terms of contexts, processes, files, ports, users, etc.
+	- **Policies**: they are a set of rules that describe what system-wide access control decisions should be made by SELinux.
 - A SELinux context is a label used by a rule to define how users, processes, files and ports interact with each other. As the default policy is to deny any access, rules are used to describe allowed actions on the system. Each of the actions must be allowed via the Access Vector Cache.
 #### Enforcement modes
 - SELinux enforcement modes are selected in a file (usually `/etc/selinux/config` or `/etc/sysconfig/selinux`).
@@ -52,10 +52,28 @@
 - Disable SELinux:
 	- **Configuration file**: set `SELINUX=disabled` in the configuration file and reboot.
 	- **Kernel parameter**: add `selinux=0` to the Kernel parameter list when rebooting.
-### Default SELinux policies
+#### Default SELinux policies
 - Multiple policies are allowed, but only 1 can be active at a time.
 - Changing the policy may require a reboot of the system and a time-consuming re-labeling of filesystems contents.
 - Default policies:
 	- **targeted**: the default policy in which SELinux is more restrictive to targeted processes. User processes and init processes are not targeted, while network service processes are targeted. SELinux enforces memory restrictions for all processes, which reduces the vulnerability to buffer overflow attacks.
 	- **minimum**: a modification of the targeted policy where only selected processes are protected.
 	- **Multi-Level Security (MLS)**: much more restrictive; all processes are placed in fine-grained security domains with particular policies
+#### Context inheritance
+- Newly created files inherit the context from their parent directory, but when moving or copying files, it is the context of the source directory which may be preserved, which can cause problems.
+- Use `restorecon` to reset file contexts, based on parent directory settings.
+### AppArmor
+- AppArmor is an alternative LSM (Linux Security Module) to SELinux, which supplements the traditional UNIX **Discretionary Access Control (DAC)** model by providing **Mandatory Access Control (MAC)**.
+- AppArmor includes a learning mode, in which violations of the profile are logged, but not prevented. This log can then be turned into a profile, based on the program’s typical behavior.
+#### Using with k8s
+- AppArmor must be available on the node where assigned. There is not a native process for k8s to load policies. As a result, you need to ensure policies are loaded on every node where AppArmor-required pods are scheduled, and the scheduler is unaware of which nodes have profiles.
+- Adding profiles could be done during node installation with a tool like Ansible or Puppet, at least for some of the nodes. If only some nodes will have profiles installed, you could use a `NodeSelector`or a taint to ensure the scheduler chooses the appropriate node. Another solution would be to deploy a `DaemonSet` and allow the pod the ability to modify the host and add profiles. This would put the responsibility into the cluster administrators, if different from those responsible for operating system configuration and security.
+#### Modes and profiles
+- Profiles restrict how executable programs, which have pathnames on your system can be used.
+- Processes can run in modes:
+	- **Enforce mode**: applications are prevented from acting in ways which are restricted. Attempted violations are reported to the system logging files. This is the default mode. A profile can be set to this mode with `aa-enforce`.
+	- **Complain**: polices are not enforced, but attempted policy violations are reported. This is also called learning mode. A profile can be set to this mode with `aa-complain`.
+- Profiles in AppArmor is stored in `/etc/apparmor.d`.
+#### Complex profiles
+- If you know the specific function, perhaps to want to run a new containerized application, you can use `aa-genprof`. If passed the location of existing profiles, the tool will create a new complain mode profile, send a starting mark to the system log, and prompt the running of the program in a different terminal. While the program runs, you can use the Scan feature to parse the log and add to the profile. When all program operations have been scanned, use the Finish and cause the complain mode profile to become an enforce mode.
+- To generate a systemic profile, you can run `aa-logprof`. When run, all entries in the system log are presented to the user to choose one of several options: `(A)llow, (D)eny, (I)gnore, (N)ew, (G)lob last piece, (Q)uit`. This process can continue for a long time as normal system operation takes place. When **Quit** is chosen, the profile is persisted to disk and AppArmor is reloaded if active.
