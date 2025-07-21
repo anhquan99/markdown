@@ -1,0 +1,12 @@
+# Cluster Security
+- K8s components are running secure and up-to-date
+	- `Apiserver`
+	- `Kubelet`
+	- `ETCD`
+- Restrict (external) access
+- Use Authentication → Authorization
+- `AdmissionControllers`
+	- `NodeRestriction`
+	- `CustomPolicies` (OPA)
+- Enable Audit logging
+- Secure benchmarking

@@ -177,3 +177,6 @@ In many recent kernels the ExecShield feature was replaced with NX (not executab
 - Secure computing mode (`seccomp`) is a mechanism which restricts access to system calls by processes. The idea is to reduce the attack surface of the kernel by preventing applications from entering system calls they do not need. The system call API is a wide gateway to the kernel, and as with all code, there have and are likely to be bugs present somewhere.
 - Given the privileged nature of the kernel, bugs in system calls are potential avenues of attack. If an application only needs to use a limited number of system calls, then restricting it to only being able to invoke those calls reduces the overall risk of a successful attack. Good knowledge of what the application needs is required in order to execute properly.
 - The original `seccomp` code, also known as _mode 1_, provided access to only four system calls: `read(), write(), exit(), and sigreturn()`. These are the minimum required for a useful application, and this was intended to be used to run untrusted code on otherwise idle systems.
+### Tools
+- `grafeas`: https://github.com/grafeas/grafeas
+- 
