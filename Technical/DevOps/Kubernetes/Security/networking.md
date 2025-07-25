@@ -17,3 +17,29 @@
 - Where to apply the filter is generally the first decision made when constructing a filter rule. Ingress traffic is that coming into the system or environment. Egress traffic is that generated inside the environment and leaving the local network.
 - Both ingress and egress traffic should be filtered at the network perimeter. Acceptable use policies can be enforced via egress filtering. Egress filtering can also ensure that local systems do not leak sensitive information and cannot attack external systems on the internet, e.g., participate in a botnet DoS, or act as spam mailers.
 - Deciding which traffic to filter is done by creating selection criteria and then comparing the traffic attributes to that criteria. The specific action taken is self-explanatory. These concepts apply both to operating system firewalls, as well as Kubernetes `networkpolicies`.
+## Certificates
+![[image-20.png]]
+### `/etc/kubernetes/pki`
+- CA (Certificate Authority):
+	- `ca.crt`
+	- `ca.key`
+- API server certificate:
+	- `apiserver.crt`
+	- `apiserver.key`
+- API → `etcd`
+	- `apiserver-etcd-client.crt`
+	- `apiserver-etcd-client.key`
+- API → `kubelet`
+	- `apiserver-kubelet-client.crt`
+	- `apiserver-kubelet-client.key`
+- `etcd` server cert (`/etc/kubernetes/pki/etcd`)
+	- `server.crt`
+	- `server.key`
+- Scheduler → API 
+	- `/etc/kubernetes/scheduler.conf`
+- Control manager → API
+	- `/etc/kubernetes/controller-manager.conf`
+- `kubelet` → API
+	- `/etc/kubernetes/kubelet.conf` under `client-certificate`
+### `/var/lib/kubelet/pki`
+- `kubelet` sever certificate

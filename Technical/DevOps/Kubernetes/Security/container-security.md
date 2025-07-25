@@ -179,4 +179,14 @@ In many recent kernels the ExecShield feature was replaced with NX (not executab
 - The original `seccomp` code, also known as _mode 1_, provided access to only four system calls: `read(), write(), exit(), and sigreturn()`. These are the minimum required for a useful application, and this was intended to be used to run untrusted code on otherwise idle systems.
 ### Tools
 - `grafeas`: https://github.com/grafeas/grafeas
-- 
+## Container isolation
+### Namespaces
+- Restrict what processes can see
+	- Other processes
+	- Users
+	- Filesystem
+### `cgoups`
+- Restrict the resource usage of processes
+	- RAM
+	- Disk
+	- CPU

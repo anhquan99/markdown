@@ -50,3 +50,18 @@
 	- It is impossible to unload a module that is being used by one or more processes, which can also be seen from the `lsmod` listing. However, there are modules which do not keep track of this reference count, such as network device driver modules, as it would make it too difficult to temporarily replace a module without shutting down and restarting much of the whole network stack.
 	- When a module is loaded with `modprobe`, the system will automatically load any other modules that need to be loaded first.
 	- When a module is unloaded with `modprobe -r`, the system will automatically unload any other modules being used by the module, if they are not being simultaneously used by any other loaded modules.
+## Namespaces
+- Namespace isolate processes
+### PID
+- Isolate processes from each other
+- 1 processes cannot see others
+- A process can exist multiple times, once in every namespace
+### Mount
+- Restrict access to mounts or root filesystem
+### Network
+- Only access certain network devices firewall and routing rules and socket port numbers
+- Not able to see all traffic or contact all endpoints
+### User
+- Different set of user ids used
+- User (0) inside one namespace can be different from user (0) inside another
+- Don't use the host-root user (0) inside a container
