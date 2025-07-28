@@ -15,9 +15,9 @@
 - The default recommended controller is the [[Deployments]].
 # [[Deployments]]
 # [[DeamonSets]]
-# [[Services]]
-# [[Technical/DevOps/Kubernetes/Fundamentals/Volumes|Volume]]
-# [[Technical/DevOps/Kubernetes/Fundamentals/Network|Network]]
+# [[services]]
+# [[Technical/DevOps/kubernetes/fundamentals/Volumes|Volume]]
+# [[Technical/DevOps/kubernetes/fundamentals/Network|Network]]
 Kubernetes became popular due to its advanced application lifecycle management capabilities, implemented through a rich object model, representing different persistent entities in the Kubernetes cluster. Those entities describe:
 
 - What containerized applications we are running.

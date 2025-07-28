@@ -1,4 +1,4 @@
-- AKS is a fully managed [[Technical/DevOps/Kubernetes/Kubernetes|Kubernetes]] cluster.
+- AKS is a fully managed [[Technical/DevOps/kubernetes/kubernetes|kubernetes]] cluster.
 ![[Pasted image 20240904132737.png]]
 # Features
 - **Control plane**: installation and management for free

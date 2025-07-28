@@ -16,7 +16,7 @@
 - `iscsi`
 - [[Secrets|secret]]: pass sensitive information to Pods.
 - [[ConfigMaps|configMap]]: provide configuration data, or shell commands and arguments into a Pod.
-- `peristentVolumeClaim`: attach [[Technical/DevOps/Kubernetes/Fundamentals/Volumes#Persistent volumes (PV)|PersistentVolume]] to a Pod using [[Technical/DevOps/Kubernetes/Fundamentals/Volumes#Persistent volume claims (PVC)|persistentVolumeClaim]].
+- `peristentVolumeClaim`: attach [[Technical/DevOps/kubernetes/fundamentals/Volumes#Persistent volumes (PV)|PersistentVolume]] to a Pod using [[Technical/DevOps/kubernetes/fundamentals/Volumes#Persistent volume claims (PVC)|persistentVolumeClaim]].
 ## Container storage interface (CSI)
 - Interface for storing data by third party storage provider.
 - CSI is used for generic file storage driver.

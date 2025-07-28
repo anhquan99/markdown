@@ -1,4 +1,5 @@
-# Deployment
+# Limit resources
+## Deployment
 - You can configure the resource limit in:
 	- `spec.containers[].resources.limits.cpu`
 	- `spec.containers[].resources.limits.memory`
@@ -6,7 +7,7 @@
 	- `spec.containers[].resources.requests.cpu`
 	- `spec.containers[].resources.requests.memory`
 	- `spec.containers[].resources.requests.hugepages-<size>`
-# Namespace
+## Namespace
 - In namespace, it uses a resource with kind `LimitRange` to set limit on the namespace.
 - Example:
 ```yaml

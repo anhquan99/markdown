@@ -15,7 +15,7 @@
 # GitOps benefits
 - GitOps helps by handling the CD step
 - Regularly synchronizes the running clusters with the desired target state in the code repo and enhances the security of a cluster by separating permissions for CI and CD tasks
-- Regularly compares the cluster state in [[Technical/DevOps/Kubernetes/Kubernetes|Kubernetes]] to the desired state in the manifest files. If someone edits the cluster or deploys pods outside the CI/CD process, the tool detects the changes and can automatically restore the cluster to the target state. Git is the single source of truth, ensuring apps are always in sync
+- Regularly compares the cluster state in [[Technical/DevOps/kubernetes/kubernetes|kubernetes]] to the desired state in the manifest files. If someone edits the cluster or deploys pods outside the CI/CD process, the tool detects the changes and can automatically restore the cluster to the target state. Git is the single source of truth, ensuring apps are always in sync
 # Operator
 - The operator handles CD part, in the image below it is Argo CD.
 ![[Pasted image 20240822134119.png]]

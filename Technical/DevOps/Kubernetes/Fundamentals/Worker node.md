@@ -93,7 +93,7 @@ spec:
 ```
 ## Proxy - `kube-proxy`
 - A daemon - network agent runs on each node, control plane and workers.
-- When the [[Services]] is removed, `kube-proxy` removes the corresponding iptables rules on all nodes as well.
+- When the [[services]] is removed, `kube-proxy` removes the corresponding iptables rules on all nodes as well.
 - Responsible:
 	- Watches API server on the master node for the addition, updates, and removal of Services and endpoints.
 	- Implementing the Service configuration on behalf of an administrator or developer, in order to enable traffic routing to an exposed application running in Pods.
