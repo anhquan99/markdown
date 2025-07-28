@@ -24,4 +24,4 @@ Kubernetes became popular due to its advanced application lifecycle management c
 - The nodes where the containerized applications are deployed.
 - Application resource consumption.
 - Policies attached to applications, like restart/upgrade policies, fault tolerance, ingress/egress, access control, etc.# ConfigMap
-# [[Annotation]]
+# [[annotation]]
