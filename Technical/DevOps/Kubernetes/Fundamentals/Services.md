@@ -34,7 +34,7 @@ spec:
 - It is very important to ensure that the value of the **targetPort**, which is **5000** in this example, matches the value of the **containerPort** property of the Pod **spec** section.
 - Endpoints are created and managed automatically by the Service, not by the Kubernetes cluster administrator.
 ## Traffic policies
-- [[Worker node#Proxy - `kube-proxy`|kube-proxy]] with `iptables` implement the load-balancing mechanism, random by default.
+- [[worker-node#Proxy - `kube-proxy`|kube-proxy]] with `iptables` implement the load-balancing mechanism, random by default.
 ### Options
 - **Cluster**: allows `kube-proxy` to target all ready endpoints of the service in the load-balancing process.
 - **Local**: isolates the load-balancing process to only include the endpoints of the service located on the same node as the requester Pod. Limited when the service does not have a ready endpoint on the node where the requester Pod is running, the service will not route the request to endpoints on other nodes to satisfy the request.

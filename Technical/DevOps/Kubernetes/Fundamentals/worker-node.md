@@ -1,14 +1,15 @@
+# Worker Node
 - Provides a running env for client application.
 - In K8s the application containers are encapsulated in Pods, controlled by the cluster control plane agents running on the control plane node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world.
 ![[Pasted image 20240324123939.png]]
 - A Pod is the smallest scheduling work unit in K8s, is a logical collection of 1 or more containers scheduled together, and the collection can be started, stopped, or rescheduled as a single unit of work.
 - In a multi-worker K8s cluster, the network traffic between client users and the containerized applications deployed in Pod is handled directly by the worker nodes, and is not routed through the control plane node.
-# Components
-- [[Worker node#Container Runtime|Container Runtime]]
-- [[Worker node#Node Agent - `kunelet`|Node Agent - kubelet]]
-- [[Worker node#Proxy - `kube-proxy`|Proxy - kube-proxy]]
+## Components
+- [[worker-node##Container Runtime|Container Runtime]]
+- [[worker-node##Node Agent - `kunelet`|Node Agent - kubelet]]
+- [[worker-node##Proxy - `kube-proxy`|Proxy - kube-proxy]]
 - Add-ons for DNS, Dashboard user interface, cluster-level monitoring and logging
-## Container Runtime
+#### Container Runtime
 - Because K8s has a lack of capability to directly handle and run containers, it requires a container runtime on the node where a Pod and its containers are to be scheduled.
 - Runtimes are required on all nodes of a K8s cluster, both control plane and worker.
 - Example of container runtime:
@@ -16,19 +17,19 @@
 	- `containerd`
 	- `Docker Engine`
 	- `rkt`
-## Node Agent - `kubelet`
+#### Node Agent - `kubelet`
 - Running on each node, control plane and worker.
 - Communicates with the control plane.
-- It receives Pod definitions, primarily from the [[Control plane#API Server|API Server]], and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health and resources of Pods running containers.
+- It receives Pod definitions, primarily from the [[control-plane##API Server|API Server]], and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health and resources of Pods running containers.
 - `kubelet` connects to container runtimes through a plugin based interface - the Container Runtime Interface (CRI). In order to connect to interchangeable container runtimes, `kubelete` uses a **CRI shim**, an application which provides a clear abstraction layer between `kubelet` and the container runtime.
 ![[Pasted image 20240324130822.png]]
-### Liveness and readiness probes
+###### Liveness and readiness probes
 - Allows the `kubelet` to control the health of the application running inside a Pod's container and force container restart of an unresponsive application.
 - It is recommended to allow enough time for the readiness probe to possibly fail a few times before a pass, and only then check the liveness probe. If readiness and liveness overlap, there may be a risk that container never reach ready state, while stuck in an infinite re-create-fail lop.
-#### Liveness
+######## Liveness
 - Application running inside a container has been running successfully for a while, suddenly stopped responding to the user requests, then that container is no longer useful due to application deadlock or memory pressure.
 - Liveness probe checks on an application's health, if it fails the `kubelet` restarts the affected container automatically.
-##### Define liveness probe:
+########## Define liveness probe:
 - Liveness command
 ```YAML
 apiVersion: v1  
@@ -78,7 +79,7 @@ spec:
       periodSeconds: 5  
 ...
 ```
-#### Readiness
+######## Readiness
 - While initializing, applications have to meet certain conditions before they become ready to server traffic.
 ```YAML
 ...  
@@ -91,7 +92,7 @@ spec:
           periodSeconds: 5  
 ...
 ```
-## Proxy - `kube-proxy`
+#### Proxy - `kube-proxy`
 - A daemon - network agent runs on each node, control plane and workers.
 - When the [[services]] is removed, `kube-proxy` removes the corresponding iptables rules on all nodes as well.
 - Responsible:

@@ -1,10 +1,10 @@
 # Kubernetes
-- [[Kubectl]]
-- [[Technical/DevOps/kubernetes/fundamentals/Kubernetes|Kubenetes fundamentals]]
-- [[Technical/DevOps/kubernetes/fundamentals/Network|Network]]
-- [[Object]]
-- [[Resource definition]]
-- [[Technical/DevOps/kubernetes/fundamentals/Volumes|Volumes]]
+- [[kubectl]]
+- [[Technical/DevOps/kubernetes/fundamentals/kubernetes|Kubenetes fundamentals]]
+- [[Technical/DevOps/kubernetes/fundamentals/network|network]]
+- [[object]]
+- [[resource-definition]]
+- [[Technical/DevOps/kubernetes/fundamentals/volumes|volumes]]
 # Notes
 - Ingress controller
 - Type of services

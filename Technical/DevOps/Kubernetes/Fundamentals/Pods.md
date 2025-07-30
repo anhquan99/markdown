@@ -1,3 +1,4 @@
+# Pods
 - The smallest k8s workload object. It is the unit of deployment in k8s, which represents a single instance of the application.
 - The smallest "unit" k8s interacts with:
 	- Contains and runs one or multiple containers, which they are scheduled together on the same host with the Pod.
@@ -6,7 +7,7 @@
 	  ![[Pasted image 20240327131606.png]]
 - Pods are designed to be ephemerals, they do not have the capability to self-heal themselves. That is the reason they are used with controller, which handle Pod's replication, fault tolerance, self-healing, ...
 ```YAML
-# example of pod
+## example of pod
 apiVersion: v1  
 kind: Pod  
 metadata:  

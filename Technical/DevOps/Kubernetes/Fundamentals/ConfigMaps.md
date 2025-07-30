@@ -1,7 +1,8 @@
+# ConfigMaps
 - Decouple the configuration details from the container image.
 - Using ConfigMaps, we pass configuration data as key-value pairs, which are consumed by Pods or any other system components and controllers, in the form of environment variables, sets of commands and arguments, or volumes.
 - We can create ConfigMaps from literal values, from configuration files, from one or more files or directories.
-# Create configMap from literal value
+## Create configMap from literal value
 ```bash
 # Create config map from liter value
 $ kubectl create configmap my-config \  
@@ -11,7 +12,7 @@ $ kubectl create configmap my-config \
 # Get config map
 $ kubectl get configmaps my-config -o yaml
 ```
-# Create configMap from definition Manifest
+## Create configMap from definition Manifest
 ```YAML
 # Example yaml file
 apiVersion: v1  
@@ -27,7 +28,7 @@ data:
 ```bash
 $ kubectl create -f customer1-configmap.yaml
 ```
-# Create configMap from file
+## Create configMap from file
 - Example of create config map from file
 - Create file with name `permission-reset.properties`:
 ```
@@ -40,7 +41,7 @@ resetCount=3
 $ kubectl create configmap permission-config \  
   --from-file=<path/to/>permission-reset.properties
 ```
-# Use ConfigMaps inside Pods as env variables
+## Use ConfigMaps inside Pods as env variables
 - Single config map:
 ```YAML
 ...  
@@ -71,7 +72,7 @@ $ kubectl create configmap permission-config \
           key: SPECIFIC_INFO  
 ...
 ```
-# ConfigMap as volume
+## ConfigMap as volume
 ```YAML
 ...  
   containers:  
