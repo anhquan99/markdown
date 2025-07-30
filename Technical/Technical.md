@@ -6,5 +6,5 @@
 - [[Languages]]
 - [[Principles]]
 - [[Software architecture]]
-- [[Source version control]]
+- [[source-version-control]]
 - [[Unit test]]
