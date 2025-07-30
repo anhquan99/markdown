@@ -1,3 +1,3 @@
-- [[Books]]
+- [[books]]
 - [[How to list]]
 - [[Technical]]

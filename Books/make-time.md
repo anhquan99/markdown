@@ -1,3 +1,4 @@
+# Make Time
 <mark style="background: #FFB86CA6;">by Jake Knapp and John Zeratsky</mark>
 - This technique is based on sprint. It has 4 steps and those steps will make an effective day, but before planning for a day it must be planning for the whole week.
 - Each sprint will have their owns goals, in the end of the week its goals must be done.

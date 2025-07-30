@@ -1,3 +1,4 @@
+# The subtle art not giving a fuck
 <mark style="background: #FF5582A6;">by Mark Manson</mark>
 ## Don't try
 - Self-improvement and success often occur together. But that doesn't neccessarily mean they're the same thing.

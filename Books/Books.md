@@ -1,4 +1,5 @@
-- [[Make time]]
-- [[Emotional intelligence]]
-- [[The subtle art not giving a fuck]]
-- [[A Guide to the Good Life - The Ancient Art of Stoic Joy]]
+# Books
+- [[make-time]]
+- [[emotional-intelligence]]
+- [[the-subtle-art-not-giving-a-fuck]]
+- [[a-guide-to-the-good-life-the-ancient-art-of-stoic-joy]]
