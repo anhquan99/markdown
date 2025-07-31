@@ -9,7 +9,7 @@
 - Examples of Kubernetes object types are Nodes, Namespaces, Pods, ReplicaSets, Deployments, DaemonSets, ...
 ## [[nodes]]
 ## [[pods]]
-## [[namespaces]]
+## [[Technical/DevOps/kubernetes/fundamentals/namespaces|Namespaces]]
 ## [[labels]]
 ## ReplicationControllers
 - No longer a recommended controller because it is a complex operator that ensures a specified number of replicas of Pod is running at any given time, by constantly comparing the actual state with the desired state of the managed application.
