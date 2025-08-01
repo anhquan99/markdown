@@ -10,3 +10,30 @@
 ### Without NetworkPolicies
 - By default every pod can access every pod.
 - Pods **are** not isolated.
+```ad-note
+If there is no network policy rule, it will not allow any network in or out of pod depends on hte `policyTypes`
+```
+## `policyTypes`
+### Egress
+- If there is any rule(s) defined, it will allow outgoing network traffic.
+- Condition inside the egress block:
+	- Multiple `to` block is evaluated with `OR` operator
+	- Inside the `to` block is evaluated with `AND` operator
+```yaml
+...
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 10.0.0.0/24
+    ports:
+    - protocol: TCP
+      port: 5978
+  - to:
+    - ipBlock:
+        cidr: 10.0.0.0/24
+    ports:
+    - protocol: TCP
+      port: 5978
+```
+### Ingress
+- If there is any rule(s) defined, it will allow ingoing network traffic
