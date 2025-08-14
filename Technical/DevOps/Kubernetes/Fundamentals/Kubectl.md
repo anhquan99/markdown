@@ -6,7 +6,12 @@
 ## CLI
 - `kubectl create deployment --image` create a deployment from image, this image must be in docker hub or in some repository.
 ## Proxy
-- Issuing the `kubectl proxy` command, `kubectl` authenticates with the API server on the control plane node and makes services available on the default proxy port 8001.
+- Issuing the `kubectl proxy` command, the K8s create a proxy server between localhost and the K8s API Server.
+- Allow to access API locally just over http and without authentication.
+![[image-21.png]]
+## Port forward
+- Forwards connections from a localhost-port to a pod port.
+- More generic than `kubectl proxy` and can be used for all TCP traffic, not just HTTP.
 ## Authentication
 - When not using the `kubectl proxy`, we need to authenticate to the API Server when sending API requests.
 - We can authenticate by providing a Bearer Token when issuing a `curl` command, or by providing a set of keys and **certificates**.
