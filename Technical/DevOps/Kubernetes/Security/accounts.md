@@ -1,6 +1,6 @@
 # Account
 ## Service account
-- Service account is a type of non-human account, used for machines and managed by k8s API.   
+- Service account is a type of non-human account, used for machines and managed by k8s API.
 - Namespaced.
 - There is a default SA in every namespace used by pods.
 - Can be used to talk to k8s API.
