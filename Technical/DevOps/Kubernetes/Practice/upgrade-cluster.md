@@ -17,3 +17,5 @@
 - Pod `gracePeriod` / Terminating state
 - Pod Lifecycle Events
 - `PodsDisruptionBudget`
+## References
+- https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
