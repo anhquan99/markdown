@@ -2,6 +2,18 @@
 ***Containers are not contained***
 ## Containers and system calls
 ![[image-24.png]]
+```bash
+# demo a container can contact the kernel space from inside
+kubectl run pod --image=nginx
+kubectl exec pod -it -- bash
+
+# inside container
+uname -r
+
+# outside container 
+# use strace to see the kernel call
+strace uname -r
+```
 ## Sandbox
 - In k8s, sandbox is a security layer to reduce attack surface.
 - If a container has a sandbox, that means the container can't communicate with the system calls directly.
@@ -10,6 +22,26 @@
 	- Might be better for smaller containers
 	- Not good for `syscall` heavy workloads
 	- Not direct access to hardware
+## Open Container Initiative (OCI)
+- Linux Foundation project to design open standards for virtualization.
+- Specifications:
+	- Runtime
+	- Image
+	- Distribution
+- Runtime:
+	- `runc` (container runtime that implements their specification)
+```mermaid
+graph TD
+    A[dockerinc/docker] -->|use| B[moby/moby]
+    B -->|use| C[containerd/containerd]
+    E[oci/runtime spec] -->|impl| D[oci/runc]
+    C -->|use| D
+    D --> F[oci/runc/libcontainer]
+```
+## Container runtime interface (CRI)
+- CIR is an API allows the `kubelet` to communicate with different container runtimes.
+- In simple terms, it's a standardized plug that lets Kubernetes use any container runtime that supports the standard, without needing to have code specific to that runtime built into the project.
+![[image-25.png]]
 ## Container runtime
 - The engine running the images needs to be secured.
 - Options:
@@ -35,17 +67,25 @@ runtimeClassName: gvisor #<<--This must match the name of the runtime above
 containers:
 ...
 ```
-## gVisor
+### gVisor
+- User-space kernel for containers.
+- Not hypervisor/VM based.
 - A Go written sandbox often used along with rule-based execution tools such as SELinux or `seccomp`.
 - It provides an independent kernel between the host and the containerized application.
 - Each container has dedicated gVisor, which consists of 2 processes:
-	- Sentry: handles all of the kernel functionality the container requires.
+	- Sentry: handles all the kernel functionality the container requires.
 	- Gofer: handles access to filesystem, and runs in a restricted `seccomp` container.
 - These 2 processes communicate with each other using the 9P protocol. This approach offers isolation similar to virtual machines but less overhead.
+- Simulates kernel `syscalls` with limited functionality.
 - As gVisor intercepts the application system calls, there may be some application compatibility concerns and higher overhead per system call. As result, applications with system call intensive workloads may not perform well using gVisor.
-## Kata
+- Runtime called `runsc`.
+![[image-26.png]]
+### Kata
 - Unlike traditional containers which share a host kernel and use namespaces to keep isolated, Kata leverage hardware virtualization, to provide per-container kernels. This provides an extra layer of isolation for workload and security concerns.
 ![[image-15.png]]
+- String separation layer.
+- Runs every container in its own private VM (hypervisor based).
+- Needs virtualization, like nested virtualization in cloud. QEMU as default.
 ## Trusted packages
 - Software should be drawn from trusted sources and checked to ensure they have not changed since creation.
 - Options:
