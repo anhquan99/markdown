@@ -1,4 +1,15 @@
 # Container Security
+***Containers are not contained***
+## Containers and system calls
+![[image-24.png]]
+## Sandbox
+- In k8s, sandbox is a security layer to reduce attack surface.
+- If a container has a sandbox, that means the container can't communicate with the system calls directly.
+- Sandbox comes not for free:
+	- More resources needed
+	- Might be better for smaller containers
+	- Not good for `syscall` heavy workloads
+	- Not direct access to hardware
 ## Container runtime
 - The engine running the images needs to be secured.
 - Options:

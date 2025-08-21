@@ -1,10 +1,11 @@
+# Image
 - Pull a docker image command `docker run image_name:version` or `docker pull image_name:version`
 - Alias
 	- `image_name:version` : `IMG_V`
 	- `image_name` : `img`
 - Run interactive shell `docker run -it img`
-- Start with [[Dockerfile]], you will need to write code to tell docker how to build docker image.
-- A image is built on instruction layers - layer architechture, every instruction a layer. When you build the image, docker will cache the layers for the rebuild process, this mean if no changes for in the code the image is built faster. Each layer stacked, if one changes others will be rebuilt.
+- Start with [[dockerfile]], you will need to write code to tell docker how to build docker image.
+- A image is built on instruction layers - layer architecture, every instruction a layer. When you build the image, docker will cache the layers for the rebuild process, this mean if no changes for in the code the image is built faster. Each layer stacked, if one changes others will be rebuilt.
 ```dockerfile
 # example for the layer architechture
 
@@ -29,7 +30,7 @@ EXPOSE 80
 CMD ["node", "server.js"]
 ```
 - Tag allows you to use the right version of the image.
-- Shareing a image:
+- Sharing an image:
 	- Share a Dockerfile (**Dockerfile instructions might need surrounding files/folders like source code,...**).
 	- Share a Built image.
-## [[CLI#^736b8f|CLI]]
+## [[cli#^736b8f|CLI]]

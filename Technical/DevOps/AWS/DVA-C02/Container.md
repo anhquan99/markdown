@@ -1,4 +1,4 @@
-[[Technical/DevOps/Docker/Container|Container]]
+[[Technical/DevOps/Docker/container|container]]
 # Container management
 - Elastic Container Service (ECS)
 	- Amazon's own container platform.

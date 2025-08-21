@@ -1,4 +1,4 @@
-# Docker compose
+# Docker Compose
 ## Definition
 - A orchestration command for building and running multiple docker container in the CLI.
 - Docker compose is not suited for managing multiple containers on different hosts (machines)
@@ -11,10 +11,10 @@ environment:
 	- MONGO_INITDB_ROOT_USERNAME=aq # single value
 ```
 - Docker will create a default network for all container when use docker compose, you don't need to specify the network when using docker compose.
-- `working_dir: $container_path` set a default working directory like [[Dockerfile#^c49566|WORKDIR in Docker file]].
-- `entrypoint: ["$command"]` set a prefix command for command line in container like [[Dockerfile#^4e4524|ENTRYPOINT in Docker file]].
+- `working_dir: $container_path` set a default working directory like [[dockerfile#^c49566|WORKDIR in Docker file]].
+- `entrypoint: ["$command"]` set a prefix command for command line in container like [[dockerfile#^4e4524|ENTRYPOINT in Docker file]].
 - If a server is depended on other services, the docker will run the other services first, then the depending on service. This make you just need to run 1 service, then other services will run flow.
-## [[CLI#^79c0c7|CLI]]
+## [[cli#^79c0c7|CLI]]
 ```yaml
 version: '3.8'
 services:
