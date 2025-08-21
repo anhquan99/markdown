@@ -80,6 +80,10 @@ containers:
 - As gVisor intercepts the application system calls, there may be some application compatibility concerns and higher overhead per system call. As result, applications with system call intensive workloads may not perform well using gVisor.
 - Runtime called `runsc`.
 ![[image-26.png]]
+```bash
+# you can use command dmesg to display all messages from the kernel ring buffer.
+dmesg
+```
 ### Kata
 - Unlike traditional containers which share a host kernel and use namespaces to keep isolated, Kata leverage hardware virtualization, to provide per-container kernels. This provides an extra layer of isolation for workload and security concerns.
 ![[image-15.png]]
