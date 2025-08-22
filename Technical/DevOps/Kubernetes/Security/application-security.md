@@ -57,3 +57,4 @@ CMD ["/home/appuser/app"]
 - `Kubesec`
 - `kube-score`
 - `kube-linter`
+- `conftest`
