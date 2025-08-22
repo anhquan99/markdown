@@ -9,6 +9,7 @@
 	- Readonly filesystem
 - Vulnerability scanning
 - mTLS/ ServiceMeshes
+- Static analysis in CI/CD
 ## mTLS
 - Mutual authentication.
 - Two-way (bilateral) authentication.
@@ -47,3 +48,12 @@ CMD ["/home/appuser/app"]
 - Remove shell access.
 #### Best practices
 - https://docs.docker.com/build/building/best-practices/
+## Static analysis in CI/CD
+- Looks at source code and text files.
+- Check against rules.
+- Enforce rules.
+![[image-29.png]]
+### Tools
+- `Kubesec`
+- `kube-score`
+- `kube-linter`
