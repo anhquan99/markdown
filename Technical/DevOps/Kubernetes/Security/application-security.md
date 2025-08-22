@@ -22,3 +22,28 @@
 	3. The traffic come to pod2 which will be received and decrypt by the proxy container in pod2.
 	4. Finally the traffic is sent to app container in pod2.
 ![[image-27.png]]
+## Container hardening
+### Hardening images
+- Use specific package versions.
+- Don't run as root.
+```Dockerfile
+FROM ubuntu:24.04
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y golang-go
+COPY app.go .
+RUN CGO_ENABLED=0 go build app.go
+
+FROM alpine:3.22.1
+# this is where the container create non root user 
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup -h /home/appuser
+COPY --from=0 /app /home/appuser/
+# this is where the container run as non user
+USER appuser
+CMD ["/home/appuser/app"]
+```
+- Make filesystem readonly:
+	- Use `chmod`
+	- ...
+- Remove shell access.
+#### Best practices
+- https://docs.docker.com/build/building/best-practices/
