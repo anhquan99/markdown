@@ -130,6 +130,9 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 ### `/proc`
 - `/proc` is called **pseudo-filesystem** because they have no actual permanent presence anywhere on the disk.
 - It contains virtual files (on memory) that permit viewing constantly changing kernel data.
+- Information and connections to processes and kernel.
+- Configuration and administrative tasks.
+- Contains files that don't exists, yet you can access these.
 ### `/dev`
 - It contains **device nodes**, a type of pseudo-file used by most hardware and software devices, except for network devices, which is:
 	- Empty on the disk partition when it is not mounted.

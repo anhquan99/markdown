@@ -58,3 +58,14 @@ CMD ["/home/appuser/app"]
 - `kube-score`
 - `kube-linter`
 - `conftest`
+## Vulnerability scanning
+### Know image vulnerabilities
+- Databases:
+	- https://www.cve.org/
+	- https://nvd.nist.gov/
+- Vulnerabilities ca be discovered in image and dependencies:
+	- During build
+	- At runtime
+### Tools
+- Clair
+- Trivy

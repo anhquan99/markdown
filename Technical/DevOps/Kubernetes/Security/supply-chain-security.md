@@ -11,3 +11,5 @@
 ps aux | grep kube-api
 find /proc/{process-id}/root/ | grep kube-api
 ```
+## `ImagePolicyWebhook`
+![[image-30.png]]

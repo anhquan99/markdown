@@ -94,17 +94,17 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 - **`bg`** command for suspend process in the background and **`fg`** command to run a background process in the foreground.
 - `jobs` utility displays all jobs running in the background or the `jobs -l` for more detailed. The background jobs are connected to the terminal window, so if you log off, the `jobs` will not show the ones started from that window.
 ## Process status command
-|Tool|Purpose|
-|---|---|
-|**top**|Process activity, dynamically updated|
-|**uptime**|How long the system is running and the average load|
-|**ps**|Detailed information about processes|
-|**pstree**|A tree of processes and their connections|
-|**mpstat**|Multiple processor usage|
-|**iostat**|CPU utilization and I/O statistics|
-|**sar**|Display and collect information about system activity|
-|**numastat**|Information about NUMA (Non-Uniform Memory Architecture)|
-|**strace**|Information about all system calls a process makes
+| Tool         | Purpose                                                                                                                                         |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **top**      | Process activity, dynamically updated                                                                                                           |
+| **uptime**   | How long the system is running and the average load                                                                                             |
+| **ps**       | Detailed information about processes                                                                                                            |
+| **pstree**   | A tree of processes and their connections                                                                                                       |
+| **mpstat**   | Multiple processor usage                                                                                                                        |
+| **iostat**   | CPU utilization and I/O statistics                                                                                                              |
+| **sar**      | Display and collect information about system activity                                                                                           |
+| **numastat** | Information about NUMA (Non-Uniform Memory Architecture)                                                                                        |
+| **strace**   | - Information about all system calls a process makes<br>- Log and display signals received by a process<br>- Diagnostic, learning and debugging |
 ### `ps`
 - System V Style:
 	- `-u` displays information of processes for a specified username
