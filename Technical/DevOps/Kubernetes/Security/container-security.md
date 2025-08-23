@@ -246,3 +246,17 @@ In many recent kernels the ExecShield feature was replaced with NX (not executab
 	- RAM
 	- Disk
 	- CPU
+## Immutability
+- Container can't be modified during its lifetime.
+- Always know the state of the container.
+### Pros:
+- Advanced deployment methods
+- Easy rollback
+- More reliability
+- Better security (container level)
+### Enforce on container image level
+- Remove bash/shell
+- Make filesystem read-only
+	- K8s: `readOnlyFilesystem`
+	- Docker: `--read-only`
+- Run as user and non-root

@@ -77,3 +77,10 @@
 #### Complex profiles
 - If you know the specific function, perhaps to want to run a new containerized application, you can use `aa-genprof`. If passed the location of existing profiles, the tool will create a new complain mode profile, send a starting mark to the system log, and prompt the running of the program in a different terminal. While the program runs, you can use the Scan feature to parse the log and add to the profile. When all program operations have been scanned, use the Finish and cause the complain mode profile to become an enforce mode.
 - To generate a systemic profile, you can run `aa-logprof`. When run, all entries in the system log are presented to the user to choose one of several options: `(A)llow, (D)eny, (I)gnore, (N)ew, (G)lob last piece, (Q)uit`. This process can continue for a long time as normal system operation takes place. When **Quit** is chosen, the profile is persisted to disk and AppArmor is reloaded if active.
+## Falco
+- Runtime security
+- Access: deep kernel tracing built on the Linux kernel.
+- Assert:
+	- Describe security rules against a system (default ones)
+	- Detect unwanted behavior
+- Action: automated respond to a security violations.
