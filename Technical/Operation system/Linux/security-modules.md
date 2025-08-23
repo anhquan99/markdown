@@ -56,9 +56,11 @@
 - Allows administrators to associate a security profile to a program which restricts its capabilities.
 - Is considered easier (by some but not all) to use than SELinux.
 - Is considered filesystem-neutral (no security labels required).
+![[image-34.png]]
 ### Modes
 - **Enforce mode**: default mode, applications are prevented from acting in ways which are restricted. Violations are reported to the system logging files. `aa-enforce` can be used to set profile mode.
 - **Complain mode**: policies are not enforced, but attempted policy violations are reported, also called the learning mode. Can be set with `aa-complain`.
+- **Unconfined mode**: policies are not enforced and violation is not reported.
 ### Profiles
 - Profiles restrict how executable programs.
 - Linux distributions come with​ pre-packaged profiles, typically installed either when a given package is installed, or with an AppArmor package, such as `apparmor-profiles`. These profiles are stored in `/etc/apparmor.d`.

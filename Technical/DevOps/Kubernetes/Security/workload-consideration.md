@@ -35,12 +35,16 @@
 - With Mode 2, the BPF and eBPF filters can be used to determine which system calls are to be allowed. Once the eBPF program is constructed and installed into the kernel, every call goes through the filter.
 - In k8s, you can use `seccomp` for several features, such as `syscall` auditing and denial of disallowed calls, which will cause the pod to enter a `CrashLoopBackoff` state.
 ### SELinux
-- SELinux is a set of security rules that are used to determine which processes can access which files, directories, ports, and other items on the system. As all objects in Linux are some sort of file and everything that is done is some sort of process, SELinux can be used to control everything.
+- Secure computing mode.
+- Security facility in the Linux Kernel.
+- Restricts execution of syscalls.
+- SELinux is a set of security rules that are used to determine which processes can access which files, directories, ports, and other items on the system. As all objects on Linux are some sort of file and everything that is done is some sort of process, SELinux can be used to control everything.
 - SELinux works with 3 conceptual quantities:
 	- **Context**: these are labels to files, processes and ports. Examples of contexts are SELinux user, role and type. 
 	- **Rules**: they describe access control in terms of contexts, processes, files, ports, users, etc.
 	- **Policies**: they are a set of rules that describe what system-wide access control decisions should be made by SELinux.
 - A SELinux context is a label used by a rule to define how users, processes, files and ports interact with each other. As the default policy is to deny any access, rules are used to describe allowed actions on the system. Each of the actions must be allowed via the Access Vector Cache.
+![[image-35.png]]
 #### Enforcement modes
 - SELinux enforcement modes are selected in a file (usually `/etc/selinux/config` or `/etc/sysconfig/selinux`).
 - Modes:
@@ -56,15 +60,18 @@
 - Multiple policies are allowed, but only 1 can be active at a time.
 - Changing the policy may require a reboot of the system and a time-consuming re-labeling of filesystems contents.
 - Default policies:
-	- **targeted**: the default policy in which SELinux is more restrictive to targeted processes. User processes and init processes are not targeted, while network service processes are targeted. SELinux enforces memory restrictions for all processes, which reduces the vulnerability to buffer overflow attacks.
-	- **minimum**: a modification of the targeted policy where only selected processes are protected.
+	- **Targeted**: the default policy in which SELinux is more restrictive to targeted processes. User processes and init processes are not targeted, while network service processes are targeted. SELinux enforces memory restrictions for all processes, which reduces the vulnerability to buffer overflow attacks.
+	- **Minimum**: a modification of the targeted policy where only selected processes are protected.
 	- **Multi-Level Security (MLS)**: much more restrictive; all processes are placed in fine-grained security domains with particular policies
 #### Context inheritance
 - Newly created files inherit the context from their parent directory, but when moving or copying files, it is the context of the source directory which may be preserved, which can cause problems.
 - Use `restorecon` to reset file contexts, based on parent directory settings.
 ### AppArmor
 - AppArmor is an alternative LSM (Linux Security Module) to SELinux, which supplements the traditional UNIX **Discretionary Access Control (DAC)** model by providing **Mandatory Access Control (MAC)**.
-- AppArmor includes a learning mode, in which violations of the profile are logged, but not prevented. This log can then be turned into a profile, based on the program’s typical behavior.
+- Container runtime needs to support AppArmor.
+- AppArmor need to be installed on every node.
+- AppArmor profiles need to be available on every node.
+- AppArmor profiles are specified per container (using annotations).
 #### Using with k8s
 - AppArmor must be available on the node where assigned. There is not a native process for k8s to load policies. As a result, you need to ensure policies are loaded on every node where AppArmor-required pods are scheduled, and the scheduler is unaware of which nodes have profiles.
 - Adding profiles could be done during node installation with a tool like Ansible or Puppet, at least for some of the nodes. If only some nodes will have profiles installed, you could use a `NodeSelector`or a taint to ensure the scheduler chooses the appropriate node. Another solution would be to deploy a `DaemonSet` and allow the pod the ability to modify the host and add profiles. This would put the responsibility into the cluster administrators, if different from those responsible for operating system configuration and security.
@@ -83,4 +90,4 @@
 - Assert:
 	- Describe security rules against a system (default ones)
 	- Detect unwanted behavior
-- Action: automated respond to a security violations.
+- Action: automated respond to a security violation.

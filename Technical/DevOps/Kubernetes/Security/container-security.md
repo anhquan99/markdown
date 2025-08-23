@@ -224,8 +224,8 @@ In many recent kernels the ExecShield feature was replaced with NX (not executab
 	- It reduces changes to the kernel ABI (Application Binary Interface)
 	- No need to modify applications.
 - The following LSMs have been incorporated into the mainline Linux kernel:
-	- AppArmor: To restrict capabilities of an application.
-	- SELinux: Implements MAC (Mandatory Access Control)
+	- [AppArmor](security-modules.md#AppArmor): To restrict capabilities of an application.
+	- [SELinux](security-modules.md#SELinux): Implements MAC (Mandatory Access Control)
 	- Smack (Simplified Mandatory Access Control Kernel)
 	- TOMOYO: MAC implementation and system analysis.
 ### `Seccomp`
