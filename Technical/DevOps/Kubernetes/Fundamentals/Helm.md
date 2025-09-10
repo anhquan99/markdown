@@ -24,3 +24,6 @@ The `helm` client queries the Chart repositories for Charts based on search pa
 - `Chart.yaml` contains some metadata about the Chart like its name, version, keywords, ...
 - `values.yanl` contains keys and values that are used to generate the release in your cluster. These values are replaced in the resource manifests using the Go templating syntax.
 - The `templates` directory contains the resource manifests that make up the application.
+## References
+- https://wkrzywiec.medium.com/how-to-deploy-application-on-kubernetes-with-helm-39f545ad33b8
+![[image-36.png]]
