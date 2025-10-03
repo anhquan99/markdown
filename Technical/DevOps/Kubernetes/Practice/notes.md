@@ -1,4 +1,4 @@
-# CKA Notes
+# Notes
 ## Vim
 - Set row number: `set nu`
 ## Grep
@@ -45,19 +45,19 @@ apt-cache show kubeadm
 - Set the flag `automountServiceAccountToken` to false in yaml file.
 - Folder to check `/var/run/secrets/kubernetes.io/serviceaccount/token`.
 ## `kubelet` configuration location
-- `/var/lib/`kubelet`/config.yaml`
-- `/etc/kubernetes/`kubelet`.conf`
+- `/var/lib/kubelet/config.yaml`
+- `/etc/kubernetes/kubelet.conf`
 ### Modify Cluster DNS
 1. Modify cluster IP range in `/etc/kubernetes/manifests/kube-apiserver.yaml`
 2. Change cluster DNS service `k -n kube-system edit svc kube-dns`
 3. Modify `kubelet` configuration:
-	1. Change cluster DNS in `/var/lib/`kubelet`/config.yaml`
-	2. Edit `kubelet` configMap with `k -n kube-system edit cm `kubelet`-config`
+	1. Change cluster DNS in `/var/lib/kubelet/config.yaml`
+	2. Edit `kubelet` configMap with `k -n kube-system edit cm kubelet-config`
 	3. Apply the update to the `kubelet` configuration immediately on the node 
 	   ```
-	   kubeadm upgrade node phase `kubelet`-config
+	   kubeadm upgrade node phase kubelet-config
 	   systemctl daemon-reload
-	   systemctl restart `kubelet`
+	   systemctl restart kubelet
 	   ```
 4. Verify Pod DNS: start a pod, `exec` into that pod and `cat /etc/resolv.conf` is resolve to desired IP  
 ## `etcd`
@@ -70,14 +70,14 @@ Keyword `Certificates and Certificate Signing Requests` and `openssl`
 /etc/kubernetes/pki/apiserver.crt
 /etc/kubernetes/pki/apiserver.key
 
-/etc/kubernetes/pki/apiserver-`kubelet`-client.crt
-/etc/kubernetes/pki/apiserver-`kubelet`-client.key
+/etc/kubernetes/pki/apiserver-kubelet-client.crt
+/etc/kubernetes/pki/apiserver-kubelet-client.key
 
-/var/lib/`kubelet`/pki/`kubelet`.crt
-/var/lib/`kubelet`/pki/`kubelet`.key
+/var/lib/kubelet/pki/kubelet.crt
+/var/lib/kubelet/pki/kubelet.key
 ```
 - Kubernetes uses client certificates to authenticate a client identity to the server and a server certificate to authenticate the server’s identity to the client and establish an encrypted connection.
-- In case of `kubelet` → `api-server`, `kubelet` needs a client certificate and api-server certificate and for `api-server` → `kubelet` then the otherway around.
+- In case of `kubelet` → `api-server`, `kubelet` needs a client certificate and api-server certificate and for `api-server` → `kubelet` then the other way around.
 - Check if a certificate is a server or client one using:
 ```
 openssl x509  -noout -text -in apiserver.crt
@@ -89,7 +89,7 @@ openssl x509  -noout -text -in apiserver.crt
 ### 2. API server communication with other components
 #### `apiserver` → ``etcd``
 `--etcd-cafile, --etcd-certfile, --etcd-keyfile`
-#### `apiserver` → ``kubelet``
+#### `apiserver` → `kubelet`
 `--kubelet-certificate-authority`, `--kubelet-client-certificate`, `--kubelet-client-key`
 #### `apiserver` → `aggregated servers`
 `--proxy-client-cert-file, --proxy-client-key-file`
@@ -134,3 +134,5 @@ If you specify multiple expression in a single `matchExpression` field associate
 ```
 ## Pod topology spread constraints
 - Used to control how pods are spread across your cluster among failure-domains such as regions, zones, nodes, and other user-defined topology domains. This can help to achieve HA as well as efficient resource utilization.
+## Base64 encode a certificate
+`cat certificate.cer | base64 -w0`
