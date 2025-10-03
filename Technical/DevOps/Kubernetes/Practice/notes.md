@@ -136,3 +136,11 @@ If you specify multiple expression in a single `matchExpression` field associate
 - Used to control how pods are spread across your cluster among failure-domains such as regions, zones, nodes, and other user-defined topology domains. This can help to achieve HA as well as efficient resource utilization.
 ## Base64 encode a certificate
 `cat certificate.cer | base64 -w0`
+## `Taz`
+```
+tar -xvzf filename.tar.gz
+```
+- `-x`: Extracts files from the archive.
+- `-v`: Enables verbose mode, showing the files being extracted.
+- `-z`: Indicates that the archive is compressed with gzip.
+- `-f`: Specifies the archive file to operate on, which must immediately follow this flag.
