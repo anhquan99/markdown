@@ -61,6 +61,11 @@ sort -k 3 <filename> # sort the lines by the 3rd field on each line
 - By default, `split` breaks up a file into 1000-line segments.
 ## `grep`
 - `grep` is extensively used as a primary text searching tool.
+```shell
+grep -C 10 # get 10 line before and after
+grep -e "need_to_find_1" -e "need_to_find_2" # multiple search 
+
+```
 ## `tr`
 - Used to translate specified characters into other characters or to delete them.
 ```bash

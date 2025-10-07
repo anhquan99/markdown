@@ -73,6 +73,33 @@ If there is no network policy rule, it will not allow any network in or out of p
 ...
 ```
 - `ipBlock`
+- `ports`
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: np
+  namespace: space1
+spec:
+  podSelector: {}
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+     - namespaceSelector:
+        matchLabels:
+         kubernetes.io/metadata.name: space2
+	ports: # AND operator
+	    - port: 53
+	      protocol: TCP
+	    - port: 53
+	      protocol: UDP
+  - ports: # OR operator
+    - port: 53
+      protocol: TCP
+    - port: 53
+      protocol: UDP
+```
 ## Multiple NetworkPolicies
 - Network policies do not conflict, they are additive. It means if there are multiple network polices, those policies will be union and the order of evaluation does not affect the policy result.
 ## Default policies
