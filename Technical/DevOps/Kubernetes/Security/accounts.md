@@ -9,7 +9,9 @@
 - Client certificate:
 	- Certificate signed by the cluster's certificate authority (CA)
 	- Username under common name /CN=username
-- To create a user follow the https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+- To create a user follow the:
+	- https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+	- https://kubernetes.io/docs/tasks/tls/certificate-issue-client-csr/
 ### Leak and invalidation
 - There is no way to invalid a certificate.
 - If a certificate has been leaked:

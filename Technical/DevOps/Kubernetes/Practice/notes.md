@@ -15,7 +15,7 @@
 - `crictl`: Container Runtime Interface
 - `journalctl`
 ## Log
-- Log all container in a deployment use `--all-containers` flag
+- Log all container in a deployment, use `--all-containers` flag
 ## Ingress
 - To check ingress class you can use `kubectl get ingressclass`.
 - Check the NodePort _Service_ for the `Nginx` Ingress Controller to see the ports when see The `Nginx` Ingress Controller has been installed
@@ -27,7 +27,7 @@ k -n ingress-nginx get svc ingress-nginx-controller
 ## Pod priority
 - `PriorityClass`
 ## Certificate
-- keyword: `Certificate Management with kubeadm`
+- keyword: Certificate Management with `kubeadm`
 ## RBAC
 1. _Role_ + _RoleBinding_ (available in single _Namespace_, applied in single _Namespace_)
 2. _ClusterRole_ + _ClusterRoleBinding_ (available cluster-wide, applied cluster-wide)
@@ -64,7 +64,7 @@ apt-cache show kubeadm
 - Find the pod of `etcd` and then view it information you will get the path of certificate and more.
 - After backup `etcd` when you specify the `--data-dir` in the command, you will need to update the manifest for `etcd` and tell it get its data from that restore operation you just did. Search for `/lib/etcd` and replace that with the folder you set when backing up `etcd` with variable `--data-dir`
 ## Create a certificate signing request
-Keyword `Certificates and Certificate Signing Requests` and `openssl`
+Keyword **Certificates and Certificate Signing Requests** and `openssl`
 ## Certificates
 ```
 /etc/kubernetes/pki/apiserver.crt
