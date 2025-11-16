@@ -1,4 +1,4 @@
-# Docker Map
+# Docker
 - [[cli]]
 - [[Technical/DevOps/Docker/container|container]]
 - [[deploy-image-to-aws-ec2]]

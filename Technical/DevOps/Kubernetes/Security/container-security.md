@@ -25,9 +25,9 @@ strace uname -r
 ## Open Container Initiative (OCI)
 - Linux Foundation project to design open standards for virtualization.
 - Specifications:
-	- Runtime
-	- Image
-	- Distribution
+	- Runtime (`runtimespec`): defines the standards on how any container runtime should be developed
+	- Image (`imagespec`): specifications on how an image should be built
+	- Distribution (`distributionspec`): standardizing the distribution of content
 - Runtime:
 	- `runc` (container runtime that implements their specification)
 ```mermaid
@@ -39,7 +39,7 @@ graph TD
     D --> F[oci/runc/libcontainer]
 ```
 ## Container runtime interface (CRI)
-- CIR is an API allows the `kubelet` to communicate with different container runtimes.
+- CRI is an API allows the `kubelet` to communicate with different container runtimes.
 - In simple terms, it's a standardized plug that lets Kubernetes use any container runtime that supports the standard, without needing to have code specific to that runtime built into the project.
 ![[image-25.png]]
 ## Container runtime

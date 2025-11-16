@@ -1,8 +1,9 @@
 # Architecture
 ## High level view
 - K8s is a cluster of compute systems categorized by their distinct roles:
-- [[control-plane| Control plan nodes]]
-- [[worker-node|Worker nodes]] (more then 1 worker nodes is optional but recommended)
+	- [[control-plane|Control plan nodes]]
+	- [[worker-node|Worker nodes]] (more then 1 worker nodes is optional but recommended)
+
 ![[Pasted image 20240324113009.png]]
 ![[Pasted image 20240402220058.png]]
 ## Network challenges

@@ -1,4 +1,4 @@
-- [[docker-map|Docker]]
+- [[docker|Docker]]
 - [[Technical/DevOps/kubernetes/kubernetes|kubernetes]]
 - [[Azure]]
 - [[AWS]]
