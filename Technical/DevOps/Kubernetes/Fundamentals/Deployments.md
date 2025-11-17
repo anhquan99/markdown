@@ -1,7 +1,7 @@
 # Deployments
-- Deployment objects provide declarative updates to Pods and ReplicaSets.
+- Deployment objects provide declarative updates to Pods and ReplicaSets. The deployment use ReplicaSets to manage the desired number of replicas of a pod.
 - As a part of the control plane node's controller manager, it ensures that the current state always matches the desired state of our running containerized application.
--  Allows for seamless application updates and rollbacks, known as the default **RollingUpdate** strategy, through **rollouts** and **rollbacks**, and it directly manages its ReplicaSets for application scaling. It also supports a disruptive, less popular update strategy, known as **Recreate**.
+- Allows for seamless application updates and rollbacks, known as the default **RollingUpdate** strategy, through **rollouts** and **rollbacks**, and it directly manages its ReplicaSets for application scaling. It also supports a disruptive, less popular update strategy, known as **Recreate**.
 ```YAML
 apiVersion: apps/v1  
 kind: Deployment  
