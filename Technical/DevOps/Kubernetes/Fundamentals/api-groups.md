@@ -7,6 +7,6 @@
 - `/metrics`
 - `/healthz`
 - `/version`
-- `/api`: core group where all core functionality exists
+- `/api`: core group, where all core functionality exists
 - `/apis`: newer features are going through these named groups
 - `/logs`
