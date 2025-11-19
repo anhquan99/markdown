@@ -8,4 +8,4 @@
     VPA automatically sets Container resource requirements (CPU and memory) in a Pod and dynamically adjusts them in runtime, based on historical utilization data, current resource availability and real-time events. Increase resource by evicting a pod to change resource limit.
 
 - **[Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler)**  
-    Cluster Autoscaler automatically [re-sizes the Kubernetes cluster](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md) when there are insufficient resources available for new Pods expecting to be scheduled or when there are underutilized nodes in the cluster.
+    Cluster Autoscaler automatically [re-sizes the Kubernetes cluster](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md) when there are insufficient resources available for new Pods expecting to be scheduled or when there are underutilized nodes in the cluster. Increase resource by adding new nodes to the cluster. 
