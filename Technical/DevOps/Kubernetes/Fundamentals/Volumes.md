@@ -5,6 +5,11 @@
 - Supports many different drivers and types.
 - Volumes are not necessarily persistent.
 - Volumes survive container restarts and removals.
+## Drivers
+### Storage driver
+- Store image layers and container writeable layer.
+### Volume driver
+- Used for persistent container application data.
 ## Types
 - `emptyDir`: an empty volume is created for Pod as soon as it is scheduled on the worker node. Its life is tightly coupled with the Pod.
 - `hostPath`: share a directory between the host and the Pod. If the Pod is terminated, the content of the volume is still available on the host.
