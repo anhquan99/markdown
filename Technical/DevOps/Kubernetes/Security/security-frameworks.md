@@ -16,7 +16,7 @@
 - **Information Disclosure:** Releasing sensitive information to unauthorized parties.
 - **Denial of Service:** Preventing legitimate users from accessing the system.
 - **Elevation of Privilege:** Granting a user or process more access than they are authorized for.
-#### MITRE ATT&CK
+### MITRE ATT&CK
 - A globally accessible knowledge base of adversary tactics, techniques, and procedures (TTPs) based on real-world cyber-attack.
 #### Categories
 - **Initial access:** how attackers enter the cluster.
