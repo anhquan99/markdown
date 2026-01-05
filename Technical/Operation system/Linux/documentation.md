@@ -1,4 +1,4 @@
-# Linux documentation
+ # Linux documentation
 ![[Pasted image 20241125070322.png]]
 - Sources:
 	- The man pages (short for manual pages)

@@ -45,3 +45,7 @@ chmod 755 <file>
 - Particular privileges can be granted to specific users or groups of users when accessing certain objects or classes of objects. Files and directories can be shared without using 777 permissions.
 - While the Linux kernel enables the use of ACLs, it still must be implemented as well in the particular filesystem. All major filesystems used in modern Linux distributions incorporate the ACL extensions, and one can use the gitoption `-acl` when mounting. A default set of ACLs is created at system install.
 - Use `getfacl/setfacl` to get/set ACLs.
+## Commands
+### List files and directories
+- `ls`: **l**i**s**t
+	- 

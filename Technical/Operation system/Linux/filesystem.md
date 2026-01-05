@@ -3,9 +3,14 @@
 - Files and their names are an abstraction camouflaging the physical I/O layer. Directly writing to disk from the command line (ignoring the filesystem layer) is very dangerous and is usually only done by low-level operating system software and not by user applications. An exception is some very high-end software such as enterprise data bases that do such **cmd** access to skip filesystem-related latency.
 - Multiple filesystems may be (usually are) merged together into a single tree structure. Linux uses a virtual filesystem layer (VFS) to communicate with the filesystem software.
 - Local filesystems generally reside within a disk partition which can be a physical partition on a disk, or a logical partition controlled by a Logical Volume Manager (LVM).
+### Types
+- Absolute path: starts with a root directory and then the sub directory
+- Current / Working directory
+	- `pwd`: **p**rint **w**orking **d**irectory
+	- `cd`: **c**hange **d**irectory
 ## Inodes
 - An inode is a data structure on disk that describes and stores file attributes, including its location.
-- The inocde is used by the operating system to keep track of properties such as location, file attributes (permissions, ownership, etc.), access time and other items.
+- The inode is used by the operating system to keep track of properties such as location, file attributes (permissions, ownership, etc.), access time and other items.
 - Inodes describe and store information about a file, including:
 	- Permissions​
 	- User and group ownership​
@@ -203,3 +208,20 @@ rsync can be very dewstructive. Accidental misuse can do a lot of harm to data 
 ### `dd` (disk-to-disk copying)
 - The `dd` program is very useful for making copies of raw disk space.
 - An exact copy of the first disk device is created on the second disk device. It will delete everything that previously existed on the second disk
+## Commands
+### `cd`
+```shell
+cd / # go to root directory
+cd - # go to previous directory
+cd # go to home directory
+```
+### `cp`
+- Stand for **c**o**p**y, `cp [source] [destination]`
+```shell
+cp -r source dest # copy recursive
+```
+### `mv`
+- **M**o**v**e, `mv source dest`
+### `rm`
+- **R**e**m**ove, `rm folder`
+- Use `-r` to recursive remove child folder.
