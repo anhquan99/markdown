@@ -9,6 +9,8 @@
 	- `pwd`: **p**rint **w**orking **d**irectory
 	- `cd`: **c**hange **d**irectory
 ## Inodes
+- A file might have blocks of data scattered all over the disk, but the inodes remember where all data are stored.
+- The file points to the inode, and the inode points to all the blocks of data that we require. And the inode is hard linked to the file.
 - An inode is a data structure on disk that describes and stores file attributes, including its location.
 - The inode is used by the operating system to keep track of properties such as location, file attributes (permissions, ownership, etc.), access time and other items.
 - Inodes describe and store information about a file, including:
@@ -26,10 +28,20 @@ Filenames are not stored in the inode; they are stored in the direcroty.
 - Hard links point to an inode. They are made by using `In` without an option.
 - All hard linked files have to be on the same filesystem.
 - Changing the content of a hard linked file in 1 place may not change it in other places.
+- If there is no link to the inode, it will be deleted.
+#### Limitations
+- Only hard link to files, not folders.
+- Only hard link to files on the same filesystem.
+#### Considerations
+- Make sure to have the proper permissions to create the link file at the destination.
+- Make sure all users involved have the required permissions to access that file.
 ### Soft links
-- Soft (or symbolic) links point to a file name which has an associated inode.
+- Soft (or symbolic) links point to a file name which has an associated inode. Another way to understand this is soft link points to the path of a file.
 - Soft linked files may be on different filesystems.
 - If the target does not yet exist or is not yet mounted, it can be dangling.
+- Permission on the soft link do not matter.
+- You can soft link to files and folders.
+- A soft link hard link to files on the different filesystem.
 ## Virtual Filesystem (VFS)
 - When an application needs to access a file, it interacts with the VFS abstraction layer, which then translates the I/O system calls into specific code relevant to particular actual filesystem.
 ## Journaling filesystems
