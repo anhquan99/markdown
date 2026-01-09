@@ -67,15 +67,51 @@ mv
 #### find
 - Finds recursive down the filesystem tree from any particular directory (or set of directories) and locates files that match specified conditions.
 ```shell
+# find [/path/to/dir] [search parameters]
+#      Go there        Find it
 find /usr -name gcc # find files and directories
 find /usr -type d -name gcc # find directory
 find /usr -type f -name gcc # find file
+
+find -name filename # search current directory
+
+find -name filename # case sensitive
+find -iname filename # case insensitive
+find -name 'f*' # find file name start with f
+
+# find -mmin [minutes] - find modified minute
+find -mmin 5 # Exactly 5 minutes ago
+find -mmin -5 # Less than 5 minutes ago
+find -mmin +5 # More than 5 minutes ago
+find -mtime 2 # 24 hour periods
+
+find -ctime [minutes] # change time
+
+# find -size [size] - find file with size
+find -size 512k
+find -size -512k
+find -size +512k
+
+find -name "f*" -size 512k # AND operator
+find -name "f*" -o -size 512k # OR operator
+
+find -not -name "f*" # NOT operator
+find \! -name "f*" # alternate NOT operator
+
+find -perm 664 # find files with exactly 664 permissions
+find -perm -664 # find files with least 664 permissions
+find -perm /664 # find files with any of these permissions
+find -perm u=rw,g=rw,o=r # alternate way
 
 # find and remove all files end with .swp 
 # the {} is a placeholder that will be filled with all the file names that result from the expression, and the preceding command will be run on each one individually
 # you have to end the command with either '**;'** (including the single-quotes) or **\;**. Both forms are fine.
 find -name '*.swp' -exec rm {} ';'
 ```
+- Modification = Create or Edit
+- Modified Time != Change Time
+	- Modified time: the time when the content was changed
+	- Change time: the time when the metadata was changed
 #### Wildcards and matching filenames
 | Wildcard | Result                                             |
 | -------- | -------------------------------------------------- |
