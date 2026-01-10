@@ -77,3 +77,9 @@ diff -c file1 file2 # show context
 diff -y file1 file2 # show side by side
 sdiff file1 file2 # same command
 ```
+## Pager
+- Open a file in a pager (view with pages)
+- Tools:  `less`, `more`
+- To search for a word enter `/[word to find]`
+	- To move next to next search press `n` key, to move back press `N`.
+	- To ignore case-sensitive use `-I` option.

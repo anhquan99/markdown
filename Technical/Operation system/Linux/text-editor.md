@@ -1,4 +1,7 @@
 # Text Editor
+## Vim
+- To find a term with case-insensitive use backslash with `c`: `/{term}\c`.
+- To go to line number use `:{line number}`.
 ## Without editor
 ### `echo`
 - Use `echo >` will send the output of a command to a file.
@@ -11,3 +14,4 @@ cat << EOF > myfile
 > line three  
 > EOF  
 ```
+

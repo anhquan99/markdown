@@ -62,9 +62,63 @@ sort -k 3 <filename> # sort the lines by the 3rd field on each line
 ## `grep`
 - `grep` is extensively used as a primary text searching tool.
 ```shell
+# grep [options] 'search pattern' file/directory
 grep -C 10 # get 10 line before and after
 grep -e "need_to_find_1" -e "need_to_find_2" # multiple search 
 
+grep -i 'search word' file # case-insentisive
+grep -r 'term' dir # search directory with recusrive
+sudo grep -ri --color 'term' system_dir # search system dir with color
+grep -vi 'term' dir # inverted search - search for lines don't contain the text term with -v option
+grep -wi 'password' /dir # search only for exactly word password without extra letter before or after it
+grep -oi 'password' /dir # only matching result means return password only without context, usually for data process
+```
+### Regex
+- There is a `egrep` is regex grep.
+```shell
+# use ^ in the search pattern to search for lines start with the pattern
+grep '^etc' /dir # start with etc 
+
+# USE $ in the search pattern to search for the lines end with the pattern
+grep 'nat$' somefile.txt
+
+# Math any 1 character
+grep -r 'c.t' /dir
+grep -wr 'c.t' /dir # search for exactly c.t
+
+# special characters use '\'
+grep '.' /dir # match all characters because '.' is special character
+grep '\.' /dir # will match '.' character
+
+# match the previous element 0 or more times
+grep -r 'te*' /dir
+# match the previous element 1 or more times
+grep -r 'te\+' /dir
+# in basic regex the special character lose their special meaning
+# with extended regex
+grep -Er 'te+' /dir 
+# with egrep
+egrep -r 'te+' /dir
+
+# previous element can exist n times
+egrep -r '0{3,}' /dir # at least 3 times and no limit
+egrep -r '0{,3}' /dir # at least 1 time and 3 times
+egrep -r '0{3}' /dir # exactly 3 times
+
+# make the previous element optional
+egrep -r 'disabled?' /dir # math disable or disabled or disables
+
+# match with or operator
+egrep -r 'enabled|disabled' /dir
+
+# range or set: [a-z] [A-Z]
+egrep -r 'c[au]t' /dir # match cat or cut
+
+# subepxression
+egrep -r '/dev/([a-z]*[0-9]?)*' /dir
+
+# negated ranges or sets
+egrep -r 'https[^:]' /dir # negate the https:
 ```
 ## `tr`
 - Used to translate specified characters into other characters or to delete them.
