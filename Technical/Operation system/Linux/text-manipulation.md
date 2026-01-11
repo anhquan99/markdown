@@ -23,7 +23,7 @@ sed -i 's/[search text]/[replace text]/g' filename
 - Extract positioned column in a file
 ```shell
 # cut -d '[delimiter]' -f [column number] filename
-cut -d ',' -f test.txt
+cut -d ',' -f 1 test.txt
 ```
 ### `uniq`
 - Unique a content of a file by rows

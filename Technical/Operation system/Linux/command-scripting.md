@@ -102,6 +102,7 @@ done
 - Usage `<bash-file> 2> <outputfile>`.
 ```bash
 ./test.sh 2> error.log # output the error to error.log file
+grep -r 'test' dir 1> result 2>&1 # error message mix with standard message 
 ```
 ## Create temporary files and directories
 - Use `mktemp` to create temporary files or directories (with `-d` option).
