@@ -70,3 +70,28 @@
   - Do you need kernel customization from the vendor or a third party?
   - What hardware are you running on? For example, it might be **X86**, **RISC-V**, **ARM**, **PPC**, etc.
   - Do you need long-term stability? Or can you accept (or need) a more volatile cutting-edge system running the latest software versions?
+## Commands
+### `systemctl`
+- Stand for **System** **C**on**t**ro**l**.
+```sh
+# reboot
+systemctl reboot
+systemctl reboot --force # force reboot
+systemctl reboot --force --force  # like pressing restart button
+
+# shutdown
+systemctl poweroff
+shutdown 02:00 # scheduled shutdown
+shutdown +15 # shutdown after 15 mins
+shutdown -r +1 # shutdown and reboot
+shutdown -r +1 'wall message' # shutdown with message
+```
+- `systemctl get-default` get default target of `systemd`, which mean the program is called when the system is booted. Targets:
+	- `graphical.target`: graphical interface
+	- `emergency.target`: load up as few programs as possible
+	- `rescue.target`: load more programs than emergency but fewer than graphical
+```shell
+systemctl set-default multi-user.target # set boot with all of its daemons but the graphical interface is skipped
+# to boot back with the graphical interface
+systemctl isolate graphical.target
+```
