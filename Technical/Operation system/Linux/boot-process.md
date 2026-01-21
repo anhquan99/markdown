@@ -42,11 +42,28 @@
 	- `Upstart`
 	- `systemd`
 # `systemd`
+- `systemd` is called systemd units. A collection of tools, components, and applications that responsible for system initialization and monitoring the system as a whole to ensure smooth operation. 
 - `systemd` start up faster than those with earlier `init` methods because it replaces a serialized set of steps with aggressive parallelization techniques, which permits multiple services to be initiated simultaneously.
 - `/sbin/init` points to `/lib/systemd/systemd`.
 - System unit files: `/etc/systemd/system` and `/lib/systemd/system`.
 - User unit files: `/etc/systemd/user` and `~/.config/systemd/user`.
+- Units:
+	- Service
+	- Socket
+	- Device
+	- Timerw
+- If the status of the service is enabled then service is started when the system boots. If it is disabled then the service can still run manually, but it will not start when the system boots.
+- When changing the config of a service, and it is running. The old config still applies to the running service. You can `restart` the service, but it will make disruption to other people who are using it, to prevent this you can use `reload` to gracefully restart the service.
+- 
 # Filesystems
+## Analogy
+- A single page is just a small piece of data (a "block"). To create a **book (a File)**, the **Filesystem (the Librarian)** gathers several related pages together, binds them in a specific order, and gives them a title.
+- To make the analogy complete, look at it this way:
+	- **The Data (Pages):** Individual pieces of information.
+	- **The File (The Book):** A collection of those pages that make sense together (like a photo or a document).
+	- **The Folder (The Section):** The "Science" or "History" section where multiple books are kept together.
+	- **The Filesystem (The Librarian & Index):** The system that knows which book is on which shelf and how to find it using the title.
+## Structure
 - Linux uses the `/` character to separate paths and does not have drive letters.
   ![[Pasted image 20241109161937.png]]
   # Choosing a Linux Distro
@@ -94,4 +111,19 @@ shutdown -r +1 'wall message' # shutdown with message
 systemctl set-default multi-user.target # set boot with all of its daemons but the graphical interface is skipped
 # to boot back with the graphical interface
 systemctl isolate graphical.target
+
+# get service file
+systemctl cat ssh.service
+# edit service
+sudo systemctl edit --full ssh.service
+#reset to factory
+sudo systemctl revert ssh.service
+# check the service is enable
+systemctl is-enabled ssh.service
+# enable and auto start the service, also apply to disable
+sudo systemctl enable --now ssh.service
+# disable service from starting even manual
+sudo systemctl mask ssh.service
+# list service
+sudo systemctl list-units --type service --all
 ```
