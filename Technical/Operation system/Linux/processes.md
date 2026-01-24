@@ -114,6 +114,9 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 	- `aux` displays all processes of all users
 	- `axo` specify which attributes you want to view
 - `pmem`: Ratio of the process's resident set size to the physical memory on the machine, expressed as a percentage
+- % CPU shows how much the CPU is used by the process, 100% means the process entire capacity 1 CPU core is used.
+- Time shows how much time is used by the process. To get 1 second of CPU, the process needs to use 100% of CPU in 1 second. If it uses 50% of 1 CPU for 10 seconds then the time usage of the process is 5 seconds.
+- The processes wrapped with square brackets are kernel processes run inside a privileged area in the kernel, which is managed kernel internally.
 ### `pstree`
 - Displays the processes running on the system in the form of a tree diagram.
 ### `top`
