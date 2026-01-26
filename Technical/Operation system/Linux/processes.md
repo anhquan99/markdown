@@ -171,9 +171,61 @@ pgrep -a syslog # a option is to show all process with name syslog
 	- User can modify but cannot exceed the hard limit
 	- `ulimit -S -n`
 ### Start processes in the future
-- Use `at` to execute any non-interactive command at a specified time.
-- `cron` is a time-based scheduling utility program.
+#### `at`
+- Use `at` to execute any non-interactive command at a specified time **once**.
+- To see what jobs are currently scheduled to run with `at`, use `atq`.
+- To see detail of a job scheduled to run with `at`, use `atq -c {job_id}`.
+- To remove a job scheduled to run with `at`, use `atrm {job_id}`.
+#### `cron`
+- `cron` is a time-based scheduling utility program well suited for repetitive jobs that execute once every few minutes, hours, day or specific time.
+- Alternative way to setup `cron` is though special directory:
+	- `/etc/cron.hourly`
+	- `/etc/cron.daily`
+	- `/etc/cron.weekly`
+	- `/etc/cron.monthly`
+- Step for setup script to special folder:
+```shell
+# 1. create script
+touch script # don't use extension
+
+# 2. cp script to special folder
+sudo cp script /etc/cron.daily
+
+# 3.set permission to ensure it is execuable
+sudo chmod +rx /etc/cron.daily/script
+```
+- Can be found in the `/etc/crontab`.
+	- `*`: match all possible values
+	- `;`: match multiple value
+	- `-`: range of value (ex: 2-4)
+	- `/`: specifies step (ex: \*/4)
+```shell
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+
+
+# see crontab of the current user
+crontab -l
+
+# edit crontab of different user
+sudo crontab -e -u other_user
+
+# remove crontab
+crontab -r
+```
+#### `anacorn`
 - `anacorn` has replaced `cron` on modern system. If the machine was powered off, scheduled jobs would not run, `anacorn` will run the necessary jobs in a controlled and staggered manner when the system is up and running.
+	- It can only run jobs every day(s), week, month, year not hour or minute.
+	- If the machine was powered off, the `anacorn` will check for that job that has been run yet and run that job if it was not run.
+- To schedule a job with `anacron`, edit the `/etc/anacrontab` file.
+- To verify the job is correct, use `anacron -T`.
+#### `sleep`
 - `sleep` command is used to delay or suspend a job.
 ## Basic troubleshooting techniques
 - Characterize the problem
