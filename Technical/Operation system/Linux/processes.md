@@ -56,7 +56,7 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 	- Subsequent processes are forked from init or other running processes
 	- Forking from a parent produces a child process, in every way a equal and a peer of the parent
 	- If the parent dies, the child is "adopted" by init
-	- There are also kernel-created processes; these have names sur- rounded by **[..]** in the output from **ps**
+	- There are also kernel-created processes; these have names surrounded by **[..]** in the output from **ps**
 ### Creating processes in a Command shell
 - Steps:
 	- A new process is created (forked from the user's login shell)
@@ -69,9 +69,16 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 ## Terminate a process
 - Use command `kill -SIGKILL pid` or `kill -9 pid`.
 - You can only kill your own processes.
+- List all the kill signals: `kill -l`
+- Command variants:
+	- `kill -{number}`
+	- `kill -{fullname}`
+	- `kill -{shortname}`
+- Terminate a process with name using `pkill`.
+	- Ex: `pkill -KILL bash`
 ## User and Groups IDs
 - Many users can access a system simultaneously, and each user can run multiple processes. The OS identifies the user who starts the process by the Real User ID (RUID) assigned to the user or Real Group ID (RGID).
-## Priorities
+## Priorities - Process niceness
 - The priority for a process can be set by specifying a **nice value**, or niceness. The lower the nice value, the higher the priority.
 - The -20 is the highest priority and +19 is the lowest.
 - You can assign a real-time priority to time-sensitive task.
@@ -91,7 +98,7 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 - Foreground process is executed directly in the foreground, other jobs will have to wait as this process is completed.
 - You can put job in the background by suffixing `&`.
 - You can use **`CTRL-Z`** to suspend a foreground job and **`CTRL-C`** to terminate it.
-- **`bg`** command for suspend process in the background and **`fg`** command to run a background process in the foreground.
+- **`bg`** command is used to put process in the background and **`fg`** command to bring a background process into the foreground.
 - `jobs` utility displays all jobs running in the background or the `jobs -l` for more detailed. The background jobs are connected to the terminal window, so if you log off, the `jobs` will not show the ones started from that window.
 ## Process status command
 | Tool         | Purpose                                                                                                                                         |
@@ -105,6 +112,7 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 | **sar**      | Display and collect information about system activity                                                                                           |
 | **numastat** | Information about NUMA (Non-Uniform Memory Architecture)                                                                                        |
 | **strace**   | - Information about all system calls a process makes<br>- Log and display signals received by a process<br>- Diagnostic, learning and debugging |
+| **lsof**     | List Open Files command display directory is in-use by process, user, ...                                                                       |
 ### `ps`
 - System V Style:
 	- `-u` displays information of processes for a specified username
@@ -117,11 +125,21 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 - % CPU shows how much the CPU is used by the process, 100% means the process entire capacity 1 CPU core is used.
 - Time shows how much time is used by the process. To get 1 second of CPU, the process needs to use 100% of CPU in 1 second. If it uses 50% of 1 CPU for 10 seconds then the time usage of the process is 5 seconds.
 - The processes wrapped with square brackets are kernel processes run inside a privileged area in the kernel, which is managed kernel internally.
+```shell
+# u option to show user oriented format
+ps u
+# -U option to filter user
+ps -U username
+# l option to more detail, l is for long
+ps lax
+# f for forest display
+ps fax
+```
 ### `pstree`
 - Displays the processes running on the system in the form of a tree diagram.
 ### `top`
 - Helps user monitor the system performance live over time with constant real-time updates (2 seconds by default).
-- The first line displays: up time, number user logged on, load average.
+- The first line displays: uptime, number user logged on, load average.
 - The second line displays: total number of processes, number of running, sleeping, stopped, and zombie process.
 - The third line displays: indicates how the CPU time is being divided between the users (**us**) and the kernel (**sy**) by displaying the percentage of CPU time used for each.
 - The fourth and fifth lines display: memory usage (physical memory - RAM and swap space)
@@ -134,10 +152,20 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 	- **%CPU** and **%MEM** used
 	- Execution time (**TIME+**)
 	- **COMMAND**
-## `ulimit`
+### `pgrep`
+- Process grep is used to filter process with name.
+```shell
+pgrep -a syslog # a option is to show all process with name syslog
+```
+### `nice`
+- Launch a process with pre-set nice value: `nice - n [Nice Value] [Command]`.
+- To assign lower value - higher priority, the root privilege is required.
+### `renice`
+- Assign new niceness value to a running process: `renice [New Nice Value] [PID]`.
+### `ulimit`
 - A built-in bash command that displays or resets process resource limits.
 - Changes would affect the current shell. To make it affect all users, modify `/etc/security/limits.conf` and then reboot.
-### Types
+#### Types
 - Hard limit `ulimit -H -n`.
 - Soft limit:
 	- User can modify but cannot exceed the hard limit
