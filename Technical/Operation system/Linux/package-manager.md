@@ -1,4 +1,7 @@
 # Package Manager
+## Package
+- An archive containing the files needed by a piece of software.
+- It may include binaries, configuration files, documentation, etc.
 ## Package types
 - **Binary packages**: contains files for deployment, including executable files and binaries. These are architecture-dependent.
 - **Source packages**: are used to generate binary packages; one should always be able to rebuild a binary package from the source package. One source package can be used for multiple architectures.
@@ -8,7 +11,7 @@
 
 ![[Pasted image 20241110130753.png|200]]
 ### `dpkg`
-- `dpkg` is the underlying package manager the Debian family, which used for install, remove, and build packages but it does not automatically download and install packages and satisfy their dependencies.
+- `dpkg` is the underlying package manager the Debian family, which used for install, remove, and build packages, but it does not automatically download and install packages and satisfy their dependencies.
 ```bash
 dpkg -s dpkg | grep -i version # see what version of a particular package is installed
 sudo dpkg -V # verify all packages on the system
@@ -19,6 +22,7 @@ dpkg -s wget # show information about an installed package
 sudo dpkg -i <package-name>.deb # install or upgrade package
 sudo dpkg -r package # remove installed package
 sudo dpkg -P package # remove installed package, including its config files. P stand for purge
+dpkg --listfiles <package> # list file in the package
 ```
 ### `apt`
 - Higher-level package management system is the Advanced Package Tool (APT) system.
@@ -32,6 +36,7 @@ apt search <package-file-name> # Search the repository for a file name
 apt list <package> # list all files in package
 apt install <package>
 apt remove <package>
+apt autremove <package> # remove all dependency
 sudo apt --pruge remove <package>
 apt update # sync package index files with their source. The indexes of available packages are fetched from the location(s) specified in /etc/apt/sources.list
 sudo apt upgrade # upgrade installed packages
@@ -40,6 +45,18 @@ sudo apt autoremove # gets rid of any packages not needed anymore, such as older
 sudo apt clean # cleans out cache files and any archived package files that have been installed
 ```
 - `apt full-upgrade` (the correct equivalent for `apt-get dist-upgrade`) applies package upgrades as well if they require either the installation of new packages or the removal of conflicting installed packages. Basically it will apply all package upgrades including those with changed dependencies.
+- The configuration for package is in the `/etc/apt/source.list` or `/etc/apt/sources.list.d/ubuntu/sources` for later version.
+```shell
+Types: deb # tell the package manager expect Debian packages in this repository
+URIs: http://archive.ubuntu.com/ubuntu # where the package manager to look for package
+Suites: noble noble-updates noble-backports # suite a set of packages that are associated with a specific release or version of the distribution
+Components: main universe restricted multiverse # components are categories of packages that are grouped together based on their licensing, functionality, or other criteria
+# main: contains free, open-source software and officially supported by Ubuntu
+# restricted: free and open-source software, but they may have some restrictions on their use or redistribution
+# universe: free and open-source software, but not officially supported by Ubuntu
+# multiverse: not free and open-source
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg # public key to verify the package has not been modified
+```
 ## Red Hat Package Manager (RPM)
 ![[Pasted image 20241110131120.png|200]]
 ### `rmp`
