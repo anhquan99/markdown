@@ -23,6 +23,7 @@ sudo dpkg -i <package-name>.deb # install or upgrade package
 sudo dpkg -r package # remove installed package
 sudo dpkg -P package # remove installed package, including its config files. P stand for purge
 dpkg --listfiles <package> # list file in the package
+dpkg --search <component> # search for the package which contain the component
 ```
 ### `apt`
 - Higher-level package management system is the Advanced Package Tool (APT) system.
@@ -36,7 +37,7 @@ apt search <package-file-name> # Search the repository for a file name
 apt list <package> # list all files in package
 apt install <package>
 apt remove <package>
-apt autremove <package> # remove all dependency
+apt autoremove <package> # remove all dependency
 sudo apt --pruge remove <package>
 apt update # sync package index files with their source. The indexes of available packages are fetched from the location(s) specified in /etc/apt/sources.list
 sudo apt upgrade # upgrade installed packages
