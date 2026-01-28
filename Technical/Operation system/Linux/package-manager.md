@@ -57,6 +57,41 @@ Components: main universe restricted multiverse # components are categories of p
 # multiverse: not free and open-source
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg # public key to verify the package has not been modified
 ```
+### Add new source package to package manager
+```shell
+# 1. download the public key of the repo
+curl "url" -o key_name.key
+
+# 2. Dearmoring the key. It means transform the key from text format to binary format so the package manager can understand
+gpg --dearmor key_name.key # return a file with gpg extensions
+
+# 3. Move the key to the etc apt keyrings directory
+mv key_name.gpg /etc/apt/keyrings/
+
+# 4. The the ne source package to apt configuration
+# there are 2 solutions:
+# first solution is to add the configuration to the file sources.list . The down side of this solution is the configuration file will become large overtime and hard to manage
+# second solution is to add new configuration to folder sources.list.d . This solution is better than the first solution, each source package will have their own config file. But the syntax is legacy.
+# syntax for the second solution:
+deb /path/to/the/keyring url suites
+
+# 5. update package manager db
+sudo apt update
+```
+### PPA
+- Stand for Personal Package Archive.
+- It simplify the whole process of adding a third-party repository.
+- Allow to create your own repository.
+```shell
+# add PPA
+sudo add-apt-repository ppa:{username}/{repository}
+
+# list ppa
+add-apt-repository --list
+
+# remove 
+sudo add-apt-repository --remove ppa:{username}/{repository}
+```
 ## Red Hat Package Manager (RPM)
 ![[Pasted image 20241110131120.png|200]]
 ### `rmp`
