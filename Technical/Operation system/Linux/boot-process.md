@@ -126,4 +126,7 @@ sudo systemctl enable --now ssh.service
 sudo systemctl mask ssh.service
 # list service
 sudo systemctl list-units --type service --all
+
+# list dependencies
+systemctl list-dependencies 
 ```

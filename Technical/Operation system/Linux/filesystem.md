@@ -237,3 +237,32 @@ cp -r source dest # copy recursive
 ### `rm`
 - **R**e**m**ove, `rm folder`
 - Use `-r` to recursive remove child folder.
+### `df`
+- **D**isk **F**ree
+- Use `-h` for human-readable size format.
+- The folder `/tmpfs` is a virtual file system that only exist in the computer's memory.
+- The folder `boot` is where the boot files are installed.
+```
+Example:
+tmpfs           191M  988K  190M   1% /run
+/dev/vda1        19G  5.2G   14G  29% /
+tmpfs           952M   84K  952M   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/vda16      881M  117M  703M  15% /boot
+/dev/vda15      105M  6.2M   99M   6% /boot/efi
+```
+### `du`
+- **D**isk **U**sage.
+- Options:
+	- `s`: summerise
+	- `h`: humman readable size format
+### `xfs_repair`
+- Verify the integrity of xfs filesystem.
+```shell
+sudo xfs_repair -v /dev/vda1
+```
+### `fsck.ext4`
+- Verify the integrity of ext4 filesystem.
+```shell
+sudo fsck.ext4 -v -f -p /dev/vdb2
+```

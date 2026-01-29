@@ -43,4 +43,20 @@
 	- **2**: Turn off overcommission. Memory requests will fail when the total memory commit reaches the size of the swap space plus a configurable percentage (50 by default) of RAM. This factor is modified changing `/proc/sys/vm/overcommit_ ratio`.
 - Process selection depends on a **badness** value, which can be read from `/proc/[pid]/oom_score` for each process.
 - Adjustments can be made to a process’s `oom_adj_score` in the same directory for each task.
- 
+## Command
+### `free`
+- The column free is truly empty space.
+- The column available is empty space and space being used for "speed-up" tasks that can be cleared instantly.
+### `uptime`
+- Load average:
+	- The first number is the load average for the last 1 minute.
+	- The first number is the load average for the last 5 minute.
+	- The first number is the load average for the last 15 minute.
+```shell
+ubuntu:~$ uptime
+ 08:49:58 up 10 min,  0 user,  load average: 0.00, 0.00, 0.00
+```
+### `lscp`
+- Show details of CPU.
+### `lspci`
+- Show detail of hardware of the system.
