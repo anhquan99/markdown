@@ -13,8 +13,8 @@
 - Can be found in the `grub.cfg` file in a subdirectory under `boot`, such as `/boot/grub`, or in a place like `/boot/efi/EFI/centos/grub.cfg`.
 - Everything after the `vmlinuz` file specified is an option. Any options not understood by the kernel will be passed to init (pid = 1), the first user process to be run on the system.
 ## Boot process failures
-### No bootloader screen
-- Check for GRUB misconfiguration or a corrupt boot sector. Bootloader re-install needed?
+### No boot loader screen
+- Check for GRUB misconfiguration or a corrupt boot sector. Boot loader re-install needed?
 ### Kernel fails to load
 - Most likely a misconfigured or corrupt kernel, or incorrect kernel boot parameters in the GRUB configuration file.
 - You can re-install the kernel, or enter into the interactive GRUB menu at boot and use very minimal command line parameters and try to fix that way, or you can try booting into rescue image, depending on which.
@@ -30,6 +30,7 @@
 - The `sysctl` interface can be used to read and tune kernel parameters at runtime.
 - The value of the `sysctl` is corresponding to a particular pseudofile residing under `/proc/sys`.
 - If settings are placed in the `/etc/sysctl.conf` file, these can be fixed at boot time.
+- To make persistent change to the kernel parameters, add a file with extension with `.conf` to the folder `/etc/sysctl.d/`.
 ## Kernel modules
 - The Linux kernel makes extensive use of modules, which contain important software that can be dynamically loaded and unloaded as needed after the system starts.
 - Kernel modules are located in `/lib/modules/$(uname -r)`and can be compiled for specific kernel versions.
@@ -65,3 +66,9 @@
 - Different set of user ids used
 - User (0) inside one namespace can be different from user (0) inside another
 - Don't use the host-root user (0) inside a container
+## Command
+```shell
+sudo sysctl -a # show all kernel runtime parameters
+sudo sysctl -w {parameter} # write the parameter
+sydo sysctl {parameter} # read specific parameter
+```

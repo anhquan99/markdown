@@ -8,10 +8,13 @@
 ## SELinux
 - Developed by NSA (National Security Administration).
 - SELinux is a set of security rules that are used to determine which processes can access which files, directories, ports, and other items on the system.
+- Used for more fine grain permission policy.
+- SELinux need time to learn about normal activities in the system and then setup enforce policy.
 - 3 conceptual quantities:
 	- **Context**: these are labels to files, processes, and ports. Examples of contexts are SELinux user, role and type.
 	- **Rules**: they describe access control in terms of contexts, processes, files, ports, users, etc.
 	- **Policies**: they are a set of rules that describe what system-wide access control decisions should be made by SELinux.
+- Enable by default on Red Hat OS but not Ubuntu.
 ### Enforcement modes
 - These modes are selected in a file (usually `/etc/selinux/config`) whose location varies by distribution (`/etc/sysconfig/selinux`).
 #### Enforcing
@@ -34,10 +37,34 @@
 	- **MLS**: Multi-Level-Security policy, all processes are placed in fine-grained security domains with particular policies.
 ### Contexts
 - Contexts are labels applied to files, directories, ports, and processes. Those labels are used to describe access rules:
-	- User
+	- User: SELinux user, every user who logs into a Linux system is mapped to SELinux user.
 	- Role
-	- Type
-	- Level
+	- Type: like a protected software jail, the software can only do certain things and nothing else.
+	- Level: fit more complex org, restrict based on the level.
+```shell
+# check the permission of SELinux
+ls -Z
+unconfied_u:object_r:user_home_t:s0
+#  user       role     type      level
+
+# see the process permission of SELinux
+ps axZ
+
+id -Z
+sudo semanage login -l 
+sudo semanage user -l
+getenforce # get enforce level of SELinux
+sudo audit2why --all # get recorded audit log
+
+# after learning enough, SELinux can export events to a policy file with .pp extension 
+sudo audit2allow --all -M module_name
+e
+sudo setenforce 1
+```
+- Usage:
+	- Only certain users can enter certain roles and certain types.
+	- It lets authorized users and processes do their job, by granting the permissions they need.
+	- Authorized users and processes are allowed to take only a limited set of actions.
 #### Context inheritance
 - On SELinux-enabled systems, creating a file and moving it to another folder, will make the file can not be accessed with the incorrect context label.
 #### Utilities
@@ -50,6 +77,24 @@
 - Stores raw message in `/var/log/audit/audit.log`.
 - Mave messages to `/var/log/messages`.
 - Use `sealert` to see detailed messages.
+```shell
+# install and enable SELinux on Ubuntu
+
+# 1. disable AppArmor
+sudo systemctl stop apparmor.service
+sudo systemctl disable apparmor.service
+
+# 2. install selinux-basics audit
+sudo apt install selinux-basics audit
+
+# 3. enable selinux
+sudo selinux-activate
+sestatus # check status of SELinux
+cat /etc/default/grub # check for the SELinux is setup when booting
+ls -a / # check for the file autolabel is exist
+```
+### Domain
+- 
 ## AppArmor
 - An LSM alternative to SELinux.
 - AppArmor supplements the traditional UNIX Discretionary Access Control (DAC) model by providing Mandatory Access Control (MAC).
