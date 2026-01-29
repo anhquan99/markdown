@@ -255,7 +255,7 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 - **D**isk **U**sage.
 - Options:
 	- `s`: summerise
-	- `h`: humman readable size format
+	- `h`: human readable size format
 ### `xfs_repair`
 - Verify the integrity of xfs filesystem.
 ```shell
