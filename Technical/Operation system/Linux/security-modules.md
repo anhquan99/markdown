@@ -41,6 +41,7 @@
 	- Role
 	- Type: like a protected software jail, the software can only do certain things and nothing else.
 	- Level: fit more complex org, restrict based on the level.
+- SELinux can use boolean to allow or disallow a set of action.
 ```shell
 # check the permission of SELinux
 ls -Z
@@ -58,8 +59,40 @@ sudo audit2why --all # get recorded audit log
 
 # after learning enough, SELinux can export events to a policy file with .pp extension 
 sudo audit2allow --all -M module_name
-e
 sudo setenforce 1
+
+ps -eZ # show the process with SELinux domain
+# example result:
+system_u:system_r:sshd_t:s0    905 ?      00:00:00 sshd
+# an example of a SELinux policy
+allow sshd_t var_log_t:file { append create getattr ioctl open };
+# this policy allow the process with sshd_t domain to write to a file with var_log_t domain
+# you can check the domain of the log file with
+ls -Z /var/log/auth.log
+
+# change SELinux security context
+sudo chcon -{type} unfined_u /var/log/auth.log # type should be u-user, r-role, t-type
+
+# show SELinux user label
+seinfo -u
+# show SELinux role label
+seinfo -r
+# show SELinux type label
+seinfo -t
+
+# copy the label context from a file to other files
+sudo chcon --refernece=/var/log/dmesg /var/log/auth.log
+# restore label files and directories recusively with SELinux suggested - restore context
+sudo restorecon -R /var/www/
+# force restore all label
+sudo restorecon -F -R /var/www/
+
+# change default context of a file even if the restore context command is run, you need to restore it again this command does not execute the restore label
+sudo semanage fcontext --add --type var_log_t /var/www/10
+# list all files or directories of semanage
+sudo semanage fcontext --list
+# change default context of files in directories with regex
+sudo semanage fcontext --add --type nfs_t "/nfs/shares(/.*)?"
 ```
 - Usage:
 	- Only certain users can enter certain roles and certain types.
@@ -92,6 +125,19 @@ sudo selinux-activate
 sestatus # check status of SELinux
 cat /etc/default/grub # check for the SELinux is setup when booting
 ls -a / # check for the file autolabel is exist
+
+# show boolean list
+sudo semanage boolean --list
+# enable SELinux boolean
+sudo setsebool virt_use_nfs 1
+# get SELinux bool value
+getsebool virt_use_nfs
+# get allowed ports
+sudo semanage port --list
+# allow port
+sudo semanage port --add --type ssh_port_t --proto tcp 2222
+# delete allowed port
+sudo semanage port --delete --type ssh_port_t --proto tcp 2222
 ```
 ### Domain
 - 
