@@ -24,7 +24,7 @@
 	- Set ID for user with `--uid {id}`
 	- Create a system account with option `--system --no-create-home`.
 - `passwd` to change user password.
-- Use `userdel` to remove user, this will leave the `/home/<user>` directory intact, the `--remove-home` option helps remove the user directory while removing user account.
+- Use `userdel` to remove user, this will leave the `/home/<user>` directory intact, the `-r` option helps remove the user directory while removing user account.
 - Use `id` to show information of the current user.
 - Use `groupadd` to add new group.
 - Use `groupdel` to remove a group.
@@ -32,8 +32,8 @@
 	- Use `--move-home {directory}` to modify the directory of user or `usermod -d {directory} -m {user}`
 	- Use `--login {new-username} {current-username}` to change username or `usermod -l {new-username} {current-username}`.
 	- Use `--shell {new-shell} {user}` to change shell or `usermod -s {new-shell} {user}`.
-- Lock user account with `--lock` or `l`. Unlock use `--unlock` or `-U`.
-- Set expiration date of the account with `--expiredate {YYYY-MM-DD}` or `-e  {YYYY-MM-DD}` to disable user login.
+	- Lock user account with `--lock` or `l`. Unlock use `--unlock` or `-U`.
+	- Set expiration date of the account with `--expiredate {YYYY-MM-DD}` or `-e  {YYYY-MM-DD}` to disable user login.
 	- To immediately set an account expired choose expired date in the past.
 	- Remove expiration date set account to never expire.
 - Set password expiration with `chage`
@@ -52,6 +52,8 @@
 - `$PATH` is an ordered list of directories which is scanned when a command is given to find the appropriate or script to run.
 - `$SHELL` points to the user's default command shell.
 - `$PS` (prompt statement) is used to customize your prompt string in your terminal windows to display the information you want.
+- `$GLOBALENV` is global environment variables.
+- `/etc/environment` is where global environment variable is set.
 ### Listing env variables
 - `env`
 - `set`

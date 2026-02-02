@@ -168,6 +168,7 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 	- `/etc/skel`: contains skeleton files used to populate newly created home directories.
 	- `/etc/systemd`: contains or points to configuration scripts for starting, stopping, and controlling system services when using `systemd`.
 	- `/etc/init.d`: contains startup and shutdown scripts for when using System V initialization.
+	- `/etc/profile.d`: contains script for startup of bash shell.
 ### `/boot`
 - It contains few essential files needed to boot the system.
 - For every alternative kernel installed on the system there are 4 files, each of theses files has a kernel version appended to its name:
