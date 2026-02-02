@@ -18,7 +18,7 @@ The **usermod -G** command is the total use list of groups, so it will _delet
 ## User private groups (UPG)
 - The idea behind UPGs is that each user will have their own group.
 - However, UPGs are not guaranteed to be private, additional members may be added to their private group in `/etc/group`.
-- By default, users whose accounts are created with `useradd` have the primary group id equal to their user id **GID = UID** and their group name is also identical to the username.
+- By default, users whose accounts are created with `useradd` have the primary group ID equal to their user id **GID = UID** and their group name is also identical to the username.
 ## `visudo`
 - An command helps safely edit `/etc/sudoers`.
 - It validates the edit of the user to avoid mistakes in this file.
