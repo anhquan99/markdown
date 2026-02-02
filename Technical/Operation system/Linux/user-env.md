@@ -97,3 +97,29 @@
 | `CTRL-U` | Deletes from beginning of line to cursor position                     |
 | `CTRL-E` | Goes to the end of the line                                           |
 | `Tab`    | Auto-completes files, directories, and binaries                       |
+## `sudo`
+```bash
+# execute as root
+sudo command
+# login as root
+sudo --login
+# or
+sudo -i
+
+# user don't have sudo priviledges but know sudo password
+su -
+# or 
+su -l
+# or 
+su --login
+
+# some system has root account locked but the sudo password is not so you can use -Does the user have permission to act like root?
+sudo --login
+# but can't do - What is the password for the root account?
+su -
+
+# lock root password
+sudo passwd --lock root
+# or
+sudo passwd -l root
+```
