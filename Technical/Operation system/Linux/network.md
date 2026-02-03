@@ -1,14 +1,27 @@
 # Network
 
-|Networking Tools|Description|
-|---|---|
-|`ethtool`|Queries network interfaces and can also set various parameters such as the speed|
-|`netstat`|Displays all active connections and routing tables; useful for monitoring performance and troubleshooting|
-|`nmap`|Scans open ports on a network; important for security analysis|
-|`tcpdump`|Dumps network traffic for analysis|
-|`iptraf`|Monitors network traffic in text mode|
-|`mtr`|Combines functionality of ping and traceroute and gives a continuously updated display|
-|`dig`|Tests DNS workings; a good replacement for host and nslookup|
+| Networking Tools | Description                                                                                               |
+| ---------------- | --------------------------------------------------------------------------------------------------------- |
+| `ethtool`        | Queries network interfaces and can also set various parameters such as the speed                          |
+| `netstat`        | Displays all active connections and routing tables; useful for monitoring performance and troubleshooting |
+| `nmap`           | Scans open ports on a network; important for security analysis                                            |
+| `tcpdump`        | Dumps network traffic for analysis                                                                        |
+| `iptraf`         | Monitors network traffic in text mode                                                                     |
+| `mtr`            | Combines functionality of ping and traceroute and gives a continuously updated display                    |
+| `dig`            | Tests DNS workings; a good replacement for host and `nslookup`                                            |
+| `ip`             | Show / manipulate routing, network devices, interfaces and tunnels                                        |
+## CIDR
+- **C**lassless **I**nter-**D**omain **R**outing
+- The CIDR of:
+	- IPv4 has 32 bits
+	- IPv6 has 128 bits
+- Example of IPv4: 192.168.1.101/24
+	- The 192.168.1 is the prefix of the address with 24 bits
+	- The 101 is the device on the network with 8 remain bits
+- Example of IPv6: 2001:0db8:0000:0000:0000:ff00:0042:8329
+	- Short form: 2001:db8:ff00:42:8329
+## Interfaces
+- Loopback: localhost
 ## Network config files
 - Network configuration files are essential to ensure that interfaces function correctly.
 - They are located in the `/etc` directory tree.
@@ -62,9 +75,38 @@
 - `dig`: generates the most information and has many options.
 - `host`
 - `nslookup`: older and not recommended; can have wrong answers, especially with Domain Name System Security Extensions (DNSSEC)
+- `netplan`: an utility that sends instructions to Systemd network daemon called Systend-Networkd.
+	- The configuration is in `/etc/netplan/`.
+	- The configuration is process in alphabet order.
 ## Network troubleshooting
 - **IP config**: use `ifconfig` or `ip` to see if the interface is up.
 - **Network driver**: if the interface cannot be brought up, maybe the correct device driver for the network card(s) is not loaded. Check with `lsmod` if the network driver is loaded as a kernel module, or by examining relevant pseudofiles in `/proc` and `/sys`, such as `/proc/interrupts` or `/sys/class/net`.
 - **Connectivity**: using `ping` to see the network is visible, `traceroute` can follow packets through the network, while `mtr` can do this in a continuous fashion.
 - **Default gateway and routing configuration**: use `route -n` to see the routing table is configured correctly.
 - **Hostname resolution**: use `dig` or `host` on a URL to see if DNS is working properly.
+## Commands
+```shell
+# show ip address of interfaces
+ip address
+# or
+ip addr
+# or
+ip a
+# add color to it with -c option
+ip -c a
+
+# bring up/down an interface
+sudo ip link set dev {interface} up/down
+# assign ip address to an interface
+sudo ip addr add {cird} dev {interface}
+# delete ip address of an interface
+sudo ip addr remove {cird} dev {interface}
+
+# get netplan
+netplan get
+# apply config
+netplan apply
+# try config to ensure config is correct
+netplan try --timeout {time}
+
+```

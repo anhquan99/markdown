@@ -10,3 +10,8 @@
 - PAM is a pluggable authentication module, and it is the default authentication mechanism for Linux. PAM is configured to use the `pam.sss.so` module.
 - `sss.so` and `sssd` use a combined `sssd` and LDAP configuration file.
 ![[image.png]]
+## `libnss-ldapd`
+- Is the client library for LDAP.
+- User configuration file: `/etc/nsswitch/conf`.
+- `nnswitch` is short for Name Service Switch.
+- Client-server configuration file: `/etc/nslcd.conf`.
