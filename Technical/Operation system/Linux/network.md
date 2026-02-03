@@ -10,33 +10,43 @@
 | `mtr`            | Combines functionality of ping and traceroute and gives a continuously updated display                    |
 | `dig`            | Tests DNS workings; a good replacement for host and `nslookup`                                            |
 | `ip`             | Show / manipulate routing, network devices, interfaces and tunnels                                        |
+| `resolvectl`     |                                                                                                           |
 ## CIDR
 - **C**lassless **I**nter-**D**omain **R**outing
 - The CIDR of:
 	- IPv4 has 32 bits
 	- IPv6 has 128 bits
-- Example of IPv4: 192.168.1.101/24
-	- The 192.168.1 is the prefix of the address with 24 bits
+- Example of IPv4: `192.168.1.101/24`
+	- The `192.168.1` is the prefix of the address with 24 bits
 	- The 101 is the device on the network with 8 remain bits
-- Example of IPv6: 2001:0db8:0000:0000:0000:ff00:0042:8329
-	- Short form: 2001:db8:ff00:42:8329
+- Example of IPv6: `2001:0db8:0000:0000:0000:ff00:0042:8329`
+	- Short form: `2001:db8:ff00:42:8329`
 ## Interfaces
-- Loopback: localhost
+- Loopback: localhost.
 ## Network config files
 - Network configuration files are essential to ensure that interfaces function correctly.
 - They are located in the `/etc` directory tree.
-## `route` or `ip route`
+- Edit resolver in `/etc/systemd/resolved.conf`.
+- Check the example files in the `/usr/share/doc/`.
+## Utilities
+### `route` or `ip route`
 - Used to view or change the IP routing table to add, delete, or modify specific (static) routes to specific hosts or networks.
-## `traceroute`
+### `traceroute`
 - Used to inspect the route which the data package takes to reach the destination host, which makes it quite useful for troubleshooting network delays and errors.
-## `wget`
+### `wget`
 - Used to download files with:
 	- Large file downloads
 	- Recursive downloads, where a web page refers to other web pages and all are downloaded at once
 	- Password-required downloads
 	- Multiple file downloads.
-## `curl`
+### `curl`
 - Used to obtain information about a URL.
+### `ss` or `netstat`
+- Used for inspecting programs are currently running and waiting for incoming network connections.
+- `netstat` is out of support soon and is not available on some system.
+```shell
+ss -ltup # get programms are litening on TCP and UDP connection
+```
 ## Predictable Network Interface Device Names (PNIDN)
 - PNIDN is connected to `udev` and integrated with `systemd`.
 ### Types
@@ -68,6 +78,7 @@
 ## `/etc/host`
 - Holds a local database of hostnames and IP addresses, a set of records which map IP addresses with corresponding hostnames and aliases.
 - Other host-related files in `/etc` are `/etc/hosts.deny` and `/etc/hosts.allow`.
+- Edit host file in `/etc/hosts`.
 ## DNSs and Name Resolution
 - The act of translating hostnames to the IP addresses of their hosts.
 ![[image-4.png|265x342]]
