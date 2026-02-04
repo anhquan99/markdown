@@ -108,14 +108,19 @@ ss -ltup # get programms are litening on TCP and UDP connection
 	- **Resilience:** Maintains connectivity even if one network interface fails.
 	- **Increased Throughput:** Aggregates multiple network cards to achieve higher data transfer speeds.
 	- **Enhanced Reliability:** Offloads traffic to available interfaces if one experiences a slowdown.
+- Detail content of a bond interface is in `/proc/net/bonding/bond0`.
 - Bonding modes:
-	- **0**: round-robin
-	- **1**: active-backup
-	- **2**: XOR
-	- **3**: broadcast
-	- **4**: IEEE 802.3ad helps increase network transfer rates above single interface support
-	- **5**: adaptive transmit loading balancing
-	- **6**: adaptive load balancing
+
+|     | Name                                | Code          | Note                                                                 |
+| --- | ----------------------------------- | ------------- | -------------------------------------------------------------------- |
+| 0   | round-robin                         | balance-rr    |                                                                      |
+| 1   | active-backup                       | active-backup |                                                                      |
+| 2   | XOR                                 | balance-xor   |                                                                      |
+| 3   | broadcast                           | broadcast     |                                                                      |
+| 4   | IEEE 802.3ad                        | 802.3ad       | Helps increase network transfer rates above single interface support |
+| 5   | adaptive transmit loading balancing | balance-tlb   |                                                                      |
+| 6   | adaptive load balancing             | balance-alb   |                                                                      |
+
 ![[image-39.png]]
 ## Commands
 ```shell

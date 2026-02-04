@@ -85,3 +85,40 @@ sudo firewall-cmd --zone=external --add-forward-port=port=80:proto=tcp:toport=80
 - The **SNAT** or **Masquerade** firewall rule is normally placed in the post-routing chain of the **NAT** table. Normally, post-routing is the last examination or modification point as the packet leaves the system on the way to the Internet.
 	- The destination address of the packet is that of the remote system that initiated the connection
 	- The source address of the packet will be changed from the internal address of the service to that of the firewall’s public facing adapter
+## `ufw`
+- The `ufw` process in order with the numbered rule.
+```shell
+# get rules
+ufw status
+# get rules with numbered
+ufw status numbered
+
+# allow only for port protocol
+ufw allow {port}/{protocol}
+# allow ip can request to any port
+ufw allow from {ip} to any {port}
+# allow cidr
+ufw allow from {cidr} to any port {port}
+
+# deny incoming network from ip
+ufw deny from {ip}
+
+ufw enable
+
+# insert rule with number
+ufw insert {number} {rule}
+
+# delete a rule with number
+ufw delete {numbered rule}
+# delete a rule
+ufw delete allow 22
+
+# apply network rule on specific interface
+ufw allow/deny out on {interface} to {ip}
+
+# example of a network fine tune rule that take the ip of the current machine 10.0.0.100 to external ip 10.0.0.145
+# inbound rule
+ufw allow in on {interface} from 10.0.0.145 to 10.0.0.100 proto {protocol}
+# outbound rule
+ufw allow out on {interface} from 10.0.0.100 to 10.0.0.145 proto {protocol}
+```
