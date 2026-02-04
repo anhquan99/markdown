@@ -95,6 +95,28 @@ ss -ltup # get programms are litening on TCP and UDP connection
 - **Connectivity**: using `ping` to see the network is visible, `traceroute` can follow packets through the network, while `mtr` can do this in a continuous fashion.
 - **Default gateway and routing configuration**: use `route -n` to see the routing table is configured correctly.
 - **Hostname resolution**: use `dig` or `host` on a URL to see if DNS is working properly.
+## Network models
+### Bridge
+- Allows computers on 2 separate networks to talk to each other as if they are part of the same network. **Two or more networks**.
+- Terms:
+	- Bridge can be called control
+	- Network interface can be called port
+![[image-38.png]]
+### Bonds
+- Combines multiple physical network devices into 1 logical interface. **Two or more connections to a network**.
+- Benefits:
+	- **Resilience:** Maintains connectivity even if one network interface fails.
+	- **Increased Throughput:** Aggregates multiple network cards to achieve higher data transfer speeds.
+	- **Enhanced Reliability:** Offloads traffic to available interfaces if one experiences a slowdown.
+- Bonding modes:
+	- **0**: round-robin
+	- **1**: active-backup
+	- **2**: XOR
+	- **3**: broadcast
+	- **4**: IEEE 802.3ad helps increase network transfer rates above single interface support
+	- **5**: adaptive transmit loading balancing
+	- **6**: adaptive load balancing
+![[image-39.png]]
 ## Commands
 ```shell
 # show ip address of interfaces
