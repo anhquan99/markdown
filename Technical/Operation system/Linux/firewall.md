@@ -2,7 +2,7 @@
 - A firewall is a network security system that monitors and controls all network traffic, applies rules for incoming, outgoing network connections and package and builds flexible barriers depending on the level of trust and network topography of a given connection.
 ## Packet filtering
 - Each packet has:
-	- **Header**: contains information about destination and source addresses, what kind of packet it is, and which protocol it obeys, various flags, which packet number this is in a stream, and ​all sorts of other metadata about transmissions
+	- **Header**: contains information about destination and source addresses, what kind of packet it is, and which protocol it obeys, various flags, which packet numbers this is in a stream, and ​all sorts of other metadata about transmissions
 	- **Payload**: contains data
 	- **Footer**: same as header
 - Packet filtering intercepts packets at one or more stages in the network transmission, including application, transport, network, and datalink.
@@ -60,6 +60,8 @@ sudo firewall-cmd --zone=home --list-ports
 sudo firewall-cmd --zone=external --add-forward-port=port=80:proto=tcp:toport=8080
 ```
 ## Network Address Translation (NAT)
+- Masquerading is when a machine is pretending a device to talk to other devices.
+![[image-40.png]]
 - NAT is a method the firewall uses to change the packet source or destination address as it enters or exits the firewall. There are several types of NAT:
 	- **DNAT** (Destination Network Address Translation)
 	- **SNAT** (Source Network Address Translation)

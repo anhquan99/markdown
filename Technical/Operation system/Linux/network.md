@@ -122,6 +122,26 @@ ss -ltup # get programms are litening on TCP and UDP connection
 | 6   | adaptive load balancing             | balance-alb   |                                                                      |
 
 ![[image-39.png]]
+## Reverse proxy
+- A reverse proxy acts as an intermediary between client requests and the backend web server. Rather than the client directly communicating with the web server, the reverse proxy intercepts the request and forwards it.
+![[image-42.png]]
+## Load balancing
+- Load balancing distributes incoming web requests across multiple servers, ensuring that no single server becomes overwhelmed.
+![[image-43.png]]
+## `nginx`
+- Configuration folder is `/etc/nginx/sites-available`.
+- Header parameter configuration file `/etc/nginx/proxy_params`.
+- Enable `nginx` configuration by creating a symbolic link in the `/etc/nginx/sites-enabled` directory.
+	- Before apply the change, the configuration can be tested with `sudo nginx -t`.
+	- Then reload the service `sudo systemctl reload nginx.service`.
+## NTP
+- Short for **N**etwork **T**ime **P**rotocol.
+- Tools:
+	- `timedatectl` for time zone stuff
+	- `systemd-timesyncd` for synchronize the time
+		- The setting of this tool is in `/etc/systemd/timesyncd.conf`.
+## `ssh`
+- 
 ## Commands
 ```shell
 # show ip address of interfaces
