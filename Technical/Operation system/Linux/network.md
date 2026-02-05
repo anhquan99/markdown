@@ -141,7 +141,26 @@ ss -ltup # get programms are litening on TCP and UDP connection
 	- `systemd-timesyncd` for synchronize the time
 		- The setting of this tool is in `/etc/systemd/timesyncd.conf`.
 ## `ssh`
-- 
+### Server
+- Configuration for `ssh` daemon is in `/etc/ssh/sshd_config`.
+- Use `man sshd_config` to see the manual page of the `sshd` config.
+- Addition config files are in `/etc/ssh/sshd_config.d/`. If there is any config file, it will override the configuration of the main file `/etc/ssh/sshd_config`.
+### Client
+- General configuration file is in `/etc/ssh/ssh_config`. This file is not recommended to edit because it will be overridden in the future update.
+	- To configure the `ssh` client persistently, create a config file in `/etc/ssh/ssh_config.d`.
+- Each user has the `ssh` folder in the `~/.ssh`. Create a config file with name `config`
+	- On Windows this folder is `C:\Users\{username}\.ssh`.
+- Use `man ssh_config` to see the manual page of the `ssh` config.
+### Login with ssh key
+```shell
+# generate a ssh key
+ssh-keygen
+
+# copy to client machine
+ssh-copy {user}@{ip}
+
+# or you can manually copy content of .pub file to file ~/.ssh/authorized_keys
+```
 ## Commands
 ```shell
 # show ip address of interfaces
