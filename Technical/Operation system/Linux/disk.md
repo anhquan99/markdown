@@ -45,11 +45,31 @@ sudo fdisk -l /dev/sdc | grep -i sector # see geometry
 - Size concerns; keeping variable and volatile storage isolated from stable
 - Performance enhancement of putting most frequently used data on faster storage media
 - Swap space can be isolated from data and also used for hibernation storage.
-## `blkid`
+### Disk naming
+- Example the machine has 3 disk:
+```
+sda (first disk with a postfix)
+  ├─sda1 (first partition of first disk)
+  └─sda2 (second partition of first disk)
+sdb (second disk with b postfix)
+  ├─sdb1
+  ├─sdb2
+  └─sdb3
+sdc (third disk with c postfix)
+  └─sdc1
+```
+### `blkid`
 - A utility to locate block devices and report on their attributes.
 - Only work on devices which contain data that is finger-printable.
-## `lsblk`
+### `lsblk`
 - It presents block device information in a tree format.
+### `fdisk`
+- List of partitions on the block devices.
+- The beginning of the has an empty space where it is not partitioned. It is a standard procedure to leave 1 MB free of unpartitioned space at the beginning.
+	- This is done in case a special program called a boot loader needs to be installed in that area.
+```shell
+sudo fdisk --list {disk}
+```
 ## Sizing up partitions
 - Most Linux systems should use a minimum of 2 partitions:
 	- **`root` is used for filesystem.**
