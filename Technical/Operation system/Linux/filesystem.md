@@ -220,7 +220,31 @@ rsync can be very dewstructive. Accidental misuse can do a lot of harm to data 
 - `tar` (tap archive) was used to archive files to a magnetic tape, allows you to create or extract files from an archive file, often called a `tarbal`.
 ### `dd` (disk-to-disk copying)
 - The `dd` program is very useful for making copies of raw disk space.
-- An exact copy of the first disk device is created on the second disk device. It will delete everything that previously existed on the second disk
+- An exact copy of the first disk device is created on the second disk device. It will delete everything that previously existed on the second disk.
+## Mount filesystem
+- To make a partition accessible, it must be mounted.
+- Mount means attaching a file system to one of the directories.
+```shell
+# mount a parition
+sudo mount {partition} {path-to-mount}
+
+# unmount a parition
+sudo unmount {path-to-mount}
+```
+- Example of a record in `/etc/fstab`:
+```
+parition      path-to-mount      type-of-partition      mount-option      backup-option error-handle-option
+
+/dev/vda2   /boot      ext4    defaults    0 1
+
+auto amount a swap 
+/dev/vdb3 none swap defaults 0 0
+```
+- After updating the `/etc/fstab` the `systemctl` should be restarted with command: `sudo systemctl daemon-reload`
+- The error handle option:
+	- **0**: filesystem should never be scanned for errors
+	- **1**: filesystem should be scanned first for errors before the other ones
+	- **2**: filesystem should be scanned after the ones with a value of 1 have been scanned
 ## Commands
 ### `cd`
 ```shell
@@ -258,7 +282,7 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 	- `s`: summerise
 	- `h`: human readable size format
 ### `xfs_repair`
-- Verify the integrity of xfs filesystem.
+- Verify the integrity of `xfs` filesystem.
 ```shell
 sudo xfs_repair -v /dev/vda1
 ```
@@ -267,3 +291,15 @@ sudo xfs_repair -v /dev/vda1
 ```shell
 sudo fsck.ext4 -v -f -p /dev/vdb2
 ```
+### `mkfs.xfs`
+- Format a partition with `xfs` format.
+```shell
+sudo mkfs.xfs {partition}
+```
+### `mfs.ext4`
+- Format a partition with `ext4` format.
+```shell
+sudo mkfs.ext4 {partition}
+```
+### `tune2fs`
+- A utility allows you to display and modify `ext4` file system properties.

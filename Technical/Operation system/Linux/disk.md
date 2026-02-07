@@ -58,6 +58,8 @@ sdb (second disk with b postfix)
 sdc (third disk with c postfix)
   └─sdc1
 ```
+- The disk naming is placed in order of the disk placement. If you swap the order of the disk then the name remain the same but the disk behind is swapped.
+	- Example: at first, sda is disk 1 and sdb is disk 2. After swapping it, sda is disk 2 and sdb is disk 1.
 ### `blkid`
 - A utility to locate block devices and report on their attributes.
 - Only work on devices which contain data that is finger-printable.
@@ -66,9 +68,15 @@ sdc (third disk with c postfix)
 ### `fdisk`
 - List of partitions on the block devices.
 - The beginning of the has an empty space where it is not partitioned. It is a standard procedure to leave 1 MB free of unpartitioned space at the beginning.
-	- This is done in case a special program called a boot loader needs to be installed in that area.
+	- This is done in case a special program called a bootloader needs to be installed in that area.
 ```shell
 sudo fdisk --list {disk}
+```
+## `cfdisk`
+- Used for partition a disk.
+- To save all the change, remember to enter Write button.
+```shell
+sudo cfdisk {disk}
 ```
 ## Sizing up partitions
 - Most Linux systems should use a minimum of 2 partitions:

@@ -28,6 +28,30 @@
 	- `swapoff`: deactivate swap partitions or files
 - It is pointless to swap out file caching contents because it will be moved to disk again. Instead, dirty pages (memory containing updated file contents that no longer reflect the stored data) are flushed out to disk.
 - It is also worth pointing out that in Linux, memory used by the kernel itself, as opposed to application memory, is _never swapped out_, in distinction to some other operating systems.
+```shell
+# show swap partition
+swapon --show
+
+# set partition as swap
+sudo mkswap {partition}
+sudo swapon --verbose {partition}
+
+# stop using partition as swap
+sudo swapoff {partition}
+```
+### Using a file as swap
+- An alternative to swap partitions.
+```shell
+# create a swap file
+# the dd command is used for copying and converting data at a low level. General syntax dd if=[input file] of=[output file] [options]
+# the /dev/zero a special pseudo-device file that acts as an endless source of null characters (binary zeros, 0x00) when read from
+# the command below write 1 MB block to file with 2048 times
+sudo dd if=/dev/zero of=/swap bs=1M count=2048 status=progress
+
+sudo chmod 600 /swap
+
+sudo mkswap /swap
+```
 ## OOM Killer
 ### Common solutions
 - The simplest way to deal with memory pressure would be to permit memory allocations to succeed as long as free memory is available and then fail when all memory is exhausted.
