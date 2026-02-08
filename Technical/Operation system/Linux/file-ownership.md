@@ -121,8 +121,40 @@ chmod 1666 stickydir
 ## Filesystem ACLs
 - **POSIX ACLs** (Access Control Lists) extend the simpler user, group, and world system.
 - Particular privileges can be granted to specific users or groups of users when accessing certain objects or classes of objects. Files and directories can be shared without using 777 permissions.
-- While the Linux kernel enables the use of ACLs, it still must be implemented as well in the particular filesystem. All major filesystems used in modern Linux distributions incorporate the ACL extensions, and one can use the gitoption `-acl` when mounting. A default set of ACLs is created at system install.
+- While the Linux kernel enables the use of ACLs, it still must be implemented as well in the particular filesystem. All major filesystems used in modern Linux distributions incorporate the ACL extensions, and one can use the option `-acl` when mounting. A default set of ACLs is created at system install.
 - Use `getfacl/setfacl` to get/set ACLs.
+```shell
+# install acl
+sudo apt install acl
+
+# allow permission for user
+sudo setfacl --modify user:{username}:{permission} {filename}
+# deny all permission
+sudo setfacl --modify user:{username}:--- {filename}
+# remove permission
+sudo setfacl --remove user:{username} {filename}
+# remove all acl from a file
+sudo setfacl --remove-all {filename}
+# recursively apply acl
+setfacl --recursive -m user:{username}:{permission} {directory}
+
+
+
+getfacl {filename}
+```
+## File attribute
+```shell
+# set append-only file using +a
+sudo chattr +a {filename}
+# remove append-only using -a
+sudo chattr -a {filename}
+
+# check attribute of a file or directory
+lsattr {name}
+
+# set immutable attribute
+sudo chattr -i {filename}
+```
 ## Commands
 ### List files and directories
 - `ls`: **l**i**s**t

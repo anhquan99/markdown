@@ -98,6 +98,11 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 - It breaks up 1 virtual partition into multiple chucks, each of which can be on different partitions and/or disks.
 - Advantage when using LVM is easy to change the size of the logical partitions and filesystems, to add more storage space, rearrange things.
 - LVM impact performance. However, even on non-RAID system, if you use striping (splitting of data to more than 1 disk), you can achieve some parallelization improvements.
+### Terms
+- **PV**: Physical Volumes
+- **VG**: Volume Groups
+- **LV**: Logical Volumes
+- **PE**: Physical Extends
 ### Volume groups
 - Partitions are converted to physical volumes and multiple physical volumes are grouped into volume groups.
 - Logical volumes are allocated from volume groups:
@@ -110,6 +115,7 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 	- `vgcreate`: creates volume groups
 	- `vgextend`: adds to volume groups
 	- `vgreduce`: shrinks volume groups
+	- `lvmdiskscan`: to examine what PVs can be used
 - Manipulate physical partitions. The name starts with `pv`:
 	- `pvcreate`: converts a partition to a physical volume
 	- `pvdisplay`: shows the physical volumes being used
@@ -128,6 +134,11 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 	4. Allocate logical volumes from the volume group.
 	5. Format the logical volumes.
 	6. Mount the logical volumes (also update the **/etc/fstab** file as needed).
+```shell
+# install lvm
+sudo apt install lvm2
+
+```
 ## Network filesystem (NFS)
 ### Server
 - NFS uses **daemons** (built-in networking and service processes in Linux).
@@ -314,6 +325,33 @@ sudo vim /etc/nbd-server/config
 
 # restart service
 sudo systemctl restart nbd-server.service
+```
+#### Setup client
+```shell
+# install lib
+sudo apt install nbd-client
+
+# extend kernel to support nbd
+sudo modprobe nbd
+
+# load nbd automatically
+sudo vim /etc/modules-load.d/modules.conf
+
+# connect to nbd server
+# sudo nbd-client {nba-server-ip} -N {partition}
+sudo nbd-client 127.0.0.1 -N partition2
+
+# mount parition
+sudo mount /dev/nbd0 /mnt
+
+# detach nbd
+# first unmount the mount
+sudo umount /mnt
+# then detach nba from the client
+sudo nbd-client -d /dev/nbd0
+
+# list list of nbd export
+sudo nbd-client -l 127.0.0.1
 ```
 ## Commands
 ### `cd`

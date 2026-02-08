@@ -95,5 +95,28 @@ sudo dd if=mbrbackup of=/dev/sda bs=512 count=1 # restore
 ```bash
 sudo sgdisk -p /dev/sda
 ```
+## Performance monitoring
+### `sysstat`
+- `iostat`: I/O statistic
+- `pidstat`: process ID statistic
+- `tps`: transfer per second
+```shell
+# show usage of storage every 1 second
+iostat 1
+# device utilization
+iostat -d
+# human-readable
+iostat -h
+# show all partition
+iostart -p ALL
+
+# show process IO
+pidstat -d
+# human-readable
+iostat -d --human
+
+# check the mapping of the volume 
+sudo dmsetup info /dev/dm-0
+```
 ## Reference
 - https://easylinuxji.blogspot.com/2018/12/what-is-disk-partitioning-disk.html
