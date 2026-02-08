@@ -224,9 +224,15 @@ rsync can be very dewstructive. Accidental misuse can do a lot of harm to data 
 ## Mount filesystem
 - To make a partition accessible, it must be mounted.
 - Mount means attaching a file system to one of the directories.
+- Filesystem independent can be used on any system. Filesystem dependent can work only on specific filesystem (ie: ext4, xfs, ...).
+	- The filesystem dependent cannot be remounted, but it has to be unmounted first and then mount again.
 ```shell
 # mount a parition
 sudo mount {partition} {path-to-mount}
+# mount with option readonly
+sudo mount -o ro {partition} {path-to-mount}
+# remount with option if the partition has already been mounted
+sudo mount -o remount,rw {partition} {path-to-mount}
 
 # unmount a parition
 sudo umount {path-to-mount}
@@ -245,6 +251,70 @@ sudo umount {path-to-mount}
 	- **0**: filesystem should never be scanned for errors
 	- **1**: filesystem should be scanned first for errors before the other ones
 	- **2**: filesystem should be scanned after the ones with a value of 1 have been scanned
+- `findmnt` is like `lsblk` but more comprehensive.
+	- The `/proc` is a virtual filesystem located in the `./proc` which is in the RAM.
+## Remote filesystem
+### NFS
+- Common protocol is Network Filesystem (NFS).
+- Shared client host can be:
+	- Hostname (ie: example.com, ...). Wild card can be used (ie: \*.example.com).
+	- IP address
+	- CIDR
+- Man page for export `man exports`.
+- Export options:
+	- `rw`: read write
+	- `ro`: readonly
+	- `sync`: ensures data written to the storage device before confirming the option
+	- `async`: allows async write, which can boost performance but might risk data loss in sudden reboots
+	- `no_subtree_check`: disables subtree checking, which avoids potential issues when files are moved or renamed
+	- `no_root_squash`: by default, NFS remaps client root users to a lesser privileged user (`nobody`). This option lets the client’s root user retain root privileges on the remote share.
+#### Setup server side
+```shell
+# install lib
+sudo apt install nfs-kernel-server
+
+# share directory by editing the /etc/exports
+sudo vim /et/exports
+# Example export configuration:
+# path-of-the-shared-directory shared-client-host1(export-options) shared-client-host2(export-optionss) ...
+"/nfs/disk1/backups"  hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)
+
+# apply changes
+sudo exportfs -r
+
+# check current exports
+sudo exportfs -v
+```
+#### Setup client side
+- To auto mount the directory from the server, it can be done with editing the `/etc/fstab`.
+```shell
+# install lib
+sudo apt install nfs-common
+
+# mount server
+# sudo mount IP_or_hostname_of_server:/path/to/remote/directory /path/to/local/directory
+sudo mount 127.0.0.1:/etc /mnt
+```
+### NBD
+- **N**etwork **B**lock **D**evices
+#### Setup server
+- By default, the NBD daemon runs as the user `nbd`, which might not have access to block devices like `/dev/sda`. The configuration contains comments guiding you to run the daemon as `root` if necessary. You can either explicitly set the user and group as `root` or comment out these lines entirely.
+- Man page: `man 5 nbd-server`.
+```shell
+# install lib
+sudo apt install nbd-server
+
+# open default config file
+sudo vim /etc/nbd-server/config
+# add nbd user to root by comment the user and group row
+# add the allowlist = true to allow client can see blocks are sharing
+# add export partition:
+# [partition2]
+# exportname=/dev/sda1
+
+# restart service
+sudo systemctl restart nbd-server.service
+```
 ## Commands
 ### `cd`
 ```shell
