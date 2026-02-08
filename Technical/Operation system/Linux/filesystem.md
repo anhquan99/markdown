@@ -229,15 +229,15 @@ rsync can be very dewstructive. Accidental misuse can do a lot of harm to data 
 sudo mount {partition} {path-to-mount}
 
 # unmount a parition
-sudo unmount {path-to-mount}
+sudo umount {path-to-mount}
 ```
 - Example of a record in `/etc/fstab`:
 ```
-parition      path-to-mount      type-of-partition      mount-option      backup-option error-handle-option
+# parition      path-to-mount      type-of-partition      mount-option      backup-option error-handle-option
 
 /dev/vda2   /boot      ext4    defaults    0 1
 
-auto amount a swap 
+# auto amount a swap 
 /dev/vdb3 none swap defaults 0 0
 ```
 - After updating the `/etc/fstab` the `systemctl` should be restarted with command: `sudo systemctl daemon-reload`
