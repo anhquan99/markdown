@@ -101,6 +101,7 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 ### Terms
 - **PV**: Physical Volumes
 - **VG**: Volume Groups
+	- Expand the disk to infinite without to turn off the machine
 - **LV**: Logical Volumes
 - **PE**: Physical Extends
 ### Volume groups
@@ -130,14 +131,60 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 - Create a new volume group:
 	1. 1. Create partitions on disk drives (type **8e** in **fdisk**).
 	2. Create physical volumes from the partitions.
-	3. Create the volume group.
+	3. Create the volume group from the physical volume. Once it is added to a volume group, it will be seen as a single continuous disk.
 	4. Allocate logical volumes from the volume group.
 	5. Format the logical volumes.
-	6. Mount the logical volumes (also update the **/etc/fstab** file as needed).
+	6. Mount the logical volumes (also update the `/etc/fstab` file as needed).
 ```shell
 # install lvm
 sudo apt install lvm2
 
+# check pv can be used
+lvmdiskscan
+
+# add disk to lvm as pv
+# sudo pvcreate {disk} 
+sudo pvcreate /dev/sda
+
+# remove pv
+sudo pvremove /dev/sde
+
+# show pv
+sudo pvs
+
+# add pv to vg
+# vg create {name-of-group} {name-of-pv}
+vg create my_volume /dev/sda
+
+# show vg
+sudo vgs
+
+# extend vg
+sudo vgextend my_volume /dev/sdb
+
+# remove pv from vg
+sudo vgreduce my_volume /dev/sdb
+
+# create lv
+sudo lvcreate --size 2G --name partition1 my_volume
+
+# show lv
+sudo lvs
+
+# extend storage of lv to 100% of the vg
+sudo lvresize --extents 100%VG my_volume/partition1
+
+# shirk lv
+sudo lvresize --size 2G my_volume/partition1
+
+# show lv detail
+sudo lsdisplay
+
+# create ext4 filesystem with lv
+sudo mkfs.ext4 /dev/my_volume/partition1
+
+# when resize lv already has filesystem on it, the filesystem will use the old size. Use the option --resizefs
+sudo lvresize --resizefs --size 3G my_volume/parition1
 ```
 ## Network filesystem (NFS)
 ### Server
