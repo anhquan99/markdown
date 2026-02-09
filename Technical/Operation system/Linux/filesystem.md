@@ -129,7 +129,7 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 	- `lvresize`: resizes logical volumes
 	- `lvremove`: remove logical volumes
 - Create a new volume group:
-	1. 1. Create partitions on disk drives (type **8e** in **fdisk**).
+	1. Create partitions on disk drives (type **8e** in **fdisk**).
 	2. Create physical volumes from the partitions.
 	3. Create the volume group from the physical volume. Once it is added to a volume group, it will be seen as a single continuous disk.
 	4. Allocate logical volumes from the volume group.
@@ -153,8 +153,8 @@ sudo pvremove /dev/sde
 sudo pvs
 
 # add pv to vg
-# vg create {name-of-group} {name-of-pv}
-vg create my_volume /dev/sda
+# vgcreate {name-of-group} {name-of-pv}
+sudo vgcreate my_volume /dev/sda
 
 # show vg
 sudo vgs
@@ -178,7 +178,7 @@ sudo lvresize --extents 100%VG my_volume/partition1
 sudo lvresize --size 2G my_volume/partition1
 
 # show lv detail
-sudo lsdisplay
+sudo lvdisplay
 
 # create ext4 filesystem with lv
 sudo mkfs.ext4 /dev/my_volume/partition1
