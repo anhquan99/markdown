@@ -62,6 +62,10 @@ chmod 755 <file>
 ```
 - The permission is evaluated from left to right.
 	- Example: If the owner in a group with the permission `-r--rw---` that owner can not write to the file because the owner doesn't have write permission even thought that owner in the group.
+## File timestamp
+- `atime` - the last time when file was accessed
+- `mtime` - last modification time. By modification we mean change in the file content.
+- `ctime` - last metadata modification time. We mean here - permissions change, location of the file, etc.
 ## Directory permission
 - Like file permission, but directory doesn't have any content, so the permission is slightly different
 	- `r`: read
