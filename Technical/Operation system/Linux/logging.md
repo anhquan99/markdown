@@ -3,6 +3,19 @@
 - Logging daemons are applications that collect, organize, and store logs.
 - Most popular is `rsyslog` (Rocket Fast System for Log Processing)
 - Logs are stored in the `/var/log` directory.
+
+| Log name | Purpose |
+| --- | --- |
+|syslog|The main system log. Contains all important information about the system and applications. Generally, if something is not writting its own logs, it will be here, in `syslog`.|
+|auth.log|Contains information about authorizations. All user login attempts (with information if successful or not), logout, password changes, remote logins and use of `sudo`.|
+|dmesg|is a kernel ring buffer, not the log (as we understand the logs). It allows us to interact with kernel and get information by querying bootup messages. It doesn't mean, that `dmesg` contains the booting data, but everything what is going on during the system's work.|
+|kern.log|Stores Kernel messages|
+|boot.log|Contains system' starting sequence (not kernel boot). Another words, information about started services, applications, disks configurations and so on.|
+|lastlog|file to be used with `lastlog` utility. Contains information abount last logins|
+|faillog|similar to lastlog, use this file with `faillog` utility. Logs fails, like login failures|
+|wtmp.log|Contains login infomration. However, it doesn't show information similar to `lastlog`, but used by other utilities, like `who`.|
+|dpkg.log|Contains data about packages management - install, remove, update, etc.|
+
 ## Finding in log files
 ### Utils
 - Using `grep`.
@@ -17,6 +30,15 @@
 - A System Journal Daemon is a bit smarter about how it collects data.
 - `journalctl` helps us analyze log more efficiently.
 - On some OS, the journaling daemon is configured to only keep logs for the current boot and only in memory. If the folder `/var/log/journal` exists, then journal daemon will store the log in the disk.
+### Syslog message levels
+- 0: emerg: emergency is the highest level and shouldn't be used by applications. It means that system is unusable.
+- 1: alert
+- 2: crit
+- 3: err
+- 4: warning
+- 5: notice
+- 6: info
+- 7: debug
 ```shell
 # journalctl {control}
 journalctl /usr/bin/sudo # show log generated from sudo commmand, it need to find the location of the command
