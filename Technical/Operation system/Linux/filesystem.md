@@ -458,3 +458,7 @@ sudo mkfs.ext4 {partition}
 ```
 ### `tune2fs`
 - A utility allows you to display and modify `ext4` file system properties.
+### `file`
+- Determine file type.
+### `stat`
+- Display file or file system status.
