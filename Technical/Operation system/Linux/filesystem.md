@@ -36,7 +36,7 @@ Filenames are not stored in the inode; they are stored in the direcroty.
 - Make sure to have the proper permissions to create the link file at the destination.
 - Make sure all users involved have the required permissions to access that file.
 ### Soft links
-- Soft (or symbolic) links point to a file name which has an associated inode. Another way to understand this is soft link points to the path of a file.
+- Soft (or symbolic) links point to a file name which has an associated inode. Another way to understand this is soft link points to the path of a file or a shortcut.
 - Soft linked files may be on different filesystems.
 - If the target does not yet exist or is not yet mounted, it can be dangling.
 - Permission on the soft link do not matter.

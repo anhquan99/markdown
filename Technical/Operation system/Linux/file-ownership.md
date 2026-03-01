@@ -72,6 +72,17 @@ chmod 755 <file>
 	- `w`: write to directory
 	- `w`: execute into directory
 	- `-`: no permission
+
+| **directory permissions** | **digit** | **delete, rename, create files** | **directory list** | **read file content** | **write file content** | **cd to directory** | **cd subdirectory** | **subdirectory list** | **access subdirectory files** |
+| ------------------------- | --------- | -------------------------------- | ------------------ | --------------------- | ---------------------- | ------------------- | ------------------- | --------------------- | ----------------------------- |
+| `---`                     | 0         |                                  |                    |                       |                        |                     |                     |                       |                               |
+| `--x`                     | 1         |                                  |                    | x                     | x                      | x                   | x                   | x                     | x                             |
+| `-w-`                     | 2         |                                  |                    |                       |                        |                     |                     |                       |                               |
+| `-wx`                     | 3         | x                                |                    | x                     | x                      | x                   | x                   | x                     | x                             |
+| `r--`                     | 4         |                                  | filenames only     |                       |                        |                     |                     |                       |                               |
+| `r-x`                     | 5         |                                  | x                  | x                     | x                      | x                   | x                   | x                     | x                             |
+| `rw-`                     | 6         |                                  | filenames only     |                       |                        |                     |                     |                       |                               |
+| `rwx`                     | 7         | x                                | x                  | x                     |                        |                     |                     |                       |                               |
 ## `umask`
 - The `umask` command on Linux is a powerful tool that sets the default file or directory permissions when a new file or directory is created.
 ## SUID

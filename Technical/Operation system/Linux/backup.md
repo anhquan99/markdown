@@ -91,7 +91,7 @@ xz --decompress file.xz
 
 # compress folder with tar
 tar --create --xz --file achive.tar.xz file
-tar CJf achive.tar.xz file
+tar cJf achive.tar.xz file
 ```
 ### `zip`
 - Support compress file and folder.
@@ -104,11 +104,11 @@ unzip archive.zip
 - **R**emote **Syn**chronization
 - Required remote server must have `ssh` daemon.
 ```shell
-resync -a source destination
+rsync -a source destination
 # -a for all file and folder
 ```
 ### `dd`
-- Disk imaging
+- A low level tool used to copy and convert data block-by-block, directly interacting with files and devices
 ```shell
 sudo dd if=/dev/vda of=diskimage.raw bs=1M status=process
 # if is for disk partition path
