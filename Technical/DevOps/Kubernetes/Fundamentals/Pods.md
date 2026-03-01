@@ -5,7 +5,7 @@
   - Contains and runs one or multiple containers, which they are scheduled together on the same host with the Pod.
   - Pods contain shared resources for all Pod containers.
   - Has a cluster-internal IP by default. Share the same network namespace, meaning that they share a single IP address originally assigned to the Pod.
-    ![](pasted-image-20240327131606.png)
+    ![](/Image/pasted-image-20240327131606.png)
 - Pods are designed to be ephemerals, they do not have the capability to self-heal themselves. That is the reason they are used with controller, which handle Pod's replication, fault tolerance, self-healing, ...
 
 ```YAML

@@ -7,7 +7,7 @@
 - Problem: you want to get data range that consecutive row by row.
 - Solution: use `LAG OVER` function.
 - Data:
-  ![](pasted-image-20230217180119.png)
+  ![](/Image/pasted-image-20230217180119.png)
   ```sql
   select proj_grp, min(proj_start), max(proj_end)
   from

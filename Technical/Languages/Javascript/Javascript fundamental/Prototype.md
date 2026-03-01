@@ -2,7 +2,7 @@
 
 - Like inheritance, we take something and extend it.
 - In JS, objects have a special property `[[Prototype]]`, that is either `null` or references another object. That object is called "a prototype"
-  ![](pasted-image-20220401162305.png)
+  ![](/Image/pasted-image-20220401162305.png)
 - When we read a property from `object`, and it's missing, JS automatically takes it from the prototype. In programming, this is called "prototype inheritance".
 - The property `[[Prototype]]` is internal and hidden, but there are many ways to set it.
 
@@ -21,11 +21,11 @@ alert(rabbit.eats); // true
 alert(rabbit.jumps); // true
 ```
 
-![](pasted-image-20220401162735.png)
+![](/Image/pasted-image-20220401162735.png)
 
 - Here we can say that `animal` is the prototype of `rabbit` prototypically ingerits from `animal`
 - The prototype can be chaining. So when access an property is not in the object, JS will find that property in the inner `[[Prototype]]`
-  ![](pasted-image-20220401163536.png)
+  ![](/Image/pasted-image-20220401163536.png)
 
 ## Limitation
 
@@ -67,7 +67,7 @@ alert(animal.isSleeping); // if animal call sleep it will not be undefined
 // undefined (no such property in the prototype
 ```
 
-![](pasted-image-20220401165957.png)
+![](/Image/pasted-image-20220401165957.png)
 
 ## `For...in` loop
 
@@ -115,7 +115,7 @@ let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
 alert(rabbit.eats); // true
 ```
 
-![](pasted-image-20220401172538.png)
+![](/Image/pasted-image-20220401172538.png)
 
 # Prototype là gì?
 

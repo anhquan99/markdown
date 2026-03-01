@@ -16,7 +16,7 @@
   - ISOLINUX (for booting from removable media)
   - DAS U-Boot (for booting on embedded devices/appliances)
 - When booting, the boot loader responsible for loading the kernel image and the initial RAM disk or filesystem (which contains some critical files and device drivers needed to start the system) into memory.
-  ![](pasted-image-20241028205918.png)
+  ![](/Image/pasted-image-20241028205918.png)
 
 # Boot loader stages
 
@@ -37,7 +37,7 @@ _The only purpose of an `initramfs` is to mount the root filesystem. The `initra
 - The **mount** program instructs the operating system that a filesystem is ready for use and associates it with a particular point in the overall hierarchy of the filesystem (the **mount point**). If this is successful, the `initramfs` is cleared from RAM, and the **init** program on the root filesystem (**/sbin/init**) is executed.
 
 - init handles the mounting and pivoting over to the final real root filesystem. If special hardware drivers are needed before the mass storage can be accessed, they must be in the `initramfs` image.
-  ![](pasted-image-20241030075937.png)
+  ![](/Image/pasted-image-20241030075937.png)
 
 # Linux Kernel
 
@@ -87,9 +87,9 @@ _The only purpose of an `initramfs` is to mount the root filesystem. The `initra
 ## Structure
 
 - Linux uses the `/` character to separate paths and does not have drive letters.
-  ![](pasted-image-20241109161937.png)
+  ![](/Image/pasted-image-20241109161937.png)
   # Choosing a Linux Distro
-  ![](pasted-image-20241109162113.png)
+  ![](/Image/pasted-image-20241109162113.png)
 
 ## Single user mode
 

@@ -9,7 +9,7 @@
   - Load balancing
   - Custom rules
 
-![](pasted-image-20240328131456.png)
+![](/Image/pasted-image-20240328131456.png)
 
 - With Ingress, users do not connect directly to a Service. Users reach the Ingress endpoint, and, from there, the request is forwarded to the desired Service.
 
@@ -65,7 +65,7 @@ spec:
         pathType: ImplementationSpecific
 ```
 
-![](pasted-image-20240328131624.png)
+![](/Image/pasted-image-20240328131624.png)
 
 # Example of fanout
 
@@ -100,4 +100,4 @@ spec:
         pathType: ImplementationSpecific
 ```
 
-![](pasted-image-20240328132049.png)
+![](/Image/pasted-image-20240328132049.png)

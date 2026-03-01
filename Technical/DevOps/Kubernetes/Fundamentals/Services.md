@@ -9,7 +9,7 @@
 - K8s provides a higher-level abstraction called **Service**, which logically groups Pods and defines a policy to access them.
 - These grouping is achieved via **Labels** and **Selectors**.
 - Using the Labels and Selectors, a logical grouping is assigned with a name, referred as Service. The Service name is also registered with the cluster's internal DNS service.
-  ![](pasted-image-20240328005603.png)
+  ![](/Image/pasted-image-20240328005603.png)
 
 ## Attribute
 
@@ -36,7 +36,7 @@ spec:
     targetPort: 5000
 ```
 
-![](pasted-image-20240328005948.png)
+![](/Image/pasted-image-20240328005948.png)
 
 - By default, each Service receives an IP address routable only inside the cluster, known as `ClusterIP`.
 - The user/client now connects to a Service via its **ClusterIP**, which forwards traffic to one of the Pods attached to it. A Service provides load balancing by default while selecting the Pods for traffic forwarding.
@@ -78,7 +78,7 @@ spec:
 
 - A high-port, dynamically picked from the default range **30000-32767**, is mapped to the respective service, from the all the worker nodes.
 - For example, if the mapped NodePort is **32233** for the service `frontend-svc`, then, if we connect to any worker node on port **32233**, the node would redirect all the traffic to the assigned ClusterIP - **172.17.0.4**. If we prefer a specific high-port number instead, then we can assign that high-port number to the NodePort from the default range when creating the Service.
-  ![](pasted-image-20240328021220.png)
+  ![](/Image/pasted-image-20240328021220.png)
 - Useful when we want to make the service accessible from the external world.
 
 ### LoadBalancer
@@ -87,13 +87,13 @@ spec:
 - The Service is exposed at a static port on each worker node.
 - The Service is exposed externally using the underlying cloud provider's load balancer feature.
 - The **LoadBalancer** *ServiceType* will only work if the underlying infrastructure supports the automatic creation of Load Balancers and have the respective support in Kubernetes, as is the case with the Google Cloud Platform and AWS. If no such feature is configured, the LoadBalancer IP address field is not populated, it remains in pending state, but the Service will still work as a typical NodePort type Service.
-  ![](pasted-image-20240328022104.png)
+  ![](/Image/pasted-image-20240328022104.png)
 
 ### ExternalIP
 
 - A Service can be mapped to an **[ExternalIP](https://kubernetes.io/docs/concepts/services-networking/service/#external-ips)** address if it can route to one or more of the worker nodes. Traffic that is ingressed into the cluster with the ExternalIP (as destination IP) on the Service port, gets routed to one of the Service endpoints. This type of service requires an external cloud provider such as Google Cloud Platform or AWS and a Load Balancer configured on the cloud provider's infrastructure.
 - ExternalIPs are not managed by Kubernetes.
-  ![](pasted-image-20240328022333.png)
+  ![](/Image/pasted-image-20240328022333.png)
 
 ### ExternalName
 

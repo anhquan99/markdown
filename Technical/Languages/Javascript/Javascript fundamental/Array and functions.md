@@ -280,4 +280,4 @@ alert(soldiers[0].age); // 20
 alert(soldiers[1].age); // 23
 ```
 
-![](pasted-image-20220401100717.png)
+![](/Image/pasted-image-20220401100717.png)

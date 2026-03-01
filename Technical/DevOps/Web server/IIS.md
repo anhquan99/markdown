@@ -34,7 +34,7 @@
 # IIS Architecture
 
 - 2 main layers: - Kernel mode: contains HTTP.SYS - User mode: contains WAS and W3 service.
-  ![](pasted-image-20230709113636.png)
+  ![](/Image/pasted-image-20230709113636.png)
 - Request process flow:
   1.  HTTP request from client got to HTTP.sys then HTTP.sys passing the request to a application pool.
   2.  HTTP.sys contacts to WAS and WAS requests configuration information from the xml file.

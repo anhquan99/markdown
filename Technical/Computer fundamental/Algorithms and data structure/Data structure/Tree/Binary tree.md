@@ -40,12 +40,12 @@ struct node{
 
 - Traversal
   - Inorder (Left, Root, Right)
-    ![](pasted-image-20220311080945.png | 300]]
+    ![](/Image/pasted-image-20220311080945.png | 300]]
   - Preorder (Root, Left, Right)
-    ![](pasted-image-20220311080951.png | 300]]
+    ![](/Image/pasted-image-20220311080951.png | 300]]
   - Postorder (Left, Right, Root)
-    ![](pasted-image-20220311080917.png | 300]]
-  - ![](pasted-image-20220311080856.png | 400]]
+    ![](/Image/pasted-image-20220311080917.png | 300]]
+  - ![](/Image/pasted-image-20220311080856.png | 400]]
   - Using [[Stack]]
     1. Create an empty stack
     2. Initialize current node as root
@@ -61,11 +61,11 @@ struct node{
 
 - [[Binary tree]]
   - **Full Binary tree:** every node has 0 or 2 children.
-    ![](pasted-image-20220316002455.png)
+    ![](/Image/pasted-image-20220316002455.png)
   - **Complete Binary tree:** if all the levels are completely filled except possibly the last level and the last level has all keys as left as possible
-    ![](pasted-image-20220316002512.png)
+    ![](/Image/pasted-image-20220316002512.png)
   - Perfect Binary tree: When all the internal nodes have 2 children and all leaf nodes are at the same level
-    ![](pasted-image-20220316002522.png)
+    ![](/Image/pasted-image-20220316002522.png)
   - Balance Binary tree: A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.
 - [[Binary search tree]]
 - [[Red black tree]]

@@ -5,9 +5,9 @@
 
 - Register domain names.
 - Route internet traffic to the resources for your domain.
-  ![](pasted-image-20240311221607.png)
+  ![](/Image/pasted-image-20240311221607.png)
 - Check the health of your resources.
-  ![](pasted-image-20240311221633.png)
+  ![](/Image/pasted-image-20240311221633.png)
 
 ## DNS terminologies
 

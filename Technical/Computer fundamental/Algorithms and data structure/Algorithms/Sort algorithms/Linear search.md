@@ -15,4 +15,4 @@
 
 # Coding
 
-![](pasted-image-20220311145505.png)
+![](/Image/pasted-image-20220311145505.png)

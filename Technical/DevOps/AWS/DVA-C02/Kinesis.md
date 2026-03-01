@@ -22,7 +22,7 @@
 ## High-level architecture
 
 - The producers continually push data to Kinesis Data Stream, and the consumers process the data in real time.
-  ![](pasted-image-20240305074334.png)
+  ![](/Image/pasted-image-20240305074334.png)
 
 ## Terminology
 
@@ -139,7 +139,7 @@
 - Enables consumers to receive records from a stream with throughput up to 2 MB of data per second per shard.
 - This throughput is dedicated, which means that consumers that use enhanced fan-out don't have to contend with other consumers that are receiving data from the stream.
 - Kinesis Data Streams pushes data records from the stream to consumers that use enhanced fan-out, there for these consumers don't need to poll for data.
-  ![](pasted-image-20240306063227.png)
+  ![](/Image/pasted-image-20240306063227.png)
 
 # Kinesis operations
 

@@ -61,7 +61,7 @@ static void Main(string[] args)
 
 - Resulting in the following
 
-![](pasted-image-20220325185618.png)
+![](/Image/pasted-image-20220325185618.png)
 
 - Together these techniques can help you create an application that is sensitive to the language and culture of the user. If you need to override that, you can also do that knowingly by specifying which culture to use when presenting your data. Hard coding the entities that vary is not culture sensitive and will display the same regardless of the locale of the machine it is run on.
 

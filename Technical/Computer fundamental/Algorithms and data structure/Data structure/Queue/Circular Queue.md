@@ -1,7 +1,7 @@
 # Definition
 
 - Extended version of [[Queue]] where the last element is connected to the first element, to form a circle.
-  ![](pasted-image-20240511222839.png)
+  ![](/Image/pasted-image-20240511222839.png)
 - In a normal queue after a bit of insertion and deletion, where will be non-usable empty space.
 
 # Operate

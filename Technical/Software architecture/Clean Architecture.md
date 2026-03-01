@@ -47,14 +47,14 @@
 
 # Domain Centric Architecture
 
-![](pasted-image-20220814143046.png)
+![](/Image/pasted-image-20220814143046.png)
 
 # Clean Architecture
 
-![](pasted-image-20220814145436.png)
-![](pasted-image-20220814154441.png)
-![](pasted-image-20220814160153.png)
-![](pasted-image-20220814160214.png)
+![](/Image/pasted-image-20220814145436.png)
+![](/Image/pasted-image-20220814154441.png)
+![](/Image/pasted-image-20220814160153.png)
+![](/Image/pasted-image-20220814160214.png)
 
 - The entities and use cases layer should be vertical slice
 - The controllers and external interfaces should be horizontal slice
@@ -92,7 +92,7 @@
 
 - The outer most layer is generally composed of frameworks and tools such as the Database, the Web Framework, etc
 - Generally, you don't write much code in this layer other than glude code that communicates to the next circle inwards
-  ![](pasted-image-20220814155713.png)
+  ![](/Image/pasted-image-20220814155713.png)
 
 # Dependency rules
 
@@ -119,7 +119,7 @@
 - Serverless is a deployment option too
 - Code written in the decoupled way (following Clean architecture rules) is easy to test
 - Clean architecture can help to mitigate the risks/fears of vendor lock-in
-  ![](pasted-image-20220814222920.png)
+  ![](/Image/pasted-image-20220814222920.png)
 
 # Problem with Clean architecture
 
@@ -131,11 +131,11 @@
   - Vertical slice architecture: minimize coupling between slices and maximize coupling within a slice
     - Things that change together, belong together
     - Maximize cohesion along axes of change and minimize coupling between them
-    - ![](pasted-image-20220814223417.png)
+    - ![](/Image/pasted-image-20220814223417.png)
 
 # Hexagonal architecture vs Onion architecture
 
-- ![](pasted-image-20220814223842.png)
+- ![](/Image/pasted-image-20220814223842.png)
 - Onion architecture: application core can access all the layers
 - Hexagonal architecture: 2 layers
 - 2 architecture combines with SOLID we get the clean architecture

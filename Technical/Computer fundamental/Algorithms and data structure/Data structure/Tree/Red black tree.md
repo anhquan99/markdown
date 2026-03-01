@@ -12,7 +12,7 @@
 3. **Leaf Property:** Every leaf (NULL) is black.
 4. **Red Property:** If a red node has children, then, the children are always black.
 5. **Depth Property:** For each node, any simple path from this node to any of its descendant leaf has the same black-depth (the number of black nodes).
-   ![](pasted-image-20240707190754.png)
+   ![](/Image/pasted-image-20240707190754.png)
 
 # Node attributes
 

@@ -36,7 +36,7 @@
   - <mark style="background: #FFB8EBA6;">Inner join:</mark> theta, natural, [[SQL Cookbook#^abdd24|equi]].
   - <mark style="background: #FFB8EBA6;">Outer join:</mark> left, right, full.
 - Is used to combine records from two or more tables in SQL database
-  ![](pasted-image-20220315231848.png | 300]]
+  ![](/Image/pasted-image-20220315231848.png | 300]]
 
 - <mark style="background: #ADCCFFA6;">Inner join:</mark>
 
@@ -77,7 +77,7 @@ FROM employee A, employee B
 WHERE A.emp_sup = B.emp_id;
 ```
 
-- ![](pasted-image-20220315233030.png | 400]]
+- ![](/Image/pasted-image-20220315233030.png | 400]]
 
 # Clustered vs Non-Clustered index
 
@@ -218,7 +218,7 @@ DELETE FROM Candidates WHERE CandidateId > 1000;
 
 # Pattern matching
 
-![](pasted-image-20220315233259.png)
+![](/Image/pasted-image-20220315233259.png)
 
 - `%`
 

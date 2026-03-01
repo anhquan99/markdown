@@ -1,7 +1,7 @@
 - Argo CD is a GitOps tool implemented as a Kubernetes controller that continuously tracks applications and compares their current state to the target state defined in a Git repository.
 - When it detects that a deployed application’s live state deviates from its desired state, it marks the application as out of sync
 - Argo CD executes the later GitOps stages and ensures the correct deployment of new configurations to Kubernetes clusters. It is a Kubernetes-native tool for implementing continuous deployment. It differs from external CD tools, which only support push-based deployment because it can pull the updated code from a Git repository and deploy it directly to a Kubernetes resource
-  ![](pasted-image-20240902143901.png)
+  ![](/Image/pasted-image-20240902143901.png)
 
 # Argo projects
 

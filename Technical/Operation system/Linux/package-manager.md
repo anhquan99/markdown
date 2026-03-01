@@ -14,7 +14,7 @@
 
 ## Debian packaging
 
-![](pasted-image-20241110130753.png|200]]
+![](/Image/pasted-image-20241110130753.png|200]]
 
 ### `dpkg`
 
@@ -114,7 +114,7 @@ sudo add-apt-repository --remove ppa:{username}/{repository}
 
 ## Red Hat Package Manager (RPM)
 
-![](pasted-image-20241110131120.png|200]]
+![](/Image/pasted-image-20241110131120.png|200]]
 
 ### `rmp`
 
@@ -207,7 +207,7 @@ Never remove the rmp package itself. The only way to fix this problem is to re-i
 
 - The Yet another Setup Tool (YaST) software manager is similar to other graphical package managers.
 
-![](pasted-image-20241110131310.png|200]]
+![](/Image/pasted-image-20241110131310.png|200]]
 
 ## Tool level
 

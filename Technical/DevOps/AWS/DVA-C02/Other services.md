@@ -65,9 +65,9 @@
   - Division of administrative tasks for better load balancing and security.
   - Use of CAs with limited, revocable trust for daily operations.
   - Validity periods and. certificate path limits.
-    ![](pasted-image-20240311071632.png)
+    ![](/Image/pasted-image-20240311071632.png)
 - Validate end-entity certificates: end-entity certificates derive their trust from a certification path leading back through the subordinate CAs to a root CA. When a web browser or other client is presented with an end-entity certificate, it attempts to construct a chain of trust. For example, it may check to see that the certificate's *issuer distinguished name* and *subject distinguished name* match with the corresponding fields of the issuing CA certificate. Matching would continue at each successive level up the hierarchy until the client reaches a trusted root that is contained in its trust store.
-  ![](pasted-image-20240311072226.png)
+  ![](/Image/pasted-image-20240311072226.png)
 
 # Macie
 

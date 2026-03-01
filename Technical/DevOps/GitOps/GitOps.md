@@ -3,7 +3,7 @@
 - GitOps is an operating model pattern, a set of best practice where the entire code delivery process is controlled via Git, including infrastructure and application definition as code and automation to complete updates and rollbacks.
 - Natively built for K8s echo system.
 - GitOps is a model developed on pre-existing practices.
-  ![](pasted-image-20240822115446.png)
+  ![](/Image/pasted-image-20240822115446.png)
 
 ## Principles
 
@@ -26,7 +26,7 @@
 # Operator
 
 - The operator handles CD part, in the image below it is Argo CD.
-  ![](pasted-image-20240822134119.png)
+  ![](/Image/pasted-image-20240822134119.png)
 
 ## Types
 
@@ -55,23 +55,23 @@
 # Progressive delivery
 
 - Minimum downtime (can be no downtime) and easy roll back.
-  ![](pasted-image-20240822135821.png)
+  ![](/Image/pasted-image-20240822135821.png)
 
 ## Blue-green deployments
 
 - Roll out full 100%
-  ![](pasted-image-20240822140034.png)
+  ![](/Image/pasted-image-20240822140034.png)
 
 ## Canary deployments
 
 - With blue-green deployments, if your new version has a hidden issue that manifests itself after some time, then all your users will be affected because the traffic is all or nothing.
 - With canary deployments, the traffic will route some percentage so that you can move a subset of users.
-  ![](pasted-image-20240822140502.png)
+  ![](/Image/pasted-image-20240822140502.png)
 
 # Automated rollbacks with Metrics
 
 - Automate canary deployments, you can set different thresholds that define if a deployment is successful or not.
-  ![](pasted-image-20240822141119.png)
+  ![](/Image/pasted-image-20240822141119.png)
 
 # Tools
 

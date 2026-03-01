@@ -1,7 +1,7 @@
 # Explain
 
 - Binary search is used in sorted array.
-- It split the search space into 2 halves and only keep the half that probably has the search target and throw away the other half. In this manner, the binary search reduce the search space to half size at every step until it find it target.![](pasted-image-20220310230721.png)
+- It split the search space into 2 halves and only keep the half that probably has the search target and throw away the other half. In this manner, the binary search reduce the search space to half size at every step until it find it target.![](/Image/pasted-image-20220310230721.png)
 
 # Advantages
 
@@ -17,4 +17,4 @@
 
 # Coding
 
-![](pasted-image-20220311150105.png)
+![](/Image/pasted-image-20220311150105.png)

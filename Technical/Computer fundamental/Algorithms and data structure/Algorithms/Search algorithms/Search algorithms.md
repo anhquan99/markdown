@@ -7,4 +7,4 @@
 - [[Exponential search]]
 - [[Prims's algorithms]]
 - [[Dijkstra's algorithms]]
-  ![](pasted-image-20220316005651.png)
+  ![](/Image/pasted-image-20220316005651.png)

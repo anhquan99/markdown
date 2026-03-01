@@ -79,12 +79,12 @@
 
 ## Change feed design patterns
 
-![](pasted-image-20231120155257.png)
+![](/Image/pasted-image-20231120155257.png)
 
 - Event-computing and Notifications: simplify scenarios that need to trigger a notification or send a call to an API based on a certain event.
 - Real-time stream processing:
   - Azure Cosmos DB change feed can be used for real-time stream processing for IoT or real-time analytics processing on operational data.
-  - For example, you might receive and store event data from devices, sensors, infrastructure, and applications, and then process these events in real time by using Spark.![](pasted-image-20231120162504.png)
+  - For example, you might receive and store event data from devices, sensors, infrastructure, and applications, and then process these events in real time by using Spark.![](/Image/pasted-image-20231120162504.png)
   - Advantages:
     - Data persistence.
     - Query ability.

@@ -3,7 +3,7 @@
 - Key-value pairs attached to k8s objects (Pods, ReplicaSets, Nodes, Namespaces, ...).
 - Used to organize and select a subset of object, based on the requirements in place.
 - Controller use Labels to logically group together decoupled objets, rather than using object's names or IDs.
-  ![](pasted-image-20240327135603.png)
+  ![](/Image/pasted-image-20240327135603.png)
 
 ## Label Selectors
 

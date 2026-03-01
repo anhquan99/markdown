@@ -52,7 +52,7 @@
   - A consumer group is a view of an entire Event Hubs. Consumer groups enable multiple consuming applications to each have a separate view of the event stream, and to read the stream independently at their own pace and from their own position. There can be at most 5 concurrent readers on a partition per consumer group; however it's recommended that there's only one active consumer for a given partition and consumer group paring. Each active reader receives all the events from its partition; if there are multiple readers on the same partition, then they'll receive duplicate events.
   - Event receivers.
   - Throughput units or processing units.
-    ![](pasted-image-20230705233943.png)
+    ![](/Image/pasted-image-20230705233943.png)
 - Event Hubs capture
   - Enables you to capture the streaming data in Event Hubs in an Azure Blob storage or Azure Data Lake Storage account of your choice, process real-time and batch-based on the same stream.
   - The key to scaling in Event Hubs is the partitioned consumer model. Each partition is an independent segment of data and is consumed independently.

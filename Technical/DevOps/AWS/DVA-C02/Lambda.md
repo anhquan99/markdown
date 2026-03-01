@@ -16,7 +16,7 @@
 
 # Lifecycle
 
-![](pasted-image-20240307180005.png)
+![](/Image/pasted-image-20240307180005.png)
 
 # Deployment package
 
@@ -93,7 +93,7 @@
   - Your function can scale independently of other functions in your account.
   - Your function can't scale out of control.
   - You may not be able to use all of your account's available concurrency.
-    ![](pasted-image-20240307223514.png)
+    ![](/Image/pasted-image-20240307223514.png)
 - **Provisioned concurrency:** pre-initialize a number of env instance for a function to avoid cold start.
   - Lambda can provision between 500 and 3000 execution envs at once, depending on the region.
 

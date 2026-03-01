@@ -1,7 +1,7 @@
 # Concept
 
 - It is a flexible software development methodology to get product into the hands of the users as quickly as possible. Scrum is a form of Agile model and is the most popular framework when implementing agile models. Scrum is an iterative software development model. Fixed iterations usually lasting 1.2 weeks are called Sprint or Iteration
-- ![](pasted-image-20220313011212.png)
+- ![](/Image/pasted-image-20220313011212.png)
 
 # Role in scrum
 

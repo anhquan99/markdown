@@ -125,7 +125,7 @@ EC2 Memory usage is by default not pushed (must be pushed from inside the instan
 ## Event buses
 
 - An event bus is a router that receive events and delivers them to destinations, or targets.
-  ![](pasted-image-20240306213727.png)
+  ![](/Image/pasted-image-20240306213727.png)
   - You can archive, or save, events and then replay events at a later time from the archive.
   - Default event bus in AWS account only allows events from 1 account, you can attach policies to an IAM role to grant permission to send events to a different account or Region.
 
@@ -148,7 +148,7 @@ EC2 Memory usage is by default not pushed (must be pushed from inside the instan
 ## Pipe
 
 - A pipe routes events from a single source to a single target. The pipe also includes the ability to filter for specific events, and to perform enrichments on the event data before it is sent to the target.
-  ![](pasted-image-20240306222039.png)
+  ![](/Image/pasted-image-20240306222039.png)
 
 ## Trigger
 

@@ -21,7 +21,7 @@
   5.  If the firewall allows the call, Key Vault calls MS Entra ID to validate the security principal's access token.
   6.  Key Vault checks if the security principal has the necessary permission for requested operation. If not, Key Vault returns a forbidden response.
   7.  Key Vault carries out the requested operation and returns the result.
-      ![](pasted-image-20231125124750.png)
+      ![](/Image/pasted-image-20231125124750.png)
   ## Authentication options
   - When you create a key vault in Azure subscription, it's automatically associated with the MS Entra tenant subscription. All callers in both planes must register in this tenant and authenticate to access the key vault. In both cases, applications can access Key vault in 3 ways:
     - Application-only.

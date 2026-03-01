@@ -43,4 +43,4 @@
 
 # LRU (Least recently used) Cache implementation
 
-- ![](pasted-image-20220310200011.png ]]
+- ![](/Image/pasted-image-20220310200011.png ]]

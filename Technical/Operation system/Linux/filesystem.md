@@ -19,7 +19,7 @@
 - An inode is a data structure on disk that describes and stores file attributes, including its location.
 - The inode is used by the operating system to keep track of properties such as location, file attributes (permissions, ownership, etc.), access time and other items.
 - Inodes describe and store information about a file, including: - Permissions​ - User and group ownership​ - Size​ - Timestamps (nanosecond)
-  ![](pasted-image-20250121200334.png)
+  ![](/Image/pasted-image-20250121200334.png)
 
 ```ad-note
 Filenames are not stored in the inode; they are stored in the direcroty.
@@ -98,7 +98,7 @@ Filenames are not stored in the inode; they are stored in the direcroty.
   - Other blocks store file data
 - The block size is specified when the filesystem is created. It may be 512, 1K, 2K, 4K, 8K, etc. bytes, but not larger than a page of memory (4kB on x86).
 - The default block size is 4 KB, which would create a block group of 128 MB.
-  ![](pasted-image-20250204210232.png)
+  ![](/Image/pasted-image-20250204210232.png)
 - The first 1024 bytes are unused (to allow for boot sectors). The superblock will sstart the first block, except for block group 0. This is followed by the group descriptors and a number of GDT (Group Descriptor Table) blocks. These are followed by the data block bitmap, the inode bitmap, the inode table, and the data blocks.
 - The block size is used to set the maximum number of:
   - Blocks
@@ -142,7 +142,7 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 
 - Partitions are converted to physical volumes and multiple physical volumes are grouped into volume groups.
 - Logical volumes are allocated from volume groups: - Can be defined by the size or number of extents. - Filesystems are built on logical volumes. - Can be named anything.
-  ![](pasted-image-20250209190338.png)
+  ![](/Image/pasted-image-20250209190338.png)
 
 #### Utilities
 
@@ -259,7 +259,7 @@ sudo lvresize --resizefs --size 3G my_volume/parition1
 ### `/dev`
 
 - It contains **device nodes**, a type of pseudo-file used by most hardware and software devices, except for network devices, which is: - Empty on the disk partition when it is not mounted. - Contains entries which are created by the `udev` system, which creates and manages device nodes on Linux, creating them dynamically when devices are found.
-  ![](pasted-image-20250105190120.png)
+  ![](/Image/pasted-image-20250105190120.png)
 
 ### `/var`
 

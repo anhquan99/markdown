@@ -11,7 +11,7 @@
   3.  `~/.profile`
 - Every time you create a new shell, or terminal window, you do not perform a full system login; only a file named `~/.bashrc` file is read and evaluated.
 - Recent distribution sometimes do not even have `.bash_profile` or `.bash_login`.
-  ![](pasted-image-20241231094149.png)
+  ![](/Image/pasted-image-20241231094149.png)
 
 ## Users and groups
 

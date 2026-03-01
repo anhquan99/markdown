@@ -59,7 +59,7 @@
 - The key the client will use to communicate with the **Resource Server**. This is like a badge or key card that give the **Client** permission to request data or perform action with the **Resource Server** on your behalf.
 - Understanding how to retrieve the needed information to make authorization decisions is an agreement between the authorization server and the resource server.
 - With the access token, there is a set of techniques, collectively known as *sender constraint*, that allow you to bind an access token to a specific sender. This guarantees that even if an attacker steals an access token, they can’t use it to access your API since the token is bound to the client that originally requested it.
-  ![](pasted-image-20250127142541.png)
+  ![](/Image/pasted-image-20250127142541.png)
 
 ```ad-note
 Sometimes the **Authorization Server** and the **Resource Server** are the same server. However, there are cases where they will _not_ be the same server or even part of the same organization. For example, the **Authorization Server** might be a third-party service the **Resource Server** trusts.
@@ -90,7 +90,7 @@ Sometimes the **Authorization Server** and the **Resource Server** are the same 
 
 ## OAuth Flow
 
-![](pasted-image-20250127114632.png)
+![](/Image/pasted-image-20250127114632.png)
 
 1. You, the **Resource Owner**, want to allow “Terrible Pun of the Day,” the **Client**, to access your contacts so they can send invitations to all your friends.
 2. The **Client** redirects your browser to the **Authorization Server** and includes with the request the **Client ID**, **Redirect URI**, **Response Type**, and one or more **Scopes** it needs.

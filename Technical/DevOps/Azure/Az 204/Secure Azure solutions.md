@@ -33,13 +33,13 @@
   - Tied to the Azure resource instance.
   - Created and deleted along with the resource, role assignments can't be created in advance.
   - If you require that each resource has its own identity, or have resources that require a unique set of permissions and want the identity to be deleted when the resource is deleted.
-    ![](pasted-image-20231125171550.png)
+    ![](/Image/pasted-image-20231125171550.png)
 - User assigned managed identity:
   - Stand alone Azure resource.
   - More efficient in a broader range of scenarios than system assigned.
   - Can be used in multiple resources, and their life cycles are decoupled from the resource's life cycles.
   - Administration overhead will be reduced if infrastructure requires multiple resources to access the same resources.
-    ![](pasted-image-20231125171612.png)
+    ![](/Image/pasted-image-20231125171612.png)
 
 | Scenario                                      | Recommendation  |
 | --------------------------------------------- | --------------- |
@@ -53,7 +53,7 @@
 ## Multiple managed identities
 
 - Resources that support managed identities can have both system and user assigned identity
-  ![](pasted-image-20231125171920.png)
+  ![](/Image/pasted-image-20231125171920.png)
 
 ## How a system-assigned managed identity works with an Azure virtual machine:
 

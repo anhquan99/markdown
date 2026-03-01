@@ -35,7 +35,7 @@
       2.  Point the pointer of the previous node to the next node of the node to be deleted
       3.  Free memory for the node to be deleted.
     - <mark style="background: #D2B3FFA6;">Recursive method</mark>
-      - ![](pasted-image-20220309230710.png)
+      - ![](/Image/pasted-image-20220309230710.png)
   - Size() return number of the elements in list
   - Empty() check if list is empty
   - value_at(index) return value of the nth item
@@ -67,7 +67,7 @@
     - Pointer points to previous node from current node.
     - Pointer points to next node from current node.
     - Pointer points to current node from next node.
-    - ![](pasted-image-20220310123914.png)
+    - ![](/Image/pasted-image-20220310123914.png)
   - ## Advantages over singly linked list
     - Travel both from back and forward.
     - Delete operation is more efficient if pointer to the node to be deleted is given

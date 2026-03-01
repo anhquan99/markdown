@@ -6,7 +6,7 @@
 ## Problem
 
 - In weather system, the weather data changes every minute or second that make the prediction changes every time the data change. The user uses the weather system wants to know when the prediction changes. The observer pattern defines one-to-many dependency between objects to that when one object changes its state all the other are notified about the change.
-  ![](pasted-image-20220313010640.png)
+  ![](/Image/pasted-image-20220313010640.png)
 
 ## Code
 

@@ -6,7 +6,7 @@
    - All element is smaller than pivot
 3. Then repeat until there is no more element in sub halves
 
-- ![](pasted-image-20220311143308.png)
+- ![](/Image/pasted-image-20220311143308.png)
 - We can choose pivot in these position:
   - At first element
   - Last element
@@ -23,4 +23,4 @@
 
 # Coding
 
-![](pasted-image-20220311144241.png)
+![](/Image/pasted-image-20220311144241.png)

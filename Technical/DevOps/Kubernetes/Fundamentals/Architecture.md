@@ -6,8 +6,8 @@
   - [[control-plane|Control plan nodes]]
   - [[worker-node|Worker nodes]] (more then 1 worker nodes is optional but recommended)
 
-![](pasted-image-20240324113009.png)
-![](pasted-image-20240402220058.png)
+![](/Image/pasted-image-20240324113009.png)
+![](/Image/pasted-image-20240402220058.png)
 
 ## Network challenges
 
@@ -19,7 +19,7 @@
 
 - K8s network model aims to reduce complexity, and it treats Pods as VMs on a network, where each VM is equipped with a network interface - thus each Pod receiving a unique IP address - called **IP-per-Pod** model.
 - Containers are integrated with the overall K8s networking model through the use of the **Container Network Interface** (CNI) supported by CNI plugins.
-  ![](pasted-image-20240324132628.png)
+  ![](/Image/pasted-image-20240324132628.png)
 
 #### Service-to-Pod communication within the same namespace and across cluster namespaces.
 

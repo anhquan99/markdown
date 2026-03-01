@@ -11,7 +11,7 @@
 
 1. Convert both microservices (Service A and Service B) into library modules that can be deployed into a shared runtime.
 2. Make both microservices share the same database instance, because they can participate in the same transactions and make the transaction executed locally.
-   ![](pasted-image-20240820173701.png)
+   ![](/Image/pasted-image-20240820173701.png)
 
 ## Benefits
 
@@ -38,7 +38,7 @@ The operation includes 2 phases:
 
 1. Prepare phase: the coordinator node send a prepare message to all participating nodes, asking them if they are ready to commit the transaction. Each participant acquires a “lock” on the resource/s and replies with either a Yes or No message, indicating whether they can commit.
 2. Commit phase: the coordinator decides whether to commit or abort the transaction based on the responses received in the prepare phase. If all participants have responded with a Yes message, the coordinator sends a commit message to all the participants. If any participant has responded with a No message, the coordinator sends an abort message to all the participants, and the transaction is rolled back.
-   ![](pasted-image-20240820175415.png)
+   ![](/Image/pasted-image-20240820175415.png)
 
 ## Benefits
 
@@ -63,7 +63,7 @@ Transaction in Sage must be [[Microservice#ACID|ACID]]
 - Like the 2 phase commit, there is a service acts as the coordinator and orchestrator of the overall distributed state change.
 - The orchestrator service has the responsibility to call other services until they reach the desired state or take corrective actions if they fail.
 - The orchestrator uses its local database to keep track of state changes, and it is responsible for recovering any failures related to state changes.
-  ![](pasted-image-20240820231018.png)
+  ![](/Image/pasted-image-20240820231018.png)
 
 ### Benefits
 
@@ -104,7 +104,7 @@ Transaction in Sage must be [[Microservice#ACID|ACID]]
 
 - Coordinate microservices with exchange events without a centralized point of control.
 - Each local transaction publishes domain events that trigger local transactions in other services.
-  ![](pasted-image-20240820233438.png)
+  ![](/Image/pasted-image-20240820233438.png)
 
 ### Benefits
 
@@ -123,12 +123,12 @@ Transaction in Sage must be [[Microservice#ACID|ACID]]
 ## Approach
 
 - A route service accepts and forward requests to services through a message broker in a single local transaction, therefor services can process the requests independently and in parallel.
-  ![](pasted-image-20240820234654.png)
+  ![](/Image/pasted-image-20240820234654.png)
 
 # Comparison
 
-![](pasted-image-20240821000329.png)
-![](pasted-image-20240821000346.png)
+![](/Image/pasted-image-20240821000329.png)
+![](/Image/pasted-image-20240821000346.png)
 
 # Reference
 

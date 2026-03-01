@@ -1,7 +1,7 @@
 # Idea
 
 - Find the possible target value position
-- ![](pasted-image-20220312105545.png)
+- ![](/Image/pasted-image-20220312105545.png)
 
 # Time complexity
 
@@ -10,4 +10,4 @@
 
 # Coding
 
-![](pasted-image-20220312105631.png)
+![](/Image/pasted-image-20220312105631.png)

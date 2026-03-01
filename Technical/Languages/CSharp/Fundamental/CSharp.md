@@ -8,9 +8,9 @@
 
 1. When you run your code, C# compiler takes your code as an input and process it then output your program in **intermediate language (IL)** code which is saved in .exe or .dll files.
 2. After the IL code is generated, the **Common Language Runtime (CLR)** convert IL to machine codes.
-3. CLR use **just-in-time (JIT)** compiler to translate the IL code into machine code.![](pasted-image-20220313161419.png)
+3. CLR use **just-in-time (JIT)** compiler to translate the IL code into machine code.![](/Image/pasted-image-20220313161419.png)
 
-- ![](pasted-image-20220313160144.png)
+- ![](/Image/pasted-image-20220313160144.png)
 
 ## Const vs static vs readonly
 
@@ -43,7 +43,7 @@
 
 ## Delegate
 
-- Create delegate variable reference to a function with the same input arguments.![](pasted-image-20220313165658.png)
+- Create delegate variable reference to a function with the same input arguments.![](/Image/pasted-image-20220313165658.png)
 - Multicast delegate
 
 ```csharp

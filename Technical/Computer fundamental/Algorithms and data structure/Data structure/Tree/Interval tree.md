@@ -6,7 +6,7 @@
 
 - (Low, High) is the interval of a node.
 - Max is the maximum high value of the subtree in the node.
-  ![](pasted-image-20240613093228.png)
+  ![](/Image/pasted-image-20240613093228.png)
 
 # Operations
 

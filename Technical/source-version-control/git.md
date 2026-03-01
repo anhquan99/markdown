@@ -7,7 +7,7 @@
 ## Version control system (VCS)
 
 - Records all the changes made to a file or set of data, so a specific version may be called later if needed.
-- This helps ensure that all team member are working on the latest version of the file.![](pasted-image-20220315082757.png)
+- This helps ensure that all team member are working on the latest version of the file.![](/Image/pasted-image-20220315082757.png)
 
 ## Git repository
 
@@ -95,11 +95,11 @@
   - is used to incorporate new commits into you feature branch.
   - Creates an extra merge commit every time you need to incorporate changes
   - It pollutes your feature branch history
-  - ![](pasted-image-20220315105058.png)
+  - ![](/Image/pasted-image-20220315105058.png)
 - #### Rebase:
   - Incorporates all the new commits in the master branch
   - Rewrites the project history by creating new commits for each commit in the original branch
-  - ![](pasted-image-20220315105231.png)
+  - ![](/Image/pasted-image-20220315105231.png)
 
 ## Command used to fix a broken commit
 

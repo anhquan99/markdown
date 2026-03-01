@@ -23,7 +23,7 @@
 - BigInt
 - Boolean
 - Undefined: meaning the variable value is not assigned or not assigned
-  - ![](pasted-image-20220330070133.png)
+  - ![](/Image/pasted-image-20220330070133.png)
 - Null: means empty or not does not exist
 - Symbol
 
@@ -260,7 +260,7 @@
 
 ## Operator precedence
 
-![](pasted-image-20220330133915.png)
+![](/Image/pasted-image-20220330133915.png)
 
 ## Assignment
 
@@ -314,9 +314,9 @@
   > The comparison algorithm given above is roughly equivalent to the one used in dictionaries or phone books, but it's not exactly the same
   > For instance, case matters. A capital letter `"A"` is not equal to the lowercase `"a"`. Which one is greater? The lowercase `"a"`. Why? Because the lowercase character has a greater index in the internal encoding table JavaScript uses (Unicode).
 
-![](pasted-image-20220330143230.png)
-![](pasted-image-20220330144030.png)
-![](pasted-image-20220330144043.png)
+![](/Image/pasted-image-20220330143230.png)
+![](/Image/pasted-image-20220330144030.png)
+![](/Image/pasted-image-20220330144043.png)
 
 # Logical operators
 

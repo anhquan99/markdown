@@ -1,5 +1,5 @@
 - Infrastructure as a Service.
-  ![](pasted-image-20240311222331.png)
+  ![](/Image/pasted-image-20240311222331.png)
 
 # Capability
 
@@ -94,7 +94,7 @@
 
 # Instance storage
 
-![](pasted-image-20240311230449.png)
+![](/Image/pasted-image-20240311230449.png)
 
 ## Elastic block store (EBS) volume
 
@@ -144,7 +144,7 @@
 - The root volume automatically have an EBS volume attached.
 - An Amazon EBS-backed instance can be stopped and later restarted without affecting data stored in the attached volumes.
 - You can't use `st1` or `sc1` volumes as root volumes.
-  ![](pasted-image-20240311234111.png)
+  ![](/Image/pasted-image-20240311234111.png)
 
 ## EC2 instance store
 
@@ -277,7 +277,7 @@
 - CLB:
   - Disabled by default.
   - No charges for inter AZ data.
-    ![](pasted-image-20240310222821.png)
+    ![](/Image/pasted-image-20240310222821.png)
 
 ## SSL/TLS
 

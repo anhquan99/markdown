@@ -17,5 +17,5 @@
 
 # Coding
 
-- Recursive ![](pasted-image-20220311184544.png)
-- Non-recursive ![](pasted-image-20220311184611.png)
+- Recursive ![](/Image/pasted-image-20220311184544.png)
+- Non-recursive ![](/Image/pasted-image-20220311184611.png)

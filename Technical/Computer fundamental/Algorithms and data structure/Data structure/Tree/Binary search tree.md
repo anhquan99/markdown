@@ -24,7 +24,7 @@
 
 - Node to be deleted is the leaf: Simply remove from the tree
 - Node to be deleted has only one child: move the child to the parent node and delete
-- Node to be deleted has 2 children: find inorder successor of the node. Copy contents of the inorder successor to the node and delete inorder succesor. Note that inorder predecessor can also used ![](pasted-image-20220311104228.png)
+- Node to be deleted has 2 children: find inorder successor of the node. Copy contents of the inorder successor to the node and delete inorder succesor. Note that inorder predecessor can also used ![](/Image/pasted-image-20220311104228.png)
 
 # Function
 

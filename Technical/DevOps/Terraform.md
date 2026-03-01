@@ -19,11 +19,11 @@ _HashiCorp Terraform is an infrastructure as code tool that lets you define both
 # Modules
 
 - With Terraform, you can put your code inside a Terraform module and reuse that module in multiple places throughout your code. Instead of having the same code copied and pasted in the staging and production environments.
-  ![](pasted-image-20240902150857.png)
+  ![](/Image/pasted-image-20240902150857.png)
 
 # Workflow
 
-![](pasted-image-20240902145104.png)
+![](/Image/pasted-image-20240902145104.png)
 
 # Syntax
 

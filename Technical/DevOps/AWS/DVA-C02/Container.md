@@ -218,8 +218,8 @@
   - Capacity: the infrastructure where your containers run.
   - Controller: deploy and manage your applications that run on the containers.
   - Provisioning: the tools you can use to interface with the scheduler to deploy and manage your application containers.
-    ![](pasted-image-20240308080029.png)
-    ![](pasted-image-20240308080108.png)
+    ![](/Image/pasted-image-20240308080029.png)
+    ![](/Image/pasted-image-20240308080108.png)
 - Task definition: is like a blueprint for your application. Each time you launch a task in Amazon ECS, you specify a task definition. The service then knows which Docker image to use for containers, how many containers to use in the task, and the resource allocation for each container.
 
 ```ad-note

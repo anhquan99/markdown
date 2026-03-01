@@ -6,7 +6,7 @@
 ## Problem
 
 - In the first developments your application has created class A. Now you use 3rd party library or something else, your application needs to use a class B. But class A is not compatible with class B. The adapter pattern converts the interface of A class into another interface as expected by the client application here we have B class.  
-  ![](pasted-image-20220313004931.png)
+  ![](/Image/pasted-image-20220313004931.png)
 
 ## Code
 

@@ -4,7 +4,7 @@
 # Idea
 
 - Using array of pointer to store the tree and when querying start from the root trace back to the node by check the element exist on the tree.
-  ![](pasted-image-20240611221147.png)
+  ![](/Image/pasted-image-20240611221147.png)
 
 # Usage
 

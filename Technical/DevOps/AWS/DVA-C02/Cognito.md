@@ -2,7 +2,7 @@
 - Cognito User Pools (CUP):
   - Sign in functionality for app users.
   - Integrate with API Gateway and ALB.
-    ![](pasted-image-20240311074456.png)
+    ![](/Image/pasted-image-20240311074456.png)
 - Cognito Identity pools (federated identity):
   - Provide AWS credentials to users so they can access AWS resources directly.
   - Integrate with User pools as an identity provider.
@@ -57,9 +57,9 @@
 ## Authentication flow
 
 - External provider flow.
-  ![](pasted-image-20240311075511.png)
+  ![](/Image/pasted-image-20240311075511.png)
 - Developer authenticated identities flow.
-  ![](pasted-image-20240311075533.png)
+  ![](/Image/pasted-image-20240311075533.png)
 
 # Temporary security credentials (AWS Security Token Service/ AWS STS)
 

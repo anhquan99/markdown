@@ -3,7 +3,7 @@
 - A heap is a special Tree-based data structure in which the tree is a complete binary tree
 - **Max-heap:** the key present at the root node must be greatest among the keys present at all of its children. The same property must be recursively true for all sub-trees in that Binary tree
 - **Min-heap:** like **max-heap**, but the root node must be the minimum among the keys present at all of its children.
-- ![](pasted-image-20220311113953.png)
+- ![](/Image/pasted-image-20220311113953.png)
 
 # Functions
 
@@ -23,7 +23,7 @@
 # Implementation
 
 - Being a complete tree makes an **array** a natural choice to implement a heap since it can be stored compactly and no space wasted.
-  ![](pasted-image-20240526221631.png)
+  ![](/Image/pasted-image-20240526221631.png)
 - For node _i_, its children are stored at _2i+1_ and _2i+2_, and its parent is at _floor((i-1)/2)_.
 - If implement **k-heap** then the children are at _ki+1_ to _ki+k_, and its parent is at _floor((i-1)/k)_.
 

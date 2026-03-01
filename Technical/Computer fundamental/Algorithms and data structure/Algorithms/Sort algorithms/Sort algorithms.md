@@ -11,4 +11,4 @@
 - [[Bubble sort]]
 - [[Insertion sort]]
 - [[Heap sort]]
-  ![](pasted-image-20220316005711.png)
+  ![](/Image/pasted-image-20220316005711.png)

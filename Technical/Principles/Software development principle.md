@@ -16,13 +16,13 @@
   - Open for extension but close for modification
 - Liskov substitution
   - An object of child class can replace parent class but not changes the rightness of the program.
-  - ![](pasted-image-20220312203521.png)
+  - ![](/Image/pasted-image-20220312203521.png)
 - Interface Segregation
   - Divide big interface into smaller interfaces to have specific purpose of that interface
 - Dependency inversion
   - Higher module should not depend on lower module
   - Interface (abstraction) should not be specific.
-  - ![](pasted-image-20220312204047.png)
+  - ![](/Image/pasted-image-20220312204047.png)
 
 # SoC (Separation of Concerns)
 
@@ -42,5 +42,5 @@
 - Talk only to your close friends. Don't talk to stranger
 - Example: take O->P->Q
   - O don't know anything about Q, so this case is violated Law of Demeter
-  - ![](pasted-image-20220312205522.png)
-  - ![](pasted-image-20220312205727.png)
+  - ![](/Image/pasted-image-20220312205522.png)
+  - ![](/Image/pasted-image-20220312205727.png)

@@ -1,6 +1,6 @@
 # Linux documentation
 
-![](pasted-image-20241125070322.png)
+![](/Image/pasted-image-20241125070322.png)
 
 - Sources:
   - The man pages (short for manual pages)

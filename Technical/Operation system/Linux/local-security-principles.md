@@ -30,7 +30,7 @@
 
 - The most privileged account on a Linux/UNIX system.
 - When you are signed in as, or acting as root, the shell prompt displays `#`.
-  ![](pasted-image-20250103224243.png)
+  ![](/Image/pasted-image-20250103224243.png)
 - A regular account user can perform some operations requiring special permissions; however, the system configuration must allow such abilities to be exercised.
 - `SUID` (Set owner User ID upon execution) is a special kind of file permission given to a file. Use of SUID provides temporary permissions to a user to run a program with the permissions of the file *owner* (which may be root) instead of the permissions held by the *user*.
 

@@ -73,7 +73,7 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 - The process is isolated in its own user space to protect it from other processes, which promotes security and creates greater stability.
 - The shared memory segments, a user process is not able to read or write into or from memory space of any other process.
 - Even a process run by the root user or as a `setuid` program runs in user mode, except when jumping into a system call, and has only limited ability to access hardware.
-  ![](pasted-image-20250119115505.png)
+  ![](/Image/pasted-image-20250119115505.png)
 
 ### Kernel (system) mode
 

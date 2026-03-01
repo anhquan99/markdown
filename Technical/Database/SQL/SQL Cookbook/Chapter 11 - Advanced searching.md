@@ -33,7 +33,7 @@ from
 ## Finding knight values
 
 - Problem: you want result a result set that containes each employee's name, the department they work in, their salary, the date they were hired, and the salary of the last employee hired, in each department.
-  ![](pasted-image-20230217221012.png)
+  ![](/Image/pasted-image-20230217221012.png)
 - Solution: use a case expression in a subquery to return the SAL of the last employee hired in each DEPTNO; for all other salaries, return 0. Use the window function `MAX OVER` in ther outer query to return the nonzero SAL for each employee's department.
 
 ```sql
@@ -55,9 +55,9 @@ order by 1, 4 desc
 - Problem: based on current data, you want to return additional rows and columns representing future actions.
 - Solution: the key is to use a Cartesian product to generate two additional rows for each order and then simply use CASE expression to create the required column values.
 - Data:
-  ![](pasted-image-20230217221941.png)
+  ![](/Image/pasted-image-20230217221941.png)
 - Result:
-  ![](pasted-image-20230217222000.png)
+  ![](/Image/pasted-image-20230217222000.png)
 
 ```sql
 with nrows(n) as (

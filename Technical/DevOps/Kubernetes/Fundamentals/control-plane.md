@@ -33,7 +33,7 @@
 #### API directory
 
 - Directory tree
-  ![](pasted-image-20240324184154.png)
+  ![](/Image/pasted-image-20240324184154.png)
 - Group types:
   - **Core group `(/api/v1)`**: includes objects such as Pods, Services, Nodes, Namespaces, ConfigMaps, Secrets, ...
   - **Name group**: Includes objects in `/apis/$NAME/$VERSION` format. These different API versions imply different levels of stability and support:
@@ -64,8 +64,8 @@
 - New data is written to the data store only by appending to it, data is never replaced in the data store, obsolete data is compacted (or shredded) periodically to minimize the size of the data store.
 - `etcd` CLI management tool - `etcdctl`, provides snapshot save and restore capabilities.
 - Stacked `etcd` topology
-  ![](pasted-image-20240324122949.png)
+  ![](/Image/pasted-image-20240324122949.png)
 - External `etcd` topology
-  ![](pasted-image-20240324123013.png)
+  ![](/Image/pasted-image-20240324123013.png)
 - Both stacked and external topologies support HA configs. `etcd` is based on the [Raft Consensus Algorithm](https://web.stanford.edu/~ouster/cgi-bin/papers/raft-atc14), which allows a collection of machines to work as a coherent group that can survive the failures of some of its members. At any given time, 1 of the nodes the group will be the leader. `etcd` gracefully handles leader elections and can tolerate node failure, including leader node failures. Any node can be treated as a leader.
-  ![](pasted-image-20240324123519.png)
+  ![](/Image/pasted-image-20240324123519.png)

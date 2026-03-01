@@ -50,7 +50,7 @@
 
 - PVC is a request for storage by a user. Users request for PersistentVolume resources based on storage class, access mode, size, and optionally volume mode.
 - Once a user finishes its work, the attached PersistentVolumes can be released. The underlying PersistentVolumes can then be *reclaimed* (for an admin to verify and/or aggregate data), *deleted* (both data and volume are deleted), or *recycled* for future usage (only data is deleted), based on the configured **persistentVolumeReclaimPolicy** property.
-  ![](pasted-image-20240328111513.png)
+  ![](/Image/pasted-image-20240328111513.png)
 
 #### Modes
 

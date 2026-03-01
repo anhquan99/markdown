@@ -14,7 +14,7 @@
 - `udev` run as a daemon (either `udevd` or `systemd-udevd`) and monitors a netlink socket.
 - When new devices are initialized or removed, the `uevent` kernel facility sends a message through the socket, which `udev` receives and takes appropriate action to create or remove device nodes of the right names and properties according to the rules.
 - Components of `udev` are: - `libudev` lib which allows access to information about the devices - `udevd` or `systemd-udevd` daemon that manages the `/dev` directory - `udevadm` utility for control and diagnostics
-  ![](pasted-image-20250210220921.png|300]]
+  ![](/Image/pasted-image-20250210220921.png|300]]
 
 ## Device nodes
 
@@ -22,7 +22,7 @@
 - A device driver may use multiple device nodes. Device nodes are located in the `/dev` directory.
 - The device nodes present in `/dev` are the primary or first interaction with the hardware on a machine.
 - Some common devices are: - `/dev/sd*`: devices appearing as hard drives - `/dev/ttyS*`: serial ports, often used as consoles - `/dev/snd/*`: various sound devices
-  ![](pasted-image-20250105190120.png)
+  ![](/Image/pasted-image-20250105190120.png)
 
 ## Rule files
 

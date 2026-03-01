@@ -32,7 +32,7 @@
   - Smallest unit of k8s contain container or multiple containers.
   - Multiple pods can be created and removed to scale your app and distributed across all available worker node.
 - Proxy/config: - Connect to outside request and response.
-  ![](pasted-image-20240324113009.png)
+  ![](/Image/pasted-image-20240324113009.png)
 
 ## Terms
 

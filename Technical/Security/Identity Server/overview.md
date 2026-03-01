@@ -1,6 +1,6 @@
 # Overview
 
-![](pasted-image-20250118101332.png)
+![](/Image/pasted-image-20250118101332.png)
 
 ## Problems
 
@@ -10,7 +10,7 @@
 ## Solution
 
 - Outsourcing security functions to a security token service.
-  ![](pasted-image-20250118102558.png)
+  ![](/Image/pasted-image-20250118102558.png)
 
 ## Security concerns
 
@@ -32,4 +32,4 @@
 - OpenID Connect and OAuth 2.0 are very similar - in fact OpenID Connect is an extension on top of OAuth 2.0. The 2 fundamental security concerns are combined into a single protocol - often with a single round trip to the security token service.
 - IdentityServer4 is an implementation of these 2 protocols.
 - IdentityServer is middleware that adds the spec compliant OpenID Connect and OAuth 2.0 endpoints to an arbitrary ASP.NET Core application.
-  ![](pasted-image-20250118114641.png)
+  ![](/Image/pasted-image-20250118114641.png)

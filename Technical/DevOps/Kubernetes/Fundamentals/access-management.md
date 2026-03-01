@@ -5,4 +5,4 @@ To access and manage k8s resources or objects in the cluster, we need to access 
 - [[authentication]]: who are you?
 - [[authorization]]: are you allowed to create pod?
 - [[admission-control]]: software modules that validate and/or modify user requests.
-  ![](pasted-image-20240327203319.png)
+  ![](/Image/pasted-image-20240327203319.png)

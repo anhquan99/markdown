@@ -10,7 +10,7 @@
 
 # Architecture
 
-![](pasted-image-20240910204851.png)
+![](/Image/pasted-image-20240910204851.png)
 
 ## Jenkins server
 

@@ -74,4 +74,4 @@ alert(isFinite("str")); // false, because a special value: NaN
 alert(isFinite(Infinity)); // false, because a special value: Infinity
 ```
 
-![](pasted-image-20220331165107.png)
+![](/Image/pasted-image-20220331165107.png)

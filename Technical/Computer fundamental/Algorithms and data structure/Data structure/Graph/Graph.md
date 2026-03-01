@@ -14,13 +14,13 @@
 
 # Representations
 
-- Adjacency matrix ![](pasted-image-20220311180612.png)
-- Association matrix ![](pasted-image-20220311180705.png)
-- Edges list ![](pasted-image-20220311180721.png)
-- Adjacency list ![](pasted-image-20220311180812.png)
+- Adjacency matrix ![](/Image/pasted-image-20220311180612.png)
+- Association matrix ![](/Image/pasted-image-20220311180705.png)
+- Edges list ![](/Image/pasted-image-20220311180721.png)
+- Adjacency list ![](/Image/pasted-image-20220311180812.png)
 
 # Search
 
 - [[DFS]] (Deep first search)
 - [[BFS]] (Breadth first search)
-  ![](pasted-image-20220316005744.png)
+  ![](/Image/pasted-image-20220316005744.png)

@@ -99,7 +99,7 @@
     - Service SAS: secured with the storage account key, delegate access to a resource in Azure Storage service: Blob storage, Queue storage, Table storage or Azure Files.
     - Account SAS: secured with the storage account key, delegate access to resources in one or more of the storage services. All of the operations available via a service or user delegation SAS also available via an account SAS.
     - Note: Microsoft recommends using Azure AD credentials when possible as a security best practice rather than using the account key.
-  - URI components: ![](pasted-image-20230630224225.png)
+  - URI components: ![](/Image/pasted-image-20230630224225.png)
   - Best practice to reduce the potential risks of using SAS:
     - Always use HTTPS.
     - The most secure SAS is a user delegation SAS. Use it wherever possible because it removes the need to store your storage account key in code. You must use Azure Active Directory to manage credentials. This option might not be possible for your solution.

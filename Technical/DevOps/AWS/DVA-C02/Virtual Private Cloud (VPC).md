@@ -53,19 +53,19 @@
 
 - In Availability Zone B, the public subnet contains a NAT gateway, and the instances in the private subnet can reach the internet through a route to the NAT gateway in the public subnet.
 - Both private and public NAT gateways map the source private IPv4 address of the instances to the private IPv4 address of the private NAT gateway, but in the case of a public NAT gateway, the internet gateway then maps the private IPv4 address of the public NAT Gateway to the Elastic IP address associated with the NAT Gateway. When sending response traffic to the instances, whether it's a public or private NAT gateway, the NAT gateway translates the address back to the original source IP address.
-  ![](pasted-image-20240304210229.png)
+  ![](/Image/pasted-image-20240304210229.png)
 
 ### Access your network using allow-listed IP address
 
 - Traffic from the instances is routed to a virtual private gateway, over the VPN connection, to the customer gateway, and then to the destination in the on-premises network. If the destination allows traffic only from a specific IP address range, it will prevent traffic from these instances from reaching the on-premises network.
-  ![](pasted-image-20240304211341.png)
+  ![](/Image/pasted-image-20240304211341.png)
   - By using NAT gateway before being routed to the VPN connection, the on-premises network receives the traffic from the instances with the source IP address of the NAT gateway, which is from the allowed IP address range.
-    ![](pasted-image-20240304213133.png)
+    ![](/Image/pasted-image-20240304213133.png)
 
 ### Enable communication between overlapping networks
 
 - Traffic from an instance in the non-routable subnet of VPC A that is destined for the instances in the non-routable subnet of VPC B is sent through the private NAT gateway and then routed to the transit gateway. The transit gateway sends the traffic to the Application Load Balancer, which routes the traffic to one of the target instances in the non-routable subnet of VPC B. The traffic from the transit gateway to the Application Load Balancer has the source IP address of the private NAT gateway. Therefore, response traffic from the load balancer uses the address of the private NAT gateway as its destination. The response traffic is sent to the transit gateway and then routed to the private NAT gateway, which translates the destination to the instance in the non-routable subnet of VPC A.
-  ![](pasted-image-20240304213356.png)
+  ![](/Image/pasted-image-20240304213356.png)
 
 | Security group                                                                                                                                                | Network ACL                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |

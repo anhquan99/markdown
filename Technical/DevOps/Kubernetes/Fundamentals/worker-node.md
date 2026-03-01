@@ -2,7 +2,7 @@
 
 - Provides a running env for client application.
 - In K8s the application containers are encapsulated in Pods, controlled by the cluster control plane agents running on the control plane node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world.
-  ![](pasted-image-20240324123939.png)
+  ![](/Image/pasted-image-20240324123939.png)
 - A Pod is the smallest scheduling work unit in K8s, is a logical collection of 1 or more containers scheduled together, and the collection can be started, stopped, or rescheduled as a single unit of work.
 - In a multi-worker K8s cluster, the network traffic between client users and the containerized applications deployed in Pod is handled directly by the worker nodes, and is not routed through the control plane node.
 
@@ -29,7 +29,7 @@
 - Communicates with the control plane.
 - It receives Pod definitions, primarily from the [[control-plane##API Server|API Server]], and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health and resources of Pods running containers.
 - `kubelet` connects to container runtimes through a plugin based interface - the Container Runtime Interface (CRI). In order to connect to interchangeable container runtimes, `kubelete` uses a **CRI shim**, an application which provides a clear abstraction layer between `kubelet` and the container runtime.
-  ![](pasted-image-20240324130822.png)
+  ![](/Image/pasted-image-20240324130822.png)
 
 ###### Liveness and readiness probes
 
@@ -115,7 +115,7 @@ spec:
 - A daemon - network agent runs on each node, control plane and workers.
 - When the [[services]] is removed, `kube-proxy` removes the corresponding iptables rules on all nodes as well.
 - Responsible: - Watches API server on the master node for the addition, updates, and removal of Services and endpoints. - Implementing the Service configuration on behalf of an administrator or developer, in order to enable traffic routing to an exposed application running in Pods. - Dynamic updates and maintenance of all networking rules on the node - Abstracts the details of Pods networking and forwards connection request (TCP, UDP, and SCTP stream) to the containers in the Pods.
-  ![](pasted-image-20240328012709.png)
+  ![](/Image/pasted-image-20240328012709.png)
 
 ```ad-note
 - Imagine a pod as a shipping container. It can hold various individual packages (containers) that are all delivered together to a destination (deployment on a server). The packages might be dependent on each other, like parts for a machine.

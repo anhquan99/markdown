@@ -198,7 +198,7 @@ command1 | command2 | command3
 
 ## Package management systems
 
-![](pasted-image-20241124222644.png)
+![](/Image/pasted-image-20241124222644.png)
 
 - Package management systems operate on 2 distinct level:
   - Low level (`dpkg, rpm`): takes care of the details of unpacking individual packages, running scripts, getting the software installed correctly.

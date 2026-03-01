@@ -151,13 +151,13 @@ for (let key in user) {
     name: "John",
   };
   ```
-  ![](pasted-image-20220331105002.png)
+  ![](/Image/pasted-image-20220331105002.png)
 - When an object variable is copied, the reference is copied, but the object itself is not duplicated.
   ```js
   let user = { name: "John" };
   let admin = user; // copy reference
   ```
-  ![](pasted-image-20220331105134.png)
+  ![](/Image/pasted-image-20220331105134.png)
 
 ```js
 let user = { name: "John" };
@@ -280,7 +280,7 @@ user = {
 ## This in method
 
 - To access the object, a method can use the `this` key word.
-  ![](pasted-image-20220331135144.png)
+  ![](/Image/pasted-image-20220331135144.png)
 - `this` is not bound
 
   ```js
@@ -379,7 +379,7 @@ let user = new User();
 
 # Object.keys, values, entries
 
-![](pasted-image-20220401115801.png)
+![](/Image/pasted-image-20220401115801.png)
 
 # Destructuring assignment
 

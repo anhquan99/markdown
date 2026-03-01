@@ -4,7 +4,7 @@
 2. Call merge sort for first half `mergeSort(arr, l, m)`
 3. Call merge sort for second half `mergeSort(arr, m + 1, r)`
 4. Merge the two halves sorted `merge(arr, l, m, r)`
-   ![](pasted-image-20220311141029.png)
+   ![](/Image/pasted-image-20220311141029.png)
 
 # Advantages
 
@@ -16,4 +16,4 @@
 
 # Coding
 
-![](pasted-image-20220311141720.png)
+![](/Image/pasted-image-20220311141720.png)

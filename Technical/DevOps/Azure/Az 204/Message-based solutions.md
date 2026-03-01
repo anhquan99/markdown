@@ -21,7 +21,7 @@
 - Receive modes:
   - Receive and delete: marks the message is consumed as the consumer request and return it to the consumer. This mode is not for failure tolerance.
   - Peek lock: if the message is unable to process, the Service Bus service abandon the message. Service Bus unlocks the message and make it available to be received again. There is a timeout associated with the lock. 1. Find the next message to be consumed, lock is it to prevent other consumers from receiving it, then return to the application or service. 2. After the application or service consumes the message, it will tell the message queue the message has been completed, then the message queue mark the message is consumed.
-    ![](pasted-image-20231124200555.png)
+    ![](/Image/pasted-image-20231124200555.png)
 
 ## Topics and subscriptions
 
@@ -31,7 +31,7 @@
 ### Advanced features:
 
 - Message sessions
-  - The message broker send message to receiver by session.![](pasted-image-20231124211040.png)
+  - The message broker send message to receiver by session.![](/Image/pasted-image-20231124211040.png)
   - Use patterns:
     - FIFO.
     - Request-response: enables the sender application to send a request and provides a way for the receiver to correctly send a response back to the sender application. This pattern typically needs a short-lived queue or topic for the application to send responses to. In this scenario, session provide a simple alternative solution with comparable semantics.
@@ -47,7 +47,7 @@
 - Support ordering
 - Geo-disaster recovery
 - Security
-  ![](pasted-image-20231124200816.png)
+  ![](/Image/pasted-image-20231124200816.png)
   ## Queue storage
   - Consideration when using storage queues
   - Store more than 80 GBs of message.

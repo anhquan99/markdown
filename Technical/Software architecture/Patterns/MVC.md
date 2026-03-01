@@ -9,7 +9,7 @@
 1. Controller receives the request from user for the application and passes it to model to send and receive data.
 2. View will use the data from controller requested from model to render view for user.
 3. The view then sends it final presentation to the controller and the controller send the response to user.
-   ![](pasted-image-20220312174811.png)
+   ![](/Image/pasted-image-20220312174811.png)
 
 ## Advantages:
 
