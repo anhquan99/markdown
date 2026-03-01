@@ -27,12 +27,12 @@
 #### Enforcing
 
 - SELinux code is operative and access is denied according to policy. All violations are audited and logged.
-  ![439](Image/image-2.png)
+  ![439](/Image/image-2.png)
 
 #### Permissive
 
 - Enables SELinux code, but only audits and warns about operations that would be denied enforcing mode.
-  ![426](Image/image-3.png)
+  ![426](/Image/image-3.png)
 
 #### Disabled
 
@@ -172,8 +172,6 @@ sudo semanage port --delete --type ssh_port_t --proto tcp 2222
 
 ### Domain
 
--
-
 ## AppArmor
 
 - An LSM alternative to SELinux.
@@ -181,7 +179,7 @@ sudo semanage port --delete --type ssh_port_t --proto tcp 2222
 - Allows administrators to associate a security profile to a program which restricts its capabilities.
 - Is considered easier (by some but not all) to use than SELinux.
 - Is considered filesystem-neutral (no security labels required).
-  ![[image-34.png)
+  ![](/Image/image-34.png)
 
 ### Modes
 

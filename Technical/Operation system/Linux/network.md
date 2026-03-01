@@ -117,7 +117,7 @@ ss -ltup # get programms are litening on TCP and UDP connection
 ## DNSs and Name Resolution
 
 - The act of translating hostnames to the IP addresses of their hosts.
-  ![314](image/image-4.png)
+  ![314](/Image/image-4.png)
 
 ### Utilities
 
