@@ -1,6 +1,6 @@
 # Boot Process
 
-![269|140x379](pasted-image-20241027233004.png)
+![269|140x379](/image/pasted-image-20241027233004.png)
 
 # BIOS
 
