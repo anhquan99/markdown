@@ -1,5 +1,5 @@
 # Linux
-[backup](Technical/Operation%20system/Linux/backup.md)
+[backup](Technical/Operation%20system/linux/backup.md)
 [boot-process](boot-process.md)
 [command-line](command-line.md)
 [command-scripting](command-scripting.md)
@@ -16,8 +16,8 @@
 [logging](logging.md)
 [manipulating-text](manipulating-text.md)
 [memory-management](memory-management.md)
-[namespaces](Technical/Operation%20system/Linux/namespaces.md)
-[network](Technical/Operation%20system/Linux/network.md)
+[namespaces](Technical/Operation%20system/linux/namespaces.md)
+[network](Technical/Operation%20system/linux/network.md)
 [package-manager](package-manager.md)
 [processes](processes.md)
 [resource-limits](resource-limits.md)
