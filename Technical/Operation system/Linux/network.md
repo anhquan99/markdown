@@ -117,7 +117,7 @@ ss -ltup # get programms are litening on TCP and UDP connection
 ## DNSs and Name Resolution
 
 - The act of translating hostnames to the IP addresses of their hosts.
-  ![[image-4.png|265x342]]
+  ![314](image/image-4.png)
 
 ### Utilities
 
@@ -131,7 +131,7 @@ ss -ltup # get programms are litening on TCP and UDP connection
 ## Network troubleshooting
 
 - **IP config**: use `ifconfig` or `ip` to see if the interface is up.
-- **Network driver**: if the interface cannot be brought up, maybe the correct device driver for the network card(s) is not loaded. Check with `lsmod` if the network driver is loaded as a kernel module, or by examining relevant pseudofiles in `/proc` and `/sys`, such as `/proc/interrupts` or `/sys/class/net`.
+- **Network driver**: if the interface cannot be brought up, maybe the correct device driver for the network card(s) is not loaded. Check with `lsmod` if the network driver is loaded as a kernel module, or by examining relevant pseudo files in `/proc` and `/sys`, such as `/proc/interrupts` or `/sys/class/net`.
 - **Connectivity**: using `ping` to see the network is visible, `traceroute` can follow packets through the network, while `mtr` can do this in a continuous fashion.
 - **Default gateway and routing configuration**: use `route -n` to see the routing table is configured correctly.
 - **Hostname resolution**: use `dig` or `host` on a URL to see if DNS is working properly.

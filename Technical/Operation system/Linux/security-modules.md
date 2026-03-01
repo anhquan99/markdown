@@ -27,12 +27,12 @@
 #### Enforcing
 
 - SELinux code is operative and access is denied according to policy. All violations are audited and logged.
-  ![[image-2.png|301x315]]
+  ![439](Image/image-2.png)
 
 #### Permissive
 
 - Enables SELinux code, but only audits and warns about operations that would be denied enforcing mode.
-  ![[image-3.png|301x315]]
+  ![426](Image/image-3.png)
 
 #### Disabled
 
