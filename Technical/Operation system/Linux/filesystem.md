@@ -142,7 +142,8 @@ If you mount a filesystem on a non-empty directory, the former contents of that 
 
 - Partitions are converted to physical volumes and multiple physical volumes are grouped into volume groups.
 - Logical volumes are allocated from volume groups: - Can be defined by the size or number of extents. - Filesystems are built on logical volumes. - Can be named anything.
-  ![](/Image/pasted-image-20250209190338.png)
+
+![](/Image/pasted-image-20250209190338.png)
 
 #### Utilities
 
