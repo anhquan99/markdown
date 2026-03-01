@@ -19,7 +19,7 @@
 - An inode is a data structure on disk that describes and stores file attributes, including its location.
 - The inode is used by the operating system to keep track of properties such as location, file attributes (permissions, ownership, etc.), access time and other items.
 - Inodes describe and store information about a file, including: - Permissions​ - User and group ownership​ - Size​ - Timestamps (nanosecond)
-  ![](/Image/pasted-image-20250121200334.png)
+![](/Image/pasted-image-20250121200334.png)
 
 ```ad-note
 Filenames are not stored in the inode; they are stored in the direcroty.
