@@ -11,6 +11,7 @@
 	- ISOLINUX (for booting from removable media)
 	- DAS U-Boot (for booting on embedded devices/appliances)
 - When booting, the boot loader responsible for loading the kernel image and the initial RAM disk or filesystem (which contains some critical files and device drivers needed to start the system) into memory.
+![[/Image/Pasted image 20241028205918.png]]
 ![[Pasted image 20241028205918.png]]
 # Boot loader stages
 2 distinct stages:
