@@ -1,26 +1,26 @@
 - It's a fully managed NoSQL database designed to provide low latency, elastic scalability of throughput, well-defined semantics for data consistency, and high availability.
 - Consistency levels
-	 ![[Pasted image 20230610211654.png]]
-	 - Strong consistency: Users are always guaranteed to read the latest committed write.
-	 - Bounded staleness consistency: the reads might lag behind writes by at most "K" versions of an item or by "T" time interval, whichever is smaller.
-	 - Session consistency: monotonic reads and writes.
-		 - Within a single client session, reads are guaranteed to honor the read-your-writes, and write-follows-reads guarantees.
-		 - This guarantee assumes a single writer session or sharing the session token for multiple writers.
-		 - If the client didn't initiate a write to a physical partition, the client doesn't contain a session token in its cache and reads to that physical partition behave as reads with Eventual Consistency.
-	 - Consistent prefix consistency: if the operation performs on doc_1 and doc_2 you will get doc_1 ver 1 and doc_2 ver 1 or doc_1 ver 2 and doc_2 ver 2 but never doc_1 ver 1 and doc_2 ver 2.
-	 - Eventual consistency: there's no guarantee for reads. In the absence of any further writes, the replicas eventually converge. It's the weakest form of consistency.
+  ![](pasted-image-20230610211654.png)
+  - Strong consistency: Users are always guaranteed to read the latest committed write.
+  - Bounded staleness consistency: the reads might lag behind writes by at most "K" versions of an item or by "T" time interval, whichever is smaller.
+  - Session consistency: monotonic reads and writes.
+    - Within a single client session, reads are guaranteed to honor the read-your-writes, and write-follows-reads guarantees.
+    - This guarantee assumes a single writer session or sharing the session token for multiple writers.
+    - If the client didn't initiate a write to a physical partition, the client doesn't contain a session token in its cache and reads to that physical partition behave as reads with Eventual Consistency.
+  - Consistent prefix consistency: if the operation performs on doc_1 and doc_2 you will get doc_1 ver 1 and doc_2 ver 1 or doc_1 ver 2 and doc_2 ver 2 but never doc_1 ver 1 and doc_2 ver 2.
+  - Eventual consistency: there's no guarantee for reads. In the absence of any further writes, the replicas eventually converge. It's the weakest form of consistency.
 - Request units (RUs):
-	  ![[Pasted image 20230610214109.png]]
-	- Represents the system resources such as CPU, IOPS, and memory that are required to perform the database operations supported by Azure Cosmos DB.
-	- Azure Cosmos DB account modes:
-		- Provisioned throughput mode: you provision the number of RUs for your application on a per-second basis in increments of 100 RUs per second.
-		- Serverless mode: you get billed for the number of RUs consumed.
-		- Autoscale mode: automatically and instantly scale the throughput (RU/s) of database or container based on its usage.
-	- Considerations:
-		- Item size.
-		- Item indexing.
-		- Item property count: number of property index. The bigger the number, the more it costs.
-		- Indexed properties.
-		- Data consistency: more strong consistency the more it costs.
-		- Type of reads.
-		- Query patterns
+  ![](pasted-image-20230610214109.png)
+  - Represents the system resources such as CPU, IOPS, and memory that are required to perform the database operations supported by Azure Cosmos DB.
+  - Azure Cosmos DB account modes:
+    - Provisioned throughput mode: you provision the number of RUs for your application on a per-second basis in increments of 100 RUs per second.
+    - Serverless mode: you get billed for the number of RUs consumed.
+    - Autoscale mode: automatically and instantly scale the throughput (RU/s) of database or container based on its usage.
+  - Considerations:
+    - Item size.
+    - Item indexing.
+    - Item property count: number of property index. The bigger the number, the more it costs.
+    - Indexed properties.
+    - Data consistency: more strong consistency the more it costs.
+    - Type of reads.
+    - Query patterns

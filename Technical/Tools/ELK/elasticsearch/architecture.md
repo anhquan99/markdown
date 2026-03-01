@@ -5,7 +5,7 @@
 - Each node belong to a cluster - a collection of related nodes. Clusters are completely independent of each other by default. The separation of cluster is usually to separate things logically and configure differently.
 - When a node start up, it will either join an existing cluster if configured to do, or create its own cluster consisting of just that node.
 
-![Elasticsearch. architecture|367x363](/Image/image-13.png)
+![Elasticsearch. architecture|367x363](image-13.png)
 ### Node roles
 #### Master
 - This role is eligible, whereas a node may be elected as the cluster's master node.

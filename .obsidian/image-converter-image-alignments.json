@@ -1,21 +1,29 @@
 {
   "Technical/Operation system/Linux/package-manager.md": {
-    "19044d476745b0bbe9ce4b912ade732a": {
+    "5c0cf058457f37be17e4af4510cd333b": {
       "position": "center",
       "width": "",
       "height": "",
       "wrap": false
     },
-    "ab886cfe029ea47369c8b46813d307a9": {
+    "022d2afa65b6e1fa1985e83059497b5a": {
       "position": "center",
       "width": "",
       "height": "",
       "wrap": false
     },
-    "fdfe1eb7e13f1ef009bc567eb2724c8b": {
+    "a43eb84b9601c45f99ce243ee77c6c18": {
       "position": "center",
       "width": "",
       "height": "",
+      "wrap": false
+    }
+  },
+  "Technical/Operation system/Linux/boot-process.md": {
+    "ae722d2b5be635a36fbe0bec13d8e24d": {
+      "position": "center",
+      "width": "140px",
+      "height": "379px",
       "wrap": false
     }
   }

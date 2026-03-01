@@ -1,14 +1,20 @@
 # Idead
+
 - Store the interval data type in the self-balancing Binary Search Tree (BST).
+
 # Structure
+
 - (Low, High) is the interval of a node.
-- Max is the maximum high value of the subtree in the node. 
-![[Pasted image 20240613093228.png]]
+- Max is the maximum high value of the subtree in the node.
+  ![](pasted-image-20240613093228.png)
+
 # Operations
+
 - Insert: like self-balance BST, interval tree must update the Max when the interval high value is bigger than the nodes which the interval travel through.
 - Search
 - Delete
 - Interval intersection query:
+
 ```
 # pseudo code for interval intersection
 If interval in node intersects query interval return it
@@ -16,7 +22,9 @@ Else if left subtree is null, go right
 Else if max endpoint in left subtree is less than low, go right
 Else go left
 ```
+
 # Code
+
 ```csharp
 public class IntervalNode
 {

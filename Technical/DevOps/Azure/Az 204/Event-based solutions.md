@@ -1,67 +1,69 @@
 - Azure event Grid is a serverless event broker that you can use to integrate applications using events.
 - 5 concepts in event grid
-	- Event: what happened.
-	- Event sources: where the event took place.
-	- Topic: the endpoint publishers send events.
-	- Event subscriptions: the event router, it can route to multiple handler. Subscriptions are also used by handler to filter incoming request.
-	- Event handler: the app or service to handle event.
+  - Event: what happened.
+  - Event sources: where the event took place.
+  - Topic: the endpoint publishers send events.
+  - Event subscriptions: the event router, it can route to multiple handler. Subscriptions are also used by handler to filter incoming request.
+  - Event handler: the app or service to handle event.
 - Event schemas:
-	- Event schema: use `"content-type" : "application/json; charset=utf-8` 
-	- Cloud schema: use `"content-type" : "application/cloudevents+json"`
+  - Event schema: use `"content-type" : "application/json; charset=utf-8`
+  - Cloud schema: use `"content-type" : "application/cloudevents+json"`
 - Event delivery durability:
-	- Note: event grid doesn't guarantee order for event delivery, so subscribers may receive them out of order.
-	- Retry schedule:
-		- If error occur when sending event, event grid will consider dropping the event to dead-letter queue or drop the event. The dead-letter queue is not config by default.
-		- Event grid will wait for 30 seconds for the response, after 30 seconds the event grid will retry. Event grid uses an exponential backoff retry policy.
-	- Retry policy:
-		- Maximum number of attempts: must be 1 to 30, default value is 30.
-		- Event time to live (TTL): must be 1 to 1440, default value is 1440 minutes.
-	- Output batching:
-		- Max events per batch
-		- Preferred batch size in kilobytes
-	- Delayed delivery: if an endpoint experiences delivery failures, event grid begin to delay the delivery and retry.
-	- Dead-letter event: after a certain time of retries or TTL, the event is sent to a storage account.
+  - Note: event grid doesn't guarantee order for event delivery, so subscribers may receive them out of order.
+  - Retry schedule:
+    - If error occur when sending event, event grid will consider dropping the event to dead-letter queue or drop the event. The dead-letter queue is not config by default.
+    - Event grid will wait for 30 seconds for the response, after 30 seconds the event grid will retry. Event grid uses an exponential backoff retry policy.
+  - Retry policy:
+    - Maximum number of attempts: must be 1 to 30, default value is 30.
+    - Event time to live (TTL): must be 1 to 1440, default value is 1440 minutes.
+  - Output batching:
+    - Max events per batch
+    - Preferred batch size in kilobytes
+  - Delayed delivery: if an endpoint experiences delivery failures, event grid begin to delay the delivery and retry.
+  - Dead-letter event: after a certain time of retries or TTL, the event is sent to a storage account.
 - Control access to events
-	- Build-in roles
-		- Event grid subscription reader: lets you read event grid event subscriptions.
-		- Event grid subscription contributor: lets you manage event grid event subscription operations.
-		- Event grid contributor: lets you create and manage event grid resources.
-		- Event grid data sender: lets you send events to event grid topics.
-	- Permissions for event subscriptions: for event handler isn't a WebHook (such as an event hub or queue storage)
-		- System topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}`
-		- Custom topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.EventGrid/topics/{topic-name}`
+  - Build-in roles
+    - Event grid subscription reader: lets you read event grid event subscriptions.
+    - Event grid subscription contributor: lets you manage event grid event subscription operations.
+    - Event grid contributor: lets you create and manage event grid resources.
+    - Event grid data sender: lets you send events to event grid topics.
+  - Permissions for event subscriptions: for event handler isn't a WebHook (such as an event hub or queue storage)
+    - System topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}`
+    - Custom topics: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.EventGrid/topics/{topic-name}`
 - Filter events
-	- Event type filtering
-	- Subject filtering
-	- Advanced filtering
+  - Event type filtering
+  - Subject filtering
+  - Advanced filtering
+
 # Azure Event Hubs
+
 - Azure Event Hubs represents the "front door" for an event pipeline, often called an event ingestor in solution architectures. An event ingestor is a component or service that sits between event publishers and event consumers to decouple the production of an event stream from the consumption of those events. Event Hubs provide a unified streaming platform with time retention buffer, decoupling event producers from event consumers.
 - Features:
-	- Fully managed PaaS.
-	- Real-time and batch processing.
-	- Capture event data.
-	- Scalable.
-	- Rich ecosystem.
+  - Fully managed PaaS.
+  - Real-time and batch processing.
+  - Capture event data.
+  - Scalable.
+  - Rich ecosystem.
 - Key concepts:
-	- An Event Hubs client is the primary interface for developers interacting with the Event Hubs client library.
-	- An Event Hubs provider is a type of client that serves as a producer of events.
-	- An Event Hubs consumer is a type of client that reads information from the Event Hubs and allows processing of it.
-	- A partition is an ordered sequence of events that is hold in an Event Hubs. Partitions are a means of data organization associated with the parallelism required by event consumers. Azure Event Hubs provides message streaming through a partitioned consumer pattern in which each consumer only reads a specific subset, or partition, of the message stream. As newer events arrive, they're added to the end of this sequence. The number of partitions is specified at the time an Event Hubs is created and can't be changed.
-	- A consumer group is a view of an entire Event Hubs. Consumer groups enable multiple consuming applications to each have a separate view of the event stream, and to read the stream independently at their own pace and from their own position. There can be at most 5 concurrent readers on a partition per consumer group; however it's recommended that there's only one active consumer for a given partition and consumer group paring. Each active reader receives all the events from its partition; if there are multiple readers on the same partition, then they'll receive duplicate events.
-	- Event receivers.
-	- Throughput units or processing units.
-	  ![[Pasted image 20230705233943.png]]
+  - An Event Hubs client is the primary interface for developers interacting with the Event Hubs client library.
+  - An Event Hubs provider is a type of client that serves as a producer of events.
+  - An Event Hubs consumer is a type of client that reads information from the Event Hubs and allows processing of it.
+  - A partition is an ordered sequence of events that is hold in an Event Hubs. Partitions are a means of data organization associated with the parallelism required by event consumers. Azure Event Hubs provides message streaming through a partitioned consumer pattern in which each consumer only reads a specific subset, or partition, of the message stream. As newer events arrive, they're added to the end of this sequence. The number of partitions is specified at the time an Event Hubs is created and can't be changed.
+  - A consumer group is a view of an entire Event Hubs. Consumer groups enable multiple consuming applications to each have a separate view of the event stream, and to read the stream independently at their own pace and from their own position. There can be at most 5 concurrent readers on a partition per consumer group; however it's recommended that there's only one active consumer for a given partition and consumer group paring. Each active reader receives all the events from its partition; if there are multiple readers on the same partition, then they'll receive duplicate events.
+  - Event receivers.
+  - Throughput units or processing units.
+    ![](pasted-image-20230705233943.png)
 - Event Hubs capture
-	- Enables you to capture the streaming data in Event Hubs in an Azure Blob storage or Azure Data Lake Storage account of your choice, process real-time and batch-based on the same stream.
-	- The key to scaling in Event Hubs is the partitioned consumer model. Each partition is an independent segment of data and is consumed independently.
-	- Captured data is written in Apache Avro format, which is widely used in the Hadoop ecosystem, Stream Analytics and Azure Data factory.
+  - Enables you to capture the streaming data in Event Hubs in an Azure Blob storage or Azure Data Lake Storage account of your choice, process real-time and batch-based on the same stream.
+  - The key to scaling in Event Hubs is the partitioned consumer model. Each partition is an independent segment of data and is consumed independently.
+  - Captured data is written in Apache Avro format, which is widely used in the Hadoop ecosystem, Stream Analytics and Azure Data factory.
 - Scale your processing application
-	- The key to scale for Event Hubs is the idea of partitioned consumers. In contrast to the competing consumers pattern, the partitioned consumer pattern enables high scale by removing the contention bottleneck and facilitating end to end parallelism.
+  - The key to scale for Event Hubs is the idea of partitioned consumers. In contrast to the competing consumers pattern, the partitioned consumer pattern enables high scale by removing the contention bottleneck and facilitating end to end parallelism.
 - Control access to events
-	- Roles:
-		- Data owner.
-		- Data sender.
-		- Data receiver.
-	- Authorize access with managed identities.
-	- Authorize access with MS identity platform.
-	- Authorize access to Event Hubs publishers/consumers with shared access signatures.
+  - Roles:
+    - Data owner.
+    - Data sender.
+    - Data receiver.
+  - Authorize access with managed identities.
+  - Authorize access with MS identity platform.
+  - Authorize access to Event Hubs publishers/consumers with shared access signatures.

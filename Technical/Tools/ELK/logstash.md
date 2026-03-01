@@ -35,7 +35,7 @@ output {}
 	- **Batch delay**: how long to wait before processing an undersized batch of events
 	- Example: max batch size is 100 and batch delay is 100 seconds. If a batch of events has 50 unprocessed events, after 100 seconds it will be processed even the batch size is not reached, Logstash wants to process event in timely manner and not keeping the events in the work queue for too long.
 - Logstash inspects the number of CPU cores and starts up an appropriate number of pipeline workers based on that - utilize performance.
-![Logstash execution model](/Image/elk-logstash-execute-model.excalidraw.png)
+![Logstash execution model](elk-logstash-execute-model.excalidraw.png)
 ## Multiple pipelines
 - Using multiple pipelines is especially useful if your current configuration has event flows that don’t share the same inputs/filters and outputs and are being separated from each other using tags and conditionals.
 - Having multiple pipelines in a single instance also allows these event flows to have different performance and durability parameters (for example, different settings for pipeline workers and persistent queues). This separation means that a blocked output in one pipeline won’t exert backpressure in the other.
@@ -55,4 +55,4 @@ output {}
 ## Dead letter queue
 - By default, when Logstash encounters an event that it cannot process because the data contains a mapping error or some other issue, the Logstash pipeline either hangs or drops the unsuccessful event.
 - The dead letter queue (DLQ) is designed as a place to temporarily write events that cannot be processed. The DLQ gives you flexibility to investigate problematic events without blocking the pipeline or losing the events. Your pipeline keeps flowing, and the immediate problem is averted. But those events still need to be addressed.
-![DLQ|277x270](/Image/image-12.png)
+![DLQ|277x270](image-12.png)

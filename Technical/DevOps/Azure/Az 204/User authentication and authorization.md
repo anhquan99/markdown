@@ -1,140 +1,151 @@
 # Microsoft's identity platform:
+
 - **Tenant:** is an organization that owns and manages a specific instance of MS cloud services.
 - Helps you build applications for users or customers to sign in using Microsoft identities or social accounts, and provide authorized access to your own APIs or Microsoft APIs like Microsoft Graph.
 - Components:
-	- OAuth 2.0 and OpenID Connect standard-compliant authentication help application authenticate through:
-		- Work or school accounts, provisioned through Azure AD.
-		- Personal Microsoft account.
-		- Social or local accounts using Azure AD B2C.
-	- Open-source libraries: Microsoft Authentication Libraries (MSAL).
-	- Application management portal: a registration and configuration experience in the Azure portal, along with the other Azure management capabilities.
-	- Application configuration API and PowerShell.
+  - OAuth 2.0 and OpenID Connect standard-compliant authentication help application authenticate through:
+    - Work or school accounts, provisioned through Azure AD.
+    - Personal Microsoft account.
+    - Social or local accounts using Azure AD B2C.
+  - Open-source libraries: Microsoft Authentication Libraries (MSAL).
+  - Application management portal: a registration and configuration experience in the Azure portal, along with the other Azure management capabilities.
+  - Application configuration API and PowerShell.
 - Service principals:
-	- Single tenant: only accessible in your tenant.
-	- Multi tenant: accessible in other tenants.
-	- Types:
-		- Application
-		- Managed identity
-		- Legacy
+  - Single tenant: only accessible in your tenant.
+  - Multi tenant: accessible in other tenants.
+  - Types:
+    - Application
+    - Managed identity
+    - Legacy
 - Application object: an Azure AD application is defined by its one and only application object.
 - Service principle object:
-	- To access resources secured by Azure AD tenant, the entity that requires access must be represented by a security principal, this is true for both users (user principal) and applications (service principal).
-	- Types of service principal:
-		- Application
-		- Managed identity
-		- Legacy
+  - To access resources secured by Azure AD tenant, the entity that requires access must be represented by a security principal, this is true for both users (user principal) and applications (service principal).
+  - Types of service principal:
+    - Application
+    - Managed identity
+    - Legacy
 - Relationship between application objects and service principals:
-	- An application object has:
-		- A one-to-one relationship with the software application.
-		- A one-to-many relationship with its corresponding service principal object(s).
+  - An application object has:
+    - A one-to-one relationship with the software application.
+    - A one-to-many relationship with its corresponding service principal object(s).
 - Permission types:
-	- Delegated permissions make call to the resources on behalf of the signed user.
-	- App-only access permissions.
+  - Delegated permissions make call to the resources on behalf of the signed user.
+  - App-only access permissions.
 - Consent types:
-	- Static user consent ask for permission when the application has not granted permission, but it has some issues:
-		- Request all the permission for the first time, this may lead to a long list of permissions that discourages end users from approving the consent.
-		- Application needs to know all the resources it will access ahead of time, this is hard.
-	- Incremental and dynamic user consent:
-		- Ask the minimum permission first, then ask for permission if required later.
-		- A big challenge for permissions that require admin consent, since the admin consent experience doesn't know about those permissions at consent time. If you require admin privileged permissions or if your app uses dynamic consent, you must register all of the permissions in the Azure portal (not just the subset of permissions that require admin consent).
-	- Admin consent
+  - Static user consent ask for permission when the application has not granted permission, but it has some issues:
+    - Request all the permission for the first time, this may lead to a long list of permissions that discourages end users from approving the consent.
+    - Application needs to know all the resources it will access ahead of time, this is hard.
+  - Incremental and dynamic user consent:
+    - Ask the minimum permission first, then ask for permission if required later.
+    - A big challenge for permissions that require admin consent, since the admin consent experience doesn't know about those permissions at consent time. If you require admin privileged permissions or if your app uses dynamic consent, you must register all of the permissions in the Azure portal (not just the subset of permissions that require admin consent).
+  - Admin consent
 - Conditional check:
-	- Enables developers and enterprise customers to protect services in a multitude of ways:
-		- Multi-factor authentication.
-		- Allowing only enrolled devices to access a specific service.
-		- Restricting user locations and IP ranges.
+  - Enables developers and enterprise customers to protect services in a multitude of ways:
+    - Multi-factor authentication.
+    - Allowing only enrolled devices to access a specific service.
+    - Restricting user locations and IP ranges.
 - Glossary of terms:
-	- Identity and access management (IAM): ensures that the right people, machine, and software components get access to the right resources at the right time.
-	- Application (client) ID: is a value the MS identity platform assigns to your application when you register it in MS Entra ID.
-	- Application manifest: is a feature that produces a JSON representation of the application's identity configuration, used as a mechanism for updating its associated Application and Service Principal entities.
-	- Application object: defines the application's identity configuration globally (across all tenants where it has access).
-	- Claim: claims are name/values pairs in a security token that provide assertions made by one entity to another. These entities are typically the client application or a resource owner providing assertions to a resource server. Claims relay facts about the token subject like the ID of the security principal that was authenticated by the authorization server. The claims present in a token can vary and depend on several factors like the type of token, type of the credential used for authenticating the subject, the application configuration, and others.
-	- Consent: the process of a resource owner granting authorization to a client application, to access protected resources under specific permissions, on behalf of the resource owner.
-	- User principal: similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represent the user.
+  - Identity and access management (IAM): ensures that the right people, machine, and software components get access to the right resources at the right time.
+  - Application (client) ID: is a value the MS identity platform assigns to your application when you register it in MS Entra ID.
+  - Application manifest: is a feature that produces a JSON representation of the application's identity configuration, used as a mechanism for updating its associated Application and Service Principal entities.
+  - Application object: defines the application's identity configuration globally (across all tenants where it has access).
+  - Claim: claims are name/values pairs in a security token that provide assertions made by one entity to another. These entities are typically the client application or a resource owner providing assertions to a resource server. Claims relay facts about the token subject like the ID of the security principal that was authenticated by the authorization server. The claims present in a token can vary and depend on several factors like the type of token, type of the credential used for authenticating the subject, the application configuration, and others.
+  - Consent: the process of a resource owner granting authorization to a client application, to access protected resources under specific permissions, on behalf of the resource owner.
+  - User principal: similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represent the user.
+
 ## Azure operations:
+
 - Control plan:
-	- All requests for control plan operations are sent to Azure Resource Manager (ARM) URL.
-	- ARM handles all control plan requests. It automatically applies the Azure features you have implemented to manage your resources:
-		- Azure RBAC.
-		- Azure Policy.
-		- Management Locks.
-		- Activity logs.
-	- After authenticating the request, ARM sends it to the resource provider, which completes the operation.
-	- The control plan includes 2 scenarios for handling request:
-		- Green field: refers to new resources.
-		- Brow field: refers to existing resources.
+  - All requests for control plan operations are sent to Azure Resource Manager (ARM) URL.
+  - ARM handles all control plan requests. It automatically applies the Azure features you have implemented to manage your resources:
+    - Azure RBAC.
+    - Azure Policy.
+    - Management Locks.
+    - Activity logs.
+  - After authenticating the request, ARM sends it to the resource provider, which completes the operation.
+  - The control plan includes 2 scenarios for handling request:
+    - Green field: refers to new resources.
+    - Brow field: refers to existing resources.
 - Data plan:
-	- Request for data plan operations are sent to endpoint that's specific to your instance.
+  - Request for data plan operations are sent to endpoint that's specific to your instance.
+
 ## Object ID:
+
 - A user security principal identifies an individual who has a profile in Microsoft Entra ID.
 - A group security principal identifies a set of users created in MS Entra ID. Any roles or permissions assigned to the group are granted to all of the users within the group.
 - A service principal is a type of security principal that identifies an application or service, which is to say, a piece of code rather than a user or group. **A service principal's object ID acts like its username; the service principal's client secret acts like its password.**
+
 # MSAL:
+
 - Provides secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API, gives you many ways to get tokens and benefits:
-	- No need to directly use the OAuth libraries or code against the protocol in your application.
-	- Acquires tokens on behalf of a user or on behalf of an application (when applicable to the platform).
-	- Maintains a token cache and refreshes tokens for you when they're close to expire, you don't need to handle.
-	- Helps you set up your application from configuration files.
-	- Helps you troubleshoot your app by exposing actionable exceptions, logging, and telemetry.
+  - No need to directly use the OAuth libraries or code against the protocol in your application.
+  - Acquires tokens on behalf of a user or on behalf of an application (when applicable to the platform).
+  - Maintains a token cache and refreshes tokens for you when they're close to expire, you don't need to handle.
+  - Helps you set up your application from configuration files.
+  - Helps you troubleshoot your app by exposing actionable exceptions, logging, and telemetry.
 - Authentication flows:
-	- Authorization code: obtain tokens in the name of the user.
-	- Client credentials: service applications run without user interaction.
-	- On-behalf-of: application calls a service/web API, which in turns calls Microsoft Graph.
-	- Implicit: used in browser-based applications.
-	- Device code: Enables sign-in to a device by using another device that has a browser.
-	- Integrated Windows: Windows computers silently acquire an access token when they're domain joined.
-	- Interactive: Mobile and desktops applications call Microsoft Graph in the name of a user.
-	- Username/password.
+  - Authorization code: obtain tokens in the name of the user.
+  - Client credentials: service applications run without user interaction.
+  - On-behalf-of: application calls a service/web API, which in turns calls Microsoft Graph.
+  - Implicit: used in browser-based applications.
+  - Device code: Enables sign-in to a device by using another device that has a browser.
+  - Integrated Windows: Windows computers silently acquire an access token when they're domain joined.
+  - Interactive: Mobile and desktops applications call Microsoft Graph in the name of a user.
+  - Username/password.
 - Shared access signatures (SAS):
-	- Is a signed URI that contains a special set of query parameters to access storage resources.
-	- Types of shared access signatures:
-		- User delegation SAS: secured with Azure AD credentials and also by the permissions specified for the SAS, this applies to Blob storage only.
-		- Service SAS: secured with the storage account key, delegate access to a resource in Azure Storage service: Blob storage, Queue storage, Table storage or Azure Files.
-		- Account SAS: secured with the storage account key, delegate access to resources in one or more of the storage services. All of the operations available via a service or user delegation SAS also available via an account SAS.
-		- Note: Microsoft recommends using Azure AD credentials when possible as a security best practice rather than using the account key.
-	- URI components: ![[Pasted image 20230630224225.png]]
-	- Best practice to reduce the potential risks of using SAS:
-		- Always use HTTPS.
-		- The most secure SAS is a user delegation SAS. Use it wherever possible because it removes the need to store your storage account key in code. You must use Azure Active Directory to manage credentials. This option might not be possible for your solution.
-		- Set expiration time for SAS, if SAS key is stolen it can be exploited for a short time.
-		-  Apply the rule of minimum-required privileges.
-		- Find another solution beside SAS when not situation can not accept the risks of using SAS.
-	- When to use SAS ?
-		- A common scenario where a SAS is useful is a service where users read and write their own data to your storage account.
-	- Stored access policy:
-		- Provide extra level of control over service-level SAS on the server side.
-		- Storage resources support stored access policies:
-			- Blob containers.
-			- File shares.
-			- Queues.
-			- Tables.
+  - Is a signed URI that contains a special set of query parameters to access storage resources.
+  - Types of shared access signatures:
+    - User delegation SAS: secured with Azure AD credentials and also by the permissions specified for the SAS, this applies to Blob storage only.
+    - Service SAS: secured with the storage account key, delegate access to a resource in Azure Storage service: Blob storage, Queue storage, Table storage or Azure Files.
+    - Account SAS: secured with the storage account key, delegate access to resources in one or more of the storage services. All of the operations available via a service or user delegation SAS also available via an account SAS.
+    - Note: Microsoft recommends using Azure AD credentials when possible as a security best practice rather than using the account key.
+  - URI components: ![](pasted-image-20230630224225.png)
+  - Best practice to reduce the potential risks of using SAS:
+    - Always use HTTPS.
+    - The most secure SAS is a user delegation SAS. Use it wherever possible because it removes the need to store your storage account key in code. You must use Azure Active Directory to manage credentials. This option might not be possible for your solution.
+    - Set expiration time for SAS, if SAS key is stolen it can be exploited for a short time.
+    - Apply the rule of minimum-required privileges.
+    - Find another solution beside SAS when not situation can not accept the risks of using SAS.
+  - When to use SAS ?
+    - A common scenario where a SAS is useful is a service where users read and write their own data to your storage account.
+  - Stored access policy:
+    - Provide extra level of control over service-level SAS on the server side.
+    - Storage resources support stored access policies:
+      - Blob containers.
+      - File shares.
+      - Queues.
+      - Tables.
 - Client application:
-	- Confidential client application: apps run on servers, such as web apps, web API apps. They are considered difficult to access, and for that reason can keep an application secret. Confidential clients can hold configuration-time secrets, these values are difficult for end users to extract.
-	- Public client application: apps run on devices, desktop computers or in a web browser. They are not trusted to safety keep application secrets, so they only access web APIs on behalf of the user. They also only support public client flows. Public clients can't hold configuration-time secrets, so they cannot have client secrets.
+  - Confidential client application: apps run on servers, such as web apps, web API apps. They are considered difficult to access, and for that reason can keep an application secret. Confidential clients can hold configuration-time secrets, these values are difficult for end users to extract.
+  - Public client application: apps run on devices, desktop computers or in a web browser. They are not trusted to safety keep application secrets, so they only access web APIs on behalf of the user. They also only support public client flows. Public clients can't hold configuration-time secrets, so they cannot have client secrets.
+
 # Microsoft Graph:
+
 - Is the gateway to data and intelligence in Microsoft 365.
 - Components facilitate the access and flow of data:
-	- REST APIs or SDKs to access Microsoft Graph endpoint `https://graph.microsoft.com`.
-		- HTTP methods:
-			- GET 
-			- POST
-			- PATH: update a resource with new value.
-			- PUT: replace a resource with a new one.
-			- DELETE
-	- Microsoft Graph connectors work in the incoming direction, delivering data external to the Microsoft cloud into Microsoft Graph services and applications.
-	- Microsoft Graph Data Connect provides a set of tools to streamline secure and scalable delivery of Microsoft Graph data to popular Azure data stores.
+  - REST APIs or SDKs to access Microsoft Graph endpoint `https://graph.microsoft.com`.
+    - HTTP methods:
+      - GET
+      - POST
+      - PATH: update a resource with new value.
+      - PUT: replace a resource with a new one.
+      - DELETE
+  - Microsoft Graph connectors work in the incoming direction, delivering data external to the Microsoft cloud into Microsoft Graph services and applications.
+  - Microsoft Graph Data Connect provides a set of tools to streamline secure and scalable delivery of Microsoft Graph data to popular Azure data stores.
+
 # Apply best practices:
+
 - Authentication:
-	- Use HTTP Authorization request header.
-	- Graph client constructor when using Microsoft Graph client library.
+  - Use HTTP Authorization request header.
+  - Graph client constructor when using Microsoft Graph client library.
 - Consent and authorization:
-	- Use the least privilege.
-	- Use the correct permission type based on scenarios.
-	- Consider end user and admin experience.
-	- Consider multi-tenant applications.
-		- Tenant admins can disable the ability for end users to consent to application.
-		- Tenant admins can set custom authorization polices.
-	- Handle responses effectively:
-		- Pagination.
-		- Evolvable enumerations.
-	- Storing data locally.
+  - Use the least privilege.
+  - Use the correct permission type based on scenarios.
+  - Consider end user and admin experience.
+  - Consider multi-tenant applications.
+    - Tenant admins can disable the ability for end users to consent to application.
+    - Tenant admins can set custom authorization polices.
+  - Handle responses effectively:
+    - Pagination.
+    - Evolvable enumerations.
+  - Storing data locally.

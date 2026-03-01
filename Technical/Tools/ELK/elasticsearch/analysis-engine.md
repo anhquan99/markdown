@@ -3,7 +3,7 @@
 - The result is stored in data structures that are efficient for searching.
 - The `_source` object is not used when searching for documents.
 - There are built-in analyzers, character filters, tokenizers, and token filters are available or you can build your own.
-![Analysis engine](/Image/image-10.png)
+![Analysis engine](image-10.png)
 ## Character filters
 - Adds, removes, or changes characters.
 - Analyzers contain zero or more character filters.
@@ -56,7 +56,7 @@ POST /_analyzer
 }
 ```
 - The other data types use BKD trees.
-![Inverted index](/Image/image-11.png)
+![Inverted index](image-11.png)
 ## Mapping
 - Define the structure of documents and used to configure how values are indexed.
 - Similar to a table's schema in SQL.
@@ -213,9 +213,9 @@ PUT _index_template/template_name
 ```
 #### Index document with index template
 - Auto create index with index template when index document
-![Auto create index with index template when index document|402x459](/Image/elk-index-template-auto.excalidraw.png)
+![Auto create index with index template when index document|402x459](elk-index-template-auto.excalidraw.png)
 - Manual create index with index template
-![Manual create index with index template|402x459](/Image/elk-index-template-manual.excalidraw.png)
+![Manual create index with index template|402x459](elk-index-template-manual.excalidraw.png)
 #### Reserved index patterns
 - `logs-*-*`
 - `metrics-*-*`

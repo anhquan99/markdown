@@ -1,54 +1,62 @@
 - Azure key vault is used for storing and accessing secrets.
 - Problem solves:
-	- Secrets management.
-	- Key management.
-	- Certificate management.
+  - Secrets management.
+  - Key management.
+  - Certificate management.
 - Tiers:
-	- Standard: encrypts with a software key.
-	- Premium: includes hardware security module (HSM) protected keys.
+  - Standard: encrypts with a software key.
+  - Premium: includes hardware security module (HSM) protected keys.
 - Benefits:
-	- Centralized application secrets
-	- Securely store secrets and keys
-	- Monitor access and use
-	- Simplified administration of application secrets
+  - Centralized application secrets
+  - Securely store secrets and keys
+  - Monitor access and use
+  - Simplified administration of application secrets
 - Authentication with Azure key vault:
-	- Managed identities for Azure resources: assign an identity to the resources that has access to key vault. This is recommended as a best practice.
-	- Service principal and certificate: Microsoft is not recommend is approach because the application owner or developer must rotate the certificate.
-	- Service principal and secret: another not recommended approach because it's hard to automatically rotate the bootstrap secret that's used to authenticate to key vault.
+  - Managed identities for Azure resources: assign an identity to the resources that has access to key vault. This is recommended as a best practice.
+  - Service principal and certificate: Microsoft is not recommend is approach because the application owner or developer must rotate the certificate.
+  - Service principal and secret: another not recommended approach because it's hard to automatically rotate the bootstrap secret that's used to authenticate to key vault.
 - Encryption of data in transit: Azure key vault enforces TLS protocol to protect data when it's traveling between Azure key vault and clients.
 - Best practices:
-	- Use separate key vaults.
-	- Control access to your vault.
-	- Backup.
-	- Logging.
-	- Recovery options: turn on soft-delete and purge protection if you want to guard against force deletion.
-# Managed identities
-- Provides an automatically managed identity in Azure AD for application to use when connecting to resources that support Azure AD authentication.
-## Types:
-- System assigned managed identity: 
-	- Tied to the Azure resource instance.
-	- Created and deleted along with the resource, role assignments can't be created in advance.
-	- If you require that each resource has its own identity, or have resources that require a unique set of permissions and want the identity to be deleted when the resource is deleted.
-	![[Pasted image 20231125171550.png]]
-- User assigned managed identity: 
-	- Stand alone Azure resource.
-	- More efficient in a broader range of scenarios than system assigned.
-	- Can be used in multiple resources, and their life cycles are decoupled from the resource's life cycles.
-	- Administration overhead will be reduced if infrastructure requires multiple resources to access the same resources.
-	![[Pasted image 20231125171612.png]]
+  - Use separate key vaults.
+  - Control access to your vault.
+  - Backup.
+  - Logging.
+  - Recovery options: turn on soft-delete and purge protection if you want to guard against force deletion.
 
-| Scenario | Recommendation |
-| -- | --|
-| Rapid creation of resources | User assigned |
-| Replicated resources/applications | User assigned |
-| Compliance | User assigned |
-| Access required before a resource is deployed | User assigned |
-| Audit logging | System assigned |
-| Permissions Lifecycle management | System assigned |
+# Managed identities
+
+- Provides an automatically managed identity in Azure AD for application to use when connecting to resources that support Azure AD authentication.
+
+## Types:
+
+- System assigned managed identity:
+  - Tied to the Azure resource instance.
+  - Created and deleted along with the resource, role assignments can't be created in advance.
+  - If you require that each resource has its own identity, or have resources that require a unique set of permissions and want the identity to be deleted when the resource is deleted.
+    ![](pasted-image-20231125171550.png)
+- User assigned managed identity:
+  - Stand alone Azure resource.
+  - More efficient in a broader range of scenarios than system assigned.
+  - Can be used in multiple resources, and their life cycles are decoupled from the resource's life cycles.
+  - Administration overhead will be reduced if infrastructure requires multiple resources to access the same resources.
+    ![](pasted-image-20231125171612.png)
+
+| Scenario                                      | Recommendation  |
+| --------------------------------------------- | --------------- |
+| Rapid creation of resources                   | User assigned   |
+| Replicated resources/applications             | User assigned   |
+| Compliance                                    | User assigned   |
+| Access required before a resource is deployed | User assigned   |
+| Audit logging                                 | System assigned |
+| Permissions Lifecycle management              | System assigned |
+
 ## Multiple managed identities
+
 - Resources that support managed identities can have both system and user assigned identity
-  ![[Pasted image 20231125171920.png]]
+  ![](pasted-image-20231125171920.png)
+
 ## How a system-assigned managed identity works with an Azure virtual machine:
+
 1. Azure Resource Manager receives a request to enable the system-assigned managed identity on a virtual machine.
 2. Azure Resource Manager creates a service principal in Azure Active Directory for the identity of the virtual machine. The service principal is created in the Azure Active Directory tenant that's trusted by the subscription.
 3. Azure Resource Manager configures the identity on the virtual machine by updating the Azure Instance Metadata Service identity endpoint with the service principal client ID and certificate.
@@ -56,7 +64,9 @@
 5. Your code that's running on the virtual machine can request a token from the Azure Instance Metadata service endpoint, accessible only from within the virtual machine: `http://169.254.169.254/metadata/identity/oauth2/token`
 6. A call is made to Azure Active Directory to request an access token (as specified in step 5) by using the client ID and certificate configured in step 3. Azure Active Directory returns a JSON Web Token (JWT) access token.
 7. Your code sends the access token on a call to a service that supports Azure Active Directory authentication.
+
 ## How a user-assigned managed identity works with an Azure virtual machine
+
 1. Azure Resource Manager receives a request to create a user-assigned managed identity.
 2. Azure Resource Manager creates a service principal in Azure Active Directory for the user-assigned managed identity. The service principal is created in the Azure Active Directory tenant that's trusted by the subscription.
 3. Azure Resource Manager receives a request to configure the user-assigned managed identity on a virtual machine and updates the Azure Instance Metadata Service identity endpoint with the user-assigned managed identity service principal client ID and certificate.
@@ -64,30 +74,30 @@
 5. Your code that's running on the virtual machine can request a token from the Azure Instance Metadata Service identity endpoint, accessible only from within the virtual machine: `http://169.254.169.254/metadata/identity/oauth2/token`
 6. A call is made to Azure Active Directory to request an access token (as specified in step 5) by using the client ID and certificate configured in step 3. Azure Active Directory returns a JSON Web Token (JWT) access token.
 7. Your code sends the access token on a call to a service that supports Azure Active Directory authentication
+
 # Azure app configuration
+
 - Benefits:
-	- A fully managed service that can be set up in minutes
-	- Flexible key representations and mappings
-	- Tagging with labels
-	- Point-in-time replay of settings
-	- Dedicated UI for feature flag management
-	- Comparison of two sets of configurations on custom-defined dimensions
-	- Enhanced security through Azure-managed identities
-	- Encryption of sensitive information at rest and in transit
-	- Native integration with popular frameworks
+  - A fully managed service that can be set up in minutes
+  - Flexible key representations and mappings
+  - Tagging with labels
+  - Point-in-time replay of settings
+  - Dedicated UI for feature flag management
+  - Comparison of two sets of configurations on custom-defined dimensions
+  - Enhanced security through Azure-managed identities
+  - Encryption of sensitive information at rest and in transit
+  - Native integration with popular frameworks
 - It's easier to implement in these scenarios:
-	- Centralize management and distribution of hierarchical configuration data for different environments and geographies
-	- Dynamically change application settings without the need to redeploy or restart an application
-	- Control feature availability in real-time
+  - Centralize management and distribution of hierarchical configuration data for different environments and geographies
+  - Dynamically change application settings without the need to redeploy or restart an application
+  - Control feature availability in real-time
 - Keys:
-	- Case sensitive and unicode-based strings.
-	- Design key namespaces:
-			- Flat.
-			- Hierarchical:
-		- Easier to read. Instead of one long sequence of characters, delimiters in a hierarchical key name function as spaces in a sentence.
-		- Easier to manage. A key name hierarchy represents logical groups of configuration data.
-		- Easier to use. It's simpler to write a query that pattern-matches keys in a hierarchical structure and retrieves only a portion of configuration data.
+  - Case sensitive and unicode-based strings.
+  - Design key namespaces: - Flat. - Hierarchical:
+    - Easier to read. Instead of one long sequence of characters, delimiters in a hierarchical key name function as spaces in a sentence.
+    - Easier to manage. A key name hierarchy represents logical groups of configuration data.
+    - Easier to use. It's simpler to write a query that pattern-matches keys in a hierarchical structure and retrieves only a portion of configuration data.
 - Manage application features:
-	- Feature flag
-	- Feature manager: manage feature flag.
-	- Filter: is a rule for evaluating state of feature flag, example: device, OS, country ...
+  - Feature flag
+  - Feature manager: manage feature flag.
+  - Filter: is a rule for evaluating state of feature flag, example: device, OS, country ...

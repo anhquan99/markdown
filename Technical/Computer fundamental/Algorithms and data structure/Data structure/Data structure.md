@@ -11,8 +11,10 @@
 - [[Hash table]]
 - [[Fibonacci Heap]]
 - [[Binomoial heap]]
+
 ## Graph
+
 - [[Graph map|Graph]]
-![[Pasted image 20220316005803.png]]
-![[Pasted image 20220316005629.png]]
-![[Pasted image 20220316005726.png]]
+  ![](pasted-image-20220316005803.png)
+  ![](pasted-image-20220316005629.png)
+  ![](pasted-image-20220316005726.png)
