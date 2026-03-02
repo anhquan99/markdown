@@ -27,7 +27,7 @@ sudo fdisk -l /dev/sdc | grep -i sector # see geometry
 - It is used in the early days of MSDOS.
 - In MBR, a disk my have up to 4 primary partitions. 1 of the primary partitions can be designated as an extended partition, which can be subdivided further into logical partitions with 15 partitions possible.
 - If the system have SCSI, for example, `/dev/sda`, then `/dev/sda1` is the first primary partition and `/dev/sda2` is the second primary partition. If we created an extended partition `/dev/sda3`, it could be divided into logical partitions. All partitions greater than four are logical partitions (meaning contained within an extended partition). There can only be one extended partition, but it can be divided into numerous logical partitions.
-  ![](/Image/pasted-image-20250122065450.png)
+  ![655](/Image/pasted-image-20250122065450.png)
 - **Partition Flag** - Status of physical drive (bit 7 set is for active or bootable, old MBRs only accept 80hex, 00hex means inactive, and 01hex–7Fhex stand for invalid)
 - **Start CHS Address** - CHS(Cylinder-Head-Sector) address of first absolute sector in partition
 - **Partition Type** - It is a byte value intended to specify the file system the partition contains and/or to flag special access methods used to access these partition
@@ -46,7 +46,7 @@ sudo fdisk -l /dev/sdc | grep -i sector # see geometry
 - GPT is on all modern system and is based on UEFI (Unified Extensible Firmware Interface).
 - By default, it may have up to 128 primary partitions. When using the GPT scheme, there is no need for extended partitions. Partitions can be up to 233 TB in size (with MBR, the limit is just 2TB).
 - There are two copies of the GPT header, at the beginning and at the end of the disk, describing metadata: - List of usable blocks on disk - Number of partitions - Size of partition entries. Each partition entry has a minimum size of 128 bytes.
-  ![](/Image/pasted-image-20250122070106.png)
+  ![663](/Image/pasted-image-20250122070106.png)
 
 ## Why partitions?
 
