@@ -80,7 +80,7 @@ sudo firewall-cmd --zone=external --add-forward-port=port=80:proto=tcp:toport=80
 ## Network Address Translation (NAT)
 
 - Masquerading is when a machine is pretending a device to talk to other devices.
-  ![[image-40.png)
+  ![](/Image/image-40.png)
 - NAT is a method the firewall uses to change the packet source or destination address as it enters or exits the firewall. There are several types of NAT:
   - **DNAT** (Destination Network Address Translation)
   - **SNAT** (Source Network Address Translation)
@@ -106,7 +106,7 @@ sudo firewall-cmd --zone=external --add-forward-port=port=80:proto=tcp:toport=80
   - Translation is required to protect the addresses used on internal networks from exposure to the Internet
   - Most internal networks are private networks and not routable
 - If the IP on the outbound interface is provided by DHCP, the **Masquerade** option is used to implement **SNAT**, **Masquerade** is requires more compute resources than **SNAT**. But if the outbound interface is static then the SNAT can be used and public IP address is specified.
-  ![[image-1.png)
+  ![](/Image/image-1.png)
 - The **SNAT** or **Masquerade** firewall rule is normally placed in the post-routing chain of the **NAT** table. Normally, post-routing is the last examination or modification point as the packet leaves the system on the way to the Internet.
   - The destination address of the packet is that of the remote system that initiated the connection
   - The source address of the packet will be changed from the internal address of the service to that of the firewall’s public facing adapter

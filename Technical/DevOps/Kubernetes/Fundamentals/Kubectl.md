@@ -5,7 +5,7 @@
 1. Master node (control plane), the scheduler analyzes currently running Pods and finds the best Node for the new Pods(s).
 2. The newly created worker node will be moved to 1 current worker node.
 3. The `kubelet` manages the Pods and containers (starting, checking health, ...).
-   ![[image-22.png)
+   ![](/Image/image-22.png)
 
 ## CLI
 
@@ -15,7 +15,7 @@
 
 - Issuing the `kubectl proxy` command, the K8s create a proxy server between localhost and the K8s API Server.
 - Allow to access API locally just over http and without authentication.
-  ![[image-21.png)
+  ![](/Image/image-21.png)
 
 ## Port forward
 

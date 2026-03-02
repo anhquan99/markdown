@@ -9,7 +9,7 @@
 - The Factory Method pattern suggests that you replace direct object construction calls with calls to a special _factory_ method.
 - You can override the factory method in a subclass and change the class of concrete class being created by method.
 - **Limitation**: subclasses may return different types of products only if these products have a common base class or interface, and the factory method in the base class should have its return type declared as this interface.
-  ![[image-5.png)
+  ![](/Image/image-5.png)
 
 ## Applicability
 

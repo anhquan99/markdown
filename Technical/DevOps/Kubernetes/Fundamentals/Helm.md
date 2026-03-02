@@ -33,4 +33,4 @@ The `helm` client queries the Chart repositories for Charts based on search pa
 ## References
 
 - https://wkrzywiec.medium.com/how-to-deploy-application-on-kubernetes-with-helm-39f545ad33b8
-  ![[image-36.png)
+  ![](/Image/image-36.png)

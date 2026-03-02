@@ -1,6 +1,6 @@
 # Audit
 
-![[image-32.png)
+![](/Image/image-32.png)
 
 ## Problem
 
@@ -50,4 +50,4 @@ rules:
 
 ## Log location
 
-![[image-33.png)
+![](/Image/image-33.png)

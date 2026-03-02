@@ -15,7 +15,7 @@
 Prometheus follows a pull based model, which mean it will pull data from target and it needs to have a list of targets it should scrape.
 ```
 
-![[image-37.png)
+![](/Image/image-37.png)
 
 ## Data
 

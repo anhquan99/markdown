@@ -59,7 +59,7 @@
 - Each layer greatly affects the layers within, one cannot protect everything from the Code layer if there are vulnerabilities at the Cluster level.
 - There are many cloud providers, each with their own security best practices and settings. It may be a good idea to research the settings rather than trust.
 - Container security relies on trusted code. This layer is a combination of container vulnerabilities scanning, image signing to ensure nothing has been modified, and also preventing the leveraging of elevated privileges past the the least privileges required.
-  ![[image-14.png)
+  ![](/Image/image-14.png)
 
 ## Limit access
 

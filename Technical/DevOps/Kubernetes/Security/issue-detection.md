@@ -2,7 +2,7 @@
 
 ## Attack life cycle
 
-![[image-17.png)
+![](/Image/image-17.png)
 
 - During the reconnaissance phase the attacker will try to understand your environment as much as possible. The more information they can collect, the more they can determine a way to exploit your environment, looking for a vulnerability. This phase may range from a simple port-scan to buying drinks for IT staff and starting conversations about difficulties at work; anything to get more information about the environment. This phase could last years and can be difficult to detect.
 - With an idea of what exists, from hardware, to software, to personnel, the initial compromise phase begins by exploiting some weakness. This could be a zero-day exploit, or an ignored long-term vulnerability. This phase could last months, but if the reconnaissance phase went well, the attack should be focused and guaranteed to be quickly successful. If the attack does not work, the attacker will return to the reconnaissance phase. This phase is often the first time it’s possible to detect the attack.
@@ -13,7 +13,7 @@
 
 ## Kill chain
 
-![[image-18.png)
+![](/Image/image-18.png)
 
 - Kill chain, or cyber kill chain, is the attack progression. This refers to the steps taken by a malicious operator in order to compromise a target. Interrupting or preventing each step is an important part of cybersecurity.
 

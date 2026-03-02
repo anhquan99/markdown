@@ -26,7 +26,7 @@
 
 ## Certificates
 
-![[image-20.png)
+![](/Image/image-20.png)
 
 ### `/etc/kubernetes/pki`
 

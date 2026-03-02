@@ -18,7 +18,7 @@
     - Different development environment within a team/company
     - Clasing tools/versions between different projects.
 - Virtual machines (VM) vs docker container: - VM problems: - The VM create waste of resources in computer because it must install the whole new system in the computer, so it is a computer OS in a computer OS. - VM run slower because the whole process is run on an OS. - It's hard to share the VM and can be challenging. - A docker container solves the problem of VM problems. - A docker container runs on OS built-in container support and a docker engine. - The container is a small running OS but not whole OS itself, there the resources are not going to be wasted and runs faster than VM. - Docker help you to create image, it is easy to share the image.
-  ![[image-23.png)
+  ![](/Image/image-23.png)
 
 ## [[docker-tools-and-building-blocks]]
 

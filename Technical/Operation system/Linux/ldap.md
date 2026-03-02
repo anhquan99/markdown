@@ -12,7 +12,7 @@
 - `openldap-clients` package is used for programs.
 - PAM is a pluggable authentication module, and it is the default authentication mechanism for Linux. PAM is configured to use the `pam.sss.so` module.
 - `sss.so` and `sssd` use a combined `sssd` and LDAP configuration file.
-  ![[image.png)
+  ![](/Image/image.png)
 
 ## `libnss-ldapd`
 

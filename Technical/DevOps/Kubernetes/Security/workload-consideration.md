@@ -63,7 +63,7 @@
   - **Rules**: they describe access control in terms of contexts, processes, files, ports, users, etc.
   - **Policies**: they are a set of rules that describe what system-wide access control decisions should be made by SELinux.
 - A SELinux context is a label used by a rule to define how users, processes, files and ports interact with each other. As the default policy is to deny any access, rules are used to describe allowed actions on the system. Each of the actions must be allowed via the Access Vector Cache.
-  ![[image-35.png)
+  ![](/Image/image-35.png)
 
 #### Enforcement modes
 

@@ -1,6 +1,6 @@
 # Boot Process
 
-![269|140x379](/Image/pasted-image-20241027233004.png)
+![269|226](/Image/pasted-image-20241027233004.png)
 
 # BIOS
 
@@ -64,14 +64,13 @@ _The only purpose of an `initramfs` is to mount the root filesystem. The `initra
 - `/sbin/init` points to `/lib/systemd/systemd`.
 - System unit files: `/etc/systemd/system` and `/lib/systemd/system`.
 - User unit files: `/etc/systemd/user` and `~/.config/systemd/user`.
-- Units:
-  - Service
-  - Socket
-  - Device
-  - Timerw
+- **Units**:
+	- Service
+	- Socket
+	- Device
+	- Timer
 - If the status of the service is enabled then service is started when the system boots. If it is disabled then the service can still run manually, but it will not start when the system boots.
 - When changing the config of a service, and it is running. The old config still applies to the running service. You can `restart` the service, but it will make disruption to other people who are using it, to prevent this you can use `reload` to gracefully restart the service.
--
 
 # Filesystems
 

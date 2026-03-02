@@ -102,7 +102,7 @@ spec:
 
 ### Relationship of services
 
-![[image-19.png)
+![](/Image/image-19.png)
 
 ## Multi-Port services
 

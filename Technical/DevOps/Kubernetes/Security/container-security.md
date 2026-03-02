@@ -4,7 +4,7 @@
 
 ## Containers and system calls
 
-![[image-24.png)
+![](/Image/image-24.png)
 
 ```bash
 # demo a container can contact the kernel space from inside
@@ -52,7 +52,7 @@ graph TD
 
 - CRI is an API allows the `kubelet` to communicate with different container runtimes.
 - In simple terms, it's a standardized plug that lets Kubernetes use any container runtime that supports the standard, without needing to have code specific to that runtime built into the project.
-  ![[image-25.png)
+  ![](/Image/image-25.png)
 
 ## Container runtime
 
@@ -96,7 +96,7 @@ containers:
 - Simulates kernel `syscalls` with limited functionality.
 - As gVisor intercepts the application system calls, there may be some application compatibility concerns and higher overhead per system call. As result, applications with system call intensive workloads may not perform well using gVisor.
 - Runtime called `runsc`.
-  ![[image-26.png)
+  ![](/Image/image-26.png)
 
 ```bash
 # you can use command dmesg to display all messages from the kernel ring buffer.
@@ -106,7 +106,7 @@ dmesg
 ### Kata
 
 - Unlike traditional containers which share a host kernel and use namespaces to keep isolated, Kata leverage hardware virtualization, to provide per-container kernels. This provides an extra layer of isolation for workload and security concerns.
-  ![[image-15.png)
+  ![](/Image/image-15.png)
 - String separation layer.
 - Runs every container in its own private VM (hypervisor based).
 - Needs virtualization, like nested virtualization in cloud. QEMU as default.
@@ -128,7 +128,7 @@ dmesg
 
 ## Gatekeeper
 
-![[image-16.png)
+![](/Image/image-16.png)
 
 ## Constraint template
 
@@ -291,7 +291,7 @@ In many recent kernels the ExecShield feature was replaced with NX (not executab
 - Secure computing mode (`seccomp`) is a mechanism which restricts access to system calls by processes. The idea is to reduce the attack surface of the kernel by preventing applications from entering system calls they do not need. The system call API is a wide gateway to the kernel, and as with all code, there have and are likely to be bugs present somewhere.
 - Given the privileged nature of the kernel, bugs in system calls are potential avenues of attack. If an application only needs to use a limited number of system calls, then restricting it to only being able to invoke those calls reduces the overall risk of a successful attack. Good knowledge of what the application needs is required in order to execute properly.
 - The original `seccomp` code, also known as *mode 1*, provided access to only four system calls: `read(), write(), exit(), and sigreturn()`. These are the minimum required for a useful application, and this was intended to be used to run untrusted code on otherwise idle systems.
-  ![[image-31.png)
+  ![](/Image/image-31.png)
 
 ### Tools
 
