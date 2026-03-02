@@ -64,17 +64,21 @@ dirs # list pushed directories
 
 ### Linking mechanism
 
-- Let's think about inode as an element of communication between filesystem and physical storage. Take a look on the picture below. This is how soft link looks
+- Let's think about inode as an element of communication between filesystem and physical storage. Take a look on the picture below. This is how soft link looks:
+
   ![](/Image/image-44.png)
 
 - We see that link on the file level is related to the original file. Both files have their own inodes and we can say (it is simplification) that inode of link is a shortcut to inode of original file. Only one inode points to the object on storage - original one.
 - When we remove the original file:
+
   ![](/Image/image-45.png)
 
 - Neither link itself or inode has understanding how to get to the storage. The file is 'lost'.
 - Ok, how it looks for hard links?
+
   ![](/Image/image-46.png)
 - Both files - original and link, point to the same inode. And this inode points to the object on storage. Now, when we remove the original file...
+
   ![](/Image/image-47.png)
 - We remove just the file. Inode stays s long as anything is related to it.
 - Reference lab: https://killercoda.com/pawelpiwosz/course/linuxFundamentals/lf-18-links
