@@ -31,7 +31,7 @@
 make ; make install ; make clean # all excecute even ones fail
 make && make install && make clean # abort subsequent commands when an earlier one fails
 ```
-- If the first command fails, the second one will never be executed, use `||`.
+- If the first command success, the second one will never be executed, use `||`.
 ## Script parameters
 | Parameter            | Meaning                       |
 | -------------------- | ----------------------------- |
