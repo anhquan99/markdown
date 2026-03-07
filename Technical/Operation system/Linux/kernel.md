@@ -70,5 +70,5 @@
 ```shell
 sudo sysctl -a # show all kernel runtime parameters
 sudo sysctl -w {parameter} # write the parameter
-sydo sysctl {parameter} # read specific parameter
+sudo sysctl {parameter} # read specific parameter
 ```

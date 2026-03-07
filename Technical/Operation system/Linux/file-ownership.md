@@ -46,7 +46,7 @@ ls -l
 	- `o`: others
 ```
 rwx: rwx: rwx
- u:    g:   o
+ u:   g:   o:
 ```
 - Shorthand to set the permissions by using single digit suffices to specify all 3 permissions bits for each entity:
 	- 4 for read
@@ -61,7 +61,7 @@ rwx: rwx: rwx
 chmod 755 <file>
 ```
 - The permission is evaluated from left to right.
-	- Example: If the owner in a group with the permission `-r--rw---` that owner can not write to the file because the owner doesn't have write permission even thought that owner in the group.
+	- Example: If the owner in a group with the permission `-r--rw---` that owner can not write to the file because the owner doesn't have write permission even though that owner in the group.
 ## File timestamp
 - `atime` - the last time when file was accessed
 - `mtime` - last modification time. By modification we mean change in the file content.
@@ -168,7 +168,7 @@ sudo chattr -a {filename}
 lsattr {name}
 
 # set immutable attribute
-sudo chattr -i {filename}
+sudo chattr +i {filename}
 ```
 ## Commands
 ### List files and directories

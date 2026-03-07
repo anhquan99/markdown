@@ -230,7 +230,7 @@ sudo lvresize --resizefs --size 3G my_volume/parition1
 
 - NFS uses **daemons** (built-in networking and service processes in Linux).
 - The `/etc/exports` contains the directions and permissions that a host is willing to share with other system over NFS.
-- After modifying the `/etc/exports`, you can use `exportnfs -av` to notify Linux about the directories you are allowing to be remotely mounted using NFS, or you can use `systemctl restart nfs` but this is heavier, as it halts NFS for a short while before starting it up again.
+- After modifying the `/etc/exports`, you can use `exportfs -av` to notify Linux about the directories you are allowing to be remotely mounted using NFS, or you can use `systemctl restart nfs` but this is heavier, as it halts NFS for a short while before starting it up again.
 
 ### Client
 
