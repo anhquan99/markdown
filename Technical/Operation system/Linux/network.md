@@ -141,8 +141,10 @@ ss -ltup # get programms are litening on TCP and UDP connection
 ### Bridge
 
 - Allows computers on 2 separate networks to talk to each other as if they are part of the same network. **Two or more networks**.
-- Terms: - Bridge can be called control - Network interface can be called port
-  ![[image-38.png)
+- Terms:
+  - Bridge can be called control
+  - Network interface can be called port
+    ![](/Image/image-38.png)
 
 ### Bonds
 
@@ -164,17 +166,18 @@ ss -ltup # get programms are litening on TCP and UDP connection
 | 5   | adaptive transmit loading balancing | balance-tlb   |                                                                      |
 | 6   | adaptive load balancing             | balance-alb   |                                                                      |
 
-![[image-39.png)
+![](/Image/image-39.png)
 
 ## Reverse proxy
 
 - A reverse proxy acts as an intermediary between client requests and the backend web server. Rather than the client directly communicating with the web server, the reverse proxy intercepts the request and forwards it.
-  ![[image-42.png)
+
+![](/Image/image-42.png)
 
 ## Load balancing
 
 - Load balancing distributes incoming web requests across multiple servers, ensuring that no single server becomes overwhelmed.
-  ![[image-43.png)
+  ![](/Image/image-43.png)
 
 ## `nginx`
 
