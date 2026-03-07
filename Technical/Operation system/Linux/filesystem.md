@@ -74,7 +74,7 @@ Filenames are not stored in the inode; they are stored in the directory.
   - `squashfs`
   - `btrfs`
 - Others:
-  - Windows (`ntfs, vfat, exfat)
+  - Windows (`ntfs, vfat, exfat`)
   - SGI (`xfs`)
   - IBM (`jfs`)
   - macOS (`hfs, hfs+`)
@@ -343,7 +343,7 @@ sudo lvresize --resizefs --size 3G my_volume/parition1
 - `rsync` is more efficient, because it checks if the file being copied already exists. If the file exists and there is no change in size or modification time, `rsync` will avoid an unnecessary copy and save time.
 
 ```ad-note
-rsync can be very dewstructive. Accidental misuse can do a lot of harm to data and programs, by inadvertently copying changes to where they are not wanted.
+rsync can be very destructive. Accidental misuse can do a lot of harm to data and programs, by inadvertently copying changes to where they are not wanted.
 ```
 
 ### Compress data

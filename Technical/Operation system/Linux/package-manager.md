@@ -53,7 +53,7 @@ sudo apt --pruge remove <package>
 apt update # sync package index files with their source. The indexes of available packages are fetched from the location(s) specified in /etc/apt/sources.list
 sudo apt upgrade # upgrade installed packages
 sudo apt dist-upgrade
-sudo apt autoremove # gets rid of any packages not needed anymore, such as older Linux kernel versions:
+sudo apt autoremove # gets rid of any packages not needed anymore, such as older Linux kernel versions
 sudo apt clean # cleans out cache files and any archived package files that have been installed
 ```
 

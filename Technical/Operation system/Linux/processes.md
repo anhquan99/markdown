@@ -47,7 +47,7 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 
 - `us` - user - All user processes are combined in this number. So, our sessions too.
 - `sy` - system - processes owned by system (kernel)
-- `ni` - nice - this is important to understand. `nice` allows us to change the priority of the process. The standard value for processes is `0` , but we can modify it from 19 (lowest) to -20 (highest) priority. This statistic here shows all processes with the niceness set abow 0. So, the processes which will be executed by the system, when **systemm will have time for it**.
+- `ni` - nice - this is important to understand. `nice` allows us to change the priority of the process. The standard value for processes is `0` , but we can modify it from 19 (lowest) to -20 (highest) priority. So, the processes which will be executed by the system, when **systemm will have time for it**.
 - `id` - idle - idle time means that the system is bored and do nothing.
 - `wa` - `iowait` - the number represents the time (which is a subset of idle time) when the process is waiting for input/output operation. This statistic is very important, because it may show the issue outside the CPU, in other hardware (but not only) components.
 - `hi` - hardware interrupts. These are physical interrupts from hardware and are handled by CPU itself.
