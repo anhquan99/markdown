@@ -191,6 +191,7 @@ find -name '*.swp' -exec rm {} ';'
 - Send input source to, use `<`.
 - Send the `stderr`, use `2>`
 - A special shorthand notation can send anything written to file descriptor 2 (`stderr`) to the same place as file descriptor 1 (`stdout`): `2>&1`.
+- Use `$?` to check the return code of last running command.
 
 ### Pipes
 
