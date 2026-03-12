@@ -87,9 +87,9 @@ sdc (third disk with c postfix)
 
 ### `fdisk`
 
-- List of partitions on the block devices.
+- Used to manipulate disk partition table.
 - The beginning of the has an empty space where it is not partitioned. It is a standard procedure to leave 1 MB free of unpartitioned space at the beginning.
-  - This is done in case a special program called a bootloader needs to be installed in that area.
+  - This is done in case a special program called a boot loader needs to be installed in that area.
 
 ```shell
 sudo fdisk --list {disk}

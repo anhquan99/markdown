@@ -47,10 +47,18 @@ sudo swapoff {partition}
 # the /dev/zero a special pseudo-device file that acts as an endless source of null characters (binary zeros, 0x00) when read from
 # the command below write 1 MB block to file with 2048 times
 sudo dd if=/dev/zero of=/swap bs=1M count=2048 status=progress
+# or use fallocate to do the same
+sudo fallocate -l 1024M /swap
 
 sudo chmod 600 /swap
 
 sudo mkswap /swap
+
+# active swap
+sudo swapon /swap
+
+# permanent mount swap on boot, edit the /etc/fstab file
+/swap none swap sw 0 0
 ```
 ## OOM Killer
 ### Common solutions
