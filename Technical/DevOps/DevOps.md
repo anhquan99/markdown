@@ -3,4 +3,4 @@
 - [[Azure]]
 - [[AWS]]
 - [[Web server]]
-- [[GitOps]]
+- [[gitops]]
