@@ -12,6 +12,12 @@
 2. **Versioned in Git:** All declarative configurations are committed to a version control system like Git, providing a single source of truth with immutable commits, diffs, and historical audit trails.
 3. **Automated Application of Changes:** GitOps agents (controllers or operators) continuously watch the Git repository for changes (commits or pull requests) and apply them to the target environments automatically.
 4. **Continuous Reconciliation:** GitOps agents run a control loop that constantly observes the live environment, compares it to the Git repository, and reconciles any drift (automatically correcting out-of-band modifications)
+5. **State Reconciliation:** self-correction mechanism, which is the core engine of GitOps. The GitOps operator is going to ensure the entire system is self-healing to reduce the risk of human error, which will loop from these 3 steps:
+	- Observe
+	- Diff
+	- Act
+6. **State store:** single source of truth where every change is recorded.
+7. **Feedback loop:** process of observing the actual state of the system and then use this information to inform and improve your desired state and reconciliation process.
 ## Challenges with traditional workflow deployments
 - Addressing problems can be tricky and the cluster (in K8s) can be modified intentionally or accidentally.
 - Does not allow developers to return a cluster to its previous stable state easily.
