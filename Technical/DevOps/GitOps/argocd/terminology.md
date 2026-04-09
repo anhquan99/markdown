@@ -1,0 +1,11 @@
+# Terminology
+- **Application:** a group of k8s resources defined by a manifest.
+- **Application source type:** tool used to build the application (ex: Helm, Kustomize, ...).
+- **Project:** logical grouping of applications.
+- **Target state:** the desired state of an application, represented by files in a Git repo.
+- **Live state:** the actual state of the application.
+- **Sync status:** is the actual status compared to the desired state.
+- **Sync:** the process of making an application move to its target state.
+- **Sync operation status:** result of sync process.
+- **Refresh:** the action which compare the latest code in Git with the lives state.
+- **Health:** the health of the application.

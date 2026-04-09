@@ -103,4 +103,4 @@
 - **Lack of Input Validation:** API calls can validate requests immediately, but GitOps relies on the user to ensure manifest files are correct before committing
 ## Tools
 
-- [[Argo CD]]
+- [[argodcd]]
