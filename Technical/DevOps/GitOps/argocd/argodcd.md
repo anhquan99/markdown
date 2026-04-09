@@ -17,16 +17,21 @@
 - Ksonnet applications
 - Jsonnet files
 - Yaml/Json manifest
+## Features
+- Automated deployment of applications to specified target environment in multiple clusters.
+- SSO integration
+- Health status analysis of application resources
+- Automated configuration drift detection and visualization
+- Audit trails
+- Webhook integration
+- CLI and access token for automation and CI integration
+- Automated or manual syncing of applications to its desired state
 ## Argo projects
 
 - Argo CD (GitOps controller)
 - Argo Rollouts (Progressive Delivery controller)
 - Argo Workflows (Workflow engine for Kubernetes)
 - Argo Events (Event handling for Kubernetes)
-
-## Sync strategies
-- **Manual or automatic sync:** defines what Argo CD does when it finds a new version of your application in Git.
-  - Automatic: Argo CD will detect the change then update/create new resources in the cluster.
-  - Manual: Argo CD will detect the change but will not change anything in the cluster
-- **Auto-pruning of resources:** only applicable for automatic sync. It defines what Argo CD does when you remove/delete files from Git. If enabled, Argo CD will also remove the respective resources in the cluster as well.
-- **Self-heal of cluster:** only applicable for automatic sync. It defines what Argo CD does when you make changes directly to the cluster (via `kubectl` or any other way) which will discard the extra changes and bring the cluster back to the described state in Git.
+## Resources
+- Application: a Kubernetes resource that defines a deployed software instance.
+- Project: an enforcing rules for an application. Each application is assigned with a project. 
