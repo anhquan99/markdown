@@ -33,5 +33,6 @@
 - Argo Workflows (Workflow engine for Kubernetes)
 - Argo Events (Event handling for Kubernetes)
 ## Resources
-- Application: a Kubernetes resource that defines a deployed software instance.
-- Project: an enforcing rules for an application. Each application is assigned with a project. 
+- **Application:** a Kubernetes resource that defines a deployed software instance.
+- **Project:** an enforcing rules for an application. Each application is assigned with a project. 
+- **Application set:** is used for generating a ArgoCD applications for multiple environments or multi tenants.
