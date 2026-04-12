@@ -1,11 +1,12 @@
 {
   "baseFontSize": 22,
   "cssTheme": "Things",
-  "theme": "moonstone",
+  "theme": "obsidian",
   "translucency": false,
   "accentColor": "",
   "interfaceFontFamily": "",
   "baseFontSizeAction": true,
   "textFontFamily": "Arial",
-  "monospaceFontFamily": ""
+  "monospaceFontFamily": "",
+  "showViewHeader": true
 }
