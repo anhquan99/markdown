@@ -1,4 +1,4 @@
-[[Technical/DevOps/Docker/container|container]]
+[[Technical/DevOps/docker/container|container]]
 
 # Container management
 

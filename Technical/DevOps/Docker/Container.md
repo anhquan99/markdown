@@ -2,7 +2,7 @@
 
 ## Definition
 
-- What is [[Technical/DevOps/Docker/container|container]]? ^d2bd26
+- What is [[Technical/DevOps/docker/container|container]]? ^d2bd26
   - Container: a package of code where you put code, tools - dependencies to run that code.
   - Like the real life container, it contains the goods. And whenever needed to move those goods around, you just need to take that container move to where you want. You don't get any unexpected when opening the container. The same with container always yields the exact same application and execution behavior. No matter where or by whom, it might be executed.
 - What is [[image]]? ^7a8e6c
@@ -24,7 +24,7 @@
 
 ## Technical/DevOps/Docker/Volumes]
 
-## [[Technical/DevOps/Docker/network]]
+## [[Technical/DevOps/docker/network]]
 
 ## [[docker-compose]]
 

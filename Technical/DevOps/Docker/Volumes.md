@@ -4,7 +4,7 @@
 ## External data storage
 - <mark style="background: #ADCCFFA6;">Volumes (manged by docker):</mark>
 	- <mark style="background: #D2B3FFA6;">Anonymous volumes:</mark> when user defines a mapped folder in container but don't define a volume for the host machine, Docker will automatically assign an anonymous volume. These types of volumes are attached to the container, if the container is deleted it will be deleted.
-	- <mark style="background: #D2B3FFA6;">Named volumes:</mark> user define volumes, and it is not attached with the container, but it is created and managed by [[Docker]].
+	- <mark style="background: #D2B3FFA6;">Named volumes:</mark> user define volumes, and it is not attached with the container, but it is created and managed by [[docker]].
 	- <mark style="background: #D2B3FFA6;">Bind mounts:</mark> great for persistent, editable (by you) data. It is local machine folder map to the container folder.
 ## Folder mapping
 - The local host machine folder will override the container folder, <mark style="background: #FF5582A6;">but docker will not do the reverse.</mark>

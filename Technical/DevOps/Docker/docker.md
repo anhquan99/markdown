@@ -1,6 +1,6 @@
 # Docker
 - [[cli]]
-- [[Technical/DevOps/Docker/container|container]]
+- [[Technical/DevOps/docker/container|container]]
 - [[deploy-image-to-aws-ec2]]
 - [[Deploy image to AWS ECS]]
 - [[docker-compose]]
@@ -9,7 +9,7 @@
 - [[from-development-to-production]]
 - [[image]]
 - [[multi-stage-builds]]
-- [[Technical/DevOps/Docker/network|network]]
+- [[Technical/DevOps/docker/network|network]]
 - [[note]]
 - [[utility-container]]
-- [[Technical/DevOps/Docker/volumes|volumes]]
+- [[Technical/DevOps/docker/volumes|volumes]]

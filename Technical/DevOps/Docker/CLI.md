@@ -1,6 +1,6 @@
 # CLI
 - `docker image/container/volume prune` remove all unused images or container. ^b22ac4
-## [[Docker#^7a8e6c|Image]]
+## [[docker#^7a8e6c|Image]]
 - `docker build .` build the docker file from current folder and create an image.
 	- `-t $name:$tag .` create an image with a name and tag.
 	- `--build-arg $arg=$arg_value` assign argument variable. 
@@ -12,7 +12,7 @@
 - `docker image inspect $image_name/id`
 - `docker push/pull $username/$image_name:$tag_name` push or pull the image from the **docker hub**. 
 	- When pushing the image, docker will not push all the information about the whole image, it will only push extra information if the image is based on another image.
-## [[Docker#^d2bd26|Container]]
+## [[docker#^d2bd26|Container]]
 - `docker start $container_id/container_name` start created container with detach mode. ^1cc093
 	- `-i` [[cli#^ae9c17| ref]]
 	- `-a` [[cli#^5cf14f| ref]]
@@ -38,10 +38,10 @@
 	- [[cli#^b22ac4|prune]]
 - `docker cp $a $b` copy file from local computer file/folder to running container or reverse.
 	- `$a` and `$b` can be `$file/folder_on_computer` or `$container_name/id:$path`
-## [[Technical/DevOps/Docker/volumes|volumes]]
+## [[Technical/DevOps/docker/volumes|volumes]]
 - `docker volume rm $volume_name`
 - `docker run -v $local_folder:$container_folder:ro` The `ro` command give folder readonly attribute where container can not write into this folder.
-## [[Technical/DevOps/Docker/network|network]]
+## [[Technical/DevOps/docker/network|network]]
 - `docker network create $network_name` create a new network.
 	- `--driver $type_of_driver` create a network with a driver type.
 ## [[docker-compose]]
