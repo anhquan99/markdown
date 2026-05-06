@@ -27,3 +27,10 @@
 - OTLP protocol: define how telemetry is transported or the formats.
 - Context propagation
 - Instrumentation guidelines: provides best practices for consistent implementation.
+### Semantic conventions
+- Defines keys and values which describe commonly observed concepts, and operations used by applications.
+- It ensures consistent naming across languages and instrumentation libraries.
+- Why semantic conventions matters?
+	- Solve the inconsistency problem
+	- Power correlation, dashboards, alerting, and automation
+	- Core enabler of vendor-neutral observability
