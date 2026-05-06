@@ -34,3 +34,30 @@
 	- Solve the inconsistency problem
 	- Power correlation, dashboards, alerting, and automation
 	- Core enabler of vendor-neutral observability
+#### Guidelines
+- Reuse existing conventions whenever meaning align.
+- Using domains rather than organization.
+- Use dot `.` for hierarchy.
+- Use underscore `_` for multi-word.
+- Use widely known abbreviation (IP, DB, HTTP, ...).
+- Add domain to make abbreviation clear (ie: `container.oci.version`, ...).
+- Avoid ambiguity.
+- Don't reuse the same name across type.
+- Be explicit with new names.
+## Component
+### Foundation: definitions and standards
+- Specification
+- OpenTelemetry Protocol (OTLP)
+- Semantic convention
+### Data generation: APIs and SDKs
+- APIs: how you instrument your code to produce metrics, traces, and logs
+- SDKs: implement the API and provide exporters, config, and utilities
+- Instrumentation libraries: pre-built integrations for common libraries and frameworks
+- Auto instrumentation agents: generate telemetry without code changes
+### Data processing: collector and tools
+- OpenTelemetry collector: receives, processes, and exports telemetry data in addition to handling transformation, filtering, batching, ...
+- Supporting tools:
+	- OpenTelemetry Operator (k8s)
+	- ...
+## Architecture
+![](/Image/Pasted%20image%2020260506221653.png)
