@@ -39,11 +39,11 @@
 - Required HTTP/2.
 - The routing happens through gRPC service definitions in the protobuf schema.
 ### OTLP/HTTP
-![[/Excalidraw/opentelemetry-http.excalidraw]]
+![](Pasted%20image%2020260507193100.png)
 - Use specific endpoint to routing.
 - Default port: 4318.
 ### Json encoding
 - Messages are encoded as JSON and the `Content-Type` is changed to `application/json`.
 - Useful for debugging.
 ## Transport flow
-![[/Excalidraw/opentelemetry-transport-flow.excalidraw]]
+![](Pasted%20image%2020260507193112.png)
