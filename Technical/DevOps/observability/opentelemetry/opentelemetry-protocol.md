@@ -30,7 +30,7 @@
 - Each record carries ID, timestamps, attributes, and events.
 ## Transportation
 ### OTLP/gRPC
-![](/image/Pasted%20image%2020260507115151.png)
+![](/Image/Pasted%20image%2020260507115151.png)
 - Signal is encoded into Protobuf binary format.
 - Multiplexing: multiple streams over single connection.
 - Bidirectional streaming support.
