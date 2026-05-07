@@ -20,6 +20,7 @@
 	- The child spans represent sub-task.
 	- The sibling spans share the same parent.
 ### Information in a span
+- ID
 - Name
 - Parent span ID
 - Start and end timestamps
@@ -28,26 +29,46 @@
 - Span events
 - Span links
 - Span status
+### Span name
+- It should be meaningful: `{verb} {object}`.
 ### Span context
 - An immutable object on every span that contains the following:
 	- The Trace ID representing the trace that the span is a part of
-	- The span’s Span ID
-	- Trace Flags, a binary encoding containing information about the trace
+	- The span’s Span ID:
+		- 8 bytes (64 bits)
+		- Typically represented as a 16 character hexadecimal string
+	- Trace Flags:
+		- A binary encoding containing information about the trace
+		- Control tracing behavior, mainly related to: sampling, future use case.
+		- 8 bits (1 byte)
+		- Represented as 2 hexadecimal characters
+		- Mandatory
 	- Trace State, a list of key-value pairs that can carry vendor-specific trace information
 ### Attributes
 - Key-value pairs that contain metadata that used to annotate a span to carry information about the operation it is tracking.
+- Enhance business and technical context and make traces searchable, filterable, and meaningful.
+- Follow SDK rules and use semantic conventions where possible.
 - If the timestamp isn’t meaningful, attach the data as span attributes.
+#### Span resource
+- A resource is a collection of attributes that identify the source of telemetry data.
+- Resources are attached during initialization (ex: TracerProvider or MeterProvider).
+
 ### Span events
 - A span event can be viewed as a structured log message (or annotation) on a span, typically used to denote a meaningful, singular point in time during the span's duration.
 - If the timestamp in which the operation completes is meaningful or relevant, attach the data to a span event.
 ### Span links
-- Helps user associate one span with one or more spans, implying a casual relationship.
-### Span Status
+- Helps user associate one span with one or more spans, implying a casual relationship but not parent-child.
+- Examples: batch job, queue message trigger multiple actions.
+- Spans run in:
+	- Parallelly
+	- Asynchronously
+	- Independently
+### Span status
 - OK: success
 - Error: failure
 - Unset: no status set by default
 ### Span kind
-- Provides a hint to the tracing backend as to how to trace should be assembled.
+- Classifies a span's role in a distributed interaction. It clarifies the direction of the call and its communication style.
 - Types:
 	- Client: synchronous outgoing remote call, the synchronous does not refer to async/await but to the fact that it is not queued for later processing.
 	- Server: synchronous incoming remote call or remote procedure call.
