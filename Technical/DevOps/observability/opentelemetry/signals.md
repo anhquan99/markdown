@@ -14,3 +14,5 @@
 	- Timestamps
 	- Severity levels
 	- Structured data
+## Baggage
+## Profiles
