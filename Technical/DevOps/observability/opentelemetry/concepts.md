@@ -54,6 +54,8 @@
 - SDKs: implement the API and provide exporters, config, and utilities
 - Instrumentation libraries: pre-built integrations for common libraries and frameworks
 - Auto instrumentation agents: generate telemetry without code changes
+- Contrib: community maintained instrumentation and plugins
+- Distribution: a wrapper around an upstream OpenTelemetry repository with some custominzations (**not a folk**).
 ### Data processing: collector and tools
 - OpenTelemetry collector: receives, processes, and exports telemetry data in addition to handling transformation, filtering, batching, ...
 - Supporting tools:
