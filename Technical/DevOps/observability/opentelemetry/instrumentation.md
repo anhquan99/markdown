@@ -6,6 +6,15 @@
 - Code-based/manual instrumentation
 - Library-based instrumentation
 - Zero-code/auto-instrumentation
+
+| Aspect                  | Zero-Code             | Library-Based                  | Code-Based                  |
+| ----------------------- | --------------------- | ------------------------------ | --------------------------- |
+| Code changes required   | None                  | Minor imports                  | Full-developer control      |
+| Coverage                | Common libraries      | Supported libraries            | Anything in code            |
+| Custom logic visibility | No                    | Limited                        | Full                        |
+| Setup time              | Fast                  | Moderate                       | Slower                      |
+| Best for                | Ops, fast on-boarding | Maintainer using common stacks | Developer need deep control |
+
 ## Components
 - Exporter: send telemetry data to observability backends and destinations.
 - Processor: transform, filter, and enrich telemetry data as it flows through the pipeline.
@@ -61,19 +70,26 @@
 ![](/image/Pasted%20image%2020260509071956.png)
 ### Technique
 - Monkey-patching (Python, JavaScript)
-- Bytecode manipulation (.NET, Java)
+- Bytecode manipulation (.NET, Java): modify the compiled code at runtime or load time to inject additional behavior
 - eBPF
 ### Configuration options
 - Environment variables
 - System properties
 - Startup arguments
+### Extensions
+- Extensions allow you to enhance or customize OpenTelemetry Agent behavior without modifying the agent or creating a separate build.
+#### Capabilities
+-  Add custom span, processor, exporters, samplers, and propagators.
+- Inject new instrumentation modules.
+- Modify or filter span attributes.
+- Override or disable existing instrumentation.
 ## Span Processor
 - Hooks into `onStart()` and `onEnd()` of spans.
 - Only runs if the span is recording.
 - Processes the spans before they are exported.
 - Types:
 	- `SimpleSpanProcessor`: collect each span to the exporter as soon as it ends. Used for testing.
-	- `BatchSpanProcessor`: collects spans and sends them in batches on a schedule. Used for production environment. Used by default.
+	- `BatchSpanProcessor`: collects spans and sends them in batches on a schedule. Used for production environment. Used by default with default batch size is 512.
 ## Span Exporter
 - Responsible for delivery span to the destination.
 - Types:
