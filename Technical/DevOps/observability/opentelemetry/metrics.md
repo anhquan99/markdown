@@ -121,3 +121,47 @@ Raw events → SDK transformation → Data streaming → Export protocol → Sen
 - Allows both increment and decrement, making it ideal for tracking dynamic counts such as active requests or queue length.
 #### Async UpDownCounter instrument
 - Report additive values when observed.
+## Metrics API
+### Components
+- MeterProvider: entry point
+- Meter: create instruments
+- Instrument: report measurement
+## Metrics SDK
+- 
+## Metrics pipeline
+- MeterProvider
+- Meter
+- Instrument
+- Measurement
+- View: configures aggregation and filtering of metric data
+- MetricReader: collects and aggregates measurements at defined intervals
+- MetricExporter: encodes and sends aggregated metric data to a telemetry backend
+![697](/image/Pasted%20image%2020260510053812.png)
+### MetricExporter
+- A small plug-in that sends your metrics out.
+- It always works with a MetricReader partner, where the reader decides how numbers are combined (aggregation) and over what time (temporality) and the exporter get already-summarized metrics from the readers.
+- Multiple exporters can be used at once, each with its own reader.
+#### Push metric exporter
+- Send metrics on a schedule out on its own.
+- Can send immediately when there's a serious error.
+#### Pull metric exporter
+- Exposes metrics and waits to be scraped.
+- Data is served on request - the exporter is passive.
+- Force flush doesn't apply.
+#### Application shutdown
+- When the application shutdown, the MeterProvider termination API is invoked exactly once to perform cleanup by calling shutdown on all registered metric readers and exporters.
+- Before shutdown, the pending data should be flushed with the force flush which prompts all push-based exporters to immediately collect and send their buffered metrics.
+## Exemplars
+- Exemplars are sample data points associated with specific time series in the metrics.
+- They capture the context of specific measurements when your application records a metric value.
+- Enable correlation of metric data with trace data, giving you deeper observability.
+### Components
+- Value
+- Timestamp
+- Filtered attributes
+- Trace context: trace_id, span_id
+### Usage
+- Associate arbitrary (non-metric) data with metric data.
+- Link a metric point to the trace that was active when the measurement was taken.
+- Efficient troubleshooting by focusing on key events.
+- Improved contextual observability.
