@@ -88,6 +88,6 @@
 - `Shutdown()`: stop new loggers and clean up.
 ### LogRecordProcessor architecture
 - LogRecord Emission emits records to:
-	- Simple processor: send logs immmediately
+	- Simple processor: send logs immediately
 	- Batching processor: buffers and exports in intervals
 	- Custom processor: enriches, filters, or routes logs
