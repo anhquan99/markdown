@@ -9,6 +9,46 @@
 - Extension: support collector itself, enabling status monitoring and troubleshooting
 	- health check
 	- z-pages
+### Receivers
+#### Ports
+- `grpc`: 4317
+- `http`: 4318
+- `thrift`: 55680
+#### Popular receivers
+- OTLP
+- Prometheus
+- Hostmetric: collects metrics from the host system
+- Kubelet status receiver: pulls metrics from kubelet API
+- K8s cluster receiver: collects cluster-level metrics
+- K8s object receiver: collects k8s objects as logs
+- Filelog receiver: tails log file from system
+- Journald receiver
+- Syslog receiver: receives syslog messages over network
+- SNMP receiver: pull metrics f rom SNMP-enabled devices
+- Jaeger
+- Zipkin
+- OpenCensus
+### Processors
+- Processing telemetry as it flows through the service.
+- Where data can be enriched, modified, or filtered - making the data smarter.
+#### Popular processors
+- Memory limit processor: prevents out of memory situations on collector
+- Batch processor
+- Resource detection processor: automatically detects environment metadata
+- Resource processor: modifies resource attribute directly
+- K8s attributes processor
+- Attributes processor: modifies span, log, or metric attributes
+- Transform processor: uses OTTL for powerful transformation
+- Filter processor
+- Probabilistic sampler processor: samples telemetry based on probability
+- Tail sampling processor: samples traces after all span received
+- Delta to cumulative processor: converts delta metrics to cumulative
+- Cumulative to delta processor: converts monotonic cumulative metrics to delta
+- Span processor
+#### Order of processor matter
+- Memory first: prevent crashes before processing
+- Transform early: modify data before batching
+- Batch last: group final processed data
 ## Benefits
 - Decouples code from backend
 - Centralizes configuration
@@ -60,6 +100,10 @@
 - Optional:
 	- Processors
 	- Connectors: connect pipelines, act as both exporter and receiver. Enable cross-pipeline flows without extra load
+## Collector as an agent
+- An agent is a lightweight process running on a VM.
+- Agent run on many hosts across the environment.
+- On k8s it is pod.
 ## Debug
 - The Otel collector automatically emits internal logs to `stderr`.
 - Default log level is INFO.
