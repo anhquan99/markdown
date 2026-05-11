@@ -80,18 +80,22 @@
 - Not for daily use, used for deep performance debugging by advanced operators.
 - Port: 1777
 ## Scaling collector
+- Avoid scaling when backend or network bottleneck exist.
 ### Categories
 - Stateless
+  ![](/image/Pasted%20image%2020260511225200.png)
 - Scraping
+  ![](/image/Pasted%20image%2020260511225537.png)
 - Stateful
 - Load balancing
 - Sharding
 - Target Allocator
+  ![](/image/Pasted%20image%2020260511230554.png)
 ### Metrics signal scaling
 
-| Metric                                                             | Meaning                                          | Action/alert                                  |
-| ------------------------------------------------------------------ | ------------------------------------------------ | --------------------------------------------- |
-| `otelcol_processor_refesed_span`                                   | Memory limiter blocked spans                     | Frequent refusals → scale up collector        |
-| `otelcol_exporter_queue_capacity`<br>`otelcol_exporter_queue_size` | Exporter queue utilization                       | If size > 70% capacity → scale/tune queues    |
-| `otelcol_exporter_enqueue_failed_spans`                            | Data dropped due to full exporter queue          | Investigate queue limits → adjust or scale    |
-| `otelcol_loadbalancer_backned_latency`                             | Latency from load-balancing exporter to backends | High latency → backend bottleneck / scale out |
+| Metric                                                             | Meaning                                          | Action/alert                                   |
+| ------------------------------------------------------------------ | ------------------------------------------------ | ---------------------------------------------- |
+| `otelcol_processor_refesed_span`                                   | Memory limiter blocked spans                     | Frequent refusals → scale up collector         |
+| `otelcol_exporter_queue_capacity`<br>`otelcol_exporter_queue_size` | Exporter queue utilization                       | If size > 70% capacity → scale/tune queues     |
+| `otelcol_exporter_enqueue_failed_spans`                            | Data dropped due to full exporter queue          | Investigate queue limits → adjust or scale     |
+| `otelcol_loadbalancer_backned_latency`                             | Latency from load-balancing exporter to backends | High latency -> backend bottleneck / scale out |
