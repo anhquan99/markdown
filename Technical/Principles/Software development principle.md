@@ -40,7 +40,7 @@
 # Law of Demeter
 
 - Talk only to your close friends. Don't talk to stranger
-- Example: take O->P->Q
+- Example: take O→P→Q
   - O don't know anything about Q, so this case is violated Law of Demeter
   - ![](/Image/pasted-image-20220312205522.png)
   - ![](/Image/pasted-image-20220312205727.png)
