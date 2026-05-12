@@ -131,16 +131,26 @@
 	- Can be done at any point in the trace collection pipeline
 - Cons: can't make decision based on data in the entire trace.
 #### Tail sampling
-- The decision to sample a trace takes place by considering all or most of the spans within the trace.
+- The decision to sample a trace takes place after the trace completes.
+![](/image/Pasted%20image%2020260512214413.png)
 - Pros: allow much higher degree of sophistication in how you sample data based on criterias or requirements.
 - Cons:
 	1. Tail sampling can be difficult to implement. Depending on the kind of sampling techniques available to you, it is not always a “set and forget” kind of thing. As your systems change, so too will your sampling strategies. For a large and sophisticated distributed system, rules that implement sampling strategies can also be large and sophisticated.
 	2. Tail sampling can be difficult to operate. The component(s) that implement tail sampling must be stateful systems that can accept and store a large amount of data. Depending on traffic patterns, this can require dozens or even hundreds of compute nodes that all utilize resources differently. Furthermore, a tail sampler might need to “fall back” to less computationally intensive sampling techniques if it is unable to keep up with the volume of data it is receiving. Because of these factors, it is critical to monitor tail-sampling components to ensure that they have the resources they need to make the correct sampling decisions.
 	3. Tail samplers often end up as vendor-specific technology today. If you’re using a paid vendor for Observability, the most effective tail sampling options available to you might be limited to what the vendor offers.
+- Trade-offs:
+	- Memory pressure
+	- Latency: delay to decide
+	- Correctness: all span same collector
+	- Timeout: late traces dropped
+	- Scaling: hashing/topology needed
 ### Strategies
 - `AlwaysOnSampler`: records all spans
 - `AlwaysOffSampler`: records no spans
 - `TraceIdReatioBaedSampler`: records a percentage of spans
 - `ParentBasedSampler`: follows the sampling decision of the parent span
+#### Combine head and tail
+- Optimize pipeline efficiency without losing critical insights.
+- Use head sampler filters early control cost and load, tail sampler captures only the traces that matter.
 ### Configuration
 - Environment variable: `OTEL_TRACES_SAMPLER, OTEL_TRACES_SAMPLER_ARG`

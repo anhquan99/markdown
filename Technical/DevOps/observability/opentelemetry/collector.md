@@ -49,6 +49,18 @@
 - Memory first: prevent crashes before processing
 - Transform early: modify data before batching
 - Batch last: group final processed data
+### Exporters
+#### Patterns
+- Fan-out: list multiple exporters in the same pipeline to duplicate data
+- Route by attribute: use a routing processor to send subsets to different exporters.
+- Cross-pipeline forwarding: use a connector when telemetry moves to another pipeline or changes. signals
+### Connectors
+- Connectors join two pipelines, acting as both exporter and receiver. A connector consumes data as an exporter at the end of one pipeline and emits data as a receiver at the beginning of another pipeline. The data consumed and emitted may be of the same type or of different data types.
+![](/image/Pasted%20image%2020260512201429.png)
+#### Use cases
+- Reuse telemetry: single ingestion for multiple pipelines
+- Transform signals: derive metrics from traces
+- Route/replicate: OTTL rules for environment or tenant branches
 ## Benefits
 - Decouples code from backend
 - Centralizes configuration
