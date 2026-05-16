@@ -49,7 +49,7 @@
 - Enhance business and technical context and make traces searchable, filterable, and meaningful.
 - Follow SDK rules and use semantic conventions where possible.
 - If the timestamp isn’t meaningful, attach the data as span attributes.
-#### Span resource
+### Span resource
 - A resource is a collection of attributes that identify the source of telemetry data.
 - Resources are attached during initialization (ex: TracerProvider or MeterProvider).
 

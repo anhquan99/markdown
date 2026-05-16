@@ -1,6 +1,6 @@
 # Kubernetes Deployment
 ## Observability in Kubernetes
-- Due to the ephemeral pods, dynamic scaling, complex networking, the observability is need for k8s environment.
+- Due to the ephemeral pods, dynamic scaling, complex networking, the observability is needed for k8s environment.
 - Need metadata like pod name, namespace, labels, and node information.
 ## Capabilities of Otel operator
 - Ports and networking: the operator automatically create k8s services for exposed port.

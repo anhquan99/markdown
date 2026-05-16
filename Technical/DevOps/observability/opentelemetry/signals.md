@@ -25,3 +25,5 @@
 - Sensitive data can be shared with unintended resources. This caused by the automatic instrumentation includes baggage in most of the service's network requests.
 - If the request is sent via HTTP, it is visible for anyone.
 ## Profiles
+- The fourth core observability signal (alongside logs, metrics, and traces) that provide deep, code-level insight into resource utilization and application performance. 
+- While traces show you _where_ time is spent and metrics show system-level aggregates, profiles show you exactly _why_ your code is slow at the function or line level. Continuous profiling captures lightweight snapshots of resource usage—such as CPU time or memory allocation—all the time rather than reactively.

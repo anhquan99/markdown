@@ -127,15 +127,14 @@ Raw events → SDK transformation → Data streaming → Export protocol → Sen
 - Meter: create instruments
 - Instrument: report measurement
 ## Metrics SDK
-- 
 ## Metrics pipeline
-- MeterProvider
-- Meter
-- Instrument
-- Measurement
-- View: configures aggregation and filtering of metric data
-- MetricReader: collects and aggregates measurements at defined intervals
-- MetricExporter: encodes and sends aggregated metric data to a telemetry backend
+1. MeterProvider
+2. Meter
+3. Instrument
+4. Measurement
+5. View: configures aggregation and filtering of metric data
+6. MetricReader: collects and aggregates measurements at defined intervals
+7. MetricExporter: encodes and sends aggregated metric data to a telemetry backend
 ![697](/image/Pasted%20image%2020260510053812.png)
 ### MetricExporter
 - A small plug-in that sends your metrics out.

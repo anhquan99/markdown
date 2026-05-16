@@ -52,8 +52,8 @@
 ### Exporters
 #### Patterns
 - Fan-out: list multiple exporters in the same pipeline to duplicate data
-- Route by attribute: use a routing processor to send subsets to different exporters.
-- Cross-pipeline forwarding: use a connector when telemetry moves to another pipeline or changes. signals
+- Route by attribute: use a routing processor to send subsets to different exporters
+- Cross-pipeline forwarding: use a connector when telemetry moves to another pipeline or changes signals
 ### Connectors
 - Connectors join two pipelines, acting as both exporter and receiver. A connector consumes data as an exporter at the end of one pipeline and emits data as a receiver at the beginning of another pipeline. The data consumed and emitted may be of the same type or of different data types.
 ![](/image/Pasted%20image%2020260512201429.png)
@@ -151,7 +151,7 @@
 
 | Metric                                                             | Meaning                                          | Action/alert                                   |
 | ------------------------------------------------------------------ | ------------------------------------------------ | ---------------------------------------------- |
-| `otelcol_processor_refesed_span`                                   | Memory limiter blocked spans                     | Frequent refusals → scale up collector         |
+| `otelcol_processor_refused_span`                                   | Memory limiter blocked spans                     | Frequent refusals → scale up collector         |
 | `otelcol_exporter_queue_capacity`<br>`otelcol_exporter_queue_size` | Exporter queue utilization                       | If size > 70% capacity → scale/tune queues     |
 | `otelcol_exporter_enqueue_failed_spans`                            | Data dropped due to full exporter queue          | Investigate queue limits → adjust or scale     |
 | `otelcol_loadbalancer_backned_latency`                             | Latency from load-balancing exporter to backends | High latency -> backend bottleneck / scale out |
