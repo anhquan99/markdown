@@ -38,7 +38,21 @@
 - Metric name
 - Value
 - Timestamp
-- Dimensions - additional information about the metricw
+- Dimensions - additional information about the metric
+```
+structure:
+<metric_name>[{<label_1="value_1">,<label_N="value_N">}]<metric_value?
+example:
+node_cpu_second_total{cpu="0",mode="idle"} 25234.12
+```
+## Metric types
+- Counter
+- Gauge
+- Historgram
+- Summary: similar to histogram, don't have to define quantiles ahead of time.
+## Time series
+- Stream of timestamped values sharing the same metric and set of labels.
+- Any metric with a unique set of labels, collected data overtime. That is called a time series
 ## Service level
 ### Service level indicator (SLI)
 - A quantitative measure of some aspect of the level of service that is provided.
