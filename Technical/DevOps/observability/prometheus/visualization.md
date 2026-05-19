@@ -1,6 +1,6 @@
 # Visualization
 ## Definition
-- Visualization is visually represent Prometheus metrics using graphs, tables, charts, and dashboards.
+- Visualization is visually representing Prometheus metrics using graphs, tables, charts, and dashboards.
 ## Tools
 ### Expression browser
 - Built in web UI that can be used to execute queries and simple graphs.
