@@ -30,4 +30,7 @@ scrape_configs:
     - Executes after a scrape
     - Has access to all collected metrics and labels.
 ### Actions
-- `keep`: only keep the specified labels an
+- `drop`: Deletes the entire time series if the regex matches.
+- `keep`: Deletes the time series if it _does not_ match.
+- `replace`: Renames or transforms a label value.
+- `labeldrop`: Removes specific labels from the series.

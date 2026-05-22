@@ -15,7 +15,7 @@
 ### Capacity planning
 
 - Each sample is roughly 1–2 bytes.
-- Formula: **Needed disk space = Retention time (seconds) _ ingested samples per second _ Bytes per sample**.
+- Formula: **Needed disk space = Retention time (seconds) x ingested samples per second x Bytes per sample**.
 
 ### Scaling storage
 
