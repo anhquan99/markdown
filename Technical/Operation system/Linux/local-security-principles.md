@@ -30,7 +30,7 @@
 
 - The most privileged account on a Linux/UNIX system.
 - When you are signed in as, or acting as root, the shell prompt displays `#`.
-  ![](/Image/pasted-image-20250103224243.png)
+  ![](/image/pasted-image-20250103224243.png)
 - A regular account user can perform some operations requiring special permissions; however, the system configuration must allow such abilities to be exercised.
 - `SUID` (Set owner User ID upon execution) is a special kind of file permission given to a file. Use of SUID provides temporary permissions to a user to run a program with the permissions of the file *owner* (which may be root) instead of the permissions held by the *user*.
 
@@ -63,9 +63,9 @@ Jan  3 16:01:07 ubuntu sudo:     root : TTY=pts/0 ; PWD=/root ; USER=root ; COMM
 - One process normally cannot access the resources of another process, even when that process is running with the same user privileges.
 - Linux thus makes it difficult (though certainly not impossible) for viruses and security exploits to access and attack random resources on a system.
 - More recent additional security mechanisms that limit risks even further include:
-	- **Control Groups (`cgroups`)**: Allows system administrators to group processes and associate finite resources to each `cgroup`.
-	- **Containers**: Makes it possible to run multiple isolated Linux systems (containers) on a single system by relying on `cgroups`.
-	- **Virtualization**: Hardware is emulated in such a way that not only can processes be isolated, but entire systems are run simultaneously as isolated and insulated guests (virtual machines) on one physical host.
+  - **Control Groups (`cgroups`)**: Allows system administrators to group processes and associate finite resources to each `cgroup`.
+  - **Containers**: Makes it possible to run multiple isolated Linux systems (containers) on a single system by relying on `cgroups`.
+  - **Virtualization**: Hardware is emulated in such a way that not only can processes be isolated, but entire systems are run simultaneously as isolated and insulated guests (virtual machines) on one physical host.
 
 ## Hardware device access
 

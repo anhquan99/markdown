@@ -1,7 +1,7 @@
 - Define your cloud infrastructure using a familiar language.
 - The code is compiled into a CloudFormation template (JSON/YAML).
 - Lifecycle
-  ![](/Image/pasted-image-20240309205235.png)
+  ![](/image/pasted-image-20240309205235.png)
 
 # Benefits
 

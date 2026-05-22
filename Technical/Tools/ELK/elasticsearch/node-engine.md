@@ -7,7 +7,7 @@
 - The default routing strategy ensures that documents are distributed evenly.
 - When changing number of shards, the routing formula return a different result with the old document leading the old document can not be found. Adding new shards requires creating a new index and reindex document into it. The **Split API** helps add shards with larger number of shard or **Shrink API** helps remove shards.
 
-![Routing formular|422x418](/Image/image-8.png)
+![Routing formular|422x418](image-8.png)
 
 ## Read and write data
 
@@ -34,7 +34,7 @@
 
 - Since the replicas can be offline, the primary shard is not required to replicate to all replicas. Instead, ES maintains a list of shard copies that should receive the operation which is set of **good** shards that are guaranteed to have processed all the operations that have been acknowledged to the user, called **in-sync copies** and is maintained by the master node
 - The primary shard follows basic flow: 1. Validate incoming operation and reject it if structurally invalid. 2. Execute the operation locally (index, delete, ...), it also validates the content of the fields and reject if needed. 3. Forward the operation to each replica in the current in-sync copies set in parallel. 4. Once all in-sync replicas have successfully performed the operation and responded to the primary, the primary acknowledges the successful completion of the request to the client.
-  ![](/Image/image-9.png)
+  ![](/image/image-9.png)
 
 ### Shard failure recovery
 

@@ -61,11 +61,11 @@ struct node{
 
 - [[Binary tree]]
   - **Full Binary tree:** every node has 0 or 2 children.
-    ![](/Image/pasted-image-20220316002455.png)
+    ![](/image/pasted-image-20220316002455.png)
   - **Complete Binary tree:** if all the levels are completely filled except possibly the last level and the last level has all keys as left as possible
-    ![](/Image/pasted-image-20220316002512.png)
+    ![](/image/pasted-image-20220316002512.png)
   - Perfect Binary tree: When all the internal nodes have 2 children and all leaf nodes are at the same level
-    ![](/Image/pasted-image-20220316002522.png)
+    ![](/image/pasted-image-20220316002522.png)
   - Balance Binary tree: A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.
 - [[Binary search tree]]
 - [[Red black tree]]

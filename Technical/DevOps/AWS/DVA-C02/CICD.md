@@ -46,7 +46,7 @@
 - Use CW Metrics to monitor build statistics.
 - Use EventBridge to detect failed build and trigger notifications.
 - Use CW Alarms to notify if you need thresholds for failures.
-  ![](/Image/pasted-image-20240309162953.png)
+  ![](/image/pasted-image-20240309162953.png)
 
 ## `buildspec.yml`
 
@@ -104,13 +104,13 @@
     - `Custom` define your %
 - Life cycle event hooks
   - **Auto scaling launch deployments:**
-    ![](/Image/pasted-image-20240224215909.png)
+    ![](/image/pasted-image-20240224215909.png)
   - **Auto scaling termination deployments:**
-    ![](/Image/pasted-image-20240224215925.png)
+    ![](/image/pasted-image-20240224215925.png)
   - **In-place deployment:**
-    ![](/Image/pasted-image-20240224215937.png)
+    ![](/image/pasted-image-20240224215937.png)
   - **Blue/green deployment:**
-    ![](/Image/pasted-image-20240224215826.png)
+    ![](/image/pasted-image-20240224215826.png)
 
 ## Lambda platform
 
@@ -165,7 +165,7 @@
 - **Package namespace**
 - **Package version**
 - **Upstream repository:** when the package versions in it can be accessed from the repository endpoint of the downstream repository.
-  ![](/Image/pasted-image-20240309162510.png)
+  ![](/image/pasted-image-20240309162510.png)
 
 ## Resource policies
 
@@ -228,4 +228,4 @@
 # Cloud9
 
 - Cloud based IDE.
-  ![](/Image/pasted-image-20240309150632.png)
+  ![](/image/pasted-image-20240309150632.png)

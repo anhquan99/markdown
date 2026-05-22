@@ -110,7 +110,7 @@ query parameters are not allowed in the `servers` property of an `OpenAPI` speci
   - Product (all APIs in selected product).
   - API (all operations in an API).
   - Operation (single operation in an API).
-    ![](/Image/pasted-image-20231123230813.png)
+    ![](/image/pasted-image-20231123230813.png)
 
 ## Things to know
 

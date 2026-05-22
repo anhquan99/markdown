@@ -1,6 +1,6 @@
 # Boot Process
 
-![269|226](/Image/pasted-image-20241027233004.png)
+![269|226](pasted-image-20241027233004.png)
 
 # BIOS
 
@@ -16,7 +16,7 @@
   - ISOLINUX (for booting from removable media)
   - DAS U-Boot (for booting on embedded devices/appliances)
 - When booting, the boot loader responsible for loading the kernel image and the initial RAM disk or filesystem (which contains some critical files and device drivers needed to start the system) into memory.
-  ![](/Image/pasted-image-20241028205918.png)
+  ![](/image/pasted-image-20241028205918.png)
 
 # Boot loader stages
 
@@ -37,7 +37,7 @@ _The only purpose of an `initramfs` is to mount the root filesystem. The `initra
 - The **mount** program instructs the operating system that a filesystem is ready for use and associates it with a particular point in the overall hierarchy of the filesystem (the **mount point**). If this is successful, the `initramfs` is cleared from RAM, and the **init** program on the root filesystem (**/sbin/init**) is executed.
 
 - init handles the mounting and pivoting over to the final real root filesystem. If special hardware drivers are needed before the mass storage can be accessed, they must be in the `initramfs` image.
-  ![](/Image/pasted-image-20241030075937.png)
+  ![](/image/pasted-image-20241030075937.png)
 
 # Linux Kernel
 
@@ -65,10 +65,10 @@ _The only purpose of an `initramfs` is to mount the root filesystem. The `initra
 - System unit files: `/etc/systemd/system` and `/lib/systemd/system`.
 - User unit files: `/etc/systemd/user` and `~/.config/systemd/user`.
 - **Units**:
-	- Service
-	- Socket
-	- Device
-	- Timer
+  - Service
+  - Socket
+  - Device
+  - Timer
 - If the status of the service is enabled then service is started when the system boots. If it is disabled then the service can still run manually, but it will not start when the system boots.
 - When changing the config of a service, and it is running. The old config still applies to the running service. You can `restart` the service, but it will make disruption to other people who are using it, to prevent this you can use `reload` to gracefully restart the service.
 
@@ -86,9 +86,9 @@ _The only purpose of an `initramfs` is to mount the root filesystem. The `initra
 ## Structure
 
 - Linux uses the `/` character to separate paths and does not have drive letters.
-  ![](/Image/pasted-image-20241109161937.png)
+  ![](/image/pasted-image-20241109161937.png)
   # Choosing a Linux Distro
-  ![](/Image/pasted-image-20241109162113.png)
+  ![](/image/pasted-image-20241109162113.png)
 
 ## Single user mode
 

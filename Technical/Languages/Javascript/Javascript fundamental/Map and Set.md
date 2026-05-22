@@ -18,7 +18,7 @@
 
 ### Map can also use objects as keys
 
-![](/Image/pasted-image-20220401105849.png)
+![](/image/pasted-image-20220401105849.png)
 
 ### Iteration over Map
 

@@ -174,7 +174,7 @@ HttpContextBase myBase = new HttpContextWrapper(myContext);
 ```
 
 - Receiving request data: - Extract it from a set of context objects - Have the data passed as parameters to your action method - Explicitly invoke the framework's model binding feature
-  ![](/Image/pasted-image-20230528143020.png)
+  ![](/image/pasted-image-20230528143020.png)
 - There are build-in value providers that fech items from `Request.Form`, `Request.QueryString`, `Request.Files` and `RouteData.Values`. The values are then passed to model binders that try to map them to the types that your action methods require as parameters.
 - When the MVC framework receives an `ActionResult` object from an action method, it calls the `ExecuteResult` method defined by that object. The action result implementation then deals with the `Response` object for you, generating the output that corresponds to your intention.
 
@@ -190,13 +190,13 @@ public class CustomRedirectResult : ActionResult {
 }
 ```
 
-![](/Image/pasted-image-20230528152256.png)
+![](/image/pasted-image-20230528152256.png)
 
 - The `RedirectToAction` (for temporary redirections) or the `RedirectToActionPermanent` (for permanent redirections) are just wrappers around the `RedirectToRoute`.
 
 # Controller factory
 
-![](/Image/pasted-image-20230528194306.png)
+![](/image/pasted-image-20230528194306.png)
 
 - To create a controller factory, the class must inherite the `IControllerFactory`
   - `CreateController()`
@@ -281,7 +281,7 @@ public partial class PersonMetaData {
 
 # Basic links and URLs
 
-![](/Image/pasted-image-20230528221532.png)
+![](/image/pasted-image-20230528221532.png)
 
 # Ajax
 
@@ -379,7 +379,7 @@ ValueProviderFactories.Factories.Insert(0, new CustomValueProviderFactory());
 ```
 
 - Custom model binder
-  ![](/Image/pasted-image-20230528231110.png)
+  ![](/image/pasted-image-20230528231110.png)
 
 ```csharp
 // implement IModelBinder
@@ -430,7 +430,7 @@ public class AddressSummary {
 
 # Filter
 
-![](/Image/pasted-image-20230529162356.png)
+![](/image/pasted-image-20230529162356.png)
 
 - <mark style="background: #D2B3FFA6;">Authorization filter:</mark>
   - `IAuthorizationFilter`
@@ -454,11 +454,11 @@ public class AddressSummary {
   - `System.Web.HttpApplication` which is the base class for the application, and it is not define the method, it uses reflection to look for the methods by name.
 - <mark style="background: #D2B3FFA6;">Request life cycle</mark> defines the path that an HTTP request follows as it moves through the ASP.NET platform from the point at which the initial request is received until the response is sent.
 - ASP.NET life cycles
-  ![](/Image/pasted-image-20230530205638.png)
-  ![](/Image/pasted-image-20230530205646.png)
+  ![](/image/pasted-image-20230530205638.png)
+  ![](/image/pasted-image-20230530205646.png)
 - HttpContext
-  ![](/Image/pasted-image-20230530211704.png)
-  ![](/Image/pasted-image-20230530211714.png)
+  ![](/image/pasted-image-20230530211704.png)
+  ![](/image/pasted-image-20230530211714.png)
 - ASP.NET context objects provide information about the application, the current request, and the response that is being prepared for it, they also provide access to the most important ASP.NET platform services such as security and state data.
 - `HttpApplication` objects describes a single HTTP requests as it is being processed.
 
@@ -474,8 +474,8 @@ public class AddressSummary {
 # IHttpHandler
 
 - Handlers are the ASP.NET request handling component that is responsible for generating the response content for requests
-  ![](/Image/pasted-image-20230605204152.png)
-  ![](/Image/pasted-image-20230605204202.png)
+  ![](/image/pasted-image-20230605204152.png)
+  ![](/image/pasted-image-20230605204202.png)
   - Methods defined
     - `ProcressRequest(context)`
     - `IsReusable()`
@@ -573,7 +573,7 @@ public class EventListModule : IHttpModule {
 
 # Configuration
 
-![](/Image/pasted-image-20230605221036.png)
+![](/image/pasted-image-20230605221036.png)
 
 - Reading from config file: use `WebConfigurationManager.AppSettings` and access it like a dictionary.
 
@@ -582,10 +582,10 @@ public class EventListModule : IHttpModule {
 - Application state data allows small amounts of data to be shared throughout an application and is available to every component.
 - It is available through `HttpContext.Application`
 - When working on Application state data, we should care about the synchronization effect
-  ![](/Image/pasted-image-20230605223138.png)
-  ![](/Image/pasted-image-20230605223148.png)
+  ![](/image/pasted-image-20230605223138.png)
+  ![](/image/pasted-image-20230605223148.png)
 - Tracking sessions without cookies
-  ![](/Image/pasted-image-20230605223415.png)
+  ![](/image/pasted-image-20230605223415.png)
 
 # Donut and donut-hole caching
 

@@ -117,7 +117,7 @@ ss -ltup # get programms are litening on TCP and UDP connection
 ## DNSs and Name Resolution
 
 - The act of translating hostnames to the IP addresses of their hosts.
-  ![314](/Image/image-4.png)
+  ![314](image-4.png)
 
 ### Utilities
 
@@ -144,7 +144,7 @@ ss -ltup # get programms are litening on TCP and UDP connection
 - Terms:
   - Bridge can be called control
   - Network interface can be called port
-    ![](/Image/image-38.png)
+    ![](/image/image-38.png)
 
 ### Bonds
 
@@ -166,18 +166,18 @@ ss -ltup # get programms are litening on TCP and UDP connection
 | 5   | adaptive transmit loading balancing | balance-tlb   |                                                                      |
 | 6   | adaptive load balancing             | balance-alb   |                                                                      |
 
-![](/Image/image-39.png)
+![](/image/image-39.png)
 
 ## Reverse proxy
 
 - A reverse proxy acts as an intermediary between client requests and the backend web server. Rather than the client directly communicating with the web server, the reverse proxy intercepts the request and forwards it.
 
-![](/Image/image-42.png)
+![](/image/image-42.png)
 
 ## Load balancing
 
 - Load balancing distributes incoming web requests across multiple servers, ensuring that no single server becomes overwhelmed.
-  ![](/Image/image-43.png)
+  ![](/image/image-43.png)
 
 ## `nginx`
 

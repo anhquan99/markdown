@@ -13,4 +13,4 @@
 
 # Coding
 
-![](/Image/pasted-image-20220311142153.png)
+![](/image/pasted-image-20220311142153.png)

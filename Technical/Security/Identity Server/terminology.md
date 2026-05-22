@@ -1,6 +1,6 @@
 # Terminology
 
-![](/Image/pasted-image-20250118120637.png)
+![](/image/pasted-image-20250118120637.png)
 
 ## IdentityServer
 

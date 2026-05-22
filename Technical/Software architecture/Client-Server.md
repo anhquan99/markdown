@@ -7,4 +7,4 @@
 ## Application:
 
 - Online applications email, banking, games,...
-  ![](/Image/pasted-image-20220312182420.png)
+  ![](/image/pasted-image-20220312182420.png)

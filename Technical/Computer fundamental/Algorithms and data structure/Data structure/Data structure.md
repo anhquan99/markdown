@@ -15,6 +15,6 @@
 ## Graph
 
 - [[Graph map|Graph]]
-  ![](/Image/pasted-image-20220316005803.png)
-  ![](/Image/pasted-image-20220316005629.png)
-  ![](/Image/pasted-image-20220316005726.png)
+  ![](/image/pasted-image-20220316005803.png)
+  ![](/image/pasted-image-20220316005629.png)
+  ![](/image/pasted-image-20220316005726.png)

@@ -45,8 +45,8 @@ Reference https://docs.microsoft.com/en-us/dotnet/core/extensions/globalization-
   		}
   ```
 
-  ![](/Image/pasted-image-20220325161333.png)
-  ![](/Image/pasted-image-20220325161612.png)
+  ![](/image/pasted-image-20220325161333.png)
+  ![](/image/pasted-image-20220325161612.png)
 
 ## Choosing a StringComparison member for your method call
 

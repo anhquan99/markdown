@@ -218,7 +218,7 @@ DELETE FROM Candidates WHERE CandidateId > 1000;
 
 # Pattern matching
 
-![](/Image/pasted-image-20220315233259.png)
+![](/image/pasted-image-20220315233259.png)
 
 - `%`
 

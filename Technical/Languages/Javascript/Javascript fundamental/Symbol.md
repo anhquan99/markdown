@@ -55,5 +55,5 @@ const obj = {
 ```
 
 - Symbol used to avoid name conflicts
-  ![](/Image/pasted-image-20220331153512.png)
-  ![](/Image/pasted-image-20220331153527.png)
+  ![](/image/pasted-image-20220331153512.png)
+  ![](/image/pasted-image-20220331153527.png)

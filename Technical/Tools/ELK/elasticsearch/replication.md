@@ -10,7 +10,7 @@
 - A replica shard can serve search requests, exactly like its primary shard.
 - The number of replicas can be configured at index creation.
 - Replica shards are **never** stored on the same node as their primary shard.
-  ![Replication](/Image/image-7.png)
+  ![Replication](image-7.png)
 
 ## Choosing the number of replica shards
 

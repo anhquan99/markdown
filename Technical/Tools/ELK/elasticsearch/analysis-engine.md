@@ -4,7 +4,7 @@
 - The result is stored in data structures that are efficient for searching.
 - The `_source` object is not used when searching for documents.
 - There are built-in analyzers, character filters, tokenizers, and token filters are available or you can build your own.
-  ![Analysis engine](/Image/image-10.png)
+  ![Analysis engine](image-10.png)
 
 ## Character filters
 
@@ -69,7 +69,7 @@ POST /_analyzer
 ```
 
 - The other data types use BKD trees.
-  ![Inverted index](/Image/image-11.png)
+  ![Inverted index](image-11.png)
 
 ## Mapping
 

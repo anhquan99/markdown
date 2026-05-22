@@ -19,4 +19,4 @@ find /proc/{process-id}/root/ | grep kube-api
 
 ## `ImagePolicyWebhook`
 
-![](/Image/image-30.png)
+![](/image/image-30.png)

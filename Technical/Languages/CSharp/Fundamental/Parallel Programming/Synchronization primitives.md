@@ -49,7 +49,7 @@ Memory barriers ensure that any code statements above or below the barrier will 
 - `SuspendRequested`
 - `Suspended`
 - `Background`: thread is being executed in the background.
-  ![](/Image/pasted-image-20240814161155.png)
+  ![](/image/pasted-image-20240814161155.png)
 
 # Lock, mutex, and semaphore
 
