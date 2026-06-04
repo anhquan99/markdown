@@ -19,7 +19,7 @@
     "setup"
   ],
   "vimMode": false,
-  "readableLineLength": true,
+  "readableLineLength": false,
   "strictLineBreaks": true,
   "rightToLeft": false,
   "newFileLocation": "folder",
