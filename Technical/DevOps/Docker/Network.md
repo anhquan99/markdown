@@ -16,4 +16,4 @@
 	- `Macvlan`: you can set a custom MAC address to a container - this address can then be used for communication with that container.
 	- None: all network is disabled.
 	- Third-party-plugins: you can install third-party plugins.
-#### [[cli##^7e7061|CLI]]
+#### [[Technical/DevOps/docker/cli##^7e7061|CLI]]
