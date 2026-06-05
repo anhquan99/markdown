@@ -143,4 +143,415 @@ spec:
             replicas: '>=2'
 ```
 ### Anchors
-- 
+- Anchors allow conditional processing (i.e. “if-then-else”) and other logical checks in validation patterns.
+
+| Anchor      | Tag | Usage                                          | Behavior                                                                                                                                                                                                                                                                                                                    |
+| ----------- | --- | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Conditional | ()  | Checks if the field is set to a specific value | If tag with the given value (including child elements) is specified, then peer elements will be processed.  <br>e.g. If image has tag latest then imagePullPolicy cannot be IfNotPresent.  <br>    (image): ”*:latest”  <br>    imagePullPolicy: ”!IfNotPresent”                                                            |
+| Equality    | =() | Checks if the field exists                     | If tag is specified, then processing continues. For tags with scalar values, the value must match. For tags with child elements, the child element is further evaluated as a validation pattern.  <br>e.g. If hostPath is defined then the path cannot be /var/lib  <br>    =(hostPath):  <br>        path: ”!/var/lib”     |
+| Existence   | ^() | Check for at least one in a list               | Works on the list/array type only. If at least one element in the list satisfies the pattern. In contrast, a conditional anchor would validate that all elements in the list match the pattern.  <br>e.g. At least one container with image nginx:latest must exist.  <br>    ^(containers):  <br>    - image: nginx:latest |
+| Negation    | X() | Forbids a field                                | The tag cannot be specified. The value of the tag is not evaluated (use exclamation point to negate a value). The value should ideally be set to `"null"` (quotes surrounding null).  <br>e.g. Hostpath tag cannot be defined.  <br>    X(hostPath): “null”                                                                 |
+| Global      | <() | Acts as a gatekeeper for the rule              | The content of this condition, if false, will cause the entire rule to be skipped. Valid for both validate and strategic merge patches.                                                                                                                                                                                     |
+#### Conditional
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: conditional-anchor-dockersock
+spec:
+  background: false
+  rules:
+    - name: conditional-anchor-dockersock
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        failureAction: Enforce
+        message: 'If a hostPath volume exists and is set to `/var/run/docker.sock`, the label `allow-docker` must equal `true`.'
+        pattern:
+          metadata:
+            labels:
+              allow-docker: 'true'
+          (spec):
+            (volumes):
+              - (hostPath):
+                  path: '/var/run/docker.sock'
+---
+# if image matches *:latest then the peer field imagePullPolicy must not be IfNotPresent
+spec:
+  containers:
+  - (image): "*:latest"
+    imagePullPolicy: "!IfNotPresent"
+---
+spec:
+  failureAction: Enforce
+  message: "If a hostPath volume exists and is set to `/var/run/docker.sock`, the label `allow-docker` must equal `true`."
+  pattern:
+	# else block
+    metadata:
+      labels:
+        allow-docker: true
+    # If block
+    (spec):
+      (volumes):
+      - (hostPath):
+        path: "/var/run/docker/sock"
+```
+#### Equality
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: equality-anchor-no-dockersock
+spec:
+  background: false
+  rules:
+    - name: equality-anchor-no-dockersock
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        failureAction: Enforce
+        message: 'If a hostPath volume exists, it must not be set to `/var/run/docker.sock`.'
+        pattern:
+          =(spec):
+            =(volumes):
+              - =(hostPath):
+                  path: '!/var/run/docker.sock'
+```
+#### Existence
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: existence-anchor-at-least-one-nginx
+spec:
+  rules:
+    - name: existence-anchor-at-least-one-nginx
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        failureAction: Enforce
+        message: 'At least one container must use the image `nginx:latest`.'
+        pattern:
+          spec:
+            ^(containers):
+              - image: nginx:latest
+```
+#### Global
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: sample
+spec:
+  rules:
+    - name: check-container-image
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        failureAction: Enforce
+        message: Images coming from corp.reg.com must use the correct imagePullSecret.
+        pattern:
+          spec:
+            containers:
+              - name: '*'
+                <(image): 'corp.reg.com/*'
+            imagePullSecrets:
+              - name: my-registry-secret
+```
+### `anyPattern`
+- In some cases, content can be defined at different levels. For example, a security context can be defined at the Pod or Container level. The validation rule should pass if either one of the conditions is met.
+- The `anyPattern` tag is a logical OR across multiple validation patterns and can be used to check if any one of the patterns in the list match.
+```ad-note
+Either one of `pattern` or `anyPattern` is allowed in a rule; they both can’t be declared in the same rule.
+```
+
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-run-as-non-root
+spec:
+  background: true
+  rules:
+    - name: check-containers
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        failureAction: Enforce
+        message: >-
+          Running as root is not allowed. The fields spec.securityContext.runAsNonRoot,
+          spec.containers[*].securityContext.runAsNonRoot, and
+          spec.initContainers[*].securityContext.runAsNonRoot must be `true`.
+        anyPattern:
+          # spec.securityContext.runAsNonRoot must be set to true. If containers and/or initContainers exist which declare a securityContext field, those must have runAsNonRoot also set to true.
+          - spec:
+              securityContext:
+                runAsNonRoot: true
+              containers:
+                - =(securityContext):
+                    =(runAsNonRoot): true
+              =(initContainers):
+                - =(securityContext):
+                    =(runAsNonRoot): true
+          # All containers and initContainers must define (not optional) runAsNonRoot=true.
+          - spec:
+              containers:
+                - securityContext:
+                    runAsNonRoot: true
+              =(initContainers):
+                - securityContext:
+                    runAsNonRoot: true
+```
+## Deny rules
+- A validate rule can deny a request based on a set of conditions written as expressions.
+```yaml
+validate:
+  message: Main message is here.
+  deny:
+    conditions:
+      any:
+        - key: '{{ request.object.data.team }}'
+          operator: Equals
+          value: eng
+          message: The expression team = eng failed.
+        - key: '{{ request.object.data.unit }}'
+          operator: Equals
+          value: green
+          message: The expression unit = green failed.
+---
+# default deny any update or create to the resource
+validate:
+  failureAction: Enforce
+  message: "Modifying or deleting this custom resource is forbidden."
+  deny: {}
+
+```
+## ForEach
+- The `foreach` declaration simplifies validation of sub-elements in resource declarations, for example containers in a Pod.
+### Structure
+- The list field: a JMESPath expression to select the array you want to loop over.
+	- Note: the path is not enclosed in `{{...}}`
+- The special element variable: hold the current item from the list.
+- The validation logic: applied to each element
+	- `pattern`
+	- `anyPattern`
+	- `deny`
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: check-images
+spec:
+  background: false
+  rules:
+    - name: check-registry
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      preconditions:
+        any:
+          - key: '{{request.operation}}'
+            operator: NotEquals
+            value: DELETE
+      validate:
+        failureAction: Enforce
+        message: 'unknown registry'
+        foreach:
+          - list: 'request.object.spec.initContainers'
+            pattern:
+              image: 'trusted-registry.io/*'
+          - list: 'request.object.spec.containers'
+            pattern:
+              image: 'trusted-registry.io/*'
+```
+## Pod security
+- In Kyverno, `podSecurity` is a specialized validation rule designed to enforce the **Kubernetes Pod Security Standards (PSS)** instantly, without requiring you to write long, complex `pattern` or `deny` blocks.
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: psa
+spec:
+  background: true
+  rules:
+    - name: restricted
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        failureAction: Enforce
+        podSecurity:
+          level: restricted
+          version: latest
+```
+### Exemptions
+- Exemptions within Kyverno's `podSecurity` rule are handled using the `exclude` block. This is the exact feature that makes Kyverno's implementation superior to Kubernetes' native Pod Security Admission, as it allows for surgical, highly granular exceptions rather than forcing an "all-or-nothing" approach.
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: psa
+spec:
+  background: true
+  rules:
+    - name: restricted
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        failureAction: Enforce
+        podSecurity:
+          level: restricted
+          version: latest
+          exclude:
+            - controlName: Capabilities
+              images:
+                - nginx*
+                - redis*
+```
+## Common Expression Language (CEL)
+- A fast, simple, and highly secure open-source programming language originally developed by Google.
+- It is specifically designed to do one thing very well: **evaluate short, logical conditions** (essentially, the logic you would put inside an `if` statement).
+### Features
+#### It is "Non-Turing Complete" (Guaranteed to Finish)
+- In standard languages, a user could accidentally (or maliciously) write an infinite `while` loop that crashes the server. CEL **does not allow loops or infinite recursion**. 
+- When a program runs a CEL expression, it is mathematically guaranteed to finish evaluating in a fraction of a millisecond. This makes it incredibly safe to run user-provided rules inside critical infrastructure like an API gateway.
+#### Lightning Fast
+- Because it is so restricted, CEL expressions are parsed and evaluated almost instantly. When Envoy processes 10,000 requests per second, it can use CEL to check the headers of every single request without slowing down traffic.
+#### Highly Embeddable
+- CEL isn't a standalone program. It is designed to be embedded directly into other applications written in Go, C++, or Java. The host application (like Kubernetes) provides the data, and CEL just evaluates it.
+### Available CEL variables
+- `object`: the incoming resource from the admission request (null for delete)
+- `oldObject`: the existing resource in the cluster (null for create)
+- `request`: attribute of the admission request itself
+- `namespaceObject`
+- `params`: a parameter resource used for configurable policies
+- `authorizer`: a cel variable to perform authorization checks
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: check-deployment-replicas
+spec:
+  background: false
+  rules:
+    - name: check-deployment-replicas
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+      validate:
+        failureAction: Enforce
+        cel:
+          expressions:
+            - expression: 'object.spec.replicas < 4'
+              message: 'Deployment spec.replicas must be less than 4.'
+```
+### Parameter Resources
+- Parameter resources enable a policy configuration to be separated from its definition. A policy can define `cel.paramKind`, which outlines the GVK of the parameter resource, and then associate the policy with a specific parameter resource via `cel.paramRef`.
+```yaml
+apiVersion: rules.example.com/v1
+kind: ReplicaLimit
+metadata:
+  name: 'replica-limit'
+maxReplicas: 4
+---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: check-deployment-replicas
+spec:
+  background: false
+  rules:
+    - name: check-deployment-replicas
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+      validate:
+        failureAction: Enforce
+        cel:
+          paramKind:
+            apiVersion: rules.example.com/v1
+            kind: ReplicaLimit
+          paramRef:
+            name: 'replica-limit'
+            parameterNotFoundAction: 'Deny'
+          expressions:
+            - expression: 'object.spec.replicas < params.maxReplicas'
+              messageExpression: "'Deployment spec.replicas must be less than ' + string(params.maxReplicas)"
+```
+### CEL Preconditions
+- CEL Preconditions allow for more fine-grained selection of resources than the options allowed by match and exclude statements.
+```yaml
+rules:
+  - name: validate-nodeport-trafficpolicy
+    match:
+      any:
+        - resources:
+            kinds:
+              - Service
+    celPreconditions:
+      - name: check-service-type
+        expression: "object.spec.type.matches('NodePort')"
+    validate:
+      cel:
+        expressions:
+          - expression: "object.spec.externalTrafficPolicy.matches('Local')"
+            message: 'All NodePort Services must use an externalTrafficPolicy of Local.'
+```
+### CEL Variables
+- If an expression grows too complicated, or part of the expression is reusable and computationally expensive to evaluate. We can extract some parts of the expressions into variables. A variable is a named expression that can be referred later as variables in other expressions.
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: image-matches-namespace-environment.policy.example.com
+spec:
+  background: false
+  rules:
+    - name: image-matches-namespace-environment
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+      validate:
+        failureAction: Enforce
+        cel:
+          variables:
+            - name: environment
+              expression: "'environment' in namespaceObject.metadata.labels ? namespaceObject.metadata.labels['environment'] : 'prod'"
+            - name: exempt
+              expression: "has(object.metadata.labels) && 'exempt' in object.metadata.labels && object.metadata.labels['exempt'] == 'true'"
+            - name: containers
+              expression: 'object.spec.template.spec.containers'
+            - name: containersToCheck
+              expression: "variables.containers.filter(c, c.image.contains('example.com/'))"
+          expressions:
+            - expression: "variables.exempt || variables.containersToCheck.all(c, c.image.startsWith(variables.environment + '.'))"
+              messageExpression: "'only ' + variables.environment + ' images are allowed in namespace ' + namespaceObject.metadata.name"
+```
