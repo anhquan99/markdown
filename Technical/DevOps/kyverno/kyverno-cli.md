@@ -45,5 +45,5 @@ results:
     result: pass
 ```
 - For the mutate rule the result has addition field `patchedResource` that point to the expected file.
-- For the mutate rule the result has addition field `generatedResource` that point to the expected file.
+- For the generate rule the result has addition field `generatedResource` that point to the expected file.
 - Run the test suit: `kyverno test`.
