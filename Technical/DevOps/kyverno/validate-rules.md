@@ -184,20 +184,6 @@ spec:
   containers:
   - (image): "*:latest"
     imagePullPolicy: "!IfNotPresent"
----
-spec:
-  failureAction: Enforce
-  message: "If a hostPath volume exists and is set to `/var/run/docker.sock`, the label `allow-docker` must equal `true`."
-  pattern:
-	# else block
-    metadata:
-      labels:
-        allow-docker: true
-    # If block
-    (spec):
-      (volumes):
-      - (hostPath):
-        path: "/var/run/docker/sock"
 ```
 #### Equality
 ```yaml
