@@ -74,6 +74,7 @@ A program may be composed of multiple simulataneous threads (multithreading), ea
 - The shared memory segments, a user process is not able to read or write into or from memory space of any other process.
 - Even a process run by the root user or as a `setuid` program runs in user mode, except when jumping into a system call, and has only limited ability to access hardware.
   ![](/image/pasted-image-20250119115505.png)
+![](/image/Pasted%20image%2020260607202940.png)
 
 ### Kernel (system) mode
 
