@@ -45,5 +45,21 @@
 - Used to aggregates flow data from multiple per node Hubble server to present a centralized cluster-wide view.
 - Can view by using GUI or CLI.
 ### `kube-proxy`
-- Can be replaced with Cilum when you want Cilium to handle all the traffic.
-- Cilium can perform the `kube-proxy` capabilites.
+- Can be replaced with Cilium when you want Cilium to handle all the traffic.
+- Cilium can perform the `kube-proxy` capabilities.
+## Installation
+### Components
+- Agent: DaemonSet - cilium
+- Envoy: DaemonSet - cilium-envoy
+- Operator: Deployment - cilium-operator
+- Configuration: ConfigMap - cilium-config
+- Cluster role and binding for:
+	- Agent: cilium
+	- Operator: cilium-operator
+	- Envoy: cilium-envoy
+### Methods
+- Cilium CLI
+```ad-note
+There is another Cilium CLI used in agent pod, used for advanced debugging
+```
+- Helm
