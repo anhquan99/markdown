@@ -47,19 +47,23 @@
 ### `kube-proxy`
 - Can be replaced with Cilium when you want Cilium to handle all the traffic.
 - Cilium can perform the `kube-proxy` capabilities.
-## Installation
-### Components
-- Agent: DaemonSet - cilium
-- Envoy: DaemonSet - cilium-envoy
-- Operator: Deployment - cilium-operator
-- Configuration: ConfigMap - cilium-config
-- Cluster role and binding for:
-	- Agent: cilium
-	- Operator: cilium-operator
-	- Envoy: cilium-envoy
-### Methods
-- Cilium CLI
-```ad-note
-There is another Cilium CLI used in agent pod, used for advanced debugging
+## Terminology
+### Cilium endpoint
+- ***Every address is an endpoint***
+- An endpoint in Cilium represents a network identity for which Cilium enforces network policy.
+- Cilium assigns each endpoint a unique numeric ID that the agent uses internally to manage that endpoint. 
+```bash
+# inpect enpoints from a Cilium agent
+kubectl exec -n kube-system cilium-{agent} -- cilium endpoint list
 ```
-- Helm
+### Cilium identities
+- Cilium addresses IP volatility by decoupling policy from IP addresses: it assigns stable numeric identities to sets of endpoints that share the same semantic labels (for example, role=frontend).
+- Policies are written against these identities rather than raw IPs, so they remain valid when pods scale or move.
+- Benefits:
+	- Identities remain stable across Pod lifecycle events.
+	- Security policies are decoupled from changing network addresses, simplifying enforcement and scaling.
+- All Pods that share the same set of labels are mapped to the same numeric identity.
+```bash
+# inpect id list
+kubectl exec -n kube-system cilium-{agent} -- cilium identity list
+```
