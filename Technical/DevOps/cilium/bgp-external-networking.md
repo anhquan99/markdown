@@ -110,6 +110,7 @@ kubectl describe svc myapp-service
 - **Loopback:** a **loopback interface** is a virtual, software-only interface that exists inside a networking device (like a router or switch).
 - **BGP adjacency:** is the **"handshake" or relationship** established between two routers so they can exchange routing information.
 - **AS number:** Autonomous System Number is a unique numerical identifier assigned to a large network (like an ISP, a university, or a massive tech company like Google or Amazon) so that it can be identified by other networks on the internet.
+- **ARP Request:** Address Resolution Protocol Request is the "Who is this?" shout that happens inside a local network when one device knows the **IP address** of another device but doesn't know its **MAC address**.
 ### Routing
 ![](/image/Pasted%20image%2020260611153242.png)
 - BGP lets Cilium with the native routing and advertise the IP to the router.
