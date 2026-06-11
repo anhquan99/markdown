@@ -1,14 +1,14 @@
 # Configuration
 ## Installation
 ### Components
-- Agent: DaemonSet - cilium
-- Envoy: DaemonSet - cilium-envoy
-- Operator: Deployment - cilium-operator
-- Configuration: ConfigMap - cilium-config
+- **Agent**: DaemonSet - cilium
+- **Envoy**: DaemonSet - cilium-envoy
+- **Operator**: Deployment - cilium-operator
+- **Configuration**: ConfigMap - cilium-config
 - Cluster role and binding for:
-	- Agent: cilium
-	- Operator: cilium-operator
-	- Envoy: cilium-envoy
+	- **Agent**: cilium
+	- **Operator**: cilium-operator
+	- **Envoy**: cilium-envoy
 ### Methods
 - Cilium CLI
 ```ad-note

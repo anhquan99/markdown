@@ -187,19 +187,24 @@ spec:
 apiVersion: "cilium.io/v2"
 kind: CiliumNetworkPolicy
 metadata:
-  name: "egress-cidr-with-port"
+  name: "http-method-path"
   namespace: dev
 spec:
   endpointSelector:
     matchLabels:
-      role: frontend
-  egress:
-  - toCIDR:
-    - 192.0.2.0/24
+      role: backend
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        role: frontend
     toPorts:
     - ports:
       - port: "80"
         protocol: TCP
+      rules:
+        http:
+        - method: "GET"
+          path: "/products"
 ```
 - DNS filtering and FQDN:
 ```yaml
@@ -333,7 +338,7 @@ spec:
 |none (INGRESS AUDITED)|Traffic would be denied by policy, but audit mode allowed the flow and recorded the audited verdict.|
 |L3-Only (INGRESS ALLOWED)|Traffic is allowed by the policy (L3 match) and is permitted.|
 |other verdicts|May indicate more specific L4/L7 evaluation — inspect Hubble logs for details.|
-### Config
+### Configuration
 - Globally (all endpoints) via Helm — requires restarting Cilium components with config `policyAuditMode: true`.
 - Per-endpoint (specific endpoints) using `cilium-dbg` — no cluster-wide restart required.
 ```bash

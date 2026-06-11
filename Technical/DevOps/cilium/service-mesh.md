@@ -49,7 +49,7 @@
 - Programs the Linux kernel datapath with eBPF for most routing and load-balancing work, avoiding the need for a separate Ingress-controller pod for L3/L4.
 - Uses Envoy only where required: L7 processing, TLS termination (if configured), and policy enforcement.
 - Supports both traditional Kubernetes Ingress and the Gateway API for modern traffic routing.
-### Config
+### Configuration
 - Config file:
 ```yaml
 nodePort:
@@ -120,7 +120,7 @@ gatewayAPI:
 | Key management   | Secret keys in Kubernetes | Keys managed by Cilium (peer-based)            |
 | Compatibility    | Works across many kernels | Requires WireGuard support in kernel or module |
 | Typical use case | Stable enterprise setups  | High-throughput, low-latency environments      |
-### Config IPsec
+### Configuration IPsec
 - Manifest:
 ```yaml
 encryption:
@@ -137,7 +137,7 @@ kubectl -n kube-system rollout restart ds/cilium
 # verify
 kubectl -n kube-system exec -ti ds/cilium -- cilium-dbg encrypt status
 ```
-### Config WireGuard
+### Configuration WireGuard
 - Manifest:
 ```yaml
 encryption:

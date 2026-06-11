@@ -80,3 +80,9 @@ cilium clustermesh enable --context $CLUSTER1 --service-type=LoadBalancer --kvst
 - By default, a Kubernetes Service load-balances only to endpoints (Pods) in the same cluster.
 - Cilium Cluster Mesh can expose Services across clusters. Enabling a global service allows cross-cluster load balancing and failover.
 - To create a global service, deploy identical Service resources (same name, namespace, and ports) in each cluster where the Service should be reachable, and add the global annotation to enable
+
+| Annotation                 | Purpose                                                                 | Example value      |
+| -------------------------- | ----------------------------------------------------------------------- | ------------------ |
+| service.cilium.io/global   | Mark Service as global and advertise it via Cluster Mesh                | ”true”             |
+| service.cilium.io/shared   | Control whether this cluster advertises its endpoints to other clusters | ”true” / “false”   |
+| service.cilium.io/affinity | Bias load-balancing to local or remote endpoints                        | ”local” / “remote” |
