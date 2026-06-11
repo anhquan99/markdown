@@ -56,3 +56,10 @@ ipv6NativeRoutingCIDR: ""
 | More efficient use of MTU            | Complex routing configuration |
 | Easier debugging                     | Not always cloud friendly     |
 | Optimized for large-scale deployment |                               |
+## VXLAN
+- **VXLAN (Virtual Extensible LAN)** is a networking technology that allows you to create "virtual" networks on top of your existing physical network. It essentially takes your standard Layer 2 Ethernet frames and wraps them inside Layer 3 UDP packets.
+### How it works?
+1. **Inner Packet:** Your original data (the Ethernet frame from a Pod or VM) is kept exactly as it is.
+2. **VXLAN Header:** A small label is added to it (called the **VNI** or VXLAN Network Identifier). The VNI is 24 bits long, meaning you can have over **16 million virtual networks** (compared to the 4,000 in standard VLANs).
+3. **UDP Wrapper:** The entire thing is then wrapped in a standard UDP packet.
+4. **Outer Header:** It gets an IP header that points to the destination server (the **VTEP** - VXLAN Tunnel End Point).
