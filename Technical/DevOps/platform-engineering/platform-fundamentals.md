@@ -1,6 +1,7 @@
 # Platform Fundamentals
-## Cattle vs pets 
-- 
+## Cattle vs pets
+- Metaphor for the on premise and serverless. In this case the pets are on premise servers and the cattle is serverless resources (ie: AWS, Azure, ...).
+- _Pets_ to _Cattle_ is essential for modern cloud computing, scalability, and security. It eliminates human error, prevents malicious actors from maintaining a permanent foothold, and allows systems to scale up or down automatically.
 
 ## Dora metric
 ### Deployment frequency
