@@ -110,3 +110,6 @@ In production, you should migrate namespaces from PERMISSIVE to STRICT mode grad
 - **Gate 2 - Cosign signing**: Sign images with a private key after they pass scanning to establish provenance and integrity.
 - **Gate 3 - Cosign verification**: Verify signatures with the public key before promoting an image to a deployment environment.
 - **Gate 4 - Kyverno**: Enforce signature verification at the Kubernetes admission layer so that no unsigned image can be scheduled, even if someone bypasses the CI/CD pipeline.
+## SLSA
+- Supply-chain Levels for Software Artifacts
+- https://slsa.dev/spec/v0.1/
