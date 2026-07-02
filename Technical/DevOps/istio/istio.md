@@ -136,3 +136,13 @@ spec:
 ### Service entries
 
 ### Service breakers
+
+### Service entry vs workload entry
+
+|                       | Service entry                                      | Workload entry                                                               |
+| --------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Purpose               | Defines an external service for traffic routing    | Defines an external workload inside the mesh (like a pod in the k8s cluster) |
+| Use case              | For exposing external APIs or services to the mesh | For integrating external workload into the mesh                              |
+| mTLS support          | Does not directly involve mTLS                     | Support mTLS and workload identity                                           |
+| Service discovery     | Provides service discovery for external services   | Used for redirecting traffic to specified external workloads                 |
+| Telemetry and metrics | Limited                                            | Provides logs, metrics for external workloads                                |
