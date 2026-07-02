@@ -96,6 +96,22 @@ spec:
     - www.wikipedia.org
 ---
 apiVersion: networking.istio.io/v1
+kind: ServiceEntry
+metadata:
+  name: wikipedia
+spec:
+  hosts:
+  - www.wikipedia.org
+  ports:
+  - number: 80
+    name: http-port
+    protocol: HTTP
+  - number: 443
+    name: https
+    protocol: HTTPS
+  resolution: DNS
+---
+apiVersion: networking.istio.io/v1
 kind: DestinationRule
 metadata:
   name: egressgateway-for-wikipedia
