@@ -1,5 +1,5 @@
 # The subtle art not giving a fuck
-<mark style="background: #FF5582A6;">by Mark Manson</mark>
+<mark style="background: #02CCFE;">by Mark Manson</mark>
 ## Don't try
 - Self-improvement and success often occur together. But that doesn't neccessarily mean they're the same thing.
 - Giving a fuck about more stuff is good for business, but giving too many fucks is bad for your mental health.

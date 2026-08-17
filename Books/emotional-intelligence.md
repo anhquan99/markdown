@@ -1,11 +1,10 @@
 # Emotional Intelligence
-<mark style="background: #FF5582A6;">by Daniel Goleman</mark>
+<mark style="background: #02CCFE;">by Daniel Goleman</mark>
 > "Anybody can become angry - that is easy, but to be angry with the right person and to the right degree and at the right time and for the right purpose, and in the right way - that is not within everybody's power and is not easy"
-
 ### Part 1: The emotional brain
 -  <mark style="background: #ADCCFFA6;">Chapter 1: What are emotions for?</mark>
 	- <mark style="background: #D2B3FFA6;">When passions overwhelm reason: </mark>
-		- Everytimes emotion makes a decision, it is the instinct of the hunman. Through time, it was developed through survival and till now it is not keeping up with the modern world.
+		- Everytimes emotion makes a decision, it is the instinct of the human. Through time, it was developed through survival and till now it is not keeping up with the modern world.
 	- <mark style="background: #D2B3FFA6;">Impules to action:</mark>
 		- Anger
 		- Fear

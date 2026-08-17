@@ -1,5 +1,5 @@
 # Think And Grow Rich
-<mark style="background: #FF5582A6;">by Napoleon Hill</mark>
+<mark style="background: #02CCFE;">by Napoleon Hill</mark>
 ## Desire
 - The methods which help desire rich:
 	1. Fix in your mind the exact amount of money you desire. It's not suufficient merely to say "I want plenty of money". Be definite as to the amount.
