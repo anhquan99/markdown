@@ -6,7 +6,7 @@
 	2. Determine exactly what you intend to give in return for the money you desire.
 	3. Establish a definite date when you intend to possess the money you desire.
 	4. Create a definite plan for carrying out your desire, and begin at once, whether you are ready or not, to put this plan in action.
-	5. Write out a clear, concise statement of the amount of money you intend to acquire, name the time limit for its acquisition, state what you intend to give in return for the money, and describle clearly the plan through which you intend to accumulate it.
+	5. Write out a clear, concise statement of the amount of money you intend to acquire, name the time limit for its acquisition, state what you intend to give in return for the money, and describe clearly the plan through which you intend to accumulate it.
 	6. Read your writteen statement aloud, twice daily, once just before retiring at night, and once after arising in the morning. AS YOU READ - SEE AND FEEL AND BELIEVE YOURSELF, ALREADY IN PROCESSION OF THE MONEY.
 ## Faith
 - Thoughts which are mixed with any of the feelings or emotions, constitute a "magnetic" force which attracts, from the vibrations of the ether, other similar, or related thoughts.
