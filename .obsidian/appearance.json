@@ -8,5 +8,6 @@
   "baseFontSizeAction": true,
   "textFontFamily": "Arial",
   "monospaceFontFamily": "",
-  "showViewHeader": true
+  "showViewHeader": true,
+  "enabledCssSnippets": []
 }

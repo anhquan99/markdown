@@ -1,3 +1,3 @@
-- [[Concept]]
+- [concepts](Technical/Message%20Queue/rabbitmq/concepts.md)
 - [[message-acknowledgement]]
 - [[publisher-confirms]]
