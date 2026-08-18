@@ -25,10 +25,14 @@
 		- When special characters "`*`" (star) and "`#`" (hash) aren't used in bindings, the topic exchange will behave just like a `direct` one.
 - Headers
 - Fanout: broadcasts all the messages to all the queue of the exchange.
-### Temporary queues
+### Temporary 
 ### Priority queues
 - Message with higher priority than others and need to be handled before any other messages.
 - Priority attribute (`x-max-priority`) is an optional, and it is set at queue creation time. Range from 1 to 255.
 #### Notes
 - Overall performance is lower: more cpu and ram are needed. Longer latency, bigger load and lower throughput.
-- Order is not guaranteed: message with biggest priority may not be consumed before lower ones - it's suggestion only.
+- Order is not guaranteed: message with the biggest priority may not be consumed before lower ones - it's suggestion only.
+- Careful with TTL and max-length when using priority queues:
+	1. **Expired low-priority messages are NOT removed** because they are trapped behind high-priority messages and never reach the front to be checked.
+	2. These "ghost" messages **fill up your queue's `max-length`**.
+	3. When the queue is full, RabbitMQ's default setting drops the message at the **head** (which is your **highest-priority message**).
