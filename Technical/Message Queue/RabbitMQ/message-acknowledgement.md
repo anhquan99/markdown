@@ -1,3 +1,4 @@
+# Message Acknowledgement
 - While doing a task, the consumer may have errors and the task is partly done and never be done.
 - In that case, we want to send the message to another consumer. RabbitMQ supports message acknowledgements.
 - **An ack is sent back by the consumer** to tell RabbitMQ the message has been received, processed and RabbitMQ is free to delete it.
