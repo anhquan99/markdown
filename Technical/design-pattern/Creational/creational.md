@@ -1,5 +1,5 @@
 - [[Abstract factory]]
-- [[Builder]]
+- [[builder]]
 - [[factory-method|Factory method]]
 - [[Prototype]]
 - [[singleton|Singleton]]

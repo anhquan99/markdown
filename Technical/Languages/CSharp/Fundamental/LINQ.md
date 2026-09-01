@@ -50,7 +50,7 @@
 - An equal sign `=` is used as comparison operator
 - You can perform `equijoins` by using `join` keyword followed by `on`.
 ## Non `equijoins`
-- Like [[LINQ#Equijoins | Equijoins]], non `equijoin` performs a join with comparison operator instead of the equal sign like `>`, `<`, ... along with conditions.
+- Like [[linq#Equijoins| Equijoins]], non `equijoin` performs a join with comparison operator instead of the equal sign like `>`, `<`, ... along with conditions.
 ## Query keyword
 ### `orderby`
 - Sort the returned data by using `orderby`
@@ -89,7 +89,7 @@
   group person by new {name = person.surname, city = person.city}
 ```
 ###  `join`
-- Take 2 data source as input. Compare elements in each sequence must either be or contain a property that can be compared to a corresponding property in the other sequence. Using `equals` keyword to compare specified keys. All joins performed by `join` clause are [[LINQ#Equijoins | Equijoins]] 
+- Take 2 data source as input. Compare elements in each sequence must either be or contain a property that can be compared to a corresponding property in the other sequence. Using `equals` keyword to compare specified keys. All joins performed by `join` clause are [[linq#Equijoins| Equijoins]] 
 ```csharp
 	from data_1 from dataset_1
 	join data_2 from dataset_2 
@@ -145,7 +145,7 @@ var query = from person in people
 ```
 
 #### The equals operator
-- `join` clause uses the `equals` keyword for [[LINQ#Equijoins | equijoins]] instead of `==` operator.
+- `join` clause uses the `equals` keyword for [[linq#Equijoins| equijoins]] instead of `==` operator.
 - When comparing `null` the result is `false` by using `equals` but `==` results `true`. 
 - With `equals`, the left key consumes the outer source sequence, and the right key consumes the inner source. The outer source is only in scope on the left side of `equals` and the inner source sequence is only in scope on the right side.
 - #### `from`

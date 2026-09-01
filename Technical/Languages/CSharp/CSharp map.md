@@ -1,3 +1,3 @@
-- [[CSharp fundamental]]
+- [[csharp-fundamental]]
 ## Framework
 - [[DotNet]]

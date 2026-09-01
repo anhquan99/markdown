@@ -1,18 +1,19 @@
-# Generic collections
+# System.Collections
+## Generic collections
 - List
 - Dictionary
 - SortedList
 - Queue
 - Stack
 - Hashset
-# Non-generic collections
+## Non-generic collections
 - ArrayList
 - SortedList
 - Stack
 - Queue
 - Hashtable
 - BitArray
-# IEnumerable and IEnumerator
+## IEnumerable and IEnumerator
 ``````csharp
 ItemEnumerable items = new ItemEnumerable(data);
 foreach(var i in items){

@@ -1,3 +1,4 @@
-- [[Value types]]
-- [[Reference types]]
-- [[Event]]
+# Types
+- [[value-types]]
+- [[reference-types]]
+- [[event]]

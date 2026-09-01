@@ -1,6 +1,6 @@
 - [[adapter]]
 - [[Bridge]]
-- [[Composite]]
+- [[composite]]
 - [[Decorator]]
 - [[Facade]]
 - [[Flyweight]]

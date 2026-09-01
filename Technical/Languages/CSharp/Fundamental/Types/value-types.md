@@ -1,6 +1,7 @@
-# Integral numeric
+# Value Types
+## Integral numeric
 - `nint` and `nuint` range depends on platform (compute at runtime).
-## Literals
+#### Literals
 - *decimal*: without any prefix.
 - *hexadecimal*: with the `0x` or `0X` prefix.
 - *binary*: with the `0b` or `0B` prefix.
@@ -9,7 +10,7 @@ var decimalLiteral = 42;
 var hexLiteral = 0x2A;
 var binaryLiteral = 0b_0010_1010;
 ```
-## Floating-point numeric
+#### Floating-point numeric
 
 | Type      | Percision     | Size     | Usage                                                                      |
 | --------- | ------------- | -------- | -------------------------------------------------------------------------- |
@@ -35,11 +36,11 @@ Console.WriteLine("PositiveInfinity plus 10.0 equals {0}.", (Double.PositiveInfi
 // This will equal Infinity.
 Console.WriteLine("10.0 minus NegativeInfinity equals {0}.", (10.0 - Double.NegativeInfinity).ToString());
 ```
-## Literals
+#### Literals
 - The literal without suffix or with the `d` or `D` suffix is of type `double`
 - The literal with the `f` or `F` suffix is of type `float`
 - The literal with the `m` or `M` suffix is of type `decimal`
-# Tuple
+## Tuple
 - The _tuples_ feature provides concise syntax to group multiple data elements in a lightweight data structure.
 ```csharp
 (double, int) t1 = (4.5, 3);
@@ -52,18 +53,18 @@ Console.WriteLine($"Sum of {t2.Count} elements is {t2.Sum}.");
 // Output:
 // Sum of 3 elements is 4.5.
 ```
-## Types
-### `Tuple`
+#### Types
+###### `Tuple`
 - Is a reference type.
 - Immutable.
 - Create using `Tuple.Create` method or a constructor.
 - Performance overhead due to heap allocation.
-### `ValueTuple`
+###### `ValueTuple`
 - Is a value type.
 - Mutable.
 - Create using parentheses.
 - More efficient than `Tuple` due to stack allocation.
-## Application
+#### Application
 - Replace the `out` method parameters.
 - Use deconstruct.
 - Replace the anonymous types.
@@ -75,7 +76,7 @@ Console.WriteLine($"Sum of {t2.Count} elements is {t2.Sum}.");
 | Tuple           | `public`        | `class`  | No                 | No                     | Yes                     |
 | ValueTuple      | `public`        | `struct` | Yes                | Yes                    | No                      |
 
-## Equality
+#### Equality
 - Tuple types support the `==` and `!=` operators. These operators compare members of the left-hand operand with the corresponding members of the right-hand operand following the order of tuple elements.
 ```csharp
 (int a, byte b) left = (5, 10);

@@ -1,3 +1,4 @@
+# Thread
 - A thread is the smallest unit of processing (CPU utilization) that can be scheduled and executed by the operating system.
 - Threads are components of a process, which contains the program code and its activity
   ![](/image/pasted-image-20240904165955.png)
