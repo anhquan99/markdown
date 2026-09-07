@@ -7,6 +7,7 @@
 ### Horizontal Splits
 - **Multiple micro-frontends on the same page:** Multiple MFEs coexist on a single view (e.g., a header, a search bar, and a footer from different teams).
 - This offers high reusability but requires extreme discipline to avoid performance degradation and integration "hell."
+---
 ## Compose
 - Once you define your micro-frontends, you must choose where and how to stitch them together into a unified user interface:
 ### Client-Side Composition
@@ -15,6 +16,7 @@
 - The origin server aggregates different micro-frontends and returns a compiled HTML page. This is highly optimized for performance metrics (such as time-to-interactive) and SEO, making it the preferred choice for highly indexed websites like e-commerce or news.
 ### Edge-Side Composition
 - The composition happens at the CDN level using **Edge-Side Includes (ESI)**. By delegating page assembly to edge points of presence globally, it drastically reduces latency. This is ideal for static-content applications (like product catalogs) but suffers from poor local developer experience (DX) since testing requires running local CDN environments
+---
 ## Route
 - Navigating Between Views
 ### Client-Side Routing
@@ -23,6 +25,7 @@
 - The origin application servers manage routing, mapping paths directly to SSR templates. Scaling this architecture under burst traffic requires horizontal scaling of application servers.
 ### Edge-Side Routing
 - The CDN routes request paths directly to edge-composed templates.
+---
 ## Communicate
 ### The Shared-State Antipattern
 - It is strongly advises **against** using a global shared state across different teams' micro-frontends. This creates "tight coupling," forcing teams to coordinate deployments and dragging them into a sociotechnical bottleneck.
@@ -35,6 +38,7 @@
 - For volatile, transient data (like a product ID), teams should pass information via **URL query strings**. For persistent session data (like JWT authentication tokens or local user preferences), they should use **web storage** (localStorage or cookies) accessed via APIs provided by the application shell.
 	- **URL Query Strings**
 	- **Web Storage & Cookies**
+---
 ## Best Practice
 - To mitigate storage fragmentation and security vulnerabilities, the recommendation using the **application shell as an API gateway proxy**: Instead of letting micro-frontends execute direct `localStorage.setItem` commands, the application shell exposes standardized storage helper methods (e.g., `appshell.set(token)` and `appshell.get(token)`).
 - Advantages:
