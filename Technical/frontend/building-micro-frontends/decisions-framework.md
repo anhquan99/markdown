@@ -1,7 +1,8 @@
 # Decisions framework
 - The Micro-Frontend Decisions Framework serves as the cornerstone for project initiation, forcing architects to address four pillars: **Define**, **Compose**, **Route**, and **Communicate**.
 ## Define
-### Vertical Splits 
+  ![](/image/Pasted%20image%2020260908060628.png)
+### Vertical Splits
 - **One micro-frontend per view:** A team owns a business domain end-to-end (e.g., the entire "Catalog" experience).
 - This is the gold standard for reducing cross-team dependencies and is informed by Domain-Driven Design (DDD).
 ### Horizontal Splits
@@ -9,7 +10,8 @@
 - This offers high reusability but requires extreme discipline to avoid performance degradation and integration "hell."
 ---
 ## Compose
-- Once you define your micro-frontends, you must choose where and how to stitch them together into a unified user interface:
+- Once you define your micro-frontends, you must choose where and how to stitch them together into a unified user interface.
+  ![](/image/Pasted%20image%2020260908060539.png)
 ### Client-Side Composition
 - An application shell in the browser dynamically loads micro-frontend bundles from a CDN or origin. The author details several client-side technologies: **iframes** (excellent for sandbox isolation but hard to make responsive and difficult to test), **Web Components** (using custom elements as wrappers and shadow DOM to encapsulate CSS styles), and **Webpack 5 Module Federation** (which allows host and remote modules to dynamically share dependencies like React, loading them only once).
 ### Server-Side Composition
@@ -19,6 +21,7 @@
 ---
 ## Route
 - Navigating Between Views
+  ![](/image/Pasted%20image%2020260908060732.png)
 ### Client-Side Routing
 - The application shell handles **global routing**, intercepting URL changes and loading/unloading the correct micro-frontend. Meanwhile, the loaded micro-frontend is solely responsible for **local routing** (moving between its own internal views). This keeps the shell domain-unaware and highly lightweight.
 ### Server-Side Routing
@@ -34,10 +37,12 @@
 	- **Custom Events:** Leveraging native browser standards, teams can dispatch custom objects via the global `window` object.
 	- **Event Emitters (Publisher/Subscriber):** A highly robust pattern is to instantiate a centralized **Event Emitter** inside the parent container or **application shell**, and then inject that instance into the child micro-frontends as a property (prop) at runtime.
 	- **Reactive Streams:** This implementation enforces unidirectional data flows. Decoupled components subscribe to declarative reactive data streams, cleanly separation concerns.
+  ![](/image/Pasted%20image%2020260908060912.png)
 ### Cross-Page/Cross-View Communication
 - For volatile, transient data (like a product ID), teams should pass information via **URL query strings**. For persistent session data (like JWT authentication tokens or local user preferences), they should use **web storage** (localStorage or cookies) accessed via APIs provided by the application shell.
 	- **URL Query Strings**
 	- **Web Storage & Cookies**
+  ![](/image/Pasted%20image%2020260908060854.png)
 ---
 ## Best Practice
 - To mitigate storage fragmentation and security vulnerabilities, the recommendation using the **application shell as an API gateway proxy**: Instead of letting micro-frontends execute direct `localStorage.setItem` commands, the application shell exposes standardized storage helper methods (e.g., `appshell.set(token)` and `appshell.get(token)`).
