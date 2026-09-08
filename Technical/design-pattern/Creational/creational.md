@@ -1,4 +1,4 @@
-- [[Abstract factory]]
+- [Abstract Factory](abstract-factory.md)
 - [[builder]]
 - [[factory-method|Factory method]]
 - [[Prototype]]
