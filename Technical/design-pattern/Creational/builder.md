@@ -1,12 +1,15 @@
 # Builder
 - A creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+## Intent
+- **Step-by-Step Construction:** The Builder is a creational pattern that allows you to construct complex objects step by step. It lets you produce drastically different types and representations of an object while using the exact same construction code.
+- **Separation of Concerns:** It explicitly separates the construction logic of a complex object from its final representation.
 ## Problem
 - A complex object that requires laborious, step-by-step initialization of many fields and nested object. Such initialization code is usually buried inside a monstrous constructor with lots of parameters. Or even worse: scattered all over the client code.
 ## Solution
 - The builder pattern suggests that you extract the object construction code out of its own class and move it to separate objects called builder.
 ### Director
 - A director class helps construct a class in order of execute build steps, while the builder provide implementation for those steps.
-- **It's not necessary to have a directory.** But the director class might be a good place to put various construction routines so you can reuse them across your program or completely hides the details of product construction from the client code, the client only needs to associate a builder with a director, launch the construction with the director, and get the result from the builder.
+- **It's not necessary to have a director.** But the director class might be a good place to put various construction routines so you can reuse them across your program or completely hides the details of product construction from the client code, the client only needs to associate a builder with a director, launch the construction with the director, and get the result from the builder.
 ## Applicability
 - Get rid of a **telescoping constructor**.
 ```csharp
