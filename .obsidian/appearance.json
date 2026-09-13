@@ -1,13 +1,15 @@
 {
   "baseFontSize": 22,
-  "cssTheme": "Catppuccin",
+  "cssTheme": "Obsidian Nord",
   "theme": "obsidian",
   "translucency": false,
-  "accentColor": "",
+  "accentColor": "#c1e1c1",
   "interfaceFontFamily": "",
   "baseFontSizeAction": true,
   "textFontFamily": "",
   "monospaceFontFamily": "",
   "showViewHeader": true,
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "showRibbon": true,
+  "nativeMenus": true
 }
