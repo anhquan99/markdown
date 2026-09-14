@@ -22,3 +22,7 @@
 ### Customization
 - **Persistent memory**: lets your subagent retain memory across conversations. This is great if you're using it consistently on the same projects.
 - **Preload skills**
+## Component usage
+- **`CLAUDE.md`:** for conventions.
+- **Skills**: for procedures tied to task.
+- **Hooks**: for rules that can't be skipped.

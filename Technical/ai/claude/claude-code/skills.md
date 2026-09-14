@@ -20,3 +20,9 @@ Unlike **slash commands** (which require manual typing), **Skills are automatica
 ## Hierarchy
 - **Personal:** `~/.claude/skills`
 - **Project:** `.claude/skills` in the root of the project
+## Skill folder
+- Drop a `reference.md` next to the skill for detailed material, then link to it from `skill.md`. Claude only reads it when it actually needs that depth. Your main file stays short.
+- Put scripts in the folder too. Claude executes them rather than loading their contents into context. That means a skill can carry its own tooling, like a `check.sh` that runs all the gates.
+```ad-note
+Keep `skill.md` itself lean. Push the heavy material, the long explanations and the executable scripts, into side files. The lean file describes what to do; the side files hold the depth and the tools.
+```
