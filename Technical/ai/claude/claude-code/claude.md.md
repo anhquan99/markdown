@@ -3,6 +3,7 @@
 - `CLAUDE.md` is a Markdown file you add to the root of your project, and Claude Code reads it automatically every time you start a session.
 - Think of it as an onboarding script for your codebase.
 - The contents of the `CLAUDE.md` file are appended to your prompt.
+- `CLAUDE.md` loads into every conversation, always.
 ## Consideration
 - Before you write a rule, ask whether it belongs in `CLAUDE.md` at all. Some rules are guidance, and some rules are hard lines that must never be crossed. Those are two different jobs.
 - Take a rule like "never push to main." If you put that in `CLAUDE.md`, you're hoping Claude reads it and respects it. Most of the time it will. But "most of the time" isn't good enough for something that dangerous. A hard rule like that belongs in a pre-tool-use hook instead.

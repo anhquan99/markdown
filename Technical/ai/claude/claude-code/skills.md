@@ -2,7 +2,8 @@
 ## Definition
 - Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks.
 - A skill is a markdown file that teaches Claude how to do something once, and Claude applies that knowledge automatically whenever it's relevant.
-- Think of them as expertise packages:they teach Claude how to complete specific tasks repeatably.
+- Think of them as expertise packages: they teach Claude how to complete specific tasks repeatably.
+- Skills load on demand.
 - Claude Code loads skills at startup, so restart your session after creating one. You can verify it's available by checking the available skills list.
 ```ad-note
 Unlike **slash commands** (which require manual typing), **Skills are automatically applied** when Claude recognizes the situation. They're best for specialized, task-specific knowledge:like your team's code review standards, commit message formats, or brand guidelines. If you find yourself repeatedly explaining the same thing to Claude, that's a signal to create a skill.
@@ -15,9 +16,9 @@ Unlike **slash commands** (which require manual typing), **Skills are automatica
 - Anthropic's built-in Skills are tested and maintained by Anthropic
 - Custom Skills you upload are private to your individual account
 - If you're installing a custom Skill from an external source, review its contents before use to understand what it does.
-## Skills vs. Projects
-- **Projects** are knowledge hubs. They hold the reference materials Claude needs to understand your work:project specs, meeting notes, research documents. When you upload files to a project, Claude draws on that information across every conversation within that project.
-- **Skills** are procedural machines. They encode _how_ Claude should execute a task:the specific steps, order of operations, and methodology you want followed every time. Skills shine when you have repeatable workflows you want Claude to run consistently.
+## Skills vs projects
+- **Projects** are knowledge hubs. They hold the reference materials Claude needs to understand your work: project specs, meeting notes, research documents. When you upload files to a project, Claude draws on that information across every conversation within that project.
+- **Skills** are procedural machines. They encode _how_ Claude should execute a task: the specific steps, order of operations, and methodology you want followed every time. Skills shine when you have repeatable workflows you want Claude to run consistently.
 ## Hierarchy priority
 1. **Enterprise** : managed settings, highest priority
 2. **Personal** : your home directory (`~/.claude/skills`)
@@ -59,3 +60,45 @@ Keep `skill.md` itself lean. Push the heavy material, the long explanations an
 	- Environment validation
 	- Data transformations that need to be consistent
 	- Operations that are more reliable as tested code than generated code
+## Sharing skills
+- Source version control (git, ...)
+- Plugin
+- Enterprise deployment through managed settings
+## Add skill to sub agent
+- Subagents don't automatically see your skills. When you delegate a task to a subagent, it starts with a fresh, clean context. You can add skill to sub agent.
+```md
+---
+name: frontend-security-accessibility-reviewer
+description: "Use this agent when you need to review frontend code for accessibility..."
+tools: Bash, Glob, Grep, Read, WebFetch, WebSearch, Skill...
+model: sonnet
+color: blue
+skills: accessibility-audit, performance-check
+---
+```
+- This pattern works really well when:
+	- You want isolated task delegation with specific expertise
+	- Different subagents need different skills (frontend reviewer vs. backend reviewer)
+	- You want to enforce standards in delegated work without relying on prompts
+## Debug skill
+### Use skill validator
+- The validator will catch structural problems before you spend time debugging other things.
+## Skill doesn't trigger
+- Add trigger phrases users would actually say
+- Test with variations like "help me profile this," "why is this slow?", "make this faster"
+- If any variation fails to trigger, add those keywords to your description
+### Skill doesn't load
+- The `SKILL.md` file must be inside a named directory, not at the skills root
+- The file name must be exactly `SKILL.md` — all caps on "SKILL", lowercase "md"
+- Run `claude --debug` to see loading errors. Look for messages mentioning your skill name. Sometimes this alone will point you straight to the problem.
+### Wrong skill gets used
+- If Claude uses the wrong skill or seems confused between skills, your descriptions are probably too similar.
+- Make them distinct. Being as specific as possible doesn't just help Claude decide when to use your skill — it also prevents conflicts with other similar-sounding skills.
+### Skill priority conflicts
+- If there's an enterprise "code-review" skill and you also have a personal "code-review" skill, the enterprise one wins every time.
+- Rename your skill to something more distinct (this is usually the easier path)
+- Talk to your admin about the enterprise skill
+### Runtime errors
+- **Missing dependencies:** If your skill uses external packages, they must be installed. Add dependency info to your skill description so Claude knows what's needed.
+- **Permission issues:** Scripts need execute permission. Run `chmod +x` on any scripts your skill references.
+- **Path separators:** Use forward slashes everywhere, even on Windows.
