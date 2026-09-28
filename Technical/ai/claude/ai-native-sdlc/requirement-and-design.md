@@ -1,4 +1,5 @@
 # Requirement And Design
+- Stage 2.
 - Once the product owner approves the `intent.md`, Claude takes it and produces a requirements and design spec. This is guided by the organization's skills for brand, security, compliance, and UX.
 - The product owner reviews that spec, but doesn't write it. The goal of this process is to create a spec the engineering team can plan against, with flagged areas of concern.
 

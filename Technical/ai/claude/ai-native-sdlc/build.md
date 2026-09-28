@@ -1,4 +1,5 @@
-# Implementation
+# Build
+- Stage 3.
 ## Plan
 - Engineers start Claude Code sessions in plan mode, give Claude the approved `spec.md` from **Stage 2: Design**, and let it interview them, iterating on the plan until they are happy with it.
 
